@@ -1,0 +1,26 @@
+<wallpapers>
+	<wallpaper deleted="false">
+		<name>Utile 26.04 Artistic</name>
+		<filename>/usr/share/backgrounds/utile/artistic-bright.png</filename>
+		<filename-dark>/usr/share/backgrounds/utile/artistic-dark.png</filename-dark>
+		<options>zoom</options>
+	</wallpaper>
+	<wallpaper deleted="false">
+		<name>Distribution</name>
+		<filename>/usr/share/backgrounds/utile/distro-bright.png</filename>
+		<filename-dark>/usr/share/backgrounds/utile/distro-dark.png</filename-dark>
+		<options>zoom</options>
+	</wallpaper>
+	<wallpaper deleted="false">
+		<name>x86_64</name>
+		<filename>/usr/share/backgrounds/utile/x86_64-bright.png</filename>
+		<filename-dark>/usr/share/backgrounds/utile/x86_64-dark.png</filename-dark>
+		<options>zoom</options>
+	</wallpaper>
+	<wallpaper deleted="false">
+		<name>arm64</name>
+		<filename>/usr/share/backgrounds/utile/arm64-bright.png</filename>
+		<filename-dark>/usr/share/backgrounds/utile/arm64-dark.png</filename-dark>
+		<options>zoom</options>
+	</wallpaper>
+</wallpapers>
