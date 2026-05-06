@@ -1,26 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE wallpapers SYSTEM "gnome-wp-list.dtd">
 <wallpapers>
 	<wallpaper deleted="false">
-		<name>Utile 26.04 Artistic</name>
+		<name>Utile Artistic</name>
 		<filename>/usr/share/backgrounds/utile/artistic-bright.png</filename>
 		<filename-dark>/usr/share/backgrounds/utile/artistic-dark.png</filename-dark>
 		<options>zoom</options>
 	</wallpaper>
 	<wallpaper deleted="false">
-		<name>Distribution</name>
+		<name>Utile Artistic Bright</name>
+		<filename>/usr/share/backgrounds/utile/artistic-bright.png</filename>
+		<options>zoom</options>
+	</wallpaper>
+	<wallpaper deleted="false">
+		<name>Utile Artistic Dark</name>
+		<filename>/usr/share/backgrounds/utile/artistic-dark.png</filename>
+		<options>zoom</options>
+	</wallpaper>
+	<wallpaper deleted="false">
+		<name>Utile Distribution</name>
 		<filename>/usr/share/backgrounds/utile/distro-bright.png</filename>
 		<filename-dark>/usr/share/backgrounds/utile/distro-dark.png</filename-dark>
 		<options>zoom</options>
 	</wallpaper>
 	<wallpaper deleted="false">
-		<name>x86_64</name>
-		<filename>/usr/share/backgrounds/utile/x86_64-bright.png</filename>
-		<filename-dark>/usr/share/backgrounds/utile/x86_64-dark.png</filename-dark>
+		<name>Utile Distribution Bright</name>
+		<filename>/usr/share/backgrounds/utile/distro-bright.png</filename>
 		<options>zoom</options>
 	</wallpaper>
 	<wallpaper deleted="false">
-		<name>arm64</name>
+		<name>Utile Distribution Dark</name>
+		<filename>/usr/share/backgrounds/utile/distro-dark.png</filename>
+		<options>zoom</options>
+	</wallpaper>
+	<wallpaper deleted="false">
+		<name>Abstract Assembly (x86_64 Architecture)</name>
+		<filename>/usr/share/backgrounds/utile/x86-64-bright.png</filename>
+		<filename-dark>/usr/share/backgrounds/utile/x86-64-dark.png</filename-dark>
+		<options>zoom</options>
+	</wallpaper>
+	<wallpaper deleted="false">
+		<name>Abstract Assembly (x86_64 Architecture) Bright</name>
+		<filename>/usr/share/backgrounds/utile/x86-64-bright.png</filename>
+		<options>zoom</options>
+	</wallpaper>
+	<wallpaper deleted="false">
+		<name>Abstract Assembly (x86_64 Architecture) Dark</name>
+		<filename>/usr/share/backgrounds/utile/x86-64-dark.png</filename>\
+		<options>zoom</options>
+	</wallpaper>
+	<wallpaper deleted="false">
+		<name>Abstract Assembly (arm64 Architecture)</name>
 		<filename>/usr/share/backgrounds/utile/arm64-bright.png</filename>
 		<filename-dark>/usr/share/backgrounds/utile/arm64-dark.png</filename-dark>
+		<options>zoom</options>
+	</wallpaper>
+	<wallpaper deleted="false">
+		<name>Abstract Assembly (arm64 Architecture) Bright</name>
+		<filename>/usr/share/backgrounds/utile/arm64-bright.png</filename>
+		<options>zoom</options>
+	</wallpaper>
+	<wallpaper deleted="false">
+		<name>Abstract Assembly (arm64 Architecture) Dark</name>
+		<filename>/usr/share/backgrounds/utile/arm64-dark.png</filename>
 		<options>zoom</options>
 	</wallpaper>
 </wallpapers>

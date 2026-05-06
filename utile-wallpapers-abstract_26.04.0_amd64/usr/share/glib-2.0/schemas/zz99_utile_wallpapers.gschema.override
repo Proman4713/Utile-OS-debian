@@ -1,3 +1,3 @@
 [org.gnome.desktop.background]
-picture-uri='file:///usr/share/backgrounds/utile/x86_64-bright.png'
-picture-uri-dark='file:///user/share/backgrounds/utile/x86_64-dark.png'
+picture-uri='file:///usr/share/backgrounds/utile/x86-64-bright.png'
+picture-uri-dark='file:///user/share/backgrounds/utile/x86-64-dark.png'
