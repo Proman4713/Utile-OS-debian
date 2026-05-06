@@ -1,5 +1,5 @@
 Package: utile-wallpapers
-Version: 26.04.0
+Version: 26.04.0~beta1
 Architecture: amd64
 Section: metapackages
 Priority: optional
