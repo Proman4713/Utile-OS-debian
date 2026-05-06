@@ -1,0 +1,7 @@
+Package: utile-wallpapers
+Version: 26.04.0
+Architecture: arm64
+Section: metapackages
+Priority: optional
+Maintainer: Aaser Abd-el Sabour <proman4713@gmail.com>
+Description: Wallpaper configuration for Utile OS 26.04 Abstract Assembly (arm64 defaults)
