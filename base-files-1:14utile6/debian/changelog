@@ -1,6 +1,7 @@
 base-files (1:14utile6) abstract; urgency=medium
 
-  * Incorporate upstream code with release metadata and logos modified
+  * logos: Add Utile logos and symlink ubuntu-logos to them
+  * /etc/issue{,.net}, /etc/{lsb,os}-release, /etc/legal, /etc/dpkg/origins/utile: Modify upstream release metadata
 
  -- Aaser <proman4713@gmail.com>  Wed, 06 May 2026 22:01:25 +0300
 
