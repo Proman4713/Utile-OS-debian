@@ -1,3 +1,9 @@
+base-files (1:14utile7.1) abstract; urgency=medium
+
+  * logos: Update logo variants to match with design changes
+
+ -- Aaser Abd-el Sabour <proman4713@gmail.com>  Sun, 10 May 2026 02:50:15 +0300
+
 base-files (1:14utile7) abstract; urgency=medium
 
   * logos: Symlink ubuntu-logo* files to utile-logo* equivalents
