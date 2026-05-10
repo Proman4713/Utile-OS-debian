@@ -4,7 +4,7 @@ Replaces: ubuntu-wallpapers
 Conflicts: ubuntu-wallpapers
 Version: 26.04.0~beta3
 Architecture: amd64
-Section: metapackages
+Section: graphics
 Priority: optional
 Maintainer: Aaser Abd-el Sabour <proman4713@gmail.com>
 Description: Wallpaper configuration for Utile OS 26.04 Abstract Assembly (amd64 defaults)
