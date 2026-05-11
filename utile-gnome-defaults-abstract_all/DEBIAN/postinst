@@ -12,9 +12,9 @@ if [ ! -f "$DCONF_PROFILE" ] || ! grep -q "system-db:local" "$DCONF_PROFILE"; th
     echo "system-db:local" >> "$DCONF_PROFILE"
 fi
 
-if [ ! -f "$DCONF_GDM_PROFILE" ] || ! grep -q "system-db:local" "$DCONF_GDM_PROFILE"; then
+if [ ! -f "$DCONF_GDM_PROFILE" ] || ! grep -q "system-db:gdm" "$DCONF_GDM_PROFILE"; then
 	echo "user-db:user" > "$DCONF_GDM_PROFILE"
-	echo "system-db:local" >> "$DCONF_GDM_PROFILE"
+	echo "system-db:gdm" >> "$DCONF_GDM_PROFILE"
 fi
 
 if command -v dconf >/dev/null 2>&1; then

@@ -1,0 +1,34 @@
+[org/gnome/desktop/interface]
+# Purple theme
+accent-color='purple'
+# Show Battery % in Top Bar
+show-battery-percentage=true
+# Set time to AM/PM. 24-hour users would understand the time immediately if it's in 12-hour OOBE, and they can change it. But for 12-hour users, it would take
+#	more friction for them to read the time if its 24-hour OOBE, so we set it to AM/PM.
+clock-format='12h'
+# Show week day
+clock-show-weekday=true
+
+[org/gnome/desktop/wm/keybindings]
+# Muscle Memory: Windows users are used to Alt+Shift and Ctrl+Alt+Shift for switching input sources. Not only is this not the default in GNOME,
+#	it is actually impossible to achieve through the UI due to a bug that doesn't accept Alt+Shift_L.
+switch-input-source=['<Alt>Shift_L']
+switch-input-source-backward=['<Primary><Alt>Shift_L']
+
+#! Enable eyesight reminders, debatable on whether this is a good idea
+[org/gnome/desktop/break-reminders]
+selected-breaks=['eyesight']
+
+[org/gnome/desktop/break-reminders/eyesight]
+notify=true
+# 20 minutes
+interval-seconds=1200
+
+# Mouse acceleration
+[org/gnome/desktop/peripherals/mouse]
+accel-profile='flat'
+
+# Set Nightlight start period to 00:00 and end to 23:59 so that it always gets enabled if the user clicks on 'Night Light' unless they set their own schedule
+[org/gnome/settings-daemon/plugins/color]
+night-light-schedule-from=0.0
+night-light-schedule-to=23.99
