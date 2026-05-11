@@ -2,7 +2,7 @@ Package: utile-wallpapers
 Provides: ubuntu-wallpapers
 Replaces: ubuntu-wallpapers
 Conflicts: ubuntu-wallpapers
-Version: 26.04.0~beta4
+Version: 26.04.0~beta5
 Architecture: arm64
 Section: graphics
 Priority: optional

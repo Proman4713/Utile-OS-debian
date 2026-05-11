@@ -13,8 +13,8 @@ fi
 echo "Building $PACKAGE_NAME..."
 
 echo "Fixing permissions..."
-find "$SRC_DIR" -type d -exec chmod 755 {} +
-find "$SRC_DIR" -type f -exec chmod 644 {} +
+sudo find "$SRC_DIR" -type d -exec chmod 755 {} +
+sudo find "$SRC_DIR" -type f -exec chmod 644 {} +
 
 rm -f "$PACKAGE_NAME.deb"
 

@@ -29,6 +29,7 @@ wget -qO "$OUTPUT_DIR/$EXTENSION_NAME.zip" "$EXTENSION_URL"
 unzip -qo "$OUTPUT_DIR/$EXTENSION_NAME.zip" -d "$OUTPUT_DIR/$EXTENSION_NAME"
 
 if [ -d "$OUTPUT_DIR/$EXTENSION_NAME/schemas" ]; then
+	sudo glib-compile-schemas $OUTPUT_DIR/$EXTENSION_NAME/schemas
 	echo -e "\nRegistering settings system-wide for $EXTENSION_NAME...\n"
 	cp "$OUTPUT_DIR/$EXTENSION_NAME/schemas/"*.xml $OUTPUT_DIR/../../glib-2.0/schemas/
 fi
