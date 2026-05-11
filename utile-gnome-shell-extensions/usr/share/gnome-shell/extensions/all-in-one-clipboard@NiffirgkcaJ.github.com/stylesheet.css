@@ -1,0 +1,607 @@
+/* --- Main Extension UI --- */
+.aio-clipboard-container .aio-clipboard-tab-button {
+    min-width: 30px;
+    max-width: 30px;
+    min-height: 30px;
+    max-height: 30px;
+    padding: 0;
+    margin: 0 2px;
+    background: transparent;
+}
+
+.aio-clipboard-container .aio-clipboard-tab-button:checked,
+.aio-clipboard-container .aio-clipboard-tab-button:focus,
+.aio-clipboard-container .aio-clipboard-tab-button:hover {
+    background-color: rgba(128, 128, 128, 0.3);
+}
+
+.aio-clipboard-container .aio-clipboard-tab-topbar {
+    margin-bottom: 4px;
+}
+
+.aio-clipboard-container .aio-clipboard-tab-topbar.no-margin {
+    margin-bottom: 0;
+}
+
+.aio-clipboard-container .aio-clipboard-tab-scrollview {
+    margin-left: 2px;
+}
+
+.aio-clipboard-container .aio-clipboard-content-area {
+    padding: 0;
+}
+
+.aio-clipboard-container .aio-clipboard-back-button {
+    min-width: 30px;
+    max-width: 30px;
+    min-height: 30px;
+    max-height: 30px;
+    padding: 0;
+    transition: background-color 0.1s ease-out;
+}
+
+.aio-clipboard-container .aio-clipboard-error-label {
+    text-align: center;
+}
+
+/* --- Search Specific UI --- */
+.aio-clipboard-container .aio-search-bar-container {
+    height: 35px;
+    padding: 0 2px;
+    margin: 8px 0;
+}
+
+.aio-clipboard-container .aio-search-entry {
+    height: 35px;
+    font-size: 0.9em;
+    margin: 0;
+    border-radius: 17.5px;
+}
+
+.aio-clipboard-container .aio-search-clear-button {
+    background-color: transparent;
+    width: 35px;
+    height: 35px;
+    padding: 0;
+    margin-left: 4px;
+}
+
+.aio-clipboard-container .aio-search-clear-button.button:checked,
+.aio-clipboard-container .aio-search-clear-button.button:focus,
+.aio-clipboard-container .aio-search-clear-button.button:hover {
+    background-color: rgba(128, 128, 128, 0.3);
+}
+
+/* --- Recently Used Tab Specific UI --- */
+.aio-clipboard-container .recently-used-tab-content {
+    background: transparent;
+}
+
+.aio-clipboard-container .recently-used-container {
+    padding: 8px;
+}
+
+.aio-clipboard-container .recently-used-separator {
+    height: 1px;
+    background-color: rgba(128, 128, 128, 0.2);
+    margin: 12px 4px;
+}
+
+.aio-clipboard-container .recently-used-header {
+    margin-bottom: 8px;
+}
+
+.aio-clipboard-container .recently-used-title {
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.aio-clipboard-container .recently-used-show-all-button {
+    padding: 2px 8px;
+    font-size: 0.85em;
+    background-color: rgba(128, 128, 128, 0.2);
+    border-radius: 4px;
+    transition: background-color 0.1s ease-out;
+}
+
+.aio-clipboard-container .recently-used-show-all-button:hover,
+.aio-clipboard-container .recently-used-show-all-button:focus {
+    background-color: rgba(128, 128, 128, 0.4);
+}
+
+.aio-clipboard-container .recently-used-list-item {
+    height: 48px;
+    min-height: 48px;
+    padding: 4px 8px;
+    margin: 2px 0;
+    background-color: transparent;
+    font-weight: normal;
+    text-align: start;
+    transition: background-color 0.1s ease-out;
+}
+
+.aio-clipboard-container .recently-used-list-item:hover,
+.aio-clipboard-container .recently-used-list-item:focus {
+    background-color: rgba(128, 128, 128, 0.3);
+}
+
+.aio-clipboard-container .recently-used-grid-item {
+    height: 64px;
+    min-height: 64px;
+    min-width: 0; /* Allows flexible width in grid */
+    background-color: transparent;
+    font-weight: bold;
+    font-size: 1.6em;
+    transition: background-color 0.1s ease-out;
+}
+
+.aio-clipboard-container .recently-used-grid-item:hover,
+.aio-clipboard-container .recently-used-grid-item:focus {
+    background-color: rgba(128, 128, 128, 0.3);
+}
+
+.aio-clipboard-container .recently-used-normal-item {
+    font-weight: normal;
+    text-align: center;
+}
+
+.aio-clipboard-container .recently-used-bold-item {
+    font-weight: bold;
+    text-align: center;
+}
+
+.aio-clipboard-container .recently-used-gif-icon {
+    font-size: 64px;
+}
+
+.aio-clipboard-container .recently-used-settings-button {
+    min-width: 40px;
+    max-width: 40px;
+    min-height: 40px;
+    max-height: 40px;
+    padding: 0;
+    margin: 8px;
+    background-color: rgba(128, 128, 128, 0.3);
+    border-radius: 20px;
+    transition: background-color 0.1s ease-out;
+}
+
+.aio-clipboard-container .recently-used-settings-button:hover,
+.aio-clipboard-container .recently-used-settings-button:focus {
+    background-color: rgba(128, 128, 128, 0.5);
+}
+
+/* --- Emoji Tab Specific UI --- */
+.aio-clipboard-container .emoji-category-tab-button {
+    min-width: 30px;
+    max-width: 30px;
+    min-height: 30px;
+    max-height: 30px;
+    padding: 0;
+    margin: 0 2px;
+    background: transparent;
+    transition: background-color 0.1s ease-out;
+}
+
+.aio-clipboard-container .emoji-category-tab-button:checked,
+.aio-clipboard-container .emoji-category-tab-button:focus,
+.aio-clipboard-container .emoji-category-tab-button:hover {
+    background-color: rgba(128, 128, 128, 0.3);
+}
+
+.aio-clipboard-container .emoji-grid-button {
+    min-width: 40px;
+    max-width: 40px;
+    min-height: 40px;
+    max-height: 40px;
+    padding: 0;
+    margin: 2px;
+    font-size: 1.6em;
+    background: transparent;
+    transition: background-color 0.1s ease-out;
+}
+
+.aio-clipboard-container .emoji-grid-button:checked,
+.aio-clipboard-container .emoji-grid-button:focus,
+.aio-clipboard-container .emoji-grid-button:hover {
+    background-color: rgba(128, 128, 128, 0.3);
+}
+
+/* --- GIF Tab Specific UI --- */
+.aio-clipboard-container .gif-info-bar {
+    padding: 4px 8px;
+    margin: 4px;
+    background-color: rgba(80, 80, 80, 0.3);
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+.aio-clipboard-container .gif-category-tab-button {
+    padding: 0 10px;
+    min-width: 100px;
+    min-height: 30px;
+    max-height: 30px;
+    margin: 0 2px;
+    background: transparent;
+    transition: background-color 0.1s ease-out;
+    font-weight: normal;
+    font-size: 0.9em;
+}
+
+.aio-clipboard-container .gif-category-tab-button:checked,
+.aio-clipboard-container .gif-category-tab-button:focus,
+.aio-clipboard-container .gif-category-tab-button:hover {
+    background-color: rgba(128, 128, 128, 0.3);
+}
+
+.aio-clipboard-container .gif-category-tab-button:checked {
+    font-weight: bold;
+}
+
+.aio-clipboard-container .gif-grid-button {
+    padding: 2px;
+    margin: 0;
+    background-color: transparent;
+    transition: background-color 0.1s ease-out;
+    border-radius: 4px;
+}
+
+.aio-clipboard-container .gif-grid-button:checked,
+.aio-clipboard-container .gif-grid-button:focus,
+.aio-clipboard-container .gif-grid-button:hover {
+    background-color: rgba(128, 128, 128, 0.3);
+}
+
+.aio-clipboard-container .gif-spinner-box {
+    padding: 10px 0;
+}
+
+/* --- Kaomoji Tab Specific UI --- */
+.aio-clipboard-container .kaomoji-category-tab-button {
+    padding: 0 8px;
+    min-width: 55px;
+    min-height: 30px;
+    max-height: 30px;
+    margin: 0 2px;
+    background: transparent;
+    transition: background-color 0.1s ease-out;
+    font-weight: normal;
+    font-size: 0.9em;
+}
+
+.aio-clipboard-container .kaomoji-category-tab-button:checked,
+.aio-clipboard-container .kaomoji-category-tab-button:focus,
+.aio-clipboard-container .kaomoji-category-tab-button:hover {
+    background-color: rgba(128, 128, 128, 0.3);
+}
+
+.aio-clipboard-container .kaomoji-category-tab-button:checked {
+    font-weight: bold;
+}
+
+.aio-clipboard-container .kaomoji-grid-button {
+    min-width: 50px;
+    max-width: 100px;
+    min-height: 30px;
+    max-height: 30px;
+    padding: 0 4px;
+    margin: 2px;
+    font-size: 1em;
+    background: transparent;
+    transition: background-color 0.1s ease-out;
+    text-align: center;
+}
+
+.aio-clipboard-container .kaomoji-grid-button:checked,
+.aio-clipboard-container .kaomoji-grid-button:focus,
+.aio-clipboard-container .kaomoji-grid-button:hover {
+    background-color: rgba(128, 128, 128, 0.3);
+}
+
+/* --- Symbols Tab Specific UI --- */
+.aio-clipboard-container .symbol-category-tab-button {
+    padding: 0 8px;
+    min-width: 140px;
+    min-height: 30px;
+    max-height: 30px;
+    margin: 0 2px;
+    background: transparent;
+    transition: background-color 0.1s ease-out;
+    font-weight: normal;
+    font-size: 0.9em;
+}
+
+.aio-clipboard-container .symbol-category-tab-button:checked,
+.aio-clipboard-container .symbol-category-tab-button:focus,
+.aio-clipboard-container .symbol-category-tab-button:hover {
+    background-color: rgba(128, 128, 128, 0.3);
+}
+
+.aio-clipboard-container .symbol-category-tab-button:checked {
+    font-weight: bold;
+}
+
+.aio-clipboard-container .symbol-grid-button {
+    min-width: 40px;
+    max-width: 40px;
+    min-height: 40px;
+    max-height: 40px;
+    padding: 0;
+    margin: 2px;
+    font-size: 1em;
+    background: transparent;
+    transition: background-color 0.1s ease-out;
+    text-align: center;
+}
+
+.aio-clipboard-container .symbol-grid-button:checked,
+.aio-clipboard-container .symbol-grid-button:focus,
+.aio-clipboard-container .symbol-grid-button:hover {
+    background-color: rgba(128, 128, 128, 0.3);
+}
+
+/* --- Clipboard Tab Specific UI --- */
+/* Shared UI Components */
+.aio-clipboard-container .clipboard-separator {
+    height: 1px;
+    background-color: rgba(128, 128, 128, 0.3);
+    margin: 4px 8px;
+}
+
+.aio-clipboard-container .clipboard-section-header {
+    font-size: 0.9em;
+    font-weight: bold;
+    margin: 8px 8px 4px 8px;
+}
+
+.aio-clipboard-container .clipboard-selection-bar {
+    padding: 4px 10px;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.3);
+}
+
+.aio-clipboard-container .clipboard-icon-button {
+    min-width: 30px;
+    max-width: 30px;
+    min-height: 30px;
+    max-height: 30px;
+    border-radius: 4px;
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+}
+
+.aio-clipboard-container .clipboard-icon-button:hover,
+.aio-clipboard-container .clipboard-icon-button:focus {
+    background-color: rgba(128, 128, 128, 0.3);
+}
+
+/* List View */
+.aio-clipboard-container .clipboard-list-view {
+    padding: 0;
+}
+
+.aio-clipboard-container .clipboard-list-item {
+    height: 48px;
+    min-height: 48px;
+    padding: 4px 8px;
+    margin: 2px;
+    background-color: transparent;
+    font-weight: normal;
+}
+
+.aio-clipboard-container .clipboard-list-item:hover,
+.aio-clipboard-container .clipboard-list-item:focus {
+    background-color: rgba(128, 128, 128, 0.3);
+}
+
+.aio-clipboard-container .clipboard-list-controls {
+    padding: 0;
+}
+
+.aio-clipboard-container .clipboard-list-checkbox,
+.aio-clipboard-container .clipboard-list-control-button {
+    padding: 0;
+    margin: 0;
+    border-radius: 4px;
+    background-color: transparent;
+}
+
+.aio-clipboard-container .clipboard-list-checkbox {
+    min-width: 28px;
+    max-width: 28px;
+    min-height: 28px;
+    max-height: 28px;
+}
+
+.aio-clipboard-container .clipboard-list-control-button {
+    min-width: 30px;
+    max-width: 30px;
+    min-height: 30px;
+    max-height: 30px;
+}
+
+.aio-clipboard-container .clipboard-list-checkbox:hover,
+.aio-clipboard-container .clipboard-list-checkbox:focus,
+.aio-clipboard-container .clipboard-list-control-button:hover,
+.aio-clipboard-container .clipboard-list-control-button:focus {
+    background-color: rgba(128, 128, 128, 0.3);
+}
+
+.aio-clipboard-container .clipboard-list-text-label {
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.aio-clipboard-container .clipboard-list-title {
+    margin-bottom: 2px;
+    font-size: 0.95em;
+    font-weight: bold;
+}
+
+.aio-clipboard-container .clipboard-list-subtitle {
+    font-size: 0.8em;
+    font-weight: normal;
+    color: rgba(180, 180, 180, 0.8);
+}
+
+.aio-clipboard-container .clipboard-list-item:hover .clipboard-list-subtitle,
+.aio-clipboard-container .clipboard-list-item:focus .clipboard-list-subtitle {
+    color: inherit;
+}
+
+.aio-clipboard-container .clipboard-list-rich-container {
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.aio-clipboard-container .clipboard-list-rich-icon {
+    margin-right: 8px;
+}
+
+.aio-clipboard-container .clipboard-list-color-container {
+    padding: 0;
+    margin-right: 8px;
+    border: 5px solid rgba(128, 128, 128, 0.4);
+    border-radius: 8px;
+}
+
+.aio-clipboard-container .clipboard-list-color-swatch {
+    min-width: 48px;
+    max-width: 48px;
+    min-height: 24px;
+    max-height: 24px;
+    border-radius: 3px;
+}
+
+.aio-clipboard-container .clipboard-list-code-container {
+    padding: 0;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.aio-clipboard-container .clipboard-list-code-numbers {
+    min-width: 13px;
+    margin-right: 8px;
+    font-family: monospace;
+    font-size: 0.8em;
+    text-align: center;
+    color: rgba(128, 128, 128, 0.6);
+}
+
+.aio-clipboard-container .clipboard-list-code-content {
+    font-family: monospace;
+    font-size: 0.8em;
+}
+
+/* Grid View */
+.aio-clipboard-container .clipboard-grid-view {
+    padding: 4px;
+}
+
+.aio-clipboard-container .clipboard-grid-card {
+    padding: 2px;
+    margin: 0;
+    border-radius: 6px;
+    overflow: hidden;
+    background-color: transparent;
+    font-weight: normal;
+}
+
+.aio-clipboard-container .clipboard-grid-card:hover,
+.aio-clipboard-container .clipboard-grid-card:focus {
+    background-color: rgba(128, 128, 128, 0.3);
+}
+
+.aio-clipboard-container .clipboard-grid-card-content {
+    padding: 8px;
+}
+
+.aio-clipboard-container .clipboard-grid-type-badge {
+    padding: 6px;
+    border-radius: 6px 6px 0 0;
+    background-gradient-direction: vertical;
+    background-gradient-start: rgba(0, 0, 0, 0.5);
+    background-gradient-end: transparent;
+}
+
+.aio-clipboard-container .clipboard-grid-type-icon {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.aio-clipboard-container .clipboard-grid-controls {
+    padding: 6px 8px;
+    border-radius: 0 0 6px 6px;
+    background-gradient-direction: vertical;
+    background-gradient-start: transparent;
+    background-gradient-end: rgba(0, 0, 0, 0.6);
+}
+
+.aio-clipboard-container .clipboard-grid-checkbox,
+.aio-clipboard-container .clipboard-grid-control-button {
+    min-width: 24px;
+    max-width: 24px;
+    min-height: 24px;
+    max-height: 24px;
+    padding: 0;
+    margin: 0 2px;
+    border-radius: 4px;
+    background-color: transparent;
+}
+
+.aio-clipboard-container .clipboard-grid-checkbox:hover,
+.aio-clipboard-container .clipboard-grid-checkbox:focus,
+.aio-clipboard-container .clipboard-grid-control-button:hover,
+.aio-clipboard-container .clipboard-grid-control-button:focus {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.aio-clipboard-container .clipboard-grid-text-label {
+    font-size: 11px;
+}
+
+.aio-clipboard-container .clipboard-grid-title {
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.aio-clipboard-container .clipboard-grid-subtitle {
+    font-size: 10px;
+}
+
+.aio-clipboard-container .clipboard-grid-rich-labels {
+    margin-top: 4px;
+}
+
+.aio-clipboard-container .clipboard-grid-image-content {
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.aio-clipboard-container .clipboard-grid-color-container {
+    border-radius: 6px;
+}
+
+.aio-clipboard-container .clipboard-grid-color-card {
+    padding: 6px 8px;
+    border-radius: 0 0 6px 6px;
+    background-gradient-direction: vertical;
+    background-gradient-start: transparent;
+    background-gradient-end: rgba(0, 0, 0, 0.6);
+}
+
+.aio-clipboard-container .clipboard-grid-color-label {
+    font-size: 12px;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.aio-clipboard-container .clipboard-grid-code-line-count {
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.aio-clipboard-container .clipboard-grid-code-content {
+    font-family: monospace;
+    font-size: 10px;
+}

@@ -11,11 +11,6 @@ if [ ! -f "$DCONF_PROFILE" ] || ! grep -q "system-db:local" "$DCONF_PROFILE"; th
     echo "system-db:local" >> "$DCONF_PROFILE"
 fi
 
-if [ -d /usr/share/glib-2.0/schemas ]; then
-    echo "Compiling GSettings schemas..."
-    glib-compile-schemas /usr/share/glib-2.0/schemas
-fi
-
 if command -v dconf >/dev/null 2>&1; then
     echo "Updating dconf database..."
     dconf update

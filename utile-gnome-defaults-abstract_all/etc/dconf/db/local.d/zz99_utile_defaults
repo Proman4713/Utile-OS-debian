@@ -1,0 +1,218 @@
+[org/gnome/desktop/interface]
+# Set font sizes to 9 rather than 11, which is roughly 125% smaller, then increase default fractional scaling to 125%. This is to make Chromium browsers look as big as
+#	they do on macOS or Windows. Where the same display would usually require 125% display due to Windows' inherently smaller font sizes. So when a Chromium browser
+#	sees 100% by default from Ubuntu, they scale to an equivalent of 100% on Windows which makes the scaling look way smaller than it should be.
+#	this makes the default interface too small at 100%, just like it would be on Windows, prompting users to adjust it, just like they would do on Windows.
+#!	EXPERIMENTAL, only tested on my system
+font-name='Ubuntu Regular 9'
+document-font-name='Sans Regular 9'
+monospace-font-name='Ubuntu Mono Regular 9'
+font-hinting='full'
+# Purple theme
+accent-color='purple'
+# Make the cursor smaller, default is 24. This is to match the smaller font sizes we applied, so that it doesn't get too big with fractional scaling.
+cursor-size=22
+# Enable Hot Corners
+enable-hot-corners=true
+# Show Battery % in Top Bar
+show-battery-percentage=true
+# Set time to AM/PM. 24-hour users would understand the time immediately if it's in 12-hour OOBE, and they can change it. But for 12-hour users, it would take
+#	more friction for them to read the time if its 24-hour OOBE, so we set it to AM/PM.
+clock-format='12h'
+# Show week day
+clock-show-weekday=true
+
+[org/gnome/desktop/wm/preferences]
+# Same as above, but for the title bar in legacy applications
+titlebar-font='Ubuntu Bold 9'
+
+[org/gnome/desktop/wm/keybindings]
+# Muscle Memory: Windows users are used to Alt+Shift and Ctrl+Alt+Shift for switching input sources. Not only is this not the default in GNOME,
+#	it is actually impossible to achieve through the UI due to a bug that doesn't accept Alt+Shift_L.
+switch-input-source=['<Alt>Shift_L']
+switch-input-source-backward=['<Primary><Alt>Shift_L']
+
+#! Enable eyesight reminders, debatable on whether this is a good idea
+[org/gnome/desktop/break-reminders]
+selected-breaks=['eyesight']
+
+[org/gnome/desktop/break-reminders/eyesight]
+notify=true
+# 20 minutes
+interval-seconds=1200
+
+# Mouse acceleration
+[org/gnome/desktop/peripherals/mouse]
+accel-profile='flat'
+
+[org/gnome/shell]
+# GNOME sometimes bugs certain extensions, like Hide Top Bar, that perfectly work with extension validation disabled
+disable-extension-version-validation=true
+# Default pinned apps
+favorite-apps=['org.gnome.Nautilus.desktop', 'brave-browser.desktop', 'org.gnome.Calendar.desktop', 'org.gnome.Music.desktop', 'libreoffice-impress.desktop', 'libreoffice-calc.desktop', 'libreoffice-writer.desktop', 'snap-store_snap-store.desktop', 'org.gnome.Settings.desktop']
+# Enable Extensions (except Blur My Shell):
+enabled-extensions=['hidetopbar@mathieu.bidon.ca', 'ding@rastersoft.com', 'ubuntu-dock@ubuntu.com', 'tiling-assistant@ubuntu.com', 'snapd-search-provider@canonical.com', 'web-search-provider@ubuntu.com', 'gsconnect@andyholmes.github.io', 'add-to-desktop@tommimon.github.com', 'just-perfection-desktop@just-perfection', 'Vitals@CoreCoding.com', 'all-in-one-clipboard@NiffirgkcaJ.github.com']
+
+[org/gnome/shell/keybindings]
+# Muscle Memory: Windows users use Win+Shift+S to open the Snipping Tool, not just PrtScr
+show-screenshot-ui=['<Shift><Super>s', 'Print']
+# Remove the notification/calendar tray keybind (Super + v) to leave room for 'All-In-One Clipboard' | Default is ['<Super>v', '<Super>m']
+toggle-message-tray=['<Super>m']
+
+# Set Nightlight start period to 00:00 and end to 23:59 so that it always gets enabled if the user clicks on 'Night Light' unless they set their own schedule
+[org/gnome/settings-daemon/plugins/color]
+night-light-schedule-from=0.0
+night-light-schedule-to=23.99
+
+[org/gnome/settings-daemon/plugins/media-keys]
+# Bind Super+E to open Files (Nautilus)
+home=['<Super>e']
+# Muscle Memory: Windows Win+I for settings
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/open-settings']
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/open-settings]
+name='Launch Settings'
+command='gnome-control-center'
+binding='<Super>i'
+
+# Remove IBus emoji keybind (Super + .) to leave room for the 'All-In-One Clipboard' extension we're going to install
+[org/freedesktop/ibus/panel/emoji]
+unicode-hotkey=@as []
+hotkey=@as []
+
+[org/gnome/shell/extensions/dash-to-dock]
+# Make the dock minimise/maximise apps when clicked there
+click-action='minimize-or-previews'
+extend-height=false
+dock-position='BOTTOM'
+dock-fixed=false
+show-mounts=false
+show-trash=false
+show-apps-at-top=true
+# Due to the fractional scaling setup, the Ubuntu Dock also needs to have a lower icon size (default 44)
+dash-max-icon-size=35
+
+[org/gnome/shell/extensions/ding]
+# Force DING to use the top-right
+start-corner='top-right'
+show-trash=true
+
+#* CONFIGURE: Blur My Shell
+# Add Overview pipeline
+[org/gnome/shell/extensions/blur-my-shell]
+pipelines={'pipeline_default': {'name': <'Default'>, 'effects': <[<{'type': <'native_static_gaussian_blur'>, 'id': <'effect_000000000000'>, 'params': <{'radius': <15>, 'brightness': <0.7>, 'unscaled_radius': <15>}>}>]>}, 'pipeline_default_rounded': {'name': <'Default rounded'>, 'effects': <[<{'type': <'native_static_gaussian_blur'>, 'id': <'effect_000000000001'>, 'params': <{'radius': <70>, 'brightness': <0.5>, 'unscaled_radius': <70>}>}>, <{'type': <'corner'>, 'id': <'effect_000000000002'>, 'params': <{'radius': <16>}>}>]>}, 'pipeline_overview': {'name': <'Overview'>, 'effects': <[<{'type': <'native_static_gaussian_blur'>, 'id': <'effect_45545059471727'>, 'params': <{'unscaled_radius': <20>, 'brightness': <0.5>}>}>]>}}
+
+# Set default values for folder backgrounds in the app grid
+[org/gnome/shell/extensions/blur-my-shell/appfolder]
+brightness=0.32
+sigma=3
+style-dialogs=3
+
+# Set default values for application blur (by default Ptyxis is whitelisted)
+[org/gnome/shell/extensions/blur-my-shell/applications]
+# Enable
+blur=true
+dynamic-opacity=false
+# Make it slightly more opaque than the default
+opacity=220
+# Low blur intensity
+sigma=5
+# Whitelist Ptyxis
+whitelist=['org.gnome.Ptyxis']
+
+# Disable blur on extensions we don't use
+[org/gnome/shell/extensions/blur-my-shell/coverflow-alt-tab]
+blur=false
+
+[org/gnome/shell/extensions/blur-my-shell/window-list]
+blur=false
+
+# Change pipelines
+[org/gnome/shell/extensions/blur-my-shell/lockscreen]
+pipeline='pipeline_overview'
+
+[org/gnome/shell/extensions/blur-my-shell/overview]
+pipeline='pipeline_overview'
+
+[org/gnome/shell/extensions/blur-my-shell/screenshot]
+pipeline='pipeline_overview'
+
+#* CONFIGURE: Hide Top Bar
+[org/gnome/shell/extensions/hidetopbar]
+# Disable intellihide
+enable-active-window=false
+enable-intellihide=false
+# Enable hot corner even with the top bar hidden
+hot-corner=true
+# Show top bar when the mouse move towards the top of the screen, even when a fullscreen window is active, but don't automatically
+#	open the overview just because the user moved the mouse
+mouse-sensitive=true
+mouse-sensitive-fullscreen-window=true
+mouse-triggers-overview=false
+# Show the top bar in the overview
+show-in-overview=true
+
+#* CONFIGURE: Just Perfection Desktop
+[org/gnome/shell/extensions/just-perfection]
+# Hide activities button, the entire existence of this button only serves to show the number of workspaces as well as act as a CTA to open the overview.
+#	Regular users will most likely only use Super and Super+A, and power users know that hot corners exist, so that button is largely unneeded and this space may be
+#	used better by the Vitals extension.
+activities-button=false
+# Show top bar in overview, in accordance with Hide Top Bar
+panel-in-overview=true
+# Boot to desktop rather than overview
+startup-status=0
+#! I will not add this, even though on my target system it is different from the default (0), because this stops the donation notification from appearing until
+#!	a new version is released, which is probably wrong morally:
+#? org.gnome.shell.extensions.just-perfection support-notifier-showed-version 36
+
+#* CONFIGURE: Vitals
+[org/gnome/shell/extensions/vitals]
+#todo Show only memory and processor usage, I would later like to add temps to this
+hot-sensors=['_memory_usage_', '_processor_usage_']
+# I like the default icons better, but to make this more coherent with the rest of the system OOBE, I change the style to GNOME icons, which is closer to Ubuntu's
+#	Yaru theme and to the iconography used in many GTK4 apps.
+icon-style=1
+# The extension still tries to run `gnome-system-monitor` by default, but the default on Ubuntu has become the 'Resources' app, so we change the command.
+#	Big thanks to the author of the extension for making this possible.
+monitor-cmd='resources'
+# Monitor the system GPU, and also allow the user to select static info about their GPU in the Vitals section of the top bar
+show-gpu=true
+include-static-gpu-info=true
+# Show the Vitals extension on the far left, to replace the Activities button. Also disable the monitoring of other system components
+#	that would likely overwhelm a non-technical user if they all showed in the Vitals popup from the top bar.
+position-in-panel=3
+show-fan=false
+show-network=false
+show-storage=false
+show-system=false
+show-voltage=false
+
+#* CONFIGURE: All-in-one Clipboard
+[org/gnome/shell/extensions/all-in-one-clipboard]
+# Always show the main tabs, even if the extension was triggered by a keyboard shortcut for a specific tab
+always-show-main-tab=true
+#! Clear clipboard history at login. Debatable.
+clear-data-at-login=true
+# Don't clear the recents anywhere else
+clear-recent-emojis-at-login=false
+clear-recent-gifs-at-login=false
+clear-recent-kaomojis-at-login=false
+clear-recent-symbols-at-login=false
+# Automatically past the whichever text/emoji/gif/kaomoji/symbol was selected by the user, I'm surprised this isn't the default. Also do not move old clipboard items to the top of the list if they're pasted again, this breaks the chronological sequence that the user
+#	would likely have in their mind.
+enable-auto-paste=true
+# Don't unpin pinned clipboard items when they're pasted.
+unpin-on-paste=false
+# Don't move old clipboard items to the top of the list if they're pasted again, this breaks the chronological sequence that the user
+#	would likely have in their mind.
+update-recency-on-copy=false
+# Use Tenor. And paste GIFs as images rather than links. Show up to 20 past GIFs.
+gif-provider='tenor'
+gif-paste-behavior=1
+gif-recents-max-items=20
+# Hide top bar icon
+hide-panel-icon=true
+# Use Super+V to open the clipboard, replacing the keybind for opening the notification/calendar popup. The default for emojis is
+#	Super+., which also replaces the keybind for IBus emoji mode.
+shortcut-open-clipboard=['<Super>v']
