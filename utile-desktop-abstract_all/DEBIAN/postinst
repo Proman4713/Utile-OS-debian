@@ -23,10 +23,10 @@ fi
 
 # Default neofetch
 if [ -f $BASHRC ] && ! grep -q "alias neofetch" $BASHRC; then
-	"$(cat << 'EOF'
+	(cat << 'EOF'
 
 alias fastfetch="fastfetch --logo /usr/share/pixmaps/utile-ascii.txt"
 alias neofetch="fastfetch --config neofetch.jsonc"
 EOF
-)" >> $BASHRC
+) >> $BASHRC
 fi
