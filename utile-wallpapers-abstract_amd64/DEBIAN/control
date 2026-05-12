@@ -2,9 +2,9 @@ Package: utile-wallpapers
 Provides: ubuntu-wallpapers
 Replaces: ubuntu-wallpapers
 Conflicts: ubuntu-wallpapers
-Version: 26.04.0~beta6
+Version: 26.0~beta6
 Architecture: amd64
 Section: graphics
 Priority: optional
 Maintainer: Aaser Abd-el Sabour <proman4713@gmail.com>
-Description: Wallpaper configuration for Utile OS 26.04 Abstract Assembly (amd64 defaults)
+Description: Wallpaper configuration for Utile OS 26 Abstract Assembly (amd64 defaults)

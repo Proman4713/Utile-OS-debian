@@ -1,7 +1,7 @@
-PRETTY_NAME="Utile OS 26.04"
+PRETTY_NAME="Utile OS 26"
 NAME="Utile OS"
-VERSION_ID="26.04"
-VERSION="26.04 (Abstract Assembly)"
+VERSION_ID="26"
+VERSION="26 (Abstract Assembly)"
 VERSION_CODENAME=abstract
 ID=utile
 ID_LIKE="ubuntu debian"

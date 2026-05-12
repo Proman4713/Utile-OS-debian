@@ -1,8 +1,8 @@
 Package: utile-gnome-shell-extensions
-Version: 26.04.0~beta4
+Version: 26.0~beta5
 Architecture: all
 Section: utils
 Priority: optional
 Maintainer: Aaser Abd-el Sabour <proman4713@gmail.com>
 Description: Utile OS Default GNOME Shell Extensions
-Depends: gnome-shell,gnome-shell-extension-gsconnect
+Depends: gnome-shell,gnome-shell-extension-gsconnect,gnome-shell-extension-gsconnect-browsers
