@@ -5,7 +5,7 @@ BASHRC=/etc/skel/.bashrc
 
 if [ -f $BASHRC ] && ! grep -q "nala" $BASHRC; then
 	echo "Configuring apt command to use nala..."
-	"$(cat << 'EOF'
+	(cat << 'EOF'
 
 apt() {
 	echo -e "\e[31mUtile OS uses nala for 'apt' commands. If you want to use apt: Modify your .bashrc, use sudo, or use apt-get.\e[0m"
@@ -18,7 +18,7 @@ apt() {
 	fi
 }
 EOF
-)" >> $BASHRC
+) >> $BASHRC
 fi
 
 # Default neofetch
