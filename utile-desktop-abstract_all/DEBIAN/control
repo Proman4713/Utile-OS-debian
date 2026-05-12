@@ -1,8 +1,8 @@
 Package: utile-desktop
-Version: 26.04.0~beta2
+Version: 26.04.0~beta3
 Architecture: all
 Section: metapackages
 Priority: optional
 Maintainer: Aaser Abd-el Sabour <proman4713@gmail.com>
 Description: Utile Desktop metapackage
-Depends: utile-gnome-shell-extensions,utile-gnome-defaults,utile-wallpapers,base-files,utile-grub-theme
+Depends: utile-gnome-shell-extensions,utile-gnome-defaults,utile-wallpapers,base-files,utile-grub-theme,nala,fastfetch

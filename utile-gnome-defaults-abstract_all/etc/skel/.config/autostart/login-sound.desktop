@@ -1,0 +1,9 @@
+# Startup sound
+[Desktop Entry]
+Type=Application
+Exec=/usr/bin/canberra-gtk-play --id="desktop-login"
+Hidden=false
+NoDisplay=false
+Name=Login Sound
+Comment=Plays welcome sound at login
+X-GNOME-Autostart-enabled=true

@@ -1,0 +1,32 @@
+#!/bin/bash
+set -e
+
+BASHRC=/etc/skel/.bashrc
+
+if [ -f $BASHRC ] && ! grep -q "nala" $BASHRC; then
+	echo "Configuring apt command to use nala..."
+	"$(cat << 'EOF'
+
+apt() {
+	echo -e "\e[31mUtile OS uses nala for 'apt' commands. If you want to use apt: Modify your .bashrc, use sudo, or use apt-get.\e[0m"
+	if [[ "$1" == "history" || "$1" == "list" || "$1" == "search" || "$1" == "show" ]]; then
+		nala "$@"
+	elif [[ "$1" == "autoclean" || "$1" == "reinstall" || "$1" == "satisfy" || "$1" == "source" || "$1" == "edit-sources" ]]; then
+		sudo apt "$@"
+	else
+		sudo nala "$@"
+	fi
+}
+EOF
+)" >> $BASHRC
+fi
+
+# Default neofetch
+if [ -f $BASHRC ] && ! grep -q "alias neofetch" $BASHRC; then
+	"$(cat << 'EOF'
+
+alias fastfetch="fastfetch --logo /usr/share/pixmaps/utile-ascii.txt"
+alias neofetch="fastfetch --config neofetch.jsonc"
+EOF
+)" >> $BASHRC
+fi
