@@ -11,9 +11,9 @@
 			"spaceBeforeUnit": "never"
 		},
 		"color": {
-			"keys": "yellow",
+			"keys": "dim_yellow",
 			"output": "white",
-			"title": "yellow"
+			"title": "dim_yellow"
 		}
 	},
 	"modules": [
@@ -61,8 +61,8 @@
 	],
 	"logo": {
 		"color": {
-			"1": "yellow",
-			"2": "yellow"
+			"1": "dim_yellow",
+			"2": "dim_yellow"
 		}
 	}
 }

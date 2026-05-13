@@ -22,7 +22,12 @@ EOF
 fi
 
 # Default neofetch
-if [ -f $BASHRC ] && ! grep -q "alias neofetch" $BASHRC; then
+if [ -f $BASHRC ]; then
+	# Remove previous aliases as well as trailing newlines
+	sed -i '/alias fastfetch/d;/alias neofetch/d' $BASHRC || true
+	perl -pi -e 'chomp if eof' $BASHRC || true
+
+	# Add new aliases
 	(cat << 'EOF'
 
 alias fastfetch="fastfetch --logo /usr/share/pixmaps/utile-ascii.txt --config utile.jsonc"
