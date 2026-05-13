@@ -85,7 +85,7 @@ wrap-text=false
 [org/gnome/Ptyxis]
 cursor-shape='ibeam'
 
-[org/gnome/Ptyxis/Profile:/org/gnome/Ptyxis/Profiles/Default/]
+[org/gnome/Ptyxis/Profile:/org/gnome/Ptyxis/Profiles/Default]
 palette='Pixiefloss'
 
 # Remove IBus emoji keybind (Super + .) to leave room for the 'All-In-One Clipboard' extension we're going to install
