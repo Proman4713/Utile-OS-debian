@@ -68,9 +68,9 @@ night-light-schedule-to=23.99
 # Bind Super+E to open Files (Nautilus)
 home=['<Super>e']
 # Muscle Memory: Windows Win+I for settings
-custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/open-settings']
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/launch-settings']
 
-[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/open-settings]
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/launch-settings]
 name='Launch Settings'
 command='gnome-control-center'
 binding='<Super>i'
