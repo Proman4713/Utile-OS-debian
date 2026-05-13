@@ -12,9 +12,9 @@ desktop-color: "#000"
 }
 
 + boot_menu {
-	width=40%
+	width=50%
 	height=60%
-	left=30% # (100 - 40) / 2
+	left=25% # (100 - 50) / 2
 	top=25% # (100 - 60) / 2
 	item_color="#aaa"
 	item_font="Ubuntu Sans Bold 20"
