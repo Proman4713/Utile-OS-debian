@@ -41,6 +41,9 @@ notify=true
 # 20 minutes
 interval-seconds=1200
 
+[org/gnome/desktop/media-handling]
+autorun-never=false
+
 # Mouse acceleration
 [org/gnome/desktop/peripherals/mouse]
 accel-profile='flat'
@@ -66,14 +69,24 @@ night-light-schedule-to=23.99
 
 [org/gnome/settings-daemon/plugins/media-keys]
 # Bind Super+E to open Files (Nautilus)
+#! Could maybe change to Super+F for Files? or Super+H for Home? Win+E is the default on windows because of 'Explorer' but we shouldn't just follow Windows blindly
 home=['<Super>e']
 # Muscle Memory: Windows Win+I for settings
-custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/launch-settings']
+control-center=['<Super>i']
 
-[org/gnome/settings-daemon/plugins/media-keys/custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/launch-settings]
-name='Launch Settings'
-command='gnome-control-center'
-binding='<Super>i'
+[org/gnome/TextEditor]
+style-scheme='peninsula-dark'
+show-line-numbers=true
+indent-style='tab'
+tab-width=uint32 4
+indent-width=-1
+wrap-text=false
+
+[org/gnome/Ptyxis]
+cursor-shape='ibeam'
+
+[org/gnome/Ptyxis/Profile:/org/gnome/Ptyxis/Profiles/Default/]
+palette='Pixiefloss'
 
 # Remove IBus emoji keybind (Super + .) to leave room for the 'All-In-One Clipboard' extension we're going to install
 [org/freedesktop/ibus/panel/emoji]
@@ -96,6 +109,7 @@ dash-max-icon-size=35
 # Force DING to use the top-right
 start-corner='top-right'
 show-trash=true
+icon-size='small'
 
 #* CONFIGURE: Blur My Shell
 # Add Overview pipeline
@@ -118,7 +132,7 @@ opacity=220
 # Low blur intensity
 sigma=5
 # Whitelist Ptyxis
-whitelist=['org.gnome.Ptyxis']
+whitelist=['org.gnome.Ptyxis', 'org.gnome.TextEditor']
 
 # Disable blur on extensions we don't use
 [org/gnome/shell/extensions/blur-my-shell/coverflow-alt-tab]
