@@ -25,8 +25,8 @@ fi
 if [ -f $BASHRC ] && ! grep -q "alias neofetch" $BASHRC; then
 	(cat << 'EOF'
 
-alias fastfetch="fastfetch --logo /usr/share/pixmaps/utile-ascii.txt"
-alias neofetch="fastfetch --config neofetch.jsonc"
+alias fastfetch="fastfetch --logo /usr/share/pixmaps/utile-ascii.txt --config utile.jsonc"
+alias neofetch="fastfetch"
 EOF
 ) >> $BASHRC
 fi
