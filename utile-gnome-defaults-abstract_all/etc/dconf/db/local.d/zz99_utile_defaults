@@ -10,6 +10,8 @@ monospace-font-name='Ubuntu Mono Regular 9'
 font-hinting='full'
 # Purple theme
 accent-color='purple'
+icon-theme='Yaru-purple'
+gtk-theme='Yaru-purple'
 # Make the cursor smaller, default is 24. This is to match the smaller font sizes we applied, so that it doesn't get too big with fractional scaling.
 cursor-size=22
 # Enable Hot Corners
