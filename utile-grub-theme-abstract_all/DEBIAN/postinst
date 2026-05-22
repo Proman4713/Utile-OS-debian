@@ -1,8 +1,12 @@
 #!/bin/sh
 set -e
 
-# Run update-grub to apply changes
-if command -v update-grub > /dev/null 2>&1; then
-	echo "Updating grub..."
-	update-grub
+# Run update-grub only if NOT in a chroot and the command exists
+if [ "$(stat -c %d:%i /)" = "$(stat -c %d:%i /proc/1/root/.)" ]; then
+	if command -v update-grub > /dev/null 2>&1; then
+		echo "Updating grub..."
+		update-grub
+	fi
+else
+	echo "Chroot detected. Skipping update-grub."
 fi
