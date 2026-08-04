@@ -1,3 +1,9 @@
+utile-gnome-defaults (26.0~beta11) abstract; urgency=medium
+
+  * Update Ptyxis dconf settings after manual review of dconf paths on live OS
+
+ -- Aaser Abd-el Sabour <proman4713@gmail.com>  Tue, 04 Aug 2026 19:18:20 +0300
+
 utile-gnome-defaults (26.0~beta10) abstract; urgency=medium
 
   * Initial move to dch/debuild
