@@ -1,6 +1,6 @@
 import { IOResource } from '../../../shared/utilities/utilityIO.js';
+import { Logger } from '../../../shared/utilities/utilityLogger.js';
 import { ResourceItem } from '../../../shared/constants/storagePaths.js';
-import { ServiceJson } from '../../../shared/services/serviceJson.js';
 
 import { ClipboardType } from '../constants/clipboardConstants.js';
 import { ProcessorUtils } from '../utilities/clipboardProcessorUtils.js';
@@ -13,41 +13,43 @@ const EMAIL_REGEX = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 const PHONE_REGEX = /^\+(\d{1,4})[\s-]?\(?\d{1,4}\)?[\s-]?\d{1,4}[\s-]?\d{1,9}$/;
 
 /**
- * ContactProcessor - Handles email and phone number detection
+ * ContactProcessor
  *
- * Pattern: Single-phase (process) with initialization
- * - init(): Loads country data for phone number parsing
- * - process(): Detects and validates emails/phone numbers
+ * Handles email and phone number detection, loading country data for phone number parsing and validation.
  */
 export class ContactProcessor {
     static _countryByDialCode = null;
     static _initPromise = null;
 
+    // ========================================================================
+    // Public API
+    // ========================================================================
+
     /**
-     * Initialize the processor by loading country data.
-     * @param {string} extensionPath - Path to the extension root.
+     * Initialize the processor by loading country data for phone number detection.
+     *
+     * @returns {Promise<void>} Initialization promise.
      */
     static init() {
         if (this._initPromise) return this._initPromise;
 
         this._initPromise = (async () => {
             try {
-                const bytes = await IOResource.read(ResourceItem.COUNTRIES);
+                const countriesArray = await IOResource.readJson(ResourceItem.COUNTRIES);
 
-                if (bytes) {
-                    const countriesArray = ServiceJson.parse(bytes);
-
+                if (countriesArray) {
                     this._countryByDialCode = new Map();
+
                     for (const country of countriesArray) {
                         if (country.dial_code) {
                             this._countryByDialCode.set(country.dial_code, country);
                         }
                     }
                 } else {
-                    console.error('[AIO-Clipboard] ContactProcessor: Failed to load countries.json from GResource');
+                    Logger.error('Failed to load countries.json from GResource', 'ContactProcessor');
                 }
             } catch (e) {
-                console.warn(`[AIO-Clipboard] ContactProcessor: Failed to load country data: ${e.message}`);
+                Logger.warn(`Failed to load country data: ${e.message}`, 'ContactProcessor');
             }
         })();
 
@@ -55,17 +57,19 @@ export class ContactProcessor {
     }
 
     /**
-     * Process clipboard text to detect contacts.
-     * @param {string} text - The clipboard text.
-     * @returns {Promise<Object|null>} Processed contact object or null.
+     * Process clipboard text to detect email addresses or phone numbers.
+     *
+     * @param {string} text The clipboard text content.
+     * @returns {Promise<Object|null>} Processed contact object or null if no contact was detected.
      */
     static async process(text) {
-        if (!text || text.length > MAX_CONTACT_LENGTH) return null; // Contacts are usually short
+        if (!text || text.length > MAX_CONTACT_LENGTH) return null;
         const cleanText = text.trim();
 
         // Email
         if (EMAIL_REGEX.test(cleanText)) {
             const hash = ProcessorUtils.computeHashForString(cleanText);
+
             return {
                 type: ClipboardType.CONTACT,
                 subtype: 'email',
@@ -78,23 +82,24 @@ export class ContactProcessor {
 
         // Phone
         const phoneMatch = cleanText.match(PHONE_REGEX);
+
         if (phoneMatch) {
             if (this._initPromise) {
                 await this._initPromise;
             } else {
-                console.warn('[AIO-Clipboard] ContactProcessor: process() called before init()! Cannot load country data.');
+                Logger.warn('process() called before init()! Cannot load country data.', 'ContactProcessor');
             }
 
             const dialCodeMatch = cleanText.match(/^(\+\d+)/);
-
             let countryCode = null;
             let countryName = null;
 
             if (this._countryByDialCode && dialCodeMatch) {
-                // Try to match the longest possible dial code
                 const fullDial = dialCodeMatch[1];
+
                 for (let i = fullDial.length; i >= 2; i--) {
                     const dialCode = fullDial.substring(0, i);
+
                     if (this._countryByDialCode.has(dialCode)) {
                         const countryInfo = this._countryByDialCode.get(dialCode);
                         countryCode = countryInfo.code;
@@ -110,7 +115,7 @@ export class ContactProcessor {
                 type: ClipboardType.CONTACT,
                 subtype: 'phone',
                 text: cleanText,
-                preview: cleanText, // Just the text
+                preview: cleanText,
                 hash: hash,
                 metadata: countryCode
                     ? {

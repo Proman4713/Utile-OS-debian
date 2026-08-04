@@ -2,37 +2,44 @@ import Clutter from 'gi://Clutter';
 import GLib from 'gi://GLib';
 import GObject from 'gi://GObject';
 import St from 'gi://St';
-import { gettext as _ } from 'resource:///org/gnome/shell/extensions/extension.js';
 
-import { FocusUtils } from '../../shared/utilities/utilityFocus.js';
+import { GlobalActionService } from '../../shared/services/serviceAction.js';
 import { SearchComponent } from '../../shared/utilities/utilitySearch.js';
-import { AutoPaster, getAutoPaster } from '../../shared/utilities/utilityAutoPaste.js';
-import { createStaticIconButton, createDynamicIconButton } from '../../shared/utilities/utilityIcon.js';
 
-import { ClipboardListView } from './view/clipboardListView.js';
+import { ClipboardActionBar } from './view/clipboardActionBar.js';
+import { ClipboardCopyService } from './services/clipboardCopyService.js';
 import { ClipboardGridView } from './view/clipboardGridView.js';
-import { ClipboardIcons } from './constants/clipboardConstants.js';
-import { ClipboardSearchUtils } from './utilities/clipboardSearchUtils.js';
+import { ClipboardListView } from './view/clipboardListView.js';
+import { ClipboardSearchService } from './services/clipboardSearchService.js';
+import { ClipboardSelectionService } from './services/clipboardSelectionService.js';
+import { ensureClipboardSearchProviderRegistered } from './integrations/clipboardSearchProvider.js';
+
+// Configuration
+const RETRY_INTERVAL_MS = 16;
 
 /**
  * ClipboardTabContent
  *
- * Main UI component for the clipboard tab, displaying clipboard history
- * with search, selection, pinning, and deletion capabilities.
+ * Main UI container for the clipboard feature.
+ * Delegates search orchestration to ClipboardSearchService and selection management to ClipboardSelectionService.
  */
 export const ClipboardTabContent = GObject.registerClass(
     class ClipboardTabContent extends St.Bin {
+        // ========================================================================
+        // Initialization
+        // ========================================================================
+
         /**
-         * Initialize the clipboard tab content
+         * Initialize the clipboard tab content.
          *
-         * @param {Object} extension - The extension instance
-         * @param {Gio.Settings} settings - Extension settings
-         * @param {ClipboardManager} manager - Clipboard manager instance
+         * @param {Object} extension Extension instance.
+         * @param {Gio.Settings} settings Extension settings.
+         * @param {ClipboardManager} manager Clipboard manager.
          */
         constructor(extension, settings, manager) {
             super({
-                y_align: Clutter.ActorAlign.FILL,
                 x_align: Clutter.ActorAlign.FILL,
+                y_align: Clutter.ActorAlign.FILL,
                 x_expand: true,
                 y_expand: true,
             });
@@ -40,24 +47,18 @@ export const ClipboardTabContent = GObject.registerClass(
             this._extension = extension;
             this._settings = settings;
             this._manager = manager;
+            ensureClipboardSearchProviderRegistered();
 
             this._imagePreviewSize = this._settings.get_int('clipboard-image-preview-size');
-
-            this._settingSignalId = this._settings.connect('changed::clipboard-image-preview-size', () => {
-                this._imagePreviewSize = this._settings.get_int('clipboard-image-preview-size');
-                if (this._currentView) {
-                    this._currentView.setImagePreviewSize(this._imagePreviewSize);
-                }
-                this._redraw();
-            });
-
-            this._selectedIds = new Set();
-            this._currentSearchText = '';
-            this._isPrivateMode = false;
-            this._currentView = null;
             this._layoutMode = this._settings.get_string('clipboard-layout-mode') || 'list';
+            this._hasRenderedOnce = false;
+            this._deferredRedrawPending = false;
             this._redrawIdleId = 0;
-            this._focusIdleId = 0;
+            this._redrawScheduled = false;
+            this._retryId = 0;
+
+            this._copyService = new ClipboardCopyService();
+            this._selectionService = new ClipboardSelectionService();
 
             this._mainBox = new St.BoxLayout({
                 vertical: true,
@@ -66,122 +67,110 @@ export const ClipboardTabContent = GObject.registerClass(
             });
             this.set_child(this._mainBox);
 
+            this._searchService = new ClipboardSearchService({
+                onSearchChanged: () => this._scheduleRedraw(true),
+            });
+
             this._buildSearchComponent();
-            this._buildSelectionBar();
+            this._buildActionBar();
             this._buildScrollableList();
-            this._setupKeyboardNavigation();
+
+            this._setupSettingsSignals();
             this._connectManagerSignals();
+            this.connectObject(
+                'notify::mapped',
+                () => this._flushDeferredRedraw(),
+                'notify::visible',
+                () => this._flushDeferredRedraw(),
+                this,
+            );
         }
 
         // ========================================================================
-        // UI Construction Methods
+        // UI Construction
         // ========================================================================
 
         /**
-         * Build and add the search component to the UI
+         * Set up listeners for settings changes.
+         *
+         * @private
+         */
+        _setupSettingsSignals() {
+            this._settings.connectObject(
+                'changed::clipboard-image-preview-size',
+                () => {
+                    this._imagePreviewSize = this._settings.get_int('clipboard-image-preview-size');
+                    this._currentView.setImagePreviewSize(this._imagePreviewSize);
+                    this._scheduleRedraw();
+                },
+                'changed::clipboard-layout-mode',
+                () => {
+                    this._applyLayoutMode(this._settings.get_string('clipboard-layout-mode') || 'list');
+                },
+                'changed::extension-width',
+                () => {
+                    this._currentView.resetScrollAndPagination();
+                    this._scheduleRedraw();
+                },
+                'changed::extension-height',
+                () => this._scheduleRedraw(),
+                this,
+            );
+        }
+
+        /**
+         * Create the search component for filtering items.
+         *
+         * @private
          */
         _buildSearchComponent() {
-            this._searchComponent = new SearchComponent((searchText) => {
-                this._currentSearchText = searchText.toLowerCase().trim();
-                this._redraw();
+            this._searchComponent = new SearchComponent((text) => this._searchService.handleSearchInput(text), {
+                onNavigateDown: () => {
+                    if (this._actionBar?.visible) {
+                        this._actionBar.grabFocus();
+                        return true;
+                    }
+                    return this._focusFirstContentItem();
+                },
             });
 
-            const searchWidget = this._searchComponent.getWidget();
-            searchWidget.x_expand = true;
-            this._mainBox.add_child(searchWidget);
+            this._mainBox.add_child(this._searchComponent.getWidget());
         }
 
         /**
-         * Build the selection action bar with control buttons
+         * Create the action bar for bulk operations and layout switching.
+         *
+         * @private
          */
-        _buildSelectionBar() {
-            const selectionBar = new St.BoxLayout({
-                style_class: 'clipboard-selection-bar',
-                vertical: false,
-                y_align: Clutter.ActorAlign.CENTER,
-            });
-            selectionBar.spacing = 8;
+        _buildActionBar() {
+            this._actionBar = new ClipboardActionBar(this._settings, this._manager, this._selectionService.selectedIds);
 
-            // Select All button with unchecked/checked/mixed states
-            this._selectAllButton = createDynamicIconButton(
-                {
-                    unchecked: ClipboardIcons.CHECKBOX_UNCHECKED,
-                    checked: ClipboardIcons.CHECKBOX_CHECKED,
-                    mixed: ClipboardIcons.CHECKBOX_MIXED,
+            this._actionBar.connectObject(
+                'layout-toggled',
+                () => {
+                    const next = this._layoutMode === 'list' ? 'grid' : 'list';
+                    this._settings.set_string('clipboard-layout-mode', next);
                 },
-                {
-                    initial: 'unchecked',
-                    style_class: 'button clipboard-icon-button',
-                    tooltip_text: _('Select All'),
-                },
+                'selection-cleared',
+                () => this._scheduleRedraw(),
+                'select-all-requested',
+                () => this._onSelectAllClicked(),
+                'merge-selected-requested',
+                () => this._onMergeSelectedRequested(),
+                'navigate-up',
+                () => this._searchComponent.grabFocus(),
+                'navigate-down',
+                () => this._focusFirstContentItem(),
+                this,
             );
-            // Store icon reference for updates
-            this._selectAllIcon = this._selectAllButton.child;
 
-            this._selectAllButton.connect('clicked', () => this._onSelectAllClicked());
-            selectionBar.add_child(this._selectAllButton);
-
-            const actionButtonsBox = new St.BoxLayout({
-                x_expand: true,
-                x_align: Clutter.ActorAlign.END,
-            });
-            actionButtonsBox.spacing = 4;
-            selectionBar.add_child(actionButtonsBox);
-
-            // Layout toggle button
-            this._layoutToggleButton = createDynamicIconButton(
-                {
-                    list: ClipboardIcons.LAYOUT_LIST || 'view-list-symbolic',
-                    grid: ClipboardIcons.LAYOUT_GRID || 'view-grid-symbolic',
-                },
-                {
-                    initial: this._layoutMode,
-                    style_class: 'button clipboard-icon-button',
-                    tooltip_text: this._layoutMode === 'list' ? _('Switch to Grid View') : _('Switch to List View'),
-                },
-            );
-            this._layoutToggleButton.connect('clicked', () => this._onLayoutToggle());
-            actionButtonsBox.add_child(this._layoutToggleButton);
-
-            // Private Mode button with inactive/active states
-            this._privateModeButton = createDynamicIconButton(
-                {
-                    inactive: ClipboardIcons.ACTION_PRIVATE,
-                    active: ClipboardIcons.ACTION_PUBLIC,
-                },
-                {
-                    initial: 'inactive',
-                    style_class: 'button clipboard-icon-button',
-                    tooltip_text: _('Start Private Mode (Pause Recording)'),
-                },
-            );
-            this._privateModeButton.connect('clicked', () => this._onPrivateModeToggled());
-            actionButtonsBox.add_child(this._privateModeButton);
-
-            this._pinSelectedButton = createStaticIconButton(ClipboardIcons.ACTION_PIN, {
-                style_class: 'button clipboard-icon-button',
-                can_focus: false,
-                reactive: false,
-                tooltip_text: _('Pin/Unpin Selected'),
-            });
-            this._pinSelectedButton.connect('clicked', () => this._onPinSelected());
-
-            this._deleteSelectedButton = createStaticIconButton(ClipboardIcons.DELETE, {
-                style_class: 'button clipboard-icon-button',
-                can_focus: false,
-                reactive: false,
-                tooltip_text: _('Delete Selected'),
-            });
-            this._deleteSelectedButton.connect('clicked', () => this._onDeleteSelected());
-
-            actionButtonsBox.add_child(this._pinSelectedButton);
-            actionButtonsBox.add_child(this._deleteSelectedButton);
-
-            this._mainBox.add_child(selectionBar);
+            this._mainBox.add_child(this._actionBar);
         }
 
         /**
-         * Build the scrollable list container for clipboard items
+         * Create the scrollable container for clipboard items.
+         *
+         * @private
          */
         _buildScrollableList() {
             this._scrollView = new St.ScrollView({
@@ -190,109 +179,178 @@ export const ClipboardTabContent = GObject.registerClass(
                 x_expand: true,
                 y_expand: true,
             });
-            this._mainBox.add_child(this._scrollView);
 
-            // Create the appropriate view based on layout mode
+            this._mainBox.add_child(this._scrollView);
             this._createView(this._layoutMode);
         }
 
         /**
-         * Create or switch to a specific view type
-         * @param {string} mode - 'list' or 'grid'
+         * Create the appropriate view based on the layout mode.
+         *
+         * @param {string} mode Layout mode.
          * @private
          */
         _createView(mode) {
-            // Disconnect and destroy existing view
             if (this._currentView) {
-                if (this._navigateUpSignalId) {
-                    this._currentView.disconnect(this._navigateUpSignalId);
-                    this._navigateUpSignalId = null;
-                }
-                // Remove from scroll view BEFORE destroying to prevent leftover references
+                this._currentView.disconnectObject(this);
                 this._scrollView.set_child(null);
                 this._currentView.destroy();
-                this._currentView = null;
             }
 
-            const viewOptions = {
+            const options = {
                 manager: this._manager,
                 imagePreviewSize: this._imagePreviewSize,
-                onItemCopy: this._onItemCopyToClipboard.bind(this),
-                onSelectionChanged: this._updateSelectionState.bind(this),
-                selectedIds: this._selectedIds,
+                onItemCopy: (data) => this._onItemCopyToClipboard(data),
+                onSelectionChanged: () => this._updateSelectionState(),
+                selectedIds: this._selectionService.selectedIds,
                 scrollView: this._scrollView,
                 settings: this._settings,
             };
 
-            if (mode === 'grid') {
-                this._currentView = new ClipboardGridView(viewOptions);
-            } else {
-                this._currentView = new ClipboardListView(viewOptions);
-            }
+            this._currentView = mode === 'grid' ? new ClipboardGridView(options) : new ClipboardListView(options);
 
-            this._navigateUpSignalId = this._currentView.connect('navigate-up', () => {
-                this._selectAllButton.grab_key_focus();
-            });
+            this._currentView.connectObject(
+                'navigate-up',
+                () => {
+                    if (this._actionBar?.visible) this._actionBar.grabFocus();
+                    else this._searchComponent.grabFocus();
+                },
+                this,
+            );
 
             this._scrollView.set_child(this._currentView);
         }
 
         /**
-         * Handle layout toggle button click
+         * Switch between list and grid layout modes.
+         *
+         * @param {string} mode Layout mode.
          * @private
          */
-        _onLayoutToggle() {
-            this._layoutMode = this._layoutMode === 'list' ? 'grid' : 'list';
-            this._settings.set_string('clipboard-layout-mode', this._layoutMode);
+        _applyLayoutMode(mode) {
+            if (mode === this._layoutMode) return;
 
-            // Update button state and tooltip
-            this._layoutToggleButton.child.state = this._layoutMode;
-            this._layoutToggleButton.tooltip_text = this._layoutMode === 'list' ? _('Switch to Grid View') : _('Switch to List View');
+            this._layoutMode = mode;
+            this._actionBar.updateLayoutIcon(mode);
+            this._scrollView.vadjustment.value = 0;
 
-            // Recreate view and redraw
-            this._createView(this._layoutMode);
-            this._redraw();
+            this._createView(mode);
+            this._scheduleRedraw(true);
 
-            // Restore focus to search field to keep keyboard navigation working
-            this._searchComponent?.grabFocus();
+            if (this._extension?._indicator?.menu?.isOpen) this._searchComponent.grabFocus();
         }
 
+        // ========================================================================
+        // Event Handling
+        // ========================================================================
+
         /**
-         * Setup keyboard navigation handlers for the UI
+         * Handle selection or deselection of all items in the current view.
+         *
+         * @private
          */
-        _setupKeyboardNavigation() {
-            // Header navigation
-            const selectionBar = this._mainBox.get_child_at_index(1);
-            selectionBar.set_reactive(true);
-            selectionBar.connect('key-press-event', this._onHeaderKeyPress.bind(this));
+        _onSelectAllClicked() {
+            this._selectionService.toggleSelectAll(
+                () => this._currentView.getAllItems(),
+                () => this._currentView.getCheckboxIconsMap(),
+            );
+            this._updateSelectionState();
         }
 
         /**
-         * Connect to clipboard manager signals
+         * Update the action bar state based on the current selection.
+         *
+         * @private
+         */
+        _updateSelectionState() {
+            this._selectionService.updateSelectionState(() => this._currentView.getAllItems(), this._actionBar);
+        }
+
+        /**
+         * Handle copying an item to the system clipboard.
+         *
+         * @param {Object} itemData Data of the item to copy.
+         * @private
+         */
+        async _onItemCopyToClipboard(itemData) {
+            await GlobalActionService.executeCopyAction({
+                onCopy: async () => await this._manager.copyToSystemClipboard(itemData),
+                onPostCopy: () => this._manager.promoteItemToTop(itemData.id),
+                settings: this._settings,
+                autoPasteKey: 'auto-paste-clipboard',
+                menu: this._extension._indicator?.menu,
+            });
+        }
+
+        /**
+         * Handle merging of selected items.
+         *
+         * @private
+         */
+        async _onMergeSelectedRequested() {
+            const selectedIds = [...this._selectionService.selectedIds];
+            if (selectedIds.length === 0) return;
+
+            const mergeSuccess = await this._copyService.mergeMultiple(selectedIds, this._manager, {
+                settings: this._settings,
+                menu: this._extension._indicator?.menu,
+            });
+            if (!mergeSuccess) return;
+
+            this._selectionService.clearSelection(() => this._currentView.getCheckboxIconsMap());
+            this._updateSelectionState();
+            this._scheduleRedraw();
+        }
+
+        /**
+         * Connect to signals from the clipboard manager.
+         *
+         * @private
          */
         _connectManagerSignals() {
-            this._historyChangedId = this._manager.connect('history-changed', () => {
-                this._scheduleRedraw();
-            });
-
-            this._pinnedChangedId = this._manager.connect('pinned-list-changed', () => {
-                this._scheduleRedraw();
-            });
+            this._manager.connectObject(
+                'history-changed',
+                () => this._scheduleRedraw(),
+                'pinned-changed',
+                () => this._scheduleRedraw(),
+                this,
+            );
         }
 
+        // ========================================================================
+        // Rendering
+        // ========================================================================
+
         /**
-         * Schedule a redraw, debouncing multiple rapid calls into one
+         * Schedule a redraw of the content area.
+         *
+         * @param {boolean} immediate Whether to redraw immediately.
          * @private
          */
-        _scheduleRedraw() {
-            if (this._redrawScheduled) {
+        _scheduleRedraw(immediate = false) {
+            if (!this._currentView || !this._scrollView) return;
+
+            if (!this._canRenderNow()) {
+                this._deferredRedrawPending = true;
+                if (this._shouldRetryRender()) this._ensureRetry();
                 return;
             }
-            this._redrawScheduled = true;
-            if (this._redrawIdleId) {
-                GLib.source_remove(this._redrawIdleId);
-                this._redrawIdleId = 0;
+
+            this._deferredRedrawPending = false;
+
+            if (immediate) {
+                if (this._redrawIdleId) {
+                    GLib.source_remove(this._redrawIdleId);
+                    this._redrawIdleId = 0;
+                    this._redrawScheduled = false;
+                }
+                this._redraw();
+                return;
             }
+
+            if (this._redrawScheduled) return;
+
+            this._redrawScheduled = true;
             this._redrawIdleId = GLib.idle_add(GLib.PRIORITY_DEFAULT_IDLE, () => {
                 this._redrawIdleId = 0;
                 this._redrawScheduled = false;
@@ -301,323 +359,208 @@ export const ClipboardTabContent = GObject.registerClass(
             });
         }
 
-        // ========================================================================
-        // Keyboard Navigation Methods
-        // ========================================================================
-
         /**
-         * Get all focusable header buttons
+         * Determine if the content can currently be rendered.
          *
-         * @returns {St.Button[]} Array of focusable header buttons
+         * @returns {boolean} True if rendering is possible.
+         * @private
          */
-        _getHeaderButtons() {
-            return [this._selectAllButton, this._layoutToggleButton, this._privateModeButton, this._pinSelectedButton, this._deleteSelectedButton].filter(
-                (button) => button.can_focus && button.visible,
-            );
+        _canRenderNow() {
+            if (!this._shouldRetryRender()) return false;
+            const box = this._scrollView.get_allocation_box();
+            return box && box.get_width() > 1 && box.get_height() > 1;
         }
 
         /**
-         * Handle keyboard navigation in the header bar
+         * Determine if a pending render should wait for allocation.
          *
-         * @param {St.Widget} actor - The actor that received the event
-         * @param {Clutter.Event} event - The key press event
-         * @returns {boolean} EVENT_STOP if handled, EVENT_PROPAGATE otherwise
+         * @returns {boolean} True if the actor is alive and visible.
+         * @private
          */
-        _onHeaderKeyPress(actor, event) {
-            const symbol = event.get_key_symbol();
-            if (symbol !== Clutter.KEY_Left && symbol !== Clutter.KEY_Right && symbol !== Clutter.KEY_Down && symbol !== Clutter.KEY_Up) {
-                return Clutter.EVENT_PROPAGATE;
-            }
-
-            const headerButtons = this._getHeaderButtons();
-            if (headerButtons.length === 0) {
-                return Clutter.EVENT_PROPAGATE;
-            }
-
-            const currentFocus = global.stage.get_key_focus();
-            const currentIndex = headerButtons.indexOf(currentFocus);
-
-            if (currentIndex === -1) {
-                return Clutter.EVENT_PROPAGATE;
-            }
-
-            if (symbol === Clutter.KEY_Left || symbol === Clutter.KEY_Right) {
-                return FocusUtils.handleLinearNavigation(event, headerButtons, currentIndex);
-            }
-            if (symbol === Clutter.KEY_Down) {
-                const viewFocusables = this._currentView?.getFocusables() || [];
-                if (viewFocusables.length > 0) {
-                    viewFocusables[0].grab_key_focus();
-                    return Clutter.EVENT_STOP;
-                }
-            }
-            if (symbol === Clutter.KEY_Up) {
-                this._searchComponent?.grabFocus();
-                return Clutter.EVENT_STOP;
-            }
-
-            return Clutter.EVENT_PROPAGATE;
-        }
-
-        // ========================================================================
-        // Action Handler Methods
-        // ========================================================================
-
-        /**
-         * Toggle private mode to pause or resume clipboard recording
-         */
-        _onPrivateModeToggled() {
-            this._isPrivateMode = !this._isPrivateMode;
-            this._manager.setPaused(this._isPrivateMode);
-            this._privateModeButton.child.state = this._isPrivateMode ? 'active' : 'inactive';
-            this._privateModeButton.tooltip_text = this._isPrivateMode ? _('Stop Private Mode (Resume Recording)') : _('Start Private Mode (Pause Recording)');
+        _shouldRetryRender() {
+            return !!this._currentView && !!this._scrollView && this.mapped && this.visible;
         }
 
         /**
-         * Handle Select All / Deselect All button click
-         */
-        _onSelectAllClicked() {
-            const allItems = this._currentView?.getAllItems() || [];
-            const checkboxIconsMap = this._currentView?.getCheckboxIconsMap() || new Map();
-            const shouldSelectAll = this._selectedIds.size < allItems.length;
-
-            if (shouldSelectAll) {
-                allItems.forEach((item) => {
-                    this._selectedIds.add(item.id);
-                    const icon = checkboxIconsMap.get(item.id);
-                    if (icon) {
-                        icon.state = 'checked';
-                    }
-                });
-            } else {
-                this._selectedIds.clear();
-                allItems.forEach((item) => {
-                    const icon = checkboxIconsMap.get(item.id);
-                    if (icon) {
-                        icon.state = 'unchecked';
-                    }
-                });
-            }
-
-            this._updateSelectionState();
-        }
-
-        /**
-         * Pin all selected items
-         */
-        async _onPinSelected() {
-            const selectedIds = [...this._selectedIds];
-            if (selectedIds.length === 0) {
-                return;
-            }
-
-            const pinnedItems = this._manager.getPinnedItems();
-            const historyItems = this._manager.getHistoryItems();
-
-            const unpinnedSelected = selectedIds.filter((id) => historyItems.some((item) => item.id === id));
-            const pinnedSelected = selectedIds.filter((id) => pinnedItems.some((item) => item.id === id));
-
-            // Pin unpinned selected items, unpin pinned selected items
-            if (unpinnedSelected.length > 0) {
-                await Promise.all(unpinnedSelected.map((id) => this._manager.pinItem(id)));
-            } else if (pinnedSelected.length > 0) {
-                await Promise.all(pinnedSelected.map((id) => this._manager.unpinItem(id)));
-            }
-        }
-
-        /**
-         * Delete all selected items
-         */
-        async _onDeleteSelected() {
-            const idsToDelete = [...this._selectedIds];
-
-            if (idsToDelete.length === 0) {
-                return;
-            }
-
-            await Promise.all(idsToDelete.map((id) => this._manager.deleteItem(id)));
-            // Deletion is a final action, so we explicitly clear the selection here.
-            this._selectedIds.clear();
-        }
-
-        /**
-         * Copy a clipboard item to the system clipboard
+         * Ensure redraw is retried when rendering becomes possible again.
          *
-         * @param {Object} itemData - The clipboard item data
+         * @private
          */
-        async _onItemCopyToClipboard(itemData) {
-            const copySuccess = await this._manager.copyToSystemClipboard(itemData);
+        _ensureRetry() {
+            if (!this._currentView || !this._scrollView || this._retryId) return;
 
-            if (copySuccess) {
-                if (AutoPaster.shouldAutoPaste(this._settings, 'auto-paste-clipboard')) {
-                    await getAutoPaster().trigger();
+            this._retryId = GLib.timeout_add(GLib.PRIORITY_DEFAULT, RETRY_INTERVAL_MS, () => {
+                if (!this._deferredRedrawPending || !this._currentView || !this._scrollView) {
+                    this._retryId = 0;
+                    return GLib.SOURCE_REMOVE;
                 }
 
-                this._manager.promoteItemToTop(itemData.id);
-            }
+                if (!this._shouldRetryRender()) {
+                    this._retryId = 0;
+                    return GLib.SOURCE_REMOVE;
+                }
 
-            this._extension._indicator.menu.close();
-        }
+                if (this._canRenderNow()) {
+                    this._scheduleRedraw(true);
+                    this._retryId = 0;
+                    return GLib.SOURCE_REMOVE;
+                }
 
-        // ========================================================================
-        // UI State Methods
-        // ========================================================================
-
-        /**
-         * Update the UI state based on current selection
-         */
-        _updateSelectionState() {
-            const allItems = this._currentView?.getAllItems() || [];
-            const numSelected = this._selectedIds.size;
-            const totalItems = allItems.length;
-            const canSelect = totalItems > 0;
-            const hasSelection = numSelected > 0;
-
-            // Move focus away from disabled buttons
-            const currentFocus = global.stage.get_key_focus();
-            if (!hasSelection && (currentFocus === this._pinSelectedButton || currentFocus === this._deleteSelectedButton)) {
-                this._selectAllButton.grab_key_focus();
-            }
-
-            // Enable/disable action buttons based on selection
-            this._pinSelectedButton.set_reactive(hasSelection);
-            this._pinSelectedButton.set_can_focus(hasSelection);
-            this._deleteSelectedButton.set_reactive(hasSelection);
-            this._deleteSelectedButton.set_can_focus(hasSelection);
-
-            // Update Select All button state
-            this._selectAllButton.set_reactive(canSelect);
-
-            if (!canSelect || numSelected === 0) {
-                this._selectAllIcon.state = 'unchecked';
-                this._selectAllButton.tooltip_text = _('Select All');
-            } else if (numSelected === allItems.length) {
-                this._selectAllIcon.state = 'checked';
-                this._selectAllButton.tooltip_text = _('Deselect All');
-            } else {
-                this._selectAllIcon.state = 'mixed';
-                this._selectAllButton.tooltip_text = _('Select All');
-            }
-
-            // Update the pin button's appearance based on the selection context
-            this._updatePinButtonState();
-        }
-
-        /**
-         * Updates the pin button's icon and tooltip based on the current selection.
-         * - If any selected item is unpinned, the action is to "Pin".
-         * - If all selected items are already pinned, the action is to "Unpin".
-         */
-        _updatePinButtonState() {
-            // Pin icon is static, no state update needed
-            if (this._selectedIds.size === 0) {
-                this._pinSelectedButton.tooltip_text = _('Pin/Unpin Selected');
-                return;
-            }
-
-            const selectedIds = [...this._selectedIds];
-            const historyItems = this._manager.getHistoryItems();
-            const hasUnpinnedSelection = selectedIds.some((id) => historyItems.some((item) => item.id === id));
-            this._pinSelectedButton.tooltip_text = hasUnpinnedSelection ? _('Pin Selected') : _('Unpin Selected');
-        }
-
-        /**
-         * Redraw the entire clipboard list
-         */
-        _redraw() {
-            // Check if grid view focus is on a card before render destroys them
-            const isGridView = this._layoutMode === 'grid';
-            let hadGridFocus = false;
-            if (isGridView && this._currentView) {
-                const currentFocus = global.stage.get_key_focus();
-                const focusables = this._currentView.getFocusables?.() || [];
-                hadGridFocus = focusables.includes(currentFocus);
-            }
-
-            // Get items from manager
-            let pinnedItems = this._manager.getPinnedItems();
-            let historyItems = this._manager.getHistoryItems();
-            const isSearching = this._currentSearchText.length > 0;
-
-            // Apply search filter if active
-            if (isSearching) {
-                const filterFn = (item) => ClipboardSearchUtils.isMatch(item, this._currentSearchText);
-                pinnedItems = pinnedItems.filter(filterFn);
-                historyItems = historyItems.filter(filterFn);
-            }
-
-            // Delegate rendering to the list view
-            this._currentView.render(pinnedItems, historyItems, isSearching);
-
-            // Update selection state based on new items
-            this._updateSelectionState();
-
-            // If grid view had card focus, fall back to search field
-            if (hadGridFocus) {
-                this._searchComponent?.grabFocus();
-            }
-        }
-
-        // ========================================================================
-        // Lifecycle Methods
-        // ========================================================================
-
-        /**
-         * Called when the tab is selected/activated
-         */
-        onTabSelected() {
-            this._redraw();
-            if (this._focusIdleId) {
-                GLib.source_remove(this._focusIdleId);
-                this._focusIdleId = 0;
-            }
-            this._focusIdleId = GLib.idle_add(GLib.PRIORITY_DEFAULT_IDLE, () => {
-                this._focusIdleId = 0;
-                this._searchComponent?.grabFocus();
-                return GLib.SOURCE_REMOVE;
+                return GLib.SOURCE_CONTINUE;
             });
         }
 
         /**
-         * Called by the parent when the main menu is closed.
-         * Resets the tab's state, such as clearing the search field.
+         * Render pending content when a cached tab becomes visible.
+         *
+         * @private
          */
-        onMenuClosed() {
-            // Clear search text and redraw the list without the filter
-            this._searchComponent?.clearSearch();
+        _flushDeferredRedraw() {
+            if (!this._deferredRedrawPending || !this._shouldRetryRender()) return;
+            this._scheduleRedraw(true);
         }
 
         /**
-         * Cleanup when the widget is destroyed
+         * Perform the actual redraw of the current view.
+         *
+         * @private
          */
-        destroy() {
+        _redraw() {
+            if (!this._currentView || !this._searchService || !this._manager) return;
+
+            if (!this._canRenderNow()) {
+                this._deferredRedrawPending = true;
+                if (this._shouldRetryRender()) this._ensureRetry();
+                return;
+            }
+
+            const pinned = this._searchService.filterItems(this._manager.getPinnedItems());
+            const history = this._searchService.filterItems(this._manager.getHistoryItems());
+
+            this._currentView.render(pinned, history, this._searchService.isSearching);
+            this._hasRenderedOnce = true;
+        }
+
+        /**
+         * Move focus to the first item in the content list.
+         *
+         * @returns {boolean} True if focus was successfully moved.
+         * @private
+         */
+        _focusFirstContentItem() {
+            return this._currentView.focusFirstContentItem();
+        }
+
+        // ========================================================================
+        // Public API
+        // ========================================================================
+
+        /**
+         * Handle the event when the clipboard tab is selected.
+         */
+        onTabSelected() {
+            if (!this._searchService) return;
+
+            const needs = this._deferredRedrawPending || this._searchService.pendingReset || !this._hasRenderedOnce;
+
+            this._searchService.onTabSelected(this._searchComponent);
+
+            if (needs) {
+                this._currentView.resetScrollAndPagination();
+                this._scheduleRedraw(true);
+            }
+
+            this._manager.scheduleImagePreviewWarmup();
+            this._searchComponent.grabFocus();
+        }
+
+        /**
+         * Apply an external search query to filter clipboard items.
+         *
+         * @param {string} query Search query string.
+         * @returns {Promise<boolean>} True if the search was applied successfully.
+         */
+        async applyExternalSearch(query) {
+            return this._searchService ? await this._searchService.applyExternalSearch(this._searchComponent, query) : false;
+        }
+
+        /**
+         * Clear any active external search query.
+         *
+         * @returns {Promise<boolean>} True if the search was cleared successfully.
+         */
+        async clearExternalSearch() {
+            return this._searchService ? await this._searchService.clearExternalSearch(this._searchComponent) : false;
+        }
+
+        /**
+         * Handle the event when the extension menu is closed.
+         */
+        onMenuClosed() {
+            if (!this._searchService) return;
+
+            this._searchService.onMenuClosed();
+            this._clearRedrawSources();
+
+            const currentFocus = global.stage.get_key_focus();
+            if (currentFocus && (currentFocus === this || this.contains(currentFocus))) {
+                global.stage.set_key_focus(null);
+            }
+        }
+
+        /**
+         * Remove pending redraw sources.
+         *
+         * @private
+         */
+        _clearRedrawSources() {
             if (this._redrawIdleId) {
                 GLib.source_remove(this._redrawIdleId);
                 this._redrawIdleId = 0;
             }
-            if (this._focusIdleId) {
-                GLib.source_remove(this._focusIdleId);
-                this._focusIdleId = 0;
+            if (this._retryId) {
+                GLib.source_remove(this._retryId);
+                this._retryId = 0;
             }
+            this._redrawScheduled = false;
+            this._deferredRedrawPending = false;
+        }
 
-            // Tell it to stop listening for our image size setting changes
-            if (this._settings && this._settingSignalId > 0) {
-                this._settings.disconnect(this._settingSignalId);
-            }
+        // ========================================================================
+        // Lifecycle
+        // ========================================================================
 
-            if (this._manager) {
-                if (this._historyChangedId) {
-                    this._manager.disconnect(this._historyChangedId);
-                }
-                if (this._pinnedChangedId) {
-                    this._manager.disconnect(this._pinnedChangedId);
-                }
-            }
+        /**
+         * Clean up resources and disconnect signals before destruction.
+         */
+        destroy() {
+            this._clearRedrawSources();
+
+            this._settings?.disconnectObject(this);
+            this._manager?.disconnectObject(this);
+            this._actionBar?.disconnectObject(this);
+            this._currentView?.disconnectObject(this);
+            this.disconnectObject(this);
 
             this._searchComponent?.destroy();
+            this._actionBar?.destroy();
             this._currentView?.destroy();
+            this._copyService?.destroy();
+            this._searchService?.destroy();
+            this._selectionService?.destroy();
+
+            this._searchComponent = null;
+            this._actionBar = null;
             this._currentView = null;
+            this._scrollView = null;
+            this._mainBox = null;
+            this._copyService = null;
+            this._searchService = null;
+            this._selectionService = null;
             this._manager = null;
+            this._settings = null;
+            this._extension = null;
+
             super.destroy();
         }
     },

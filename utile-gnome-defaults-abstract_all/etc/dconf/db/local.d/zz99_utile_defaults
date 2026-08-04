@@ -86,8 +86,13 @@ wrap-text=false
 
 [org/gnome/Ptyxis]
 cursor-shape='ibeam'
+default-profile-uuid='355cf9118df429c216853a226a71c685'
+profile-uuids=['355cf9118df429c216853a226a71c685']
 
 [org/gnome/Ptyxis/Profile:/org/gnome/Ptyxis/Profiles/Default]
+palette='Pixiefloss'
+
+[org/gnome/Ptyxis/Profile:/org/gnome/Ptyxis/Profiles/355cf9118df429c216853a226a71c685]
 palette='Pixiefloss'
 
 # Remove IBus emoji keybind (Super + .) to leave room for the 'All-In-One Clipboard' extension we're going to install
@@ -134,7 +139,7 @@ opacity=220
 # Low blur intensity
 sigma=5
 # Whitelist Ptyxis
-whitelist=['org.gnome.Ptyxis', 'org.gnome.TextEditor']
+whitelist=['org.gnome.Ptyxis', 'org.gnome.TextEditor', 'net.nokyan.Resources']
 
 # Disable blur on extensions we don't use
 [org/gnome/shell/extensions/blur-my-shell/coverflow-alt-tab]

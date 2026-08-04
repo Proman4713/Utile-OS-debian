@@ -14,19 +14,32 @@ const SearchIcons = {
 
 /**
  * A self-contained search bar component.
- *
  * Encapsulates an St.Entry with a clear button and provides a simple callback
  * mechanism to notify a listener of search text changes.
  */
 export const SearchComponent = GObject.registerClass(
+    {
+        Signals: {
+            'search-changed': { param_types: [GObject.TYPE_STRING] },
+            'navigate-down': { param_types: [] },
+            'navigate-up': { param_types: [] },
+        },
+    },
     class SearchComponent extends GObject.Object {
         /**
-         * @param {Function} onSearchChangedCallback - A function that will be called
-         *   with the new search text whenever it changes.
+         * Initialize the search component.
+         *
+         * @param {Function} onSearchChangedCallback A function called with the new search text whenever it changes.
+         * @param {Object} [options] Optional configuration.
+         * @param {Function} [options.onNavigateDown] Callback when down navigation is requested.
+         * @param {Function} [options.onNavigateUp] Callback when up navigation is requested.
          */
-        constructor(onSearchChangedCallback) {
+        constructor(onSearchChangedCallback, { onNavigateDown, onNavigateUp } = {}) {
             super();
             this._onSearchChangedCallback = onSearchChangedCallback;
+            this._onNavigateDown = onNavigateDown ?? null;
+            this._onNavigateUp = onNavigateUp ?? null;
+            this._mappedSignalId = 0;
 
             this.actor = new St.BoxLayout({
                 style_class: 'aio-search-bar-container',
@@ -82,7 +95,7 @@ export const SearchComponent = GObject.registerClass(
         }
 
         /**
-         * Internal handler for the search entry's 'notify::text' signal.
+         * Internal handler for the search entry text notification signal.
          * @private
          */
         _onSearchChanged() {
@@ -92,12 +105,11 @@ export const SearchComponent = GObject.registerClass(
         }
 
         /**
-         * Handle key press events on the search entry.
-         * Allows escaping the entry with Left/Right arrows at text boundaries.
+         * Handle key press events on the search entry to allow escaping with arrow keys.
          *
-         * @param {Clutter.Actor} actor - The source actor
-         * @param {Clutter.Event} event - The key event
-         * @returns {boolean} Clutter.EVENT_STOP or Clutter.EVENT_PROPAGATE
+         * @param {Clutter.Actor} actor The source actor.
+         * @param {Clutter.Event} event The key event.
+         * @returns {boolean} Clutter.EVENT_STOP or Clutter.EVENT_PROPAGATE.
          * @private
          */
         _onKeyPress(actor, event) {
@@ -108,6 +120,19 @@ export const SearchComponent = GObject.registerClass(
                 if (symbol === Clutter.KEY_Left) {
                     this._entry.grab_key_focus();
                     return Clutter.EVENT_STOP;
+                }
+                return Clutter.EVENT_PROPAGATE;
+            }
+
+            if (symbol === Clutter.KEY_Down) {
+                if (this._onNavigateDown) {
+                    return this._onNavigateDown() ? Clutter.EVENT_STOP : Clutter.EVENT_PROPAGATE;
+                }
+                return Clutter.EVENT_PROPAGATE;
+            }
+            if (symbol === Clutter.KEY_Up) {
+                if (this._onNavigateUp) {
+                    return this._onNavigateUp() ? Clutter.EVENT_STOP : Clutter.EVENT_PROPAGATE;
                 }
                 return Clutter.EVENT_PROPAGATE;
             }
@@ -136,21 +161,43 @@ export const SearchComponent = GObject.registerClass(
          * Clears the text in the search entry and restores focus to it.
          */
         clearSearch() {
-            if (this._entry.get_text() === '') return;
-            this._entry.set_text('');
-            this._entry.grab_key_focus();
+            this.setSearchText('', { focus: true });
         }
 
         /**
-         * Sets the search hint content. Accepts text, a logo config, or both.
-         * Text-only hints use the native `set_hint_text()` for perfect theme colors.
-         * When a logo is present, an St.Label with `hint-text` class is used for
-         * theme-consistent coloring, and the logo auto-resolves its color to match.
+         * Sets the current search text.
          *
-         * @param {Object} [config]
-         * @param {string} [config.text] - Hint text (e.g. "Search Tenor...")
-         * @param {Object} [config.logo] - Logo config for createLogo (e.g. { icon, height, basePath })
-         * @param {number} [config.spacing=4] - Spacing in px between text and logo
+         * @param {string} searchText Text to apply to the search field.
+         * @param {Object} [options] Additional options.
+         * @param {boolean} [options.focus=false] Whether to focus the entry after update.
+         */
+        setSearchText(searchText, { focus = false } = {}) {
+            const normalizedText = typeof searchText === 'string' ? searchText : '';
+
+            if (this._entry.get_text() !== normalizedText) {
+                this._entry.set_text(normalizedText);
+            }
+
+            if (focus) {
+                this.grabFocus();
+            }
+        }
+
+        /**
+         * Returns the current search text.
+         * @returns {string} Current entry text.
+         */
+        getSearchText() {
+            return this._entry.get_text();
+        }
+
+        /**
+         * Sets the search hint content using text or a logo configuration or both.
+         *
+         * @param {Object} [config] Configuration object.
+         * @param {string} [config.text] Hint text such as Search Tenor.
+         * @param {Object} [config.logo] Logo configuration for createLogo.
+         * @param {number} [config.spacing=4] Spacing in pixels between text and logo.
          */
         setHint(config) {
             if (this._hintWrapper) {
@@ -173,7 +220,6 @@ export const SearchComponent = GObject.registerClass(
 
                 let hintLabel = null;
                 if (config.text) {
-                    // Uses the theme's StEntry StLabel.hint-text selector for native hint color
                     hintLabel = new St.Label({
                         text: config.text,
                         style_class: 'hint-text',
@@ -201,7 +247,6 @@ export const SearchComponent = GObject.registerClass(
                     });
                 }
             } else {
-                // Text-only hints use the native hint_text for theme-consistent color
                 this._entry.set_hint_text(config.text);
             }
         }
@@ -210,7 +255,22 @@ export const SearchComponent = GObject.registerClass(
          * Sets the keyboard focus to the search entry.
          */
         grabFocus() {
-            this._entry.grab_key_focus();
+            if (this._entry.mapped && this._entry.visible) {
+                this._entry.grab_key_focus();
+            } else {
+                if (this._mappedSignalId) {
+                    this._entry.disconnect(this._mappedSignalId);
+                }
+                this._mappedSignalId = this._entry.connect('notify::mapped', () => {
+                    if (this._entry.mapped && this._entry.visible) {
+                        if (this._mappedSignalId) {
+                            this._entry.disconnect(this._mappedSignalId);
+                            this._mappedSignalId = 0;
+                        }
+                        this._entry.grab_key_focus();
+                    }
+                });
+            }
         }
 
         /**
@@ -225,10 +285,16 @@ export const SearchComponent = GObject.registerClass(
          * Cleans up resources and references.
          */
         destroy() {
+            if (this._mappedSignalId) {
+                this._entry?.disconnect(this._mappedSignalId);
+                this._mappedSignalId = 0;
+            }
             this._entry = null;
             this._clearButton = null;
             this.actor = null;
             this._onSearchChangedCallback = null;
+            this._onNavigateDown = null;
+            this._onNavigateUp = null;
         }
     },
 );

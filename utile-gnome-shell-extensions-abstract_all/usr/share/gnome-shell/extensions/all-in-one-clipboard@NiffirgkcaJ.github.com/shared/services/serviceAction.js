@@ -1,0 +1,47 @@
+import { AutoPaster, getAutoPaster } from '../utilities/utilityAutoPaste.js';
+
+/**
+ * Orchestrates click-to-copy-and-paste actions across the extension.
+ *
+ * Ensures that Clutter modal grabs and keyboard focus are dropped before
+ * simulating keystrokes to prevent stuck modifiers and missed inputs.
+ */
+export class GlobalActionService {
+    /**
+     * Executes a safe copy and auto-paste lifecycle.
+     *
+     * @param {Object} params
+     * @param {Function} params.onCopy Async callback that performs the actual clipboard copy.
+     * @param {Function} [params.onPostCopy] Optional synchronous callback executed after focus is dropped.
+     * @param {Gio.Settings} params.settings Extension settings object.
+     * @param {string} [params.autoPasteKey] The settings key to check for auto-paste.
+     * @param {Object} [params.menu] The extension indicator menu.
+     * @returns {Promise<boolean>} True if the copy action succeeded.
+     */
+    static async executeCopyAction({ onCopy, onPostCopy, settings, autoPasteKey, menu }) {
+        if (!onCopy) return false;
+        const copySuccess = await onCopy();
+        if (!copySuccess) return false;
+
+        // Close the menu to release the modal grab so the active window regains focus.
+        if (menu && menu.close) {
+            menu.close();
+        }
+
+        // Clear key focus to prevent routing keystrokes to widgets during the fade-out animation.
+        const currentFocus = global.stage.get_key_focus();
+        if (currentFocus) {
+            global.stage.set_key_focus(null);
+        }
+
+        if (onPostCopy) {
+            onPostCopy();
+        }
+
+        if (settings && autoPasteKey && AutoPaster.shouldAutoPaste(settings, autoPasteKey)) {
+            await getAutoPaster().trigger();
+        }
+
+        return true;
+    }
+}

@@ -5,24 +5,27 @@ import { gettext as _ } from 'resource:///org/gnome/shell/extensions/extension.j
 
 import { CategorizedItemViewer } from '../../shared/utilities/utilityCategorizedItemViewer.js';
 import { clipboardSetText } from '../../shared/utilities/utilityClipboard.js';
-import { AutoPaster, getAutoPaster } from '../../shared/utilities/utilityAutoPaste.js';
+import { GlobalActionService } from '../../shared/services/serviceAction.js';
+import { IOJson } from '../../shared/utilities/utilityIO.js';
+import { Logger } from '../../shared/utilities/utilityLogger.js';
 import { ResourceItem, FileItem } from '../../shared/constants/storagePaths.js';
 
 import { EmojiJsonParser } from './parsers/emojiJsonParser.js';
 import { EmojiModifier } from './logic/emojiModifier.js';
-import { EmojiSettings, EmojiUI } from './constants/emojiConstants.js';
 import { EmojiViewRenderer } from './view/emojiViewRenderer.js';
+import { ensureEmojiSearchProviderRegistered } from './integrations/emojiSearchProvider.js';
 import { getSkinnableCharSet } from './logic/emojiDataCache.js';
+import { EmojiSettings, EmojiUI } from './constants/emojiConstants.js';
 
 /**
- * A content widget for the "Emoji" tab.
+ * EmojiTabContent
  *
- * This class acts as a controller that configures and manages a
- * `CategorizedItemViewer` component to display and interact with emojis.
+ * A content widget for the "Emoji" tab.
+ * This class acts as a controller that configures and manages a CategorizedItemViewer component to display and interact with emojis.
  * It handles emoji-specific logic such as skin tone modification.
  *
- * @fires set-main-tab-bar-visibility - Requests to show or hide the main tab bar.
- * @fires navigate-to-main-tab - Requests a navigation to a different main tab.
+ * @fires set-main-tab-bar-visibility Requests to show or hide the main tab bar.
+ * @fires navigate-to-main-tab Requests a navigation to a different main tab.
  */
 export const EmojiTabContent = GObject.registerClass(
     {
@@ -32,6 +35,16 @@ export const EmojiTabContent = GObject.registerClass(
         },
     },
     class EmojiTabContent extends St.Bin {
+        // ========================================================================
+        // Initialization
+        // ========================================================================
+
+        /**
+         * Initialize the Emoji tab content.
+         *
+         * @param {object} extension The main extension instance.
+         * @param {Gio.Settings} settings The GSettings instance for the extension.
+         */
         constructor(extension, settings) {
             super({
                 style_class: 'emoji-tab-content',
@@ -47,16 +60,19 @@ export const EmojiTabContent = GObject.registerClass(
             this._alwaysShowTabsSignalId = 0;
             this._viewer = null;
 
+            ensureEmojiSearchProviderRegistered({ extensionUuid: extension?.uuid });
+
             this._setupPromise = this._setup(extension, settings);
             this._setupPromise.catch((e) => {
-                console.error('[AIO-Clipboard] Failed to setup Emoji tab:', e);
+                Logger.error('Failed to setup Emoji tab', e);
             });
         }
 
         /**
          * Performs asynchronous setup tasks.
-         * @param {Extension} extension - The main extension instance.
-         * @param {Gio.Settings} settings - The GSettings instance for the extension.
+         *
+         * @param {Extension} extension The main extension instance.
+         * @param {Gio.Settings} settings The GSettings instance for the extension.
          * @private
          */
         async _setup(extension, settings) {
@@ -69,7 +85,9 @@ export const EmojiTabContent = GObject.registerClass(
                 parserClass: EmojiJsonParser,
                 recentsPath: FileItem.RECENT_EMOJI,
                 recentsMaxItemsKey: EmojiSettings.RECENTS_MAX_ITEMS_KEY,
-                itemsPerRow: EmojiUI.ITEMS_PER_ROW,
+                targetItemWidth: EmojiUI.TARGET_ITEM_WIDTH,
+                limitItemsPerRowKey: EmojiSettings.GRID_LIMIT_COLUMNS_KEY,
+                maxItemsPerRowKey: EmojiSettings.GRID_MAX_COLUMNS_KEY,
                 categoryPropertyName: 'category',
                 enableTabScrolling: false,
                 sortCategories: false,
@@ -107,6 +125,7 @@ export const EmojiTabContent = GObject.registerClass(
 
         /**
          * Applies the user's preference for always showing the main tab back button.
+         *
          * @private
          */
         _applyBackButtonPreference() {
@@ -120,14 +139,14 @@ export const EmojiTabContent = GObject.registerClass(
 
         /**
          * Handles the 'item-selected' signal from the viewer.
-         * Determines the correct emoji character (with/without skin tone) and
-         * copies it to the clipboard.
-         * @param {string} jsonPayload - The JSON string payload from the signal.
-         * @param {Extension} extension - The main extension instance.
+         * Determines the correct emoji character, with or without skin tone, and copies it to the clipboard.
+         *
+         * @param {string} jsonPayload The JSON string payload from the signal.
+         * @param {Extension} extension The main extension instance.
          * @private
          */
         async _onItemSelected(jsonPayload, extension) {
-            const data = JSON.parse(jsonPayload);
+            const data = IOJson.parseText(jsonPayload);
             const originalChar = data.char || data.value;
             let charToCopy;
 
@@ -139,16 +158,18 @@ export const EmojiTabContent = GObject.registerClass(
 
             clipboardSetText(charToCopy);
 
-            if (AutoPaster.shouldAutoPaste(this._settings, 'auto-paste-emoji')) {
-                await getAutoPaster().trigger();
-            }
-
-            extension._indicator.menu?.close();
+            await GlobalActionService.executeCopyAction({
+                onCopy: async () => true,
+                settings: this._settings,
+                autoPasteKey: 'auto-paste-emoji',
+                menu: extension._indicator.menu,
+            });
         }
 
         /**
          * Handles changes in skin tone related GSettings.
          * Updates internal state and commands the viewer to re-render the grid.
+         *
          * @private
          */
         _onSkinToneSettingsChanged() {
@@ -162,6 +183,7 @@ export const EmojiTabContent = GObject.registerClass(
 
         /**
          * Reads skin tone preferences from GSettings and updates the internal state.
+         *
          * @private
          */
         _loadAndApplyCustomSkinToneSettings() {
@@ -173,7 +195,8 @@ export const EmojiTabContent = GObject.registerClass(
         /**
          * Gets the final display character for an emoji, applying skin tones if applicable.
          * This method is used by the view renderer.
-         * @param {object} itemData - The standardized emoji data object.
+         *
+         * @param {object} itemData The standardized emoji data object.
          * @returns {string} The final emoji character to display.
          * @private
          */
@@ -184,19 +207,47 @@ export const EmojiTabContent = GObject.registerClass(
         }
 
         // ========================================================================
-        // Public Methods & Lifecycle
+        // Public Methods
         // ========================================================================
 
         /**
          * Called by the parent when this tab is selected.
          */
-        async onTabSelected() {
-            await this._setupPromise;
-
-            this.emit('set-main-tab-bar-visibility', false);
-
-            this._viewer?.onSelected();
+        onTabSelected() {
+            if (this._viewer) {
+                this.emit('set-main-tab-bar-visibility', false);
+                this._viewer.onSelected();
+            } else {
+                this._setupPromise
+                    .then(() => {
+                        this.emit('set-main-tab-bar-visibility', false);
+                        this._viewer?.onSelected();
+                    })
+                    .catch((e) => Logger.error(e));
+            }
         }
+
+        /**
+         * Applies an externally provided search query to this tab.
+         *
+         * @param {string} query Query text.
+         */
+        async applyExternalSearch(query) {
+            await this._setupPromise;
+            this._viewer?.applyExternalSearch(query, { focus: false });
+        }
+
+        /**
+         * Clears externally provided search state.
+         */
+        async clearExternalSearch() {
+            await this._setupPromise;
+            this._viewer?.clearExternalSearch({ focus: false });
+        }
+
+        // ========================================================================
+        // Lifecycle
+        // ========================================================================
 
         /**
          * Cleans up resources when the widget is destroyed.

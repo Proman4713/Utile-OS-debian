@@ -5,21 +5,24 @@ import { gettext as _ } from 'resource:///org/gnome/shell/extensions/extension.j
 
 import { CategorizedItemViewer } from '../../shared/utilities/utilityCategorizedItemViewer.js';
 import { clipboardSetText } from '../../shared/utilities/utilityClipboard.js';
-import { AutoPaster, getAutoPaster } from '../../shared/utilities/utilityAutoPaste.js';
+import { GlobalActionService } from '../../shared/services/serviceAction.js';
+import { IOJson } from '../../shared/utilities/utilityIO.js';
+import { Logger } from '../../shared/utilities/utilityLogger.js';
 import { ResourceItem, FileItem } from '../../shared/constants/storagePaths.js';
 
+import { ensureSymbolsSearchProviderRegistered } from './integrations/symbolsSearchProvider.js';
 import { SymbolsJsonParser } from './parsers/symbolsJsonParser.js';
 import { SymbolsViewRenderer } from './view/symbolsViewRenderer.js';
 import { SymbolsSettings, SymbolsUI } from './constants/symbolsConstants.js';
 
 /**
+ * SymbolsTabContent
+ *
  * A content widget for the "Symbols" tab.
+ * This class acts as a controller that configures and manages a CategorizedItemViewer component to display and interact with symbols.
  *
- * This class acts as a controller that configures and manages a
- * `CategorizedItemViewer` component to display and interact with symbols.
- *
- * @fires set-main-tab-bar-visibility - Requests to show or hide the main tab bar.
- * @fires navigate-to-main-tab - Requests a navigation to a different main tab.
+ * @fires set-main-tab-bar-visibility Requests to show or hide the main tab bar.
+ * @fires navigate-to-main-tab Requests a navigation to a different main tab.
  */
 export const SymbolsTabContent = GObject.registerClass(
     {
@@ -29,6 +32,16 @@ export const SymbolsTabContent = GObject.registerClass(
         },
     },
     class SymbolsTabContent extends St.Bin {
+        // ========================================================================
+        // Initialization
+        // ========================================================================
+
+        /**
+         * Initialize the Symbols tab content.
+         *
+         * @param {object} extension The main extension instance.
+         * @param {Gio.Settings} settings The GSettings instance for the extension.
+         */
         constructor(extension, settings) {
             super({
                 style_class: 'symbols-tab-content',
@@ -41,6 +54,8 @@ export const SymbolsTabContent = GObject.registerClass(
             this._settings = settings;
             this._alwaysShowTabsSignalId = 0;
 
+            ensureSymbolsSearchProviderRegistered({ extensionUuid: extension?.uuid });
+
             this._viewRenderer = new SymbolsViewRenderer();
 
             const config = {
@@ -48,7 +63,9 @@ export const SymbolsTabContent = GObject.registerClass(
                 parserClass: SymbolsJsonParser,
                 recentsPath: FileItem.RECENT_SYMBOLS,
                 recentsMaxItemsKey: SymbolsSettings.RECENTS_MAX_ITEMS_KEY,
-                itemsPerRow: SymbolsUI.ITEMS_PER_ROW,
+                targetItemWidth: SymbolsUI.TARGET_ITEM_WIDTH,
+                limitItemsPerRowKey: SymbolsSettings.GRID_LIMIT_COLUMNS_KEY,
+                maxItemsPerRowKey: SymbolsSettings.GRID_MAX_COLUMNS_KEY,
                 categoryPropertyName: 'category',
                 enableTabScrolling: true,
                 sortCategories: false,
@@ -79,6 +96,7 @@ export const SymbolsTabContent = GObject.registerClass(
 
         /**
          * Applies the user's preference for always showing the main tab back button.
+         *
          * @private
          */
         _applyBackButtonPreference() {
@@ -93,30 +111,32 @@ export const SymbolsTabContent = GObject.registerClass(
         /**
          * Handles the 'item-selected' signal from the viewer.
          * Copies the selected symbol string to the clipboard.
-         * @param {string} jsonPayload - The JSON string payload from the signal.
-         * @param {Extension} extension - The main extension instance.
+         *
+         * @param {string} jsonPayload The JSON string payload from the signal.
+         * @param {Extension} extension The main extension instance.
          * @private
          */
         async _onItemSelected(jsonPayload, extension) {
             try {
-                const data = JSON.parse(jsonPayload);
+                const data = IOJson.parseText(jsonPayload);
                 const symbolToCopy = data.symbol;
                 if (!symbolToCopy) return;
 
                 clipboardSetText(symbolToCopy);
 
-                if (AutoPaster.shouldAutoPaste(this._settings, 'auto-paste-symbols')) {
-                    await getAutoPaster().trigger();
-                }
-
-                extension._indicator.menu?.close();
+                await GlobalActionService.executeCopyAction({
+                    onCopy: async () => true,
+                    settings: this._settings,
+                    autoPasteKey: 'auto-paste-symbols',
+                    menu: extension._indicator.menu,
+                });
             } catch (e) {
-                console.error('[AIO-Clipboard] Error in symbols item selection:', e);
+                Logger.error('Error in symbols item selection', e);
             }
         }
 
         // ========================================================================
-        // Public Methods & Lifecycle
+        // Public Methods
         // ========================================================================
 
         /**
@@ -126,6 +146,26 @@ export const SymbolsTabContent = GObject.registerClass(
             this.emit('set-main-tab-bar-visibility', false);
             this._viewer?.onSelected();
         }
+
+        /**
+         * Applies an externally provided search query to this tab.
+         *
+         * @param {string} query Query text.
+         */
+        async applyExternalSearch(query) {
+            this._viewer?.applyExternalSearch(query, { focus: false });
+        }
+
+        /**
+         * Clears externally provided search state.
+         */
+        async clearExternalSearch() {
+            this._viewer?.clearExternalSearch({ focus: false });
+        }
+
+        // ========================================================================
+        // Lifecycle
+        // ========================================================================
 
         /**
          * Cleans up resources when the widget is destroyed.

@@ -1,16 +1,33 @@
 import GObject from 'gi://GObject';
 
-import { IOFile } from './utilityIO.js';
-import { ServiceJson } from '../services/serviceJson.js';
+import { Logger } from './utilityLogger.js';
+import { IOFile, IOJson } from './utilityIO.js';
 
 const DEFAULT_MAX_RECENTS_FALLBACK = 45;
 
 /**
- * Manages a list of recently used items for a specific data type (e.g., emojis, kaomojis).
+ * Shared instances keyed by cache file path to allow multiple consumers to reuse a single manager.
+ */
+let _instances = null;
+
+/**
+ * Returns the shared recents manager registry, creating it on first use.
+ *
+ * @returns {Map<string, RecentItemsManager>} Recent item managers keyed by cache file path.
+ */
+function getInstances() {
+    if (!_instances) {
+        _instances = new Map();
+    }
+    return _instances;
+}
+
+/**
+ * Manages a list of recently used items for a specific data type.
  * Handles loading from and saving to a cache file, enforcing a maximum item limit
  * from GSettings, and notifying listeners of changes.
  *
- * @fires recents-changed - Emitted when the list of recent items is modified.
+ * @fires recents-changed Emitted when the list of recent items is modified.
  */
 export const RecentItemsManager = GObject.registerClass(
     {
@@ -20,15 +37,16 @@ export const RecentItemsManager = GObject.registerClass(
     },
     class RecentItemsManager extends GObject.Object {
         /**
-         * @param {string} extensionUUID - The UUID of the extension.
-         * @param {Gio.Settings} settings - The GSettings object.
-         * @param {string} absolutePath - The absolute path for this manager's recents file.
-         * @param {string} maxItemsSettingKey - The GSettings key for the max items for this type (e.g., 'emoji-recents-max-items').
+         * @param {string} extensionUUID The UUID of the extension.
+         * @param {Gio.Settings} settings The GSettings object.
+         * @param {string} absolutePath The absolute path for this manager's recents file.
+         * @param {string} maxItemsSettingKey The GSettings key for the max items for this type.
          */
         constructor(extensionUUID, settings, absolutePath, maxItemsSettingKey) {
             super();
             this._uuid = extensionUUID;
             this._settings = settings;
+            this._refCount = 1;
             this._recents = [];
 
             if (!absolutePath || typeof absolutePath !== 'string' || absolutePath.trim() === '') {
@@ -49,7 +67,7 @@ export const RecentItemsManager = GObject.registerClass(
                 this._maxItems = this._settings.get_int(this._maxItemsSettingKey);
                 if (this._isLoaded) {
                     this._pruneRecents();
-                    this._save().catch((e) => console.warn(`[AIO-Clipboard] Save after maxItems change failed for ${this._cacheFilePath}: ${e.message}`));
+                    this._save().catch((e) => Logger.warn(`Save after maxItems change failed for ${this._cacheFilePath}: ${e.message}`));
                 }
             });
 
@@ -59,7 +77,7 @@ export const RecentItemsManager = GObject.registerClass(
                 })
                 .catch((e) => {
                     this._isLoaded = true;
-                    console.warn(`[AIO-Clipboard] Initial load of recents from ${this._cacheFilePath} failed: ${e.message}. Recents will be empty.`);
+                    Logger.warn(`Initial load of recents from ${this._cacheFilePath} failed: ${e.message}. Recents will be empty.`);
                     if (this._settings) {
                         this._recents = [];
                         this.emit('recents-changed');
@@ -74,20 +92,19 @@ export const RecentItemsManager = GObject.registerClass(
         async _load() {
             try {
                 if (!this._settings) return;
-                const recents = ServiceJson.parse(await IOFile.read(this._cacheFilePath));
+                const recents = await IOFile.readJson(this._cacheFilePath);
                 if (Array.isArray(recents)) {
                     this._recents = recents;
                     this._pruneRecents();
                 } else {
                     this._recents = [];
                     if (recents !== null) {
-                        // null means file not found/empty which is expected
-                        console.warn(`[AIO-Clipboard] Recents file ${this._cacheFilePath} content is not an array. Initializing as empty.`);
+                        Logger.warn(`Recents file ${this._cacheFilePath} content is not an array. Initializing as empty.`);
                     }
                 }
             } catch (e) {
                 this._recents = [];
-                console.warn(`[AIO-Clipboard] Error loading recents from ${this._cacheFilePath}: ${e.message}. Initializing as empty.`);
+                Logger.warn(`Error loading recents from ${this._cacheFilePath}: ${e.message}. Initializing as empty.`);
             } finally {
                 if (this._settings) {
                     this.emit('recents-changed');
@@ -101,18 +118,19 @@ export const RecentItemsManager = GObject.registerClass(
          */
         async _save() {
             if (!this._settings) return;
-            await IOFile.write(this._cacheFilePath, ServiceJson.stringify(this._recents));
+            await IOFile.writeJson(this._cacheFilePath, this._recents);
         }
 
         /**
          * Adds an item to the top of the recents list.
          * If the item already exists, it is moved to the top.
-         * @param {object} item - The item to add. Must have a 'value' property.
+         * @param {Object} item The item to add that must have a value property.
          */
         addItem(item) {
             if (!this._settings) return;
             if (!item || typeof item.value !== 'string' || item.value.trim() === '') {
-                console.warn(`[AIO-Clipboard] Attempted to add invalid item to recents for ${this._cacheFilePath}: ${JSON.stringify(item)}`);
+                const serialized = IOJson.stringifyText(item);
+                Logger.warn(`Attempted to add invalid item to recents for ${this._cacheFilePath}: ${serialized ?? 'null'}`);
                 return;
             }
             const existingIndex = this._recents.findIndex((r) => r.value === item.value);
@@ -120,13 +138,13 @@ export const RecentItemsManager = GObject.registerClass(
 
             this._recents.unshift({ ...item });
             this._pruneRecents();
-            this._save().catch((e) => console.warn(`[AIO-Clipboard] Save after addItem failed for ${this._cacheFilePath}: ${e.message}`));
+            this._save().catch((e) => Logger.warn(`Save after addItem failed for ${this._cacheFilePath}: ${e.message}`));
             this.emit('recents-changed');
         }
 
         /**
          * Gets a copy of the current list of recent items.
-         * @returns {Array<object>} The list of recent items.
+         * @returns {Array<Object>} The list of recent items.
          */
         getRecents() {
             return [...this._recents];
@@ -143,9 +161,14 @@ export const RecentItemsManager = GObject.registerClass(
         }
 
         /**
-         * Cleans up resources, particularly the GSettings signal connection.
+         * Cleans up resources such as the GSettings signal connection.
          */
         destroy() {
+            this._refCount--;
+            if (this._refCount > 0) return;
+
+            getInstances().delete(this._cacheFilePath);
+
             if (this._settings && this._settingsSignalId > 0) {
                 this._settings.disconnect(this._settingsSignalId);
             }
@@ -156,5 +179,56 @@ export const RecentItemsManager = GObject.registerClass(
             this._uuid = null;
             this._maxItemsSettingKey = null;
         }
+
+        /**
+         * Forces cleanup regardless of the current reference count.
+         *
+         * @returns {void}
+         */
+        forceDestroy() {
+            this._refCount = 1;
+            this.destroy();
+        }
     },
 );
+
+/**
+ * Gets or creates a shared RecentItemsManager instance for the given cache file path.
+ * Multiple consumers that manage the same recents file will receive the same instance.
+ * Each call increments a reference count and the instance is only destroyed when the last consumer calls destroy.
+ *
+ * @param {string} extensionUUID The UUID of the extension.
+ * @param {Gio.Settings} settings The GSettings object.
+ * @param {string} absolutePath The absolute path for this manager's recents file.
+ * @param {string} maxItemsSettingKey The GSettings key for the max items for this type.
+ * @returns {RecentItemsManager} A shared manager instance.
+ */
+export function getRecentItemsManager(extensionUUID, settings, absolutePath, maxItemsSettingKey) {
+    const key = absolutePath.trim();
+    let instance = getInstances().get(key);
+
+    if (instance) {
+        instance._refCount++;
+        return instance;
+    }
+
+    instance = new RecentItemsManager(extensionUUID, settings, absolutePath, maxItemsSettingKey);
+    getInstances().set(key, instance);
+    return instance;
+}
+
+/**
+ * Destroys any remaining shared recents managers during extension shutdown.
+ *
+ * @returns {void}
+ */
+export function destroyAllRecentItemsManagers() {
+    if (!_instances) {
+        return;
+    }
+
+    const managers = [..._instances.values()];
+    _instances.clear();
+    managers.forEach((manager) => manager.forceDestroy());
+    _instances = null;
+}

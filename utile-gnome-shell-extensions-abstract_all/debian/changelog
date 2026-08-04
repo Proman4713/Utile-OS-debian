@@ -1,0 +1,6 @@
+utile-gnome-shell-extensions (26.0~beta7) abstract; urgency=medium
+
+  * Initial move to dch/debuild
+  * Update All-In-One Clipboard, Hide Top Bar, and Vitals extensions
+
+ -- Aaser Abd-el Sabour <proman4713@gmail.com>  Tue, 04 Aug 2026 14:41:04 +0300

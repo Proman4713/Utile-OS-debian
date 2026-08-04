@@ -3,6 +3,7 @@ import GLib from 'gi://GLib';
 import St from 'gi://St';
 
 import { createStaticIcon } from '../../../shared/utilities/utilityIcon.js';
+import { Logger } from '../../../shared/utilities/utilityLogger.js';
 
 import { getGifCacheManager } from '../logic/gifCacheManager.js';
 import { GifIcons } from '../constants/gifConstants.js';
@@ -13,16 +14,27 @@ import { GifIcons } from '../constants/gifConstants.js';
  * Responsible for creating UI widgets for GIF items.
  */
 export class GifItemFactory {
+    // ========================================================================
+    // Initialization
+    // ========================================================================
+
     /**
-     * @param {GifDownloadService} downloadService - Service for downloading images
-     * @param {string} cacheDir - Directory to store preview images
-     * @param {object} scrollView - The scroll view to ensure visibility in
+     * @param {GifDownloadService} downloadService Service for downloading images.
+     * @param {string} cacheDir Directory to store preview images.
      */
-    constructor(downloadService, cacheDir, scrollView) {
+    constructor(downloadService, cacheDir) {
         this._downloadService = downloadService;
         this._cacheDir = cacheDir;
-        this._scrollView = scrollView;
+        this._scrollView = null;
         this._renderSession = {};
+    }
+
+    /**
+     * Sets the scroll view reference for visibility checks.
+     * @param {St.ScrollView} scrollView The scroll view component.
+     */
+    setScrollView(scrollView) {
+        this._scrollView = scrollView;
     }
 
     /**
@@ -36,13 +48,13 @@ export class GifItemFactory {
     /**
      * Create a masonry item widget for a GIF.
      *
-     * @param {object} itemData - The GIF data
-     * @param {Function} onSelected - Callback when item is selected
+     * @param {object} itemData The GIF data.
+     * @param {Function} onSelected Callback when item is selected.
      * @returns {St.Bin|null} The created widget
      */
     createItem(itemData, onSelected) {
         if (!this._isValidItemData(itemData)) {
-            console.warn('[AIO-Clipboard] Skipping item with invalid data:', itemData);
+            Logger.warn('Skipping item with invalid data', itemData);
             return null;
         }
 
@@ -79,7 +91,7 @@ export class GifItemFactory {
     /**
      * Validate that item data has all required properties.
      *
-     * @param {object} itemData - The item data to validate
+     * @param {object} itemData The item data to validate.
      * @returns {boolean} True if valid
      * @private
      */
@@ -90,9 +102,9 @@ export class GifItemFactory {
     /**
      * Load and set the preview image for a GIF item.
      *
-     * @param {St.Bin} bin - The container widget
-     * @param {string} url - The preview image URL
-     * @param {object} session - Session object for tracking async operations
+     * @param {St.Bin} bin The container widget.
+     * @param {string} url The preview image URL.
+     * @param {object} session Session object for tracking async operations.
      * @private
      */
     async _loadPreviewImage(bin, url, session) {
@@ -134,8 +146,8 @@ export class GifItemFactory {
     /**
      * Handle errors when loading preview images.
      *
-     * @param {St.Bin} bin - The container widget
-     * @param {Error} error - The error that occurred
+     * @param {St.Bin} bin The container widget.
+     * @param {Error} error The error that occurred.
      * @private
      */
     _handleError(bin, error) {
@@ -147,9 +159,13 @@ export class GifItemFactory {
         });
 
         if (!error.message.startsWith('GIF Tab') && !error.message.startsWith('Render session')) {
-            console.warn(`[AIO-Clipboard] Failed to load GIF preview: ${error.message}`);
+            Logger.warn(`Failed to load GIF preview: ${error.message}`);
         }
     }
+
+    // ========================================================================
+    // Lifecycle
+    // ========================================================================
 
     /**
      * Clean up resources.

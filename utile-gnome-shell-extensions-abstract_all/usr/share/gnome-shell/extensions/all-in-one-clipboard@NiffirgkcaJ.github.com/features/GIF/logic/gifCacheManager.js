@@ -1,6 +1,11 @@
 import { Debouncer } from '../../../shared/utilities/utilityDebouncer.js';
 import { FilePath } from '../../../shared/constants/storagePaths.js';
 import { IOFile } from '../../../shared/utilities/utilityIO.js';
+import { Logger } from '../../../shared/utilities/utilityLogger.js';
+
+// ========================================================================
+// State
+// ========================================================================
 
 let _instance = null;
 
@@ -11,6 +16,10 @@ let _instance = null;
  * It centralizes the logic for cache path, limits, and cleanup operations, including a debounced trigger for efficiency.
  */
 class GifCacheManager {
+    // ========================================================================
+    // Initialization
+    // ========================================================================
+
     constructor(uuid, settings) {
         this._uuid = uuid;
         this._settings = settings;
@@ -44,9 +53,9 @@ class GifCacheManager {
     _runCleanup() {
         try {
             const cacheLimit = this._settings.get_int('gif-cache-limit-mb');
-            IOFile.prune(this._gifCacheDir, cacheLimit).catch((e) => console.warn(`[AIO-Clipboard] GIF cache management failed: ${e.message}`));
+            IOFile.prune(this._gifCacheDir, cacheLimit).catch((e) => Logger.warn(`GIF cache management failed: ${e.message}`));
         } catch (e) {
-            console.warn(`[AIO-Clipboard] Could not initiate GIF cache management: ${e.message}`);
+            Logger.warn(`Could not initiate GIF cache management: ${e.message}`);
         }
     }
 
@@ -57,6 +66,10 @@ class GifCacheManager {
     async clearCache() {
         await IOFile.empty(this._gifCacheDir);
     }
+
+    // ========================================================================
+    // Lifecycle
+    // ========================================================================
 
     /**
      * Cleans up resources, including canceling any pending debounced cleanup.
@@ -72,8 +85,8 @@ class GifCacheManager {
 
 /**
  * Initializes and/or returns the singleton instance of the GifCacheManager.
- * @param {string} [uuid] - The extension UUID which is required for first-time initialization.
- * @param {Gio.Settings} [settings] - The GSettings object which is required for first-time initialization.
+ * @param {string} [uuid] The extension UUID which is required for first-time initialization.
+ * @param {Gio.Settings} [settings] The GSettings object which is required for first-time initialization.
  * @returns {GifCacheManager} The singleton instance.
  */
 export function getGifCacheManager(uuid, settings) {

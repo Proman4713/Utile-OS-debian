@@ -1,0 +1,6 @@
+utile-gnome-defaults (26.0~beta10) abstract; urgency=medium
+
+  * Initial move to dch/debuild
+  * Update settings for Blur My Shell and Ptyxis
+
+ -- Aaser Abd-el Sabour <proman4713@gmail.com>  Tue, 04 Aug 2026 14:24:58 +0300

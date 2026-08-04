@@ -1,13 +1,14 @@
-import Clutter from 'gi://Clutter';
 import GObject from 'gi://GObject';
 
 import { StackLayout } from '../../../shared/utilities/utilityStackLayout.js';
 
-import { ClipboardListItemFactory } from './clipboardListItemFactory.js';
 import { ClipboardBaseView } from './clipboardBaseView.js';
+import { ClipboardListItemFactory } from './clipboardListItemFactory.js';
+import { ListVirtualization } from '../constants/clipboardLayoutConstants.js';
 
 /**
  * ClipboardListView
+ *
  * Stack layout for clipboard items.
  *
  * Renders clipboard items as cards in a vertical list.
@@ -18,9 +19,14 @@ import { ClipboardBaseView } from './clipboardBaseView.js';
  */
 export const ClipboardListView = GObject.registerClass(
     class ClipboardListView extends ClipboardBaseView {
+        // ========================================================================
+        // Initialization
+        // ========================================================================
+
         /**
          * Initialize the list view.
-         * @param {Object} options Configuration options
+         *
+         * @param {Object} options Configuration options.
          */
         constructor(options) {
             super(options, { style_class: 'clipboard-list-view' });
@@ -34,13 +40,18 @@ export const ClipboardListView = GObject.registerClass(
 
         /**
          * Create the container for pinned items.
-         * @returns {StackLayout} The stack layout container
+         *
+         * @returns {StackLayout} The stack layout container.
          * @override
          */
         _createPinnedContainer() {
             return new StackLayout({
                 style_class: 'clipboard-stack-container',
                 scrollView: this._scrollView,
+                virtualization: true,
+                virtualMinItems: ListVirtualization.PINNED_MIN_ITEMS,
+                virtualEstimatedItemHeight: ListVirtualization.ESTIMATED_ITEM_HEIGHT,
+                virtualOverscanItems: ListVirtualization.OVERSCAN_ITEMS,
                 renderItemFn: (item) => this._createItemWidget(item, true),
                 updateItemFn: (widget, item) => this._updateItemWidget(widget, item, true),
             });
@@ -48,49 +59,27 @@ export const ClipboardListView = GObject.registerClass(
 
         /**
          * Create the container for history items.
-         * @returns {StackLayout} The stack layout container
+         *
+         * @returns {StackLayout} The stack layout container.
          * @override
          */
         _createHistoryContainer() {
             return new StackLayout({
                 style_class: 'clipboard-stack-container',
                 scrollView: this._scrollView,
+                virtualization: true,
+                virtualMinItems: ListVirtualization.HISTORY_MIN_ITEMS,
+                virtualEstimatedItemHeight: ListVirtualization.ESTIMATED_ITEM_HEIGHT,
+                virtualOverscanItems: ListVirtualization.OVERSCAN_ITEMS,
                 renderItemFn: (item) => this._createItemWidget(item, false),
                 updateItemFn: (widget, item) => this._updateItemWidget(widget, item, false),
             });
         }
 
         /**
-         * Get all focusable items in the list.
-         * Used by parent container for navigation.
-         * @returns {Array<St.Widget>} Array of focusable widgets
-         * @override
-         */
-        getFocusables() {
-            const pinned = this._pinnedContainer ? this._pinnedContainer.get_children() : [];
-            const history = this._historyContainer ? this._historyContainer.get_children() : [];
-            return [...pinned, ...history];
-        }
-
-        // ========================================================================
-        // Private Helpers
-        // ========================================================================
-
-        /**
-         * Create a single widget for the list.
-         * @param {Object} itemData The item data
-         * @param {boolean} isPinned Whether this item is pinned
-         * @returns {St.Widget} The created widget
-         * @private
-         */
-        _createItemWidget(itemData, isPinned) {
-            const options = this._getItemOptions(isPinned);
-            return ClipboardListItemFactory.createItem(itemData, options);
-        }
-
-        /**
          * Get the item factory class.
-         * @returns {Class} BillboardListItemFactory
+         *
+         * @returns {Class} BillboardListItemFactory.
          * @override
          */
         _getItemFactory() {
@@ -99,15 +88,17 @@ export const ClipboardListView = GObject.registerClass(
 
         /**
          * Get item options.
-         * @param {boolean} isPinned
-         * @returns {Object}
+         *
+         * @param {boolean} isPinned Whether the item is pinned.
+         * @returns {Object} Options object.
          * @override
          */
         _getItemOptions(isPinned) {
             return {
                 isPinned: isPinned,
-                imagesDir: this._manager._imagesDir,
-                linkPreviewsDir: this._manager._linkPreviewsDir,
+                imagesDir: this._manager.imagesDir,
+                imagePreviewsDir: this._manager.imagePreviewsDir,
+                linkPreviewsDir: this._manager.linkPreviewsDir,
                 imagePreviewSize: this._imagePreviewSize,
                 onItemCopy: this._onItemCopy,
                 manager: this._manager,
@@ -119,71 +110,66 @@ export const ClipboardListView = GObject.registerClass(
         }
 
         // ========================================================================
+        // Overrides
+        // ========================================================================
+
+        /**
+         * Get all focusable items.
+         *
+         * @returns {Array<St.Widget>} Array of focusable widgets.
+         * @override
+         */
+        getFocusables() {
+            const pinned = this._pinnedContainer ? this._pinnedContainer.get_children().filter((w) => w._itemId && w.can_focus) : [];
+            const history = this._historyContainer ? this._historyContainer.get_children().filter((w) => w._itemId && w.can_focus) : [];
+            return [...pinned, ...history];
+        }
+
+        // ========================================================================
+        // Private Helpers
+        // ========================================================================
+
+        /**
+         * Create a single item widget for the stack layout.
+         *
+         * @param {Object} itemData The item data.
+         * @param {boolean} isPinned Whether this item is pinned.
+         * @returns {St.Widget} The created widget.
+         * @private
+         */
+        _createItemWidget(itemData, isPinned) {
+            const options = this._getItemOptions(isPinned);
+            return ClipboardListItemFactory.createItem(itemData, options);
+        }
+
+        // ========================================================================
         // Event Handlers
         // ========================================================================
 
         /**
          * Handle key press events for navigation.
-         * @param {Clutter.Actor} _actor The source actor
-         * @param {Clutter.Event} event The key event
-         * @returns {number} Clutter.EVENT_STOP or Clutter.EVENT_PROPAGATE
+         *
+         * @param {Clutter.Actor} _actor The source actor.
+         * @param {Clutter.Event} event The key event.
+         * @returns {number} Clutter.EVENT_STOP or Clutter.EVENT_PROPAGATE.
          * @private
          */
         _onKeyPress(_actor, event) {
-            const symbol = event.get_key_symbol();
-            const isArrowKey = [Clutter.KEY_Left, Clutter.KEY_Right, Clutter.KEY_Up, Clutter.KEY_Down].includes(symbol);
-            if (!isArrowKey) return Clutter.EVENT_PROPAGATE;
-
-            const currentFocus = global.stage.get_key_focus();
-            const pinnedHasItems = this._pinnedContainer && this._pinnedContainer.getItemCount() > 0;
-            const historyHasItems = this._historyContainer && this._historyContainer.getItemCount() > 0;
-
-            if (pinnedHasItems && this._pinnedContainer.contains(currentFocus)) {
-                const result = this._pinnedContainer.handleKeyPress(this._pinnedContainer, event);
-                if (result === Clutter.EVENT_STOP) return result;
-
-                if (symbol === Clutter.KEY_Down && historyHasItems) {
-                    const finder = this._createFocusFinder(currentFocus);
-                    this._historyContainer.focusFirst(finder);
-                    return Clutter.EVENT_STOP;
-                }
-                if (symbol === Clutter.KEY_Up) {
-                    this.emit('navigate-up');
-                    return Clutter.EVENT_STOP;
-                }
-                return Clutter.EVENT_PROPAGATE;
-            }
-
-            if (historyHasItems && this._historyContainer.contains(currentFocus)) {
-                const result = this._historyContainer.handleKeyPress(this._historyContainer, event);
-                if (result === Clutter.EVENT_STOP) return result;
-
-                if (symbol === Clutter.KEY_Up) {
-                    if (pinnedHasItems) {
-                        const finder = this._createFocusFinder(currentFocus);
-                        this._pinnedContainer.focusLast(finder);
-                    } else {
-                        this.emit('navigate-up');
-                    }
-                    return Clutter.EVENT_STOP;
-                }
-                return Clutter.EVENT_PROPAGATE;
-            }
-
-            return Clutter.EVENT_PROPAGATE;
+            return this._handleArrowNavigation(event, {
+                createTransferToken: (currentFocus) => this._createTransferToken(currentFocus),
+                focusHistoryFromPinned: (finder) => this._historyContainer.focusFirst(finder),
+                focusPinnedFromHistory: (finder) => this._pinnedContainer.focusLast(finder),
+            });
         }
 
         /**
-         * Create a finder function that locates the equivalent widget in a target item.
-         * Usage:
-         *   const finder = this._createFocusFinder(currentFocus);
-         *   otherContainer.focusFirst(finder);
+         * Create a transfer token for cross-section list navigation.
          *
-         * @param {Clutter.Actor} currentFocus The currently focused actor
-         * @returns {Function|undefined} A function (itemWidget) => childWidget, or undefined
+         * @param {Clutter.Actor} currentFocus The currently focused actor.
+         * @returns {Function|undefined} A function that locates the equivalent widget in a target item.
          * @private
          */
-        _createFocusFinder(currentFocus) {
+        _createTransferToken(currentFocus) {
             let itemWidget = currentFocus;
             while (itemWidget && !itemWidget._itemId) {
                 itemWidget = itemWidget.get_parent();
@@ -191,17 +177,15 @@ export const ClipboardListView = GObject.registerClass(
 
             if (!itemWidget) return undefined;
 
-            // Determine which type of widget is focused
             const isCheckbox = currentFocus === itemWidget._itemCheckbox;
             const isPin = currentFocus === itemWidget._pinButton;
             const isDelete = currentFocus === itemWidget._deleteButton;
 
-            // Return a function that finds the same type in the target item
             return (targetItemWidget) => {
                 if (isCheckbox) return targetItemWidget._itemCheckbox;
                 if (isPin) return targetItemWidget._pinButton;
                 if (isDelete) return targetItemWidget._deleteButton;
-                return targetItemWidget; // Fallback to item itself
+                return targetItemWidget;
             };
         }
 
@@ -211,6 +195,7 @@ export const ClipboardListView = GObject.registerClass(
 
         /**
          * Clear the view.
+         *
          * @override
          */
         clear() {
@@ -219,6 +204,7 @@ export const ClipboardListView = GObject.registerClass(
 
         /**
          * Destroy the view and clean up.
+         *
          * @override
          */
         destroy() {

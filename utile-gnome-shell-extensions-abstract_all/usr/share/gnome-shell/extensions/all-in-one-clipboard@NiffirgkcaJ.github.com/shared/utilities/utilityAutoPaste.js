@@ -1,6 +1,8 @@
 import Clutter from 'gi://Clutter';
 import GLib from 'gi://GLib';
 
+import { Logger } from './utilityLogger.js';
+
 let _instance = null;
 
 /**
@@ -8,6 +10,9 @@ let _instance = null;
  * It encapsulates the virtual keyboard device and its state.
  */
 class AutoPaster {
+    /**
+     * Initializes the AutoPaster instance.
+     */
     constructor() {
         this._virtualKeyboard = null;
         this._pasteTimeoutId = 0;
@@ -38,8 +43,8 @@ class AutoPaster {
                 const keyboard = this._getVirtualKeyboard();
                 const timestamp = GLib.get_monotonic_time();
 
-                const KEY_LEFTSHIFT = 42; // Left Shift
-                const KEY_INSERT = 110; // Insert
+                const KEY_LEFTSHIFT = 42;
+                const KEY_INSERT = 110;
 
                 try {
                     keyboard.notify_key(timestamp, KEY_LEFTSHIFT, Clutter.KeyState.PRESSED);
@@ -47,7 +52,7 @@ class AutoPaster {
                     keyboard.notify_key(timestamp + 20, KEY_INSERT, Clutter.KeyState.RELEASED);
                     keyboard.notify_key(timestamp + 30, KEY_LEFTSHIFT, Clutter.KeyState.RELEASED);
                 } catch (e) {
-                    console.error('[AIO-Clipboard] Failed to trigger paste:', e);
+                    Logger.error('Failed to trigger paste', e);
                 }
 
                 this._pasteTimeoutId = 0;
@@ -59,17 +64,17 @@ class AutoPaster {
 
     /**
      * Checks if auto-paste should be triggered for a specific feature.
-     * This is a static method because it does not depend on an instance's state.
      *
-     * @param {Gio.Settings} settings - Extension settings
-     * @param {string} featureKey - The feature-specific setting key (e.g., 'auto-paste-emoji')
-     * @returns {boolean} Whether auto-paste should be triggered
+     * @param {Gio.Settings} settings Extension settings.
+     * @param {string} featureKey The feature-specific setting key such as auto-paste-emoji.
+     * @returns {boolean} Whether auto-paste should be triggered.
      */
     static shouldAutoPaste(settings, featureKey) {
         if (!settings.get_boolean('enable-auto-paste')) {
             return false;
         }
-        return settings.get_boolean(featureKey);
+        const result = settings.get_boolean(featureKey);
+        return result;
     }
 
     /**
@@ -96,7 +101,7 @@ export function getAutoPaster() {
 }
 
 /**
- * Destroys the singleton instance of the AutoPaster, cleaning up its resources.
+ * Destroys the singleton instance of the AutoPaster and cleans up its resources.
  */
 export function destroyAutoPaster() {
     if (_instance !== null) {

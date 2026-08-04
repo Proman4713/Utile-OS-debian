@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schemalist>
     <schema id="org.gnome.shell.extensions.all-in-one-clipboard" path="/org/gnome/shell/extensions/all-in-one-clipboard/">
+        <!-- General Page -->
         <!-- General Settings -->
+        <key name="extension-width" type="i">
+            <default>420</default>
+            <range min="420" max="1000"/>
+            <summary>Extension Menu Width</summary>
+            <description>The width of the main extension popup menu in pixels.</description>
+        </key>
+        <key name="extension-height" type="i">
+            <default>420</default>
+            <range min="420" max="1000"/>
+            <summary>Extension Menu Height</summary>
+            <description>The height of the main extension popup menu in pixels.</description>
+        </key>
         <key name="hide-panel-icon" type="b">
             <default>false</default>
             <summary>Hide Panel Icon</summary>
@@ -75,9 +88,9 @@
             <default>[]</default>
             <summary>Toggle main menu</summary>
         </key>
-        <key name="shortcut-open-clipboard" type="as">
-            <default><![CDATA[['<Super>c']]]></default>
-            <summary>Open clipboard tab</summary>
+        <key name="shortcut-open-recently-used" type="as">
+            <default>[]</default>
+            <summary>Open recently used tab</summary>
         </key>
         <key name="shortcut-open-emoji" type="as">
             <default><![CDATA[['<Super>period']]]></default>
@@ -94,6 +107,10 @@
         <key name="shortcut-open-symbols" type="as">
             <default>[]</default>
             <summary>Open symbols tab</summary>
+        </key>
+        <key name="shortcut-open-clipboard" type="as">
+            <default><![CDATA[['<Super>c']]]></default>
+            <summary>Open clipboard tab</summary>
         </key>
         <key name="shortcut-next-tab" type="as">
             <default><![CDATA[['<Control>Tab']]]></default>
@@ -115,15 +132,15 @@
             <summary>Switch to previous category</summary>
             <description>Shortcut to cycle to the previous category within a tab.</description>
         </key>
-        <key name="clipboard-key-toggle-select" type="s">
+        <key name="clipboard-key-select" type="s">
             <default>'space'</default>
-            <summary>Toggle item selection</summary>
-            <description>Key to toggle the selection checkbox on a focused clipboard item.</description>
+            <summary>Select item</summary>
+            <description>Key to select a focused clipboard item.</description>
         </key>
-        <key name="clipboard-key-toggle-pin" type="s">
+        <key name="clipboard-key-pin" type="s">
             <default>'s'</default>
-            <summary>Toggle item pin/star</summary>
-            <description>Key to toggle the pin/star on a focused clipboard item.</description>
+            <summary>Pin/Star item</summary>
+            <description>Key to pin/star a focused clipboard item.</description>
         </key>
         <key name="clipboard-key-delete" type="s">
             <default>'Delete'</default>
@@ -131,32 +148,64 @@
             <description>Key to delete a focused clipboard item.</description>
         </key>
 
-        <!-- Recent Items Limits -->
-        <key name="emoji-recents-max-items" type="i">
-            <default>45</default>
-            <range min="5" max="100"/>
-            <summary>Maximum Recent Emojis</summary>
-            <description>The maximum number of recently used emojis to store and display in the Emoji 'Recents' tab.</description>
+        <!-- Grid Column Settings -->
+        <key name="emoji-grid-limit-columns" type="b">
+            <default>false</default>
+            <summary>Limit Emoji Grid Columns</summary>
+            <description>When enabled, caps the number of columns in the emoji grid.</description>
         </key>
-        <key name="kaomoji-recents-max-items" type="i">
-            <default>30</default>
-            <range min="5" max="100"/>
-            <summary>Maximum Recent Kaomojis</summary>
-            <description>The maximum number of recently used kaomojis to store and display in the Kaomoji 'Recents' tab.</description>
+        <key name="emoji-grid-max-columns" type="i">
+            <default>9</default>
+            <range min="1" max="22"/>
+            <summary>Emoji Grid Max Columns</summary>
+            <description>Maximum number of columns to show in the emoji grid when the limit is enabled.</description>
         </key>
-        <key name="symbols-recents-max-items" type="i">
-            <default>45</default>
-            <range min="5" max="100"/>
-            <summary>Maximum Recent Symbols</summary>
-            <description>The maximum number of recently used symbols to store and display in the Symbols 'Recents' tab.</description>
+        <key name="gif-grid-limit-columns" type="b">
+            <default>false</default>
+            <summary>Limit GIF Grid Columns</summary>
+            <description>When enabled, caps the number of columns in the GIF masonry grid.</description>
         </key>
-        <key name="gif-recents-max-items" type="i">
-            <default>30</default>
-            <range min="5" max="100"/>
-            <summary>Maximum Recent GIFs</summary>
-            <description>The maximum number of recently used GIFs to store and display in the GIF 'Recents' tab.</description>
+        <key name="gif-grid-max-columns" type="i">
+            <default>4</default>
+            <range min="1" max="10"/>
+            <summary>GIF Grid Max Columns</summary>
+            <description>Maximum number of columns to show in the GIF masonry grid when the limit is enabled.</description>
+        </key>
+        <key name="kaomoji-grid-limit-columns" type="b">
+            <default>false</default>
+            <summary>Limit Kaomoji Grid Columns</summary>
+            <description>When enabled, caps the number of columns in the kaomoji grid.</description>
+        </key>
+        <key name="kaomoji-grid-max-columns" type="i">
+            <default>4</default>
+            <range min="1" max="9"/>
+            <summary>Kaomoji Grid Max Columns</summary>
+            <description>Maximum number of columns to show in the kaomoji grid when the limit is enabled.</description>
+        </key>
+        <key name="symbols-grid-limit-columns" type="b">
+            <default>false</default>
+            <summary>Limit Symbols Grid Columns</summary>
+            <description>When enabled, caps the number of columns in the symbols grid.</description>
+        </key>
+        <key name="symbols-grid-max-columns" type="i">
+            <default>9</default>
+            <range min="1" max="22"/>
+            <summary>Symbols Grid Max Columns</summary>
+            <description>Maximum number of columns to show in the symbols grid when the limit is enabled.</description>
+        </key>
+        <key name="clipboard-grid-limit-columns" type="b">
+            <default>false</default>
+            <summary>Limit Clipboard Grid Columns</summary>
+            <description>When enabled, caps the number of columns in the clipboard masonry grid.</description>
+        </key>
+        <key name="clipboard-grid-max-columns" type="i">
+            <default>3</default>
+            <range min="1" max="9"/>
+            <summary>Clipboard Grid Max Columns</summary>
+            <description>Maximum number of columns to show in the clipboard masonry grid when the limit is enabled.</description>
         </key>
 
+        <!-- Features Page -->
         <!-- Auto-Paste Settings -->
         <key name="enable-auto-paste" type="b">
             <default>false</default>
@@ -189,33 +238,164 @@
             <description>Automatically paste items from clipboard history when selected (requires master toggle).</description>
         </key>
 
-        <!-- Clipboard Settings -->
-        <key name="clipboard-history-max-items" type="i">
+        <!-- Recent Items Limits -->
+        <key name="emoji-recents-max-items" type="i">
             <default>50</default>
-            <range min="10" max="1000"/>
-            <summary>Maximum number of items in clipboard history</summary>
-            <description>The maximum number of unpinned items to store in the clipboard history.</description>
+            <range min="5" max="100"/>
+            <summary>Maximum Recent Emojis</summary>
+            <description>The maximum number of recently used emojis to store and display in the Emoji 'Recents' tab.</description>
         </key>
-        <key name="update-recency-on-copy" type="b">
+        <key name="gif-recents-max-items" type="i">
+            <default>50</default>
+            <range min="5" max="100"/>
+            <summary>Maximum Recent GIFs</summary>
+            <description>The maximum number of recently used GIFs to store and display in the GIF 'Recents' tab.</description>
+        </key>
+        <key name="kaomoji-recents-max-items" type="i">
+            <default>50</default>
+            <range min="5" max="100"/>
+            <summary>Maximum Recent Kaomojis</summary>
+            <description>The maximum number of recently used kaomojis to store and display in the Kaomoji 'Recents' tab.</description>
+        </key>
+        <key name="symbols-recents-max-items" type="i">
+            <default>50</default>
+            <range min="5" max="100"/>
+            <summary>Maximum Recent Symbols</summary>
+            <description>The maximum number of recently used symbols to store and display in the Symbols 'Recents' tab.</description>
+        </key>
+
+        <!-- Recently Used Settings -->
+        <key name="enable-recently-used-search" type="b">
             <default>true</default>
-            <summary>Move item to top on copy</summary>
-            <description>When an item is copied from the clipboard history, move it to the top of the list.</description>
+            <summary>Show search in Recently Used tab</summary>
+            <description>When enabled, displays a global search bar in the Recently Used tab to filter items across all visible sections.</description>
         </key>
-        <key name="unpin-on-paste" type="b">
+        <key name="recently-used-default-limit-mode" type="s">
+            <default>'limited'</default>
+            <choices>
+                <choice value='limited'/>
+                <choice value='unlimited'/>
+            </choices>
+            <summary>Default limit mode in Recently Used</summary>
+            <description>Default cap behavior used when custom limit policy by context is disabled.</description>
+        </key>
+        <key name="recently-used-enable-custom-limit-policy" type="b">
             <default>true</default>
-            <summary>Unpin item on paste</summary>
-            <description>When a pinned item is pasted, automatically unpin it and move it to the top of the history. If disabled, pinned items will remain pinned after pasting.</description>
+            <summary>Enable custom limit policy by context</summary>
+            <description>When enabled, browse and search limit policies can be configured independently and override the global limit policy.</description>
         </key>
-        <key name="clipboard-image-preview-size" type="i">
-            <default>48</default>
-            <range min="48" max="300"/>
-            <summary>Clipboard image preview size</summary>
-            <description>Sets the pixel size for clipboard image previews. Applies to the clipboard history tab and the recently used overview.</description>
+        <key name="recently-used-history-limit-mode" type="s">
+            <default>'limited'</default>
+            <choices>
+                <choice value='limited'/>
+                <choice value='unlimited'/>
+            </choices>
+            <summary>History limit mode in Recently Used</summary>
+            <description>Controls cap behavior for non-search browsing context in Recently Used.</description>
         </key>
-        <key name="clipboard-layout-mode" type="s">
-            <default>'list'</default>
-            <summary>Clipboard Layout Mode</summary>
-            <description>Display mode for clipboard history items. Can be 'list' (compact rows) or 'grid' (masonry cards).</description>
+        <key name="recently-used-search-limit-mode" type="s">
+            <default>'unlimited'</default>
+            <choices>
+                <choice value='limited'/>
+                <choice value='unlimited'/>
+            </choices>
+            <summary>Search limit mode in Recently Used</summary>
+            <description>Controls cap behavior for search context in Recently Used.</description>
+        </key>
+        <key name="recently-used-default-display-mode" type="s">
+            <default>'scroll-window'</default>
+            <choices>
+                <choice value='fixed-window'/>
+                <choice value='scroll-window'/>
+            </choices>
+            <summary>Default display mode in Recently Used</summary>
+            <description>Default display mode used by Recently Used policy resolution.</description>
+        </key>
+        <key name="recently-used-enable-custom-display-mode" type="b">
+            <default>false</default>
+            <summary>Enable custom display mode by view</summary>
+            <description>When enabled, list and grid display modes can be configured independently and override the global display mode.</description>
+        </key>
+        <key name="recently-used-list-display-mode" type="s">
+            <default>'scroll-window'</default>
+            <choices>
+                <choice value='fixed-window'/>
+                <choice value='scroll-window'/>
+            </choices>
+            <summary>List display mode in Recently Used</summary>
+            <description>Display mode applied to list view when custom display mode by view is enabled.</description>
+        </key>
+        <key name="recently-used-grid-display-mode" type="s">
+            <default>'scroll-window'</default>
+            <choices>
+                <choice value='fixed-window'/>
+                <choice value='scroll-window'/>
+            </choices>
+            <summary>Grid display mode in Recently Used</summary>
+            <description>Display mode applied to grid view when custom display mode by view is enabled.</description>
+        </key>
+        <key name="recently-used-global-visible-items" type="i">
+            <default>5</default>
+            <range min="1" max="1000"/>
+            <summary>Global visible items in Recently Used</summary>
+            <description>Global visible-items cap used when custom per-view visible items are disabled.</description>
+        </key>
+        <key name="recently-used-enable-custom-visible-items" type="b">
+            <default>false</default>
+            <summary>Enable custom visible items by view</summary>
+            <description>When enabled, list and grid visible-items caps can be configured independently and override the global visible-items cap.</description>
+        </key>
+        <key name="recently-used-list-visible-items" type="i">
+            <default>5</default>
+            <range min="1" max="1000"/>
+            <summary>List visible items in Recently Used</summary>
+            <description>Visible-items cap applied to list view when custom visible items by view is enabled.</description>
+        </key>
+        <key name="recently-used-grid-visible-items" type="i">
+            <default>5</default>
+            <range min="1" max="1000"/>
+            <summary>Grid visible items in Recently Used</summary>
+            <description>Visible-items cap applied to grid view when custom visible items by view is enabled.</description>
+        </key>
+        <key name="recently-used-global-window-rows" type="i">
+            <default>5</default>
+            <range min="1" max="1000"/>
+            <summary>Global window rows in Recently Used</summary>
+            <description>Global window-row limit used by list and grid when custom window limits by view are disabled.</description>
+        </key>
+        <key name="recently-used-enable-custom-window-limits" type="b">
+            <default>false</default>
+            <summary>Enable custom window limits by view</summary>
+            <description>When enabled, list and grid window limits can be configured independently and override global window rows.</description>
+        </key>
+        <key name="recently-used-list-window-rows" type="i">
+            <default>5</default>
+            <range min="1" max="1000"/>
+            <summary>List window rows in Recently Used</summary>
+            <description>Window-row limit applied to list view when custom window limits by view is enabled.</description>
+        </key>
+        <key name="recently-used-grid-window-rows" type="i">
+            <default>5</default>
+            <range min="1" max="1000"/>
+            <summary>Grid window rows in Recently Used</summary>
+            <description>Window-row limit applied to grid view when custom window limits by view is enabled.</description>
+        </key>
+        <key name="recently-used-grid-window-columns" type="i">
+            <default>5</default>
+            <range min="1" max="10"/>
+            <summary>Grid window columns in Recently Used</summary>
+            <description>Window-column value applied to grid view when custom window limits by view is enabled.</description>
+        </key>
+        <key name="recently-used-unlimited-safety-cap" type="i">
+            <default>1000</default>
+            <range min="1" max="1000"/>
+            <summary>Unlimited safety cap in Recently Used</summary>
+            <description>Maximum number of items allowed in Recently Used when limit mode is unlimited.</description>
+        </key>
+        <key name="recently-used-advanced-section-overrides" type="s">
+            <default>'{}'</default>
+            <summary>Advanced Recently Used section overrides</summary>
+            <description>Serialized object storing per-section Recently Used policy overrides to avoid schema key explosion.</description>
         </key>
 
         <!-- Emoji Settings -->
@@ -258,16 +438,88 @@
             <description>The maximum size for the GIF preview cache in megabytes. Set to 0 for unlimited cache size.</description>
         </key>
 
-        <!-- Excluded Applications -->
+        <!-- Clipboard Settings -->
+        <key name="clipboard-history-max-items" type="i">
+            <default>50</default>
+            <range min="10" max="1000"/>
+            <summary>Maximum number of items in clipboard history</summary>
+            <description>The maximum number of unpinned items to store in the clipboard history.</description>
+        </key>
+        <key name="update-recency-on-copy" type="b">
+            <default>true</default>
+            <summary>Move item to top on copy</summary>
+            <description>When an item is copied from the clipboard history, move it to the top of the list.</description>
+        </key>
+        <key name="unpin-on-paste" type="b">
+            <default>true</default>
+            <summary>Unpin item on paste</summary>
+            <description>When a pinned item is pasted, automatically unpin it and move it to the top of the history. If disabled, pinned items will remain pinned after pasting.</description>
+        </key>
+        <key name="clipboard-show-action-bar" type="b">
+            <default>true</default>
+            <summary>Show Clipboard Action Bar</summary>
+            <description>Show the top action bar in the Clipboard tab with select-all, layout, private mode, pin, and delete controls.</description>
+        </key>
+        <key name="clipboard-layout-mode" type="s">
+            <default>'list'</default>
+            <summary>Clipboard Layout Mode</summary>
+            <description>Display mode for clipboard history items. Can be 'list' (compact rows) or 'grid' (masonry cards).</description>
+        </key>
+        <key name="clipboard-image-preview-size" type="i">
+            <default>48</default>
+            <range min="48" max="300"/>
+            <summary>Clipboard image preview size</summary>
+            <description>Sets the pixel size for clipboard image previews. Applies to the clipboard history tab and the recently used overview.</description>
+        </key>
+        <key name="enable-clipboard-merge-selection" type="b">
+            <default>true</default>
+            <summary>Enable merging selected items</summary>
+            <description>When enabled, allows selecting and merging multiple clipboard items.</description>
+        </key>
+        <key name="clipboard-merge-selection-delimiter-type" type="s">
+            <default>'newline'</default>
+            <choices>
+                <choice value='newline'/>
+                <choice value='double-newline'/>
+                <choice value='space'/>
+                <choice value='comma'/>
+                <choice value='tab'/>
+                <choice value='custom'/>
+            </choices>
+            <summary>Merge selection delimiter type</summary>
+            <description>The type of delimiter used to separate text items when merging selection.</description>
+        </key>
+        <key name="clipboard-merge-selection-delimiter-custom" type="s">
+            <default>''</default>
+            <summary>Custom merge selection delimiter</summary>
+            <description>Custom string delimiter used when type is set to 'custom'.</description>
+        </key>
+        <key name="clipboard-merge-selection-order" type="s">
+            <default>'selection'</default>
+            <choices>
+                <choice value='selection'/>
+                <choice value='chronological'/>
+            </choices>
+            <summary>Merge selection order</summary>
+            <description>Order in which items are merged.</description>
+        </key>
+
+        <!-- Advanced Page -->
+        <!-- Exclusions Management -->
         <key name="enable-atspi-exclusion" type="b">
             <default>false</default>
             <summary>Enhanced Exclusion Detection</summary>
             <description>When enabled, uses the system accessibility service (AT-SPI) to detect excluded applications inside browser windows, such as password manager extension popups. This will enable the system accessibility service (toolkit-accessibility) if it is not already active.</description>
         </key>
-        <key name="exclusion-list" type="as">
+        <key name="excluded-applications" type="as">
             <default>[]</default>
             <summary>List of excluded applications</summary>
             <description>A list of applications or window classes (wm_class) that should be ignored by the clipboard manager.</description>
+        </key>
+        <key name="excluded-addresses" type="as">
+            <default>[]</default>
+            <summary>List of excluded addresses</summary>
+            <description>A list of domains, URLs, or email addresses that should be ignored when fetching metadata.</description>
         </key>
 
         <!-- Data Management -->

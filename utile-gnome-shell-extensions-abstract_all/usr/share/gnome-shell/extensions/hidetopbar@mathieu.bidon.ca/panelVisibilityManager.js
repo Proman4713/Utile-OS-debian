@@ -66,11 +66,13 @@ export class PanelVisibilityManager {
         // We lost the original notification's position because of
         // PanelBox->affectsStruts = false and now it appears beneath the
         // top bar, fix it
-        this._oldTween = MessageTray._tween;
-        MessageTray._tween = (
-            function(actor, statevar, value, params) {
-                params.y += (PanelBox.y < 0 ? 0 : PanelBox.height);
-                this._oldTween.apply(MessageTray, arguments);
+        this._oldEase = MessageTray._bannerBin.ease;
+        MessageTray._bannerBin.ease = (
+            function(params) {
+                if (params.hasOwnProperty("y") && PanelBox.y >= 0) {
+                    params.y += PanelBox.height;
+                }
+                this._oldEase.apply(MessageTray._bannerBin, arguments);
             }
         ).bind(this);
 
@@ -544,7 +546,7 @@ export class PanelVisibilityManager {
           _searchEntryBin.style = null;
         }
 
-        MessageTray._tween = this._oldTween;
+        MessageTray._bannerBin.ease = this._oldEase;
         this.show(0, "destroy");
 
         Main.layoutManager.removeChrome(PanelBox);

@@ -15,7 +15,7 @@ fi
 if [ ! -f "$DCONF_GDM_PROFILE" ] || ! grep -q "system-db:gdm" "$DCONF_GDM_PROFILE"; then
 	echo "user-db:user" > "$DCONF_GDM_PROFILE"
 	echo "system-db:gdm" >> "$DCONF_GDM_PROFILE"
-	echo "file-db:/usr/share/gdm/greeter-dconf-defaults" >> "$DCONF_GDM_PROFILE"
+	echo "file-db:/usr/share/gdm/greeter-dconf-defaults" >> "$DCONF_GDM_PROFILE" # https://support.scc.suse.com/s/kb/How-to-set-a-global-dconf-value-for-gnome-gdm-1583239433993?language=en_US
 fi
 
 if command -v dconf >/dev/null 2>&1; then

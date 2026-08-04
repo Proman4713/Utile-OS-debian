@@ -1,21 +1,32 @@
 import Gio from 'gi://Gio';
 import GLib from 'gi://GLib';
 
+import { IOFile } from '../../../shared/utilities/utilityIO.js';
 import { ResourcePath } from '../../../shared/constants/storagePaths.js';
 
 import { ClipboardType, ClipboardStyling, ClipboardIcons } from '../constants/clipboardConstants.js';
 
+// Existing Preview
+const EXISTING_PREVIEW_PATH_CACHE = new Set();
+
 /**
+ * ClipboardBaseItemConfig
+ *
  * Shared configuration utilities for clipboard items.
  * Maps raw item data to view configurations used by both list and grid factories.
  */
 export class ClipboardBaseItemConfig {
+    // ========================================================================
+    // Public API
+    // ========================================================================
+
     /**
-     * Maps an item's data to a standardized view configuration.
-     * @param {Object} item The raw item data
-     * @param {string} imagesDir Directory where images are stored
-     * @param {string} linkPreviewsDir Directory where link previews are stored
-     * @returns {Object} Configuration object
+     * Map an item's raw data to a standardized view configuration.
+     *
+     * @param {Object} item The raw item data.
+     * @param {string} imagesDir Directory where images are stored.
+     * @param {string} linkPreviewsDir Directory where link previews are stored.
+     * @returns {Object} Standardized configuration object.
      */
     static getItemViewConfig(item, imagesDir, linkPreviewsDir) {
         const style = ClipboardStyling[item.type] || ClipboardStyling[ClipboardType.TEXT];
@@ -23,9 +34,10 @@ export class ClipboardBaseItemConfig {
         const config = {
             layoutMode: style.layout,
             icon: style.icon,
-            text: '', // Initialize text to prevent undefined errors
+            text: '',
         };
 
+        // Type Configuration
         switch (item.type) {
             case ClipboardType.FILE:
                 ClipboardBaseItemConfig._configureFileItem(config, item);
@@ -48,24 +60,17 @@ export class ClipboardBaseItemConfig {
                 break;
         }
 
-        // Corrupted state fallback
+        // Corruption Fallback
         if (item.is_corrupted) {
-            // Override icon to show warning with color
             config.icon = ClipboardIcons.ERROR_WARNING.icon;
             config.iconOptions = ClipboardIcons.ERROR_WARNING.iconOptions;
 
-            // For image items without source, show in rich layout with warning
             if (config.layoutMode === 'image') {
                 config.layoutMode = 'rich';
                 config.title = 'Image (Data Lost)';
-            }
-            // For code items, keep code layout but update title info
-            else if (config.layoutMode === 'code') {
-                // Keep code layout, just add warning in config
+            } else if (config.layoutMode === 'code') {
                 config.title = 'Code (Full Content Lost)';
-            }
-            // For text items, switch to rich for visibility
-            else if (config.layoutMode === 'text') {
+            } else if (config.layoutMode === 'text') {
                 config.layoutMode = 'rich';
                 config.title = config.text ? config.text.substring(0, 50) + '...' : 'Text (Full Content Lost)';
             }
@@ -73,11 +78,72 @@ export class ClipboardBaseItemConfig {
             config.subtitle = 'Cannot be recovered';
         }
 
+        config._fingerprint = ClipboardBaseItemConfig._buildConfigFingerprint(config);
         return config;
     }
 
     /**
-     * Configure File item view.
+     * Resolve an image preview path if available on disk.
+     *
+     * @param {Object} itemData Clipboard item data.
+     * @param {string} imagePreviewsDir Directory where image previews are stored.
+     * @returns {string|null} Resolved path or null if missing.
+     */
+    static resolveImagePreviewPath(itemData, imagePreviewsDir) {
+        if (!imagePreviewsDir || !itemData?.image_filename) return null;
+
+        const base = itemData.image_filename.replace(/\.[^/.]+$/, '');
+        const fallbackPreviewName = `preview_${base}.png`;
+        const previewName = itemData.preview_filename || fallbackPreviewName;
+        const previewPath = GLib.build_filenamev([imagePreviewsDir, previewName]);
+
+        if (EXISTING_PREVIEW_PATH_CACHE.has(previewPath)) {
+            return previewPath;
+        }
+
+        if (IOFile.existsSync(previewPath)) {
+            EXISTING_PREVIEW_PATH_CACHE.add(previewPath);
+            return previewPath;
+        }
+
+        return null;
+    }
+
+    // ========================================================================
+    // Internal Helpers
+    // ========================================================================
+
+    /**
+     * Build a lightweight stable fingerprint for update fast-path checks.
+     *
+     * @param {Object} config Item view config.
+     * @returns {string} Config fingerprint.
+     * @private
+     */
+    static _buildConfigFingerprint(config) {
+        const iconOptions = config.iconOptions;
+        const iconOptionsFingerprint = iconOptions ? `${iconOptions.color || ''}:${iconOptions.styleClass || ''}` : '';
+
+        return [
+            config.layoutMode || '',
+            config.icon || '',
+            config.title || '',
+            config.subtitle || '',
+            config.text || '',
+            config.cssColor || '',
+            config.rawLines || 0,
+            config.previewLinesCount || 0,
+            config.flagPath || '',
+            config.giconPath || '',
+            iconOptionsFingerprint,
+        ].join('|');
+    }
+
+    /**
+     * Configure the view state for File items.
+     *
+     * @param {Object} config Output config.
+     * @param {Object} item Source item.
      * @private
      */
     static _configureFileItem(config, item) {
@@ -86,31 +152,44 @@ export class ClipboardBaseItemConfig {
     }
 
     /**
-     * Configure URL item view.
+     * Configure the view state for URL items.
+     *
+     * @param {Object} config Output config.
+     * @param {Object} item Source item.
+     * @param {string} linkPreviewsDir Previews directory.
      * @private
      */
     static _configureUrlItem(config, item, linkPreviewsDir) {
         config.title = item.title || item.url;
         config.subtitle = item.url;
+
         if (item.icon_filename && linkPreviewsDir) {
             const iconPath = GLib.build_filenamev([linkPreviewsDir, item.icon_filename]);
+            config.giconPath = iconPath;
             config.gicon = new Gio.FileIcon({ file: Gio.File.new_for_path(iconPath) });
         }
     }
 
     /**
-     * Configure Contact item view.
+     * Configure the view state for Contact items.
+     *
+     * @param {Object} config Output config.
+     * @param {Object} item Source item.
+     * @param {Object} style Styling definitions.
+     * @param {string} linkPreviewsDir Previews directory.
      * @private
      */
     static _configureContactItem(config, item, style, linkPreviewsDir) {
         config.title = item.preview || item.text || 'Unknown Contact';
         config.subtitle = item.subtype === 'email' ? 'Email' : 'Phone';
+
         if (style.subtypes && style.subtypes[item.subtype]) {
             config.icon = style.subtypes[item.subtype].icon;
         }
 
         if (item.subtype === 'email' && item.icon_filename && linkPreviewsDir) {
             const iconPath = GLib.build_filenamev([linkPreviewsDir, item.icon_filename]);
+            config.giconPath = iconPath;
             config.gicon = new Gio.FileIcon({ file: Gio.File.new_for_path(iconPath) });
         }
 
@@ -121,29 +200,41 @@ export class ClipboardBaseItemConfig {
     }
 
     /**
-     * Configure Color item view.
+     * Configure the view state for Color items.
+     *
+     * @param {Object} config Output config.
+     * @param {Object} item Source item.
+     * @param {Object} style Styling definitions.
      * @private
      */
     static _configureColorItem(config, item, style) {
         config.title = item.color_value;
         config.subtitle = item.format_type;
         config.cssColor = item.color_value;
+
         if (style.subtypes && style.subtypes[item.subtype]) {
             config.icon = style.subtypes[item.subtype].icon;
         }
     }
 
     /**
-     * Configure Code item view.
+     * Configure the view state for Code items.
+     *
+     * @param {Object} config Output config.
+     * @param {Object} item Source item.
      * @private
      */
     static _configureCodeItem(config, item) {
         config.text = item.preview || '';
         config.rawLines = item.raw_lines || 0;
+        config.previewLinesCount = config.text ? config.text.split('\n').length : 0;
     }
 
     /**
-     * Configure Text item view.
+     * Configure the view state for Text items.
+     *
+     * @param {Object} config Output config.
+     * @param {Object} item Source item.
      * @private
      */
     static _configureTextItem(config, item) {

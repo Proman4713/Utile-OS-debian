@@ -1,8 +1,10 @@
-Package: utile-gnome-defaults
-Version: 26.0~beta9
-Architecture: all
+Source: utile-gnome-defaults
 Section: gnome
 Priority: optional
 Maintainer: Aaser Abd-el Sabour <proman4713@gmail.com>
+Build-Depends: debhelper-compat (= 13)
+
+Package: utile-gnome-defaults
+Architecture: all
 Description: Utile OS Default GNOME Configurations
 Depends: gnome-shell
