@@ -1,0 +1,6 @@
+utile-wallpapers (26.0~beta7) abstract; urgency=medium
+
+  * Initial move to dch/debuild
+  * Merge both amd64 and arm64 into one package
+
+ -- Aaser Abd-el Sabour <proman4713@gmail.com>  Wed, 05 Aug 2026 16:36:55 +0300

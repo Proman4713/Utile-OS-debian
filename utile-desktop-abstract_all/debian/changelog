@@ -1,0 +1,6 @@
+utile-desktop (26.0~beta10) abstract; urgency=medium
+
+  * Initial move to dch/debuild
+  * postinst: Update nala wrapper to be more concise and informative
+
+ -- Aaser Abd-el Sabour <proman4713@gmail.com>  Wed, 05 Aug 2026 16:27:51 +0300

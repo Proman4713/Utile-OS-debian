@@ -1,0 +1,25 @@
+#!/usr/bin/make -f
+
+include /usr/share/dpkg/architecture.mk
+
+DESTDIR = debian/utile-wallpapers
+
+%:
+	dh $@
+
+override_dh_auto_install:
+	install -d $(DESTDIR)/usr/share/backgrounds/utile/
+	install -d $(DESTDIR)/usr/share/gnome-background-properties/
+
+	install -pm644 usr/share/backgrounds/utile/*		$(DESTDIR)/usr/share/backgrounds/utile/
+	install -pm644 usr/share/gnome-background-properties/*		$(DESTDIR)/usr/share/gnome-background-properties/
+
+	if [ "$(DEB_HOST_ARCH)" = "arm64" ]; then \
+		install -Dpm644 etc/dconf/db/local.d/zz99_utile_wallpapers.arm64		$(DESTDIR)/etc/dconf/db/local.d/zz99_utile_wallpapers; \
+	else \
+		# Default to amd64 for all other architectures (the only two architectures we support are arm64 and amd64 anyway); \
+		install -Dpm644 etc/dconf/db/local.d/zz99_utile_wallpapers.amd64		$(DESTDIR)/etc/dconf/db/local.d/zz99_utile_wallpapers; \
+	fi
+
+override_dh_install:
+	# Do nothing, as we are overriding dh_auto_install to achieve our own logic.

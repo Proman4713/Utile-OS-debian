@@ -1,8 +1,0 @@
-Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
-Upstream-Name: utile-wallpapers
-
-Files: *
-       debian/*
-Copyright: 2026, Aaser Abd-el Sabour <proman4713@gmail.com>
-License: CC-BY-NC-ND-4.0
-Comment: This is an artwork package

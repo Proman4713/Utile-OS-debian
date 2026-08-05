@@ -1,0 +1,10 @@
+Source: utile-desktop
+Section: metapackages
+Priority: optional
+Maintainer: Aaser Abd-el Sabour <proman4713@gmail.com>
+Build-Depends: debhelper-compat (= 13)
+
+Package: utile-desktop
+Architecture: all
+Description: Utile Desktop metapackage
+Depends: utile-keyring,utile-gnome-shell-extensions,utile-gnome-defaults,utile-wallpapers,base-files,utile-grub-theme,nala,fastfetch

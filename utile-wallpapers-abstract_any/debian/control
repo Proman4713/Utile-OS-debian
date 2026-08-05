@@ -1,0 +1,12 @@
+Source: utile-wallpapers
+Section: graphics
+Priority: optional
+Maintainer: Aaser Abd-el Sabour <proman4713@gmail.com>
+Build-Depends: debhelper-compat (= 13)
+
+Package: utile-wallpapers
+Architecture: any
+Description: Wallpaper configuration for Utile OS 26 Abstract Assembly
+Provides: ubuntu-wallpapers
+Replaces: ubuntu-wallpapers
+Conflicts: ubuntu-wallpapers
