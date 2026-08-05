@@ -23,4 +23,7 @@ For now, this only means the `base-files` package, but this is how it should be 
 1. `git fetch ubuntu` to fetch the `ubuntu` remote.
 2. `git rebase ubuntu/ubuntu/{codename} main` to merge the `ubuntu` remote into the `main` branch.
 3. `dch -i` if the updates upstream are incremental, otherwise, manually specify a version.
-4. `debuild -us -uc && debuild -T clean` to build the package, this requires the `build-essential devscripts debhelper` packages.
+4. `debuild && debuild -T clean` to build the package*, this requires the `build-essential devscripts debhelper` packages.
+
+#### * if your `debuild` commands are failing due to 'debsign', then you need to generate a GPG signing key for your package builds so that we can verify your identity as a contributor. This is currently not enforced since I (Aaser Abd-el Sabour, in case you're not aware) manually update all packages (we do not have build farms and build queues to limit package uploads to those who have permission).
+#### However, I do have my personal GPG signing key alongside the Utile OS Debian repository key, and I will use it to upload packages once we have that kind of infrastructure.
