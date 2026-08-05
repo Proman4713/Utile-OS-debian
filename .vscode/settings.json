@@ -27,6 +27,5 @@
 		"titleBar.inactiveBackground": "#5e275099",
 		"titleBar.inactiveForeground": "#e7e7e799"
 	},
-	"peacock.remoteColor": "#5E2750",
-	"git.enableCommitSigning": true
+	"peacock.remoteColor": "#5E2750"
 }
