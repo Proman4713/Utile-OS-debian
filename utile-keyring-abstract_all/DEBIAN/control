@@ -1,7 +1,0 @@
-Package: utile-keyring
-Version: 2026.05.23.2
-Architecture: all
-Section: misc
-Priority: important
-Maintainer: Aaser Abd-el Sabour <proman4713@gmail.com>
-Description: GPG keys for the Utile APT repository

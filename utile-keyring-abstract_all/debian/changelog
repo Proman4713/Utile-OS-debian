@@ -1,0 +1,6 @@
+utile-keyring (2026.08.06.1) abstract; urgency=medium
+
+  * Initial move to debuild/dch
+  * Properly add dearmoured archive keyring to fix verification issues
+
+ -- Aaser Abd-el Sabour <proman4713@gmail.com>  Thu, 06 Aug 2026 16:16:56 +0300

@@ -1,0 +1,9 @@
+Source: utile-keyring
+Section: misc
+Priority: important
+Maintainer: Aaser Abd-el Sabour <proman4713@gmail.com>
+Build-Depends: debhelper-compat (= 13)
+
+Package: utile-keyring
+Architecture: all
+Description: GnuPG keys of the Utile archive
