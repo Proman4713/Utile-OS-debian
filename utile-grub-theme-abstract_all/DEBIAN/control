@@ -1,8 +1,0 @@
-Package: utile-grub-theme
-Version: 26.0~beta3
-Architecture: all
-Section: admin
-Priority: optional
-Maintainer: Aaser Abd-el Sabour <proman4713@gmail.com>
-Description: Utile OS Grub Theme and Fonts
-Depends: grub-common

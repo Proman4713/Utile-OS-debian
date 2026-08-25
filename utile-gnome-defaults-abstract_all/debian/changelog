@@ -1,3 +1,18 @@
+utile-gnome-defaults (26.0) abstract; urgency=medium
+
+  * Update comments
+  * Decrease default volume step
+  * Set 'Show Volumes' to true in Ubuntu Dock
+  * Change clipboard GIF provider to Klipy
+
+ -- Aaser Abd-el Sabour <proman4713@gmail.com>  Wed, 26 Aug 2026 01:12:52 +0300
+
+utile-gnome-defaults (26.0~beta12) abstract; urgency=medium
+
+  * Add trailing newline to dconf override
+
+ -- Aaser Abd-el Sabour <proman4713@gmail.com>  Thu, 06 Aug 2026 17:06:37 +0300
+
 utile-gnome-defaults (26.0~beta11) abstract; urgency=medium
 
   * Update Ptyxis dconf settings after manual review of dconf paths on live OS

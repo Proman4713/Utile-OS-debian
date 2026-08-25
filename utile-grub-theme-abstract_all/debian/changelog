@@ -1,0 +1,8 @@
+utile-grub-theme (26.0~beta4) abstract; urgency=medium
+
+  * Initial move to dch/debuild
+  * Add shebang to config
+  * Fix issues with GRUB_DISTRIBUTOR
+  * Rename config file from zz99-utile.cfg to 99-utile.cfg
+
+ -- Aaser Abd-el Sabour <proman4713@gmail.com>  Wed, 26 Aug 2026 01:49:49 +0300

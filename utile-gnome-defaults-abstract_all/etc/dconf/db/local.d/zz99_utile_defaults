@@ -3,7 +3,7 @@
 #	they do on macOS or Windows. Where the same display would usually require 125% display due to Windows' inherently smaller font sizes. So when a Chromium browser
 #	sees 100% by default from Ubuntu, they scale to an equivalent of 100% on Windows which makes the scaling look way smaller than it should be.
 #	this makes the default interface too small at 100%, just like it would be on Windows, prompting users to adjust it, just like they would do on Windows.
-#!	EXPERIMENTAL, only tested on my system
+#!	EXPERIMENTAL, only tested on my system, could also cause issues on smaller displays without fractional scaling!
 font-name='Ubuntu Regular 9'
 document-font-name='Sans Regular 9'
 monospace-font-name='Ubuntu Mono Regular 9'
@@ -30,7 +30,7 @@ titlebar-font='Ubuntu Bold 9'
 
 [org/gnome/desktop/wm/keybindings]
 # Muscle Memory: Windows users are used to Alt+Shift and Ctrl+Alt+Shift for switching input sources. Not only is this not the default in GNOME,
-#	it is actually impossible to achieve through the UI due to a bug that doesn't accept Alt+Shift_L.
+#	it is actually impossible to achieve through the UI due to a bug that doesn't accept Alt+Shift_L (LP#1956916)
 switch-input-source=['<Alt>Shift_L']
 switch-input-source-backward=['<Primary><Alt>Shift_L']
 
@@ -51,7 +51,7 @@ autorun-never=false
 accel-profile='flat'
 
 [org/gnome/shell]
-# GNOME sometimes bugs certain extensions, like Hide Top Bar, that perfectly work with extension validation disabled
+# GNOME sometimes bugs certain extensions, like Hide Top Bar, that perfectly work with extension version validation disabled
 disable-extension-version-validation=true
 # Default pinned apps
 favorite-apps=['org.gnome.Nautilus.desktop', 'brave-browser.desktop', 'org.gnome.Calendar.desktop', 'org.gnome.Music.desktop', 'libreoffice-impress.desktop', 'libreoffice-calc.desktop', 'libreoffice-writer.desktop', 'snap-store_snap-store.desktop', 'org.gnome.Settings.desktop']
@@ -75,6 +75,8 @@ night-light-schedule-to=23.99
 home=['<Super>e']
 # Muscle Memory: Windows Win+I for settings
 control-center=['<Super>i']
+# Smaller volume step for more adequate control (Similar to macOS and Windows, default is 6)
+volume-step=2
 
 [org/gnome/TextEditor]
 style-scheme='peninsula-dark'
@@ -100,13 +102,13 @@ hotkey=@as []
 [org/gnome/shell/extensions/dash-to-dock]
 # Make the dock minimise/maximise apps when clicked there
 click-action='minimize-or-previews'
-extend-height=false
+extend-height=false # Disable Panel Mode
 dock-position='BOTTOM'
 dock-fixed=false
-show-mounts=false
+show-mounts=true # Set to true since this is the only way to eject external media without opening Files
 show-trash=false
 show-apps-at-top=true
-# Due to the fractional scaling setup, the Ubuntu Dock also needs to have a lower icon size (default 44)
+# Due to the fractional scaling setup, the Ubuntu Dock also needs to have a lower icon size (default 44). But also because the default is really big
 dash-max-icon-size=35
 
 [org/gnome/shell/extensions/ding]
@@ -217,16 +219,15 @@ clear-recent-emojis-at-login=false
 clear-recent-gifs-at-login=false
 clear-recent-kaomojis-at-login=false
 clear-recent-symbols-at-login=false
-# Automatically past the whichever text/emoji/gif/kaomoji/symbol was selected by the user, I'm surprised this isn't the default. Also do not move old clipboard items to the top of the list if they're pasted again, this breaks the chronological sequence that the user
-#	would likely have in their mind.
+# Automatically past whichever text/emoji/gif/kaomoji/symbol was selected by the user, I'm surprised this isn't the default.
 enable-auto-paste=true
 # Don't unpin pinned clipboard items when they're pasted.
 unpin-on-paste=false
 # Don't move old clipboard items to the top of the list if they're pasted again, this breaks the chronological sequence that the user
 #	would likely have in their mind.
 update-recency-on-copy=false
-# Use Tenor. And paste GIFs as images rather than links. Show up to 20 past GIFs.
-gif-provider='tenor'
+# Use Klipy; the Tenor API is discontinued. And paste GIFs as images rather than links. Show up to 20 past GIFs.
+gif-provider='klipy'
 gif-paste-behavior=1
 gif-recents-max-items=20
 # Hide top bar icon
