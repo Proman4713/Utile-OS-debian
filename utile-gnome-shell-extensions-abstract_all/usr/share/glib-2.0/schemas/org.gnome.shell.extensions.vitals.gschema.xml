@@ -169,5 +169,40 @@
       <summary>Icon styles</summary>
       <description>Set the style for the displayed sensor icons ('original', 'updated')</description>
     </key>
+    <key name="temperature-colors" type="as">
+      <default>[]</default>
+      <summary>Temperature color thresholds</summary>
+      <description>Color rules matched against the displayed temperature value. Entries are "threshold r g b" for all sensors, or "threshold r g b sensor:&lt;key&gt;" for one sensor. Multiple sensors may each have their own breakpoints; unknown sensor keys are ignored.</description>
+    </key>
+    <key name="fan-colors" type="as">
+      <default>[]</default>
+      <summary>Fan color thresholds</summary>
+      <description>Color rules matched against fan RPM. Entries are "threshold r g b" or "threshold r g b sensor:&lt;key&gt;" per sensor. Unknown sensor keys are ignored.</description>
+    </key>
+    <key name="memory-colors" type="as">
+      <default>[]</default>
+      <summary>Memory usage color thresholds</summary>
+      <description>Color rules matched against memory usage percentage. Entries are "threshold r g b" or "threshold r g b sensor:&lt;key&gt;". Unknown sensor keys are ignored.</description>
+    </key>
+    <key name="processor-colors" type="as">
+      <default>[]</default>
+      <summary>Processor usage color thresholds</summary>
+      <description>Color rules matched against processor usage percentage. Entries are "threshold r g b" or "threshold r g b sensor:&lt;key&gt;". Unknown sensor keys are ignored.</description>
+    </key>
+    <key name="system-colors" type="as">
+      <default>[]</default>
+      <summary>System load color thresholds</summary>
+      <description>Color rules matched against system load average. Entries are "threshold r g b" or "threshold r g b sensor:&lt;key&gt;". Unknown sensor keys are ignored.</description>
+    </key>
+    <key name="battery-colors" type="as">
+      <default>[]</default>
+      <summary>Battery color thresholds</summary>
+      <description>Color rules matched against battery percentage. Entries are "threshold r g b" or "threshold r g b sensor:&lt;key&gt;". Unknown sensor keys are ignored.</description>
+    </key>
+    <key name="gpu-colors" type="as">
+      <default>[]</default>
+      <summary>GPU usage color thresholds</summary>
+      <description>Color rules matched against GPU utilization percentages. Entries are "threshold r g b" or "threshold r g b sensor:&lt;key&gt;". Unknown sensor keys are ignored.</description>
+    </key>
   </schema>
 </schemalist>

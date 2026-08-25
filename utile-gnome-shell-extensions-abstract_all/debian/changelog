@@ -1,3 +1,9 @@
+utile-gnome-shell-extensions (26.0) abstract; urgency=medium
+
+  * Update Hide Top Bar
+
+ -- Aaser Abd-el Sabour <proman4713@gmail.com>  Wed, 26 Aug 2026 01:22:13 +0300
+
 utile-gnome-shell-extensions (26.0~beta7) abstract; urgency=medium
 
   * Initial move to dch/debuild

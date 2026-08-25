@@ -28,8 +28,6 @@ import GLib from 'gi://GLib';
 import GObject from 'gi://GObject';
 import * as SubProcessModule from './helpers/subprocess.js';
 import * as FileModule from './helpers/file.js';
-import { gettext as _ } from 'resource:///org/gnome/shell/extensions/extension.js';
-import NM from 'gi://NM';
 
 let GTop, hasGTop = true;
 try {
@@ -42,9 +40,10 @@ try {
 export const Sensors = GObject.registerClass({
     GTypeName: 'Sensors',
 }, class Sensors extends GObject.Object {
-    _init(settings, sensorIcons) {
+    _init(settings, sensorIcons, gettext) {
         this._settings = settings;
         this._sensorIcons = sensorIcons;
+        this._gettext = gettext || (s => s);
 
         this.resetHistory();
 
@@ -229,7 +228,7 @@ export const Sensors = GObject.registerClass({
                         this._returnValue(callback, 'processor', delta / 100, 'processor-group', 'percent');
                         this._returnValue(callback, 'Usage', delta / 100, 'processor', 'percent');
                     } else {
-                        this._returnValue(callback, _('Core %d').format(cpu.substr(3)), delta / 100, 'processor', 'percent');
+                        this._returnValue(callback, this._gettext('Core %d').format(cpu.substr(3)), delta / 100, 'processor', 'percent');
                     }
                 }
 
@@ -288,10 +287,10 @@ export const Sensors = GObject.registerClass({
         new FileModule.File('/proc/loadavg').read(' ').then(loadArray => {
             let proc = loadArray[3].split('/');
 
-            this._returnValue(callback, 'Load 1m', loadArray[0], 'system', 'load');
-            this._returnValue(callback, 'system', loadArray[0], 'system-group', 'load');
-            this._returnValue(callback, 'Load 5m', loadArray[1], 'system', 'load');
-            this._returnValue(callback, 'Load 15m', loadArray[2], 'system', 'load');
+            this._returnValue(callback, 'Load 1m', parseFloat(loadArray[0]), 'system', 'load');
+            this._returnValue(callback, 'system', parseFloat(loadArray[0]), 'system-group', 'load');
+            this._returnValue(callback, 'Load 5m', parseFloat(loadArray[1]), 'system', 'load');
+            this._returnValue(callback, 'Load 15m', parseFloat(loadArray[2]), 'system', 'load');
             this._returnValue(callback, 'Threads Active', proc[0], 'system', 'string');
             this._returnValue(callback, 'Threads Total', proc[1], 'system', 'string');
         }).catch(err => { });
@@ -502,7 +501,9 @@ export const Sensors = GObject.registerClass({
                 this._returnValue(callback, 'Energy (now)', output['ENERGY_NOW'], 'battery', 'watt-hour');
             }
 
-            if ('ENERGY_FULL' in output && 'ENERGY_NOW' in output && 'POWER_NOW' in output && output['POWER_NOW'] !== 0 && 'STATUS' in output && (output['STATUS'] == 'Charging' || output['STATUS'] == 'Discharging')) {
+            if ('ENERGY_FULL' in output && 'ENERGY_NOW' in output && 'POWER_NOW' in output &&
+                output['POWER_NOW'] !== 0 && 'STATUS' in output &&
+                (output['STATUS'] == 'Charging' || output['STATUS'] == 'Discharging')) {
 
                 let timeLeft = 0;
 
@@ -544,6 +545,10 @@ export const Sensors = GObject.registerClass({
     }
 
     _initFrameMonitor() {
+        // Prefs has no gnome-shell `global`; skip refresh-rate sampling there.
+        if (typeof global === 'undefined' || !global.stage)
+            return;
+
         if (this._frameMonitorSignalId) return;
         this._frameMonitorLastTime = 0;
         this._frameMonitorFrameCount = 0;
@@ -555,6 +560,12 @@ export const Sensors = GObject.registerClass({
     }
 
     _destroyFrameMonitor() {
+        if (typeof global === 'undefined' || !global.stage) {
+            this._frameMonitorSignalId = 0;
+            this._frameMonitorLastTime = 0;
+            this._frameMonitorCurrentHz = 0;
+            return;
+        }
         if (this._frameMonitorSignalId) {
             global.stage.disconnect(this._frameMonitorSignalId);
             this._frameMonitorSignalId = 0;
@@ -680,7 +691,6 @@ export const Sensors = GObject.registerClass({
 
         this._returnGpuValue(callback, 'Name', label, typeName, '');
 
-        this._returnGpuValue(callback, globalLabel, parseInt(fan_speed_pct) * 0.01, 'fan', 'percent');
         this._returnGpuValue(callback, 'Fan', parseInt(fan_speed_pct) * 0.01, typeName, 'percent');
 
         this._returnGpuValue(callback, globalLabel, parseInt(temp_gpu) * 1000, 'temperature', 'temp');
