@@ -1,3 +1,9 @@
+base-files (14ubuntu6utile7.4) abstract; urgency=medium
+
+  * /etc/os-release, /etc/dpkg/origins/utile: Update home URL
+
+ -- Aaser Abd-el Sabour <proman4713@gmail.com>  Wed, 26 Aug 2026 12:30:31 +0300
+
 base-files (1:14utile7.3) abstract; urgency=medium
 
   * /etc/issue{,.net}, /etc/{lsb,os}-release: Change Utile OS numbering scheme to match main repository's naming scheme guidelines
