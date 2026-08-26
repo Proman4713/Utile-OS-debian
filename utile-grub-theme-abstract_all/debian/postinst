@@ -11,4 +11,8 @@ else
 	echo "Chroot detected. Skipping update-grub."
 fi
 
+if [ "$1" = "triggered" ]; then
+	/usr/share/utile-grub-entry/systemd/start || true
+fi
+
 #DEBHELPER#
