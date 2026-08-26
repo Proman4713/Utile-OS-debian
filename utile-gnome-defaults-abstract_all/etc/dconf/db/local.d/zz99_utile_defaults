@@ -102,7 +102,8 @@ hotkey=@as []
 [org/gnome/shell/extensions/dash-to-dock]
 # Make the dock minimise/maximise apps when clicked there
 click-action='minimize-or-previews'
-extend-height=false # Disable Panel Mode
+# Disable Panel Mode
+extend-height=false
 dock-position='BOTTOM'
 dock-fixed=false
 # Set to true since this is the only way to eject external media without opening Files
