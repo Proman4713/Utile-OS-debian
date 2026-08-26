@@ -23,7 +23,7 @@ apt() {
 	if [[ "$1" == "history" || "$1" == "list" || "$1" == "search" || "$1" == "show" ]]; then
 		echo -e "$HEADER"
 		nala "$@"
-	elif [[ "$1" == "autoclean" || "$1" == "reinstall" || "$1" == "satisfy" || "$1" == "source" || "$1" == "edit-sources" || "$2" == "--only-upgrade" ]]; then
+	elif [[ "$1" == "autoclean" || "$1" == "reinstall" || "$1" == "satisfy" || "$1" == "source" || "$1" == "edit-sources" || "$2" == "--only-upgrade" || "$2" == "--reinstall" ]]; then
 		sudo "apt" "$@"
 	else
 		echo -e "$HEADER"

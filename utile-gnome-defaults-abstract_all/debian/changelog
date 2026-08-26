@@ -1,3 +1,9 @@
+utile-gnome-defaults (26.0-1) abstract; urgency=medium
+
+  * Move comment to separate line to avoid dconf update errors
+
+ -- Aaser Abd-el Sabour <proman4713@gmail.com>  Wed, 26 Aug 2026 04:23:29 +0300
+
 utile-gnome-defaults (26.0) abstract; urgency=medium
 
   * Update comments

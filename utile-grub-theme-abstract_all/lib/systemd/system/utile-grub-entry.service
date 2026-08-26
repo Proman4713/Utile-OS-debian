@@ -1,0 +1,12 @@
+#* Source: http://packages.linuxmint.com/pool/main/u/ubuntu-system-adjustments/
+[Unit]
+Description=Utile OS GRUB Entry
+
+[Service]
+Type=oneshot
+RemainAfterExit=true
+ExecStart=/usr/share/utile-grub-entry/systemd/start
+ExecStop=/usr/share/utile-grub-entry/systemd/stop
+
+[Install]
+WantedBy=multi-user.target

@@ -10,3 +10,5 @@ if [ "$(stat -c %d:%i /)" = "$(stat -c %d:%i /proc/1/root/.)" ]; then
 else
 	echo "Chroot detected. Skipping update-grub."
 fi
+
+#DEBHELPER#

@@ -7,4 +7,4 @@ Build-Depends: debhelper-compat (= 13)
 Package: utile-grub-theme
 Architecture: all
 Description: Utile OS GRUB theme and fonts
-Depends: grub-common,grub2-common
+Depends: grub-common,grub2-common,python3

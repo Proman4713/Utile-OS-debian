@@ -105,7 +105,8 @@ click-action='minimize-or-previews'
 extend-height=false # Disable Panel Mode
 dock-position='BOTTOM'
 dock-fixed=false
-show-mounts=true # Set to true since this is the only way to eject external media without opening Files
+# Set to true since this is the only way to eject external media without opening Files
+show-mounts=true
 show-trash=false
 show-apps-at-top=true
 # Due to the fractional scaling setup, the Ubuntu Dock also needs to have a lower icon size (default 44). But also because the default is really big

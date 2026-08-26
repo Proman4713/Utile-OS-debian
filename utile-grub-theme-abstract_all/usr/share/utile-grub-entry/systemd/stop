@@ -1,0 +1,19 @@
+#!/usr/bin/python3
+
+#* Source: http://packages.linuxmint.com/pool/main/u/ubuntu-system-adjustments/
+import datetime
+import subprocess
+
+
+try:
+    # Log current datetime
+    now = str(datetime.datetime.now())
+    with open("/var/log/utile-grub-entry-stop.log", "w") as f:
+        f.write(now)
+
+    # Adjust Grub title
+    subprocess.call(["/usr/share/utile-grub-entry/systemd/adjust-grub-title"])
+
+except:
+    pass
+
