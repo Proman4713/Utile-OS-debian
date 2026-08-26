@@ -1,3 +1,9 @@
+base-files (14ubuntu6utile7.5) abstract; urgency=medium
+
+  * /etc/os-release: Add UBUNTU_VERSION_CODENAME for python-apt
+
+ -- Aaser Abd-el Sabour <proman4713@gmail.com>  Wed, 26 Aug 2026 22:38:28 +0300
+
 base-files (14ubuntu6utile7.4) abstract; urgency=medium
 
   * /etc/os-release, /etc/dpkg/origins/utile: Update home URL

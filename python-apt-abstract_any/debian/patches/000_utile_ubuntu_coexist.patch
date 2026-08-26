@@ -1,0 +1,50 @@
+Index: python-apt-abstract_any/aptsources/distro.py
+===================================================================
+--- python-apt-abstract_any.orig/aptsources/distro.py
++++ python-apt-abstract_any/aptsources/distro.py
+@@ -503,6 +503,16 @@ class UbuntuRTMDistribution(UbuntuDistri
+     def get_mirrors(self):
+         self.main_server = self.source_template.base_uri
+ 
++class UtileDistribution(Distribution):
++	"""Class to support specific Utile OS features"""
++
++	def is_codename(self, name):
++		"""Compare a given name with the release codename."""
++		if name == self.codename:
++			return True
++
++		return name in self.like_codenames.values()
++
+ 
+ def _system_image_channel():
+     """Get the current channel from system-image-cli -i if possible."""
+@@ -577,5 +587,9 @@ def get_distro(
+         return DebianDistribution(
+             id, codename, description, release, is_like, like_codenames
+         )
++    elif id == "utile":
++        return UtileDistribution(
++            id, codename, description, release, is_like, like_codenames
++		)
+     else:
+         return Distribution(id, codename, description, release, is_like, like_codenames)
+Index: python-apt-abstract_any/data/templates/utile.info.in
+===================================================================
+--- /dev/null
++++ python-apt-abstract_any/data/templates/utile.info.in
+@@ -0,0 +1,14 @@
++Suite: abstract
++RepositoryType: deb
++BaseURI: https://proman4713.github.io/Utile-OS-apt
++MatchURI: proman4713.github.io/Utile-OS-apt
++Description: Utile OS 26 'Abstract Assembly'
++Component: main
++_CompDescription: Officially supported
++_CompDescriptionLong: Free and open-source software officially considered 'Utile' (useful)
++Component: universe
++_CompDescription: Community-maintained
++_CompDescriptionLong: Free and open-source 'Utile' (useful) software maintained by the community
++Component: upstream
++_CompDescription: Ubuntu-sourced
++_CompDescriptionLong: Free and open-source software from Ubuntu modified for Utile OS's needs

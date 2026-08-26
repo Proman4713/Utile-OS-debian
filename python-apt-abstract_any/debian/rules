@@ -18,7 +18,7 @@ BUILDDIR3 := $(shell pybuild --print build_dir --interpreter python3)
 
 override_dh_auto_build:
 	dh_auto_build
-	PYTHONPATH=$(BUILDDIR3) sphinx-build doc/source build/sphinx/html
+	PYTHONPATH="$(BUILDDIR3)" sphinx-build doc/source build/sphinx/html
 
 # this is nasty. instead of installing the files to one dir, overriding
 # common ones, and then us picking out the files we want, we have to move some

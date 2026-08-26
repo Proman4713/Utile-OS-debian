@@ -1,3 +1,10 @@
+python-apt (3.1.0ubuntu1+utile1) abstract; urgency=medium
+
+  * Add patch 000_utile_ubuntu_coexist.patch to allow both Utile OS and Ubuntu's repositories as main repos
+  * Add patch 001_new_pot_date.patch to change base potfile date
+
+ -- Aaser Abd-el Sabour <proman4713@gmail.com>  Wed, 26 Aug 2026 22:26:55 +0300
+
 python-apt (3.1.0ubuntu1) resolute; urgency=medium
 
   * Refresh mirror lists (LP: #2148657)
