@@ -7,3 +7,5 @@
 *.ddeb
 *.tar.gz
 builds/
+.venv/
+.pc/
