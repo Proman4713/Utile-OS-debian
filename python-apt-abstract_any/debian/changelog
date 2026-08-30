@@ -1,3 +1,9 @@
+python-apt (3.1.0ubuntu1.1-1utile1) abstract; urgency=medium
+
+  * New upstream release
+
+ -- Aaser Abd-el Sabour <proman4713@gmail.com>  Sun, 30 Aug 2026 05:20:10 +0300
+
 python-apt (3.1.0ubuntu1-1utile1) abstract; urgency=medium
 
   * Add patch 000_utile_ubuntu_coexist.patch to allow both Utile OS and Ubuntu's repositories as main repos

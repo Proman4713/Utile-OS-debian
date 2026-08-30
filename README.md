@@ -7,7 +7,7 @@ Note: I am certain that there must be a better way to manage this repository, I 
 ## Upstream package clone instructions
 1. `pull-lp-source base-files {codename} {needed_version}` to get the source code of the upstream package, this requires the `ubuntu-dev-tools` package. The `needed_version` must usually be the absolute latest release in a specific codename/branch. For now, the latest codename we use is `resolute`.
 2. Rename the directory accordingly (for human understanding: `base-files-14ubuntu6/` was renamed to `base-files-abstract_all/`) and introduce a new entry to the Debian changelog file.
-	* When the package name comes from Ubuntu's upstream (Debian) and therefore has an Ubuntu revision (e.g., `-0ubuntu1`), that revision is directly replaced with a Utile revision (e.g., `-1utile1`) and Debian's package is used as `.orig.tar.xz`.
+	* When the package name comes from Ubuntu's upstream (Debian or original software) and therefore has an Ubuntu revision (e.g., `-1ubuntu1`), that revision is directly replaced with a Utile revision (e.g., `-1utile1`) and the `.orig.tar.xz` (which could either be a package from Debian or original software source code) is retrieved from the package's Launchpad page.
 	* When the package name comes from Ubuntu directly and therefore doesn't have an Ubuntu revision (e.g., `3.1.0ubuntu1`), Utile OS's revision is added and Ubuntu's package is used as `.orig.tar.xz`.
 	* This is of course very TODO, I think I need to think more about this.
 3. (optional) if you're doing this in an already-existing package folder that you want to merge with upstream, run `git init && git add . && git commit -m "Current Utile version"` to make it a Git repository.
