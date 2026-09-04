@@ -54,7 +54,7 @@ accel-profile='flat'
 # GNOME sometimes bugs certain extensions, like Hide Top Bar, that perfectly work with extension version validation disabled
 disable-extension-version-validation=true
 # Default pinned apps
-favorite-apps=['org.gnome.Nautilus.desktop', 'brave-browser.desktop', 'org.gnome.Calendar.desktop', 'org.gnome.Music.desktop', 'libreoffice-impress.desktop', 'libreoffice-calc.desktop', 'libreoffice-writer.desktop', 'snap-store_snap-store.desktop', 'org.gnome.Settings.desktop']
+favorite-apps=['org.gnome.Nautilus.desktop', 'brave-browser.desktop', 'org.gnome.Calendar.desktop', 'com.github.proman4713.utile-music.desktop', 'libreoffice-impress.desktop', 'libreoffice-calc.desktop', 'libreoffice-writer.desktop', 'snap-store_snap-store.desktop', 'org.gnome.Settings.desktop']
 # Enable Extensions (except Blur My Shell):
 enabled-extensions=['hidetopbar@mathieu.bidon.ca', 'ding@rastersoft.com', 'ubuntu-dock@ubuntu.com', 'tiling-assistant@ubuntu.com', 'snapd-search-provider@canonical.com', 'web-search-provider@ubuntu.com', 'gsconnect@andyholmes.github.io', 'add-to-desktop@tommimon.github.com', 'just-perfection-desktop@just-perfection', 'Vitals@CoreCoding.com', 'all-in-one-clipboard@NiffirgkcaJ.github.com']
 
