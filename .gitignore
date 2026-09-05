@@ -1,7 +1,7 @@
 *.deb
 *.dsc
-!tests/data/**/*.deb
-!tests/data/**/*.dsc
+!*/tests/data/**/*.deb
+!*/tests/data/**/*.dsc
 *.build
 *.buildinfo
 *.changes
