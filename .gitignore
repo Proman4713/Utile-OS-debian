@@ -1,9 +1,10 @@
 *.deb
+*.dsc
 !tests/data/**/*.deb
+!tests/data/**/*.dsc
 *.build
 *.buildinfo
 *.changes
-*.dsc
 *.tar.xz
 *.ddeb
 *.tar.gz
