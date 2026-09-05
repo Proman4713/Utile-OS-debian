@@ -1,4 +1,5 @@
 *.deb
+!tests/data/**/*.deb
 *.build
 *.buildinfo
 *.changes
