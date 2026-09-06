@@ -1,3 +1,8 @@
+Description: Updates POT file creation date to more recent one
+Author: Aaser Abd-el Sabour <proman4713@gmail.com>
+Last-Update: 2026-09-06 <YYYY-MM-DD, last update of the meta-information, optional>
+---
+This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
 Index: python-apt-abstract_any/po/python-apt.pot
 ===================================================================
 --- python-apt-abstract_any.orig/po/python-apt.pot
