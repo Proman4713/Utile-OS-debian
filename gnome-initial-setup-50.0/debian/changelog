@@ -1,3 +1,9 @@
+gnome-initial-setup (50.0-1utile1) abstract; urgency=medium
+
+  * d/p: Add initial Utile patches and fix upstream patches (this needs to be synced with upstream every once in a while since I can't maintain it alone)
+
+ -- Aaser Abd-el Sabour <proman4713@gmail.com>  Wed, 09 Sep 2026 02:32:31 +0300
+
 gnome-initial-setup (50.0-0ubuntu7.1) resolute; urgency=medium
 
   [ Alessandro Astone ]
