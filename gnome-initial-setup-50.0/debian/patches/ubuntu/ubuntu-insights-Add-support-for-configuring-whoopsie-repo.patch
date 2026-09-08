@@ -18,8 +18,8 @@ index c50b770..58a98f2 100644
        $GisPageHeader header {
 -        margin-top: "24";
          icon-name: "ubuntu-insights";
-         title: _("Help Improve Ubuntu");
-+        subtitle: _("Help us improve Ubuntu by sharing your system and error reports with us.\nReports are sent anonymously.");
+         title: _("Utile Depends On It: Help Improve Ubuntu");
++        subtitle: _("Help improve Ubuntu by sharing your system and error reports with them.\nReports are sent anonymously.");
          show-icon: bind template.small-screen inverted;
 +        spacing: 0;
 +        use-accessible-title: true;
@@ -360,9 +360,9 @@ index 4bdab24..917847c 100644
    GisUbuntuInsightsPage *page = GIS_UBUNTU_INSIGHTS_PAGE (gis_page);
 -  g_autofree gchar *description_text = NULL;
 -
--  gis_page_set_title (GIS_PAGE (page), _("Help Improve Ubuntu"));
+-  gis_page_set_title (GIS_PAGE (page), _("Utile Depends On It: Help Improve Ubuntu"));
 -
--  description_text = g_strdup_printf (_("Help us improve Ubuntu by sharing your system data with us. "
+-  description_text = g_strdup_printf (_("Help improve Ubuntu by sharing your system data with them. "
 -                                        "This includes things like your machine model, "
 -                                        "language, and timezone."));
  

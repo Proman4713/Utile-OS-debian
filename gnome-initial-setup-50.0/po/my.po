@@ -6,11 +6,13 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2026-05-22 14:35+0000\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+"issues\n"
+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
 "PO-Revision-Date: 2026-04-11 14:53+0000\n"
 "Last-Translator: Wint Theingi Aung <Unknown>\n"
 "Language-Team: Burmese <my@li.org>\n"
+"Language: my\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -81,8 +83,7 @@ msgstr "အကောင့် စာရင်းသွင်းခြင် မ�
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.c:420
 msgid "No supported way to authenticate with this domain"
-msgstr ""
-"ဤဒိုမိန်းဖြင့် စစ်မှန်ကြောင်းအထောက်အထားပြရန် ပံ့ပိုးပေးထားသည့်နည်းလမ်းမရှိပါ။"
+msgstr "ဤဒိုမိန်းဖြင့် စစ်မှန်ကြောင်းအထောက်အထားပြရန် ပံ့ပိုးပေးထားသည့်နည်းလမ်းမရှိပါ။"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.c:459
 msgid "Failed to join domain"
@@ -102,9 +103,8 @@ msgid ""
 "used on this device. You can also use this account to access company "
 "resources on the internet."
 msgstr ""
-"လုပ်ငန်းသုံးအကောင့်ဝင်ခြင်းသည် ဤစက်ပစ္စည်းပေါ်တွင် ရှိပြီးသား ဗဟိုမှ "
-"စီမံခန့်ခွဲသော အသုံးပြုသူအကောင့်ကို အသုံးပြုခွင့်ပေးသည်။ အင်တာနက်ပေါ်ရှိ "
-"ကုမ္ပဏီအရင်းအမြစ်များကို ဝင်ရောက်ကြည့်ရှုရန် ဤအကောင့်ကိုလည်း "
+"လုပ်ငန်းသုံးအကောင့်ဝင်ခြင်းသည် ဤစက်ပစ္စည်းပေါ်တွင် ရှိပြီးသား ဗဟိုမှ စီမံခန့်ခွဲသော အသုံးပြုသူအကောင့်ကို "
+"အသုံးပြုခွင့်ပေးသည်။ အင်တာနက်ပေါ်ရှိ ကုမ္ပဏီအရင်းအမြစ်များကို ဝင်ရောက်ကြည့်ရှုရန် ဤအကောင့်ကိုလည်း "
 "သင်အသုံးပြုနိုင်ပါသည်။"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:27
@@ -136,9 +136,8 @@ msgid ""
 "domain. Please have your network administrator type the domain password "
 "here, and choose a unique computer name for your computer."
 msgstr ""
-"လုပ်ငန်းသုံးအကောင့်ဝင်ပြီး အသုံးပြုရန်အတွက် ဤကွန်ပျူတာအား ဒိုမိန်းတစ်ခုတွင် "
-"စာရင်းသွင်းရန် လိုအပ်ပါသည်။ ကျေးဇူးပြု၍ သင့်ကွန်ရက်စီမံခန့်ခွဲသူမှ ဤနေရာတွင် "
-"ဒိုမိန်းစကားဝှက်ရိုက်ထည့်ပြီး သင့်ကွန်ပျူတာအတွက် သီးသန့်ကွန်ပျူတာအမည်ကို "
+"လုပ်ငန်းသုံးအကောင့်ဝင်ပြီး အသုံးပြုရန်အတွက် ဤကွန်ပျူတာအား ဒိုမိန်းတစ်ခုတွင် စာရင်းသွင်းရန် လိုအပ်ပါသည်။ "
+"ကျေးဇူးပြု၍ သင့်ကွန်ရက်စီမံခန့်ခွဲသူမှ ဤနေရာတွင် ဒိုမိန်းစကားဝှက်ရိုက်ထည့်ပြီး သင့်ကွန်ပျူတာအတွက် သီးသန့်ကွန်ပျူတာအမည်ကို "
 "ရွေးချယ်ပါ။"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:179
@@ -158,35 +157,31 @@ msgstr "အုပ်ချုပ်ရေးမှူးစကားဝှက်
 msgid "C_ontinue"
 msgstr "_C ဆက်လုပ်"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:225
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:210
 #, c-format
 msgid "The hostname is too long."
 msgstr "hostname သည် ရှည်လွန်းသည်။"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:229
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:214
 msgid "The hostname must start with a lower case letter from a-z or a digit."
 msgstr "hostname သည် a-z သို့မဟုတ် ဂဏန်းတစ်ခုမှ စာလုံးအသေးဖြင့် စတင်ရပါမည်။"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:233
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:218
 msgid ""
 "The hostname should only consist of lower case letters from a-z, digits and "
 "a hyphen: -"
-msgstr ""
-"hostname တွင် a-z မှ စာလုံးအသေးများ၊ ဂဏန်းများနှင့် တုံးတိုဖြင့်သာ "
-"ပါဝင်သင့်သည်-"
+msgstr "hostname တွင် a-z မှ စာလုံးအသေးများ၊ ဂဏန်းများနှင့် တုံးတိုဖြင့်သာ ပါဝင်သင့်သည်-"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:574
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:545
 msgid "We need a few details to complete setup."
-msgstr ""
-"စနစ်ထည့်သွင်းမှု အပြီးသတ်ရန် ကျွန်ုပ်တို့သည် အသေးစိတ်အချက်အနည်းငယ် "
-"လိုအပ်ပါသည်။"
+msgstr "စနစ်ထည့်သွင်းမှု အပြီးသတ်ရန် ကျွန်ုပ်တို့သည် အသေးစိတ်အချက်အနည်းငယ် လိုအပ်ပါသည်။"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:737
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:704
 msgid "Administrator"
 msgstr "အုပ်ချုပ်ရေးမှူး"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:743
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:786
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:710
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:753
 #, c-format
 msgid "Failed to create user '%s': "
 msgstr "အသုံးပြုသူ '%s' ကို ဖန်တီး၍မရပါ။ "
@@ -217,11 +212,8 @@ msgid "Set up _parental controls for this user"
 msgstr "ဤအသုံးပြုသူအတွက်  _p မိဘမှထိန်းချုပ်မှုများ စနစ်ထည့်သွင်းပါ။"
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:223
-msgid ""
-"For use by a parent or supervisor, who must set up their own password."
-msgstr ""
-"မိဘ သို့မဟုတ် ကြီးကြပ်ရေးမှူးက အသုံးပြုရန်အတွက် "
-"၎င်းတို့၏ကိုယ်ပိုင်စကားဝှက်ကို သတ်မှတ်ပေးရမည်ဖြစ်သည်။"
+msgid "For use by a parent or supervisor, who must set up their own password."
+msgstr "မိဘ သို့မဟုတ် ကြီးကြပ်ရေးမှူးက အသုံးပြုရန်အတွက် ၎င်းတို့၏ကိုယ်ပိုင်စကားဝှက်ကို သတ်မှတ်ပေးရမည်ဖြစ်သည်။"
 
 #: gnome-initial-setup/pages/account/gis-account-page.ui:32
 msgid "_Enterprise Login"
@@ -270,22 +262,18 @@ msgstr "အသုံးပြုသူအမည်သည် a-z စာလုံ�
 
 #: gnome-initial-setup/pages/account/um-utils.c:162
 msgid "That username isn’t available. Please try another."
-msgstr ""
-"ထို အသုံးပြုမည့် အမည်မှာ မရရှိနိုင်ပါ။ အခြားတခုဖြင့် ထပ်မံကြိုးစားကြည့်ပါ။"
+msgstr "ထို အသုံးပြုမည့် အမည်မှာ မရရှိနိုင်ပါ။ အခြားတခုဖြင့် ထပ်မံကြိုးစားကြည့်ပါ။"
 
 #: gnome-initial-setup/pages/account/um-utils.c:165
 msgid ""
 "The username should only consist of lower case letters from a-z, digits, and "
 "the following characters: - _"
-msgstr ""
-"အသုံးပြုသူအမည်တွင် a-z၊ ဂဏန်းများနှင့် အောက်ပါစာလုံးများမှ စာလုံးအသေးများသာ "
-"ပါဝင်သင့်သည်- _"
+msgstr "အသုံးပြုသူအမည်တွင် a-z၊ ဂဏန်းများနှင့် အောက်ပါစာလုံးများမှ စာလုံးအသေးများသာ ပါဝင်သင့်သည်- _"
 
 #: gnome-initial-setup/pages/account/um-utils.c:169
 msgid "This will be used to name your home folder and can’t be changed."
 msgstr ""
-"ဤအမည်ကို သင်၏ စတင်သည့် folder၏ အမည်အဖြစ် အသုံးပြုသွားမည်ဖြစ်ပြီး ပြန်လည် "
-"ပြင်ဆင်၍ ရမည်မဟုတ်ပါ။"
+"ဤအမည်ကို သင်၏ စတင်သည့် folder၏ အမည်အဖြစ် အသုံးပြုသွားမည်ဖြစ်ပြီး ပြန်လည် ပြင်ဆင်၍ ရမည်မဟုတ်ပါ။"
 
 #: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:257
 msgid "Preview"
@@ -298,7 +286,7 @@ msgstr "ပိုမို..."
 
 #. Translators: a search for input methods or keyboard layouts
 #. * did not yield any results
-#. 
+#.
 #: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:347
 msgid "No inputs found"
 msgstr "ထည့်သွင်းမှု ပစ္စည်းများ (ဥပမာ. ကီးဘုတ်) မတွေ့ပါ။"
@@ -327,14 +315,12 @@ msgstr "ကြိုဆိုပါသည်"
 
 #: gnome-initial-setup/pages/language/gis-language-page.ui:41
 msgid "Select a language from the list, or search for a specific language."
-msgstr ""
-"စာရင်းထဲမှ ဘာသာစကားတစ်ခုကို ရွေးပါ သို့မဟုတ် သီးခြားဘာသာစကားတစ်ခုကို "
-"ရှာဖွေပါ။"
+msgstr "စာရင်းထဲမှ ဘာသာစကားတစ်ခုကို ရွေးပါ သို့မဟုတ် သီးခြားဘာသာစကားတစ်ခုကို ရှာဖွေပါ။"
 
 #. Translators: This is meant to be a warm, engaging welcome message,
 #. * like greeting somebody at the door. If the exclamation mark is not
 #. * suitable for this in your language you may replace it.
-#. 
+#.
 #: gnome-initial-setup/pages/language/gis-welcome-widget.c:132
 msgid "Welcome!"
 msgstr "ကြိုဆိုပါတယ်"
@@ -373,9 +359,8 @@ msgid ""
 "Connecting to the internet helps you get new apps, information, and other "
 "upgrades. It also helps set the time and your location automatically."
 msgstr ""
-"အင်တာနက်ချိတ်ဆက်ခြင်းသည် သင့်အား အက်ပ်အသစ်များ၊ အချက်အလက်များနှင့် "
-"အခြားအဆင့်မြှင့်တင်မှုများ ရရှိရန်အတွက် ကူညီပေးပါသည်။ ၎င်းသည် အချိန်နှင့် "
-"သင့်တည်နေရာတို့ကို အလိုအလျောက် သတ်မှတ်ပေးပါသည်။"
+"အင်တာနက်ချိတ်ဆက်ခြင်းသည် သင့်အား အက်ပ်အသစ်များ၊ အချက်အလက်များနှင့် အခြားအဆင့်မြှင့်တင်မှုများ ရရှိရန်အတွက် "
+"ကူညီပေးပါသည်။ ၎င်းသည် အချိန်နှင့် သင့်တည်နေရာတို့ကို အလိုအလျောက် သတ်မှတ်ပေးပါသည်။"
 
 #: gnome-initial-setup/pages/network/gis-network-page.ui:57
 msgid "No wireless available"
@@ -417,8 +402,7 @@ msgstr "အုပ်ထိန်းသူ စကားဝှက် ထည့်�
 #: gnome-initial-setup/pages/password/gis-password-page.c:101
 #, c-format
 msgid "This password will control access to the parental controls for %s."
-msgstr ""
-"ဤ စကားဝှက်ဖြင့်  %s ၏ အုပ်ထိန်းသူ ထိန်းချုပ်မှုများအား ပြုပြင်နိုင်သည်။"
+msgstr "ဤ စကားဝှက်ဖြင့်  %s ၏ အုပ်ထိန်းသူ ထိန်းချုပ်မှုများအား ပြုပြင်နိုင်သည်။"
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:223
 #, c-format
@@ -457,8 +441,7 @@ msgid ""
 "This password is very similar to your last one. Try changing some letters "
 "and numbers."
 msgstr ""
-"ဤ စကားဝှက်သည် သင်၏ ယခင် စကားဝှက်နှင့် ဆင်တူလွန်းသည်။ အက္ခရာနှင့် ဂဏန်း "
-"အချို့ကို ပြောင်း၍ ကြိုးစားကြည့်ပါ။"
+"ဤ စကားဝှက်သည် သင်၏ ယခင် စကားဝှက်နှင့် ဆင်တူလွန်းသည်။ အက္ခရာနှင့် ဂဏန်း အချို့ကို ပြောင်း၍ ကြိုးစားကြည့်ပါ။"
 
 #: gnome-initial-setup/pages/password/pw-utils.c:85
 #: gnome-initial-setup/pages/password/pw-utils.c:93
@@ -467,24 +450,20 @@ msgid ""
 "This password is very similar to your last one. Try changing the password a "
 "bit more."
 msgstr ""
-"ဤ စကားဝှက်သည် သင်၏ ယခင် စကားဝှက်နှင့် ဆင်တူလွန်းသည်။ စကားဝှက်ကို အနည်းငယ် "
-"ထပ်မံပြောင်းလဲ၍ ကြိုးစားကြည့်ပါ။"
+"ဤ စကားဝှက်သည် သင်၏ ယခင် စကားဝှက်နှင့် ဆင်တူလွန်းသည်။ စကားဝှက်ကို အနည်းငယ် ထပ်မံပြောင်းလဲ၍ ကြိုးစားကြည့်ပါ။"
 
 #: gnome-initial-setup/pages/password/pw-utils.c:87
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. A password without your user name would be stronger."
-msgstr ""
-"ဤစကားဝှက်သည် လုံခြုံမှု အားနည်းလွန်းသည်။ အသုံးပြုသည့်အမည် စကားဝှက်တွင် "
-"မပါဝင်ပါက ပို၍ လုံခြုံလိမ့်မည်။"
+msgstr "ဤစကားဝှက်သည် လုံခြုံမှု အားနည်းလွန်းသည်။ အသုံးပြုသည့်အမည် စကားဝှက်တွင် မပါဝင်ပါက ပို၍ လုံခြုံလိမ့်မည်။"
 
 #: gnome-initial-setup/pages/password/pw-utils.c:89
 msgctxt "Password hint"
-msgid ""
-"This is a weak password. Try to avoid using your name in the password."
+msgid "This is a weak password. Try to avoid using your name in the password."
 msgstr ""
-"ဤစကားဝှက်သည် လုံခြုံမှု အားနည်းလွန်းသည်။ စကားဝှက်တွင် အသုံးပြုသည့်အမည် "
-"ထည့်သွင်းအသုံးပြုခြင်းအား ရှောင်ကြဉ်ရန် ကြိုးစားပါ"
+"ဤစကားဝှက်သည် လုံခြုံမှု အားနည်းလွန်းသည်။ စကားဝှက်တွင် အသုံးပြုသည့်အမည် ထည့်သွင်းအသုံးပြုခြင်းအား ရှောင်ကြဉ်ရန် "
+"ကြိုးစားပါ"
 
 #: gnome-initial-setup/pages/password/pw-utils.c:91
 msgctxt "Password hint"
@@ -492,52 +471,43 @@ msgid ""
 "This is a weak password. Try to avoid some of the words included in the "
 "password."
 msgstr ""
-"ဤစကားဝှက်သည် လုံခြုံမှု အားနည်းလွန်းသည်။ စကားဝှက်တွင် ပါဝင်သော "
-"စကားလုံးများ(words) အား ရှောင်ကြဉ်ရန် ကြိုးစားပါ။"
+"ဤစကားဝှက်သည် လုံခြုံမှု အားနည်းလွန်းသည်။ စကားဝှက်တွင် ပါဝင်သော စကားလုံးများ(words) အား ရှောင်ကြဉ်ရန် "
+"ကြိုးစားပါ။"
 
 #: gnome-initial-setup/pages/password/pw-utils.c:95
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid common words."
 msgstr ""
-"ဤစကားဝှက်သည် လုံခြုံမှု အားနည်းလွန်းသည်။အသုံးများသည် စကားလုံးများ(words)အား "
-"ရှောင်ကြဉ်ရန် ကြိုးစားပါ။"
+"ဤစကားဝှက်သည် လုံခြုံမှု အားနည်းလွန်းသည်။အသုံးများသည် စကားလုံးများ(words)အား ရှောင်ကြဉ်ရန် ကြိုးစားပါ။"
 
 #: gnome-initial-setup/pages/password/pw-utils.c:97
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid reordering existing words."
 msgstr ""
-"ဤစကားဝှက်သည် လုံခြုံမှု အားနည်းလွန်းသည်။ စကားလုံးများ(words) အား "
-"ပြန်လည်စီစဉ်ကာ အသုံးပြုခြင်းကို ရှောင်ကြဉ်ရန် ကြိုးစားပါ။"
+"ဤစကားဝှက်သည် လုံခြုံမှု အားနည်းလွန်းသည်။ စကားလုံးများ(words) အား ပြန်လည်စီစဉ်ကာ အသုံးပြုခြင်းကို "
+"ရှောင်ကြဉ်ရန် ကြိုးစားပါ။"
 
 #: gnome-initial-setup/pages/password/pw-utils.c:99
 msgctxt "Password hint"
 msgid "This is a weak password. Try to use more numbers."
-msgstr ""
-"ဤစကားဝှက်သည် လုံခြုံမှု အားနည်းလွန်းသည်။ဂဏန်းများ ပိုမိုအသုံးပြုရန် "
-"ကြိုးစားပါ။"
+msgstr "ဤစကားဝှက်သည် လုံခြုံမှု အားနည်းလွန်းသည်။ဂဏန်းများ ပိုမိုအသုံးပြုရန် ကြိုးစားပါ။"
 
 #: gnome-initial-setup/pages/password/pw-utils.c:101
 msgctxt "Password hint"
 msgid "This is a weak password. Try to use more uppercase letters."
-msgstr ""
-"ဤစကားဝှက်သည် လုံခြုံမှု အားနည်းလွန်းသည်။ အက္ခရာ အကြီးများ ပိုမို အသုံးပြုရန် "
-"ကြိုးပါ။"
+msgstr "ဤစကားဝှက်သည် လုံခြုံမှု အားနည်းလွန်းသည်။ အက္ခရာ အကြီးများ ပိုမို အသုံးပြုရန် ကြိုးပါ။"
 
 #: gnome-initial-setup/pages/password/pw-utils.c:103
 msgctxt "Password hint"
 msgid "This is a weak password. Try to use more lowercase letters."
-msgstr ""
-"ဤစကားဝှက်သည် လုံခြုံမှု အားနည်းလွန်းသည်။ အက္ခရာ အသေးများ ပိုမို အသုံးပြုရန် "
-"ကြိုးစားပါ။"
+msgstr "ဤစကားဝှက်သည် လုံခြုံမှု အားနည်းလွန်းသည်။ အက္ခရာ အသေးများ ပိုမို အသုံးပြုရန် ကြိုးစားပါ။"
 
 #: gnome-initial-setup/pages/password/pw-utils.c:105
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to use more special characters, like "
 "punctuation."
-msgstr ""
-"ဤစကားဝှက်သည် လုံခြုံမှု အားနည်းလွန်းသည်။ သင်္ကေတများ ပိုမို အသုံးပြုရန် "
-"ကြိုးစားပါ။"
+msgstr "ဤစကားဝှက်သည် လုံခြုံမှု အားနည်းလွန်းသည်။ သင်္ကေတများ ပိုမို အသုံးပြုရန် ကြိုးစားပါ။"
 
 #: gnome-initial-setup/pages/password/pw-utils.c:107
 msgctxt "Password hint"
@@ -545,15 +515,15 @@ msgid ""
 "This is a weak password. Try to use a mixture of letters, numbers and "
 "punctuation."
 msgstr ""
-"ဤစကားဝှက်သည် လုံခြုံမှု အားနည်းလွန်းသည်။ အက္ခရာ၊ ဂဏန်း နှင့် သင်္ကေတများ "
-"ရောနှော၍ အသုံးပြုနိုင်ရန် ကြိုးစားပါ။"
+"ဤစကားဝှက်သည် လုံခြုံမှု အားနည်းလွန်းသည်။ အက္ခရာ၊ ဂဏန်း နှင့် သင်္ကေတများ ရောနှော၍ အသုံးပြုနိုင်ရန် "
+"ကြိုးစားပါ။"
 
 #: gnome-initial-setup/pages/password/pw-utils.c:109
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid repeating the same character."
 msgstr ""
-"ဤစကားဝှက်သည် လုံခြုံမှု အားနည်းလွန်းသည်။ အက္ခရာ တစ်လုံးအား အကြိမ်ကြိမ် "
-"ပြန်လည် အသုံးပြုခြင်းမှ ရှောင်ကြဉ်နိုင်ရန် ကြိုးစားပါ။"
+"ဤစကားဝှက်သည် လုံခြုံမှု အားနည်းလွန်းသည်။ အက္ခရာ တစ်လုံးအား အကြိမ်ကြိမ် ပြန်လည် အသုံးပြုခြင်းမှ "
+"ရှောင်ကြဉ်နိုင်ရန် ကြိုးစားပါ။"
 
 #: gnome-initial-setup/pages/password/pw-utils.c:111
 msgctxt "Password hint"
@@ -561,39 +531,34 @@ msgid ""
 "This is a weak password. Try to avoid repeating the same type of character: "
 "you need to mix up letters, numbers and punctuation."
 msgstr ""
-"ဤစကားဝှက်သည် လုံခြုံမှု အားနည်းလွန်းသည်။ အမျိုးအစား တမျိုးတည်းအား "
-"အကြိမ်ကြိမ် ပြန်လည် အသုံးပြုခြင်းမှ ရှောင်ကြဉ်နိုင်ရန် ကြိုးစားပါ။ "
-"အက္ခရာများ၊ဂဏန်း နှင့် သင်္ကေတများကို ရောနှော အသုံးပြုုသင့်သည်။"
+"ဤစကားဝှက်သည် လုံခြုံမှု အားနည်းလွန်းသည်။ အမျိုးအစား တမျိုးတည်းအား အကြိမ်ကြိမ် ပြန်လည် အသုံးပြုခြင်းမှ "
+"ရှောင်ကြဉ်နိုင်ရန် ကြိုးစားပါ။ အက္ခရာများ၊ဂဏန်း နှင့် သင်္ကေတများကို ရောနှော အသုံးပြုုသင့်သည်။"
 
 #: gnome-initial-setup/pages/password/pw-utils.c:113
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid sequences like 1234 or abcd."
 msgstr ""
-"ဤစကားဝှက်သည် လုံခြုံမှု အားနည်းလွန်းသည်။ abcd (သို့) 1234 ကဲ့သို့သော "
-"အစီအစဉ်များကို ရှောင်ကြဉ်နိုင်ရန် ကြိုးစားပါ။"
+"ဤစကားဝှက်သည် လုံခြုံမှု အားနည်းလွန်းသည်။ abcd (သို့) 1234 ကဲ့သို့သော အစီအစဉ်များကို ရှောင်ကြဉ်နိုင်ရန် "
+"ကြိုးစားပါ။"
 
 #: gnome-initial-setup/pages/password/pw-utils.c:115
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to add more letters, numbers and punctuation."
 msgstr ""
-"ဤစကားဝှက်သည် လုံခြုံမှု အားနည်းလွန်းသည်။ အက္ခရာများ၊ ဂဏန်းများ နှင့် "
-"သင်္ကေတများ ပိုမိုထည့်သွင်းနိုင်ရန် ကြိုးစားပါ။"
+"ဤစကားဝှက်သည် လုံခြုံမှု အားနည်းလွန်းသည်။ အက္ခရာများ၊ ဂဏန်းများ နှင့် သင်္ကေတများ ပိုမိုထည့်သွင်းနိုင်ရန် "
+"ကြိုးစားပါ။"
 
 #: gnome-initial-setup/pages/password/pw-utils.c:117
 msgctxt "Password hint"
 msgid "Mix uppercase and lowercase and try to use a number or two."
-msgstr ""
-"အက္ခရာ အကြီး အသေး ရောနှော သုံးစွဲ၍ ဂဏန်း တလုံး သို့ နှစ်လုံး ထည့်သွင်း "
-"အသုံးပြုနိုင်ရန် ကြိုးစားပါ။"
+msgstr "အက္ခရာ အကြီး အသေး ရောနှော သုံးစွဲ၍ ဂဏန်း တလုံး သို့ နှစ်လုံး ထည့်သွင်း အသုံးပြုနိုင်ရန် ကြိုးစားပါ။"
 
 #: gnome-initial-setup/pages/password/pw-utils.c:119
 msgctxt "Password hint"
 msgid ""
 "Adding more letters, numbers and punctuation will make the password stronger."
-msgstr ""
-"အက္ခရာ ဂဏန်း နှင့် သင်္ကေတများ ထပ်မံ ဖြည့်သွင်းခြင်းသည် စကားဝှက်အား ပိုမို "
-"လုံခြုံစေလိမ့်မည်။"
+msgstr "အက္ခရာ ဂဏန်း နှင့် သင်္ကေတများ ထပ်မံ ဖြည့်သွင်းခြင်းသည် စကားဝှက်အား ပိုမို လုံခြုံစေလိမ့်မည်။"
 
 #. TRANSLATORS: this string describes a password as being poor
 #: gnome-initial-setup/pages/password/pw-utils.c:146
@@ -618,28 +583,28 @@ msgstr "အကောင်းဆုံး"
 
 #. Translators: the first parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu".
-#. 
+#.
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:68
 #, c-format
 msgid ""
 "Sends technical reports that do not contain personal information. Data is "
 "collected by %1$s (<u><a href='%2$s'>privacy policy</a></u>)."
 msgstr ""
-"ကိုယ်ရေးကိုယ်တာ အချက်အလက်များ မပါဝင်သော နည်းပညာဆိုင်ရာ အစီရင်ခံစာများ "
-"ပေးပို့ပါသည်။ အချက်အလက်များကို %1$s မှ စုစည်းထားခြင်းဖြစ်သည် (<u><a "
-"href='%2$s'>ကိုယ်ရေးအချက်အလက် လုံခြုံမှုဆိုင်ရာ မူဝါဒ</a></u>)။"
+"ကိုယ်ရေးကိုယ်တာ အချက်အလက်များ မပါဝင်သော နည်းပညာဆိုင်ရာ အစီရင်ခံစာများ ပေးပို့ပါသည်။ အချက်အလက်များကို "
+"%1$s မှ စုစည်းထားခြင်းဖြစ်သည် (<u><a href='%2$s'>ကိုယ်ရေးအချက်အလက် လုံခြုံမှုဆိုင်ရာ မူဝါဒ</a></"
+"u>)။"
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu".
-#. 
+#.
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:79
 #, c-format
 msgid ""
 "Sends technical reports that do not contain personal information. Data is "
 "collected by %s."
 msgstr ""
-"ကိုယ်ရေးကိုယ်တာ အချက်အလက် မပါဝင်သည့် နည်းပညာဆိုင်ရာ အစီရင်ခံစာများကို "
-"ပေးပို့သည်။ ဒေတာကို %s မှ စုဆောင်းသည်။"
+"ကိုယ်ရေးကိုယ်တာ အချက်အလက် မပါဝင်သည့် နည်းပညာဆိုင်ရာ အစီရင်ခံစာများကို ပေးပို့သည်။ ဒေတာကို %s မှ "
+"စုဆောင်းသည်။"
 
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:123
 #, c-format
@@ -647,8 +612,8 @@ msgid ""
 "Allows apps to determine your geographical location (<u><a "
 "href='%1$s'>privacy policy</a></u>)."
 msgstr ""
-"အက်ပ်များကို တည်နေရာသိရှိခွင့်ပြုသည် (<u><a href='%1$s'>ကိုယ်ရေးအချက်အလက် "
-"လုံခြုံမှုဆိုင်ရာ မူဝါဒ</a></u>)။"
+"အက်ပ်များကို တည်နေရာသိရှိခွင့်ပြုသည် (<u><a href='%1$s'>ကိုယ်ရေးအချက်အလက် လုံခြုံမှုဆိုင်ရာ မူဝါဒ</a></"
+"u>)။"
 
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:174
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:14
@@ -660,8 +625,7 @@ msgstr "တည်နေရာ ညွှန်ပြမှု စနစ် ဝန
 msgid ""
 "Turn on location services to let applications know your geographical "
 "location."
-msgstr ""
-"အက်ပလီကေးရှင်းများကို တည်နေရာသိရှိနိုင်စေရန် တည်နေရာပြဝန်ဆောင်မှုကို ဖွင့်ပါ။"
+msgstr "အက်ပလီကေးရှင်းများကို တည်နေရာသိရှိနိုင်စေရန် တည်နေရာပြဝန်ဆောင်မှုကို ဖွင့်ပါ။"
 
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:56
 msgid "Automatic Problem Reporting"
@@ -685,10 +649,9 @@ msgid ""
 "<a href='%s'>external sources</a>, including popular apps and drivers that "
 "are important for some devices. Some proprietary software is included."
 msgstr ""
-"Third-party repositories သည် အချို့သောစက်ပစ္စည်းများအတွက် အရေးကြီးသော "
-"နာမည်ကြီးအက်ပ်များနှင့် ဒရိုက်ဗာများအပါအဝင် ရွေးချယ်ထားသော <a "
-"href='%s'>ပြင်ပအရင်းအမြစ်များ</a>မှ ထပ်လောင်းဆော့ဖ်ဝဲကို "
-"အသုံးပြုခွင့်ပေးပါသည်။ ကိုယ်ပိုင်ဆော့ဖ်ဝဲလ်အချို့ ပါဝင်ပါသည်။"
+"Third-party repositories သည် အချို့သောစက်ပစ္စည်းများအတွက် အရေးကြီးသော နာမည်ကြီးအက်ပ်များနှင့် "
+"ဒရိုက်ဗာများအပါအဝင် ရွေးချယ်ထားသော <a href='%s'>ပြင်ပအရင်းအမြစ်များ</a>မှ "
+"ထပ်လောင်းဆော့ဖ်ဝဲကို အသုံးပြုခွင့်ပေးပါသည်။ ကိုယ်ပိုင်ဆော့ဖ်ဝဲလ်အချို့ ပါဝင်ပါသည်။"
 
 #: gnome-initial-setup/pages/software/gis-software-page.c:127
 msgid ""
@@ -696,10 +659,9 @@ msgid ""
 "external sources, including popular apps and drivers that are important for "
 "some devices. Some proprietary software is included."
 msgstr ""
-"Third-party repositories သည် အချို့သောစက်များအတွက် အရေးကြီးသော "
-"နာမည်ကြီးအက်ပ်များနှင့် ဒရိုက်ဗာများအပါအဝင် ရွေးချယ်ထားသော "
-"ပြင်ပအရင်းအမြစ်များမှ ထပ်လောင်းဆော့ဖ်ဝဲကို ဝင်ရောက်အသုံးပြုခွင့်ပေးပါသည်။ "
-"ကိုယ်ပိုင်ဆော့ဖ်ဝဲအချို့ ပါဝင်ပါသည်။"
+"Third-party repositories သည် အချို့သောစက်များအတွက် အရေးကြီးသော နာမည်ကြီးအက်ပ်များနှင့် "
+"ဒရိုက်ဗာများအပါအဝင် ရွေးချယ်ထားသော ပြင်ပအရင်းအမြစ်များမှ ထပ်လောင်းဆော့ဖ်ဝဲကို "
+"ဝင်ရောက်အသုံးပြုခွင့်ပေးပါသည်။ ကိုယ်ပိုင်ဆော့ဖ်ဝဲအချို့ ပါဝင်ပါသည်။"
 
 #: gnome-initial-setup/pages/software/gis-software-page.c:139
 msgid "_Disable Third-Party Repositories"
@@ -763,7 +725,7 @@ msgstr "မြို့များရှာပါ။"
 #. Translators: this is the name of a location followed by a region, for example:
 #. * 'London, United Kingdom'
 #. * You shouldn't need to translate this string unless the language has a different comma.
-#. 
+#.
 #: gnome-initial-setup/pages/timezone/gis-location-entry.c:557
 #: gnome-initial-setup/pages/timezone/gis-location-entry.c:582
 #, c-format
@@ -779,7 +741,7 @@ msgstr "%s၊ %s"
 
 #. Translators: UTC here means the Coordinated Universal Time.
 #. * %:::z will be replaced by the offset from UTC e.g. UTC+02
-#. 
+#.
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.c:320
 msgid "UTC%:::z"
 msgstr "UTC+6:30"
@@ -816,8 +778,8 @@ msgid ""
 "The time zone will be set automatically if your location can be found. You "
 "can also search for a city to set it yourself."
 msgstr ""
-"သင့်တည်နေရာတွေ့ရှိပါက အချိန်ကွာခြားမှုဇုန်ကို အလိုအလျောက် "
-"သတ်မှတ်ပေးမည်ဖြစ်သည်။ သင်ကိုယ်တိုင်သတ်မှတ်ပြီး မြို့ကိုလည်း ရှာဖွေနိုင်သည်။"
+"သင့်တည်နေရာတွေ့ရှိပါက အချိန်ကွာခြားမှုဇုန်ကို အလိုအလျောက် သတ်မှတ်ပေးမည်ဖြစ်သည်။ သင်ကိုယ်တိုင်သတ်မှတ်ပြီး မြို့ကိုလည်း "
+"ရှာဖွေနိုင်သည်။"
 
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.ui:49
 msgid "Please search for a nearby city"
@@ -830,7 +792,7 @@ msgstr "ကျေးဇူးပြု၍ အနီးနားရှိမြ�
 #. * space (U200a) to improve the spacing in the title, which you can
 #. * keep or remove. The %s is getting replaced with the name and version
 #. * of the OS, e.g. "GNOME 3.38"
-#. 
+#.
 #: gnome-initial-setup/pages/welcome/gis-welcome-page.c:79
 #, c-format
 msgid "Welcome to %s !"
@@ -883,8 +845,7 @@ msgstr "အခြေခံစနစ်သတ်မှတ်သည့် အက�
 #: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:75
 #, c-format
 msgid "Failed to withdraw consent for the Initial Setup application: %s"
-msgstr ""
-"အခြေခံစနစ်သတ်မှတ်သည့် အက်ပ်အတွက် ပေးထားသော သဘောတူညီချက်ကို ပယ်ဖျက်၍မရပါ - %s"
+msgstr "အခြေခံစနစ်သတ်မှတ်သည့် အက်ပ်အတွက် ပေးထားသော သဘောတူညီချက်ကို ပယ်ဖျက်၍မရပါ - %s"
 
 #. Platform source used by timed systemd collection
 #. TRANSLATORS: The place-holder is an error message
@@ -897,8 +858,7 @@ msgstr "စနစ်အချက်အလက် စုဆောင်းမှ�
 #: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:82
 #, c-format
 msgid "Failed to withdraw consent for the system data collector: %s"
-msgstr ""
-"စနစ်အချက်အလက် စုဆောင်းမှုအတွက် ပေးထားသော သဘောတူညီချက်ကို ပယ်ဖျက်၍မရပါ - %s"
+msgstr "စနစ်အချက်အလက် စုဆောင်းမှုအတွက် ပေးထားသော သဘောတူညီချက်ကို ပယ်ဖျက်၍မရပါ - %s"
 
 #. Platform source used by release upgrader collection
 #. TRANSLATORS: The place-holder is an error message
@@ -911,9 +871,7 @@ msgstr "စနစ်ဗားရှင်း အဆင့်မြှင့်�
 #: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:89
 #, c-format
 msgid "Failed to withdraw consent for the release upgrader application: %s"
-msgstr ""
-"စနစ်ဗားရှင်း အဆင့်မြှင့်တင်သည့်အက်ပ်အတွက် ပေးထားသော သဘောတူညီချက်ကို "
-"ပယ်ဖျက်၍မရပါ - %s"
+msgstr "စနစ်ဗားရှင်း အဆင့်မြှင့်တင်သည့်အက်ပ်အတွက် ပေးထားသော သဘောတူညီချက်ကို ပယ်ဖျက်၍မရပါ - %s"
 
 #: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:381
 #, c-format
@@ -945,12 +903,13 @@ msgid "Show First Report"
 msgstr "ပထမအစီရင်ခံစာကိုပြပါ"
 
 #: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:9
-msgid "Help Improve Ubuntu"
+#, fuzzy
+msgid "Utile Depends On It: Help Improve Ubuntu"
 msgstr "Ubuntu ကိုတိုးတက်အောင်ကူညီပါ"
 
 #: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:10
 msgid ""
-"Help us improve Ubuntu by sharing your system and error reports with us.\n"
+"Help improve Ubuntu by sharing your system and error reports with them.\n"
 "Reports are sent anonymously."
 msgstr ""
 
@@ -980,8 +939,7 @@ msgstr "Ubuntu အဖွဲ့နှင့် _e အမှားအယွင်�
 
 #: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:96
 msgid "This includes crash reports and related system logs"
-msgstr ""
-"၎င်းတွင် ပျက်စီးမှုအစီရင်ခံစာများနှင့် ဆက်စပ်စနစ်မှတ်တမ်းများ ပါဝင်သည်"
+msgstr "၎င်းတွင် ပျက်စီးမှုအစီရင်ခံစာများနှင့် ဆက်စပ်စနစ်မှတ်တမ်းများ ပါဝင်သည်"
 
 #: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:110
 msgid "Learn more about error reporting"
@@ -1011,9 +969,7 @@ msgstr "တိုကင်"
 
 #: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:54
 msgid "Upgrade this device to Ubuntu Pro. Free for personal use."
-msgstr ""
-"ဤစက်ပစ္စည်းကို Ubuntu Pro သို့ အဆင့်မြှင့်ပါ။ ကိုယ်ပိုင်အသုံးပြုမှုအတွက် "
-"အခမဲ့။"
+msgstr "ဤစက်ပစ္စည်းကို Ubuntu Pro သို့ အဆင့်မြှင့်ပါ။ ကိုယ်ပိုင်အသုံးပြုမှုအတွက် အခမဲ့။"
 
 #: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:105
 msgid ""
@@ -1055,10 +1011,9 @@ msgid ""
 "web interface. You can also change enabled services in the Settings menu or "
 "with the `<span font_family='monospace'>pro</span>` command-line."
 msgstr ""
-"ubuntu.com/pro ဝဘ်အင်တာဖေ့စ်တွင် သင့်တိုကင်အတွက် ပုံသေဖွင့်ထားမှုများကို "
-"သင်ပြောင်းလဲနိုင်သည်။ သင်သည် ဆက်တင်များ မီနူး သို့မဟုတ် `<span "
-"font_family='monospace'>pro</span>` command line ဖြင့် ဖွင့်ထားသော "
-"ဝန်ဆောင်မှုများကို ပြောင်းလဲနိုင်သည်။"
+"ubuntu.com/pro ဝဘ်အင်တာဖေ့စ်တွင် သင့်တိုကင်အတွက် ပုံသေဖွင့်ထားမှုများကို သင်ပြောင်းလဲနိုင်သည်။ သင်သည် "
+"ဆက်တင်များ မီနူး သို့မဟုတ် `<span font_family='monospace'>pro</span>` command line "
+"ဖြင့် ဖွင့်ထားသော ဝန်ဆောင်မှုများကို ပြောင်းလဲနိုင်သည်။"
 
 #: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-services-page.blp:53
 msgid "Other available services"
@@ -1072,7 +1027,7 @@ msgstr "မှန်ကန်သောတိုကင်"
 #. Ubuntu Pro contact fails.
 #. It may be due to various reasons, most common is
 #. an invalid token.
-#. 
+#.
 #: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:236
 msgid "Invalid token or attach failure"
 msgstr "တိုကင် မမှန်ကန်ပါ သို့မဟုတ် ပူးတွဲမှု မအောင်မြင်ပါ။"
@@ -1129,16 +1084,12 @@ msgstr "NIST အသိအမှတ်ပြု FIPS crypto ပက်ကေ့ဂ
 #. TRANSLATORS: The fips-preview Ubuntu Pro Service description.
 #: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:624
 msgid "Preview of FIPS crypto packages undergoing certification with NIST"
-msgstr ""
-"NIST ဖြင့် အသိအမှတ်ပြုလက်မှတ်ရရှိထားသော FIPS crypto ပက်ကေ့ဂျ်များကို "
-"အစမ်းကြည့်ရှုခြင်း။"
+msgstr "NIST ဖြင့် အသိအမှတ်ပြုလက်မှတ်ရရှိထားသော FIPS crypto ပက်ကေ့ဂျ်များကို အစမ်းကြည့်ရှုခြင်း။"
 
 #. TRANSLATORS: The fips-updates Ubuntu Pro Service description.
 #: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:627
 msgid "FIPS compliant crypto packages with stable security updates"
-msgstr ""
-"တည်ငြိမ်သောလုံခြုံရေးအပ်ဒိတ်များဖြင့် FIPS လိုက်လျောညီထွေဖြစ်သော crypto "
-"ပက်ကေ့ဂျ်မျာ"
+msgstr "တည်ငြိမ်သောလုံခြုံရေးအပ်ဒိတ်များဖြင့် FIPS လိုက်လျောညီထွေဖြစ်သော crypto ပက်ကေ့ဂျ်မျာ"
 
 #. TRANSLATORS: The landscape Ubuntu Pro Service description.
 #: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:630
@@ -1178,7 +1129,7 @@ msgstr "%s တွင် ပိုမိုလေ့လာပါ"
 
 #. TRANSLATORS: Subtitle telling who can provide the Ubuntu Pro token.
 #. Use HTML encoded format for special characters such as &amp' for '&'. %s is a URL.
-#. 
+#.
 #: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:1247
 #, c-format
 msgid "From your admin, or from %s"
@@ -1260,9 +1211,7 @@ msgstr "_r အမှောင်"
 
 #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:100
 msgid "OLED screen detected. Dark style may save power."
-msgstr ""
-"OLED မျက်နှာပြင်ကို စစ်ဆေးတွေ့ရှိပါသည်။ Dark style သည် "
-"ပါဝါချွေတာပေးနိုင်ပါသည်။"
+msgstr "OLED မျက်နှာပြင်ကို စစ်ဆေးတွေ့ရှိပါသည်။ Dark style သည် ပါဝါချွေတာပေးနိုင်ပါသည်။"
 
 #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:112
 msgid "Accent Color"
@@ -1289,9 +1238,8 @@ msgid ""
 "\n"
 "        Alternatively, choose install to launch the installer."
 msgstr ""
-"ကွန်ပျူတာတွင် ပြောင်းလဲမှုများ မပြုလုပ်ဘဲ ${NAME} ၏ ယာယီဗားရှင်းကို သင် "
-"စမ်းသုံးနိုင်သည်။ နောက်ပိုင်း ထည့်သွင်းလိုပါက Activities မြင်ကွင်းမှ "
-"installer ကို စတင်လုပ်ဆောင်ပါ။\n"
+"ကွန်ပျူတာတွင် ပြောင်းလဲမှုများ မပြုလုပ်ဘဲ ${NAME} ၏ ယာယီဗားရှင်းကို သင် စမ်းသုံးနိုင်သည်။ နောက်ပိုင်း "
+"ထည့်သွင်းလိုပါက Activities မြင်ကွင်းမှ installer ကို စတင်လုပ်ဆောင်ပါ။\n"
 "\n"
 "        တစ်နည်းအားဖြင့် installer စတင်ရန် ထည့်သွင်းမည်ကို ရွေးချယ်ပါ။"
 
@@ -1331,22 +1279,18 @@ msgstr "${PRETTY_NAME} ကို ထည့်သွင်းပါ"
 
 #~ msgid "You can change your mind later in Settings → Privacy → Diagnostics."
 #~ msgstr ""
-#~ "သတ်မှတ်ချက်များ - ကိုယ်ရေးကိုယ်တာ - Diagnostics တွင် နောက်ပိုင်း "
-#~ "သင်ပြောင်းလဲအသုံးပြုနိုင်သည်။"
+#~ "သတ်မှတ်ချက်များ - ကိုယ်ရေးကိုယ်တာ - Diagnostics တွင် နောက်ပိုင်း သင်ပြောင်းလဲအသုံးပြုနိုင်သည်။"
 
 #, c-format
 #~ msgid ""
 #~ "Sends technical reports that do not contain personal information. Data is "
 #~ "collected by %1$s (<a href='%2$s'>privacy policy</a>)."
 #~ msgstr ""
-#~ "ကိုယ်ရေးကိုယ်တာ အချက်အလက် မပါဝင်သည့် နည်းပညာဆိုင်ရာ အစီရင်ခံစာများကို "
-#~ "ပေးပို့သည်။ ဒေတာကို %1$s (<a href='%2$s'>ကိုယ်ရေးကိုယ်တာ မူဝါဒ</a>) မှ "
-#~ "စုဆောင်းပါသည်။"
+#~ "ကိုယ်ရေးကိုယ်တာ အချက်အလက် မပါဝင်သည့် နည်းပညာဆိုင်ရာ အစီရင်ခံစာများကို ပေးပို့သည်။ ဒေတာကို %1$s (<a "
+#~ "href='%2$s'>ကိုယ်ရေးကိုယ်တာ မူဝါဒ</a>) မှ စုဆောင်းပါသည်။"
 
 #~ msgid "Privacy controls can be changed at any time from the Settings app."
-#~ msgstr ""
-#~ "သီးသန့်ထိန်းချုပ်မှုများကို သတ်မှတ်ချက်များအက်ပ်မှ အချိန်မရွေး "
-#~ "ပြောင်းလဲနိုင်သည်။"
+#~ msgstr "သီးသန့်ထိန်းချုပ်မှုများကို သတ်မှတ်ချက်များအက်ပ်မှ အချိန်မရွေး ပြောင်းလဲနိုင်သည်။"
 
 #, c-format
 #~ msgid "Failed to send report decline: %s"
@@ -1361,8 +1305,8 @@ msgstr "${PRETTY_NAME} ကို ထည့်သွင်းပါ"
 #~ "Turn on location services to let applications know your geographical "
 #~ "location. You can change this anytime in System Settings."
 #~ msgstr ""
-#~ "သင့်တည်နေရာကို အပလီကေးရှင်းများသိစေရန် တည်နေရာဝန်ဆောင်မှုများကို ဖွင့်ပါ။ "
-#~ "၎င်းကို စနစ်သတ်မှတ်ချက်များတွင် အချိန်မရွေး ပြောင်းလဲနိုင်သည်။"
+#~ "သင့်တည်နေရာကို အပလီကေးရှင်းများသိစေရန် တည်နေရာဝန်ဆောင်မှုများကို ဖွင့်ပါ။ ၎င်းကို "
+#~ "စနစ်သတ်မှတ်ချက်များတွင် အချိန်မရွေး ပြောင်းလဲနိုင်သည်။"
 
 #~ msgid "Location services"
 #~ msgstr "တည်နေရာဝန်ဆောင်မှုများ"
@@ -1376,9 +1320,8 @@ msgstr "${PRETTY_NAME} ကို ထည့်သွင်းပါ"
 #~ "things like your machine model, installed software and the location you "
 #~ "chose for your timezone."
 #~ msgstr ""
-#~ "သင့်စနစ်ဒေတာကို ကျွန်ုပ်တို့နှင့် မျှဝေခြင်းဖြင့် Ubuntu ကို "
-#~ "တိုးတက်ကောင်းမွန်အောင် ကူညီပေးပါ။ ၎င်းတွင် သင့်စက်မော်ဒယ်၊ ထည့်သွင်းထားသည့် "
-#~ "ဆော့ဖ်ဝဲလ်နှင့် သင့်အချိန်ဇုန်အတွက်ရွေးချယ်ထားသည့်တည်နေရာကဲ့သို့ စသည်များ "
+#~ "သင့်စနစ်ဒေတာကို ကျွန်ုပ်တို့နှင့် မျှဝေခြင်းဖြင့် Ubuntu ကို တိုးတက်ကောင်းမွန်အောင် ကူညီပေးပါ။ ၎င်းတွင် "
+#~ "သင့်စက်မော်ဒယ်၊ ထည့်သွင်းထားသည့် ဆော့ဖ်ဝဲလ်နှင့် သင့်အချိန်ဇုန်အတွက်ရွေးချယ်ထားသည့်တည်နေရာကဲ့သို့ စသည်များ "
 #~ "ပါဝင်သည်။"
 
 #~ msgid "Yes, share system data with the Ubuntu team"
@@ -1395,18 +1338,16 @@ msgstr "${PRETTY_NAME} ကို ထည့်သွင်းပါ"
 #~ "\n"
 #~ "More information on <a href=\"https://ubuntu.com/pro\">ubuntu.com/pro</a>."
 #~ msgstr ""
-#~ "2034 အထိ ပိုမိုကျယ်ပြန့်သော ပက်ကေ့ဂျ်များအတွက် လုံခြုံရေးအပ်ဒိတ်များအတွက် "
-#~ "ဤစက်ကို Ubuntu Pro သို့ အဆင့်မြှင့်ပါ။ FedRAMP၊ FIPS၊ STIG နှင့် HIPAA နှင့် "
-#~ "အသိအမှတ်ပြုကိရိယာတန်ဆာပလာများနှင့် crypto-modules များဖြင့် အခြားသော "
-#~ "လိုက်နာမှုနှင့် ပိုမိုလုံခြုံသောလိုအပ်ချက်များကို ဖြည့်ဆည်းပါ။ စက် 5 ခုအထိ "
-#~ "အခမဲ့သုံးနိုင်ပါတယ် ။ <a href=\"https://ubuntu.com/pro\">ubuntu.com/pro</a> "
-#~ "တွင် နောက်ထပ်အချက်အလက်များကြည့်ရှုနိုင်ပါသည်။"
+#~ "2034 အထိ ပိုမိုကျယ်ပြန့်သော ပက်ကေ့ဂျ်များအတွက် လုံခြုံရေးအပ်ဒိတ်များအတွက် ဤစက်ကို Ubuntu Pro သို့ "
+#~ "အဆင့်မြှင့်ပါ။ FedRAMP၊ FIPS၊ STIG နှင့် HIPAA နှင့် အသိအမှတ်ပြုကိရိယာတန်ဆာပလာများနှင့် crypto-"
+#~ "modules များဖြင့် အခြားသော လိုက်နာမှုနှင့် ပိုမိုလုံခြုံသောလိုအပ်ချက်များကို ဖြည့်ဆည်းပါ။ စက် 5 ခုအထိ "
+#~ "အခမဲ့သုံးနိုင်ပါတယ် ။ <a href=\"https://ubuntu.com/pro\">ubuntu.com/pro</a> တွင် "
+#~ "နောက်ထပ်အချက်အလက်များကြည့်ရှုနိုင်ပါသည်။"
 
 #~ msgid ""
-#~ "You can always enable Ubuntu Pro later via the Software & Updates application"
-#~ msgstr ""
-#~ "နောက်ပိုင်းတွင်  Software & Updates အပလီကေးရှင်းမှတဆင့် Ubuntu Pro ကို "
-#~ "အမြဲဖွင့်နိုင်သည်။"
+#~ "You can always enable Ubuntu Pro later via the Software & Updates "
+#~ "application"
+#~ msgstr "နောက်ပိုင်းတွင်  Software & Updates အပလီကေးရှင်းမှတဆင့် Ubuntu Pro ကို အမြဲဖွင့်နိုင်သည်။"
 
 #~ msgid "Or add _token manually"
 #~ msgstr "သို့မဟုတ် _token ကို ကိုယ်တိုင်ထည့်ပါ။"
@@ -1424,13 +1365,11 @@ msgstr "${PRETTY_NAME} ကို ထည့်သွင်းပါ"
 #~ "Fulfill FedRAMP, FIPS, STIG and HIPAA and other compliance and hardening "
 #~ "requirements with certified tooling and crypto-modules."
 #~ msgstr ""
-#~ "FedRAMP၊ FIPS၊ STIG နှင့် HIPAA နှင့် အသိအမှတ်ပြုကိရိယာတန်ဆာပလာများနှင့် "
-#~ "crypto-modules များဖြင့် အခြားသောလိုက်နာမှုနှင့် လုံခြုံသောလိုအပ်ချက်များကို "
-#~ "ဖြည့်ဆည်းပါ။"
+#~ "FedRAMP၊ FIPS၊ STIG နှင့် HIPAA နှင့် အသိအမှတ်ပြုကိရိယာတန်ဆာပလာများနှင့် crypto-modules "
+#~ "များဖြင့် အခြားသောလိုက်နာမှုနှင့် လုံခြုံသောလိုအပ်ချက်များကို ဖြည့်ဆည်းပါ။"
 
 #~ msgid "Learn more at <a href=\"https://ubuntu.com/pro\">ubuntu.com/pro</a>."
-#~ msgstr ""
-#~ "<a href=\"https://ubuntu.com/pro\">ubuntu.com/pro</a> တွင် ပိုမိုလေ့လာပါ။"
+#~ msgstr "<a href=\"https://ubuntu.com/pro\">ubuntu.com/pro</a> တွင် ပိုမိုလေ့လာပါ။"
 
 #~ msgid "Downloading language packs…"
 #~ msgstr "ဘာသာစကားအတွဲများ ဒေါင်းလုဒ်လုပ်နေသည်..."

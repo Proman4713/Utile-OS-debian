@@ -16,18 +16,18 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-"
-"setup/issues/\n"
-"POT-Creation-Date: 2026-05-22 14:35+0000\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+"issues\n"
+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
 "PO-Revision-Date: 2026-05-10 15:22+0000\n"
 "Last-Translator: Michael Wehram <michael.wehram@wolfsburg.de>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2026-07-01 12:24+0000\n"
 "X-Generator: Launchpad (build c38ea58da9d7185c4996adfc854ab433551cdcdd)\n"
-"Language: de\n"
 
 #: data/gnome-initial-setup.desktop.in.in:2
 #: gnome-initial-setup/gis-driver.c:890
@@ -170,17 +170,17 @@ msgstr "Kennwort des Administrators"
 msgid "C_ontinue"
 msgstr "_Fortsetzen"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:225
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:210
 #, c-format
 msgid "The hostname is too long."
 msgstr "Der Hostname ist zu lang."
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:229
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:214
 msgid "The hostname must start with a lower case letter from a-z or a digit."
 msgstr ""
 "Der Hostname muss mit einem Kleinbuchstaben von a-z oder einer Zahl anfangen."
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:233
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:218
 msgid ""
 "The hostname should only consist of lower case letters from a-z, digits and "
 "a hyphen: -"
@@ -188,16 +188,16 @@ msgstr ""
 "Der Hostname darf nur aus Kleinbuchstaben a-z, Zahlen oder Bindestrich: - "
 "bestehen."
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:574
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:545
 msgid "We need a few details to complete setup."
 msgstr "Wir benötigen ein paar Details, um die Konfiguration abzuschließen."
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:737
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:704
 msgid "Administrator"
 msgstr "Systemverwalter"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:743
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:786
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:710
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:753
 #, c-format
 msgid "Failed to create user '%s': "
 msgstr "Erstellung des Benutzerkontos »%s« fehlgeschlagen: "
@@ -230,8 +230,7 @@ msgid "Set up _parental controls for this user"
 msgstr "_Jugendschutz-Einstellungen für diesen Benutzer konfigurieren"
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:223
-msgid ""
-"For use by a parent or supervisor, who must set up their own password."
+msgid "For use by a parent or supervisor, who must set up their own password."
 msgstr ""
 "Für die Verwendung durch einen Erziehungsberechtigten oder Betreuer, der ein "
 "separates Passwort festlegen muss."
@@ -315,7 +314,7 @@ msgstr "Weitere …"
 
 #. Translators: a search for input methods or keyboard layouts
 #. * did not yield any results
-#. 
+#.
 #: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:347
 msgid "No inputs found"
 msgstr "Es wurden keine Eingabemethoden gefunden"
@@ -351,7 +350,7 @@ msgstr ""
 #. Translators: This is meant to be a warm, engaging welcome message,
 #. * like greeting somebody at the door. If the exclamation mark is not
 #. * suitable for this in your language you may replace it.
-#. 
+#.
 #: gnome-initial-setup/pages/language/gis-welcome-widget.c:132
 msgid "Welcome!"
 msgstr "Willkommen!"
@@ -437,8 +436,7 @@ msgstr "Ein Eltern-Passwort festlegen"
 #: gnome-initial-setup/pages/password/gis-password-page.c:101
 #, c-format
 msgid "This password will control access to the parental controls for %s."
-msgstr ""
-"Dieses Passwort ermöglicht den Zugriff auf die Kindersicherung für %s."
+msgstr "Dieses Passwort ermöglicht den Zugriff auf die Kindersicherung für %s."
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:223
 #, c-format
@@ -464,8 +462,7 @@ msgstr "Passwort_hinweis"
 
 #: gnome-initial-setup/pages/password/gis-password-page.ui:103
 msgid "Password hint will be shown in case you forget your password."
-msgstr ""
-"Ein Passworthinweis wird angezeigt, falls Sie Ihr Passwort vergessen."
+msgstr "Ein Passworthinweis wird angezeigt, falls Sie Ihr Passwort vergessen."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:81
 msgctxt "Password hint"
@@ -501,8 +498,7 @@ msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:89
 msgctxt "Password hint"
-msgid ""
-"This is a weak password. Try to avoid using your name in the password."
+msgid "This is a weak password. Try to avoid using your name in the password."
 msgstr ""
 "Dies ist ein schwaches Passwort. Versuchen Sie, Ihren Namen im Passwort zu "
 "vermeiden."
@@ -636,7 +632,7 @@ msgstr "ausgezeichnet"
 
 #. Translators: the first parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu".
-#. 
+#.
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:68
 #, c-format
 msgid ""
@@ -644,12 +640,12 @@ msgid ""
 "collected by %1$s (<u><a href='%2$s'>privacy policy</a></u>)."
 msgstr ""
 "Sendet technische Berichte, die keine personenbezogenen Daten enthalten. Die "
-"Daten werden von %1$s erhoben (<u><a "
-"href='%2$s'>Datenschutzrichtlinie</a></u>)."
+"Daten werden von %1$s erhoben (<u><a href='%2$s'>Datenschutzrichtlinie</a></"
+"u>)."
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu".
-#. 
+#.
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:79
 #, c-format
 msgid ""
@@ -782,7 +778,7 @@ msgstr "Städte suchen"
 #. Translators: this is the name of a location followed by a region, for example:
 #. * 'London, United Kingdom'
 #. * You shouldn't need to translate this string unless the language has a different comma.
-#. 
+#.
 #: gnome-initial-setup/pages/timezone/gis-location-entry.c:557
 #: gnome-initial-setup/pages/timezone/gis-location-entry.c:582
 #, c-format
@@ -798,7 +794,7 @@ msgstr "%s, %s"
 
 #. Translators: UTC here means the Coordinated Universal Time.
 #. * %:::z will be replaced by the offset from UTC e.g. UTC+02
-#. 
+#.
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.c:320
 msgid "UTC%:::z"
 msgstr "UTC%:::z"
@@ -849,7 +845,7 @@ msgstr "Bitte suchen Sie nach einer nahegelegenen Stadt"
 #. * space (U200a) to improve the spacing in the title, which you can
 #. * keep or remove. The %s is getting replaced with the name and version
 #. * of the OS, e.g. "GNOME 3.38"
-#. 
+#.
 #: gnome-initial-setup/pages/welcome/gis-welcome-page.c:79
 #, c-format
 msgid "Welcome to %s !"
@@ -903,8 +899,7 @@ msgstr "Die Zustimmung für das initiale Setup wurde nicht erteilt: %s"
 #: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:75
 #, c-format
 msgid "Failed to withdraw consent for the Initial Setup application: %s"
-msgstr ""
-"Widerruf der Einwilligung zur „Ersteinrichtung“ ist fehlgeschlagen: %s"
+msgstr "Widerruf der Einwilligung zur „Ersteinrichtung“ ist fehlgeschlagen: %s"
 
 #. Platform source used by timed systemd collection
 #. TRANSLATORS: The place-holder is an error message
@@ -967,12 +962,14 @@ msgid "Show First Report"
 msgstr "Zeige den ersten Bericht"
 
 #: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:9
-msgid "Help Improve Ubuntu"
+#, fuzzy
+msgid "Utile Depends On It: Help Improve Ubuntu"
 msgstr "Hilf dabei Ubuntu zu verbessern"
 
 #: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:10
+#, fuzzy
 msgid ""
-"Help us improve Ubuntu by sharing your system and error reports with us.\n"
+"Help improve Ubuntu by sharing your system and error reports with them.\n"
 "Reports are sent anonymously."
 msgstr ""
 "Helfen Sie uns, Ubuntu zu verbessern, indem Sie uns Ihre System- und "
@@ -1049,8 +1046,7 @@ msgstr ""
 
 #: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:130
 msgid "Enable Ubuntu Pro now, or skip this step."
-msgstr ""
-"Aktivieren Sie Ubuntu Pro jetzt oder überspringen Sie diesen Schritt."
+msgstr "Aktivieren Sie Ubuntu Pro jetzt oder überspringen Sie diesen Schritt."
 
 #: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:133
 msgid "_Enable Ubuntu Pro"
@@ -1084,8 +1080,8 @@ msgid ""
 msgstr ""
 "Sie können die Standardaktivierung für Ihre Token auf der Weboberfläche "
 "ubuntu.com/pro ändern. Sie können aktivierte Dienste auch im Menü "
-"„Einstellungen“ oder mit der Befehlszeile <span "
-"font_family='monospace'>pro</span> ändern."
+"„Einstellungen“ oder mit der Befehlszeile <span font_family='monospace'>pro</"
+"span> ändern."
 
 #: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-services-page.blp:53
 msgid "Other available services"
@@ -1099,7 +1095,7 @@ msgstr "Gültiger Token"
 #. Ubuntu Pro contact fails.
 #. It may be due to various reasons, most common is
 #. an invalid token.
-#. 
+#.
 #: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:236
 msgid "Invalid token or attach failure"
 msgstr ""
@@ -1206,7 +1202,7 @@ msgstr "Mehr dazu unter %s"
 
 #. TRANSLATORS: Subtitle telling who can provide the Ubuntu Pro token.
 #. Use HTML encoded format for special characters such as &amp' for '&'. %s is a URL.
-#. 
+#.
 #: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:1247
 #, c-format
 msgid "From your admin, or from %s"
@@ -1349,7 +1345,8 @@ msgstr "${PRETTY_NAME} installieren"
 
 #, c-format
 #~ msgid "Failed to show privacy policy: %s"
-#~ msgstr "Es traten Probleme bei der Anzeige der Datenschutzbestimmung auf: %s"
+#~ msgstr ""
+#~ "Es traten Probleme bei der Anzeige der Datenschutzbestimmung auf: %s"
 
 #~ msgid "Cancel"
 #~ msgstr "Abbrechen"
@@ -1370,14 +1367,14 @@ msgstr "${PRETTY_NAME} installieren"
 #~ "Sends technical reports that do not contain personal information. Data is "
 #~ "collected by %1$s (<a href='%2$s'>privacy policy</a>)."
 #~ msgstr ""
-#~ "Sendet technische Berichte, die keine persönlichen Informationen enthalten. "
-#~ "Die Daten werden von %1$s (<a href='%2$s'>Datenschutzrichtlinie</a>) "
-#~ "gesammelt."
+#~ "Sendet technische Berichte, die keine persönlichen Informationen "
+#~ "enthalten. Die Daten werden von %1$s (<a "
+#~ "href='%2$s'>Datenschutzrichtlinie</a>) gesammelt."
 
 #~ msgid "Privacy controls can be changed at any time from the Settings app."
 #~ msgstr ""
-#~ "Die Datenschutzeinstellungen können jederzeit in den Einstellungen geändert "
-#~ "werden."
+#~ "Die Datenschutzeinstellungen können jederzeit in den Einstellungen "
+#~ "geändert werden."
 
 #, c-format
 #~ msgid "Failed to send report decline: %s"
@@ -1410,7 +1407,8 @@ msgstr "${PRETTY_NAME} installieren"
 #~ msgstr ""
 #~ "Bitte helfen Sie uns Ubuntu zu verbessern, indem Sie Ihre "
 #~ "Systeminformationen mit uns teilen. Diese umfassen das Modell Ihres "
-#~ "Rechners, die installierte Software sowie den Ort Ihrer gewählten Zeitzone."
+#~ "Rechners, die installierte Software sowie den Ort Ihrer gewählten "
+#~ "Zeitzone."
 
 #~ msgid "Yes, share system data with the Ubuntu team"
 #~ msgstr "Ja, Systeminformationen mit dem Ubuntu-Team teilen"
@@ -1420,12 +1418,13 @@ msgstr "${PRETTY_NAME} installieren"
 
 #~ msgid "Get security updates on a wide range of packages until 2034"
 #~ msgstr ""
-#~ "Erhalten Sie Sicherheitsupdates für eine größere Auswahl an Paketen bis 2034"
+#~ "Erhalten Sie Sicherheitsupdates für eine größere Auswahl an Paketen bis "
+#~ "2034"
 
 #~ msgid "Learn more at <a href=\"https://ubuntu.com/pro\">ubuntu.com/pro</a>."
 #~ msgstr ""
-#~ "Erfahren Sie mehr unter <a "
-#~ "href=\"https://ubuntu.com/pro\">ubuntu.com/pro</a>."
+#~ "Erfahren Sie mehr unter <a href=\"https://ubuntu.com/pro\">ubuntu.com/"
+#~ "pro</a>."
 
 #~ msgid ""
 #~ "Upgrade this machine to Ubuntu Pro for security updates on a much wider "
@@ -1453,14 +1452,15 @@ msgstr "${PRETTY_NAME} installieren"
 #~ "Fulfill FedRAMP, FIPS, STIG and HIPAA and other compliance and hardening "
 #~ "requirements with certified tooling and crypto-modules."
 #~ msgstr ""
-#~ "Erfüllen Sie FedRAMP-, FIPS-, STIG- und HIPAA- und andere Konformitäts- und "
-#~ "Härtungsanforderungen mittels zertifizierter Tools und Krypto-Module."
+#~ "Erfüllen Sie FedRAMP-, FIPS-, STIG- und HIPAA- und andere Konformitäts- "
+#~ "und Härtungsanforderungen mittels zertifizierter Tools und Krypto-Module."
 
 #~ msgid ""
-#~ "You can always enable Ubuntu Pro later via the Software & Updates application"
+#~ "You can always enable Ubuntu Pro later via the Software & Updates "
+#~ "application"
 #~ msgstr ""
-#~ "Sie können Ubuntu Pro später jederzeit in der Anwendung „Software & Updates“ "
-#~ "aktivieren"
+#~ "Sie können Ubuntu Pro später jederzeit in der Anwendung „Software & "
+#~ "Updates“ aktivieren"
 
 #~ msgid "Downloading language packs…"
 #~ msgstr "Herunterladen von Sprachpaketen …"

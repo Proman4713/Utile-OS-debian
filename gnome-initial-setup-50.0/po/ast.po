@@ -6,11 +6,13 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2026-05-22 14:35+0000\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+"issues\n"
+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
 "PO-Revision-Date: 2020-10-05 10:44+0000\n"
 "Last-Translator: Xandru Martino <Unknown>\n"
 "Language-Team: Asturian <ast@li.org>\n"
+"Language: ast\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -155,31 +157,31 @@ msgstr "Contraseña del alministrador"
 msgid "C_ontinue"
 msgstr "C_ontinuar"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:225
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:210
 #, c-format
 msgid "The hostname is too long."
 msgstr ""
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:229
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:214
 msgid "The hostname must start with a lower case letter from a-z or a digit."
 msgstr ""
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:233
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:218
 msgid ""
 "The hostname should only consist of lower case letters from a-z, digits and "
 "a hyphen: -"
 msgstr ""
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:574
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:545
 msgid "We need a few details to complete setup."
 msgstr "Faen falta dellos detalles pa completar los axustes."
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:737
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:704
 msgid "Administrator"
 msgstr "Alministrador"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:743
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:786
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:710
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:753
 #, c-format
 msgid "Failed to create user '%s': "
 msgstr "Falló al crear l'usuariu «%s»: "
@@ -199,8 +201,7 @@ msgstr "Sobre ti"
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:65
 msgid "Please provide a name and username. You can choose a picture too."
-msgstr ""
-"Apurri un nome y un nome d'usuariu. Tamién puedes escoyer una semeya."
+msgstr "Apurri un nome y un nome d'usuariu. Tamién puedes escoyer una semeya."
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:81
 msgid "_Full Name"
@@ -211,8 +212,7 @@ msgid "Set up _parental controls for this user"
 msgstr "Afitar el control parental pa esti usuariu"
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:223
-msgid ""
-"For use by a parent or supervisor, who must set up their own password."
+msgid "For use by a parent or supervisor, who must set up their own password."
 msgstr ""
 "Pa usar por un adultu o supervisor, que tien qu'afitar la so propia "
 "contraseña."
@@ -288,7 +288,7 @@ msgstr "Más…"
 
 #. Translators: a search for input methods or keyboard layouts
 #. * did not yield any results
-#. 
+#.
 #: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:347
 msgid "No inputs found"
 msgstr "Nun s'atopen entraes"
@@ -322,7 +322,7 @@ msgstr ""
 #. Translators: This is meant to be a warm, engaging welcome message,
 #. * like greeting somebody at the door. If the exclamation mark is not
 #. * suitable for this in your language you may replace it.
-#. 
+#.
 #: gnome-initial-setup/pages/language/gis-welcome-widget.c:132
 msgid "Welcome!"
 msgstr "Bienllegáu!"
@@ -468,8 +468,7 @@ msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:89
 msgctxt "Password hint"
-msgid ""
-"This is a weak password. Try to avoid using your name in the password."
+msgid "This is a weak password. Try to avoid using your name in the password."
 msgstr "Ésta ye una contraseña débil. Nun uses el to nome na contraseña."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:91
@@ -499,14 +498,12 @@ msgstr "Ésta ye una contraseña débil. Prueba a usar más númberos."
 #: gnome-initial-setup/pages/password/pw-utils.c:101
 msgctxt "Password hint"
 msgid "This is a weak password. Try to use more uppercase letters."
-msgstr ""
-"Ésta ye una contraseña débil. Prueba a usar más lletres en mayúscula."
+msgstr "Ésta ye una contraseña débil. Prueba a usar más lletres en mayúscula."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:103
 msgctxt "Password hint"
 msgid "This is a weak password. Try to use more lowercase letters."
-msgstr ""
-"Ésta ye una contraseña débil. Prueba a usar más lletres en minúscules."
+msgstr "Ésta ye una contraseña débil. Prueba a usar más lletres en minúscules."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:105
 msgctxt "Password hint"
@@ -589,7 +586,7 @@ msgstr ""
 
 #. Translators: the first parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu".
-#. 
+#.
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:68
 #, c-format
 msgid ""
@@ -599,7 +596,7 @@ msgstr ""
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu".
-#. 
+#.
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:79
 #, c-format
 msgid ""
@@ -718,7 +715,7 @@ msgstr ""
 #. Translators: this is the name of a location followed by a region, for example:
 #. * 'London, United Kingdom'
 #. * You shouldn't need to translate this string unless the language has a different comma.
-#. 
+#.
 #: gnome-initial-setup/pages/timezone/gis-location-entry.c:557
 #: gnome-initial-setup/pages/timezone/gis-location-entry.c:582
 #, c-format
@@ -734,7 +731,7 @@ msgstr "%s, %s"
 
 #. Translators: UTC here means the Coordinated Universal Time.
 #. * %:::z will be replaced by the offset from UTC e.g. UTC+02
-#. 
+#.
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.c:320
 msgid "UTC%:::z"
 msgstr "UTC%:::z"
@@ -785,7 +782,7 @@ msgstr "Por favor busca una ciudá cercana"
 #. * space (U200a) to improve the spacing in the title, which you can
 #. * keep or remove. The %s is getting replaced with the name and version
 #. * of the OS, e.g. "GNOME 3.38"
-#. 
+#.
 #: gnome-initial-setup/pages/welcome/gis-welcome-page.c:79
 #, c-format
 msgid "Welcome to %s !"
@@ -891,12 +888,13 @@ msgid "Show First Report"
 msgstr ""
 
 #: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:9
-msgid "Help Improve Ubuntu"
-msgstr ""
+#, fuzzy
+msgid "Utile Depends On It: Help Improve Ubuntu"
+msgstr "Aidar a meyorar Ubuntu"
 
 #: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:10
 msgid ""
-"Help us improve Ubuntu by sharing your system and error reports with us.\n"
+"Help improve Ubuntu by sharing your system and error reports with them.\n"
 "Reports are sent anonymously."
 msgstr ""
 
@@ -1011,7 +1009,7 @@ msgstr ""
 #. Ubuntu Pro contact fails.
 #. It may be due to various reasons, most common is
 #. an invalid token.
-#. 
+#.
 #: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:236
 msgid "Invalid token or attach failure"
 msgstr ""
@@ -1113,7 +1111,7 @@ msgstr ""
 
 #. TRANSLATORS: Subtitle telling who can provide the Ubuntu Pro token.
 #. Use HTML encoded format for special characters such as &amp' for '&'. %s is a URL.
-#. 
+#.
 #: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:1247
 #, c-format
 msgid "From your admin, or from %s"
@@ -1236,9 +1234,6 @@ msgstr ""
 #, sh-format
 msgid "Install ${PRETTY_NAME}"
 msgstr ""
-
-#~ msgid "Help improve Ubuntu"
-#~ msgstr "Aidar a meyorar Ubuntu"
 
 #~ msgid "Show the First Report"
 #~ msgstr "Amosar el primer informe"

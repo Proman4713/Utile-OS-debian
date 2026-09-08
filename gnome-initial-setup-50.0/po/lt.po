@@ -6,18 +6,18 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup master\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-"
-"setup/issues/\n"
-"POT-Creation-Date: 2026-05-22 14:35+0000\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+"issues\n"
+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
 "PO-Revision-Date: 2026-04-14 01:47+0000\n"
 "Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
 "Language-Team: Lietuvių <gnome-lt@lists.akl.lt>\n"
+"Language: lt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2026-07-01 12:24+0000\n"
 "X-Generator: Launchpad (build c38ea58da9d7185c4996adfc854ab433551cdcdd)\n"
-"Language: lt\n"
 
 #: data/gnome-initial-setup.desktop.in.in:2
 #: gnome-initial-setup/gis-driver.c:890
@@ -157,17 +157,17 @@ msgstr "Administratoriaus slaptažodis"
 msgid "C_ontinue"
 msgstr "_Tęsti"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:225
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:210
 #, c-format
 msgid "The hostname is too long."
 msgstr "Per ilgas kompiuterio pavadinimas."
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:229
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:214
 msgid "The hostname must start with a lower case letter from a-z or a digit."
 msgstr ""
 "Kompiuterio pavadinimas turi prasidėti mažąja raide (a-z) ar skaičiumi."
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:233
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:218
 msgid ""
 "The hostname should only consist of lower case letters from a-z, digits and "
 "a hyphen: -"
@@ -175,17 +175,16 @@ msgstr ""
 "Kompiuterio pavadinimą gali sudaryti tik mažosios raidės (a-z), skaičiai bei "
 "trumpi brūkšneliai: -"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:574
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:545
 msgid "We need a few details to complete setup."
 msgstr "Nustatymo užbaigimui reikia papildomos informacijos."
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:737
-#| msgid "Administrator _Name"
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:704
 msgid "Administrator"
 msgstr "Administratorius"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:743
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:786
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:710
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:753
 #, c-format
 msgid "Failed to create user '%s': "
 msgstr "Nepavyko sukurti naudotojo „%s“: "
@@ -217,18 +216,14 @@ msgid "Set up _parental controls for this user"
 msgstr "Nustatyti _tėvų valdymą šiam naudotojui"
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:223
-msgid ""
-"For use by a parent or supervisor, who must set up their own password."
-msgstr ""
-"Skirta tėvams ar prižiūrėtojams, kurie turi nustatyti savo slaptažodį."
+msgid "For use by a parent or supervisor, who must set up their own password."
+msgstr "Skirta tėvams ar prižiūrėtojams, kurie turi nustatyti savo slaptažodį."
 
 #: gnome-initial-setup/pages/account/gis-account-page.ui:32
-#| msgid "Enterprise Login"
 msgid "_Enterprise Login"
 msgstr "_Kompanijos prisijungimas"
 
 #: gnome-initial-setup/pages/account/gis-account-page.ui:41
-#| msgid "Set Up _Enterprise Login"
 msgid "Go online to set up Enterprise Login."
 msgstr "Išeiti į internetą ir nustatyti kompanijos prisijungimą."
 
@@ -266,19 +261,14 @@ msgid "The username is too long."
 msgstr "Naudotojo vardas yra per ilgas."
 
 #: gnome-initial-setup/pages/account/um-utils.c:159
-#| msgid "The username cannot start with a “-”."
 msgid "The username must start with a lower case letter from a-z."
 msgstr "Naudotojo vardas turi prasidėti mažąja raide a-z."
 
 #: gnome-initial-setup/pages/account/um-utils.c:162
-#| msgid "Sorry, that user name isn’t available. Please try another."
 msgid "That username isn’t available. Please try another."
 msgstr "Šis naudotojo vardas yra neprieinamas. Bandykite kitą."
 
 #: gnome-initial-setup/pages/account/um-utils.c:165
-#| msgid ""
-#| "The username should only consist of upper and lower case letters from a-"
-#| "z, digits and the following characters: . - _"
 msgid ""
 "The username should only consist of lower case letters from a-z, digits, and "
 "the following characters: - _"
@@ -303,7 +293,7 @@ msgstr "Daugiau…"
 
 #. Translators: a search for input methods or keyboard layouts
 #. * did not yield any results
-#. 
+#.
 #: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:347
 msgid "No inputs found"
 msgstr "Nerasta įvesties šaltinių"
@@ -337,7 +327,7 @@ msgstr "Pasirinkite iš sąrašo kalbą arba ieškokite jos."
 #. Translators: This is meant to be a warm, engaging welcome message,
 #. * like greeting somebody at the door. If the exclamation mark is not
 #. * suitable for this in your language you may replace it.
-#. 
+#.
 #: gnome-initial-setup/pages/language/gis-welcome-widget.c:132
 msgid "Welcome!"
 msgstr "Sveiki!"
@@ -405,7 +395,6 @@ msgstr "Tėvų valdymas"
 #. Translators: The placeholder is for the user’s full name.
 #: gnome-initial-setup/pages/password/gis-password-page.c:92
 #, c-format
-#| msgid "Set a Password"
 msgid "Set a Password for %s"
 msgstr "Nusistatyti slaptažodį paskyrai %s"
 
@@ -414,7 +403,6 @@ msgid "Be careful not to lose your password."
 msgstr "Atsargiai, nepraraskite savo slaptažodžio."
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:99
-#| msgid "Set a Password"
 msgid "Set a Parent Password"
 msgstr "Nusistatyti slaptažodį tėvams"
 
@@ -456,8 +444,6 @@ msgid "The new password needs to be different from the old one."
 msgstr "Naujas slaptažodis turi skirtis nuo ankstesnio."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:83
-#| msgctxt "Password hint"
-#| msgid "Try changing some letters and numbers."
 msgctxt "Password hint"
 msgid ""
 "This password is very similar to your last one. Try changing some letters "
@@ -477,8 +463,6 @@ msgstr ""
 "pakeisti slaptažodį."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:87
-#| msgctxt "Password hint"
-#| msgid "A password without your user name would be stronger."
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. A password without your user name would be stronger."
@@ -487,17 +471,11 @@ msgstr ""
 "saugesnis."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:89
-#| msgctxt "Password hint"
-#| msgid "Try to avoid using your name in the password."
 msgctxt "Password hint"
-msgid ""
-"This is a weak password. Try to avoid using your name in the password."
-msgstr ""
-"Tai yra silpnas slaptažodis. Venkite slaptažodyje naudoti savo vardą."
+msgid "This is a weak password. Try to avoid using your name in the password."
+msgstr "Tai yra silpnas slaptažodis. Venkite slaptažodyje naudoti savo vardą."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:91
-#| msgctxt "Password hint"
-#| msgid "Try to avoid some of the words included in the password."
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to avoid some of the words included in the "
@@ -505,47 +483,32 @@ msgid ""
 msgstr "Tai yra silpnas slaptažodis. Venkite kai kurių žodžių slaptažodyje."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:95
-#| msgctxt "Password hint"
-#| msgid ""
-#| "This is a weak password. Try to add more letters, numbers and symbols."
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid common words."
 msgstr "Tai yra silpnas slaptažodis. Bandykite vengti dažnų žodžių."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:97
-#| msgctxt "Password hint"
-#| msgid "Try to avoid reordering existing words."
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid reordering existing words."
 msgstr "Tai yra silpnas slaptažodis. Venkite keisti esamus žodžius vietomis."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:99
-#| msgctxt "Password hint"
-#| msgid ""
-#| "This is a weak password. Try to add more letters, numbers and symbols."
 msgctxt "Password hint"
 msgid "This is a weak password. Try to use more numbers."
 msgstr "Tai yra silpnas slaptažodis. Bandykite pridėti daugiau skaitmenų."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:101
-#| msgctxt "Password hint"
-#| msgid "Try to use more uppercase letters."
 msgctxt "Password hint"
 msgid "This is a weak password. Try to use more uppercase letters."
 msgstr ""
 "Tai yra silpnas slaptažodis. Bandykite naudoti daugiau didžiųjų raidžių."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:103
-#| msgctxt "Password hint"
-#| msgid "Try to use more lowercase letters."
 msgctxt "Password hint"
 msgid "This is a weak password. Try to use more lowercase letters."
-msgstr ""
-"Tai yra silpnas slaptažodis. Bandykite naudoti daugiau mažųjų raidžių."
+msgstr "Tai yra silpnas slaptažodis. Bandykite naudoti daugiau mažųjų raidžių."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:105
-#| msgctxt "Password hint"
-#| msgid "Try to use more special characters, like punctuation."
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to use more special characters, like "
@@ -555,8 +518,6 @@ msgstr ""
 "pvz. skyrybos ženklų."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:107
-#| msgctxt "Password hint"
-#| msgid "Try to use a mixture of letters, numbers and punctuation."
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to use a mixture of letters, numbers and "
@@ -566,17 +527,11 @@ msgstr ""
 "skyrybos ženklų mišinį."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:109
-#| msgctxt "Password hint"
-#| msgid "Try to avoid repeating the same character."
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid repeating the same character."
 msgstr "Tai yra silpnas slaptažodis. Venkite kartoti tą patį simbolį."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:111
-#| msgctxt "Password hint"
-#| msgid ""
-#| "Try to avoid repeating the same type of character: you need to mix up "
-#| "letters, numbers and punctuation."
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to avoid repeating the same type of character: "
@@ -586,16 +541,11 @@ msgstr ""
 "raides, skaitmenis ir skyrybos ženklus."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:113
-#| msgctxt "Password hint"
-#| msgid "Try to avoid sequences like 1234 or abcd."
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid sequences like 1234 or abcd."
 msgstr "Tai yra silpnas slaptažodis. Venkite sekų, tokių kaip 1234 ar abcd."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:115
-#| msgctxt "Password hint"
-#| msgid ""
-#| "This is a weak password. Try to add more letters, numbers and symbols."
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to add more letters, numbers and punctuation."
@@ -638,7 +588,7 @@ msgstr "puikus"
 
 #. Translators: the first parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu".
-#. 
+#.
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:68
 #, c-format
 msgid ""
@@ -648,7 +598,7 @@ msgstr ""
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu".
-#. 
+#.
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:79
 #, c-format
 msgid ""
@@ -689,7 +639,6 @@ msgstr ""
 
 #: gnome-initial-setup/pages/software/gis-software-page.c:123
 #: gnome-initial-setup/pages/software/gis-software-page.ui:11
-#| msgid "Third Party Repositories"
 msgid "Third-Party Repositories"
 msgstr "Trečiųjų šalių saugyklos"
 
@@ -706,10 +655,6 @@ msgstr ""
 "nuosavybinės programinės įrangos."
 
 #: gnome-initial-setup/pages/software/gis-software-page.c:127
-#| msgid ""
-#| "Third-party repositories provide access to additional software from "
-#| "selected external sources. They include popular apps, as well as firmware "
-#| "that is important for some devices. Some proprietary software is included."
 msgid ""
 "Third-party repositories provide access to additional software from selected "
 "external sources, including popular apps and drivers that are important for "
@@ -721,12 +666,10 @@ msgstr ""
 "programinės įrangos."
 
 #: gnome-initial-setup/pages/software/gis-software-page.c:139
-#| msgid "Third-Party Repositories"
 msgid "_Disable Third-Party Repositories"
 msgstr "_Išjungti trečiųjų šalių saugyklas"
 
 #: gnome-initial-setup/pages/software/gis-software-page.c:144
-#| msgid "Third-Party Repositories"
 msgid "_Enable Third-Party Repositories"
 msgstr "Į_jungti trečiųjų šalių saugyklas"
 
@@ -784,12 +727,10 @@ msgstr "Ieškoti miestų"
 #. Translators: this is the name of a location followed by a region, for example:
 #. * 'London, United Kingdom'
 #. * You shouldn't need to translate this string unless the language has a different comma.
-#. 
+#.
 #: gnome-initial-setup/pages/timezone/gis-location-entry.c:557
 #: gnome-initial-setup/pages/timezone/gis-location-entry.c:582
 #, c-format
-#| msgctxt "timezone loc"
-#| msgid "%s, %s"
 msgid "%s, %s"
 msgstr "%s, %s"
 
@@ -802,7 +743,7 @@ msgstr "%s, %s"
 
 #. Translators: UTC here means the Coordinated Universal Time.
 #. * %:::z will be replaced by the offset from UTC e.g. UTC+02
-#. 
+#.
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.c:320
 msgid "UTC%:::z"
 msgstr "UTC%:::z"
@@ -853,10 +794,9 @@ msgstr "Ieškokite artimiausio miesto"
 #. * space (U200a) to improve the spacing in the title, which you can
 #. * keep or remove. The %s is getting replaced with the name and version
 #. * of the OS, e.g. "GNOME 3.38"
-#. 
+#.
 #: gnome-initial-setup/pages/welcome/gis-welcome-page.c:79
 #, c-format
-#| msgid "Welcome!"
 msgid "Welcome to %s !"
 msgstr "Sveiki pradėję naudoti %s !"
 
@@ -962,12 +902,13 @@ msgid "Show First Report"
 msgstr ""
 
 #: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:9
-msgid "Help Improve Ubuntu"
-msgstr ""
+#, fuzzy
+msgid "Utile Depends On It: Help Improve Ubuntu"
+msgstr "Padėkite tobulinti Ubuntu sistemą"
 
 #: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:10
 msgid ""
-"Help us improve Ubuntu by sharing your system and error reports with us.\n"
+"Help improve Ubuntu by sharing your system and error reports with them.\n"
 "Reports are sent anonymously."
 msgstr ""
 
@@ -1082,7 +1023,7 @@ msgstr ""
 #. Ubuntu Pro contact fails.
 #. It may be due to various reasons, most common is
 #. an invalid token.
-#. 
+#.
 #: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:236
 msgid "Invalid token or attach failure"
 msgstr ""
@@ -1184,7 +1125,7 @@ msgstr ""
 
 #. TRANSLATORS: Subtitle telling who can provide the Ubuntu Pro token.
 #. Use HTML encoded format for special characters such as &amp' for '&'. %s is a URL.
-#. 
+#.
 #: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:1247
 #, c-format
 msgid "From your admin, or from %s"
@@ -1313,9 +1254,6 @@ msgstr "Bandyti ${NAME}"
 msgid "Install ${PRETTY_NAME}"
 msgstr "Įdiegti ${PRETTY_NAME}"
 
-#~ msgid "Help improve Ubuntu"
-#~ msgstr "Padėkite tobulinti Ubuntu sistemą"
-
 #~ msgid "Show the First Report"
 #~ msgstr "Peržiūrėti pirmajį pranešimą"
 
@@ -1343,8 +1281,8 @@ msgstr "Įdiegti ${PRETTY_NAME}"
 #~ "Sends technical reports that do not contain personal information. Data is "
 #~ "collected by %1$s (<a href='%2$s'>privacy policy</a>)."
 #~ msgstr ""
-#~ "Siunčia technines ataskaitas su automatiškai pašalinta asmenine informacija. "
-#~ "Duomenys renka %1$s (<a href='%2$s'>privatumo politika</a>)."
+#~ "Siunčia technines ataskaitas su automatiškai pašalinta asmenine "
+#~ "informacija. Duomenys renka %1$s (<a href='%2$s'>privatumo politika</a>)."
 
 #~ msgid "Privacy controls can be changed at any time from the Settings app."
 #~ msgstr "Privatumo valdymą bet kada galima pakeisti Nustatymų programoje."
@@ -1357,8 +1295,8 @@ msgstr "Įdiegti ${PRETTY_NAME}"
 
 #~ msgid "Yes, share system data with the Ubuntu team"
 #~ msgstr ""
-#~ "Taip, dalintis aparatinės įrangos, programų ir laiko juostos duomenimis su "
-#~ "Ubuntu komanda"
+#~ "Taip, dalintis aparatinės įrangos, programų ir laiko juostos duomenimis "
+#~ "su Ubuntu komanda"
 
 #~ msgid "No, don't share system data"
 #~ msgstr "Ne, nesidalinsiu aparatinės įrangos bei įdiegtų programų sąrašu"
@@ -1369,4 +1307,5 @@ msgstr "Įdiegti ${PRETTY_NAME}"
 #~ "location. You can change this anytime in System Settings."
 #~ msgstr ""
 #~ "Įjunkite vietovės paslaugas jei norite programoms leisti žinoti jūsų "
-#~ "geografinę vietovę. Leidimą galite pakeisti Sistemos nustatymuose bet kada."
+#~ "geografinę vietovę. Leidimą galite pakeisti Sistemos nustatymuose bet "
+#~ "kada."

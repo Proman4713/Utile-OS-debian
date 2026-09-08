@@ -7,18 +7,18 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup master\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-"
-"setup/issues/\n"
-"POT-Creation-Date: 2026-05-22 14:35+0000\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+"issues\n"
+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
 "PO-Revision-Date: 2026-04-14 01:42+0000\n"
 "Last-Translator: Martin Srebotnjak <miles@filmsi.net>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
+"Language: sl_SI\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2026-07-01 12:24+0000\n"
 "X-Generator: Launchpad (build c38ea58da9d7185c4996adfc854ab433551cdcdd)\n"
-"Language: sl_SI\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
 #: data/gnome-initial-setup.desktop.in.in:2
@@ -159,17 +159,16 @@ msgstr "Skrbniško geslo"
 msgid "C_ontinue"
 msgstr "_Nadaljuj"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:225
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:210
 #, c-format
 msgid "The hostname is too long."
 msgstr "Ime gostitelja je prdolgo."
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:229
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:214
 msgid "The hostname must start with a lower case letter from a-z or a digit."
-msgstr ""
-"Ime gostitelja se mora začeti z malo začetnico od a-z ali s številko."
+msgstr "Ime gostitelja se mora začeti z malo začetnico od a-z ali s številko."
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:233
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:218
 msgid ""
 "The hostname should only consist of lower case letters from a-z, digits and "
 "a hyphen: -"
@@ -177,18 +176,18 @@ msgstr ""
 "Ime gostitelj amora biti sestavljeno zgolj iz malih črk, številk in "
 "pomišljaja: -"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:574
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:545
 msgid "We need a few details to complete setup."
 msgstr ""
 "Za končanje namestitve oz. nastavitve so zahtevani še nekateri pomembni "
 "podatki."
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:737
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:704
 msgid "Administrator"
 msgstr "Skrbnik"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:743
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:786
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:710
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:753
 #, c-format
 msgid "Failed to create user '%s': "
 msgstr "Ustvarjanje uporabniškega računa »%s« je spodletelo: "
@@ -220,8 +219,7 @@ msgid "Set up _parental controls for this user"
 msgstr "Nastavitve _starševskega nadzora za uporabnika"
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:223
-msgid ""
-"For use by a parent or supervisor, who must set up their own password."
+msgid "For use by a parent or supervisor, who must set up their own password."
 msgstr "Za starše ali nadzornike, ki imajo nastavljen svoje geslo."
 
 #: gnome-initial-setup/pages/account/gis-account-page.ui:32
@@ -298,7 +296,7 @@ msgstr "Več …"
 
 #. Translators: a search for input methods or keyboard layouts
 #. * did not yield any results
-#. 
+#.
 #: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:347
 msgid "No inputs found"
 msgstr "Ni najdenih vhodnih naprav"
@@ -332,7 +330,7 @@ msgstr "Izberite jezik s seznama ali poiščite določen jezik."
 #. Translators: This is meant to be a warm, engaging welcome message,
 #. * like greeting somebody at the door. If the exclamation mark is not
 #. * suitable for this in your language you may replace it.
-#. 
+#.
 #: gnome-initial-setup/pages/language/gis-welcome-widget.c:132
 msgid "Welcome!"
 msgstr "Dobrodošli!"
@@ -476,8 +474,7 @@ msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:89
 msgctxt "Password hint"
-msgid ""
-"This is a weak password. Try to avoid using your name in the password."
+msgid "This is a weak password. Try to avoid using your name in the password."
 msgstr "Vpisano geslo je šibko. Ne uporabljajte imen in datumov v geslih."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:91
@@ -485,8 +482,7 @@ msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to avoid some of the words included in the "
 "password."
-msgstr ""
-"Vpisano geslo je šibko. Izognite se nekaterim znanim besedam v geslu."
+msgstr "Vpisano geslo je šibko. Izognite se nekaterim znanim besedam v geslu."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:95
 msgctxt "Password hint"
@@ -528,8 +524,7 @@ msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to use a mixture of letters, numbers and "
 "punctuation."
-msgstr ""
-"Vpisano geslo je šibko. Poskusite uporabiti črke, številke in ločila."
+msgstr "Vpisano geslo je šibko. Poskusite uporabiti črke, številke in ločila."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:109
 msgctxt "Password hint"
@@ -593,7 +588,7 @@ msgstr "izvrstna"
 
 #. Translators: the first parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu".
-#. 
+#.
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:68
 #, c-format
 msgid ""
@@ -603,7 +598,7 @@ msgstr ""
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu".
-#. 
+#.
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:79
 #, c-format
 msgid ""
@@ -731,7 +726,7 @@ msgstr "Poišči mesta"
 #. Translators: this is the name of a location followed by a region, for example:
 #. * 'London, United Kingdom'
 #. * You shouldn't need to translate this string unless the language has a different comma.
-#. 
+#.
 #: gnome-initial-setup/pages/timezone/gis-location-entry.c:557
 #: gnome-initial-setup/pages/timezone/gis-location-entry.c:582
 #, c-format
@@ -747,7 +742,7 @@ msgstr "%s, %s"
 
 #. Translators: UTC here means the Coordinated Universal Time.
 #. * %:::z will be replaced by the offset from UTC e.g. UTC+02
-#. 
+#.
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.c:320
 msgid "UTC%:::z"
 msgstr "UTC%:::z"
@@ -798,7 +793,7 @@ msgstr "Poiščite bližnje mesto"
 #. * space (U200a) to improve the spacing in the title, which you can
 #. * keep or remove. The %s is getting replaced with the name and version
 #. * of the OS, e.g. "GNOME 3.38"
-#. 
+#.
 #: gnome-initial-setup/pages/welcome/gis-welcome-page.c:79
 #, c-format
 msgid "Welcome to %s !"
@@ -907,12 +902,13 @@ msgid "Show First Report"
 msgstr ""
 
 #: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:9
-msgid "Help Improve Ubuntu"
-msgstr ""
+#, fuzzy
+msgid "Utile Depends On It: Help Improve Ubuntu"
+msgstr "Pomagajte izboljšati Ubuntu"
 
 #: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:10
 msgid ""
-"Help us improve Ubuntu by sharing your system and error reports with us.\n"
+"Help improve Ubuntu by sharing your system and error reports with them.\n"
 "Reports are sent anonymously."
 msgstr ""
 
@@ -1030,7 +1026,7 @@ msgstr "Veljaven žeton"
 #. Ubuntu Pro contact fails.
 #. It may be due to various reasons, most common is
 #. an invalid token.
-#. 
+#.
 #: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:236
 msgid "Invalid token or attach failure"
 msgstr "Neveljaven žetonn ali priklop ni uspel"
@@ -1132,7 +1128,7 @@ msgstr ""
 
 #. TRANSLATORS: Subtitle telling who can provide the Ubuntu Pro token.
 #. Use HTML encoded format for special characters such as &amp' for '&'. %s is a URL.
-#. 
+#.
 #: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:1247
 #, c-format
 msgid "From your admin, or from %s"
@@ -1269,9 +1265,6 @@ msgstr "Namesti ${PRETTY_NAME}"
 #~ msgid "Failed to show privacy policy: %s"
 #~ msgstr "Spodletelo prikazovanje politike zasebnosti: %s"
 
-#~ msgid "Help improve Ubuntu"
-#~ msgstr "Pomagajte izboljšati Ubuntu"
-
 #~ msgid "Show the First Report"
 #~ msgstr "Pokaži prvo poročilo"
 
@@ -1280,8 +1273,8 @@ msgstr "Namesti ${PRETTY_NAME}"
 #~ "Sends technical reports that do not contain personal information. Data is "
 #~ "collected by %1$s (<a href='%2$s'>privacy policy</a>)."
 #~ msgstr ""
-#~ "Pošlje tehnična poročila brez zasebnih podatkov. Podatke zbira skupnost %1$s "
-#~ "(<a href='%2$s'>pravila zasebnosti</a>)."
+#~ "Pošlje tehnična poročila brez zasebnih podatkov. Podatke zbira skupnost "
+#~ "%1$s (<a href='%2$s'>pravila zasebnosti</a>)."
 
 #~ msgid "Privacy controls can be changed at any time from the Settings app."
 #~ msgstr "Določila zasebnosti je mogoče prilagajati med nastavitvami."
@@ -1314,7 +1307,8 @@ msgstr "Namesti ${PRETTY_NAME}"
 #~ "location. You can change this anytime in System Settings."
 #~ msgstr ""
 #~ "Vklopite storitve lociranja, pa programom omogočite določanje vašega "
-#~ "geografskega položaja. To lahko kadarkoli spremenite  sistemskih nastavitvah."
+#~ "geografskega položaja. To lahko kadarkoli spremenite  sistemskih "
+#~ "nastavitvah."
 
 #~ msgid "Location services"
 #~ msgstr "Storitve lociranja"
@@ -1326,8 +1320,8 @@ msgstr "Namesti ${PRETTY_NAME}"
 #~ "chose for your timezone."
 #~ msgstr ""
 #~ "Pomagajte nam izboljšati Ubuntu, tako da delite svoje sistemske podatke z "
-#~ "nami. Ti vsebujejo model naprave, nameščeno programsko opremo in lokacijo, "
-#~ "ki ste jo izbrali za časovni pas."
+#~ "nami. Ti vsebujejo model naprave, nameščeno programsko opremo in "
+#~ "lokacijo, ki ste jo izbrali za časovni pas."
 
 #~ msgid "Yes, share system data with the Ubuntu team"
 #~ msgstr "Da, sistemske podatke bi rad delil z Ubuntu ekipo"
@@ -1344,9 +1338,10 @@ msgstr "Namesti ${PRETTY_NAME}"
 #~ "More information on <a href=\"https://ubuntu.com/pro\">ubuntu.com/pro</a>."
 #~ msgstr ""
 #~ "Nadgradite ta računalnik z Ubuntu Pro za varnostne podsodobitve mnogo "
-#~ "večjega nabora paketov do leta 2034. Ustreza Fulfill, FedRAMP, FIPS, STIG, "
-#~ "HIPPA in drugim zahtevam po skladnosti in ojačitvi preko certificiranih "
-#~ "orodnih in šifririnh modulov. Brezplačno za do 5 računalnikov.\n"
+#~ "večjega nabora paketov do leta 2034. Ustreza Fulfill, FedRAMP, FIPS, "
+#~ "STIG, HIPPA in drugim zahtevam po skladnosti in ojačitvi preko "
+#~ "certificiranih orodnih in šifririnh modulov. Brezplačno za do 5 "
+#~ "računalnikov.\n"
 #~ "\n"
 #~ "Več informaciji na <a href=\"https://ubuntu.com/pro\">ubuntu.com/pro</a>."
 
@@ -1361,14 +1356,15 @@ msgstr "Namesti ${PRETTY_NAME}"
 #~ "Ta računalnik nadgradite na Ubuntu Pro. Brezplačno za 5 računalnikov."
 
 #~ msgid "Get security updates on a wide range of packages until 2034"
-#~ msgstr "Pridobite varnostzne posodobitve za širok nabor paketov do leta 2034"
+#~ msgstr ""
+#~ "Pridobite varnostzne posodobitve za širok nabor paketov do leta 2034"
 
 #~ msgid ""
 #~ "Fulfill FedRAMP, FIPS, STIG and HIPAA and other compliance and hardening "
 #~ "requirements with certified tooling and crypto-modules."
 #~ msgstr ""
-#~ "Ustreza Fulfill, FedRAMP, FIPS, STIG, HIPPA in drugim zahtevam po skladnosti "
-#~ "in ojačitvi preko certificiranih orodnih in šifririnh modulov"
+#~ "Ustreza Fulfill, FedRAMP, FIPS, STIG, HIPPA in drugim zahtevam po "
+#~ "skladnosti in ojačitvi preko certificiranih orodnih in šifririnh modulov"
 
 #~ msgid "Downloading language packs…"
 #~ msgstr "Prenašanje jezikovnih paketov ..."
@@ -1381,10 +1377,12 @@ msgstr "Namesti ${PRETTY_NAME}"
 
 #~ msgid "Learn more at <a href=\"https://ubuntu.com/pro\">ubuntu.com/pro</a>."
 #~ msgstr ""
-#~ "Več o tem na naslovu <a href=\"https://ubuntu.com/pro\">ubuntu.com/pro</a>."
+#~ "Več o tem na naslovu <a href=\"https://ubuntu.com/pro\">ubuntu.com/pro</"
+#~ "a>."
 
 #~ msgid ""
-#~ "You can always enable Ubuntu Pro later via the Software & Updates application"
+#~ "You can always enable Ubuntu Pro later via the Software & Updates "
+#~ "application"
 #~ msgstr ""
-#~ "Ubuntu Pro lahko omogočite tudi kasneje prek programa Programska oprema in "
-#~ "posodobitve."
+#~ "Ubuntu Pro lahko omogočite tudi kasneje prek programa Programska oprema "
+#~ "in posodobitve."

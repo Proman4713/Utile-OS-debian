@@ -7,18 +7,18 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-"
-"setup/issues/\n"
-"POT-Creation-Date: 2026-05-22 14:35+0000\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+"issues\n"
+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
 "PO-Revision-Date: 2026-04-14 01:47+0000\n"
 "Last-Translator: Yaron <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew\n"
+"Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2026-07-01 12:24+0000\n"
 "X-Generator: Launchpad (build c38ea58da9d7185c4996adfc854ab433551cdcdd)\n"
-"Language: he\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
 #: data/gnome-initial-setup.desktop.in.in:2
@@ -72,7 +72,6 @@ msgid "Force Upgrade user"
 msgstr ""
 
 #: gnome-initial-setup/gnome-initial-setup.c:378
-#| msgid "- GNOME initial setup"
 msgid "— GNOME initial setup"
 msgstr "- הגדרות ראשוניות של GNOME"
 
@@ -101,9 +100,6 @@ msgid "Enterprise Login"
 msgstr "כניסה ארגונית"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:13
-#| msgid ""
-#| "Enterprise login allows an existing centrally managed user account to be "
-#| "used on this device."
 msgid ""
 "Enterprise login allows an existing centrally managed user account to be "
 "used on this device. You can also use this account to access company "
@@ -161,32 +157,31 @@ msgstr "ססמת המנהל"
 msgid "C_ontinue"
 msgstr "להמ_שיך"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:225
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:210
 #, c-format
 msgid "The hostname is too long."
 msgstr "שם המארח ארוך מדי."
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:229
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:214
 msgid "The hostname must start with a lower case letter from a-z or a digit."
 msgstr "שם המארח חייב להיפתח באות קטנה מ־a עד z או ספרה."
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:233
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:218
 msgid ""
 "The hostname should only consist of lower case letters from a-z, digits and "
 "a hyphen: -"
-msgstr ""
-"תוכן שם המארח אמור להיות מורכב מאותיות קטנות מ־a עד z, ספרות ומינוס: -"
+msgstr "תוכן שם המארח אמור להיות מורכב מאותיות קטנות מ־a עד z, ספרות ומינוס: -"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:574
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:545
 msgid "We need a few details to complete setup."
 msgstr "אנחנו צריכים כמה פרטים להשלמת ההתקנה."
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:737
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:704
 msgid "Administrator"
 msgstr "מנהל"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:743
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:786
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:710
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:753
 #, c-format
 msgid "Failed to create user '%s': "
 msgstr "יצירת המשתמש „%s” נכשלה: "
@@ -217,8 +212,7 @@ msgid "Set up _parental controls for this user"
 msgstr "הגדרת פיקוח הורים למשתמש זה_"
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:223
-msgid ""
-"For use by a parent or supervisor, who must set up their own password."
+msgid "For use by a parent or supervisor, who must set up their own password."
 msgstr "לשימוש על ידי הורה או מפקח, אשר בתורו חייב להגדיר ססמה משלו."
 
 #: gnome-initial-setup/pages/account/gis-account-page.ui:32
@@ -226,7 +220,6 @@ msgid "_Enterprise Login"
 msgstr "_כניסה ארגונית"
 
 #: gnome-initial-setup/pages/account/gis-account-page.ui:41
-#| msgid "Set Up _Enterprise Login"
 msgid "Go online to set up Enterprise Login."
 msgstr "התחברות לרשת להגדרת כניסה ארגונית."
 
@@ -264,7 +257,6 @@ msgid "The username is too long."
 msgstr "שם המשתמש ארוך מדי."
 
 #: gnome-initial-setup/pages/account/um-utils.c:159
-#| msgid "The username cannot start with a “-”."
 msgid "The username must start with a lower case letter from a-z."
 msgstr "שם המשתמש חייב להתחיל עם אות קטנה מהאלפבית האנגלי."
 
@@ -273,9 +265,6 @@ msgid "That username isn’t available. Please try another."
 msgstr "שם משתמש זה אינו זמין. יש לנסות שם אחר."
 
 #: gnome-initial-setup/pages/account/um-utils.c:165
-#| msgid ""
-#| "The username should only consist of upper and lower case letters from a-"
-#| "z, digits and the following characters: . - _"
 msgid ""
 "The username should only consist of lower case letters from a-z, digits, and "
 "the following characters: - _"
@@ -298,7 +287,7 @@ msgstr "עוד…"
 
 #. Translators: a search for input methods or keyboard layouts
 #. * did not yield any results
-#. 
+#.
 #: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:347
 msgid "No inputs found"
 msgstr "לא נמצא קלט"
@@ -332,7 +321,7 @@ msgstr "נא לבחור שפה מהרשימה או לחפש שפה מסוימת.
 #. Translators: This is meant to be a warm, engaging welcome message,
 #. * like greeting somebody at the door. If the exclamation mark is not
 #. * suitable for this in your language you may replace it.
-#. 
+#.
 #: gnome-initial-setup/pages/language/gis-welcome-widget.c:132
 msgid "Welcome!"
 msgstr "ברוך בואך!"
@@ -470,8 +459,7 @@ msgstr "זו ססמה חלשה. ססמה ללא השם שלך תהיה חזקה 
 
 #: gnome-initial-setup/pages/password/pw-utils.c:89
 msgctxt "Password hint"
-msgid ""
-"This is a weak password. Try to avoid using your name in the password."
+msgid "This is a weak password. Try to avoid using your name in the password."
 msgstr "זו ססמה חלשה. כדאי לנסות להימנע משימוש בשם שלך בססמה."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:91
@@ -540,27 +528,17 @@ msgid "This is a weak password. Try to avoid sequences like 1234 or abcd."
 msgstr "זו ססמה חלשה. כדאי להימנע מרצפים כמו 1234 או abcd או אבגד."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:115
-#| msgctxt "Password hint"
-#| msgid ""
-#| "This is a weak password. Try to use a mixture of letters, numbers and "
-#| "punctuation."
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to add more letters, numbers and punctuation."
 msgstr "זו ססמה חלשה. כדאי להוסיף עוד תווים, מספרים וסימני פיסוק."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:117
-#| msgctxt "Password hint"
-#| msgid "Mix uppercase and lowercase and use a number or two."
 msgctxt "Password hint"
 msgid "Mix uppercase and lowercase and try to use a number or two."
 msgstr "יש לערבב אותיות רישיות וקטנות ולהשתמש במספר או שניים."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:119
-#| msgctxt "Password hint"
-#| msgid ""
-#| "Good password! Adding more letters, numbers and punctuation will make it "
-#| "stronger."
 msgctxt "Password hint"
 msgid ""
 "Adding more letters, numbers and punctuation will make the password stronger."
@@ -589,7 +567,7 @@ msgstr "מצוין"
 
 #. Translators: the first parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu".
-#. 
+#.
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:68
 #, c-format
 msgid ""
@@ -599,7 +577,7 @@ msgstr ""
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu".
-#. 
+#.
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:79
 #, c-format
 msgid ""
@@ -662,12 +640,10 @@ msgstr ""
 "יישומים נפוצים וקושחות שחשובים לחלק מההתקנים. יש גם תכניות קנייניות."
 
 #: gnome-initial-setup/pages/software/gis-software-page.c:139
-#| msgid "Third-Party Repositories"
 msgid "_Disable Third-Party Repositories"
 msgstr "ה_שבתת מאגרי צד־שלישי"
 
 #: gnome-initial-setup/pages/software/gis-software-page.c:144
-#| msgid "Third-Party Repositories"
 msgid "_Enable Third-Party Repositories"
 msgstr "_אפשור מאגרי צד־שלישי"
 
@@ -725,12 +701,10 @@ msgstr "חיפוש ערים"
 #. Translators: this is the name of a location followed by a region, for example:
 #. * 'London, United Kingdom'
 #. * You shouldn't need to translate this string unless the language has a different comma.
-#. 
+#.
 #: gnome-initial-setup/pages/timezone/gis-location-entry.c:557
 #: gnome-initial-setup/pages/timezone/gis-location-entry.c:582
 #, c-format
-#| msgctxt "timezone loc"
-#| msgid "%s, %s"
 msgid "%s, %s"
 msgstr "‏%s, ‏%s"
 
@@ -743,7 +717,7 @@ msgstr "‏%s, ‏%s"
 
 #. Translators: UTC here means the Coordinated Universal Time.
 #. * %:::z will be replaced by the offset from UTC e.g. UTC+02
-#. 
+#.
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.c:320
 msgid "UTC%:::z"
 msgstr "UTC%:::z"
@@ -794,10 +768,9 @@ msgstr "נא לחפש עיר סמוכה"
 #. * space (U200a) to improve the spacing in the title, which you can
 #. * keep or remove. The %s is getting replaced with the name and version
 #. * of the OS, e.g. "GNOME 3.38"
-#. 
+#.
 #: gnome-initial-setup/pages/welcome/gis-welcome-page.c:79
 #, c-format
-#| msgid "Welcome!"
 msgid "Welcome to %s !"
 msgstr "ברוך בואך אל %s!"
 
@@ -904,12 +877,13 @@ msgid "Show First Report"
 msgstr ""
 
 #: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:9
-msgid "Help Improve Ubuntu"
-msgstr ""
+#, fuzzy
+msgid "Utile Depends On It: Help Improve Ubuntu"
+msgstr "סיוע בשיפור אובונטו"
 
 #: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:10
 msgid ""
-"Help us improve Ubuntu by sharing your system and error reports with us.\n"
+"Help improve Ubuntu by sharing your system and error reports with them.\n"
 "Reports are sent anonymously."
 msgstr ""
 
@@ -1027,7 +1001,7 @@ msgstr "אסימון תקין"
 #. Ubuntu Pro contact fails.
 #. It may be due to various reasons, most common is
 #. an invalid token.
-#. 
+#.
 #: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:236
 msgid "Invalid token or attach failure"
 msgstr "אסימון שגוי או כשל צירוף"
@@ -1129,7 +1103,7 @@ msgstr ""
 
 #. TRANSLATORS: Subtitle telling who can provide the Ubuntu Pro token.
 #. Use HTML encoded format for special characters such as &amp' for '&'. %s is a URL.
-#. 
+#.
 #: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:1247
 #, c-format
 msgid "From your admin, or from %s"
@@ -1262,9 +1236,6 @@ msgstr "להתקין את ${PRETTY_NAME}"
 #~ msgid "Failed to show privacy policy: %s"
 #~ msgstr "הצגת מדיניות הפרטיות נכשלה: %s"
 
-#~ msgid "Help improve Ubuntu"
-#~ msgstr "סיוע בשיפור אובונטו"
-
 #~ msgid "Show the First Report"
 #~ msgstr "הצגת הדיווח הראשון"
 
@@ -1300,8 +1271,8 @@ msgstr "להתקין את ${PRETTY_NAME}"
 #~ "Turn on location services to let applications know your geographical "
 #~ "location. You can change this anytime in System Settings."
 #~ msgstr ""
-#~ "להפעיל שירותי מיקום כדי לאפשר ליישומים לדעת מה מיקומך. אפשר לשנות את זה בכל "
-#~ "עת דרך הגדרות המערכת."
+#~ "להפעיל שירותי מיקום כדי לאפשר ליישומים לדעת מה מיקומך. אפשר לשנות את זה "
+#~ "בכל עת דרך הגדרות המערכת."
 
 #~ msgid "Location services"
 #~ msgstr "שירותי מיקום"
@@ -1321,8 +1292,8 @@ msgstr "להתקין את ${PRETTY_NAME}"
 #~ "things like your machine model, installed software and the location you "
 #~ "chose for your timezone."
 #~ msgstr ""
-#~ "נשמח לעזרתך בשיפור אובונטו על ידי שיתוף נתוני המערכת של איתנו. לרבות דברים "
-#~ "כמו דגם המכונה שלך, התוכנות שמותקנות אצלך והמקום שבחרת כאזור זמן."
+#~ "נשמח לעזרתך בשיפור אובונטו על ידי שיתוף נתוני המערכת של איתנו. לרבות "
+#~ "דברים כמו דגם המכונה שלך, התוכנות שמותקנות אצלך והמקום שבחרת כאזור זמן."
 
 #~ msgid "Or add _token manually"
 #~ msgstr "או להוסיף _אסימון ידנית"
@@ -1337,7 +1308,8 @@ msgstr "להתקין את ${PRETTY_NAME}"
 #~ msgstr "קבלת עדכוני אבטחה למגוון רחב של חבילות עד 2034"
 
 #~ msgid ""
-#~ "You can always enable Ubuntu Pro later via the Software & Updates application"
+#~ "You can always enable Ubuntu Pro later via the Software & Updates "
+#~ "application"
 #~ msgstr "תמיד אפשר להפעיל את אובונטו פרו בהמשך דרך היישום תוכנה ועדכונים"
 
 #~ msgid ""
@@ -1355,8 +1327,8 @@ msgstr "להתקין את ${PRETTY_NAME}"
 #~ "\n"
 #~ "More information on <a href=\"https://ubuntu.com/pro\">ubuntu.com/pro</a>."
 #~ msgstr ""
-#~ "אפשר לשדרג את המכונה הזאת ל־Ubuntu Pro כדי לקבל עדכונים למגוון משמעותית רחב "
-#~ "יותר של חבילות, עד 2034. כך ניתן לעמוד בדרישות תאימות והקשחה FedRAMP,‏ "
+#~ "אפשר לשדרג את המכונה הזאת ל־Ubuntu Pro כדי לקבל עדכונים למגוון משמעותית "
+#~ "רחב יותר של חבילות, עד 2034. כך ניתן לעמוד בדרישות תאימות והקשחה FedRAMP,‏ "
 #~ "FIPS,‏ STIG ו־ HIPAA עם כלים שהוסמכו ומודולי הצפנה. חינם עד 5 מכונות.\n"
 #~ "\n"
 #~ "יש מידע נוסף ב־<a href=\"https://ubuntu.com/pro\">ubuntu.com/pro</a>."

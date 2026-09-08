@@ -12,18 +12,18 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup master\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-"
-"setup/issues/\n"
-"POT-Creation-Date: 2026-05-22 14:35+0000\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+"issues\n"
+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
 "PO-Revision-Date: 2026-04-14 01:46+0000\n"
 "Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
+"Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2026-07-01 12:24+0000\n"
 "X-Generator: Launchpad (build c38ea58da9d7185c4996adfc854ab433551cdcdd)\n"
-"Language: ja\n"
 
 #: data/gnome-initial-setup.desktop.in.in:2
 #: gnome-initial-setup/gis-driver.c:890
@@ -109,8 +109,9 @@ msgid ""
 "used on this device. You can also use this account to access company "
 "resources on the internet."
 msgstr ""
-"エンタープライズログインを利用すると、このデバイスで既存の集中管理ユーザーアカウントを使用できます。また、このアカウントでインターネット上の企業リソースに"
-"もアクセスできます。"
+"エンタープライズログインを利用すると、このデバイスで既存の集中管理ユーザーア"
+"カウントを使用できます。また、このアカウントでインターネット上の企業リソース"
+"にもアクセスできます。"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:27
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:153
@@ -141,8 +142,9 @@ msgid ""
 "domain. Please have your network administrator type the domain password "
 "here, and choose a unique computer name for your computer."
 msgstr ""
-"エンタープライズログインを利用するには、このコンピューターをドメインに登録する必要があります。ネットワーク管理者にドメインパスワードを入力してもらい、この"
-"コンピューターの一意のコンピューター名を指定してください。"
+"エンタープライズログインを利用するには、このコンピューターをドメインに登録す"
+"る必要があります。ネットワーク管理者にドメインパスワードを入力してもらい、こ"
+"のコンピューターの一意のコンピューター名を指定してください。"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:179
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:151
@@ -161,31 +163,32 @@ msgstr "管理者パスワード"
 msgid "C_ontinue"
 msgstr "続行(_O)"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:225
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:210
 #, c-format
 msgid "The hostname is too long."
 msgstr "ホスト名が長すぎます。"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:229
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:214
 msgid "The hostname must start with a lower case letter from a-z or a digit."
 msgstr "ホスト名は、小文字の a ～ z または数字で始める必要があります、"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:233
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:218
 msgid ""
 "The hostname should only consist of lower case letters from a-z, digits and "
 "a hyphen: -"
-msgstr "ホスト名は、小文字の a ～ z、数字、ハイフン (-) のみで構成してください。"
+msgstr ""
+"ホスト名は、小文字の a ～ z、数字、ハイフン (-) のみで構成してください。"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:574
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:545
 msgid "We need a few details to complete setup."
 msgstr "セットアップを完了するために、いくつかの詳細情報が必要です。"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:737
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:704
 msgid "Administrator"
 msgstr "管理者"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:743
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:786
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:710
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:753
 #, c-format
 msgid "Failed to create user '%s': "
 msgstr "ユーザー '%s' の作成に失敗しました: "
@@ -216,8 +219,7 @@ msgid "Set up _parental controls for this user"
 msgstr "このユーザーのペアレンタルコントロールを設定する(_P)"
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:223
-msgid ""
-"For use by a parent or supervisor, who must set up their own password."
+msgid "For use by a parent or supervisor, who must set up their own password."
 msgstr "保護者または監督者向けです。自身のパスワードを設定する必要があります。"
 
 #: gnome-initial-setup/pages/account/gis-account-page.ui:32
@@ -273,11 +275,14 @@ msgstr "そのユーザー名は使用できません。別のユーザー名を
 msgid ""
 "The username should only consist of lower case letters from a-z, digits, and "
 "the following characters: - _"
-msgstr "ユーザー名は、a から z の小文字、数字、および以下の記号のみで構成される必要があります: - _"
+msgstr ""
+"ユーザー名は、a から z の小文字、数字、および以下の記号のみで構成される必要が"
+"あります: - _"
 
 #: gnome-initial-setup/pages/account/um-utils.c:169
 msgid "This will be used to name your home folder and can’t be changed."
-msgstr "これはホームフォルダーの名前として使用され、後から変更することはできません。"
+msgstr ""
+"これはホームフォルダーの名前として使用され、後から変更することはできません。"
 
 #: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:257
 msgid "Preview"
@@ -290,7 +295,7 @@ msgstr "さらに…"
 
 #. Translators: a search for input methods or keyboard layouts
 #. * did not yield any results
-#. 
+#.
 #: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:347
 msgid "No inputs found"
 msgstr "入力方法が見つかりません"
@@ -324,7 +329,7 @@ msgstr "一覧から言語を選択するか、特定の言語を検索してく
 #. Translators: This is meant to be a warm, engaging welcome message,
 #. * like greeting somebody at the door. If the exclamation mark is not
 #. * suitable for this in your language you may replace it.
-#. 
+#.
 #: gnome-initial-setup/pages/language/gis-welcome-widget.c:132
 msgid "Welcome!"
 msgstr "ようこそ！"
@@ -362,7 +367,9 @@ msgstr "Wi-Fi"
 msgid ""
 "Connecting to the internet helps you get new apps, information, and other "
 "upgrades. It also helps set the time and your location automatically."
-msgstr "インターネットに接続すると、新しいアプリや情報、その他のアップグレードを入手できます。また、時刻と位置情報の自動設定も行われます。"
+msgstr ""
+"インターネットに接続すると、新しいアプリや情報、その他のアップグレードを入手"
+"できます。また、時刻と位置情報の自動設定も行われます。"
 
 #: gnome-initial-setup/pages/network/gis-network-page.ui:57
 msgid "No wireless available"
@@ -404,7 +411,8 @@ msgstr "保護者パスワードを設定"
 #: gnome-initial-setup/pages/password/gis-password-page.c:101
 #, c-format
 msgid "This password will control access to the parental controls for %s."
-msgstr "このパスワードで %s のペアレンタルコントロールへのアクセスを管理します。"
+msgstr ""
+"このパスワードで %s のペアレンタルコントロールへのアクセスを管理します。"
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:223
 #, c-format
@@ -442,7 +450,9 @@ msgctxt "Password hint"
 msgid ""
 "This password is very similar to your last one. Try changing some letters "
 "and numbers."
-msgstr "このパスワードは前回のものと非常に似ています。いくつかの文字や数字を変更してください。"
+msgstr ""
+"このパスワードは前回のものと非常に似ています。いくつかの文字や数字を変更して"
+"ください。"
 
 #: gnome-initial-setup/pages/password/pw-utils.c:85
 #: gnome-initial-setup/pages/password/pw-utils.c:93
@@ -450,26 +460,32 @@ msgctxt "Password hint"
 msgid ""
 "This password is very similar to your last one. Try changing the password a "
 "bit more."
-msgstr "このパスワードは前回のものと非常に似ています。もう少しパスワードを変更してください。"
+msgstr ""
+"このパスワードは前回のものと非常に似ています。もう少しパスワードを変更してく"
+"ださい。"
 
 #: gnome-initial-setup/pages/password/pw-utils.c:87
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. A password without your user name would be stronger."
-msgstr "このパスワードは弱すぎます。ユーザー名を含まないパスワードにすると、より強固になります。"
+msgstr ""
+"このパスワードは弱すぎます。ユーザー名を含まないパスワードにすると、より強固"
+"になります。"
 
 #: gnome-initial-setup/pages/password/pw-utils.c:89
 msgctxt "Password hint"
-msgid ""
-"This is a weak password. Try to avoid using your name in the password."
-msgstr "このパスワードは弱すぎます。パスワードにあなたの名前を使わないでください。"
+msgid "This is a weak password. Try to avoid using your name in the password."
+msgstr ""
+"このパスワードは弱すぎます。パスワードにあなたの名前を使わないでください。"
 
 #: gnome-initial-setup/pages/password/pw-utils.c:91
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to avoid some of the words included in the "
 "password."
-msgstr "このパスワードは弱すぎます。パスワードに含まれる一部の単語を使わないでください。"
+msgstr ""
+"このパスワードは弱すぎます。パスワードに含まれる一部の単語を使わないでくださ"
+"い。"
 
 #: gnome-initial-setup/pages/password/pw-utils.c:95
 msgctxt "Password hint"
@@ -501,14 +517,17 @@ msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to use more special characters, like "
 "punctuation."
-msgstr "このパスワードは弱すぎます。句読点などの特殊文字をもっと使ってみてください。"
+msgstr ""
+"このパスワードは弱すぎます。句読点などの特殊文字をもっと使ってみてください。"
 
 #: gnome-initial-setup/pages/password/pw-utils.c:107
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to use a mixture of letters, numbers and "
 "punctuation."
-msgstr "このパスワードは弱すぎます。アルファベットや数字、記号を混ぜるようにしてください。"
+msgstr ""
+"このパスワードは弱すぎます。アルファベットや数字、記号を混ぜるようにしてくだ"
+"さい。"
 
 #: gnome-initial-setup/pages/password/pw-utils.c:109
 msgctxt "Password hint"
@@ -520,18 +539,23 @@ msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to avoid repeating the same type of character: "
 "you need to mix up letters, numbers and punctuation."
-msgstr "このパスワードは弱すぎます。同種文字の繰り返しは避け、アルファベット・数字・記号を混ぜてください。"
+msgstr ""
+"このパスワードは弱すぎます。同種文字の繰り返しは避け、アルファベット・数字・"
+"記号を混ぜてください。"
 
 #: gnome-initial-setup/pages/password/pw-utils.c:113
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid sequences like 1234 or abcd."
-msgstr "このパスワードは弱すぎます。1234 や abcd などの連続する並びは避けてください。"
+msgstr ""
+"このパスワードは弱すぎます。1234 や abcd などの連続する並びは避けてください。"
 
 #: gnome-initial-setup/pages/password/pw-utils.c:115
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to add more letters, numbers and punctuation."
-msgstr "このパスワードは弱すぎます。アルファベットや数字、記号をもっと増やしてみてください。"
+msgstr ""
+"このパスワードは弱すぎます。アルファベットや数字、記号をもっと増やしてみてく"
+"ださい。"
 
 #: gnome-initial-setup/pages/password/pw-utils.c:117
 msgctxt "Password hint"
@@ -542,7 +566,8 @@ msgstr "大文字と小文字を混ぜ、数字も 1 ～ 2 個使ってみてく
 msgctxt "Password hint"
 msgid ""
 "Adding more letters, numbers and punctuation will make the password stronger."
-msgstr "アルファベットや数字、記号をもっと増やすと、パスワードが強固になります。"
+msgstr ""
+"アルファベットや数字、記号をもっと増やすと、パスワードが強固になります。"
 
 #. TRANSLATORS: this string describes a password as being poor
 #: gnome-initial-setup/pages/password/pw-utils.c:146
@@ -567,7 +592,7 @@ msgstr "非常に強固"
 
 #. Translators: the first parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu".
-#. 
+#.
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:68
 #, c-format
 msgid ""
@@ -577,20 +602,24 @@ msgstr ""
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu".
-#. 
+#.
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:79
 #, c-format
 msgid ""
 "Sends technical reports that do not contain personal information. Data is "
 "collected by %s."
-msgstr "個人情報を含まない技術レポートを送信します。データは %s によって収集されます。"
+msgstr ""
+"個人情報を含まない技術レポートを送信します。データは %s によって収集されま"
+"す。"
 
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:123
 #, c-format
 msgid ""
 "Allows apps to determine your geographical location (<u><a "
 "href='%1$s'>privacy policy</a></u>)."
-msgstr "アプリに地理的な位置の通知を許可するかどうかの設定です（<u><a href='%1$s'>プライバシーポリシー</a></u>)）。"
+msgstr ""
+"アプリに地理的な位置の通知を許可するかどうかの設定です（<u><a href='%1$s'>プ"
+"ライバシーポリシー</a></u>)）。"
 
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:174
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:14
@@ -602,7 +631,9 @@ msgstr "位置情報サービス"
 msgid ""
 "Turn on location services to let applications know your geographical "
 "location."
-msgstr "位置情報サービスを有効にすると、アプリケーションに地理的な位置を知らせることができるようになります。"
+msgstr ""
+"位置情報サービスを有効にすると、アプリケーションに地理的な位置を知らせること"
+"ができるようになります。"
 
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:56
 msgid "Automatic Problem Reporting"
@@ -626,9 +657,9 @@ msgid ""
 "<a href='%s'>external sources</a>, including popular apps and drivers that "
 "are important for some devices. Some proprietary software is included."
 msgstr ""
-"サードパーティのリポジトリは、選択された<a "
-"href='%s'>外部ソース</a>からの追加ソフトウェアを提供します。人気のアプリや一部のデバイスにとって重要なドライバー、いくつかのプロプライエタリ"
-"ソフトウェアなどが含まれています。"
+"サードパーティのリポジトリは、選択された<a href='%s'>外部ソース</a>からの追加"
+"ソフトウェアを提供します。人気のアプリや一部のデバイスにとって重要なドライ"
+"バー、いくつかのプロプライエタリソフトウェアなどが含まれています。"
 
 #: gnome-initial-setup/pages/software/gis-software-page.c:127
 msgid ""
@@ -636,8 +667,9 @@ msgid ""
 "external sources, including popular apps and drivers that are important for "
 "some devices. Some proprietary software is included."
 msgstr ""
-"サードパーティのリポジトリは、選択された外部ソースから追加のソフトウェアを提供します。人気のアプリや一部のデバイス向けの重要なドライバー、プロプライエタリ"
-"ソフトウェアなどが含まれています。"
+"サードパーティのリポジトリは、選択された外部ソースから追加のソフトウェアを提"
+"供します。人気のアプリや一部のデバイス向けの重要なドライバー、プロプライエタ"
+"リソフトウェアなどが含まれています。"
 
 #: gnome-initial-setup/pages/software/gis-software-page.c:139
 msgid "_Disable Third-Party Repositories"
@@ -701,7 +733,7 @@ msgstr "都市を検索"
 #. Translators: this is the name of a location followed by a region, for example:
 #. * 'London, United Kingdom'
 #. * You shouldn't need to translate this string unless the language has a different comma.
-#. 
+#.
 #: gnome-initial-setup/pages/timezone/gis-location-entry.c:557
 #: gnome-initial-setup/pages/timezone/gis-location-entry.c:582
 #, c-format
@@ -717,7 +749,7 @@ msgstr "%s, %s"
 
 #. Translators: UTC here means the Coordinated Universal Time.
 #. * %:::z will be replaced by the offset from UTC e.g. UTC+02
-#. 
+#.
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.c:320
 msgid "UTC%:::z"
 msgstr "UTC%:::z"
@@ -753,7 +785,9 @@ msgstr "タイムゾーン"
 msgid ""
 "The time zone will be set automatically if your location can be found. You "
 "can also search for a city to set it yourself."
-msgstr "位置情報が検出できる場合は、タイムゾーンが自動的に設定されます。都市を検索して自分で設定することもできます。"
+msgstr ""
+"位置情報が検出できる場合は、タイムゾーンが自動的に設定されます。都市を検索し"
+"て自分で設定することもできます。"
 
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.ui:49
 msgid "Please search for a nearby city"
@@ -766,7 +800,7 @@ msgstr "近くの都市を検索してください"
 #. * space (U200a) to improve the spacing in the title, which you can
 #. * keep or remove. The %s is getting replaced with the name and version
 #. * of the OS, e.g. "GNOME 3.38"
-#. 
+#.
 #: gnome-initial-setup/pages/welcome/gis-welcome-page.c:79
 #, c-format
 msgid "Welcome to %s !"
@@ -798,7 +832,9 @@ msgstr "さらにアプリケーションを追加する"
 
 #: gnome-initial-setup/pages/apps/gis-apps-page.blp:9
 msgid "Ubuntu's App Center has a range of apps you can get started with."
-msgstr "Ubuntuのアプリセンターでは、さまざまなアプリケーションがあり、すぐに使い始めることができます。"
+msgstr ""
+"Ubuntuのアプリセンターでは、さまざまなアプリケーションがあり、すぐに使い始め"
+"ることができます。"
 
 #: gnome-initial-setup/pages/apps/gis-apps-page.blp:28
 msgid "Open App Center"
@@ -874,15 +910,18 @@ msgid "Show First Report"
 msgstr ""
 
 #: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:9
-msgid "Help Improve Ubuntu"
+#, fuzzy
+msgid "Utile Depends On It: Help Improve Ubuntu"
 msgstr "Ubuntuの改善を手助けする"
 
 #: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:10
+#, fuzzy
 msgid ""
-"Help us improve Ubuntu by sharing your system and error reports with us.\n"
+"Help improve Ubuntu by sharing your system and error reports with them.\n"
 "Reports are sent anonymously."
 msgstr ""
-"システムとエラーレポートを私たちと共有することにより、Ubuntuの改善を手助けできます。\n"
+"システムとエラーレポートを私たちと共有することにより、Ubuntuの改善を手助けで"
+"きます。\n"
 "レポートは匿名化されます。"
 
 #: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:31
@@ -983,9 +1022,10 @@ msgid ""
 "web interface. You can also change enabled services in the Settings menu or "
 "with the `<span font_family='monospace'>pro</span>` command-line."
 msgstr ""
-"Ubuntu Pro のトークンで既定で有効になるサービスは、ubuntu.com/pro "
-"のウェブインターフェースから変更できます。また、システム設定のメニュー、またはコマンドラインで `<span "
-"font_family='monospace'>pro</span>` コマンドを使って、有効なサービスを変更することもできます。"
+"Ubuntu Pro のトークンで既定で有効になるサービスは、ubuntu.com/pro のウェブイ"
+"ンターフェースから変更できます。また、システム設定のメニュー、またはコマンド"
+"ラインで `<span font_family='monospace'>pro</span>` コマンドを使って、有効な"
+"サービスを変更することもできます。"
 
 #: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-services-page.blp:53
 msgid "Other available services"
@@ -999,7 +1039,7 @@ msgstr "有効なトークン"
 #. Ubuntu Pro contact fails.
 #. It may be due to various reasons, most common is
 #. an invalid token.
-#. 
+#.
 #: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:236
 msgid "Invalid token or attach failure"
 msgstr "トークンが無効か、アタッチに失敗しました"
@@ -1101,7 +1141,7 @@ msgstr ""
 
 #. TRANSLATORS: Subtitle telling who can provide the Ubuntu Pro token.
 #. Use HTML encoded format for special characters such as &amp' for '&'. %s is a URL.
-#. 
+#.
 #: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:1247
 #, c-format
 msgid "From your admin, or from %s"
@@ -1183,7 +1223,9 @@ msgstr "ダーク(_R)"
 
 #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:100
 msgid "OLED screen detected. Dark style may save power."
-msgstr "OLEDスクリーンを検出しました。ダークスタイルにすると電源が節約できるでしょう。"
+msgstr ""
+"OLEDスクリーンを検出しました。ダークスタイルにすると電源が節約できるでしょ"
+"う。"
 
 #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:112
 msgid "Accent Color"
@@ -1210,10 +1252,11 @@ msgid ""
 "\n"
 "        Alternatively, choose install to launch the installer."
 msgstr ""
-"${NAME} "
-"の一時版をコンピューターに変更を加えずに試用できます。後でインストールする場合は、アクティビティ画面からインストーラーを起動してください。\n"
+"${NAME} の一時版をコンピューターに変更を加えずに試用できます。後でインストー"
+"ルする場合は、アクティビティ画面からインストーラーを起動してください。\n"
 "\n"
-"        または、直接インストールを選択してインストーラーを起動することも可能です。"
+"        または、直接インストールを選択してインストーラーを起動することも可能"
+"です。"
 
 #: po/EXTRA_STRINGS.sh:7
 msgid "Install to Disk…"
@@ -1264,7 +1307,9 @@ msgstr "${PRETTY_NAME} をインストール"
 #~ msgid ""
 #~ "Turn on location services to let applications know your geographical "
 #~ "location. You can change this anytime in System Settings."
-#~ msgstr "位置情報サービスをオンにすると、アプリケーションに地理的な位置を知らせるようになります。設定でいつでも変更できます。"
+#~ msgstr ""
+#~ "位置情報サービスをオンにすると、アプリケーションに地理的な位置を知らせるよ"
+#~ "うになります。設定でいつでも変更できます。"
 
 #~ msgid "Location services"
 #~ msgstr "位置情報サービス"
@@ -1278,7 +1323,8 @@ msgstr "${PRETTY_NAME} をインストール"
 #~ "things like your machine model, installed software and the location you "
 #~ "chose for your timezone."
 #~ msgstr ""
-#~ "システムデータを共有し、Ubuntuの改善にご協力ください。システムデータにはマシンモデルやインストールされたソフトウェア、位置情報やタイムゾーンの情報が"
+#~ "システムデータを共有し、Ubuntuの改善にご協力ください。システムデータにはマ"
+#~ "シンモデルやインストールされたソフトウェア、位置情報やタイムゾーンの情報が"
 #~ "含まれています"
 
 #~ msgid "Yes, share system data with the Ubuntu team"
@@ -1292,7 +1338,8 @@ msgstr "${PRETTY_NAME} をインストール"
 #~ "Sends technical reports that do not contain personal information. Data is "
 #~ "collected by %1$s (<a href='%2$s'>privacy policy</a>)."
 #~ msgstr ""
-#~ "個人情報を含まない技術レポートを送信します。データは %1$s (<a href='%2$s'>プライバシーポリシー</a>) によって収集されます。"
+#~ "個人情報を含まない技術レポートを送信します。データは %1$s (<a href='%2$s'>"
+#~ "プライバシーポリシー</a>) によって収集されます。"
 
 #~ msgid "Privacy controls can be changed at any time from the Settings app."
 #~ msgstr "プライバシーの設定は、「設定」アプリからいつでも変更できます。"

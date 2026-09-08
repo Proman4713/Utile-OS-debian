@@ -10,18 +10,18 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-"
-"setup/issues/\n"
-"POT-Creation-Date: 2026-05-22 14:35+0000\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+"issues\n"
+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
 "PO-Revision-Date: 2026-04-14 01:46+0000\n"
 "Last-Translator: AsciiWolf <mail@asciiwolf.com>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2026-07-01 12:24+0000\n"
 "X-Generator: Launchpad (build c38ea58da9d7185c4996adfc854ab433551cdcdd)\n"
-"Language: cs\n"
 
 #: data/gnome-initial-setup.desktop.in.in:2
 #: gnome-initial-setup/gis-driver.c:890
@@ -161,16 +161,16 @@ msgstr "Heslo správce"
 msgid "C_ontinue"
 msgstr "P_okračovat"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:225
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:210
 #, c-format
 msgid "The hostname is too long."
 msgstr "Název hostitele je příliš dlouhý."
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:229
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:214
 msgid "The hostname must start with a lower case letter from a-z or a digit."
 msgstr "Název hostitele musí začínat malým písmenem od a-z nebo číslicí."
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:233
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:218
 msgid ""
 "The hostname should only consist of lower case letters from a-z, digits and "
 "a hyphen: -"
@@ -178,16 +178,16 @@ msgstr ""
 "Název hostitele by se měl skládat pouze z malých písmen od a-z, číslic a "
 "pomlčky: -"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:574
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:545
 msgid "We need a few details to complete setup."
 msgstr "K dokončení nastavení je zapotřebí pár podrobností."
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:737
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:704
 msgid "Administrator"
 msgstr "Správce"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:743
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:786
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:710
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:753
 #, c-format
 msgid "Failed to create user '%s': "
 msgstr "Selhalo vytvoření uživatele „%s“: "
@@ -219,8 +219,7 @@ msgid "Set up _parental controls for this user"
 msgstr "Nastavit _rodičovskou kontrolu pro tohoto uživatele"
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:223
-msgid ""
-"For use by a parent or supervisor, who must set up their own password."
+msgid "For use by a parent or supervisor, who must set up their own password."
 msgstr "Pro používání rodičem nebo správcem musíte nastavit jejich hesla."
 
 #: gnome-initial-setup/pages/account/gis-account-page.ui:32
@@ -297,7 +296,7 @@ msgstr "Více…"
 
 #. Translators: a search for input methods or keyboard layouts
 #. * did not yield any results
-#. 
+#.
 #: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:347
 msgid "No inputs found"
 msgstr "Nenalezena žádná vstupní zařízení"
@@ -331,7 +330,7 @@ msgstr "Vyberte jazyk ze seznamu nebo vyhledejte konkrétní jazyk."
 #. Translators: This is meant to be a warm, engaging welcome message,
 #. * like greeting somebody at the door. If the exclamation mark is not
 #. * suitable for this in your language you may replace it.
-#. 
+#.
 #: gnome-initial-setup/pages/language/gis-welcome-widget.c:132
 msgid "Welcome!"
 msgstr "Vítejte!"
@@ -472,8 +471,7 @@ msgstr "Heslo je slabé. Bude silnější, když v něm nebude vaše jméno."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:89
 msgctxt "Password hint"
-msgid ""
-"This is a weak password. Try to avoid using your name in the password."
+msgid "This is a weak password. Try to avoid using your name in the password."
 msgstr "Heslo je slabé. Zkuste v něm nepoužít své jméno."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:91
@@ -522,8 +520,7 @@ msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to use a mixture of letters, numbers and "
 "punctuation."
-msgstr ""
-"Heslo je slabé. Zkuste použít směs písmen, číslic a speciálních znaků."
+msgstr "Heslo je slabé. Zkuste použít směs písmen, číslic a speciálních znaků."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:109
 msgctxt "Password hint"
@@ -588,7 +585,7 @@ msgstr "výborná"
 
 #. Translators: the first parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu".
-#. 
+#.
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:68
 #, c-format
 msgid ""
@@ -600,7 +597,7 @@ msgstr ""
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu".
-#. 
+#.
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:79
 #, c-format
 msgid ""
@@ -729,7 +726,7 @@ msgstr "hledat města"
 #. Translators: this is the name of a location followed by a region, for example:
 #. * 'London, United Kingdom'
 #. * You shouldn't need to translate this string unless the language has a different comma.
-#. 
+#.
 #: gnome-initial-setup/pages/timezone/gis-location-entry.c:557
 #: gnome-initial-setup/pages/timezone/gis-location-entry.c:582
 #, c-format
@@ -745,7 +742,7 @@ msgstr "%s, %s"
 
 #. Translators: UTC here means the Coordinated Universal Time.
 #. * %:::z will be replaced by the offset from UTC e.g. UTC+02
-#. 
+#.
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.c:320
 msgid "UTC%:::z"
 msgstr "UTC%:::z"
@@ -796,7 +793,7 @@ msgstr "Vyhledejte prosím nejbližší město"
 #. * space (U200a) to improve the spacing in the title, which you can
 #. * keep or remove. The %s is getting replaced with the name and version
 #. * of the OS, e.g. "GNOME 3.38"
-#. 
+#.
 #: gnome-initial-setup/pages/welcome/gis-welcome-page.c:79
 #, c-format
 msgid "Welcome to %s !"
@@ -908,12 +905,14 @@ msgid "Show First Report"
 msgstr "Zobrazit první hlášení"
 
 #: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:9
-msgid "Help Improve Ubuntu"
+#, fuzzy
+msgid "Utile Depends On It: Help Improve Ubuntu"
 msgstr "Pomozte Ubuntu vylepšit"
 
 #: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:10
+#, fuzzy
 msgid ""
-"Help us improve Ubuntu by sharing your system and error reports with us.\n"
+"Help improve Ubuntu by sharing your system and error reports with them.\n"
 "Reports are sent anonymously."
 msgstr ""
 "Pomozte nám vylepšit Ubuntu sdílením systémových a chybových hlášení s "
@@ -1020,9 +1019,9 @@ msgid ""
 "web interface. You can also change enabled services in the Settings menu or "
 "with the `<span font_family='monospace'>pro</span>` command-line."
 msgstr ""
-"Výchozí povolení pro váš token můžete změnit ve webovém rozhraní "
-"ubuntu.com/pro. Povolené služby můžete také změnit v nabídce Nastavení nebo "
-"pomocí příkazového řádku `<span font_family='monospace'>pro</span>`."
+"Výchozí povolení pro váš token můžete změnit ve webovém rozhraní ubuntu.com/"
+"pro. Povolené služby můžete také změnit v nabídce Nastavení nebo pomocí "
+"příkazového řádku `<span font_family='monospace'>pro</span>`."
 
 #: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-services-page.blp:53
 msgid "Other available services"
@@ -1036,7 +1035,7 @@ msgstr "Platný token"
 #. Ubuntu Pro contact fails.
 #. It may be due to various reasons, most common is
 #. an invalid token.
-#. 
+#.
 #: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:236
 msgid "Invalid token or attach failure"
 msgstr "Neplatný token nebo selhání připojení"
@@ -1059,8 +1058,7 @@ msgstr "K povolení Ubuntu Pro je vyžadováno připojení k internetu"
 #: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:466
 #, c-format
 msgid "Get security updates on a wide range of packages until %s"
-msgstr ""
-"Získejte bezpečnostní aktualizace pro širokou škálu balíčků do roku %s"
+msgstr "Získejte bezpečnostní aktualizace pro širokou škálu balíčků do roku %s"
 
 #: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:474
 msgid "Ubuntu Pro"
@@ -1140,7 +1138,7 @@ msgstr "Zjistěte více na %s"
 
 #. TRANSLATORS: Subtitle telling who can provide the Ubuntu Pro token.
 #. Use HTML encoded format for special characters such as &amp' for '&'. %s is a URL.
-#. 
+#.
 #: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:1247
 #, c-format
 msgid "From your admin, or from %s"
@@ -1339,8 +1337,8 @@ msgstr "Nainstalovat ${PRETTY_NAME}"
 #~ "Turn on location services to let applications know your geographical "
 #~ "location. You can change this anytime in System Settings."
 #~ msgstr ""
-#~ "Zapněte služby určování polohy, aby aplikace věděly o vaší zeměpisné poloze. "
-#~ "Toto můžete kdykoli změnit v Nastavení systému."
+#~ "Zapněte služby určování polohy, aby aplikace věděly o vaší zeměpisné "
+#~ "poloze. Toto můžete kdykoli změnit v Nastavení systému."
 
 #~ msgid "Or add _token manually"
 #~ msgstr "Nebo přidejte _token ručně"
@@ -1357,14 +1355,15 @@ msgstr "Nainstalovat ${PRETTY_NAME}"
 
 #~ msgid "Learn more at <a href=\"https://ubuntu.com/pro\">ubuntu.com/pro</a>."
 #~ msgstr ""
-#~ "Další informace naleznete na <a "
-#~ "href=\"https://ubuntu.com/pro\">ubuntu.com/pro</a>."
+#~ "Další informace naleznete na <a href=\"https://ubuntu.com/"
+#~ "pro\">ubuntu.com/pro</a>."
 
 #~ msgid ""
-#~ "You can always enable Ubuntu Pro later via the Software & Updates application"
+#~ "You can always enable Ubuntu Pro later via the Software & Updates "
+#~ "application"
 #~ msgstr ""
-#~ "Ubuntu Pro můžete povolit kdykoli později prostřednictvím aplikace Software "
-#~ "a aktualizace"
+#~ "Ubuntu Pro můžete povolit kdykoli později prostřednictvím aplikace "
+#~ "Software a aktualizace"
 
 #~ msgid ""
 #~ "Upgrade this machine to Ubuntu Pro for security updates on a much wider "
@@ -1375,9 +1374,9 @@ msgstr "Nainstalovat ${PRETTY_NAME}"
 #~ "More information on <a href=\"https://ubuntu.com/pro\">ubuntu.com/pro</a>."
 #~ msgstr ""
 #~ "Upgradujte tento stroj na Ubuntu Pro a získejte aktualizace zabezpečení v "
-#~ "mnohem širší řadě balíčků až do roku 2034. Splňte požadavky FedRAMP, FIPS, "
-#~ "STIG a HIPAA a další požadavky na shodu a kalení pomocí certifikovaných "
-#~ "nástrojů a šifrovacích modulů. Zdarma až pro 5 počítačů.\n"
+#~ "mnohem širší řadě balíčků až do roku 2034. Splňte požadavky FedRAMP, "
+#~ "FIPS, STIG a HIPAA a další požadavky na shodu a kalení pomocí "
+#~ "certifikovaných nástrojů a šifrovacích modulů. Zdarma až pro 5 počítačů.\n"
 #~ "\n"
 #~ "Další informace na <a href=\"https://ubuntu.com/pro\">ubuntu.com/pro</a>."
 

@@ -13,18 +13,18 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 3.12\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-"
-"setup/issues/\n"
-"POT-Creation-Date: 2026-05-22 14:35+0000\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+"issues\n"
+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
 "PO-Revision-Date: 2026-04-14 01:46+0000\n"
 "Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
 "Language-Team: Portuguese (https://l10n.gnome.org/teams/pt/)\n"
+"Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2026-07-01 12:24+0000\n"
 "X-Generator: Launchpad (build c38ea58da9d7185c4996adfc854ab433551cdcdd)\n"
-"Language: pt\n"
 "X-Project-Style: gnome\n"
 
 #: data/gnome-initial-setup.desktop.in.in:2
@@ -165,17 +165,17 @@ msgstr "Palavra-passe do administrador"
 msgid "C_ontinue"
 msgstr "C_ontinuar"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:225
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:210
 #, c-format
 msgid "The hostname is too long."
 msgstr "O nome do anfitrião é muito longo"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:229
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:214
 msgid "The hostname must start with a lower case letter from a-z or a digit."
 msgstr ""
 "O nome do anfitrião deve começar com uma letra minúscula de a-z ou um dígito."
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:233
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:218
 msgid ""
 "The hostname should only consist of lower case letters from a-z, digits and "
 "a hyphen: -"
@@ -183,16 +183,16 @@ msgstr ""
 "O nome do anfitrião deve ser constituído apenas por letras minúsculas de a-"
 "z, dígitos e um hífen: -"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:574
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:545
 msgid "We need a few details to complete setup."
 msgstr "São necessários alguns detalhes para terminar a instalação."
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:737
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:704
 msgid "Administrator"
 msgstr "Administrador"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:743
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:786
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:710
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:753
 #, c-format
 msgid "Failed to create user '%s': "
 msgstr "Falha em criar utilizador '%s': "
@@ -225,8 +225,7 @@ msgid "Set up _parental controls for this user"
 msgstr "Definir _controles parentais para este utilizador"
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:223
-msgid ""
-"For use by a parent or supervisor, who must set up their own password."
+msgid "For use by a parent or supervisor, who must set up their own password."
 msgstr ""
 "Para utilização por pais ou supervisores, que devem definir as suas próprias "
 "palavras-passe."
@@ -306,7 +305,7 @@ msgstr "Mais…"
 
 #. Translators: a search for input methods or keyboard layouts
 #. * did not yield any results
-#. 
+#.
 #: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:347
 msgid "No inputs found"
 msgstr "Nenhum método de entrada encontrado"
@@ -340,7 +339,7 @@ msgstr "Selecione um idioma da lista ou procure um idioma específico."
 #. Translators: This is meant to be a warm, engaging welcome message,
 #. * like greeting somebody at the door. If the exclamation mark is not
 #. * suitable for this in your language you may replace it.
-#. 
+#.
 #: gnome-initial-setup/pages/language/gis-welcome-widget.c:132
 msgid "Welcome!"
 msgstr "Bem-vindo!"
@@ -487,8 +486,7 @@ msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:89
 msgctxt "Password hint"
-msgid ""
-"This is a weak password. Try to avoid using your name in the password."
+msgid "This is a weak password. Try to avoid using your name in the password."
 msgstr ""
 "Esta é uma palavra-passe fraca. Evite usar o seu nome na palavra-passe."
 
@@ -608,7 +606,7 @@ msgstr "excelente"
 
 #. Translators: the first parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu".
-#. 
+#.
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:68
 #, c-format
 msgid ""
@@ -620,7 +618,7 @@ msgstr ""
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu".
-#. 
+#.
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:79
 #, c-format
 msgid ""
@@ -753,12 +751,10 @@ msgstr "Procurar cidades"
 #. Translators: this is the name of a location followed by a region, for example:
 #. * 'London, United Kingdom'
 #. * You shouldn't need to translate this string unless the language has a different comma.
-#. 
+#.
 #: gnome-initial-setup/pages/timezone/gis-location-entry.c:557
 #: gnome-initial-setup/pages/timezone/gis-location-entry.c:582
 #, c-format
-#| msgctxt "timezone loc"
-#| msgid "%s, %s"
 msgid "%s, %s"
 msgstr "%s, %s"
 
@@ -771,7 +767,7 @@ msgstr "%s, %s"
 
 #. Translators: UTC here means the Coordinated Universal Time.
 #. * %:::z will be replaced by the offset from UTC e.g. UTC+02
-#. 
+#.
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.c:320
 msgid "UTC%:::z"
 msgstr "UTC%:::z"
@@ -822,7 +818,7 @@ msgstr "Procure uma cidade na proximidade"
 #. * space (U200a) to improve the spacing in the title, which you can
 #. * keep or remove. The %s is getting replaced with the name and version
 #. * of the OS, e.g. "GNOME 3.38"
-#. 
+#.
 #: gnome-initial-setup/pages/welcome/gis-welcome-page.c:79
 #, c-format
 msgid "Welcome to %s !"
@@ -887,8 +883,7 @@ msgstr ""
 #: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:80
 #, c-format
 msgid "Failed to grant consent for the system data collector: %s"
-msgstr ""
-"Falha ao conceder consentimento para o coletor de dados do sistema: %s"
+msgstr "Falha ao conceder consentimento para o coletor de dados do sistema: %s"
 
 #. TRANSLATORS: The place-holder is an error message
 #: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:82
@@ -943,12 +938,14 @@ msgid "Show First Report"
 msgstr "Mostrar o primeiro relatório"
 
 #: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:9
-msgid "Help Improve Ubuntu"
+#, fuzzy
+msgid "Utile Depends On It: Help Improve Ubuntu"
 msgstr "Ajude a melhorar o Ubuntu"
 
 #: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:10
+#, fuzzy
 msgid ""
-"Help us improve Ubuntu by sharing your system and error reports with us.\n"
+"Help improve Ubuntu by sharing your system and error reports with them.\n"
 "Reports are sent anonymously."
 msgstr ""
 "Ajude-nos a melhorar o Ubuntu, partilhando connosco os seus relatórios de "
@@ -1059,8 +1056,8 @@ msgid ""
 msgstr ""
 "Pode ativar e desativar os serviços do seu token, usando a interface web no "
 "site ubuntu.com/pro. Também pode fazer isso usando o menu de configurações, "
-"como também usando linha de comandos `<span "
-"font_family='monospace'>pro</span>`"
+"como também usando linha de comandos `<span font_family='monospace'>pro</"
+"span>`"
 
 #: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-services-page.blp:53
 msgid "Other available services"
@@ -1074,7 +1071,7 @@ msgstr "Token válido"
 #. Ubuntu Pro contact fails.
 #. It may be due to various reasons, most common is
 #. an invalid token.
-#. 
+#.
 #: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:236
 msgid "Invalid token or attach failure"
 msgstr "Token inválido ou falha ao juntar"
@@ -1097,8 +1094,7 @@ msgstr "É necessário uma ligação de rede à internet para ativar o Ubuntu Pr
 #: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:466
 #, c-format
 msgid "Get security updates on a wide range of packages until %s"
-msgstr ""
-"Receba atualizações de segurança para uma vasta gama de pacotes até %s"
+msgstr "Receba atualizações de segurança para uma vasta gama de pacotes até %s"
 
 #: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:474
 msgid "Ubuntu Pro"
@@ -1179,7 +1175,7 @@ msgstr "Saiba mais em %s"
 
 #. TRANSLATORS: Subtitle telling who can provide the Ubuntu Pro token.
 #. Use HTML encoded format for special characters such as &amp' for '&'. %s is a URL.
-#. 
+#.
 #: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:1247
 #, c-format
 msgid "From your admin, or from %s"
@@ -1341,13 +1337,13 @@ msgstr "Instalar ${PRETTY_NAME}"
 #~ "Sends technical reports that do not contain personal information. Data is "
 #~ "collected by %1$s (<a href='%2$s'>privacy policy</a>)."
 #~ msgstr ""
-#~ "Envia relatórios técnicos que não contêm informações pessoais. Os dados são "
-#~ "recolhidos pelo %1$s (<a href='%2$s'>política de privacidade</a>)."
+#~ "Envia relatórios técnicos que não contêm informações pessoais. Os dados "
+#~ "são recolhidos pelo %1$s (<a href='%2$s'>política de privacidade</a>)."
 
 #~ msgid "Privacy controls can be changed at any time from the Settings app."
 #~ msgstr ""
-#~ "Controlos de privacidade podem ser alterados a qualquer momento a partir da "
-#~ "aplicação Definições."
+#~ "Controlos de privacidade podem ser alterados a qualquer momento a partir "
+#~ "da aplicação Definições."
 
 #, c-format
 #~ msgid "Failed to send report decline: %s"
@@ -1378,9 +1374,9 @@ msgstr "Instalar ${PRETTY_NAME}"
 #~ "things like your machine model, installed software and the location you "
 #~ "chose for your timezone."
 #~ msgstr ""
-#~ "Ajude-nos a melhorar o Ubuntu partilhando connosco os dados do seu sistema. "
-#~ "Isto inclui coisas como o modelo do seu equipamento, software instalado e a "
-#~ "localização que escolheu para o seu fuso horário."
+#~ "Ajude-nos a melhorar o Ubuntu partilhando connosco os dados do seu "
+#~ "sistema. Isto inclui coisas como o modelo do seu equipamento, software "
+#~ "instalado e a localização que escolheu para o seu fuso horário."
 
 #~ msgid "Yes, share system data with the Ubuntu team"
 #~ msgstr "Sim, partilhar dados do sistema com a equipa do Ubuntu"
@@ -1390,15 +1386,19 @@ msgstr "Instalar ${PRETTY_NAME}"
 
 #~ msgid "Get security updates on a wide range of packages until 2034"
 #~ msgstr ""
-#~ "Obter atualizações de segurança mais extensivas em diversos pacotes até 2034"
+#~ "Obter atualizações de segurança mais extensivas em diversos pacotes até "
+#~ "2034"
 
 #~ msgid "Learn more at <a href=\"https://ubuntu.com/pro\">ubuntu.com/pro</a>."
-#~ msgstr "Saiba mais em <a href=\"https://ubuntu.com/pro\">ubuntu.com/pro</a>."
+#~ msgstr ""
+#~ "Saiba mais em <a href=\"https://ubuntu.com/pro\">ubuntu.com/pro</a>."
 
 #~ msgid ""
-#~ "You can always enable Ubuntu Pro later via the Software & Updates application"
+#~ "You can always enable Ubuntu Pro later via the Software & Updates "
+#~ "application"
 #~ msgstr ""
-#~ "A qualquer momento pode ativar o Ubuntu Pro, usando Programas e Atualizações"
+#~ "A qualquer momento pode ativar o Ubuntu Pro, usando Programas e "
+#~ "Atualizações"
 
 #~ msgid "Or add _token manually"
 #~ msgstr "Ou adicione o \"_TOKEN\" manualmente"
@@ -1412,23 +1412,25 @@ msgstr "Instalar ${PRETTY_NAME}"
 #~ "More information on <a href=\"https://ubuntu.com/pro\">ubuntu.com/pro</a>."
 #~ msgstr ""
 #~ "Configurar este computador para Ubuntu Pro para receber atualizações de "
-#~ "segurança mais extensivas, até 2034, abrangendo pacotes como FedRAMP, FIPS, "
-#~ "STIG,  HIPAA e outros requisitos como conformidade e proteção , utilizando "
-#~ "ferramentas certificadas e módulos de criptógrafia (SEM CUSTOS ATÉ 5 "
-#~ "COMPUTADORES)\n"
+#~ "segurança mais extensivas, até 2034, abrangendo pacotes como FedRAMP, "
+#~ "FIPS, STIG,  HIPAA e outros requisitos como conformidade e proteção , "
+#~ "utilizando ferramentas certificadas e módulos de criptógrafia (SEM CUSTOS "
+#~ "ATÉ 5 COMPUTADORES)\n"
 #~ "\n"
 #~ "Saiba mais em <a href=\"https://ubuntu.com/pro\">ubuntu.com/pro</a>."
 
 #~ msgid "Upgrade this machine to Ubuntu Pro. Free for up to 5 machines."
 #~ msgstr ""
-#~ "Atualizar este computador para Ubuntu Pro. (Sem custos até 5 computadores)."
+#~ "Atualizar este computador para Ubuntu Pro. (Sem custos até 5 "
+#~ "computadores)."
 
 #~ msgid ""
 #~ "Fulfill FedRAMP, FIPS, STIG and HIPAA and other compliance and hardening "
 #~ "requirements with certified tooling and crypto-modules."
 #~ msgstr ""
-#~ "Abrange FedRAMP, FIPS, STIG,  HIPAA e outros requisitos como conformidade e "
-#~ "proteção , utilizando ferramentas certificadas e módulos de criptografia."
+#~ "Abrange FedRAMP, FIPS, STIG,  HIPAA e outros requisitos como conformidade "
+#~ "e proteção , utilizando ferramentas certificadas e módulos de "
+#~ "criptografia."
 
 #~ msgid "Downloading language packs…"
 #~ msgstr "A transferir pacotes de idiomas…"

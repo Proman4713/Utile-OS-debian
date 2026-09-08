@@ -9,18 +9,18 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup master\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-"
-"setup/issues/\n"
-"POT-Creation-Date: 2026-05-22 14:35+0000\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+"issues\n"
+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
 "PO-Revision-Date: 2026-04-14 01:47+0000\n"
 "Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
 "Language-Team: Ελληνικά <>\n"
+"Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2026-07-01 12:24+0000\n"
 "X-Generator: Launchpad (build c38ea58da9d7185c4996adfc854ab433551cdcdd)\n"
-"Language: el\n"
 "X-Project-Style: gnome\n"
 
 #: data/gnome-initial-setup.desktop.in.in:2
@@ -164,17 +164,16 @@ msgstr "Κωδικός πρόσβασης διαχειριστή"
 msgid "C_ontinue"
 msgstr "_Συνέχεια"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:225
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:210
 #, c-format
 msgid "The hostname is too long."
 msgstr "Το όνομα συστήματος είναι πολύ μεγάλο."
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:229
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:214
 msgid "The hostname must start with a lower case letter from a-z or a digit."
-msgstr ""
-"Το όνομα συστήματος πρέπει να ξεκινά με πεζό γράμμα από a-z ή αριθμό."
+msgstr "Το όνομα συστήματος πρέπει να ξεκινά με πεζό γράμμα από a-z ή αριθμό."
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:233
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:218
 msgid ""
 "The hostname should only consist of lower case letters from a-z, digits and "
 "a hyphen: -"
@@ -182,17 +181,17 @@ msgstr ""
 "Το όνομα συστήματος πρέπει να αποτελείται μόνο από πεζά γράμματα από a-z, "
 "αριθμούς και παύλα: -"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:574
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:545
 msgid "We need a few details to complete setup."
 msgstr ""
 "Χρειαζόμαστε περισσότερες λεπτομέρειες για να ολοκληρώσουμε τη ρύθμιση."
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:737
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:704
 msgid "Administrator"
 msgstr "Διαχειριστής"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:743
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:786
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:710
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:753
 #, c-format
 msgid "Failed to create user '%s': "
 msgstr "Αποτυχία δημιουργίας χρήστη «%s»: "
@@ -225,19 +224,16 @@ msgid "Set up _parental controls for this user"
 msgstr "Ρύθμιση _γονικού ελέγχου για αυτόν τον χρήστη"
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:223
-msgid ""
-"For use by a parent or supervisor, who must set up their own password."
+msgid "For use by a parent or supervisor, who must set up their own password."
 msgstr ""
 "Για χρήση από γονέα ή επιβλέποντα, ο οποίος πρέπει να δημιουργήσει το δικό "
 "του συνθηματικό."
 
 #: gnome-initial-setup/pages/account/gis-account-page.ui:32
-#| msgid "Enterprise Login"
 msgid "_Enterprise Login"
 msgstr "_Εταιρική σύνδεση"
 
 #: gnome-initial-setup/pages/account/gis-account-page.ui:41
-#| msgid "Set Up _Enterprise Login"
 msgid "Go online to set up Enterprise Login."
 msgstr "Συνδεθείτε για την ρύθμιση τον εταιρικό λογαριασμό."
 
@@ -307,7 +303,7 @@ msgstr "Περισσότερα…"
 
 #. Translators: a search for input methods or keyboard layouts
 #. * did not yield any results
-#. 
+#.
 #: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:347
 msgid "No inputs found"
 msgstr "Δε βρέθηκαν είσοδοι"
@@ -336,13 +332,12 @@ msgstr "Καλώς ήλθατε"
 
 #: gnome-initial-setup/pages/language/gis-language-page.ui:41
 msgid "Select a language from the list, or search for a specific language."
-msgstr ""
-"Επιλέξτε μια γλώσσα από τη λίστα ή αναζητήστε μια συγκεκριμένη γλώσσα."
+msgstr "Επιλέξτε μια γλώσσα από τη λίστα ή αναζητήστε μια συγκεκριμένη γλώσσα."
 
 #. Translators: This is meant to be a warm, engaging welcome message,
 #. * like greeting somebody at the door. If the exclamation mark is not
 #. * suitable for this in your language you may replace it.
-#. 
+#.
 #: gnome-initial-setup/pages/language/gis-welcome-widget.c:132
 msgid "Welcome!"
 msgstr "Καλώς ήλθατε!"
@@ -450,12 +445,10 @@ msgid "_Confirm Password"
 msgstr "_Επιβεβαίωση συνθηματικού"
 
 #: gnome-initial-setup/pages/password/gis-password-page.ui:92
-#| msgid "Password _Reminder"
 msgid "Password _Hint"
 msgstr "_Νύξη συνθηματικού"
 
 #: gnome-initial-setup/pages/password/gis-password-page.ui:103
-#| msgid "Password reminder will be shown in case you forget your password."
 msgid "Password hint will be shown in case you forget your password."
 msgstr ""
 "Η νύξη του συνθηματικού θα εμφανιστεί σε περίπτωση που ξεχάσετε το "
@@ -495,8 +488,7 @@ msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:89
 msgctxt "Password hint"
-msgid ""
-"This is a weak password. Try to avoid using your name in the password."
+msgid "This is a weak password. Try to avoid using your name in the password."
 msgstr ""
 "Αυτό το συνθηματικό είναι ασθενές. Προσπαθήστε να αποφύγετε τη χρήση του "
 "ονόματός σας στο συνθηματικό."
@@ -632,7 +624,7 @@ msgstr "εξαιρετικό"
 
 #. Translators: the first parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu".
-#. 
+#.
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:68
 #, c-format
 msgid ""
@@ -644,7 +636,7 @@ msgstr ""
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu".
-#. 
+#.
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:79
 #, c-format
 msgid ""
@@ -777,12 +769,10 @@ msgstr "Αναζήτηση πόλεων"
 #. Translators: this is the name of a location followed by a region, for example:
 #. * 'London, United Kingdom'
 #. * You shouldn't need to translate this string unless the language has a different comma.
-#. 
+#.
 #: gnome-initial-setup/pages/timezone/gis-location-entry.c:557
 #: gnome-initial-setup/pages/timezone/gis-location-entry.c:582
 #, c-format
-#| msgctxt "timezone loc"
-#| msgid "%s, %s"
 msgid "%s, %s"
 msgstr "%s, %s"
 
@@ -795,7 +785,7 @@ msgstr "%s, %s"
 
 #. Translators: UTC here means the Coordinated Universal Time.
 #. * %:::z will be replaced by the offset from UTC e.g. UTC+02
-#. 
+#.
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.c:320
 msgid "UTC%:::z"
 msgstr "UTC%:::z"
@@ -846,7 +836,7 @@ msgstr "Παρακαλούμε, αναζητήστε μια κοντινή πό�
 #. * space (U200a) to improve the spacing in the title, which you can
 #. * keep or remove. The %s is getting replaced with the name and version
 #. * of the OS, e.g. "GNOME 3.38"
-#. 
+#.
 #: gnome-initial-setup/pages/welcome/gis-welcome-page.c:79
 #, c-format
 msgid "Welcome to %s !"
@@ -901,8 +891,7 @@ msgstr "Αποτυχία παροχής συγκατάθεσης για την �
 #: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:75
 #, c-format
 msgid "Failed to withdraw consent for the Initial Setup application: %s"
-msgstr ""
-"Αποτυχία ανάκλησης συγκατάθεσης για την εφαρμογή Αρχικής ρύθμισης: %s"
+msgstr "Αποτυχία ανάκλησης συγκατάθεσης για την εφαρμογή Αρχικής ρύθμισης: %s"
 
 #. Platform source used by timed systemd collection
 #. TRANSLATORS: The place-holder is an error message
@@ -924,8 +913,7 @@ msgstr ""
 #: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:87
 #, c-format
 msgid "Failed to grant consent for the release upgrader application: %s"
-msgstr ""
-"Αποτυχία παροχής συγκατάθεσης για την εφαρμογή αναβάθμισης έκδοσης: %s"
+msgstr "Αποτυχία παροχής συγκατάθεσης για την εφαρμογή αναβάθμισης έκδοσης: %s"
 
 #. TRANSLATORS: The place-holder is an error message
 #: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:89
@@ -963,12 +951,14 @@ msgid "Show First Report"
 msgstr "Εμφάνιση Πρώτης Αναφοράς"
 
 #: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:9
-msgid "Help Improve Ubuntu"
+#, fuzzy
+msgid "Utile Depends On It: Help Improve Ubuntu"
 msgstr "Βοηθήστε να βελτιωθεί το Ubuntu"
 
 #: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:10
+#, fuzzy
 msgid ""
-"Help us improve Ubuntu by sharing your system and error reports with us.\n"
+"Help improve Ubuntu by sharing your system and error reports with them.\n"
 "Reports are sent anonymously."
 msgstr ""
 "Βοηθήστε μας να βελτιωθεί το Ubuntu με τη διαμοίραση των αναφορών συστήματος "
@@ -1035,8 +1025,7 @@ msgstr "Διακριτικό"
 
 #: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:54
 msgid "Upgrade this device to Ubuntu Pro. Free for personal use."
-msgstr ""
-"Αναβαθμίστε αυτή τη συσκευή σε Ubuntu Pro. Δωρεάν για προσωπική χρήση."
+msgstr "Αναβαθμίστε αυτή τη συσκευή σε Ubuntu Pro. Δωρεάν για προσωπική χρήση."
 
 #: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:105
 msgid ""
@@ -1060,8 +1049,7 @@ msgstr "Πα_ράλειψη προς το παρόν"
 
 #: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:153
 msgid "You can enable Ubuntu Pro later in the Security Center"
-msgstr ""
-"Μπορείτε να ενεργοποιήσετε το Ubuntu Pro αργότερα στο Κέντρο Ασφαλείας"
+msgstr "Μπορείτε να ενεργοποιήσετε το Ubuntu Pro αργότερα στο Κέντρο Ασφαλείας"
 
 #: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-services-page.blp:22
 msgid "Ubuntu Pro Services"
@@ -1098,7 +1086,7 @@ msgstr "Έγκυρο διακριτικό"
 #. Ubuntu Pro contact fails.
 #. It may be due to various reasons, most common is
 #. an invalid token.
-#. 
+#.
 #: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:236
 msgid "Invalid token or attach failure"
 msgstr "Μη έγκυρο διακριτικό ή αποτυχία προσάρτησης"
@@ -1162,8 +1150,7 @@ msgstr ""
 #. TRANSLATORS: The fips-updates Ubuntu Pro Service description.
 #: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:627
 msgid "FIPS compliant crypto packages with stable security updates"
-msgstr ""
-"Συμβατά με FIPS κρυπτογραφικά πακέτα με σταθερές ενημερώσεις ασφαλείας"
+msgstr "Συμβατά με FIPS κρυπτογραφικά πακέτα με σταθερές ενημερώσεις ασφαλείας"
 
 #. TRANSLATORS: The landscape Ubuntu Pro Service description.
 #: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:630
@@ -1203,7 +1190,7 @@ msgstr "Μάθετε περισσότερα στο %s"
 
 #. TRANSLATORS: Subtitle telling who can provide the Ubuntu Pro token.
 #. Use HTML encoded format for special characters such as &amp' for '&'. %s is a URL.
-#. 
+#.
 #: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:1247
 #, c-format
 msgid "From your admin, or from %s"
@@ -1362,8 +1349,8 @@ msgstr "Εγκατάσταση του ${PRETTY_NAME}"
 
 #~ msgid "Privacy controls can be changed at any time from the Settings app."
 #~ msgstr ""
-#~ "Οι ρυθμίσεις ιδιωτικότητας μπορούν να αλλαχθούν οποιαδήποτε στιγμή από τις "
-#~ "Ρυθμίσεις."
+#~ "Οι ρυθμίσεις ιδιωτικότητας μπορούν να αλλαχθούν οποιαδήποτε στιγμή από "
+#~ "τις Ρυθμίσεις."
 
 #, c-format
 #~ msgid ""
@@ -1371,8 +1358,8 @@ msgstr "Εγκατάσταση του ${PRETTY_NAME}"
 #~ "location. You can change this anytime in System Settings."
 #~ msgstr ""
 #~ "Ενεργοποίηση υπηρεσιών τοποθεσίας για να επιτρέπεται στις εφαρμογές να "
-#~ "γνωρίζουν την γεωγραφική σας τοποθεσία. Μπορείτε να το αλλάξετε οποιαδήποτε "
-#~ "στιγμή στις Ρυθμίσεις συστήματος."
+#~ "γνωρίζουν την γεωγραφική σας τοποθεσία. Μπορείτε να το αλλάξετε "
+#~ "οποιαδήποτε στιγμή στις Ρυθμίσεις συστήματος."
 
 #~ msgid "Location services"
 #~ msgstr "Υπηρεσίες τοποθεσίας"
@@ -1391,8 +1378,8 @@ msgstr "Εγκατάσταση του ${PRETTY_NAME}"
 #~ msgstr ""
 #~ "Βοηθήστε μας να βελτιώσουμε το Ubuntu με τη διαμοίραση των πληροφοριών "
 #~ "συστήματός σας με εμάς. Περιλαμβάνει πληροφορίες όπως το μοντέλο του "
-#~ "υπολογιστή, το εγκατεστημένο λογισμικό και την τοποθεσία που επιλέξατε για "
-#~ "τη ζώνη ώρας."
+#~ "υπολογιστή, το εγκατεστημένο λογισμικό και την τοποθεσία που επιλέξατε "
+#~ "για τη ζώνη ώρας."
 
 #~ msgid "Yes, share system data with the Ubuntu team"
 #~ msgstr ""

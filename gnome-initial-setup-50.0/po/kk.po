@@ -6,18 +6,18 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup master\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-"
-"setup/issues/\n"
-"POT-Creation-Date: 2026-05-22 14:35+0000\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+"issues\n"
+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
 "PO-Revision-Date: 2026-04-14 01:46+0000\n"
 "Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
 "Language-Team: Kazakh <kk@li.org>\n"
+"Language: kk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2026-07-01 12:24+0000\n"
 "X-Generator: Launchpad (build c38ea58da9d7185c4996adfc854ab433551cdcdd)\n"
-"Language: kk\n"
 
 #: data/gnome-initial-setup.desktop.in.in:2
 #: gnome-initial-setup/gis-driver.c:890
@@ -157,16 +157,16 @@ msgstr "Әкімші паролі"
 msgid "C_ontinue"
 msgstr "Ж_алғастыру"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:225
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:210
 #, c-format
 msgid "The hostname is too long."
 msgstr "Хост аты тым ұзын."
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:229
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:214
 msgid "The hostname must start with a lower case letter from a-z or a digit."
 msgstr "Хост аты a-z дейінгі кіші әріптен немесе саннан басталуы керек."
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:233
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:218
 msgid ""
 "The hostname should only consist of lower case letters from a-z, digits and "
 "a hyphen: -"
@@ -174,16 +174,16 @@ msgstr ""
 "Хост аты тек a-z дейінгі кіші әріптерден, сандардан және дефистен тұруы "
 "керек: -"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:574
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:545
 msgid "We need a few details to complete setup."
 msgstr "Баптауды аяқтау үшін бірнеше мәлімет қажет."
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:737
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:704
 msgid "Administrator"
 msgstr "Әкімші"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:743
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:786
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:710
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:753
 #, c-format
 msgid "Failed to create user '%s': "
 msgstr "'%s' пайдаланушысын жасау сәтсіз аяқталды: "
@@ -215,8 +215,7 @@ msgid "Set up _parental controls for this user"
 msgstr "Осы пайдаланушы үшін _ата-ана бақылауын баптау"
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:223
-msgid ""
-"For use by a parent or supervisor, who must set up their own password."
+msgid "For use by a parent or supervisor, who must set up their own password."
 msgstr "Өз паролін орнатуы тиіс ата-ана немесе бақылаушы пайдалану үшін."
 
 #: gnome-initial-setup/pages/account/gis-account-page.ui:32
@@ -278,8 +277,7 @@ msgstr ""
 
 #: gnome-initial-setup/pages/account/um-utils.c:169
 msgid "This will be used to name your home folder and can’t be changed."
-msgstr ""
-"Бұл үй бумаңызды атау үшін пайдаланылады және оны өзгерту мүмкін емес."
+msgstr "Бұл үй бумаңызды атау үшін пайдаланылады және оны өзгерту мүмкін емес."
 
 #: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:257
 msgid "Preview"
@@ -292,7 +290,7 @@ msgstr "Көбірек…"
 
 #. Translators: a search for input methods or keyboard layouts
 #. * did not yield any results
-#. 
+#.
 #: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:347
 msgid "No inputs found"
 msgstr "Кіріс көздері табылмады"
@@ -326,7 +324,7 @@ msgstr "Тізімнен тілді таңдаңыз немесе белгілі
 #. Translators: This is meant to be a warm, engaging welcome message,
 #. * like greeting somebody at the door. If the exclamation mark is not
 #. * suitable for this in your language you may replace it.
-#. 
+#.
 #: gnome-initial-setup/pages/language/gis-welcome-widget.c:132
 msgid "Welcome!"
 msgstr "Қош келдіңіз!"
@@ -470,8 +468,7 @@ msgstr "Бұл әлсіз пароль. Пайдаланушы атынсыз п
 
 #: gnome-initial-setup/pages/password/pw-utils.c:89
 msgctxt "Password hint"
-msgid ""
-"This is a weak password. Try to avoid using your name in the password."
+msgid "This is a weak password. Try to avoid using your name in the password."
 msgstr "Бұл әлсіз пароль. Парольде атыңызды қолданбауға тырысыңыз."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:91
@@ -587,7 +584,7 @@ msgstr "тамаша"
 
 #. Translators: the first parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu".
-#. 
+#.
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:68
 #, c-format
 msgid ""
@@ -597,7 +594,7 @@ msgstr ""
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu".
-#. 
+#.
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:79
 #, c-format
 msgid ""
@@ -726,12 +723,10 @@ msgstr "Қалаларды іздеу"
 #. Translators: this is the name of a location followed by a region, for example:
 #. * 'London, United Kingdom'
 #. * You shouldn't need to translate this string unless the language has a different comma.
-#. 
+#.
 #: gnome-initial-setup/pages/timezone/gis-location-entry.c:557
 #: gnome-initial-setup/pages/timezone/gis-location-entry.c:582
 #, c-format
-#| msgctxt "timezone loc"
-#| msgid "%s, %s"
 msgid "%s, %s"
 msgstr "%s, %s"
 
@@ -744,7 +739,7 @@ msgstr "%s, %s"
 
 #. Translators: UTC here means the Coordinated Universal Time.
 #. * %:::z will be replaced by the offset from UTC e.g. UTC+02
-#. 
+#.
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.c:320
 msgid "UTC%:::z"
 msgstr "UTC%:::z"
@@ -795,7 +790,7 @@ msgstr "Жақын жердегі қаланы іздеңіз"
 #. * space (U200a) to improve the spacing in the title, which you can
 #. * keep or remove. The %s is getting replaced with the name and version
 #. * of the OS, e.g. "GNOME 3.38"
-#. 
+#.
 #: gnome-initial-setup/pages/welcome/gis-welcome-page.c:79
 #, c-format
 msgid "Welcome to %s !"
@@ -903,12 +898,13 @@ msgid "Show First Report"
 msgstr ""
 
 #: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:9
-msgid "Help Improve Ubuntu"
-msgstr ""
+#, fuzzy
+msgid "Utile Depends On It: Help Improve Ubuntu"
+msgstr "Ubuntu-ны жақсартуға көмектесіңіз"
 
 #: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:10
 msgid ""
-"Help us improve Ubuntu by sharing your system and error reports with us.\n"
+"Help improve Ubuntu by sharing your system and error reports with them.\n"
 "Reports are sent anonymously."
 msgstr ""
 
@@ -978,8 +974,7 @@ msgstr ""
 
 #: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:130
 msgid "Enable Ubuntu Pro now, or skip this step."
-msgstr ""
-"Ubuntu Pro-ны қазір іске қосыңыз немесе бұл қадамды өткізіп жіберіңіз."
+msgstr "Ubuntu Pro-ны қазір іске қосыңыз немесе бұл қадамды өткізіп жіберіңіз."
 
 #: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:133
 msgid "_Enable Ubuntu Pro"
@@ -1028,7 +1023,7 @@ msgstr "Жарамды токен"
 #. Ubuntu Pro contact fails.
 #. It may be due to various reasons, most common is
 #. an invalid token.
-#. 
+#.
 #: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:236
 msgid "Invalid token or attach failure"
 msgstr "Жарамсыз токен немесе қосу сәтсіз аяқталды"
@@ -1133,7 +1128,7 @@ msgstr ""
 
 #. TRANSLATORS: Subtitle telling who can provide the Ubuntu Pro token.
 #. Use HTML encoded format for special characters such as &amp' for '&'. %s is a URL.
-#. 
+#.
 #: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:1247
 #, c-format
 msgid "From your admin, or from %s"
@@ -1281,8 +1276,8 @@ msgstr "${PRETTY_NAME} орнату"
 #~ "Sends technical reports that do not contain personal information. Data is "
 #~ "collected by %1$s (<a href='%2$s'>privacy policy</a>)."
 #~ msgstr ""
-#~ "Жеке ақпаратты қамтымайтын техникалық есептерді жібереді. Мәліметтерді %1$s "
-#~ "жинайды (<a href='%2$s'>жекелік саясаты</a>)."
+#~ "Жеке ақпаратты қамтымайтын техникалық есептерді жібереді. Мәліметтерді "
+#~ "%1$s жинайды (<a href='%2$s'>жекелік саясаты</a>)."
 
 #, c-format
 #~ msgid ""
@@ -1318,9 +1313,6 @@ msgstr "${PRETTY_NAME} орнату"
 #~ msgid "Failed to send report information: %s"
 #~ msgstr "Есеп ақпаратын жіберу мүмкін болмады: %s"
 
-#~ msgid "Help improve Ubuntu"
-#~ msgstr "Ubuntu-ны жақсартуға көмектесіңіз"
-
 #, c-format
 #~ msgid ""
 #~ "Help us improve Ubuntu by sharing your system data with us. This includes "
@@ -1355,9 +1347,9 @@ msgstr "${PRETTY_NAME} орнату"
 #~ msgstr ""
 #~ "Осы машинаны 2034 жылға дейін дестелердің анағұрлым кең ауқымына арналған "
 #~ "қауіпсіздік жаңартуларын алу үшін Ubuntu Pro-ға жаңғыртыңыз. "
-#~ "Сертификатталған саймандар мен крипто-модульдердің көмегімен FedRAMP, FIPS, "
-#~ "STIG және HIPAA және басқа да сәйкестік пен қатайту талаптарын орындаңыз. 5 "
-#~ "машинаға дейін тегін.\n"
+#~ "Сертификатталған саймандар мен крипто-модульдердің көмегімен FedRAMP, "
+#~ "FIPS, STIG және HIPAA және басқа да сәйкестік пен қатайту талаптарын "
+#~ "орындаңыз. 5 машинаға дейін тегін.\n"
 #~ "\n"
 #~ "Толығырақ ақпарат <a href=\"https://ubuntu.com/pro\">ubuntu.com/pro</a> "
 #~ "сайтында."
@@ -1379,8 +1371,9 @@ msgstr "${PRETTY_NAME} орнату"
 #~ "Fulfill FedRAMP, FIPS, STIG and HIPAA and other compliance and hardening "
 #~ "requirements with certified tooling and crypto-modules."
 #~ msgstr ""
-#~ "Сертификатталған саймандар мен крипто-модульдердің көмегімен FedRAMP, FIPS, "
-#~ "STIG және HIPAA және басқа да сәйкестік пен қатайту талаптарын орындаңыз."
+#~ "Сертификатталған саймандар мен крипто-модульдердің көмегімен FedRAMP, "
+#~ "FIPS, STIG және HIPAA және басқа да сәйкестік пен қатайту талаптарын "
+#~ "орындаңыз."
 
 #~ msgid "Learn more at <a href=\"https://ubuntu.com/pro\">ubuntu.com/pro</a>."
 #~ msgstr ""
@@ -1388,7 +1381,8 @@ msgstr "${PRETTY_NAME} орнату"
 #~ "біліңіз."
 
 #~ msgid ""
-#~ "You can always enable Ubuntu Pro later via the Software & Updates application"
+#~ "You can always enable Ubuntu Pro later via the Software & Updates "
+#~ "application"
 #~ msgstr ""
 #~ "Ubuntu Pro-ны кез келген уақытта «Бағдарламалық қамтама және жаңартулар» "
 #~ "қолданбасы арқылы іске қоса аласыз"

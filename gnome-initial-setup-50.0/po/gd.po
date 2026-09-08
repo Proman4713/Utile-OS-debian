@@ -5,19 +5,19 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup gnome-3-20\n"
-"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
-"initial-setup&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2026-05-22 14:35+0000\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+"issues\n"
+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
 "PO-Revision-Date: 2026-04-14 01:47+0000\n"
 "Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
 "Language-Team: Fòram na Gàidhlig\n"
+"Language: gd\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2026-07-01 12:24+0000\n"
 "X-Generator: Launchpad (build c38ea58da9d7185c4996adfc854ab433551cdcdd)\n"
 "X-Project-Style: gnome\n"
-"Language: gd\n"
 
 #: data/gnome-initial-setup.desktop.in.in:2
 #: gnome-initial-setup/gis-driver.c:890
@@ -70,7 +70,6 @@ msgid "Force Upgrade user"
 msgstr ""
 
 #: gnome-initial-setup/gnome-initial-setup.c:378
-#| msgid "- GNOME initial setup"
 msgid "— GNOME initial setup"
 msgstr "– suidheachadh tòiseachaidh GNOME"
 
@@ -101,9 +100,6 @@ msgid "Enterprise Login"
 msgstr "Clàradh a-steach Enterprise"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:13
-#| msgid ""
-#| "Enterprise login allows an existing centrally managed user account to be "
-#| "used on this device."
 msgid ""
 "Enterprise login allows an existing centrally managed user account to be "
 "used on this device. You can also use this account to access company "
@@ -165,31 +161,31 @@ msgstr "Facal-faire an rianaire"
 msgid "C_ontinue"
 msgstr "Air a_dhart"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:225
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:210
 #, c-format
 msgid "The hostname is too long."
 msgstr ""
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:229
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:214
 msgid "The hostname must start with a lower case letter from a-z or a digit."
 msgstr ""
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:233
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:218
 msgid ""
 "The hostname should only consist of lower case letters from a-z, digits and "
 "a hyphen: -"
 msgstr ""
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:574
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:545
 msgid "We need a few details to complete setup."
 msgstr "Feumaidh sinn beagan fiosrachaidh gus an suidheachadh a choileanadh."
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:737
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:704
 msgid "Administrator"
 msgstr ""
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:743
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:786
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:710
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:753
 #, c-format
 msgid "Failed to create user '%s': "
 msgstr ""
@@ -222,8 +218,7 @@ msgid "Set up _parental controls for this user"
 msgstr ""
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:223
-msgid ""
-"For use by a parent or supervisor, who must set up their own password."
+msgid "For use by a parent or supervisor, who must set up their own password."
 msgstr ""
 
 #: gnome-initial-setup/pages/account/gis-account-page.ui:32
@@ -257,7 +252,6 @@ msgstr "Facal-faire mì-dhligheach, feuch ris a-rithist"
 
 #: gnome-initial-setup/pages/account/um-realm-manager.c:801
 #, c-format
-#| msgid "Couldn't connect to the %s domain: %s"
 msgid "Couldn’t connect to the %s domain: %s"
 msgstr "Cha b’ urrainn ceangal a dhèanamh ris an àrainn %s: %s"
 
@@ -287,7 +281,6 @@ msgid ""
 msgstr ""
 
 #: gnome-initial-setup/pages/account/um-utils.c:169
-#| msgid "This will be used to name your home folder and can't be changed."
 msgid "This will be used to name your home folder and can’t be changed."
 msgstr ""
 "Thèid seo a chleachdadh gus ainm a chur air a’ phasgan dachaigh agad is cha "
@@ -304,7 +297,7 @@ msgstr "Barrachd…"
 
 #. Translators: a search for input methods or keyboard layouts
 #. * did not yield any results
-#. 
+#.
 #: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:347
 msgid "No inputs found"
 msgstr "Cha deach ion-chur a lorg"
@@ -338,7 +331,7 @@ msgstr ""
 #. Translators: This is meant to be a warm, engaging welcome message,
 #. * like greeting somebody at the door. If the exclamation mark is not
 #. * suitable for this in your language you may replace it.
-#. 
+#.
 #: gnome-initial-setup/pages/language/gis-welcome-widget.c:132
 msgid "Welcome!"
 msgstr "Fàilte!"
@@ -452,8 +445,6 @@ msgid "The new password needs to be different from the old one."
 msgstr "Chan fhaod an seann fhacal-faire ’s am fear ùr a bhith co-ionnann."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:83
-#| msgctxt "Password hint"
-#| msgid "Try changing some letters and numbers."
 msgctxt "Password hint"
 msgid ""
 "This password is very similar to your last one. Try changing some letters "
@@ -464,8 +455,6 @@ msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:85
 #: gnome-initial-setup/pages/password/pw-utils.c:93
-#| msgctxt "Password hint"
-#| msgid "Try changing the password a bit more."
 msgctxt "Password hint"
 msgid ""
 "This password is very similar to your last one. Try changing the password a "
@@ -475,8 +464,6 @@ msgstr ""
 "atharraich thu e beagan a bharrachd."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:87
-#| msgctxt "Password hint"
-#| msgid "A password without your user name would be stronger."
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. A password without your user name would be stronger."
@@ -485,17 +472,11 @@ msgstr ""
 "agad na bu treasa."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:89
-#| msgctxt "Password hint"
-#| msgid "Try to avoid using your name in the password."
 msgctxt "Password hint"
-msgid ""
-"This is a weak password. Try to avoid using your name in the password."
-msgstr ""
-"Seo facal-faire lag. Feuch nach cleachd thu d’ ainm san fhacal-fhaire."
+msgid "This is a weak password. Try to avoid using your name in the password."
+msgstr "Seo facal-faire lag. Feuch nach cleachd thu d’ ainm san fhacal-fhaire."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:91
-#| msgctxt "Password hint"
-#| msgid "Try to avoid some of the words included in the password."
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to avoid some of the words included in the "
@@ -505,46 +486,32 @@ msgstr ""
 "fhacal-fhaire."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:95
-#| msgctxt "Password hint"
-#| msgid ""
-#| "This is a weak password. Try to add more letters, numbers and symbols."
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid common words."
 msgstr "Seo facal-faire lag. Feuch gun seachnaich thu faclan cumanta."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:97
-#| msgctxt "Password hint"
-#| msgid "Try to avoid reordering existing words."
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid reordering existing words."
 msgstr ""
 "Seo facal-faire lag. Feuch nach cuir thu òrdugh ùr air faclan a tha ann."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:99
-#| msgctxt "Password hint"
-#| msgid ""
-#| "This is a weak password. Try to add more letters, numbers and symbols."
 msgctxt "Password hint"
 msgid "This is a weak password. Try to use more numbers."
 msgstr "Seo facal-faire lag. Feuch an cleachd thu barrachd àireamhan."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:101
-#| msgctxt "Password hint"
-#| msgid "Try to use more uppercase letters."
 msgctxt "Password hint"
 msgid "This is a weak password. Try to use more uppercase letters."
 msgstr "Seo facal-faire lag. Feuch an cleachd thu barrachd litrichean mòra."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:103
-#| msgctxt "Password hint"
-#| msgid "Try to use more lowercase letters."
 msgctxt "Password hint"
 msgid "This is a weak password. Try to use more lowercase letters."
 msgstr "Seo facal-faire lag. Feuch an cleachd thu barrachd litrichean beaga."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:105
-#| msgctxt "Password hint"
-#| msgid "Try to use more special characters, like punctuation."
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to use more special characters, like "
@@ -554,8 +521,6 @@ msgstr ""
 "can puingeachadh."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:107
-#| msgctxt "Password hint"
-#| msgid "Try to use a mixture of letters, numbers and punctuation."
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to use a mixture of letters, numbers and "
@@ -565,18 +530,12 @@ msgstr ""
 "puingeachadh."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:109
-#| msgctxt "Password hint"
-#| msgid "Try to avoid repeating the same character."
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid repeating the same character."
 msgstr ""
 "Seo facal-faire lag. Feuch nach cleachd thu an t-aon charactar iomadh turas."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:111
-#| msgctxt "Password hint"
-#| msgid ""
-#| "Try to avoid repeating the same type of character: you need to mix up "
-#| "letters, numbers and punctuation."
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to avoid repeating the same type of character: "
@@ -587,16 +546,11 @@ msgstr ""
 "puingeachadh."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:113
-#| msgctxt "Password hint"
-#| msgid "Try to avoid sequences like 1234 or abcd."
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid sequences like 1234 or abcd."
 msgstr "Seo facal-faire lag. Feuch is seachain sreathan mar 1234 no abcd."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:115
-#| msgctxt "Password hint"
-#| msgid ""
-#| "This is a weak password. Try to add more letters, numbers and symbols."
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to add more letters, numbers and punctuation."
@@ -605,18 +559,12 @@ msgstr ""
 "puingeachadh ris."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:117
-#| msgctxt "Password hint"
-#| msgid "Mix uppercase and lowercase and use a number or two."
 msgctxt "Password hint"
 msgid "Mix uppercase and lowercase and try to use a number or two."
 msgstr ""
 "Cleachd litrichean mòra ’s beaga agus feuch an cleachd thu àireamh no dhà."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:119
-#| msgctxt "Password hint"
-#| msgid ""
-#| "Good password! Adding more letters, numbers and punctuation will make it "
-#| "stronger."
 msgctxt "Password hint"
 msgid ""
 "Adding more letters, numbers and punctuation will make the password stronger."
@@ -647,7 +595,7 @@ msgstr ""
 
 #. Translators: the first parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu".
-#. 
+#.
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:68
 #, c-format
 msgid ""
@@ -657,7 +605,7 @@ msgstr ""
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu".
-#. 
+#.
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:79
 #, c-format
 msgid ""
@@ -727,7 +675,6 @@ msgstr ""
 #. * detect any distribution.
 #: gnome-initial-setup/pages/summary/gis-summary-page.c:406
 #, c-format
-#| msgid "_Start using %s"
 msgid "_Start Using %s"
 msgstr "_Tòisich air %s a chleachdadh"
 
@@ -777,7 +724,7 @@ msgstr ""
 #. Translators: this is the name of a location followed by a region, for example:
 #. * 'London, United Kingdom'
 #. * You shouldn't need to translate this string unless the language has a different comma.
-#. 
+#.
 #: gnome-initial-setup/pages/timezone/gis-location-entry.c:557
 #: gnome-initial-setup/pages/timezone/gis-location-entry.c:582
 #, c-format
@@ -793,7 +740,7 @@ msgstr "%s, %s"
 
 #. Translators: UTC here means the Coordinated Universal Time.
 #. * %:::z will be replaced by the offset from UTC e.g. UTC+02
-#. 
+#.
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.c:320
 msgid "UTC%:::z"
 msgstr "UTC%:::z"
@@ -845,7 +792,7 @@ msgstr "Lorg baile faisg ort"
 #. * space (U200a) to improve the spacing in the title, which you can
 #. * keep or remove. The %s is getting replaced with the name and version
 #. * of the OS, e.g. "GNOME 3.38"
-#. 
+#.
 #: gnome-initial-setup/pages/welcome/gis-welcome-page.c:79
 #, c-format
 msgid "Welcome to %s !"
@@ -951,12 +898,13 @@ msgid "Show First Report"
 msgstr ""
 
 #: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:9
-msgid "Help Improve Ubuntu"
-msgstr ""
+#, fuzzy
+msgid "Utile Depends On It: Help Improve Ubuntu"
+msgstr "Thoir taic dhuinn le leasachadh Ubuntu"
 
 #: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:10
 msgid ""
-"Help us improve Ubuntu by sharing your system and error reports with us.\n"
+"Help improve Ubuntu by sharing your system and error reports with them.\n"
 "Reports are sent anonymously."
 msgstr ""
 
@@ -1071,7 +1019,7 @@ msgstr ""
 #. Ubuntu Pro contact fails.
 #. It may be due to various reasons, most common is
 #. an invalid token.
-#. 
+#.
 #: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:236
 msgid "Invalid token or attach failure"
 msgstr ""
@@ -1173,7 +1121,7 @@ msgstr ""
 
 #. TRANSLATORS: Subtitle telling who can provide the Ubuntu Pro token.
 #. Use HTML encoded format for special characters such as &amp' for '&'. %s is a URL.
-#. 
+#.
 #: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:1247
 #, c-format
 msgid "From your admin, or from %s"
@@ -1304,9 +1252,6 @@ msgstr ""
 #, c-format
 #~ msgid "Failed to show privacy policy: %s"
 #~ msgstr "Cha deach leinn am poileasaidh prìobhaideachd a shealltainn: %s"
-
-#~ msgid "Help improve Ubuntu"
-#~ msgstr "Thoir taic dhuinn le leasachadh Ubuntu"
 
 #~ msgid "Show the First Report"
 #~ msgstr "Seall a’ chiad aithisg"

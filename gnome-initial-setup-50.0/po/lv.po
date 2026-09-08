@@ -7,18 +7,18 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup master\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-"
-"setup/issues/\n"
-"POT-Creation-Date: 2026-05-22 14:35+0000\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+"issues\n"
+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
 "PO-Revision-Date: 2026-04-14 01:43+0000\n"
 "Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
 "Language-Team: Latvian <lata-l10n@googlegroups.com>\n"
+"Language: lv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2026-07-01 12:24+0000\n"
 "X-Generator: Launchpad (build c38ea58da9d7185c4996adfc854ab433551cdcdd)\n"
-"Language: lv\n"
 
 #: data/gnome-initial-setup.desktop.in.in:2
 #: gnome-initial-setup/gis-driver.c:890
@@ -75,7 +75,6 @@ msgid "— GNOME initial setup"
 msgstr "— GNOME sākotnējā iestatīšana"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.c:181
-#| msgid "Failed to register account"
 msgid "Failed to cache account"
 msgstr "Neizdevās kešot kontu"
 
@@ -159,16 +158,16 @@ msgstr "Administratora parole"
 msgid "C_ontinue"
 msgstr "T_urpināt"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:225
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:210
 #, c-format
 msgid "The hostname is too long."
 msgstr "Resursdatora nosaukums ir pārāk garš."
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:229
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:214
 msgid "The hostname must start with a lower case letter from a-z or a digit."
 msgstr "Resursdatora nosaukumam jāsākas ar mazo burtu no a-z vai ciparu."
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:233
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:218
 msgid ""
 "The hostname should only consist of lower case letters from a-z, digits and "
 "a hyphen: -"
@@ -176,17 +175,16 @@ msgstr ""
 "Resursdatora nosaukumā drīkst būt tikai mazie burti no a-z, cipari un "
 "defise: -"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:574
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:545
 msgid "We need a few details to complete setup."
 msgstr "Lai beigtu iestatīšanu, vajag papildu informāciju."
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:737
-#| msgid "Administrator _Name"
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:704
 msgid "Administrator"
 msgstr "Administrators"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:743
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:786
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:710
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:753
 #, c-format
 msgid "Failed to create user '%s': "
 msgstr "Neizdevās izveidot lietotāju “%s”: "
@@ -196,7 +194,6 @@ msgid "Change Avatar"
 msgstr "Mainīt avatāru"
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:46
-#| msgid "Remove Account"
 msgid "Remove Avatar"
 msgstr "Izņemt avatāru"
 
@@ -218,18 +215,14 @@ msgid "Set up _parental controls for this user"
 msgstr "Šim lietotājam iestatīt _vecāku kontroli"
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:223
-msgid ""
-"For use by a parent or supervisor, who must set up their own password."
-msgstr ""
-"Paredzēts vecākam vai aizbildnim, kuram jāiestata pašiem sava parole."
+msgid "For use by a parent or supervisor, who must set up their own password."
+msgstr "Paredzēts vecākam vai aizbildnim, kuram jāiestata pašiem sava parole."
 
 #: gnome-initial-setup/pages/account/gis-account-page.ui:32
-#| msgid "Enterprise Login"
 msgid "_Enterprise Login"
 msgstr "_Uzņēmuma ierakstīšanās"
 
 #: gnome-initial-setup/pages/account/gis-account-page.ui:41
-#| msgid "Set Up _Enterprise Login"
 msgid "Go online to set up Enterprise Login."
 msgstr "Dodaties tiešsaistē, lai iestatītu uzņēmuma ierakstīšanos"
 
@@ -267,19 +260,14 @@ msgid "The username is too long."
 msgstr "Lietotājvārds ir pārāk garš."
 
 #: gnome-initial-setup/pages/account/um-utils.c:159
-#| msgid "The username cannot start with a “-”."
 msgid "The username must start with a lower case letter from a-z."
 msgstr "Lietotājvārds jāsākas ar mazajiem burtiem no a līdz z."
 
 #: gnome-initial-setup/pages/account/um-utils.c:162
-#| msgid "Sorry, that user name isn’t available. Please try another."
 msgid "That username isn’t available. Please try another."
 msgstr "Šis lietotājvārds nav pieejams. Lūdzu, mēģiniet citu."
 
 #: gnome-initial-setup/pages/account/um-utils.c:165
-#| msgid ""
-#| "The username should only consist of upper and lower case letters from a-"
-#| "z, digits and the following characters: . - _"
 msgid ""
 "The username should only consist of lower case letters from a-z, digits, and "
 "the following characters: - _"
@@ -302,7 +290,7 @@ msgstr "Vairāk…"
 
 #. Translators: a search for input methods or keyboard layouts
 #. * did not yield any results
-#. 
+#.
 #: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:347
 msgid "No inputs found"
 msgstr "Netika derīga ievade"
@@ -317,7 +305,6 @@ msgid "Select your keyboard layout or an input method."
 msgstr "Izvēlēties tastatūras izkārtojumus vai ievades metodi."
 
 #: gnome-initial-setup/pages/keyboard/input-chooser.ui:8
-#| msgid "Select your keyboard layout or an input method."
 msgid "Search keyboards and input methods"
 msgstr "Meklēt tastatūras un ievades metodes"
 
@@ -337,7 +324,7 @@ msgstr ""
 #. Translators: This is meant to be a warm, engaging welcome message,
 #. * like greeting somebody at the door. If the exclamation mark is not
 #. * suitable for this in your language you may replace it.
-#. 
+#.
 #: gnome-initial-setup/pages/language/gis-welcome-widget.c:132
 msgid "Welcome!"
 msgstr "Laipni lūdzam!"
@@ -406,7 +393,6 @@ msgstr "Vecāku kontrole"
 #. Translators: The placeholder is for the user’s full name.
 #: gnome-initial-setup/pages/password/gis-password-page.c:92
 #, c-format
-#| msgid "Set a Password"
 msgid "Set a Password for %s"
 msgstr "Iestatiet paroli %s lietotājam"
 
@@ -415,7 +401,6 @@ msgid "Be careful not to lose your password."
 msgstr "Centieties nepazaudēt savu paroli."
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:99
-#| msgid "Set a Password"
 msgid "Set a Parent Password"
 msgstr "Iestatiet vecāka paroli"
 
@@ -440,17 +425,14 @@ msgid "Password"
 msgstr "Parole"
 
 #: gnome-initial-setup/pages/password/gis-password-page.ui:68
-#| msgid "_Password"
 msgid "_Confirm Password"
 msgstr "_Apstiprināt paroli"
 
 #: gnome-initial-setup/pages/password/gis-password-page.ui:92
-#| msgid "Password _Reminder"
 msgid "Password _Hint"
 msgstr "Paroļu _mājiens"
 
 #: gnome-initial-setup/pages/password/gis-password-page.ui:103
-#| msgid "Password reminder will be shown in case you forget your password."
 msgid "Password hint will be shown in case you forget your password."
 msgstr "Paroļu mājiens parādīsies, ja aizmirsīsiet savu paroli."
 
@@ -460,8 +442,6 @@ msgid "The new password needs to be different from the old one."
 msgstr "Jaunajai parolei ir jāatšķiras no vecās."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:83
-#| msgctxt "Password hint"
-#| msgid "Try changing some letters and numbers."
 msgctxt "Password hint"
 msgid ""
 "This password is very similar to your last one. Try changing some letters "
@@ -471,8 +451,6 @@ msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:85
 #: gnome-initial-setup/pages/password/pw-utils.c:93
-#| msgctxt "Password hint"
-#| msgid "Try changing the password a bit more."
 msgctxt "Password hint"
 msgid ""
 "This password is very similar to your last one. Try changing the password a "
@@ -481,8 +459,6 @@ msgstr ""
 "Parole ir ļoti līdzīga iepriekšējai. Mēģiniet mainīt paroli vēl vairāk."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:87
-#| msgctxt "Password hint"
-#| msgid "A password without your user name would be stronger."
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. A password without your user name would be stronger."
@@ -490,16 +466,11 @@ msgstr ""
 "Šī ir vāja parole. Parole būtu stiprāka, ja nesaturētu jūsu lietotājvārdu."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:89
-#| msgctxt "Password hint"
-#| msgid "Try to avoid using your name in the password."
 msgctxt "Password hint"
-msgid ""
-"This is a weak password. Try to avoid using your name in the password."
+msgid "This is a weak password. Try to avoid using your name in the password."
 msgstr "Šī ir vāja parole. Mēģiniet neiekļaut savu vārdu parolē."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:91
-#| msgctxt "Password hint"
-#| msgid "Try to avoid some of the words included in the password."
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to avoid some of the words included in the "
@@ -507,43 +478,31 @@ msgid ""
 msgstr "Šī ir vāja parole. Mēģiniet neizmantot dažus vārdus, kas ir parolē."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:95
-#| msgctxt "Password hint"
-#| msgid "Try to avoid common words."
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid common words."
 msgstr "Šī ir vāja parole. Mēģiniet neizmantot bieži izmantotus vārdus."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:97
-#| msgctxt "Password hint"
-#| msgid "Try to avoid reordering existing words."
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid reordering existing words."
 msgstr "Šī ir vāja parole. Mēģiniet neizmantot esošo vārdu pārkārtošanu."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:99
-#| msgctxt "Password hint"
-#| msgid "Try to use more numbers."
 msgctxt "Password hint"
 msgid "This is a weak password. Try to use more numbers."
 msgstr "Šī ir vāja parole. Mēģiniet izmantot vairāk ciparu."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:101
-#| msgctxt "Password hint"
-#| msgid "Try to use more uppercase letters."
 msgctxt "Password hint"
 msgid "This is a weak password. Try to use more uppercase letters."
 msgstr "Šī ir vāja parole. Mēģiniet izmantot vairāk lieto burtu."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:103
-#| msgctxt "Password hint"
-#| msgid "Try to use more lowercase letters."
 msgctxt "Password hint"
 msgid "This is a weak password. Try to use more lowercase letters."
 msgstr "Šī ir vāja parole. Mēģiniet izmantot vairāk mazo burtu."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:105
-#| msgctxt "Password hint"
-#| msgid "Try to use more special characters, like punctuation."
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to use more special characters, like "
@@ -553,8 +512,6 @@ msgstr ""
 "pieturzīmes."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:107
-#| msgctxt "Password hint"
-#| msgid "Try to use a mixture of letters, numbers and punctuation."
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to use a mixture of letters, numbers and "
@@ -562,17 +519,11 @@ msgid ""
 msgstr "Šī ir vāja parole. Mēģiniet izmantot burtus, ciparus un pieturzīmes."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:109
-#| msgctxt "Password hint"
-#| msgid "Try to avoid repeating the same character."
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid repeating the same character."
 msgstr "Šī ir vāja parole. Mēģiniet neatkārtot vienu un to pašu rakstzīmi."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:111
-#| msgctxt "Password hint"
-#| msgid ""
-#| "Try to avoid repeating the same type of character: you need to mix up "
-#| "letters, numbers and punctuation."
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to avoid repeating the same type of character: "
@@ -582,8 +533,6 @@ msgstr ""
 "un pieturzīmes ir “jāsamaisa”."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:113
-#| msgctxt "Password hint"
-#| msgid "Try to avoid sequences like 1234 or abcd."
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid sequences like 1234 or abcd."
 msgstr ""
@@ -591,15 +540,10 @@ msgstr ""
 "abcd."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:115
-#| msgctxt "Password hint"
-#| msgid ""
-#| "Password needs to be longer. Try to add more letters, numbers and "
-#| "punctuation."
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to add more letters, numbers and punctuation."
-msgstr ""
-"Šī ir vāja parole. Mēģiniet pievienot burtus, ciparus un pieturzīmes."
+msgstr "Šī ir vāja parole. Mēģiniet pievienot burtus, ciparus un pieturzīmes."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:117
 msgctxt "Password hint"
@@ -637,7 +581,7 @@ msgstr ""
 
 #. Translators: the first parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu".
-#. 
+#.
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:68
 #, c-format
 msgid ""
@@ -647,12 +591,9 @@ msgstr ""
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu".
-#. 
+#.
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:79
 #, c-format
-#| msgid ""
-#| "Sends technical reports that have personal information automatically "
-#| "removed. Data is collected by %s."
 msgid ""
 "Sends technical reports that do not contain personal information. Data is "
 "collected by %s."
@@ -690,16 +631,11 @@ msgstr ""
 
 #: gnome-initial-setup/pages/software/gis-software-page.c:123
 #: gnome-initial-setup/pages/software/gis-software-page.ui:11
-#| msgid "Third Party Repositories"
 msgid "Third-Party Repositories"
 msgstr "Trešo pušu krātuves"
 
 #: gnome-initial-setup/pages/software/gis-software-page.c:125
 #, c-format
-#| msgid ""
-#| "Third-party repositories provide access to additional software from "
-#| "selected external sources, including popular apps and drivers that are "
-#| "important for some devices. Some proprietary software is included."
 msgid ""
 "Third-party repositories provide access to additional software from selected "
 "<a href='%s'>external sources</a>, including popular apps and drivers that "
@@ -711,10 +647,6 @@ msgstr ""
 "īpašniekprogrammatūra."
 
 #: gnome-initial-setup/pages/software/gis-software-page.c:127
-#| msgid ""
-#| "Third-party repositories provide access to additional software from "
-#| "selected external sources. They include popular apps, as well as firmware "
-#| "that is important for some devices. Some proprietary software is included."
 msgid ""
 "Third-party repositories provide access to additional software from selected "
 "external sources, including popular apps and drivers that are important for "
@@ -725,12 +657,10 @@ msgstr ""
 "dažām ierīcēm. Šajās krātuvēs var būt arī īpašniekprogrammatūra."
 
 #: gnome-initial-setup/pages/software/gis-software-page.c:139
-#| msgid "Third-Party Repositories"
 msgid "_Disable Third-Party Repositories"
 msgstr "_Izslēgt trešo pušu krātuves"
 
 #: gnome-initial-setup/pages/software/gis-software-page.c:144
-#| msgid "Third-Party Repositories"
 msgid "_Enable Third-Party Repositories"
 msgstr "I_eslēgt trešo pušu krātuves"
 
@@ -747,7 +677,6 @@ msgstr "_Sākt lietot %s"
 #. * detect any distribution.
 #: gnome-initial-setup/pages/summary/gis-summary-page.c:413
 #, c-format
-#| msgid "%s is ready to be used. We hope that you love it!"
 msgid "%s is ready to be used."
 msgstr "%s ir gatavs darbam."
 
@@ -758,7 +687,6 @@ msgid "All done!"
 msgstr "Viss izdarīts!"
 
 #: gnome-initial-setup/pages/summary/gis-summary-page.c:457
-#| msgid "Setup Complete"
 msgid "Setup Failed"
 msgstr "Iestatīšana neizdevās"
 
@@ -790,12 +718,10 @@ msgstr "Meklēt pilsētas"
 #. Translators: this is the name of a location followed by a region, for example:
 #. * 'London, United Kingdom'
 #. * You shouldn't need to translate this string unless the language has a different comma.
-#. 
+#.
 #: gnome-initial-setup/pages/timezone/gis-location-entry.c:557
 #: gnome-initial-setup/pages/timezone/gis-location-entry.c:582
 #, c-format
-#| msgctxt "timezone loc"
-#| msgid "%s, %s"
 msgid "%s, %s"
 msgstr "%s, %s"
 
@@ -808,7 +734,7 @@ msgstr "%s, %s"
 
 #. Translators: UTC here means the Coordinated Universal Time.
 #. * %:::z will be replaced by the offset from UTC e.g. UTC+02
-#. 
+#.
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.c:320
 msgid "UTC%:::z"
 msgstr "UTC%:::z"
@@ -859,10 +785,9 @@ msgstr "Lūdzu, meklējiet tuvumā esošu pilsētu"
 #. * space (U200a) to improve the spacing in the title, which you can
 #. * keep or remove. The %s is getting replaced with the name and version
 #. * of the OS, e.g. "GNOME 3.38"
-#. 
+#.
 #: gnome-initial-setup/pages/welcome/gis-welcome-page.c:79
 #, c-format
-#| msgid "Welcome!"
 msgid "Welcome to %s !"
 msgstr "Laipni lūdzam %s !"
 
@@ -968,12 +893,13 @@ msgid "Show First Report"
 msgstr ""
 
 #: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:9
-msgid "Help Improve Ubuntu"
-msgstr ""
+#, fuzzy
+msgid "Utile Depends On It: Help Improve Ubuntu"
+msgstr "Palīdziet uzlabot Ubuntu"
 
 #: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:10
 msgid ""
-"Help us improve Ubuntu by sharing your system and error reports with us.\n"
+"Help improve Ubuntu by sharing your system and error reports with them.\n"
 "Reports are sent anonymously."
 msgstr ""
 
@@ -1091,7 +1017,7 @@ msgstr "Derīgs kods"
 #. Ubuntu Pro contact fails.
 #. It may be due to various reasons, most common is
 #. an invalid token.
-#. 
+#.
 #: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:236
 msgid "Invalid token or attach failure"
 msgstr "Nederīgs kods vai pievienošanas kļūme"
@@ -1196,7 +1122,7 @@ msgstr ""
 
 #. TRANSLATORS: Subtitle telling who can provide the Ubuntu Pro token.
 #. Use HTML encoded format for special characters such as &amp' for '&'. %s is a URL.
-#. 
+#.
 #: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:1247
 #, c-format
 msgid "From your admin, or from %s"
@@ -1285,7 +1211,6 @@ msgid "Accent Color"
 msgstr ""
 
 #: po/EXTRA_STRINGS.sh:1
-#| msgid "Force existing user mode"
 msgid "Force live user mode"
 msgstr "Uzspiest pagaidu lietotāja režīmu"
 
@@ -1330,9 +1255,6 @@ msgstr "Instalēt ${PRETTY_NAME}"
 #~ msgid "Failed to show privacy policy: %s"
 #~ msgstr "Neizdevās parādīt privātuma politiku — %s"
 
-#~ msgid "Help improve Ubuntu"
-#~ msgstr "Palīdziet uzlabot Ubuntu"
-
 #~ msgid "Show the First Report"
 #~ msgstr "Rādīt pirmo pārskatu"
 
@@ -1360,8 +1282,8 @@ msgstr "Instalēt ${PRETTY_NAME}"
 #~ "Turn on location services to let applications know your geographical "
 #~ "location. You can change this anytime in System Settings."
 #~ msgstr ""
-#~ "Ieslēdziet atrašanās vietas pakalpojumus, lai lietotnes varētu zinātu jūsu "
-#~ "ģeogrāfisko atrašanās vietu. To jebkurā laikā varat mainīt sistēmas "
+#~ "Ieslēdziet atrašanās vietas pakalpojumus, lai lietotnes varētu zinātu "
+#~ "jūsu ģeogrāfisko atrašanās vietu. To jebkurā laikā varat mainīt sistēmas "
 #~ "iestatījumos."
 
 #~ msgid "Location services"
@@ -1387,9 +1309,9 @@ msgstr "Instalēt ${PRETTY_NAME}"
 #~ "things like your machine model, installed software and the location you "
 #~ "chose for your timezone."
 #~ msgstr ""
-#~ "Palīdziet mums uzlabot Ubuntu, dodot mums savas sistēmas datus. Tas ietver "
-#~ "tādas lietas kā jūsu datora modelis, instalētā programmatūra un atrašanās "
-#~ "vieta, kuru izvēlējāties savai laika joslai."
+#~ "Palīdziet mums uzlabot Ubuntu, dodot mums savas sistēmas datus. Tas "
+#~ "ietver tādas lietas kā jūsu datora modelis, instalētā programmatūra un "
+#~ "atrašanās vieta, kuru izvēlējāties savai laika joslai."
 
 #~ msgid "Yes, share system data with the Ubuntu team"
 #~ msgstr "Jā, dalīties ar sistēmas datiem ar Ubuntu komandu"
@@ -1410,9 +1332,10 @@ msgstr "Instalēt ${PRETTY_NAME}"
 #~ "More information on <a href=\"https://ubuntu.com/pro\">ubuntu.com/pro</a>."
 #~ msgstr ""
 #~ "Atjauniniet šo datoru uz Ubuntu Pro, lai saņemtu daudz plašāka klāsta "
-#~ "pakotņu drošības atjauninājumus līdz 2034. gadam. Izpildiet FedRAMP, FIPS, "
-#~ "STIG un HIPAA un citas saistības un nostiprināšanas prasības, izmantojot "
-#~ "sertificētus rīkus un kripto-moduļus. Bezmaksas līdz 5 datoriem.\n"
+#~ "pakotņu drošības atjauninājumus līdz 2034. gadam. Izpildiet FedRAMP, "
+#~ "FIPS, STIG un HIPAA un citas saistības un nostiprināšanas prasības, "
+#~ "izmantojot sertificētus rīkus un kripto-moduļus. Bezmaksas līdz 5 "
+#~ "datoriem.\n"
 #~ "\n"
 #~ "Vairāk informācijas <a href=\"https://ubuntu.com/pro\">ubuntu.com/pro</a>."
 
@@ -1432,15 +1355,17 @@ msgstr "Instalēt ${PRETTY_NAME}"
 #~ "Fulfill FedRAMP, FIPS, STIG and HIPAA and other compliance and hardening "
 #~ "requirements with certified tooling and crypto-modules."
 #~ msgstr ""
-#~ "Izpildiet FedRAMP, FIPS, STIG un HIPAA un citas prasības un nostiprināšanas "
-#~ "prasības, izmantojot sertificētus rīkus un kripto-moduļus."
+#~ "Izpildiet FedRAMP, FIPS, STIG un HIPAA un citas prasības un "
+#~ "nostiprināšanas prasības, izmantojot sertificētus rīkus un kripto-moduļus."
 
 #~ msgid "Learn more at <a href=\"https://ubuntu.com/pro\">ubuntu.com/pro</a>."
 #~ msgstr ""
-#~ "Vairāk informācijas at <a href=\"https://ubuntu.com/pro\">ubuntu.com/pro</a>."
+#~ "Vairāk informācijas at <a href=\"https://ubuntu.com/pro\">ubuntu.com/pro</"
+#~ "a>."
 
 #~ msgid ""
-#~ "You can always enable Ubuntu Pro later via the Software & Updates application"
+#~ "You can always enable Ubuntu Pro later via the Software & Updates "
+#~ "application"
 #~ msgstr ""
 #~ "Ubuntu Pro vienmēr varat iespējot vēlāk, izmantojot programmu & "
 #~ "atjauninājumus"

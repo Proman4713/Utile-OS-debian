@@ -9,18 +9,18 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-"
-"setup/issues/\n"
-"POT-Creation-Date: 2026-05-22 14:35+0000\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+"issues\n"
+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
 "PO-Revision-Date: 2026-04-14 01:46+0000\n"
 "Last-Translator: Milo Casagrande <milo.casagrande@gmail.com>\n"
 "Language-Team: Italian <gnome-it-list@gnome.org>\n"
+"Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2026-07-01 12:24+0000\n"
 "X-Generator: Launchpad (build c38ea58da9d7185c4996adfc854ab433551cdcdd)\n"
-"Language: it\n"
 "X-DL-Team: it\n"
 "X-DL-Module: gnome-initial-setup\n"
 "X-DL-Branch: master\n"
@@ -165,17 +165,17 @@ msgstr "Password amministratore"
 msgid "C_ontinue"
 msgstr "C_ontinua"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:225
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:210
 #, c-format
 msgid "The hostname is too long."
 msgstr "L'hostname è troppo lungo."
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:229
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:214
 msgid "The hostname must start with a lower case letter from a-z or a digit."
 msgstr ""
 "L'hostname deve iniziare con una lettera minuscola dalla a-z o con una cifra."
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:233
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:218
 msgid ""
 "The hostname should only consist of lower case letters from a-z, digits and "
 "a hyphen: -"
@@ -183,17 +183,16 @@ msgstr ""
 "L'hostname deve essere composto solo da lettere minuscole dalla a-z, cifre e "
 "un trattino: -"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:574
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:545
 msgid "We need a few details to complete setup."
 msgstr "Sono richiesti alcuni dettagli per completare le impostazioni."
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:737
-#| msgid "Administrator _Name"
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:704
 msgid "Administrator"
 msgstr "Amministratore"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:743
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:786
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:710
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:753
 #, c-format
 msgid "Failed to create user '%s': "
 msgstr "Creazione utente «%s» non riuscita: "
@@ -225,8 +224,7 @@ msgid "Set up _parental controls for this user"
 msgstr "Impostare il controllo _genitori per questo utente"
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:223
-msgid ""
-"For use by a parent or supervisor, who must set up their own password."
+msgid "For use by a parent or supervisor, who must set up their own password."
 msgstr ""
 "Per l'uso da parte di un genitore o supervisore, che deve impostare la "
 "propria password."
@@ -273,19 +271,14 @@ msgid "The username is too long."
 msgstr "Il nome utente è troppo lungo."
 
 #: gnome-initial-setup/pages/account/um-utils.c:159
-#| msgid "The username cannot start with a “-”."
 msgid "The username must start with a lower case letter from a-z."
 msgstr "Il nome utente deve iniziare con una lettera minuscola da a-z."
 
 #: gnome-initial-setup/pages/account/um-utils.c:162
-#| msgid "Sorry, that user name isn’t available. Please try another."
 msgid "That username isn’t available. Please try another."
 msgstr "Questo nome utente non è disponibile. Provarne un altro."
 
 #: gnome-initial-setup/pages/account/um-utils.c:165
-#| msgid ""
-#| "The username should only consist of upper and lower case letters from a-"
-#| "z, digits and the following characters: . - _"
 msgid ""
 "The username should only consist of lower case letters from a-z, digits, and "
 "the following characters: - _"
@@ -310,7 +303,7 @@ msgstr "Altro…"
 
 #. Translators: a search for input methods or keyboard layouts
 #. * did not yield any results
-#. 
+#.
 #: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:347
 msgid "No inputs found"
 msgstr "Nessun input trovato"
@@ -344,7 +337,7 @@ msgstr "Seleziona una lingua dall'elenco o cerca una lingua specifica"
 #. Translators: This is meant to be a warm, engaging welcome message,
 #. * like greeting somebody at the door. If the exclamation mark is not
 #. * suitable for this in your language you may replace it.
-#. 
+#.
 #: gnome-initial-setup/pages/language/gis-welcome-widget.c:132
 msgid "Welcome!"
 msgstr "Benvenuti"
@@ -403,8 +396,7 @@ msgstr "Controllo genitori per %s"
 
 #: gnome-initial-setup/pages/parental-controls/gis-parental-controls-page.c:108
 msgid "Set restrictions on what this user can run or install."
-msgstr ""
-"Imposta le restrizioni su cosa questo utente può avviare o installare."
+msgstr "Imposta le restrizioni su cosa questo utente può avviare o installare."
 
 #: gnome-initial-setup/pages/parental-controls/gis-parental-controls-page.c:215
 msgid "Parental Controls"
@@ -413,7 +405,6 @@ msgstr "Controllo genitori"
 #. Translators: The placeholder is for the user’s full name.
 #: gnome-initial-setup/pages/password/gis-password-page.c:92
 #, c-format
-#| msgid "Set a Password"
 msgid "Set a Password for %s"
 msgstr "Impostare una password per %s"
 
@@ -422,7 +413,6 @@ msgid "Be careful not to lose your password."
 msgstr "Fare attenzione a non perdere la password."
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:99
-#| msgid "Set a Password"
 msgid "Set a Parent Password"
 msgstr "Impostare una password genitore"
 
@@ -466,8 +456,6 @@ msgid "The new password needs to be different from the old one."
 msgstr "La nuova password deve essere diversa dalla precedente."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:83
-#| msgctxt "Password hint"
-#| msgid "Try changing some letters and numbers."
 msgctxt "Password hint"
 msgid ""
 "This password is very similar to your last one. Try changing some letters "
@@ -478,8 +466,6 @@ msgstr ""
 
 #: gnome-initial-setup/pages/password/pw-utils.c:85
 #: gnome-initial-setup/pages/password/pw-utils.c:93
-#| msgctxt "Password hint"
-#| msgid "Try changing the password a bit more."
 msgctxt "Password hint"
 msgid ""
 "This password is very similar to your last one. Try changing the password a "
@@ -489,8 +475,6 @@ msgstr ""
 "po' di più."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:87
-#| msgctxt "Password hint"
-#| msgid "A password without your user name would be stronger."
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. A password without your user name would be stronger."
@@ -499,18 +483,13 @@ msgstr ""
 "forte."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:89
-#| msgctxt "Password hint"
-#| msgid "Try to avoid using your name in the password."
 msgctxt "Password hint"
-msgid ""
-"This is a weak password. Try to avoid using your name in the password."
+msgid "This is a weak password. Try to avoid using your name in the password."
 msgstr ""
 "Questa è una password debole. Provare a evitare di usare il proprio nome "
 "nella password."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:91
-#| msgctxt "Password hint"
-#| msgid "Try to avoid some of the words included in the password."
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to avoid some of the words included in the "
@@ -520,15 +499,11 @@ msgstr ""
 "contenute nella password."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:95
-#| msgctxt "Password hint"
-#| msgid "Try to avoid common words."
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid common words."
 msgstr "Questa è una password debole. Provare a evitare parole comuni."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:97
-#| msgctxt "Password hint"
-#| msgid "Try to avoid reordering existing words."
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid reordering existing words."
 msgstr ""
@@ -536,29 +511,21 @@ msgstr ""
 "esistenti."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:99
-#| msgctxt "Password hint"
-#| msgid "Try to use more numbers."
 msgctxt "Password hint"
 msgid "This is a weak password. Try to use more numbers."
 msgstr "Questa è una password debole. Provare a usare più numeri."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:101
-#| msgctxt "Password hint"
-#| msgid "Try to use more uppercase letters."
 msgctxt "Password hint"
 msgid "This is a weak password. Try to use more uppercase letters."
 msgstr "Questa è una password debole. Provare a usare più lettere maiuscole."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:103
-#| msgctxt "Password hint"
-#| msgid "Try to use more lowercase letters."
 msgctxt "Password hint"
 msgid "This is a weak password. Try to use more lowercase letters."
 msgstr "Questa è una password debole. Provare a usare più lettere minuscole."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:105
-#| msgctxt "Password hint"
-#| msgid "Try to use more special characters, like punctuation."
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to use more special characters, like "
@@ -568,8 +535,6 @@ msgstr ""
 "la punteggiatura."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:107
-#| msgctxt "Password hint"
-#| msgid "Try to use a mixture of letters, numbers and punctuation."
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to use a mixture of letters, numbers and "
@@ -579,8 +544,6 @@ msgstr ""
 "e punteggiatura."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:109
-#| msgctxt "Password hint"
-#| msgid "Try to avoid repeating the same character."
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid repeating the same character."
 msgstr ""
@@ -588,10 +551,6 @@ msgstr ""
 "carattere."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:111
-#| msgctxt "Password hint"
-#| msgid ""
-#| "Try to avoid repeating the same type of character: you need to mix up "
-#| "letters, numbers and punctuation."
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to avoid repeating the same type of character: "
@@ -601,8 +560,6 @@ msgstr ""
 "tipo di carattere: è necessario mescolare lettere, numeri e punteggiatura."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:113
-#| msgctxt "Password hint"
-#| msgid "Try to avoid sequences like 1234 or abcd."
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid sequences like 1234 or abcd."
 msgstr ""
@@ -610,10 +567,6 @@ msgstr ""
 "abcd."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:115
-#| msgctxt "Password hint"
-#| msgid ""
-#| "Password needs to be longer. Try to add more letters, numbers and "
-#| "punctuation."
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to add more letters, numbers and punctuation."
@@ -657,7 +610,7 @@ msgstr "eccellente"
 
 #. Translators: the first parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu".
-#. 
+#.
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:68
 #, c-format
 msgid ""
@@ -665,12 +618,12 @@ msgid ""
 "collected by %1$s (<u><a href='%2$s'>privacy policy</a></u>)."
 msgstr ""
 "Invia report tecnici che non contengono informazioni personali. I dati "
-"vengono raccolti da %1$s (<u><a href='%2$s'>informativa sulla "
-"privacy</a></u>)."
+"vengono raccolti da %1$s (<u><a href='%2$s'>informativa sulla privacy</a></"
+"u>)."
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu".
-#. 
+#.
 #: gnome-initial-setup/pages/privacy/gis-privacy-page.c:79
 #, c-format
 msgid ""
@@ -802,12 +755,10 @@ msgstr "Cerca città"
 #. Translators: this is the name of a location followed by a region, for example:
 #. * 'London, United Kingdom'
 #. * You shouldn't need to translate this string unless the language has a different comma.
-#. 
+#.
 #: gnome-initial-setup/pages/timezone/gis-location-entry.c:557
 #: gnome-initial-setup/pages/timezone/gis-location-entry.c:582
 #, c-format
-#| msgctxt "timezone loc"
-#| msgid "%s, %s"
 msgid "%s, %s"
 msgstr "%s, %s"
 
@@ -820,7 +771,7 @@ msgstr "%s, %s"
 
 #. Translators: UTC here means the Coordinated Universal Time.
 #. * %:::z will be replaced by the offset from UTC e.g. UTC+02
-#. 
+#.
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.c:320
 msgid "UTC%:::z"
 msgstr "UTC%:::z"
@@ -871,10 +822,9 @@ msgstr "Cerca una città vicina"
 #. * space (U200a) to improve the spacing in the title, which you can
 #. * keep or remove. The %s is getting replaced with the name and version
 #. * of the OS, e.g. "GNOME 3.38"
-#. 
+#.
 #: gnome-initial-setup/pages/welcome/gis-welcome-page.c:79
 #, c-format
-#| msgid "Welcome!"
 msgid "Welcome to %s !"
 msgstr "Benvenuti su %s."
 
@@ -992,12 +942,14 @@ msgid "Show First Report"
 msgstr "Mostra il primo rapporto"
 
 #: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:9
-msgid "Help Improve Ubuntu"
+#, fuzzy
+msgid "Utile Depends On It: Help Improve Ubuntu"
 msgstr "Aiutaci a migliorare Ubuntu"
 
 #: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:10
+#, fuzzy
 msgid ""
-"Help us improve Ubuntu by sharing your system and error reports with us.\n"
+"Help improve Ubuntu by sharing your system and error reports with them.\n"
 "Reports are sent anonymously."
 msgstr ""
 "Aiutaci a migliorare Ubuntu condividendo con noi i report di sistema e gli "
@@ -1062,8 +1014,7 @@ msgstr "Token"
 
 #: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:54
 msgid "Upgrade this device to Ubuntu Pro. Free for personal use."
-msgstr ""
-"Aggiorna questo dispositivo a Ubuntu Pro. Gratuito per uso personale."
+msgstr "Aggiorna questo dispositivo a Ubuntu Pro. Gratuito per uso personale."
 
 #: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:105
 msgid ""
@@ -1126,7 +1077,7 @@ msgstr "Token valido"
 #. Ubuntu Pro contact fails.
 #. It may be due to various reasons, most common is
 #. an invalid token.
-#. 
+#.
 #: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:236
 msgid "Invalid token or attach failure"
 msgstr "Token non valido o errore di collegamento"
@@ -1232,7 +1183,7 @@ msgstr "Scopri di più su %s"
 
 #. TRANSLATORS: Subtitle telling who can provide the Ubuntu Pro token.
 #. Use HTML encoded format for special characters such as &amp' for '&'. %s is a URL.
-#. 
+#.
 #: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:1247
 #, c-format
 msgid "From your admin, or from %s"
@@ -1392,8 +1343,8 @@ msgstr "Installa ${PRETTY_NAME}"
 #~ "Sends technical reports that do not contain personal information. Data is "
 #~ "collected by %1$s (<a href='%2$s'>privacy policy</a>)."
 #~ msgstr ""
-#~ "Invia resoconti tecnici senza informazioni personali. I dati sono raccolti "
-#~ "da %1$s (<a href='%2$s'>politica sulla riservatezza</a>)."
+#~ "Invia resoconti tecnici senza informazioni personali. I dati sono "
+#~ "raccolti da %1$s (<a href='%2$s'>politica sulla riservatezza</a>)."
 
 #~ msgid "Privacy controls can be changed at any time from the Settings app."
 #~ msgstr ""
@@ -1414,8 +1365,8 @@ msgstr "Installa ${PRETTY_NAME}"
 #~ "location. You can change this anytime in System Settings."
 #~ msgstr ""
 #~ "Attiva i servizi di localizzazione per consentire alle applicazioni di "
-#~ "conoscere la tua posizione geografica. Puoi modificare questa impostazione "
-#~ "in qualsiasi momento nelle Impostazioni di sistema."
+#~ "conoscere la tua posizione geografica. Puoi modificare questa "
+#~ "impostazione in qualsiasi momento nelle Impostazioni di sistema."
 
 #~ msgid "Location services"
 #~ msgstr "Servizi di localizzazione"
@@ -1429,9 +1380,9 @@ msgstr "Installa ${PRETTY_NAME}"
 #~ "things like your machine model, installed software and the location you "
 #~ "chose for your timezone."
 #~ msgstr ""
-#~ "Aiutaci a migliorare Ubuntu condividendo con noi i dati del tuo sistema. Ciò "
-#~ "include cose come il modello della tua macchina, il software installato e la "
-#~ "posizione che hai scelto per il tuo fuso orario."
+#~ "Aiutaci a migliorare Ubuntu condividendo con noi i dati del tuo sistema. "
+#~ "Ciò include cose come il modello della tua macchina, il software "
+#~ "installato e la posizione che hai scelto per il tuo fuso orario."
 
 #~ msgid "Yes, share system data with the Ubuntu team"
 #~ msgstr "Sì, condividi i dati di sistema con il team di Ubuntu"
@@ -1447,13 +1398,14 @@ msgstr "Installa ${PRETTY_NAME}"
 #~ "\n"
 #~ "More information on <a href=\"https://ubuntu.com/pro\">ubuntu.com/pro</a>."
 #~ msgstr ""
-#~ "Aggiorna questa macchina a Ubuntu Pro per aggiornamenti di sicurezza su una "
-#~ "gamma molto più ampia di pacchetti, fino al 2034. Soddisfa FedRAMP, FIPS, "
-#~ "STIG e HIPAA e altri requisiti di conformità e rafforzamento con strumenti "
-#~ "certificati e moduli crittografici. Gratuito per un massimo di 5 macchine.\n"
+#~ "Aggiorna questa macchina a Ubuntu Pro per aggiornamenti di sicurezza su "
+#~ "una gamma molto più ampia di pacchetti, fino al 2034. Soddisfa FedRAMP, "
+#~ "FIPS, STIG e HIPAA e altri requisiti di conformità e rafforzamento con "
+#~ "strumenti certificati e moduli crittografici. Gratuito per un massimo di "
+#~ "5 macchine.\n"
 #~ "\n"
-#~ "Ulteriori informazioni su <a "
-#~ "href=\"https://ubuntu.com/pro\">ubuntu.com/pro</a>."
+#~ "Ulteriori informazioni su <a href=\"https://ubuntu.com/pro\">ubuntu.com/"
+#~ "pro</a>."
 
 #~ msgid "Or add _token manually"
 #~ msgstr "Oppure aggiungi _token manualmente"
@@ -1463,7 +1415,8 @@ msgstr "Installa ${PRETTY_NAME}"
 
 #~ msgid "Upgrade this machine to Ubuntu Pro. Free for up to 5 machines."
 #~ msgstr ""
-#~ "Aggiorna questa macchina a Ubuntu Pro. Gratuito per un massimo di 5 macchine."
+#~ "Aggiorna questa macchina a Ubuntu Pro. Gratuito per un massimo di 5 "
+#~ "macchine."
 
 #~ msgid "Get security updates on a wide range of packages until 2034"
 #~ msgstr ""
@@ -1475,14 +1428,16 @@ msgstr "Installa ${PRETTY_NAME}"
 #~ "requirements with certified tooling and crypto-modules."
 #~ msgstr ""
 #~ "Soddisfa i requisiti FedRAMP, FIPS, STIG e HIPAA e altri requisiti di "
-#~ "conformità e rafforzamento con strumenti certificati e moduli crittografici."
+#~ "conformità e rafforzamento con strumenti certificati e moduli "
+#~ "crittografici."
 
 #~ msgid "Learn more at <a href=\"https://ubuntu.com/pro\">ubuntu.com/pro</a>."
 #~ msgstr ""
 #~ "Scopri di più su <a href=\"https://ubuntu.com/pro\">ubuntu.com/pro</a>."
 
 #~ msgid ""
-#~ "You can always enable Ubuntu Pro later via the Software & Updates application"
+#~ "You can always enable Ubuntu Pro later via the Software & Updates "
+#~ "application"
 #~ msgstr ""
 #~ "Puoi sempre abilitare Ubuntu Pro in un secondo momento tramite "
 #~ "l'applicazione Software e aggiornamenti"
