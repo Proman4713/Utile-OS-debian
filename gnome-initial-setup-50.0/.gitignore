@@ -14,3 +14,5 @@
 /subprojects/libsass/
 /subprojects/sassc.wrap
 /subprojects/sassc/
+
+!.pc/

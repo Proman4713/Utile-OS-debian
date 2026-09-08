@@ -1,7 +1,7 @@
 Index: gnome-initial-setup-50.0/po/LINGUAS
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/LINGUAS	2026-09-09 01:48:51.226123871 +0300
-+++ gnome-initial-setup-50.0/po/LINGUAS	2026-09-09 01:48:51.054123869 +0300
+--- gnome-initial-setup-50.0.orig/po/LINGUAS	2026-09-09 02:25:30.106134671 +0300
++++ gnome-initial-setup-50.0/po/LINGUAS	2026-09-09 02:25:29.946134667 +0300
 @@ -1,19 +1,30 @@
  ab
  af
@@ -100,8 +100,8 @@ Index: gnome-initial-setup-50.0/po/LINGUAS
  uk
 Index: gnome-initial-setup-50.0/po/ab.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/ab.po	2026-09-09 01:48:51.226123871 +0300
-+++ gnome-initial-setup-50.0/po/ab.po	2026-09-09 01:52:44.814134175 +0300
+--- gnome-initial-setup-50.0.orig/po/ab.po	2026-09-09 02:25:30.106134671 +0300
++++ gnome-initial-setup-50.0/po/ab.po	2026-09-09 02:25:29.946134667 +0300
 @@ -1,67 +1,91 @@
  msgid ""
  msgstr ""
@@ -1256,8 +1256,8 @@ Index: gnome-initial-setup-50.0/po/ab.po
  msgstr ""
 Index: gnome-initial-setup-50.0/po/af.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/af.po	2026-09-09 01:48:51.226123871 +0300
-+++ gnome-initial-setup-50.0/po/af.po	2026-09-09 01:52:44.846134174 +0300
+--- gnome-initial-setup-50.0.orig/po/af.po	2026-09-09 02:25:30.106134671 +0300
++++ gnome-initial-setup-50.0/po/af.po	2026-09-09 02:25:29.950134667 +0300
 @@ -9,78 +9,97 @@
  "Project-Id-Version: gnome-initial-setup master\n"
  "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
@@ -3063,7 +3063,7 @@ Index: gnome-initial-setup-50.0/po/af.po
 Index: gnome-initial-setup-50.0/po/am.po
 ===================================================================
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ gnome-initial-setup-50.0/po/am.po	2026-09-09 01:52:44.862134173 +0300
++++ gnome-initial-setup-50.0/po/am.po	2026-09-09 02:25:29.954134667 +0300
 @@ -0,0 +1,1202 @@
 +# Amharic translation for gnome-initial-setup
 +# Copyright (c) 2021 Rosetta Contributors and Canonical Ltd 2021
@@ -4269,8 +4269,8 @@ Index: gnome-initial-setup-50.0/po/am.po
 +msgstr ""
 Index: gnome-initial-setup-50.0/po/an.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/an.po	2026-09-09 01:48:51.226123871 +0300
-+++ gnome-initial-setup-50.0/po/an.po	2026-09-09 01:52:44.878134172 +0300
+--- gnome-initial-setup-50.0.orig/po/an.po	2026-09-09 02:25:30.106134671 +0300
++++ gnome-initial-setup-50.0/po/an.po	2026-09-09 02:25:29.958134668 +0300
 @@ -9,110 +9,126 @@
  "Project-Id-Version: gnome-initial-setup gnome-3-6\n"
  "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
@@ -5876,8 +5876,8 @@ Index: gnome-initial-setup-50.0/po/an.po
 +#~ msgstr "Cancelar"
 Index: gnome-initial-setup-50.0/po/ar.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/ar.po	2026-09-09 01:48:51.226123871 +0300
-+++ gnome-initial-setup-50.0/po/ar.po	2026-09-09 01:52:44.906134172 +0300
+--- gnome-initial-setup-50.0.orig/po/ar.po	2026-09-09 02:25:30.106134671 +0300
++++ gnome-initial-setup-50.0/po/ar.po	2026-09-09 02:25:29.958134668 +0300
 @@ -9,58 +9,75 @@
  msgstr ""
  "Project-Id-Version: unnamed project\n"
@@ -7340,7 +7340,7 @@ Index: gnome-initial-setup-50.0/po/ar.po
 Index: gnome-initial-setup-50.0/po/arn.po
 ===================================================================
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ gnome-initial-setup-50.0/po/arn.po	2026-09-09 01:52:44.926134171 +0300
++++ gnome-initial-setup-50.0/po/arn.po	2026-09-09 02:25:29.958134668 +0300
 @@ -0,0 +1,1205 @@
 +# Mapudungun translation for gnome-initial-setup
 +# Copyright (c) 2022 Rosetta Contributors and Canonical Ltd 2022
@@ -8549,8 +8549,8 @@ Index: gnome-initial-setup-50.0/po/arn.po
 +#~ msgstr "Kaxvtugepe"
 Index: gnome-initial-setup-50.0/po/as.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/as.po	2026-09-09 01:48:51.226123871 +0300
-+++ gnome-initial-setup-50.0/po/as.po	2026-09-09 01:52:44.946134170 +0300
+--- gnome-initial-setup-50.0.orig/po/as.po	2026-09-09 02:25:30.106134671 +0300
++++ gnome-initial-setup-50.0/po/as.po	2026-09-09 02:25:29.962134668 +0300
 @@ -8,782 +8,1201 @@
  "Project-Id-Version: gnome-initial-setup master\n"
  "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
@@ -10222,7 +10222,7 @@ Index: gnome-initial-setup-50.0/po/as.po
 Index: gnome-initial-setup-50.0/po/ast.po
 ===================================================================
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ gnome-initial-setup-50.0/po/ast.po	2026-09-09 01:52:44.974134169 +0300
++++ gnome-initial-setup-50.0/po/ast.po	2026-09-09 02:25:29.962134668 +0300
 @@ -0,0 +1,1250 @@
 +# Asturian translation for gnome-initial-setup
 +# Copyright (c) 2020 Rosetta Contributors and Canonical Ltd 2020
@@ -11477,7 +11477,7 @@ Index: gnome-initial-setup-50.0/po/ast.po
 Index: gnome-initial-setup-50.0/po/az.po
 ===================================================================
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ gnome-initial-setup-50.0/po/az.po	2026-09-09 01:52:45.006134168 +0300
++++ gnome-initial-setup-50.0/po/az.po	2026-09-09 02:25:29.962134668 +0300
 @@ -0,0 +1,1386 @@
 +# Azerbaijani translation for gnome-initial-setup
 +# Copyright (c) 2024 Rosetta Contributors and Canonical Ltd 2024
@@ -12867,8 +12867,8 @@ Index: gnome-initial-setup-50.0/po/az.po
 +#~ "edə bilərsiniz"
 Index: gnome-initial-setup-50.0/po/be.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/be.po	2026-09-09 01:48:51.226123871 +0300
-+++ gnome-initial-setup-50.0/po/be.po	2026-09-09 01:52:45.038134167 +0300
+--- gnome-initial-setup-50.0.orig/po/be.po	2026-09-09 02:25:30.106134671 +0300
++++ gnome-initial-setup-50.0/po/be.po	2026-09-09 02:25:29.966134668 +0300
 @@ -9,51 +9,71 @@
  msgstr ""
  "Project-Id-Version: gnome-initial-setup master\n"
@@ -14124,8 +14124,8 @@ Index: gnome-initial-setup-50.0/po/be.po
 +#~ msgstr "Палітыку прыватнасці можна змяніць у любы час праз праграму Налады."
 Index: gnome-initial-setup-50.0/po/bg.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/bg.po	2026-09-09 01:48:51.226123871 +0300
-+++ gnome-initial-setup-50.0/po/bg.po	2026-09-09 01:52:45.074134166 +0300
+--- gnome-initial-setup-50.0.orig/po/bg.po	2026-09-09 02:25:30.106134671 +0300
++++ gnome-initial-setup-50.0/po/bg.po	2026-09-09 02:25:29.966134668 +0300
 @@ -9,49 +9,69 @@
  msgstr ""
  "Project-Id-Version: gnome-initial-setup master\n"
@@ -14943,7 +14943,7 @@ Index: gnome-initial-setup-50.0/po/bg.po
 Index: gnome-initial-setup-50.0/po/bn.po
 ===================================================================
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ gnome-initial-setup-50.0/po/bn.po	2026-09-09 01:52:45.102134165 +0300
++++ gnome-initial-setup-50.0/po/bn.po	2026-09-09 02:25:29.966134668 +0300
 @@ -0,0 +1,1206 @@
 +# Bengali translation for gnome-initial-setup
 +# Copyright (c) 2019 Rosetta Contributors and Canonical Ltd 2019
@@ -16154,7 +16154,7 @@ Index: gnome-initial-setup-50.0/po/bn.po
 Index: gnome-initial-setup-50.0/po/bo.po
 ===================================================================
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ gnome-initial-setup-50.0/po/bo.po	2026-09-09 01:52:45.170134163 +0300
++++ gnome-initial-setup-50.0/po/bo.po	2026-09-09 02:25:29.970134668 +0300
 @@ -0,0 +1,1202 @@
 +# Tibetan translation for gnome-initial-setup
 +# Copyright (c) 2019 Rosetta Contributors and Canonical Ltd 2019
@@ -17361,7 +17361,7 @@ Index: gnome-initial-setup-50.0/po/bo.po
 Index: gnome-initial-setup-50.0/po/br.po
 ===================================================================
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ gnome-initial-setup-50.0/po/br.po	2026-09-09 01:52:45.198134162 +0300
++++ gnome-initial-setup-50.0/po/br.po	2026-09-09 02:25:29.970134668 +0300
 @@ -0,0 +1,1202 @@
 +# Breton translation for gnome-initial-setup
 +# Copyright (c) 2018 Rosetta Contributors and Canonical Ltd 2018
@@ -18567,8 +18567,8 @@ Index: gnome-initial-setup-50.0/po/br.po
 +msgstr ""
 Index: gnome-initial-setup-50.0/po/bs.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/bs.po	2026-09-09 01:48:51.226123871 +0300
-+++ gnome-initial-setup-50.0/po/bs.po	2026-09-09 01:52:45.230134161 +0300
+--- gnome-initial-setup-50.0.orig/po/bs.po	2026-09-09 02:25:30.106134671 +0300
++++ gnome-initial-setup-50.0/po/bs.po	2026-09-09 02:25:29.970134668 +0300
 @@ -8,110 +8,129 @@
  "Project-Id-Version: bosnianuniversetranslation\n"
  "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
@@ -20095,8 +20095,8 @@ Index: gnome-initial-setup-50.0/po/bs.po
 +#~ msgstr "Prikaži prvi izvještaj"
 Index: gnome-initial-setup-50.0/po/ca.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/ca.po	2026-09-09 01:48:51.226123871 +0300
-+++ gnome-initial-setup-50.0/po/ca.po	2026-09-09 01:52:45.262134160 +0300
+--- gnome-initial-setup-50.0.orig/po/ca.po	2026-09-09 02:25:30.106134671 +0300
++++ gnome-initial-setup-50.0/po/ca.po	2026-09-09 02:25:29.974134668 +0300
 @@ -10,49 +10,69 @@
  msgstr ""
  "Project-Id-Version: gnome-initial-setup master\n"
@@ -20962,8 +20962,8 @@ Index: gnome-initial-setup-50.0/po/ca.po
 -#~ msgstr "Prova"
 Index: gnome-initial-setup-50.0/po/ca@valencia.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/ca@valencia.po	2026-09-09 01:48:51.226123871 +0300
-+++ gnome-initial-setup-50.0/po/ca@valencia.po	2026-09-09 01:52:45.290134159 +0300
+--- gnome-initial-setup-50.0.orig/po/ca@valencia.po	2026-09-09 02:25:30.106134671 +0300
++++ gnome-initial-setup-50.0/po/ca@valencia.po	2026-09-09 02:25:29.974134668 +0300
 @@ -11,76 +11,96 @@
  "Project-Id-Version: gnome-initial-setup master\n"
  "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
@@ -22527,7 +22527,7 @@ Index: gnome-initial-setup-50.0/po/ca@valencia.po
 Index: gnome-initial-setup-50.0/po/ceb.po
 ===================================================================
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ gnome-initial-setup-50.0/po/ceb.po	2026-09-09 01:52:45.318134158 +0300
++++ gnome-initial-setup-50.0/po/ceb.po	2026-09-09 02:25:29.974134668 +0300
 @@ -0,0 +1,1233 @@
 +# Cebuano translation for gnome-initial-setup
 +# Copyright (c) 2018 Rosetta Contributors and Canonical Ltd 2018
@@ -23764,8 +23764,8 @@ Index: gnome-initial-setup-50.0/po/ceb.po
 +#~ msgstr "Ipakita ang Una nga Report"
 Index: gnome-initial-setup-50.0/po/ckb.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/ckb.po	2026-09-09 01:48:51.226123871 +0300
-+++ gnome-initial-setup-50.0/po/ckb.po	2026-09-09 01:52:45.342134158 +0300
+--- gnome-initial-setup-50.0.orig/po/ckb.po	2026-09-09 02:25:30.106134671 +0300
++++ gnome-initial-setup-50.0/po/ckb.po	2026-09-09 02:25:29.978134668 +0300
 @@ -6,170 +6,214 @@
  msgid ""
  msgstr ""
@@ -25223,8 +25223,8 @@ Index: gnome-initial-setup-50.0/po/ckb.po
 +#~ msgstr "پاشگه‌زبوونه‌وه‌"
 Index: gnome-initial-setup-50.0/po/cs.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/cs.po	2026-09-09 01:48:51.226123871 +0300
-+++ gnome-initial-setup-50.0/po/cs.po	2026-09-09 01:52:45.374134157 +0300
+--- gnome-initial-setup-50.0.orig/po/cs.po	2026-09-09 02:25:30.106134671 +0300
++++ gnome-initial-setup-50.0/po/cs.po	2026-09-09 02:25:29.978134668 +0300
 @@ -11,49 +11,69 @@
  msgstr ""
  "Project-Id-Version: gnome-initial-setup\n"
@@ -26204,7 +26204,7 @@ Index: gnome-initial-setup-50.0/po/cs.po
 Index: gnome-initial-setup-50.0/po/cy.po
 ===================================================================
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ gnome-initial-setup-50.0/po/cy.po	2026-09-09 01:52:45.402134156 +0300
++++ gnome-initial-setup-50.0/po/cy.po	2026-09-09 02:25:29.982134668 +0300
 @@ -0,0 +1,1335 @@
 +# Welsh translation for gnome-initial-setup
 +# Copyright (c) 2018 Rosetta Contributors and Canonical Ltd 2018
@@ -27543,8 +27543,8 @@ Index: gnome-initial-setup-50.0/po/cy.po
 +#~ "Diagnosteg."
 Index: gnome-initial-setup-50.0/po/da.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/da.po	2026-09-09 01:48:51.226123871 +0300
-+++ gnome-initial-setup-50.0/po/da.po	2026-09-09 01:52:45.430134155 +0300
+--- gnome-initial-setup-50.0.orig/po/da.po	2026-09-09 02:25:30.106134671 +0300
++++ gnome-initial-setup-50.0/po/da.po	2026-09-09 02:25:29.982134668 +0300
 @@ -7,54 +7,75 @@
  # Ask Hjorth Larsen <asklarsen@gmail.com>, 2013-18, 2022-2026.
  # scootergrisen, 2015-2016.
@@ -28677,8 +28677,8 @@ Index: gnome-initial-setup-50.0/po/da.po
 +#~ msgstr "Kunne ikke downloade yderligere sprogpakker"
 Index: gnome-initial-setup-50.0/po/de.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/de.po	2026-09-09 01:48:51.226123871 +0300
-+++ gnome-initial-setup-50.0/po/de.po	2026-09-09 01:52:45.466134154 +0300
+--- gnome-initial-setup-50.0.orig/po/de.po	2026-09-09 02:25:30.106134671 +0300
++++ gnome-initial-setup-50.0/po/de.po	2026-09-09 02:25:29.982134668 +0300
 @@ -17,53 +17,73 @@
  msgstr ""
  "Project-Id-Version: gnome-initial-setup\n"
@@ -29885,8 +29885,8 @@ Index: gnome-initial-setup-50.0/po/de.po
 +#~ msgstr "Zusätzliche Sprachpakete können nicht heruntergeladen werden."
 Index: gnome-initial-setup-50.0/po/el.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/el.po	2026-09-09 01:48:51.226123871 +0300
-+++ gnome-initial-setup-50.0/po/el.po	2026-09-09 01:52:45.498134153 +0300
+--- gnome-initial-setup-50.0.orig/po/el.po	2026-09-09 02:25:30.106134671 +0300
++++ gnome-initial-setup-50.0/po/el.po	2026-09-09 02:25:29.986134668 +0300
 @@ -4,55 +4,76 @@
  # Tom Tryfonidis <tomtryf@gmail.com>, 2012.
  # Dimitris Spingos (Δημήτρης Σπίγγος) <dmtrs32@gmail.com>, 2013, 2015.
@@ -31124,7 +31124,7 @@ Index: gnome-initial-setup-50.0/po/el.po
 Index: gnome-initial-setup-50.0/po/en_AU.po
 ===================================================================
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ gnome-initial-setup-50.0/po/en_AU.po	2026-09-09 01:52:45.530134152 +0300
++++ gnome-initial-setup-50.0/po/en_AU.po	2026-09-09 02:25:29.986134668 +0300
 @@ -0,0 +1,1311 @@
 +# English (Australia) translation for gnome-initial-setup
 +# Copyright (c) 2019 Rosetta Contributors and Canonical Ltd 2019
@@ -32440,7 +32440,7 @@ Index: gnome-initial-setup-50.0/po/en_AU.po
 Index: gnome-initial-setup-50.0/po/en_CA.po
 ===================================================================
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ gnome-initial-setup-50.0/po/en_CA.po	2026-09-09 01:52:45.562134150 +0300
++++ gnome-initial-setup-50.0/po/en_CA.po	2026-09-09 02:25:29.986134668 +0300
 @@ -0,0 +1,1371 @@
 +# English (Canada) translation for gnome-initial-setup
 +# Copyright (c) 2020 Rosetta Contributors and Canonical Ltd 2020
@@ -33815,8 +33815,8 @@ Index: gnome-initial-setup-50.0/po/en_CA.po
 +#~ msgstr "Unable to download additional language packs"
 Index: gnome-initial-setup-50.0/po/en_GB.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/en_GB.po	2026-09-09 01:48:51.226123871 +0300
-+++ gnome-initial-setup-50.0/po/en_GB.po	2026-09-09 01:52:45.590134150 +0300
+--- gnome-initial-setup-50.0.orig/po/en_GB.po	2026-09-09 02:25:30.106134671 +0300
++++ gnome-initial-setup-50.0/po/en_GB.po	2026-09-09 02:25:29.990134668 +0300
 @@ -9,50 +9,70 @@
  msgstr ""
  "Project-Id-Version: gnome-initial-setup master\n"
@@ -34769,8 +34769,8 @@ Index: gnome-initial-setup-50.0/po/en_GB.po
 +#~ msgstr "Unable to download additional language packs"
 Index: gnome-initial-setup-50.0/po/eo.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/eo.po	2026-09-09 01:48:51.226123871 +0300
-+++ gnome-initial-setup-50.0/po/eo.po	2026-09-09 01:52:45.618134149 +0300
+--- gnome-initial-setup-50.0.orig/po/eo.po	2026-09-09 02:25:30.106134671 +0300
++++ gnome-initial-setup-50.0/po/eo.po	2026-09-09 02:25:29.990134668 +0300
 @@ -2,57 +2,77 @@
  # Copyright (C) 2012 Free Software Foundation, Inc.
  # This file is distributed under the same license as the gnome-initial-setup package.
@@ -35977,8 +35977,8 @@ Index: gnome-initial-setup-50.0/po/eo.po
 +#~ "estas kolektataj de %1$s (<a href='%2$s'>respekto pri privateco</a>)."
 Index: gnome-initial-setup-50.0/po/es.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/es.po	2026-09-09 01:48:51.226123871 +0300
-+++ gnome-initial-setup-50.0/po/es.po	2026-09-09 01:52:45.642134148 +0300
+--- gnome-initial-setup-50.0.orig/po/es.po	2026-09-09 02:25:30.106134671 +0300
++++ gnome-initial-setup-50.0/po/es.po	2026-09-09 02:25:29.994134668 +0300
 @@ -8,51 +8,71 @@
  msgstr ""
  "Project-Id-Version: gnome-initial-setup master\n"
@@ -37556,8 +37556,8 @@ Index: gnome-initial-setup-50.0/po/es.po
 +#~ msgstr "No se pueden descargar paquetes de idiomas adicionales"
 Index: gnome-initial-setup-50.0/po/et.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/et.po	2026-09-09 01:48:51.226123871 +0300
-+++ gnome-initial-setup-50.0/po/et.po	2026-09-09 01:52:45.666134147 +0300
+--- gnome-initial-setup-50.0.orig/po/et.po	2026-09-09 02:25:30.106134671 +0300
++++ gnome-initial-setup-50.0/po/et.po	2026-09-09 02:25:29.994134668 +0300
 @@ -8,401 +8,1204 @@
  "Project-Id-Version: gnome-initial-setup master\n"
  "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
@@ -39003,8 +39003,8 @@ Index: gnome-initial-setup-50.0/po/et.po
 +#~ "rakendusest"
 Index: gnome-initial-setup-50.0/po/eu.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/eu.po	2026-09-09 01:48:51.226123871 +0300
-+++ gnome-initial-setup-50.0/po/eu.po	2026-09-09 01:52:45.690134146 +0300
+--- gnome-initial-setup-50.0.orig/po/eu.po	2026-09-09 02:25:30.106134671 +0300
++++ gnome-initial-setup-50.0/po/eu.po	2026-09-09 02:25:29.994134668 +0300
 @@ -7,49 +7,72 @@
  # Asier Saratsua Garmendia  <asiersarasua@ni.eus>, 2025, 2026.
  #
@@ -40469,8 +40469,8 @@ Index: gnome-initial-setup-50.0/po/eu.po
 +#~ "Pribatutasuna → Diagnostikoa"
 Index: gnome-initial-setup-50.0/po/fa.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/fa.po	2026-09-09 01:48:51.226123871 +0300
-+++ gnome-initial-setup-50.0/po/fa.po	2026-09-09 01:52:45.714134146 +0300
+--- gnome-initial-setup-50.0.orig/po/fa.po	2026-09-09 02:25:30.106134671 +0300
++++ gnome-initial-setup-50.0/po/fa.po	2026-09-09 02:25:29.998134669 +0300
 @@ -7,48 +7,70 @@
  msgid ""
  msgstr ""
@@ -41886,8 +41886,8 @@ Index: gnome-initial-setup-50.0/po/fa.po
 +#~ msgstr "ارسال اطلاعات گزارش شکست خورد: %s"
 Index: gnome-initial-setup-50.0/po/fi.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/fi.po	2026-09-09 01:48:51.226123871 +0300
-+++ gnome-initial-setup-50.0/po/fi.po	2026-09-09 01:52:45.738134145 +0300
+--- gnome-initial-setup-50.0.orig/po/fi.po	2026-09-09 02:25:30.106134671 +0300
++++ gnome-initial-setup-50.0/po/fi.po	2026-09-09 02:25:29.998134669 +0300
 @@ -7,49 +7,69 @@
  msgstr ""
  "Project-Id-Version: \n"
@@ -43219,8 +43219,8 @@ Index: gnome-initial-setup-50.0/po/fi.po
 +#~ msgstr "Lisäkielipaketteja ei voi ladata"
 Index: gnome-initial-setup-50.0/po/fil.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/fil.po	2026-09-09 01:48:51.226123871 +0300
-+++ gnome-initial-setup-50.0/po/fil.po	2026-09-09 01:52:45.766134144 +0300
+--- gnome-initial-setup-50.0.orig/po/fil.po	2026-09-09 02:25:30.106134671 +0300
++++ gnome-initial-setup-50.0/po/fil.po	2026-09-09 02:25:30.002134669 +0300
 @@ -7,48 +7,69 @@
  msgstr ""
  "Project-Id-Version: gnome-initial-setup master\n"
@@ -44090,7 +44090,7 @@ Index: gnome-initial-setup-50.0/po/fil.po
 Index: gnome-initial-setup-50.0/po/fo.po
 ===================================================================
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ gnome-initial-setup-50.0/po/fo.po	2026-09-09 01:52:45.786134143 +0300
++++ gnome-initial-setup-50.0/po/fo.po	2026-09-09 02:25:30.002134669 +0300
 @@ -0,0 +1,1202 @@
 +# Faroese translation for gnome-initial-setup
 +# Copyright (c) 2022 Rosetta Contributors and Canonical Ltd 2022
@@ -45296,8 +45296,8 @@ Index: gnome-initial-setup-50.0/po/fo.po
 +msgstr ""
 Index: gnome-initial-setup-50.0/po/fr.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/fr.po	2026-09-09 01:48:51.226123871 +0300
-+++ gnome-initial-setup-50.0/po/fr.po	2026-09-09 01:52:45.822134142 +0300
+--- gnome-initial-setup-50.0.orig/po/fr.po	2026-09-09 02:25:30.106134671 +0300
++++ gnome-initial-setup-50.0/po/fr.po	2026-09-09 02:25:30.002134669 +0300
 @@ -17,55 +17,75 @@
  msgstr ""
  "Project-Id-Version: gnome-initial-setup\n"
@@ -46295,7 +46295,7 @@ Index: gnome-initial-setup-50.0/po/fr.po
 Index: gnome-initial-setup-50.0/po/fr_CA.po
 ===================================================================
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ gnome-initial-setup-50.0/po/fr_CA.po	2026-09-09 01:52:45.850134141 +0300
++++ gnome-initial-setup-50.0/po/fr_CA.po	2026-09-09 02:25:30.006134669 +0300
 @@ -0,0 +1,1278 @@
 +# French (Canada) translation for the GNOME initial setup
 +# Copyright (C) 2012-2019 listed translators
@@ -47577,8 +47577,8 @@ Index: gnome-initial-setup-50.0/po/fr_CA.po
 +#~ "Diagnostics."
 Index: gnome-initial-setup-50.0/po/fur.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/fur.po	2026-09-09 01:48:51.226123871 +0300
-+++ gnome-initial-setup-50.0/po/fur.po	2026-09-09 01:52:45.874134140 +0300
+--- gnome-initial-setup-50.0.orig/po/fur.po	2026-09-09 02:25:30.106134671 +0300
++++ gnome-initial-setup-50.0/po/fur.po	2026-09-09 02:25:30.006134669 +0300
 @@ -7,49 +7,70 @@
  msgstr ""
  "Project-Id-Version: gnome-initial-setup gnome-3-6\n"
@@ -48793,8 +48793,8 @@ Index: gnome-initial-setup-50.0/po/fur.po
 +#~ "aplicazion Impostazions."
 Index: gnome-initial-setup-50.0/po/ga.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/ga.po	2026-09-09 01:48:51.226123871 +0300
-+++ gnome-initial-setup-50.0/po/ga.po	2026-09-09 01:52:45.894134140 +0300
+--- gnome-initial-setup-50.0.orig/po/ga.po	2026-09-09 02:25:30.106134671 +0300
++++ gnome-initial-setup-50.0/po/ga.po	2026-09-09 02:25:30.010134669 +0300
 @@ -8,566 +8,1195 @@
  "Project-Id-Version: gnome-initial-setup.master\n"
  "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
@@ -50246,8 +50246,8 @@ Index: gnome-initial-setup-50.0/po/ga.po
 +msgstr ""
 Index: gnome-initial-setup-50.0/po/gd.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/gd.po	2026-09-09 01:48:51.226123871 +0300
-+++ gnome-initial-setup-50.0/po/gd.po	2026-09-09 01:52:45.914134139 +0300
+--- gnome-initial-setup-50.0.orig/po/gd.po	2026-09-09 02:25:30.106134671 +0300
++++ gnome-initial-setup-50.0/po/gd.po	2026-09-09 02:25:30.014134669 +0300
 @@ -7,80 +7,99 @@
  "Project-Id-Version: gnome-initial-setup gnome-3-20\n"
  "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
@@ -51883,8 +51883,8 @@ Index: gnome-initial-setup-50.0/po/gd.po
 +#~ msgstr "Seall a’ chiad aithisg"
 Index: gnome-initial-setup-50.0/po/gl.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/gl.po	2026-09-09 01:48:51.226123871 +0300
-+++ gnome-initial-setup-50.0/po/gl.po	2026-09-09 01:52:45.938134138 +0300
+--- gnome-initial-setup-50.0.orig/po/gl.po	2026-09-09 02:25:30.106134671 +0300
++++ gnome-initial-setup-50.0/po/gl.po	2026-09-09 02:25:30.014134669 +0300
 @@ -12,55 +12,75 @@
  msgstr ""
  "Project-Id-Version: gnome-initial-setup\n"
@@ -52857,8 +52857,8 @@ Index: gnome-initial-setup-50.0/po/gl.po
 +#~ "aplicación de Preferencias."
 Index: gnome-initial-setup-50.0/po/gu.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/gu.po	2026-09-09 01:48:51.226123871 +0300
-+++ gnome-initial-setup-50.0/po/gu.po	2026-09-09 01:52:45.958134138 +0300
+--- gnome-initial-setup-50.0.orig/po/gu.po	2026-09-09 02:25:30.106134671 +0300
++++ gnome-initial-setup-50.0/po/gu.po	2026-09-09 02:25:30.014134669 +0300
 @@ -7,678 +7,1201 @@
  "Project-Id-Version: \n"
  "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
@@ -54466,8 +54466,8 @@ Index: gnome-initial-setup-50.0/po/gu.po
 +#~ msgstr "રદ કરો"
 Index: gnome-initial-setup-50.0/po/he.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/he.po	2026-09-09 01:48:51.226123871 +0300
-+++ gnome-initial-setup-50.0/po/he.po	2026-09-09 01:52:45.994134137 +0300
+--- gnome-initial-setup-50.0.orig/po/he.po	2026-09-09 02:25:30.106134671 +0300
++++ gnome-initial-setup-50.0/po/he.po	2026-09-09 02:25:30.018134669 +0300
 @@ -8,51 +8,70 @@
  msgstr ""
  "Project-Id-Version: gnome-initial-setup\n"
@@ -55764,8 +55764,8 @@ Index: gnome-initial-setup-50.0/po/he.po
 +#~ "href='%2$s'>מדיניות פרטיות</a>)."
 Index: gnome-initial-setup-50.0/po/hi.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/hi.po	2026-09-09 01:48:51.226123871 +0300
-+++ gnome-initial-setup-50.0/po/hi.po	2026-09-09 01:52:46.022134136 +0300
+--- gnome-initial-setup-50.0.orig/po/hi.po	2026-09-09 02:25:30.106134671 +0300
++++ gnome-initial-setup-50.0/po/hi.po	2026-09-09 02:25:30.018134669 +0300
 @@ -10,50 +10,69 @@
  msgstr ""
  "Project-Id-Version: gnome-initial-setup master\n"
@@ -56887,8 +56887,8 @@ Index: gnome-initial-setup-50.0/po/hi.po
 +#~ msgstr "सेटिंग ऐप से किसी भी समय गोपनीयता नियंत्रणों को बदला जा सकता है।"
 Index: gnome-initial-setup-50.0/po/hr.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/hr.po	2026-09-09 01:48:51.226123871 +0300
-+++ gnome-initial-setup-50.0/po/hr.po	2026-09-09 01:52:46.050134135 +0300
+--- gnome-initial-setup-50.0.orig/po/hr.po	2026-09-09 02:25:30.106134671 +0300
++++ gnome-initial-setup-50.0/po/hr.po	2026-09-09 02:25:30.022134669 +0300
 @@ -8,74 +8,94 @@
  "Project-Id-Version: gnome-initial-setup gnome-3-24\n"
  "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
@@ -58283,8 +58283,8 @@ Index: gnome-initial-setup-50.0/po/hr.po
 +#~ msgstr "You can change your mind later in Settings → Privacy → Diagnostics."
 Index: gnome-initial-setup-50.0/po/hu.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/hu.po	2026-09-09 01:48:51.226123871 +0300
-+++ gnome-initial-setup-50.0/po/hu.po	2026-09-09 01:52:46.078134134 +0300
+--- gnome-initial-setup-50.0.orig/po/hu.po	2026-09-09 02:25:30.106134671 +0300
++++ gnome-initial-setup-50.0/po/hu.po	2026-09-09 02:25:30.022134669 +0300
 @@ -8,50 +8,70 @@
  msgid ""
  msgstr ""
@@ -59228,7 +59228,7 @@ Index: gnome-initial-setup-50.0/po/hu.po
 Index: gnome-initial-setup-50.0/po/hy.po
 ===================================================================
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ gnome-initial-setup-50.0/po/hy.po	2026-09-09 01:52:46.094134133 +0300
++++ gnome-initial-setup-50.0/po/hy.po	2026-09-09 02:25:30.026134669 +0300
 @@ -0,0 +1,1204 @@
 +# Armenian translation for gnome-initial-setup
 +# Copyright (c) 2018 Rosetta Contributors and Canonical Ltd 2018
@@ -60436,8 +60436,8 @@ Index: gnome-initial-setup-50.0/po/hy.po
 +msgstr ""
 Index: gnome-initial-setup-50.0/po/ia.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/ia.po	2026-09-09 01:48:51.226123871 +0300
-+++ gnome-initial-setup-50.0/po/ia.po	2026-09-09 01:52:46.118134133 +0300
+--- gnome-initial-setup-50.0.orig/po/ia.po	2026-09-09 02:25:30.106134671 +0300
++++ gnome-initial-setup-50.0/po/ia.po	2026-09-09 02:25:30.026134669 +0300
 @@ -8,82 +8,100 @@
  msgstr ""
  "Project-Id-Version: gnome-initial-setup master\n"
@@ -61940,8 +61940,8 @@ Index: gnome-initial-setup-50.0/po/ia.po
 +#~ "software e de actualisation"
 Index: gnome-initial-setup-50.0/po/id.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/id.po	2026-09-09 01:48:51.226123871 +0300
-+++ gnome-initial-setup-50.0/po/id.po	2026-09-09 01:52:46.146134132 +0300
+--- gnome-initial-setup-50.0.orig/po/id.po	2026-09-09 02:25:30.106134671 +0300
++++ gnome-initial-setup-50.0/po/id.po	2026-09-09 02:25:30.030134669 +0300
 @@ -10,49 +10,69 @@
  msgstr ""
  "Project-Id-Version: gnome-initial-setup master\n"
@@ -62888,8 +62888,8 @@ Index: gnome-initial-setup-50.0/po/id.po
 +#~ msgstr "Tidak bisa mengunduh pak bahasa tambahan"
 Index: gnome-initial-setup-50.0/po/ie.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/ie.po	2026-09-09 01:48:51.226123871 +0300
-+++ gnome-initial-setup-50.0/po/ie.po	2026-09-09 01:52:46.166134131 +0300
+--- gnome-initial-setup-50.0.orig/po/ie.po	2026-09-09 02:25:30.106134671 +0300
++++ gnome-initial-setup-50.0/po/ie.po	2026-09-09 02:25:30.030134669 +0300
 @@ -8,75 +8,94 @@
  "Project-Id-Version: \n"
  "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
@@ -64148,8 +64148,8 @@ Index: gnome-initial-setup-50.0/po/ie.po
 +msgstr ""
 Index: gnome-initial-setup-50.0/po/is.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/is.po	2026-09-09 01:48:51.226123871 +0300
-+++ gnome-initial-setup-50.0/po/is.po	2026-09-09 01:52:46.186134130 +0300
+--- gnome-initial-setup-50.0.orig/po/is.po	2026-09-09 02:25:30.106134671 +0300
++++ gnome-initial-setup-50.0/po/is.po	2026-09-09 02:25:30.034134669 +0300
 @@ -5,66 +5,90 @@
  msgid ""
  msgstr ""
@@ -65525,8 +65525,8 @@ Index: gnome-initial-setup-50.0/po/is.po
 +#~ msgstr "Hætta við"
 Index: gnome-initial-setup-50.0/po/it.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/it.po	2026-09-09 01:48:51.226123871 +0300
-+++ gnome-initial-setup-50.0/po/it.po	2026-09-09 01:52:46.214134130 +0300
+--- gnome-initial-setup-50.0.orig/po/it.po	2026-09-09 02:25:30.106134671 +0300
++++ gnome-initial-setup-50.0/po/it.po	2026-09-09 02:25:30.034134669 +0300
 @@ -10,55 +10,74 @@
  msgstr ""
  "Project-Id-Version: gnome-initial-setup\n"
@@ -66778,8 +66778,8 @@ Index: gnome-initial-setup-50.0/po/it.po
 +#~ msgstr "Impossibile scaricare pacchetti di lingue aggiuntivi"
 Index: gnome-initial-setup-50.0/po/ja.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/ja.po	2026-09-09 01:48:51.226123871 +0300
-+++ gnome-initial-setup-50.0/po/ja.po	2026-09-09 01:52:46.242134129 +0300
+--- gnome-initial-setup-50.0.orig/po/ja.po	2026-09-09 02:25:30.106134671 +0300
++++ gnome-initial-setup-50.0/po/ja.po	2026-09-09 02:25:30.034134669 +0300
 @@ -13,48 +13,69 @@
  msgstr ""
  "Project-Id-Version: gnome-initial-setup master\n"
@@ -67832,8 +67832,8 @@ Index: gnome-initial-setup-50.0/po/ja.po
 +#~ msgstr "プライバシーの設定は、「設定」アプリからいつでも変更できます。"
 Index: gnome-initial-setup-50.0/po/ka.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/ka.po	2026-09-09 01:48:51.226123871 +0300
-+++ gnome-initial-setup-50.0/po/ka.po	2026-09-09 01:52:46.266134128 +0300
+--- gnome-initial-setup-50.0.orig/po/ka.po	2026-09-09 02:25:30.106134671 +0300
++++ gnome-initial-setup-50.0/po/ka.po	2026-09-09 02:25:30.038134670 +0300
 @@ -7,49 +7,69 @@
  msgstr ""
  "Project-Id-Version: gnome-initial-setup\n"
@@ -68716,8 +68716,8 @@ Index: gnome-initial-setup-50.0/po/ka.po
 +#~ "მორგების აპიდან."
 Index: gnome-initial-setup-50.0/po/kab.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/kab.po	2026-09-09 01:48:51.226123871 +0300
-+++ gnome-initial-setup-50.0/po/kab.po	2026-09-09 01:52:46.290134127 +0300
+--- gnome-initial-setup-50.0.orig/po/kab.po	2026-09-09 02:25:30.106134671 +0300
++++ gnome-initial-setup-50.0/po/kab.po	2026-09-09 02:25:30.038134670 +0300
 @@ -8,55 +8,74 @@
  msgstr ""
  "Project-Id-Version: gnome-initial-setup master\n"
@@ -69799,8 +69799,8 @@ Index: gnome-initial-setup-50.0/po/kab.po
 +#~ "usnas n yiɣewwaren."
 Index: gnome-initial-setup-50.0/po/kk.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/kk.po	2026-09-09 01:48:51.226123871 +0300
-+++ gnome-initial-setup-50.0/po/kk.po	2026-09-09 01:52:46.318134126 +0300
+--- gnome-initial-setup-50.0.orig/po/kk.po	2026-09-09 02:25:30.106134671 +0300
++++ gnome-initial-setup-50.0/po/kk.po	2026-09-09 02:25:30.038134670 +0300
 @@ -7,50 +7,71 @@
  msgstr ""
  "Project-Id-Version: gnome-initial-setup master\n"
@@ -71468,8 +71468,8 @@ Index: gnome-initial-setup-50.0/po/kk.po
 +#~ "қолданбасы арқылы іске қоса аласыз"
 Index: gnome-initial-setup-50.0/po/kn.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/kn.po	2026-09-09 01:48:51.226123871 +0300
-+++ gnome-initial-setup-50.0/po/kn.po	2026-09-09 01:52:46.342134125 +0300
+--- gnome-initial-setup-50.0.orig/po/kn.po	2026-09-09 02:25:30.106134671 +0300
++++ gnome-initial-setup-50.0/po/kn.po	2026-09-09 02:25:30.042134670 +0300
 @@ -9,690 +9,1201 @@
  "Project-Id-Version: gnome-initial-setup master\n"
  "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
@@ -73080,8 +73080,8 @@ Index: gnome-initial-setup-50.0/po/kn.po
 +#~ msgstr "ರದ್ದುಗೊಳಿಸು"
 Index: gnome-initial-setup-50.0/po/ko.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/ko.po	2026-09-09 01:48:51.226123871 +0300
-+++ gnome-initial-setup-50.0/po/ko.po	2026-09-09 01:52:46.374134124 +0300
+--- gnome-initial-setup-50.0.orig/po/ko.po	2026-09-09 02:25:30.106134671 +0300
++++ gnome-initial-setup-50.0/po/ko.po	2026-09-09 02:25:30.042134670 +0300
 @@ -8,55 +8,75 @@
  msgstr ""
  "Project-Id-Version: gnome-initial-setup master\n"
@@ -74173,7 +74173,7 @@ Index: gnome-initial-setup-50.0/po/ko.po
 Index: gnome-initial-setup-50.0/po/ku.po
 ===================================================================
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ gnome-initial-setup-50.0/po/ku.po	2026-09-09 01:52:46.398134124 +0300
++++ gnome-initial-setup-50.0/po/ku.po	2026-09-09 02:25:30.042134670 +0300
 @@ -0,0 +1,1256 @@
 +# Kurdish translation for gnome-initial-setup
 +# Copyright (c) 2018 Rosetta Contributors and Canonical Ltd 2018
@@ -75434,7 +75434,7 @@ Index: gnome-initial-setup-50.0/po/ku.po
 Index: gnome-initial-setup-50.0/po/kw.po
 ===================================================================
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ gnome-initial-setup-50.0/po/kw.po	2026-09-09 01:52:46.418134123 +0300
++++ gnome-initial-setup-50.0/po/kw.po	2026-09-09 02:25:30.042134670 +0300
 @@ -0,0 +1,1229 @@
 +# Cornish translation for gnome-initial-setup
 +# Copyright (c) 2019 Rosetta Contributors and Canonical Ltd 2019
@@ -76668,7 +76668,7 @@ Index: gnome-initial-setup-50.0/po/kw.po
 Index: gnome-initial-setup-50.0/po/lld.po
 ===================================================================
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ gnome-initial-setup-50.0/po/lld.po	2026-09-09 01:52:46.438134122 +0300
++++ gnome-initial-setup-50.0/po/lld.po	2026-09-09 02:25:30.042134670 +0300
 @@ -0,0 +1,1216 @@
 +# Ladin translation for gnome-initial-setup
 +# Copyright (c) 2023 Rosetta Contributors and Canonical Ltd 2023
@@ -77888,8 +77888,8 @@ Index: gnome-initial-setup-50.0/po/lld.po
 +msgstr ""
 Index: gnome-initial-setup-50.0/po/lt.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/lt.po	2026-09-09 01:48:51.226123871 +0300
-+++ gnome-initial-setup-50.0/po/lt.po	2026-09-09 01:52:46.462134122 +0300
+--- gnome-initial-setup-50.0.orig/po/lt.po	2026-09-09 02:25:30.106134671 +0300
++++ gnome-initial-setup-50.0/po/lt.po	2026-09-09 02:25:30.046134670 +0300
 @@ -7,50 +7,69 @@
  msgstr ""
  "Project-Id-Version: gnome-initial-setup master\n"
@@ -79028,8 +79028,8 @@ Index: gnome-initial-setup-50.0/po/lt.po
 +#~ "kada."
 Index: gnome-initial-setup-50.0/po/lv.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/lv.po	2026-09-09 01:48:51.226123871 +0300
-+++ gnome-initial-setup-50.0/po/lv.po	2026-09-09 01:52:46.490134121 +0300
+--- gnome-initial-setup-50.0.orig/po/lv.po	2026-09-09 02:25:30.106134671 +0300
++++ gnome-initial-setup-50.0/po/lv.po	2026-09-09 02:25:30.046134670 +0300
 @@ -7,52 +7,70 @@
  msgid ""
  msgstr ""
@@ -80310,8 +80310,8 @@ Index: gnome-initial-setup-50.0/po/lv.po
 +#~ "atjauninājumus"
 Index: gnome-initial-setup-50.0/po/mjw.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/mjw.po	2026-09-09 01:48:51.226123871 +0300
-+++ gnome-initial-setup-50.0/po/mjw.po	2026-09-09 01:52:46.514134120 +0300
+--- gnome-initial-setup-50.0.orig/po/mjw.po	2026-09-09 02:25:30.106134671 +0300
++++ gnome-initial-setup-50.0/po/mjw.po	2026-09-09 02:25:30.046134670 +0300
 @@ -8,169 +8,212 @@
  "Project-Id-Version: gnome-initial-setup master\n"
  "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
@@ -81576,8 +81576,8 @@ Index: gnome-initial-setup-50.0/po/mjw.po
 +msgstr ""
 Index: gnome-initial-setup-50.0/po/ml.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/ml.po	2026-09-09 01:48:51.226123871 +0300
-+++ gnome-initial-setup-50.0/po/ml.po	2026-09-09 01:52:46.534134119 +0300
+--- gnome-initial-setup-50.0.orig/po/ml.po	2026-09-09 02:25:30.106134671 +0300
++++ gnome-initial-setup-50.0/po/ml.po	2026-09-09 02:25:30.046134670 +0300
 @@ -8,174 +8,235 @@
  msgid ""
  msgstr ""
@@ -83137,7 +83137,7 @@ Index: gnome-initial-setup-50.0/po/ml.po
 Index: gnome-initial-setup-50.0/po/mnw.po
 ===================================================================
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ gnome-initial-setup-50.0/po/mnw.po	2026-09-09 01:52:46.562134118 +0300
++++ gnome-initial-setup-50.0/po/mnw.po	2026-09-09 02:25:30.050134670 +0300
 @@ -0,0 +1,1231 @@
 +# Mon translation for gnome-initial-setup
 +# Copyright (c) 2019 Rosetta Contributors and Canonical Ltd 2019
@@ -84372,8 +84372,8 @@ Index: gnome-initial-setup-50.0/po/mnw.po
 +#~ "ပရေၚ်ပလေဝ်လဝ်တံဂှ် မၞးကလေၚ်ပြံၚ်ကေတ် ပ္ဍဲ  Settings - Privacy - Diagnostics တေံဂွံရ။"
 Index: gnome-initial-setup-50.0/po/mr.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/mr.po	2026-09-09 01:48:51.226123871 +0300
-+++ gnome-initial-setup-50.0/po/mr.po	2026-09-09 01:52:46.582134118 +0300
+--- gnome-initial-setup-50.0.orig/po/mr.po	2026-09-09 02:25:30.106134671 +0300
++++ gnome-initial-setup-50.0/po/mr.po	2026-09-09 02:25:30.050134670 +0300
 @@ -8,736 +8,1202 @@
  "Project-Id-Version: gnome-initial-setup master\n"
  "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
@@ -86021,8 +86021,8 @@ Index: gnome-initial-setup-50.0/po/mr.po
 +#~ msgstr "रद्द करा"
 Index: gnome-initial-setup-50.0/po/ms.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/ms.po	2026-09-09 01:48:51.226123871 +0300
-+++ gnome-initial-setup-50.0/po/ms.po	2026-09-09 01:52:46.606134117 +0300
+--- gnome-initial-setup-50.0.orig/po/ms.po	2026-09-09 02:25:30.106134671 +0300
++++ gnome-initial-setup-50.0/po/ms.po	2026-09-09 02:25:30.050134670 +0300
 @@ -8,75 +8,96 @@
  "Project-Id-Version: gnome-initial-setup master\n"
  "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
@@ -87285,7 +87285,7 @@ Index: gnome-initial-setup-50.0/po/ms.po
 Index: gnome-initial-setup-50.0/po/my.po
 ===================================================================
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ gnome-initial-setup-50.0/po/my.po	2026-09-09 01:52:46.642134116 +0300
++++ gnome-initial-setup-50.0/po/my.po	2026-09-09 02:25:30.050134670 +0300
 @@ -0,0 +1,1381 @@
 +# Burmese translation for gnome-initial-setup
 +# Copyright (c) 2020 Rosetta Contributors and Canonical Ltd 2020
@@ -88670,8 +88670,8 @@ Index: gnome-initial-setup-50.0/po/my.po
 +#~ msgstr "နောက်ထပ် ဘာသာစကားအစုံကို ဒေါင်းလုဒ်လုပ်၍မရပါ။"
 Index: gnome-initial-setup-50.0/po/nb.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/nb.po	2026-09-09 01:48:51.226123871 +0300
-+++ gnome-initial-setup-50.0/po/nb.po	2026-09-09 01:52:46.666134115 +0300
+--- gnome-initial-setup-50.0.orig/po/nb.po	2026-09-09 02:25:30.106134671 +0300
++++ gnome-initial-setup-50.0/po/nb.po	2026-09-09 02:25:30.050134670 +0300
 @@ -6,48 +6,70 @@
  msgid ""
  msgstr ""
@@ -89580,8 +89580,8 @@ Index: gnome-initial-setup-50.0/po/nb.po
 +#~ msgstr "Personverninnstillinger kan endres når som helst fra Innstillinger."
 Index: gnome-initial-setup-50.0/po/ne.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/ne.po	2026-09-09 01:48:51.226123871 +0300
-+++ gnome-initial-setup-50.0/po/ne.po	2026-09-09 01:52:46.690134114 +0300
+--- gnome-initial-setup-50.0.orig/po/ne.po	2026-09-09 02:25:30.106134671 +0300
++++ gnome-initial-setup-50.0/po/ne.po	2026-09-09 02:25:30.054134670 +0300
 @@ -8,68 +8,89 @@
  "Project-Id-Version: Gnome Nepali Translation Project\n"
  "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
@@ -90864,8 +90864,8 @@ Index: gnome-initial-setup-50.0/po/ne.po
 +#~ msgstr "_रद्द"
 Index: gnome-initial-setup-50.0/po/nl.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/nl.po	2026-09-09 01:48:51.226123871 +0300
-+++ gnome-initial-setup-50.0/po/nl.po	2026-09-09 01:52:46.714134113 +0300
+--- gnome-initial-setup-50.0.orig/po/nl.po	2026-09-09 02:25:30.106134671 +0300
++++ gnome-initial-setup-50.0/po/nl.po	2026-09-09 02:25:30.054134670 +0300
 @@ -12,50 +12,70 @@
  msgstr ""
  "Project-Id-Version: gnome-initial-setup\n"
@@ -92096,8 +92096,8 @@ Index: gnome-initial-setup-50.0/po/nl.po
 +#~ "U kunt dit later alsnog veranderen via  Instellingen → Privacy → Diagnose."
 Index: gnome-initial-setup-50.0/po/nn.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/nn.po	2026-09-09 01:48:51.226123871 +0300
-+++ gnome-initial-setup-50.0/po/nn.po	2026-09-09 01:52:46.734134113 +0300
+--- gnome-initial-setup-50.0.orig/po/nn.po	2026-09-09 02:25:30.106134671 +0300
++++ gnome-initial-setup-50.0/po/nn.po	2026-09-09 02:25:30.054134670 +0300
 @@ -7,49 +7,69 @@
  msgstr ""
  "Project-Id-Version: gnome-initial-setup master\n"
@@ -93042,8 +93042,8 @@ Index: gnome-initial-setup-50.0/po/nn.po
 +#~ "Personvernsinnstillingar kan verta brigda når som helst frå Innstillingar."
 Index: gnome-initial-setup-50.0/po/oc.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/oc.po	2026-09-09 01:48:51.226123871 +0300
-+++ gnome-initial-setup-50.0/po/oc.po	2026-09-09 01:52:46.762134112 +0300
+--- gnome-initial-setup-50.0.orig/po/oc.po	2026-09-09 02:25:30.106134671 +0300
++++ gnome-initial-setup-50.0/po/oc.po	2026-09-09 02:25:30.054134670 +0300
 @@ -6,50 +6,70 @@
  msgstr ""
  "Project-Id-Version: gnome-initial-setup\n"
@@ -94315,8 +94315,8 @@ Index: gnome-initial-setup-50.0/po/oc.po
 +#~ "Mesas a jorn"
 Index: gnome-initial-setup-50.0/po/or.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/or.po	2026-09-09 01:48:51.226123871 +0300
-+++ gnome-initial-setup-50.0/po/or.po	2026-09-09 01:52:46.778134111 +0300
+--- gnome-initial-setup-50.0.orig/po/or.po	2026-09-09 02:25:30.106134671 +0300
++++ gnome-initial-setup-50.0/po/or.po	2026-09-09 02:25:30.058134670 +0300
 @@ -7,683 +7,1201 @@
  "Project-Id-Version: \n"
  "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
@@ -95927,8 +95927,8 @@ Index: gnome-initial-setup-50.0/po/or.po
 +#~ msgstr "ବାତିଲ"
 Index: gnome-initial-setup-50.0/po/pa.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/pa.po	2026-09-09 01:48:51.226123871 +0300
-+++ gnome-initial-setup-50.0/po/pa.po	2026-09-09 01:52:46.806134110 +0300
+--- gnome-initial-setup-50.0.orig/po/pa.po	2026-09-09 02:25:30.106134671 +0300
++++ gnome-initial-setup-50.0/po/pa.po	2026-09-09 02:25:30.058134670 +0300
 @@ -5,51 +5,70 @@
  msgid ""
  msgstr ""
@@ -97514,8 +97514,8 @@ Index: gnome-initial-setup-50.0/po/pa.po
 +#~ msgstr "ਜੇ ਤੁਹਾਡਾ ਵਿਚਾਰ ਬਦਲਿਆ ਤਾਂ ਸੈਟਿੰਗਾਂ → ਪਰਦੇਦਾਰੀ → ਨਿਦਾਨ ਵਿੱਚ ਬਦਲੋ"
 Index: gnome-initial-setup-50.0/po/pl.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/pl.po	2026-09-09 01:48:51.226123871 +0300
-+++ gnome-initial-setup-50.0/po/pl.po	2026-09-09 01:52:46.830134110 +0300
+--- gnome-initial-setup-50.0.orig/po/pl.po	2026-09-09 02:25:30.106134671 +0300
++++ gnome-initial-setup-50.0/po/pl.po	2026-09-09 02:25:30.058134670 +0300
 @@ -9,50 +9,69 @@
  msgstr ""
  "Project-Id-Version: gnome-initial-setup\n"
@@ -98473,7 +98473,7 @@ Index: gnome-initial-setup-50.0/po/pl.po
 Index: gnome-initial-setup-50.0/po/ps.po
 ===================================================================
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ gnome-initial-setup-50.0/po/ps.po	2026-09-09 01:52:46.846134109 +0300
++++ gnome-initial-setup-50.0/po/ps.po	2026-09-09 02:25:30.058134670 +0300
 @@ -0,0 +1,1214 @@
 +# Pashto translation for gnome-initial-setup
 +# Copyright (c) 2023 Rosetta Contributors and Canonical Ltd 2023
@@ -99691,8 +99691,8 @@ Index: gnome-initial-setup-50.0/po/ps.po
 +msgstr ""
 Index: gnome-initial-setup-50.0/po/pt.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/pt.po	2026-09-09 01:48:51.226123871 +0300
-+++ gnome-initial-setup-50.0/po/pt.po	2026-09-09 01:52:46.874134108 +0300
+--- gnome-initial-setup-50.0.orig/po/pt.po	2026-09-09 02:25:30.106134671 +0300
++++ gnome-initial-setup-50.0/po/pt.po	2026-09-09 02:25:30.062134670 +0300
 @@ -14,50 +14,70 @@
  msgstr ""
  "Project-Id-Version: 3.12\n"
@@ -101116,8 +101116,8 @@ Index: gnome-initial-setup-50.0/po/pt.po
 +#~ msgstr "Não foi possível transferir pacotes de idiomas adicionais"
 Index: gnome-initial-setup-50.0/po/pt_BR.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/pt_BR.po	2026-09-09 01:48:51.226123871 +0300
-+++ gnome-initial-setup-50.0/po/pt_BR.po	2026-09-09 01:52:46.898134108 +0300
+--- gnome-initial-setup-50.0.orig/po/pt_BR.po	2026-09-09 02:25:30.106134671 +0300
++++ gnome-initial-setup-50.0/po/pt_BR.po	2026-09-09 02:25:30.062134670 +0300
 @@ -17,17 +17,17 @@
  msgstr ""
  "Project-Id-Version: gnome-initial-setup master\n"
@@ -102354,8 +102354,8 @@ Index: gnome-initial-setup-50.0/po/pt_BR.po
 +#~ "aplicativo Configurações."
 Index: gnome-initial-setup-50.0/po/ro.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/ro.po	2026-09-09 01:48:51.226123871 +0300
-+++ gnome-initial-setup-50.0/po/ro.po	2026-09-09 01:52:46.926134107 +0300
+--- gnome-initial-setup-50.0.orig/po/ro.po	2026-09-09 02:25:30.106134671 +0300
++++ gnome-initial-setup-50.0/po/ro.po	2026-09-09 02:25:30.062134670 +0300
 @@ -9,51 +9,70 @@
  msgstr ""
  "Project-Id-Version: gnome-initial-setup master\n"
@@ -103162,8 +103162,8 @@ Index: gnome-initial-setup-50.0/po/ro.po
 +#~ "Preferințe."
 Index: gnome-initial-setup-50.0/po/ru.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/ru.po	2026-09-09 01:48:51.226123871 +0300
-+++ gnome-initial-setup-50.0/po/ru.po	2026-09-09 01:52:46.978134105 +0300
+--- gnome-initial-setup-50.0.orig/po/ru.po	2026-09-09 02:25:30.106134671 +0300
++++ gnome-initial-setup-50.0/po/ru.po	2026-09-09 02:25:30.066134670 +0300
 @@ -8,50 +8,69 @@
  msgstr ""
  "Project-Id-Version: gnome-initial-setup\n"
@@ -104183,7 +104183,7 @@ Index: gnome-initial-setup-50.0/po/ru.po
 Index: gnome-initial-setup-50.0/po/sd.po
 ===================================================================
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ gnome-initial-setup-50.0/po/sd.po	2026-09-09 01:52:47.022134104 +0300
++++ gnome-initial-setup-50.0/po/sd.po	2026-09-09 02:25:30.066134670 +0300
 @@ -0,0 +1,1202 @@
 +# Sindhi translation for gnome-initial-setup
 +# Copyright (c) 2018 Rosetta Contributors and Canonical Ltd 2018
@@ -105390,7 +105390,7 @@ Index: gnome-initial-setup-50.0/po/sd.po
 Index: gnome-initial-setup-50.0/po/se.po
 ===================================================================
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ gnome-initial-setup-50.0/po/se.po	2026-09-09 01:52:47.062134102 +0300
++++ gnome-initial-setup-50.0/po/se.po	2026-09-09 02:25:30.066134670 +0300
 @@ -0,0 +1,1205 @@
 +# Northern Sami translation for gnome-initial-setup
 +# Copyright (c) 2021 Rosetta Contributors and Canonical Ltd 2021
@@ -106600,7 +106600,7 @@ Index: gnome-initial-setup-50.0/po/se.po
 Index: gnome-initial-setup-50.0/po/shn.po
 ===================================================================
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ gnome-initial-setup-50.0/po/shn.po	2026-09-09 01:52:47.098134101 +0300
++++ gnome-initial-setup-50.0/po/shn.po	2026-09-09 02:25:30.070134670 +0300
 @@ -0,0 +1,1202 @@
 +# Shan translation for gnome-initial-setup
 +# Copyright (c) 2019 Rosetta Contributors and Canonical Ltd 2019
@@ -107807,7 +107807,7 @@ Index: gnome-initial-setup-50.0/po/shn.po
 Index: gnome-initial-setup-50.0/po/si.po
 ===================================================================
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ gnome-initial-setup-50.0/po/si.po	2026-09-09 01:52:47.134134100 +0300
++++ gnome-initial-setup-50.0/po/si.po	2026-09-09 02:25:30.070134670 +0300
 @@ -0,0 +1,1202 @@
 +# Sinhalese translation for gnome-initial-setup
 +# Copyright (c) 2018 Rosetta Contributors and Canonical Ltd 2018
@@ -109013,8 +109013,8 @@ Index: gnome-initial-setup-50.0/po/si.po
 +msgstr ""
 Index: gnome-initial-setup-50.0/po/sk.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/sk.po	2026-09-09 01:48:51.226123871 +0300
-+++ gnome-initial-setup-50.0/po/sk.po	2026-09-09 01:52:47.166134099 +0300
+--- gnome-initial-setup-50.0.orig/po/sk.po	2026-09-09 02:25:30.106134671 +0300
++++ gnome-initial-setup-50.0/po/sk.po	2026-09-09 02:25:30.070134670 +0300
 @@ -7,58 +7,78 @@
  msgstr ""
  "Project-Id-Version: gnome-initial-setup master\n"
@@ -110354,8 +110354,8 @@ Index: gnome-initial-setup-50.0/po/sk.po
 +#~ "Nastavenia súkromia sa dajú kedykoľvek zmeniť v aplikácii Nastavenia."
 Index: gnome-initial-setup-50.0/po/sl.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/sl.po	2026-09-09 01:48:51.226123871 +0300
-+++ gnome-initial-setup-50.0/po/sl.po	2026-09-09 01:52:47.198134098 +0300
+--- gnome-initial-setup-50.0.orig/po/sl.po	2026-09-09 02:25:30.106134671 +0300
++++ gnome-initial-setup-50.0/po/sl.po	2026-09-09 02:25:30.070134670 +0300
 @@ -8,51 +8,70 @@
  msgstr ""
  "Project-Id-Version: gnome-initial-setup master\n"
@@ -111292,7 +111292,7 @@ Index: gnome-initial-setup-50.0/po/sl.po
 Index: gnome-initial-setup-50.0/po/sq.po
 ===================================================================
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ gnome-initial-setup-50.0/po/sq.po	2026-09-09 01:52:47.226134097 +0300
++++ gnome-initial-setup-50.0/po/sq.po	2026-09-09 02:25:30.074134670 +0300
 @@ -0,0 +1,1427 @@
 +# Albanian translation for gnome-initial-setup
 +# Copyright (c) 2018 Rosetta Contributors and Canonical Ltd 2018
@@ -112723,8 +112723,8 @@ Index: gnome-initial-setup-50.0/po/sq.po
 +#~ "Përditësime."
 Index: gnome-initial-setup-50.0/po/sr.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/sr.po	2026-09-09 01:48:51.226123871 +0300
-+++ gnome-initial-setup-50.0/po/sr.po	2026-09-09 01:52:47.258134096 +0300
+--- gnome-initial-setup-50.0.orig/po/sr.po	2026-09-09 02:25:30.106134671 +0300
++++ gnome-initial-setup-50.0/po/sr.po	2026-09-09 02:25:30.074134670 +0300
 @@ -10,51 +10,70 @@
  msgstr ""
  "Project-Id-Version: gnome-initial-setup master\n"
@@ -113787,8 +113787,8 @@ Index: gnome-initial-setup-50.0/po/sr.po
 +#~ "дистрибуције %1$s."
 Index: gnome-initial-setup-50.0/po/sr@latin.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/sr@latin.po	2026-09-09 01:48:51.226123871 +0300
-+++ gnome-initial-setup-50.0/po/sr@latin.po	2026-09-09 01:52:47.298134095 +0300
+--- gnome-initial-setup-50.0.orig/po/sr@latin.po	2026-09-09 02:25:30.106134671 +0300
++++ gnome-initial-setup-50.0/po/sr@latin.po	2026-09-09 02:25:30.078134671 +0300
 @@ -9,51 +9,70 @@
  msgstr ""
  "Project-Id-Version: gnome-initial-setup master\n"
@@ -115029,7 +115029,7 @@ Index: gnome-initial-setup-50.0/po/sr@latin.po
 Index: gnome-initial-setup-50.0/po/su.po
 ===================================================================
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ gnome-initial-setup-50.0/po/su.po	2026-09-09 01:52:47.330134094 +0300
++++ gnome-initial-setup-50.0/po/su.po	2026-09-09 02:25:30.078134671 +0300
 @@ -0,0 +1,1326 @@
 +# Sundanese translation for gnome-initial-setup
 +# Copyright (c) 2021 Rosetta Contributors and Canonical Ltd 2021
@@ -116359,8 +116359,8 @@ Index: gnome-initial-setup-50.0/po/su.po
 +#~ "Diagnostik."
 Index: gnome-initial-setup-50.0/po/sv.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/sv.po	2026-09-09 01:48:51.226123871 +0300
-+++ gnome-initial-setup-50.0/po/sv.po	2026-09-09 01:52:47.362134093 +0300
+--- gnome-initial-setup-50.0.orig/po/sv.po	2026-09-09 02:25:30.106134671 +0300
++++ gnome-initial-setup-50.0/po/sv.po	2026-09-09 02:25:30.078134671 +0300
 @@ -11,48 +11,69 @@
  msgstr ""
  "Project-Id-Version: gnome-initial-setup\n"
@@ -117365,7 +117365,7 @@ Index: gnome-initial-setup-50.0/po/sv.po
 Index: gnome-initial-setup-50.0/po/szl.po
 ===================================================================
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ gnome-initial-setup-50.0/po/szl.po	2026-09-09 01:52:47.386134092 +0300
++++ gnome-initial-setup-50.0/po/szl.po	2026-09-09 02:25:30.078134671 +0300
 @@ -0,0 +1,1233 @@
 +# Silesian translation for gnome-initial-setup
 +# Copyright (c) 2019 Rosetta Contributors and Canonical Ltd 2019
@@ -118602,8 +118602,8 @@ Index: gnome-initial-setup-50.0/po/szl.po
 +#~ msgstr "Pociep"
 Index: gnome-initial-setup-50.0/po/ta.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/ta.po	2026-09-09 01:48:51.226123871 +0300
-+++ gnome-initial-setup-50.0/po/ta.po	2026-09-09 01:52:47.414134091 +0300
+--- gnome-initial-setup-50.0.orig/po/ta.po	2026-09-09 02:25:30.106134671 +0300
++++ gnome-initial-setup-50.0/po/ta.po	2026-09-09 02:25:30.078134671 +0300
 @@ -8,721 +8,1201 @@
  "Project-Id-Version: \n"
  "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
@@ -120231,8 +120231,8 @@ Index: gnome-initial-setup-50.0/po/ta.po
 +#~ msgstr "ரத்துசெய்"
 Index: gnome-initial-setup-50.0/po/te.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/te.po	2026-09-09 01:48:51.226123871 +0300
-+++ gnome-initial-setup-50.0/po/te.po	2026-09-09 01:52:47.438134090 +0300
+--- gnome-initial-setup-50.0.orig/po/te.po	2026-09-09 02:25:30.106134671 +0300
++++ gnome-initial-setup-50.0/po/te.po	2026-09-09 02:25:30.082134671 +0300
 @@ -9,649 +9,1201 @@
  "Project-Id-Version: \n"
  "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
@@ -121808,8 +121808,8 @@ Index: gnome-initial-setup-50.0/po/te.po
 +#~ msgstr "రద్దు"
 Index: gnome-initial-setup-50.0/po/tg.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/tg.po	2026-09-09 01:48:51.226123871 +0300
-+++ gnome-initial-setup-50.0/po/tg.po	2026-09-09 01:52:47.462134089 +0300
+--- gnome-initial-setup-50.0.orig/po/tg.po	2026-09-09 02:25:30.106134671 +0300
++++ gnome-initial-setup-50.0/po/tg.po	2026-09-09 02:25:30.082134671 +0300
 @@ -5,119 +5,128 @@
  msgid ""
  msgstr ""
@@ -123371,8 +123371,8 @@ Index: gnome-initial-setup-50.0/po/tg.po
 +#~ msgstr "Бекор кардан"
 Index: gnome-initial-setup-50.0/po/th.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/th.po	2026-09-09 01:48:51.226123871 +0300
-+++ gnome-initial-setup-50.0/po/th.po	2026-09-09 01:52:47.490134088 +0300
+--- gnome-initial-setup-50.0.orig/po/th.po	2026-09-09 02:25:30.106134671 +0300
++++ gnome-initial-setup-50.0/po/th.po	2026-09-09 02:25:30.082134671 +0300
 @@ -6,47 +6,70 @@
  msgid ""
  msgstr ""
@@ -124708,7 +124708,7 @@ Index: gnome-initial-setup-50.0/po/th.po
 Index: gnome-initial-setup-50.0/po/tl.po
 ===================================================================
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ gnome-initial-setup-50.0/po/tl.po	2026-09-09 01:52:47.510134088 +0300
++++ gnome-initial-setup-50.0/po/tl.po	2026-09-09 02:25:30.082134671 +0300
 @@ -0,0 +1,1202 @@
 +# Tagalog translation for gnome-initial-setup
 +# Copyright (c) 2022 Rosetta Contributors and Canonical Ltd 2022
@@ -125914,8 +125914,8 @@ Index: gnome-initial-setup-50.0/po/tl.po
 +msgstr ""
 Index: gnome-initial-setup-50.0/po/tr.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/tr.po	2026-09-09 01:48:51.226123871 +0300
-+++ gnome-initial-setup-50.0/po/tr.po	2026-09-09 01:52:47.538134087 +0300
+--- gnome-initial-setup-50.0.orig/po/tr.po	2026-09-09 02:25:30.106134671 +0300
++++ gnome-initial-setup-50.0/po/tr.po	2026-09-09 02:25:30.086134671 +0300
 @@ -11,72 +11,93 @@
  msgstr ""
  "Project-Id-Version: gnome-initial-setup master\n"
@@ -127117,8 +127117,8 @@ Index: gnome-initial-setup-50.0/po/tr.po
 +#~ msgstr "Ek dil paketleri indirilemedi"
 Index: gnome-initial-setup-50.0/po/ug.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/ug.po	2026-09-09 01:48:51.226123871 +0300
-+++ gnome-initial-setup-50.0/po/ug.po	2026-09-09 01:52:47.570134086 +0300
+--- gnome-initial-setup-50.0.orig/po/ug.po	2026-09-09 02:25:30.106134671 +0300
++++ gnome-initial-setup-50.0/po/ug.po	2026-09-09 02:25:30.086134671 +0300
 @@ -7,48 +7,69 @@
  msgstr ""
  "Project-Id-Version: gnome-initial-setup\n"
@@ -128160,8 +128160,8 @@ Index: gnome-initial-setup-50.0/po/ug.po
 +#~ "شەخسىيەت كونتروللىرىنى تەڭشەك ئەپتىن خالىغان ۋاقىتتا ئۆزگەرتكىلى بولىدۇ."
 Index: gnome-initial-setup-50.0/po/uk.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/uk.po	2026-09-09 01:48:51.226123871 +0300
-+++ gnome-initial-setup-50.0/po/uk.po	2026-09-09 01:52:47.598134085 +0300
+--- gnome-initial-setup-50.0.orig/po/uk.po	2026-09-09 02:25:30.106134671 +0300
++++ gnome-initial-setup-50.0/po/uk.po	2026-09-09 02:25:30.086134671 +0300
 @@ -3,57 +3,78 @@
  # This file is distributed under the same license as the gnome-initial-setup package.
  # Daniel Korostil <ted.korostiled@gmail.com>, 2013, 2014, 2015, 2016, 2017.
@@ -129659,8 +129659,8 @@ Index: gnome-initial-setup-50.0/po/uk.po
 +#~ "a>."
 Index: gnome-initial-setup-50.0/po/uz.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/uz.po	2026-09-09 01:48:51.226123871 +0300
-+++ gnome-initial-setup-50.0/po/uz.po	2026-09-09 01:52:47.622134084 +0300
+--- gnome-initial-setup-50.0.orig/po/uz.po	2026-09-09 02:25:30.106134671 +0300
++++ gnome-initial-setup-50.0/po/uz.po	2026-09-09 02:25:30.090134671 +0300
 @@ -7,49 +7,69 @@
  msgstr ""
  "Project-Id-Version: gnome-initial-setup master\n"
@@ -130673,8 +130673,8 @@ Index: gnome-initial-setup-50.0/po/uz.po
 +#~ "oʻzgartirish mumkin."
 Index: gnome-initial-setup-50.0/po/vi.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/vi.po	2026-09-09 01:48:51.226123871 +0300
-+++ gnome-initial-setup-50.0/po/vi.po	2026-09-09 01:52:47.646134083 +0300
+--- gnome-initial-setup-50.0.orig/po/vi.po	2026-09-09 02:25:30.106134671 +0300
++++ gnome-initial-setup-50.0/po/vi.po	2026-09-09 02:25:30.090134671 +0300
 @@ -10,65 +10,88 @@
  "Project-Id-Version: gnome-initial-setup master\n"
  "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
@@ -132110,8 +132110,8 @@ Index: gnome-initial-setup-50.0/po/vi.po
 +#~ "Cài đặt."
 Index: gnome-initial-setup-50.0/po/zh_CN.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/zh_CN.po	2026-09-09 01:48:51.226123871 +0300
-+++ gnome-initial-setup-50.0/po/zh_CN.po	2026-09-09 01:52:47.670134083 +0300
+--- gnome-initial-setup-50.0.orig/po/zh_CN.po	2026-09-09 02:25:30.106134671 +0300
++++ gnome-initial-setup-50.0/po/zh_CN.po	2026-09-09 02:25:30.090134671 +0300
 @@ -14,59 +14,79 @@
  msgstr ""
  "Project-Id-Version: gnome-initial-setup master\n"
@@ -133496,8 +133496,8 @@ Index: gnome-initial-setup-50.0/po/zh_CN.po
 +#~ msgstr "您随时可以通过“软件和更新”应用程序启用 Ubuntu Pro"
 Index: gnome-initial-setup-50.0/po/zh_HK.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/zh_HK.po	2026-09-09 01:48:51.226123871 +0300
-+++ gnome-initial-setup-50.0/po/zh_HK.po	2026-09-09 01:52:47.690134082 +0300
+--- gnome-initial-setup-50.0.orig/po/zh_HK.po	2026-09-09 02:25:30.106134671 +0300
++++ gnome-initial-setup-50.0/po/zh_HK.po	2026-09-09 02:25:30.094134671 +0300
 @@ -8,580 +8,1200 @@
  "Project-Id-Version: gnome-initial-setup master\n"
  "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
@@ -135065,8 +135065,8 @@ Index: gnome-initial-setup-50.0/po/zh_HK.po
 +#~ msgstr "取消"
 Index: gnome-initial-setup-50.0/po/zh_TW.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/zh_TW.po	2026-09-09 01:48:51.226123871 +0300
-+++ gnome-initial-setup-50.0/po/zh_TW.po	2026-09-09 01:52:47.714134081 +0300
+--- gnome-initial-setup-50.0.orig/po/zh_TW.po	2026-09-09 02:25:30.106134671 +0300
++++ gnome-initial-setup-50.0/po/zh_TW.po	2026-09-09 02:25:30.094134671 +0300
 @@ -9,50 +9,69 @@
  msgstr ""
  "Project-Id-Version: gnome-initial-setup master\n"
@@ -136490,3 +136490,1611 @@ Index: gnome-initial-setup-50.0/po/zh_TW.po
 -#~ msgstr "輸入法無法在登入畫面中使用"
 +#~ msgid "Privacy controls can be changed at any time from the Settings app."
 +#~ msgstr "隱私控制可隨時在《設定》中變更。"
+Index: gnome-initial-setup-50.0/po/bn_IN.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/bn_IN.po	2026-03-19 11:38:36.000000000 +0200
++++ gnome-initial-setup-50.0/po/bn_IN.po	2026-09-09 02:27:00.758132643 +0300
+@@ -1,7 +1,7 @@
+ # Bengali (India) translation for gnome-initial-setup.
+ # Copyright (C) 2012 gnome-initial-setup's COPYRIGHT HOLDER
+ # This file is distributed under the same license as the gnome-initial-setup package.
+-# 
++#
+ # Sayak Sarkar <sayak.bugsmith@gmail.com>, 2012.
+ # sray <sray@redhat.com>, 2013. #zanata
+ # sray <sray@redhat.com>, 2014. #zanata
+@@ -10,395 +10,1342 @@
+ "Project-Id-Version: gnome-initial-setup master\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2012-11-20 00:08+0000\n"
+-"MIME-Version: 1.0\n"
+-"Content-Type: text/plain; charset=UTF-8\n"
+-"Content-Transfer-Encoding: 8bit\n"
++"POT-Creation-Date: 2026-09-09 01:52+0300\n"
+ "PO-Revision-Date: 2014-02-28 03:06-0500\n"
+ "Last-Translator: sray <sray@redhat.com>\n"
+ "Language-Team: Bengali (India) <anubad@lists.ankur.org.in>\n"
+ "Language: bn_IN\n"
++"MIME-Version: 1.0\n"
++"Content-Type: text/plain; charset=UTF-8\n"
++"Content-Transfer-Encoding: 8bit\n"
+ "Plural-Forms: nplurals=2; plural=n != 1;\n"
+ "X-Generator: Zanata 3.3.2\n"
+ 
+-#: ../data/gnome-initial-setup.desktop.in.in.h:1
+-#: ../data/gnome-initial-setup-first-login.desktop.in.in.h:1
++#: data/gnome-initial-setup.desktop.in.in:2
++#: gnome-initial-setup/gis-driver.c:890
+ msgid "Initial Setup"
+ msgstr "প্রাথমিক সেটআপ"
+ 
+-#: ../gnome-initial-setup/gis-assistant.c:394
++#: gnome-initial-setup/gis-assistant.c:425
+ msgid "_Next"
+ msgstr "পরবর্তী (_N)"
+ 
++#: gnome-initial-setup/gis-assistant.c:426
++msgid "_Finish"
++msgstr ""
++
++#: gnome-initial-setup/gis-assistant.c:427
++msgid "_Accept"
++msgstr ""
++
++#: gnome-initial-setup/gis-assistant.c:428
++msgid "_Skip"
++msgstr ""
++
+ # auto translated by TM merge from project: evolution, version: el6, DocId: evolution-2.32
+-#: ../gnome-initial-setup/gis-assistant.c:395
++#: gnome-initial-setup/gis-assistant.c:429
+ msgid "_Previous"
+ msgstr "পূর্ববর্তী (_P)"
+ 
+ # auto translated by TM merge from project: virt-manager, version: 0.9.0, DocId: virt-manager
+-#: ../gnome-initial-setup/gis-assistant.c:396
++#: gnome-initial-setup/gis-assistant.c:430
++#: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:254
+ msgid "_Cancel"
+ msgstr "বাতিল (_C)"
+ 
+-#: ../gnome-initial-setup/gnome-initial-setup.c:220
+-msgid "Force new user mode"
++#: gnome-initial-setup/gis-webkit.c:54
++msgid "Scan the QR Code…"
++msgstr ""
++
++#: gnome-initial-setup/gis-webkit.c:244
++msgid "Open in default web browser"
++msgstr ""
++
++#: gnome-initial-setup/gis-webkit.c:247
++msgid "Open in default file handler"
++msgstr ""
++
++#: gnome-initial-setup/gnome-initial-setup.c:362
++#, fuzzy
++msgid "Force existing user mode"
+ msgstr "বলপূর্বক নতুন ব্যবহারকারী মোড"
+ 
+-#: ../gnome-initial-setup/gnome-initial-setup.c:224
+-msgid "- GNOME initial setup"
+-msgstr "- GNOME প্রাথমিক সেটআপ"
++#: gnome-initial-setup/gnome-initial-setup.c:364
++#, fuzzy
++msgid "Force Upgrade user"
++msgstr "বলপূর্বক নতুন ব্যবহারকারী মোড"
+ 
+-#: ../gnome-initial-setup/pages/account/gis-account-page.c:334
+-msgid "No password"
+-msgstr "পাসওয়ার্ড নেই"
+-
+-#: ../gnome-initial-setup/pages/account/gis-account-page.c:339
+-#: ../gnome-initial-setup/pages/account/gis-account-page.c:442
+-msgid "Passwords do not match"
+-msgstr "পাসওয়ার্ডগুলি মিলছে না"
++#: gnome-initial-setup/gnome-initial-setup.c:378
++#, fuzzy
++msgid "— GNOME initial setup"
++msgstr "- GNOME প্রাথমিক সেটআপ"
+ 
+-#: ../gnome-initial-setup/pages/account/gis-account-page.c:389
+-#, c-format
+-msgid "Strength: %s"
+-msgstr "শক্তি: %s"
++#: gnome-initial-setup/pages/account/gis-account-page-enterprise.c:181
++#, fuzzy
++msgid "Failed to cache account"
++msgstr "অ্যাকাউন্ট রেজিস্টার করতে ব্যর্থ"
+ 
+-#: ../gnome-initial-setup/pages/account/gis-account-page.c:579
++#: gnome-initial-setup/pages/account/gis-account-page-enterprise.c:231
+ msgid "Failed to register account"
+ msgstr "অ্যাকাউন্ট রেজিস্টার করতে ব্যর্থ"
+ 
+-#: ../gnome-initial-setup/pages/account/gis-account-page.c:782
++#: gnome-initial-setup/pages/account/gis-account-page-enterprise.c:420
+ msgid "No supported way to authenticate with this domain"
+ msgstr "এই ডোমেন দিয়ে পরিচয়প্রমাণের কোনো সমর্থিত মাধ্যম নেই"
+ 
+-#: ../gnome-initial-setup/pages/account/gis-account-page.c:821
++#: gnome-initial-setup/pages/account/gis-account-page-enterprise.c:459
+ msgid "Failed to join domain"
+ msgstr "ডোমেন এ যোগদান করতে ব্যর্থ"
+ 
+-#: ../gnome-initial-setup/pages/account/gis-account-page.c:888
++#: gnome-initial-setup/pages/account/gis-account-page-enterprise.c:526
+ msgid "Failed to log into domain"
+ msgstr "ডোমেনে লগ ইন করতে ব্যর্থ"
+ 
+-#: ../gnome-initial-setup/pages/account/gis-account-page.c:1258
+-msgid "Login"
+-msgstr "লগ-ইন"
+-
+-#: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:1
+-msgid "Create a Local Account"
+-msgstr "একটি স্থানীয় অ্যাকাউন্ট তৈরি করুন"
+-
+-#: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:2
+-msgid "_Full Name"
+-msgstr "সম্পূর্ণ নাম (_F)"
+-
+-#: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:3
+-msgid "_Username"
+-msgstr "ব্যবহারকারীর নাম (_U)"
+-
+-#: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:4
+-msgid "This will be used to name your home folder and can't be changed."
++#: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:12
++msgid "Enterprise Login"
+ msgstr ""
+-"অাপনার হোম ফোল্ডারের নামকরণ করতে এর ব্যবহার করা হবে এবং পরিবর্তন করা যাবে "
+-"না।"
+-
+-#: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:5
+-msgid "_Password"
+-msgstr "পাসওয়ার্ড (_P)"
+ 
+-#: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:6
+-msgid "_Confirm password"
+-msgstr "পাসওয়ার্ড নিশ্চিত করুন (_C)"
+-
+-#: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:7
++#: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:13
+ msgid ""
+-"Try to use at least 8 different characters. Mix upper and lower case and use "
+-"a number or two."
++"Enterprise login allows an existing centrally managed user account to be "
++"used on this device. You can also use this account to access company "
++"resources on the internet."
+ msgstr ""
+-"অন্ততপক্ষে ৮টি পৃথক অক্ষর ব্যবহার করার চেষ্টা করুন। বড় হাতের এবং ছোট হাতের "
+-"অক্ষর এবং একটি বা দুইটি সংখ্যা মিলিয়ে মিশিয়ে ব্যবহার কারুন।"
+-
+-#: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:8
+-msgid "page 1"
+-msgstr "পৃষ্ঠা ১"
+ 
+-#: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:9
+-msgid "Create an Enterprise Account"
+-msgstr "একটি এন্টারপ্রাইজ অ্যাকাউন্ট তৈরি করুন"
+-
+-#: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:10
++#: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:27
++#: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:153
+ msgid "_Domain"
+ msgstr "ডোমেন (_D)"
+ 
++#: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:40
++#: gnome-initial-setup/pages/account/gis-account-page-local.ui:104
++msgid "_Username"
++msgstr "ব্যবহারকারীর নাম (_U)"
++
++#: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:53
++#: gnome-initial-setup/pages/password/gis-password-page.ui:31
++msgid "_Password"
++msgstr "পাসওয়ার্ড (_P)"
++
+ # auto translated by TM merge from project: gnome-online-accounts, version: 3.8.2, DocId: gnome-online-accounts
+-#: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:11
++#: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:99
+ msgid "Enterprise domain or realm name"
+ msgstr "এন্টারপ্রাইজ ডোমেন অথবা রিল্মের নাম"
+ 
+-# auto translated by TM merge from project: brasero, version: 3.8.0, DocId: brasero
+-#: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:12
+-msgid "C_ontinue"
+-msgstr "এগিয়ে চলুন (_o)"
+-
+-#: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:13
++#: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:126
+ msgid "Domain Administrator Login"
+ msgstr "ডোমেইন অ্যাডমিনিস্ট্রেটর লগিন"
+ 
+-#: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:14
++#: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:141
++#, fuzzy
+ msgid ""
+-"In order to use enterprise logins, this computer needs to be\n"
+-"enrolled in the domain. Please have your network administrator\n"
+-"type their domain password here, and choose a unique computer\n"
+-"name for your computer."
++"In order to use enterprise logins, this computer needs to be enrolled in a "
++"domain. Please have your network administrator type the domain password "
++"here, and choose a unique computer name for your computer."
+ msgstr ""
+ "এন্টারপ্রাইজ লগিন ব্যবহার করতে, এই কম্পিউটারটিকে এই ডোমেনে নথিভুক্ত\n"
+ "করতে  হবে। অনুগ্রহ করে অাপনার নেটওয়ার্ক প্রশাসককে\n"
+ "এখানে ডোমেন পাসওয়ার্ড দিতে বলুন, এবং অাপনার কম্পিউটারের জন্য অনন্য\n"
+ "নাম দিতে বলুন।"
+ 
+-#: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:18
++#: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:179
++#: gnome-initial-setup/pages/account/gis-account-page-local.ui:151
+ msgid "_Computer"
+ msgstr "কম্পিউটার (_C)"
+ 
+-#: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:19
++#: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:203
+ msgid "Administrator _Name"
+ msgstr "প্রশাসকের নাম (_N)"
+ 
+-#: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:20
++#: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:227
+ msgid "Administrator Password"
+ msgstr "প্রশাসকের পাসওয়ার্ড"
+ 
+-#: ../gnome-initial-setup/pages/account/pw-utils.c:94
+-msgctxt "Password strength"
+-msgid "Too short"
+-msgstr "খুবই ছোট"
+-
+-#: ../gnome-initial-setup/pages/account/pw-utils.c:99
+-msgctxt "Password strength"
+-msgid "Not good enough"
+-msgstr "যথেষ্ট ভালো নয়"
+-
+-#: ../gnome-initial-setup/pages/account/pw-utils.c:108
+-msgctxt "Password strength"
+-msgid "Weak"
+-msgstr "দুর্বল"
+-
+-#: ../gnome-initial-setup/pages/account/pw-utils.c:111
+-msgctxt "Password strength"
+-msgid "Fair"
+-msgstr "ন্যায্য"
+-
+-#: ../gnome-initial-setup/pages/account/pw-utils.c:114
+-msgctxt "Password strength"
+-msgid "Good"
+-msgstr "ভাল"
+-
+-#: ../gnome-initial-setup/pages/account/pw-utils.c:117
+-msgctxt "Password strength"
+-msgid "Strong"
+-msgstr "শক্তিশালী"
++# auto translated by TM merge from project: brasero, version: 3.8.0, DocId: brasero
++#: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:260
++msgid "C_ontinue"
++msgstr "এগিয়ে চলুন (_o)"
++
++#: gnome-initial-setup/pages/account/gis-account-page-local.c:210
++#, fuzzy, c-format
++msgid "The hostname is too long."
++msgstr "ব্যবহারকারীর নাম অতিশয় দীর্ঘ"
++
++#: gnome-initial-setup/pages/account/gis-account-page-local.c:214
++msgid "The hostname must start with a lower case letter from a-z or a digit."
++msgstr ""
++
++#: gnome-initial-setup/pages/account/gis-account-page-local.c:218
++msgid ""
++"The hostname should only consist of lower case letters from a-z, digits and "
++"a hyphen: -"
++msgstr ""
++
++#: gnome-initial-setup/pages/account/gis-account-page-local.c:545
++msgid "We need a few details to complete setup."
++msgstr ""
+ 
+-#: ../gnome-initial-setup/pages/account/um-realm-manager.c:352
++#: gnome-initial-setup/pages/account/gis-account-page-local.c:704
++#, fuzzy
++msgid "Administrator"
++msgstr "প্রশাসকের নাম (_N)"
++
++#: gnome-initial-setup/pages/account/gis-account-page-local.c:710
++#: gnome-initial-setup/pages/account/gis-account-page-local.c:753
++#, c-format
++msgid "Failed to create user '%s': "
++msgstr ""
++
++#: gnome-initial-setup/pages/account/gis-account-page-local.ui:28
++msgid "Change Avatar"
++msgstr ""
++
++#: gnome-initial-setup/pages/account/gis-account-page-local.ui:46
++#, fuzzy
++msgid "Remove Avatar"
++msgstr "অপসারণ (_R)"
++
++#: gnome-initial-setup/pages/account/gis-account-page-local.ui:64
++#: gnome-initial-setup/pages/account/gis-account-page.c:274
++msgid "About You"
++msgstr ""
++
++#: gnome-initial-setup/pages/account/gis-account-page-local.ui:65
++msgid "Please provide a name and username. You can choose a picture too."
++msgstr ""
++
++#: gnome-initial-setup/pages/account/gis-account-page-local.ui:81
++msgid "_Full Name"
++msgstr "সম্পূর্ণ নাম (_F)"
++
++#: gnome-initial-setup/pages/account/gis-account-page-local.ui:217
++msgid "Set up _parental controls for this user"
++msgstr ""
++
++#: gnome-initial-setup/pages/account/gis-account-page-local.ui:223
++msgid "For use by a parent or supervisor, who must set up their own password."
++msgstr ""
++
++#: gnome-initial-setup/pages/account/gis-account-page.ui:32
++msgid "_Enterprise Login"
++msgstr ""
++
++#: gnome-initial-setup/pages/account/gis-account-page.ui:41
++msgid "Go online to set up Enterprise Login."
++msgstr ""
++
++#: gnome-initial-setup/pages/account/um-realm-manager.c:310
+ msgid "Cannot automatically join this type of domain"
+ msgstr "এই ধরনের ডোমেনে স্বয়ংক্রিয়ভাবে যোগ দেওয়া যায় না"
+ 
+-#: ../gnome-initial-setup/pages/account/um-realm-manager.c:415
++#: gnome-initial-setup/pages/account/um-realm-manager.c:373
+ #, c-format
+ msgid "No such domain or realm found"
+ msgstr "এমন কোন ডোমেন বা রিলম পাওয়া যায়নি"
+ 
+-#: ../gnome-initial-setup/pages/account/um-realm-manager.c:822
+-#: ../gnome-initial-setup/pages/account/um-realm-manager.c:836
++#: gnome-initial-setup/pages/account/um-realm-manager.c:782
++#: gnome-initial-setup/pages/account/um-realm-manager.c:796
+ #, c-format
+ msgid "Cannot log in as %s at the %s domain"
+ msgstr "%s হিসেবে %s ডোমেনে লগইন করা সম্ভব হচ্ছে না"
+ 
+-#: ../gnome-initial-setup/pages/account/um-realm-manager.c:828
++#: gnome-initial-setup/pages/account/um-realm-manager.c:788
+ msgid "Invalid password, please try again"
+ msgstr "অবৈধ পাসওয়ার্ড, পুনরায় চেষ্টা করুন"
+ 
+-#: ../gnome-initial-setup/pages/account/um-realm-manager.c:841
+-#, c-format
+-msgid "Couldn't connect to the %s domain: %s"
++#: gnome-initial-setup/pages/account/um-realm-manager.c:801
++#, fuzzy, c-format
++msgid "Couldn’t connect to the %s domain: %s"
+ msgstr "%s ডোমেনে সংযোগ স্থাপন করতে ব্যর্থ: %s"
+ 
+-#: ../gnome-initial-setup/pages/account/um-utils.c:148
+-#, c-format
+-msgid "A user with the username '%s' already exists"
+-msgstr "%s নামের একটি ব্যবহারকারী ইতিমধ্যেই উপস্থিত রয়েছে"
++#: gnome-initial-setup/pages/account/um-utils.c:153
++msgid "Sorry, that user name isn’t available. Please try another."
++msgstr ""
+ 
+-#: ../gnome-initial-setup/pages/account/um-utils.c:152
+-#, c-format
+-msgid "The username is too long"
++#: gnome-initial-setup/pages/account/um-utils.c:156
++#, fuzzy, c-format
++msgid "The username is too long."
+ msgstr "ব্যবহারকারীর নাম অতিশয় দীর্ঘ"
+ 
+-#: ../gnome-initial-setup/pages/account/um-utils.c:155
+-msgid "The username cannot start with a '-'"
++#: gnome-initial-setup/pages/account/um-utils.c:159
++#, fuzzy
++msgid "The username must start with a lower case letter from a-z."
+ msgstr "একটি ব্যবহারকারীর নাম '-' দিয়ে শুরু হতে পারে না"
+ 
+-#: ../gnome-initial-setup/pages/account/um-utils.c:158
++#: gnome-initial-setup/pages/account/um-utils.c:162
++msgid "That username isn’t available. Please try another."
++msgstr ""
++
++#: gnome-initial-setup/pages/account/um-utils.c:165
++#, fuzzy
+ msgid ""
+-"The username must only consist of:\n"
+-" ➣ letters from the English alphabet\n"
+-" ➣ digits\n"
+-" ➣ any of the characters '.', '-' and '_'"
++"The username should only consist of lower case letters from a-z, digits, and "
++"the following characters: - _"
+ msgstr ""
+ "ব্যবহারকারী নামে অবশ্যই থাকতে হবে:\n"
+ " ➣ ইংরাজি বর্ণমালার অক্ষর\n"
+ " ➣ সংখ্যা\n"
+ " ➣ '.', '-' এবং '_' এর যেকোনো অক্ষর"
+ 
+-#: ../gnome-initial-setup/pages/eulas/gis-eula-page.c:323
+-#: ../gnome-initial-setup/pages/eulas/gis-eula-page.ui.h:1
+-msgid "License Agreements"
+-msgstr "লাইসেন্স চুক্তিসমূহ"
+-
+-#. translators: This is the title of the "Add Account" dialog.
+-#: ../gnome-initial-setup/pages/goa/cc-online-accounts-add-account-dialog.c:253
+-msgid "Add Account"
+-msgstr "একাউন্ট যোগ করুন"
+-
+-#: ../gnome-initial-setup/pages/goa/gis-goa-page.c:106
+-msgid "Error creating account"
+-msgstr "একাউন্ট তৈরি ত্রুটি"
+-
+-#: ../gnome-initial-setup/pages/goa/gis-goa-page.c:138
+-msgid "Error removing account"
+-msgstr "অ্যাকাউন্ট অপসারণের করার সময় ত্রুটি"
+-
+-#: ../gnome-initial-setup/pages/goa/gis-goa-page.c:164
+-msgid "Are you sure you want to remove the account?"
+-msgstr "আপনি কি নিশ্চিতরূপে অ্যাকাউন্টটি সরাতে চান?"
+-
+-#: ../gnome-initial-setup/pages/goa/gis-goa-page.c:166
+-msgid "This will not remove the account on the server."
+-msgstr "এটি সার্ভারে অ্যাকাউন্ট মুছে ফেলবে না।"
+-
+-#: ../gnome-initial-setup/pages/goa/gis-goa-page.c:167
+-msgid "_Remove"
+-msgstr "অপসারণ (_R)"
+-
+-#: ../gnome-initial-setup/pages/goa/gis-goa-page.c:429
+-msgid "Online Accounts"
+-msgstr "অনলাইন অ্যাকাউন্টস"
+-
+-#: ../gnome-initial-setup/pages/goa/gis-goa-page.ui.h:1
+-msgid "Connect to your existing data in the cloud"
+-msgstr "ক্লাউডে অাপনার বিদ্যমান ডেটার সংগে সংযুক্ত করুন"
+-
+-#: ../gnome-initial-setup/pages/goa/gis-goa-page.ui.h:2
+-msgid ""
+-"Adding accounts will allow you to transparently connect to your online "
+-"photos, contacts, mail, and more."
++#: gnome-initial-setup/pages/account/um-utils.c:169
++#, fuzzy
++msgid "This will be used to name your home folder and can’t be changed."
+ msgstr ""
+-"অ্যাকাউন্টগুলি যোগ করা হলে তার সাহায্যে অাপনি সরাসারি অাপনার অনলাইন ছবি, "
+-"পরিচিতি, মেল এবং অারো অনেক কিছুর সংগে সংযুক্ত হতে পারবেন।"
++"অাপনার হোম ফোল্ডারের নামকরণ করতে এর ব্যবহার করা হবে এবং পরিবর্তন করা যাবে না।"
+ 
+-#: ../gnome-initial-setup/pages/goa/gis-goa-page.ui.h:3
+-msgid "_Add Account"
+-msgstr "অ্যাকাউন্ট যোগ করুন (_A)"
++# auto translated by TM merge from project: evolution, version: el6, DocId: evolution-2.32
++#: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:257
++#, fuzzy
++msgid "Preview"
++msgstr "পূর্ববর্তী (_P)"
+ 
+-#: ../gnome-initial-setup/pages/keyboard/cc-input-chooser.c:172
+-#: ../gnome-initial-setup/pages/language/cc-language-chooser.c:181
++#: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:325
++#: gnome-initial-setup/pages/language/cc-language-chooser.c:244
+ msgid "More…"
+ msgstr "অারো…"
+ 
+-#: ../gnome-initial-setup/pages/keyboard/cc-input-chooser.c:186
+-msgid "No input sources found"
++#. Translators: a search for input methods or keyboard layouts
++#. * did not yield any results
++#.
++#: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:347
++#, fuzzy
++msgid "No inputs found"
+ msgstr "কোনো ইনপুট সোর্স পাওয়া যায়নি"
+ 
+-# auto translated by TM merge from project: rhsm-web, version: 0.0, DocId: management
+-#: ../gnome-initial-setup/pages/keyboard/cc-input-chooser.c:1075
+-msgid "Other"
+-msgstr "অন্যান্য"
+-
+-#: ../gnome-initial-setup/pages/keyboard/gis-keyboard-page.c:168
+-msgid "Input Sources"
+-msgstr "ইনপুট সোর্স"
+-
+-#: ../gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui.h:1
+-msgid "Select input sources"
+-msgstr "ইনপুট সোর্সগুলি নির্বাচন করুন"
++#: gnome-initial-setup/pages/keyboard/gis-keyboard-page.c:484
++#: gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui:16
++msgid "Typing"
++msgstr ""
+ 
+-#: ../gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui.h:2
+-msgid "Login settings are used by all users when logging into the system"
++#: gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui:17
++msgid "Select your keyboard layout or an input method."
+ msgstr ""
+-"সিস্টেমে লগিন করার সময়ে সকল ব্যবহারকারীর দ্বারা লগিন সেটিং ব্যবহার করা হয়"
+ 
+-#: ../gnome-initial-setup/pages/keyboard/input-chooser.ui.h:1
+-msgid "Add an Input Source"
+-msgstr "একটি ইনপুট সোর্স যোগ করুন"
++#: gnome-initial-setup/pages/keyboard/input-chooser.ui:8
++msgid "Search keyboards and input methods"
++msgstr ""
+ 
+-#: ../gnome-initial-setup/pages/language/cc-language-chooser.c:198
++#: gnome-initial-setup/pages/language/cc-language-chooser.c:264
+ msgid "No languages found"
+ msgstr "কোনো ভাষা পাওয়া যায়নি"
+ 
+-#: ../gnome-initial-setup/pages/language/gis-language-page.c:227
++#: gnome-initial-setup/pages/language/gis-language-page.c:146
++#: gnome-initial-setup/pages/language/gis-language-page.ui:14
+ msgid "Welcome"
+ msgstr "স্বাগত"
+ 
+-#: ../gnome-initial-setup/pages/location/gis-location-page.c:301
+-msgid "Search for a location"
+-msgstr "একটি অবস্থান অনুসন্ধান করুন"
+-
+-#: ../gnome-initial-setup/pages/location/gis-location-page.c:357
+-#: ../gnome-initial-setup/pages/location/gis-location-page.ui.h:3
+-msgid "Location"
+-msgstr "অবস্থান"
++#: gnome-initial-setup/pages/language/gis-language-page.ui:41
++msgid "Select a language from the list, or search for a specific language."
++msgstr ""
+ 
+-#: ../gnome-initial-setup/pages/location/gis-location-page.ui.h:1
+-msgid "Choose Your Location"
+-msgstr "আপনার অবস্থান বেছে নিন"
+-
+-#: ../gnome-initial-setup/pages/location/gis-location-page.ui.h:2
+-msgid "_Determine your location automatically"
+-msgstr "আপনার অবস্থান স্বয়ংক্রিয়ভাবে নির্ধারণ করুন (_D)"
++#. Translators: This is meant to be a warm, engaging welcome message,
++#. * like greeting somebody at the door. If the exclamation mark is not
++#. * suitable for this in your language you may replace it.
++#.
++#: gnome-initial-setup/pages/language/gis-welcome-widget.c:132
++#, fuzzy
++msgid "Welcome!"
++msgstr "স্বাগত"
+ 
+-#: ../gnome-initial-setup/pages/location/gis-location-page.ui.h:4
+-msgid "Time Zone"
+-msgstr "টাইম জোন"
++#: gnome-initial-setup/pages/language/language-chooser.ui:11
++msgid "Search languages"
++msgstr ""
++
++#: gnome-initial-setup/pages/language/language-chooser.ui:21
++msgid "Available languages"
++msgstr ""
+ 
+ # auto translated by TM merge from project: gdm, version: 3.8.4, DocId: gdm
+-#: ../gnome-initial-setup/pages/network/gis-network-page.c:306
++#: gnome-initial-setup/pages/network/gis-network-page.c:319
+ msgctxt "Wireless access point"
+ msgid "Other…"
+ msgstr "অন্যান্য..."
+ 
+-#: ../gnome-initial-setup/pages/network/gis-network-page.c:344
+-msgid "Network is not available."
+-msgstr "নেটওয়ার্ক উপলভ্য নয়।"
+-
+-#: ../gnome-initial-setup/pages/network/gis-network-page.c:346
+-msgid "No network devices found."
+-msgstr "কোন নেটওয়ার্ক ডিভাইস পাওয়া যায়নি।"
++#: gnome-initial-setup/pages/network/gis-network-page.c:401
++#, fuzzy
++msgid "Wireless networking is disabled"
++msgstr "বেতার নেটওয়ার্ক"
+ 
+-#: ../gnome-initial-setup/pages/network/gis-network-page.c:396
++#: gnome-initial-setup/pages/network/gis-network-page.c:408
+ msgid "Checking for available wireless networks"
+ msgstr "উপলব্ধ বেতার নেটওয়ার্কের জন্য পরীক্ষা করা হচ্ছে"
+ 
+-#: ../gnome-initial-setup/pages/network/gis-network-page.c:649
++#: gnome-initial-setup/pages/network/gis-network-page.c:809
+ msgid "Network"
+ msgstr "নেটওয়ার্ক"
+ 
+-#: ../gnome-initial-setup/pages/network/gis-network-page.ui.h:1
+-msgid "Wireless Networks"
+-msgstr "বেতার নেটওয়ার্ক"
++#: gnome-initial-setup/pages/network/gis-network-page.ui:15
++msgid "Wi-Fi"
++msgstr ""
++
++#: gnome-initial-setup/pages/network/gis-network-page.ui:16
++msgid ""
++"Connecting to the internet helps you get new apps, information, and other "
++"upgrades. It also helps set the time and your location automatically."
++msgstr ""
+ 
+-#: ../gnome-initial-setup/pages/network/gis-network-page.ui.h:2
++#: gnome-initial-setup/pages/network/gis-network-page.ui:57
+ msgid "No wireless available"
+ msgstr "কোনো বেতার উপলব্ধ নেই"
+ 
+-#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:352
++#: gnome-initial-setup/pages/network/gis-network-page.ui:70
++msgid "Turn On"
++msgstr ""
++
++#. Translators: The placeholder is the user’s full name.
++#: gnome-initial-setup/pages/parental-controls/gis-parental-controls-page.c:106
+ #, c-format
+-msgid "_Start using %s"
+-msgstr "%s'র ব্যবহার শুরু করুন (_S)"
++msgid "Parental Controls for %s"
++msgstr ""
+ 
+-#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:381
+-msgid "Thank You"
+-msgstr "ধন্যবাদ"
++#: gnome-initial-setup/pages/parental-controls/gis-parental-controls-page.c:108
++msgid "Set restrictions on what this user can run or install."
++msgstr ""
+ 
+-#: ../gnome-initial-setup/pages/summary/gis-summary-page.ui.h:1
+-msgid "Your computer is ready to use."
+-msgstr "অাপনার কম্পিউটার ব্যবহারের জন্য প্রস্তুত।"
++#: gnome-initial-setup/pages/parental-controls/gis-parental-controls-page.c:215
++msgid "Parental Controls"
++msgstr ""
++
++#. Translators: The placeholder is for the user’s full name.
++#: gnome-initial-setup/pages/password/gis-password-page.c:92
++#, c-format
++msgid "Set a Password for %s"
++msgstr ""
+ 
+-#: ../gnome-initial-setup/pages/summary/gis-summary-page.ui.h:2
+-msgid "You may change these options at any time in Settings."
++#: gnome-initial-setup/pages/password/gis-password-page.c:94
++msgid "Be careful not to lose your password."
++msgstr ""
++
++#: gnome-initial-setup/pages/password/gis-password-page.c:99
++msgid "Set a Parent Password"
++msgstr ""
++
++#. Translators: The placeholder is the full name of the child user on the system.
++#: gnome-initial-setup/pages/password/gis-password-page.c:101
++#, c-format
++msgid "This password will control access to the parental controls for %s."
++msgstr ""
++
++#: gnome-initial-setup/pages/password/gis-password-page.c:223
++#, fuzzy, c-format
++msgid "Password strength: %s."
++msgstr "শক্তি: %s"
++
++#: gnome-initial-setup/pages/password/gis-password-page.c:249
++#: gnome-initial-setup/pages/password/gis-password-page.c:251
++#, fuzzy
++msgid "The passwords do not match."
++msgstr "পাসওয়ার্ডগুলি মিলছে না"
++
++#: gnome-initial-setup/pages/password/gis-password-page.c:427
++#, fuzzy
++msgid "Password"
++msgstr "পাসওয়ার্ড (_P)"
++
++#: gnome-initial-setup/pages/password/gis-password-page.ui:68
++#, fuzzy
++msgid "_Confirm Password"
++msgstr "পাসওয়ার্ড নিশ্চিত করুন (_C)"
++
++#: gnome-initial-setup/pages/password/gis-password-page.ui:92
++#, fuzzy
++msgid "Password _Hint"
++msgstr "পাসওয়ার্ড (_P)"
++
++#: gnome-initial-setup/pages/password/gis-password-page.ui:103
++msgid "Password hint will be shown in case you forget your password."
++msgstr ""
++
++#: gnome-initial-setup/pages/password/pw-utils.c:81
++msgctxt "Password hint"
++msgid "The new password needs to be different from the old one."
++msgstr ""
++
++#: gnome-initial-setup/pages/password/pw-utils.c:83
++msgctxt "Password hint"
++msgid ""
++"This password is very similar to your last one. Try changing some letters "
++"and numbers."
++msgstr ""
++
++#: gnome-initial-setup/pages/password/pw-utils.c:85
++#: gnome-initial-setup/pages/password/pw-utils.c:93
++msgctxt "Password hint"
++msgid ""
++"This password is very similar to your last one. Try changing the password a "
++"bit more."
++msgstr ""
++
++#: gnome-initial-setup/pages/password/pw-utils.c:87
++msgctxt "Password hint"
++msgid ""
++"This is a weak password. A password without your user name would be stronger."
++msgstr ""
++
++#: gnome-initial-setup/pages/password/pw-utils.c:89
++msgctxt "Password hint"
++msgid "This is a weak password. Try to avoid using your name in the password."
++msgstr ""
++
++#: gnome-initial-setup/pages/password/pw-utils.c:91
++msgctxt "Password hint"
++msgid ""
++"This is a weak password. Try to avoid some of the words included in the "
++"password."
++msgstr ""
++
++#: gnome-initial-setup/pages/password/pw-utils.c:95
++msgctxt "Password hint"
++msgid "This is a weak password. Try to avoid common words."
++msgstr ""
++
++#: gnome-initial-setup/pages/password/pw-utils.c:97
++msgctxt "Password hint"
++msgid "This is a weak password. Try to avoid reordering existing words."
++msgstr ""
++
++#: gnome-initial-setup/pages/password/pw-utils.c:99
++msgctxt "Password hint"
++msgid "This is a weak password. Try to use more numbers."
++msgstr ""
++
++#: gnome-initial-setup/pages/password/pw-utils.c:101
++msgctxt "Password hint"
++msgid "This is a weak password. Try to use more uppercase letters."
++msgstr ""
++
++#: gnome-initial-setup/pages/password/pw-utils.c:103
++msgctxt "Password hint"
++msgid "This is a weak password. Try to use more lowercase letters."
++msgstr ""
++
++#: gnome-initial-setup/pages/password/pw-utils.c:105
++msgctxt "Password hint"
++msgid ""
++"This is a weak password. Try to use more special characters, like "
++"punctuation."
++msgstr ""
++
++#: gnome-initial-setup/pages/password/pw-utils.c:107
++msgctxt "Password hint"
++msgid ""
++"This is a weak password. Try to use a mixture of letters, numbers and "
++"punctuation."
++msgstr ""
++
++#: gnome-initial-setup/pages/password/pw-utils.c:109
++msgctxt "Password hint"
++msgid "This is a weak password. Try to avoid repeating the same character."
++msgstr ""
++
++#: gnome-initial-setup/pages/password/pw-utils.c:111
++msgctxt "Password hint"
++msgid ""
++"This is a weak password. Try to avoid repeating the same type of character: "
++"you need to mix up letters, numbers and punctuation."
++msgstr ""
++
++#: gnome-initial-setup/pages/password/pw-utils.c:113
++msgctxt "Password hint"
++msgid "This is a weak password. Try to avoid sequences like 1234 or abcd."
++msgstr ""
++
++#: gnome-initial-setup/pages/password/pw-utils.c:115
++msgctxt "Password hint"
++msgid ""
++"This is a weak password. Try to add more letters, numbers and punctuation."
++msgstr ""
++
++#: gnome-initial-setup/pages/password/pw-utils.c:117
++#, fuzzy
++msgctxt "Password hint"
++msgid "Mix uppercase and lowercase and try to use a number or two."
++msgstr ""
++"অন্ততপক্ষে ৮টি পৃথক অক্ষর ব্যবহার করার চেষ্টা করুন। বড় হাতের এবং ছোট হাতের অক্ষর এবং "
++"একটি বা দুইটি সংখ্যা মিলিয়ে মিশিয়ে ব্যবহার কারুন।"
++
++#: gnome-initial-setup/pages/password/pw-utils.c:119
++msgctxt "Password hint"
++msgid ""
++"Adding more letters, numbers and punctuation will make the password stronger."
++msgstr ""
++
++#. TRANSLATORS: this string describes a password as being poor
++#: gnome-initial-setup/pages/password/pw-utils.c:146
++msgid "poor"
++msgstr ""
++
++#. TRANSLATORS: this string describes a password as being weak
++#: gnome-initial-setup/pages/password/pw-utils.c:150
++msgid "weak"
++msgstr ""
++
++#. TRANSLATORS: this string describes a password as being strong
++#: gnome-initial-setup/pages/password/pw-utils.c:154
++#: gnome-initial-setup/pages/password/pw-utils.c:157
++#, fuzzy
++msgid "strong"
++msgstr "শক্তিশালী"
++
++#. TRANSLATORS: this string describes a password as being excellent
++#: gnome-initial-setup/pages/password/pw-utils.c:161
++msgid "excellent"
++msgstr ""
++
++#. Translators: the first parameter here is the name of a distribution,
++#. * like "Fedora" or "Ubuntu".
++#.
++#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:68
++#, c-format
++msgid ""
++"Sends technical reports that do not contain personal information. Data is "
++"collected by %1$s (<u><a href='%2$s'>privacy policy</a></u>)."
++msgstr ""
++
++#. Translators: the parameter here is the name of a distribution,
++#. * like "Fedora" or "Ubuntu".
++#.
++#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:79
++#, c-format
++msgid ""
++"Sends technical reports that do not contain personal information. Data is "
++"collected by %s."
++msgstr ""
++
++#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:123
++#, c-format
++msgid ""
++"Allows apps to determine your geographical location (<u><a "
++"href='%1$s'>privacy policy</a></u>)."
++msgstr ""
++
++#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:174
++#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:14
++#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:28
++#, fuzzy
++msgid "Location Services"
++msgstr "অবস্থান"
++
++#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:17
++msgid ""
++"Turn on location services to let applications know your geographical "
++"location."
++msgstr ""
++
++#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:56
++msgid "Automatic Problem Reporting"
++msgstr ""
++
++#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:99
++#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:134
++#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:138
++#, fuzzy
++msgid "You can change this later in the Settings app"
+ msgstr "অাপনি এই বিকল্পগুলি সেটিং থেকে যেকোনো সময়ে পরিবর্তন করতে পারবেন।"
++
++#: gnome-initial-setup/pages/software/gis-software-page.c:123
++#: gnome-initial-setup/pages/software/gis-software-page.ui:11
++msgid "Third-Party Repositories"
++msgstr ""
++
++#: gnome-initial-setup/pages/software/gis-software-page.c:125
++#, c-format
++msgid ""
++"Third-party repositories provide access to additional software from selected "
++"<a href='%s'>external sources</a>, including popular apps and drivers that "
++"are important for some devices. Some proprietary software is included."
++msgstr ""
++
++#: gnome-initial-setup/pages/software/gis-software-page.c:127
++msgid ""
++"Third-party repositories provide access to additional software from selected "
++"external sources, including popular apps and drivers that are important for "
++"some devices. Some proprietary software is included."
++msgstr ""
++
++#: gnome-initial-setup/pages/software/gis-software-page.c:139
++msgid "_Disable Third-Party Repositories"
++msgstr ""
++
++#: gnome-initial-setup/pages/software/gis-software-page.c:144
++msgid "_Enable Third-Party Repositories"
++msgstr ""
++
++#. Translators: the parameter here is the name of a distribution,
++#. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
++#. * detect any distribution.
++#: gnome-initial-setup/pages/summary/gis-summary-page.c:406
++#, fuzzy, c-format
++msgid "_Start Using %s"
++msgstr "%s'র ব্যবহার শুরু করুন (_S)"
++
++#. Translators: the parameter here is the name of a distribution,
++#. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
++#. * detect any distribution.
++#: gnome-initial-setup/pages/summary/gis-summary-page.c:413
++#, fuzzy, c-format
++msgid "%s is ready to be used."
++msgstr "অাপনার কম্পিউটার ব্যবহারের জন্য প্রস্তুত।"
++
++#: gnome-initial-setup/pages/summary/gis-summary-page.c:431
++#: gnome-initial-setup/pages/summary/gis-summary-page.c:499
++#: gnome-initial-setup/pages/summary/gis-summary-page.ui:8
++msgid "All done!"
++msgstr ""
++
++#: gnome-initial-setup/pages/summary/gis-summary-page.c:457
++msgid "Setup Failed"
++msgstr ""
++
++#: gnome-initial-setup/pages/summary/gis-summary-page.c:459
++msgid "Close"
++msgstr ""
++
++#: gnome-initial-setup/pages/summary/gis-summary-page.c:472
++msgid "Almost done"
++msgstr ""
++
++#: gnome-initial-setup/pages/summary/gis-summary-page.c:568
++msgid "Setup Complete"
++msgstr ""
++
++#: gnome-initial-setup/pages/summary/gis-summary-page.ui:39
++msgid "Downloading additional language packs"
++msgstr ""
++
++#: gnome-initial-setup/pages/summary/gis-summary-page.ui:47
++msgid "Cancel Download"
++msgstr ""
++
++#: gnome-initial-setup/pages/timezone/gis-location-entry.c:117
++msgid "Search cities"
++msgstr ""
++
++#. Recurse, adding the ADM1 name to the country name
++#. Translators: this is the name of a location followed by a region, for example:
++#. * 'London, United Kingdom'
++#. * You shouldn't need to translate this string unless the language has a different comma.
++#.
++#: gnome-initial-setup/pages/timezone/gis-location-entry.c:557
++#: gnome-initial-setup/pages/timezone/gis-location-entry.c:582
++#, c-format
++msgid "%s, %s"
++msgstr ""
++
++#. Translators: "city, country"
++#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:284
++#, c-format
++msgctxt "timezone loc"
++msgid "%s, %s"
++msgstr ""
++
++#. Translators: UTC here means the Coordinated Universal Time.
++#. * %:::z will be replaced by the offset from UTC e.g. UTC+02
++#.
++#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:320
++msgid "UTC%:::z"
++msgstr ""
++
++#. Translators: This is the time format used in 12-hour mode.
++#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:324
++msgid "%l:%M %p"
++msgstr ""
++
++#. Translators: This is the time format used in 24-hour mode.
++#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:327
++msgid "%R"
++msgstr ""
++
++#. Translators: "timezone (utc shift)"
++#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:330
++#, c-format
++msgctxt "timezone map"
++msgid "%s (%s)"
++msgstr ""
++
++#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:339
++#, c-format
++msgid "Current timezone: %s at %s; current time: %s"
++msgstr ""
++
++#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:505
++#: gnome-initial-setup/pages/timezone/gis-timezone-page.ui:16
++msgid "Time Zone"
++msgstr "টাইম জোন"
++
++#: gnome-initial-setup/pages/timezone/gis-timezone-page.ui:17
++msgid ""
++"The time zone will be set automatically if your location can be found. You "
++"can also search for a city to set it yourself."
++msgstr ""
++
++#: gnome-initial-setup/pages/timezone/gis-timezone-page.ui:49
++msgid "Please search for a nearby city"
++msgstr ""
++
++#. Translators: This is meant to be a warm, engaging welcome message,
++#. * like greeting somebody at the door. If the exclamation mark is not
++#. * suitable for this in your language you may replace it. The space
++#. * before the exclamation mark in this string is a typographical thin
++#. * space (U200a) to improve the spacing in the title, which you can
++#. * keep or remove. The %s is getting replaced with the name and version
++#. * of the OS, e.g. "GNOME 3.38"
++#.
++#: gnome-initial-setup/pages/welcome/gis-welcome-page.c:79
++#, c-format
++msgid "Welcome to %s !"
++msgstr ""
++
++#: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:12
++msgid "Welcome to Ubuntu 24.04 LTS"
++msgstr ""
++
++#: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:13
++msgid ""
++"Complete your setup with additional settings and we'll\n"
++"have you up and running in no time"
++msgstr ""
++
++#: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:32
++msgid "View release notes"
++msgstr ""
++
++#: gnome-initial-setup/pages/apps/gis-apps-page.c:95
++msgid "Ready to go"
++msgstr ""
++
++#: gnome-initial-setup/pages/apps/gis-apps-page.blp:8
++msgid "Get started with more applications"
++msgstr ""
++
++#: gnome-initial-setup/pages/apps/gis-apps-page.blp:9
++msgid "Ubuntu's App Center has a range of apps you can get started with."
++msgstr ""
++
++#: gnome-initial-setup/pages/apps/gis-apps-page.blp:28
++msgid "Open App Center"
++msgstr ""
++
++#: gnome-initial-setup/pages/eula/gis-eula-page.blp:4
++#, fuzzy
++msgid "End-User License Agreement"
++msgstr "লাইসেন্স চুক্তিসমূহ"
++
++#. GNOME Initial Setup
++#. TRANSLATORS: The place-holder is an error message
++#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:73
++#, c-format
++msgid "Failed to grant consent for the Initial Setup application: %s"
++msgstr ""
++
++#. TRANSLATORS: The place-holder is an error message
++#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:75
++#, c-format
++msgid "Failed to withdraw consent for the Initial Setup application: %s"
++msgstr ""
++
++#. Platform source used by timed systemd collection
++#. TRANSLATORS: The place-holder is an error message
++#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:80
++#, c-format
++msgid "Failed to grant consent for the system data collector: %s"
++msgstr ""
++
++#. TRANSLATORS: The place-holder is an error message
++#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:82
++#, c-format
++msgid "Failed to withdraw consent for the system data collector: %s"
++msgstr ""
++
++#. Platform source used by release upgrader collection
++#. TRANSLATORS: The place-holder is an error message
++#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:87
++#, c-format
++msgid "Failed to grant consent for the release upgrader application: %s"
++msgstr ""
++
++#. TRANSLATORS: The place-holder is an error message
++#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:89
++#, c-format
++msgid "Failed to withdraw consent for the release upgrader application: %s"
++msgstr ""
++
++#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:381
++#, c-format
++msgid ""
++"With telemetry log: %s\n"
++"Without telemetry log: %s"
++msgstr ""
++
++#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:411
++#, c-format
++msgid "Failed to collect telemetry report: %s"
++msgstr ""
++
++#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:571
++#, c-format
++msgid "Failed to generate report: %s"
++msgstr ""
++
++#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:589
++#, fuzzy, c-format
++msgid "Failed to write report: %s"
++msgstr "অ্যাকাউন্ট রেজিস্টার করতে ব্যর্থ"
++
++#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:647
++msgid "Show First Report"
++msgstr ""
++
++#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:9
++msgid "Utile Depends On It: Help Improve Ubuntu"
++msgstr ""
++
++#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:10
++msgid ""
++"Help improve Ubuntu by sharing your system and error reports with them.\n"
++"Reports are sent anonymously."
++msgstr ""
++
++#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:31
++msgid "Share _system data with the Ubuntu team"
++msgstr ""
++
++#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:32
++msgid "This includes hardware information, language and timezone"
++msgstr ""
++
++#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:46
++msgid "Learn more about system reporting"
++msgstr ""
++
++#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:57
++msgid "Legal notice"
++msgstr ""
++
++#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:68
++msgid "Show Report"
++msgstr ""
++
++#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:95
++msgid "Share _error reports with the Ubuntu team"
++msgstr ""
++
++#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:96
++msgid "This includes crash reports and related system logs"
++msgstr ""
++
++#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:110
++msgid "Learn more about error reporting"
++msgstr ""
++
++#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:148
++msgid "System Report"
++msgstr ""
++
++#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-attach-page.blp:21
++#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:21
++msgid "Enable Ubuntu Pro"
++msgstr ""
++
++#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-attach-page.blp:29
++msgid "_Attach machine via your Ubuntu One account"
++msgstr ""
++
++#. Translators: translators: This is the other way to attach a machine to Ubuntu Pro
++#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-attach-page.blp:82
++msgid "Or add a _token manually"
++msgstr ""
++
++#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-attach-page.blp:117
++msgid "Token"
++msgstr ""
++
++#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:54
++msgid "Upgrade this device to Ubuntu Pro. Free for personal use."
++msgstr ""
++
++#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:105
++msgid ""
++"Fulfill FedRAMP, FIPS, STIG and HIPAA and other compliance and hardening "
++"requirements with certified tooling and crypto-modules"
++msgstr ""
++
++#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:130
++msgid "Enable Ubuntu Pro now, or skip this step."
++msgstr ""
++
++#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:133
++msgid "_Enable Ubuntu Pro"
++msgstr ""
++
++#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:152
++msgid "_Skip for now"
++msgstr ""
++
++#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:153
++msgid "You can enable Ubuntu Pro later in the Security Center"
++msgstr ""
++
++#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-services-page.blp:22
++msgid "Ubuntu Pro Services"
++msgstr ""
++
++#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-services-page.blp:29
++msgid "Your subscription"
++msgstr ""
++
++#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-services-page.blp:44
++msgid "Your enabled services"
++msgstr ""
++
++#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-services-page.blp:47
++msgid ""
++"You can change the default enablements for your token on the ubuntu.com/pro "
++"web interface. You can also change enabled services in the Settings menu or "
++"with the `<span font_family='monospace'>pro</span>` command-line."
++msgstr ""
++
++#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-services-page.blp:53
++msgid "Other available services"
++msgstr ""
++
++#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:221
++msgid "Valid token"
++msgstr ""
++
++#. TRANSLATORS: The error shown when attaching an
++#. Ubuntu Pro contact fails.
++#. It may be due to various reasons, most common is
++#. an invalid token.
++#.
++#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:236
++msgid "Invalid token or attach failure"
++msgstr ""
++
++#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:244
++msgid "Code expired"
++msgstr ""
++
++#. TRANSLATORS: the placeholder %s is a link to ubuntu.com/pro/attach.
++#. Use HTML encoded format for special characters such as '&'.
++#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:259
++#, c-format
++msgid "Enter this code on %s"
++msgstr ""
++
++#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:316
++msgid "An internet connection is required to enable Ubuntu Pro"
++msgstr ""
++
++#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:466
++#, c-format
++msgid "Get security updates on a wide range of packages until %s"
++msgstr ""
++
++#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:474
++msgid "Ubuntu Pro"
++msgstr ""
++
++#. TRANSLATORS: The anbox-cloud Ubuntu Pro Service description.
++#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:609
++msgid "Scalable Android in the cloud"
++msgstr ""
++
++#. TRANSLATORS: The cc-eal Ubuntu Pro Service description.
++#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:612
++msgid "Common Criteria EAL2 Provisioning Packages"
++msgstr ""
++
++#. TRANSLATORS: The esm-apps Ubuntu Pro Service description.
++#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:615
++msgid "Expanded Security Maintenance for Applications"
++msgstr ""
++
++#. TRANSLATORS: The esm-infra Ubuntu Pro Service description.
++#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:618
++msgid "Expanded Security Maintenance for Infrastructure"
++msgstr ""
++
++#. TRANSLATORS: The fips Ubuntu Pro Service description.
++#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:621
++msgid "NIST-certified FIPS crypto packages"
++msgstr ""
++
++#. TRANSLATORS: The fips-preview Ubuntu Pro Service description.
++#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:624
++msgid "Preview of FIPS crypto packages undergoing certification with NIST"
++msgstr ""
++
++#. TRANSLATORS: The fips-updates Ubuntu Pro Service description.
++#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:627
++msgid "FIPS compliant crypto packages with stable security updates"
++msgstr ""
++
++#. TRANSLATORS: The landscape Ubuntu Pro Service description.
++#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:630
++msgid "Management and administration tool for Ubuntu"
++msgstr ""
++
++#. TRANSLATORS: The livepatch Ubuntu Pro Service description.
++#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:633
++msgid "Canonical kernel Livepatch service"
++msgstr ""
++
++#. TRANSLATORS: The realtime-kernel Ubuntu Pro Service description.
++#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:636
++msgid "Ubuntu kernel with PREEMPT_RT patches integrated"
++msgstr ""
++
++#. TRANSLATORS: The ros Ubuntu Pro Service description.
++#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:639
++msgid "Security Updates for the Robot Operating System"
++msgstr ""
++
++#. TRANSLATORS: The ros-updates Ubuntu Pro Service description.
++#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:642
++msgid "All Updates for the Robot Operating System"
++msgstr ""
++
++#. TRANSLATORS: The usg Ubuntu Pro Service description.
++#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:645
++msgid "Security compliance and audit tools"
++msgstr ""
++
++#. TRANSLATORS: Use HTML encoded format for special characters such as &amp' for '&'. %s is a URL.
++#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:1230
++#, c-format
++msgid "Learn more at %s"
++msgstr ""
++
++#. TRANSLATORS: Subtitle telling who can provide the Ubuntu Pro token.
++#. Use HTML encoded format for special characters such as &amp' for '&'. %s is a URL.
++#.
++#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:1247
++#, c-format
++msgid "From your admin, or from %s"
++msgstr ""
++
++#. TRANSLATORS: An accent color.
++#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:75
++msgid "Blue"
++msgstr ""
++
++#. TRANSLATORS: An accent color.
++#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:78
++msgid "Teal"
++msgstr ""
++
++#. TRANSLATORS: An accent color.
++#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:81
++msgid "Green"
++msgstr ""
++
++#. TRANSLATORS: An accent color.
++#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:84
++msgid "Yellow"
++msgstr ""
++
++#. TRANSLATORS: An accent color.
++#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:87
++msgid "Orange"
++msgstr ""
++
++#. TRANSLATORS: An accent color.
++#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:90
++msgid "Red"
++msgstr ""
++
++#. TRANSLATORS: An accent color.
++#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:93
++msgid "Pink"
++msgstr ""
++
++#. TRANSLATORS: An accent color.
++#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:96
++msgid "Purple"
++msgstr ""
++
++#. TRANSLATORS: An accent color.
++#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:99
++msgid "Slate"
++msgstr ""
++
++#. TRANSLATORS: An accent color.
++#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:102
++msgid "Warty Brown"
++msgstr ""
++
++#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:469
++msgid "Appearance"
++msgstr ""
++
++#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
++msgid "Choose how Ubuntu looks"
++msgstr ""
++
++#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
++msgid "Personalize your desktop's appearance"
++msgstr ""
++
++#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
++msgid "Style"
++msgstr ""
++
++#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:53
++msgid "_Default"
++msgstr ""
++
++#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:82
++msgid "Da_rk"
++msgstr ""
++
++#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:100
++msgid "OLED screen detected. Dark style may save power."
++msgstr ""
++
++#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:112
++msgid "Accent Color"
++msgstr ""
++
++#: po/EXTRA_STRINGS.sh:1
++#, fuzzy
++msgid "Force live user mode"
++msgstr "বলপূর্বক নতুন ব্যবহারকারী মোড"
++
++#: po/EXTRA_STRINGS.sh:2
++#, fuzzy
++msgid "Force OEM mode"
++msgstr "বলপূর্বক নতুন ব্যবহারকারী মোড"
++
++#: po/EXTRA_STRINGS.sh:3
++msgid "Try or Install?"
++msgstr ""
++
++#: po/EXTRA_STRINGS.sh:4
++#, sh-format
++msgid ""
++"You can try a temporary version of ${NAME} without making changes to the "
++"computer. If you decide to install later, just launch the installer from the "
++"Activities view.\n"
++"\n"
++"        Alternatively, choose install to launch the installer."
++msgstr ""
++
++#: po/EXTRA_STRINGS.sh:7
++msgid "Install to Disk…"
++msgstr ""
++
++#: po/EXTRA_STRINGS.sh:8
++#, sh-format
++msgid "Try ${NAME}"
++msgstr ""
++
++#: po/EXTRA_STRINGS.sh:9
++#, sh-format
++msgid "Install ${PRETTY_NAME}"
++msgstr ""
++
++#~ msgid "No password"
++#~ msgstr "পাসওয়ার্ড নেই"
++
++#~ msgid "Login"
++#~ msgstr "লগ-ইন"
++
++#~ msgid "Create a Local Account"
++#~ msgstr "একটি স্থানীয় অ্যাকাউন্ট তৈরি করুন"
++
++#~ msgid "page 1"
++#~ msgstr "পৃষ্ঠা ১"
++
++#~ msgid "Create an Enterprise Account"
++#~ msgstr "একটি এন্টারপ্রাইজ অ্যাকাউন্ট তৈরি করুন"
++
++#~ msgctxt "Password strength"
++#~ msgid "Too short"
++#~ msgstr "খুবই ছোট"
++
++#~ msgctxt "Password strength"
++#~ msgid "Not good enough"
++#~ msgstr "যথেষ্ট ভালো নয়"
++
++#~ msgctxt "Password strength"
++#~ msgid "Weak"
++#~ msgstr "দুর্বল"
++
++#~ msgctxt "Password strength"
++#~ msgid "Fair"
++#~ msgstr "ন্যায্য"
++
++#~ msgctxt "Password strength"
++#~ msgid "Good"
++#~ msgstr "ভাল"
++
++#, c-format
++#~ msgid "A user with the username '%s' already exists"
++#~ msgstr "%s নামের একটি ব্যবহারকারী ইতিমধ্যেই উপস্থিত রয়েছে"
++
++#~ msgid "Add Account"
++#~ msgstr "একাউন্ট যোগ করুন"
++
++#~ msgid "Error creating account"
++#~ msgstr "একাউন্ট তৈরি ত্রুটি"
++
++#~ msgid "Error removing account"
++#~ msgstr "অ্যাকাউন্ট অপসারণের করার সময় ত্রুটি"
++
++#~ msgid "Are you sure you want to remove the account?"
++#~ msgstr "আপনি কি নিশ্চিতরূপে অ্যাকাউন্টটি সরাতে চান?"
++
++#~ msgid "This will not remove the account on the server."
++#~ msgstr "এটি সার্ভারে অ্যাকাউন্ট মুছে ফেলবে না।"
++
++#~ msgid "Online Accounts"
++#~ msgstr "অনলাইন অ্যাকাউন্টস"
++
++#~ msgid "Connect to your existing data in the cloud"
++#~ msgstr "ক্লাউডে অাপনার বিদ্যমান ডেটার সংগে সংযুক্ত করুন"
++
++#~ msgid ""
++#~ "Adding accounts will allow you to transparently connect to your online "
++#~ "photos, contacts, mail, and more."
++#~ msgstr ""
++#~ "অ্যাকাউন্টগুলি যোগ করা হলে তার সাহায্যে অাপনি সরাসারি অাপনার অনলাইন ছবি, "
++#~ "পরিচিতি, মেল এবং অারো অনেক কিছুর সংগে সংযুক্ত হতে পারবেন।"
++
++#~ msgid "_Add Account"
++#~ msgstr "অ্যাকাউন্ট যোগ করুন (_A)"
++
++# auto translated by TM merge from project: rhsm-web, version: 0.0, DocId: management
++#~ msgid "Other"
++#~ msgstr "অন্যান্য"
++
++#~ msgid "Input Sources"
++#~ msgstr "ইনপুট সোর্স"
++
++#~ msgid "Select input sources"
++#~ msgstr "ইনপুট সোর্সগুলি নির্বাচন করুন"
++
++#~ msgid "Login settings are used by all users when logging into the system"
++#~ msgstr ""
++#~ "সিস্টেমে লগিন করার সময়ে সকল ব্যবহারকারীর দ্বারা লগিন সেটিং ব্যবহার করা হয়"
++
++#~ msgid "Add an Input Source"
++#~ msgstr "একটি ইনপুট সোর্স যোগ করুন"
++
++#~ msgid "Search for a location"
++#~ msgstr "একটি অবস্থান অনুসন্ধান করুন"
++
++#~ msgid "Choose Your Location"
++#~ msgstr "আপনার অবস্থান বেছে নিন"
++
++#~ msgid "_Determine your location automatically"
++#~ msgstr "আপনার অবস্থান স্বয়ংক্রিয়ভাবে নির্ধারণ করুন (_D)"
++
++#~ msgid "Network is not available."
++#~ msgstr "নেটওয়ার্ক উপলভ্য নয়।"
++
++#~ msgid "No network devices found."
++#~ msgstr "কোন নেটওয়ার্ক ডিভাইস পাওয়া যায়নি।"
++
++#~ msgid "Thank You"
++#~ msgstr "ধন্যবাদ"
