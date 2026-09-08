@@ -86,7 +86,7 @@ update_welcome_title (GisWelcomePage *page)
     return;
 
   release_note_uri = g_strdup_printf (
-        "https://www.ubuntu.com/getubuntu/releasenotes?os=ubuntu&ver=%s",
+        "https://www.ubuntu.com/getubuntu/releasenotes?os=ubuntu&ver=%s", // TODO: Change this to Utile OS release notes
         version);
 
   gtk_link_button_set_uri (GTK_LINK_BUTTON (priv->release_notes), release_note_uri);

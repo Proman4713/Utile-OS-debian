@@ -37,3 +37,4 @@ ubuntu/gnome-initial-setup-Show-privacy-panel-for-upgraders-on-2.patch
 ubuntu/pages-Add-an-appearance-page-to-customize-the-UI-style.patch
 ubuntu/gis-password-page-Adapt-per-gis-accessible-bin-usage.patch
 ubuntu/launchpad_translations_export.patch
+substitute-utile-branding.patch
