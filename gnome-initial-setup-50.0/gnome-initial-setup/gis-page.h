@@ -59,7 +59,6 @@ struct _GisPageClass
   void         (*locale_changed) (GisPage *page);
   gboolean     (*apply) (GisPage *page,
                          GCancellable *cancellable);
-  gboolean     (*go_back) (GisPage *page);
   gboolean     (*save_data) (GisPage  *page,
                              GError  **error);
   void         (*shown) (GisPage *page);
@@ -74,8 +73,6 @@ gboolean     gis_page_get_complete (GisPage *page);
 void         gis_page_set_complete (GisPage *page, gboolean complete);
 gboolean     gis_page_get_skippable (GisPage *page);
 void         gis_page_set_skippable (GisPage *page, gboolean skippable);
-gboolean     gis_page_get_hide_navigation (GisPage *page);
-void         gis_page_set_hide_navigation (GisPage *page, gboolean hide_navigation);
 gboolean     gis_page_get_needs_accept (GisPage *page);
 void         gis_page_set_needs_accept (GisPage *page, gboolean needs_accept);
 gboolean     gis_page_get_has_forward (GisPage *page);
@@ -84,7 +81,6 @@ void         gis_page_locale_changed (GisPage *page);
 void         gis_page_apply_begin (GisPage *page, GisPageApplyCallback callback, gpointer user_data);
 void         gis_page_apply_cancel (GisPage *page);
 void         gis_page_apply_complete (GisPage *page, gboolean valid);
-gboolean     gis_page_go_back (GisPage *page);
 gboolean     gis_page_get_applying (GisPage *page);
 gboolean     gis_page_save_data (GisPage  *page,
                                  GError  **error);

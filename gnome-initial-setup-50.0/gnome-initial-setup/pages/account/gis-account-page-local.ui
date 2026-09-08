@@ -145,69 +145,11 @@
               </object>
             </child>
             <child>
-              <object class="GtkLabel" id="hostname_label">
-                <property name="halign">end</property>
-                <property name="xalign">1</property>
-                <property name="label" translatable="yes">_Computer</property>
-                <property name="use_underline">True</property>
-                <property name="mnemonic_widget">hostname_entry</property>
-                <property name="margin_top">6</property>
-                <layout>
-                  <property name="column">0</property>
-                  <property name="row">6</property>
-                </layout>
-              </object>
-            </child>
-            <child>
-              <object class="GtkOverlay">
-                <layout>
-                  <property name="column">1</property>
-                  <property name="row">6</property>
-                </layout>
-                <child>
-                  <object class="GtkEntry" id="hostname_entry">
-                    <property name="max_length">255</property>
-                    <property name="width-chars">25</property>
-                  </object>
-                </child>
-                <child type="overlay">
-                  <object class="GtkSpinner" id="hostname_verifier_spinner">
-                    <property name="margin-end">6</property>
-                    <property name="halign">end</property>
-                    <property name="valign">center</property>
-                    <property name="spinning">True</property>
-                    <property name="visible">False</property>
-                  </object>
-                </child>
-              </object>
-            </child>
-            <child>
-              <object class="GtkLabel" id="hostname_explanation">
-                <property name="yalign">0</property>
-                <property name="xalign">0</property>
-                <property name="width-chars">35</property>
-                <property name="max-width-chars">35</property>
-                <property name="height-request">50</property>
-                <property name="wrap">True</property>
-                <property name="wrap_mode">word-char</property>
-                <layout>
-                  <property name="column">1</property>
-                  <property name="row">7</property>
-                </layout>
-                <style>
-                  <class name="dim-label"/>
-                </style>
-                <attributes>
-                  <attribute name="scale" value="0.8"/>
-                </attributes>
-              </object>
-            </child>
-            <child>
               <object class="GtkBox" id="enable_parental_controls_box">
                 <property name="orientation">vertical</property>
                 <layout>
                   <property name="column">1</property>
-                  <property name="row">8</property>
+                  <property name="row">6</property>
                 </layout>
                 <child>
                   <object class="GtkCheckButton" id="enable_parental_controls_check_button">

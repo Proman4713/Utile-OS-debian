@@ -10,69 +10,49 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
-"issues\n"
-"POT-Creation-Date: 2026-09-09 01:52+0300\n"
-"PO-Revision-Date: 2026-04-14 01:43+0000\n"
-"Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
+"issues/\n"
+"POT-Creation-Date: 2025-11-28 10:48+0000\n"
+"PO-Revision-Date: 2026-01-18 18:10+0700\n"
+"Last-Translator: Ega Natha <ega8642@gmail.com>\n"
 "Language-Team: Indonesian\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2026-07-01 12:24+0000\n"
-"X-Generator: Launchpad (build c38ea58da9d7185c4996adfc854ab433551cdcdd)\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.8\n"
 
 #: data/gnome-initial-setup.desktop.in.in:2
-#: gnome-initial-setup/gis-driver.c:890
+#: gnome-initial-setup/gis-driver.c:869
 msgid "Initial Setup"
 msgstr "Penyiapan Awal"
 
-#: gnome-initial-setup/gis-assistant.c:425
+#: gnome-initial-setup/gis-assistant.c:401
 msgid "_Next"
 msgstr "Sela_njutnya"
 
-#: gnome-initial-setup/gis-assistant.c:426
-msgid "_Finish"
-msgstr "_Selesai"
-
-#: gnome-initial-setup/gis-assistant.c:427
+#: gnome-initial-setup/gis-assistant.c:402
 msgid "_Accept"
 msgstr "Terim_a"
 
-#: gnome-initial-setup/gis-assistant.c:428
+#: gnome-initial-setup/gis-assistant.c:403
 msgid "_Skip"
 msgstr "Lewa_ti"
 
-#: gnome-initial-setup/gis-assistant.c:429
+#: gnome-initial-setup/gis-assistant.c:404
 msgid "_Previous"
 msgstr "Se_belumnya"
 
-#: gnome-initial-setup/gis-assistant.c:430
+#: gnome-initial-setup/gis-assistant.c:405
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:254
 msgid "_Cancel"
 msgstr "_Batal"
 
-#: gnome-initial-setup/gis-webkit.c:54
-msgid "Scan the QR Code…"
-msgstr "Pindai Kode QR..."
-
-#: gnome-initial-setup/gis-webkit.c:244
-msgid "Open in default web browser"
-msgstr "Buka di peramban web baku"
-
-#: gnome-initial-setup/gis-webkit.c:247
-msgid "Open in default file handler"
-msgstr "Buka di penangan berkas baku"
-
-#: gnome-initial-setup/gnome-initial-setup.c:362
+#: gnome-initial-setup/gnome-initial-setup.c:280
 msgid "Force existing user mode"
 msgstr "Paksakan mode pengguna yang ada"
 
-#: gnome-initial-setup/gnome-initial-setup.c:364
-msgid "Force Upgrade user"
-msgstr "Paksa Tingkatkan pengguna"
-
-#: gnome-initial-setup/gnome-initial-setup.c:378
+#: gnome-initial-setup/gnome-initial-setup.c:294
 msgid "— GNOME initial setup"
 msgstr "— GNOME penyiapan awal"
 
@@ -145,7 +125,6 @@ msgstr ""
 "Anda."
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:179
-#: gnome-initial-setup/pages/account/gis-account-page-local.ui:151
 msgid "_Computer"
 msgstr "_Komputer"
 
@@ -161,34 +140,16 @@ msgstr "Kata Sandi Administrator"
 msgid "C_ontinue"
 msgstr "L_anjutkan"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:210
-#, c-format
-msgid "The hostname is too long."
-msgstr "Nama host terlalu panjang"
-
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:214
-msgid "The hostname must start with a lower case letter from a-z or a digit."
-msgstr ""
-"Nama host harus dimulai dengan suatu huruf kecil a-z atau sebuah angka."
-
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:218
-msgid ""
-"The hostname should only consist of lower case letters from a-z, digits and "
-"a hyphen: -"
-msgstr ""
-"Nama host hanya boleh terdiri dari huruf kecil a-z, angka, dan tanda hubung: "
-"-"
-
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:545
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:321
 msgid "We need a few details to complete setup."
 msgstr "Kami perlu beberapa rincian untuk melengkapi penyiapan."
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:704
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:476
 msgid "Administrator"
 msgstr "Administrator"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:710
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:753
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:482
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:525
 #, c-format
 msgid "Failed to create user '%s': "
 msgstr "Gagal membuat pengguna '%s': "
@@ -214,11 +175,11 @@ msgstr "Harap isi nama dan nama pengguna. Anda juga dapat memilih gambar."
 msgid "_Full Name"
 msgstr "Nama _Lengkap"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.ui:217
+#: gnome-initial-setup/pages/account/gis-account-page-local.ui:159
 msgid "Set up _parental controls for this user"
 msgstr "Siapkan _pengawasan orang tua untuk pengguna ini"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.ui:223
+#: gnome-initial-setup/pages/account/gis-account-page-local.ui:165
 msgid "For use by a parent or supervisor, who must set up their own password."
 msgstr ""
 "Untuk digunakan oleh orang tua atau penyelia, yang harus mengatur kata sandi "
@@ -290,7 +251,7 @@ msgid "Preview"
 msgstr "Pratinjau"
 
 #: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:325
-#: gnome-initial-setup/pages/language/cc-language-chooser.c:244
+#: gnome-initial-setup/pages/language/cc-language-chooser.c:242
 msgid "More…"
 msgstr "Lebih banyak…"
 
@@ -301,7 +262,7 @@ msgstr "Lebih banyak…"
 msgid "No inputs found"
 msgstr "Tak ditemukan masukan"
 
-#: gnome-initial-setup/pages/keyboard/gis-keyboard-page.c:484
+#: gnome-initial-setup/pages/keyboard/gis-keyboard-page.c:502
 #: gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui:16
 msgid "Typing"
 msgstr "Mengetik"
@@ -314,11 +275,11 @@ msgstr "Pilih tata letak papan tik Anda atau metoda masukan."
 msgid "Search keyboards and input methods"
 msgstr "Cari metode masukan dan tata letak papan tik"
 
-#: gnome-initial-setup/pages/language/cc-language-chooser.c:264
+#: gnome-initial-setup/pages/language/cc-language-chooser.c:262
 msgid "No languages found"
 msgstr "Tak ada bahasa yang ditemukan"
 
-#: gnome-initial-setup/pages/language/gis-language-page.c:146
+#: gnome-initial-setup/pages/language/gis-language-page.c:268
 #: gnome-initial-setup/pages/language/gis-language-page.ui:14
 msgid "Welcome"
 msgstr "Selamat Datang"
@@ -427,7 +388,7 @@ msgstr "Kekuatan kata sandi: %s."
 msgid "The passwords do not match."
 msgstr "Kata sandi tak cocok."
 
-#: gnome-initial-setup/pages/password/gis-password-page.c:427
+#: gnome-initial-setup/pages/password/gis-password-page.c:430
 msgid "Password"
 msgstr "Kata Sandi"
 
@@ -606,19 +567,19 @@ msgstr "sempurna"
 #. Translators: the first parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu".
 #.
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:68
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:70
 #, c-format
 msgid ""
 "Sends technical reports that do not contain personal information. Data is "
-"collected by %1$s (<u><a href='%2$s'>privacy policy</a></u>)."
+"collected by %1$s (<a href='%2$s'>privacy policy</a>)."
 msgstr ""
-"Mengirim laporan teknis yang tidak mengandung informasi pribadi. Data "
-"dikumpulkan oleh %1$s (<u><a href='%2$s'>kebijakan privasi</a></u>)."
+"Mengirimkan laporan teknis yang tidak mengandung informasi pribadi. Data "
+"dikumpulkan oleh %1$s (<a href='%2$s'>kebijakan privasi</a>)."
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu".
 #.
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:79
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:82
 #, c-format
 msgid ""
 "Sends technical reports that do not contain personal information. Data is "
@@ -627,45 +588,33 @@ msgstr ""
 "Mengirimkan laporan teknis yang tidak mengandung informasi pribadi. Data "
 "dikumpulkan oleh %s."
 
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:123
-#, c-format
-msgid ""
-"Allows apps to determine your geographical location (<u><a "
-"href='%1$s'>privacy policy</a></u>)."
-msgstr ""
-"Mengizinkan app menentukan lokasi geografis Anda <u><a href='%1$s'>kebijakan "
-"privasi</a></u>)."
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:125
+msgid "Allows apps to determine your geographical location."
+msgstr "Mengizinkan aplikasi menentukan lokasi geografis Anda."
 
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:174
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:14
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:28
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:171
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:15
+msgid "Privacy"
+msgstr "Privasi"
+
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:33
 msgid "Location Services"
 msgstr "Layanan Lokasi"
 
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:17
-msgid ""
-"Turn on location services to let applications know your geographical "
-"location."
-msgstr ""
-"Nyalakan layanan lokasi agar memungkinkan aplikasi tahu lokasi geografis "
-"Anda."
-
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:56
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:65
 msgid "Automatic Problem Reporting"
 msgstr "Pelaporan Masalah Otomatis"
 
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:99
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:134
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:138
-msgid "You can change this later in the Settings app"
-msgstr "Anda dapat mengubah ini nanti dalam app Pengaturan"
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:97
+msgid "Privacy controls can be changed at any time from the Settings app."
+msgstr "Kendali privasi dapat diubah setiap saat dari aplikasi Pengaturan."
 
-#: gnome-initial-setup/pages/software/gis-software-page.c:123
+#: gnome-initial-setup/pages/software/gis-software-page.c:127
 #: gnome-initial-setup/pages/software/gis-software-page.ui:11
 msgid "Third-Party Repositories"
 msgstr "Repositori Pihak Ketiga"
 
-#: gnome-initial-setup/pages/software/gis-software-page.c:125
+#: gnome-initial-setup/pages/software/gis-software-page.c:129
 #, c-format
 msgid ""
 "Third-party repositories provide access to additional software from selected "
@@ -677,7 +626,7 @@ msgstr ""
 "populer yang penting untuk beberapa perangkat. Beberapa perangkat lunak "
 "proprietari disertakan."
 
-#: gnome-initial-setup/pages/software/gis-software-page.c:127
+#: gnome-initial-setup/pages/software/gis-software-page.c:131
 msgid ""
 "Third-party repositories provide access to additional software from selected "
 "external sources, including popular apps and drivers that are important for "
@@ -688,18 +637,26 @@ msgstr ""
 "penting untuk beberapa perangkat. Beberapa perangkat lunak berpemilik "
 "disertakan."
 
-#: gnome-initial-setup/pages/software/gis-software-page.c:139
+#: gnome-initial-setup/pages/software/gis-software-page.c:143
 msgid "_Disable Third-Party Repositories"
 msgstr "Non-Aktifkan _Repositori Pihak Ketiga"
 
-#: gnome-initial-setup/pages/software/gis-software-page.c:144
+#: gnome-initial-setup/pages/software/gis-software-page.c:148
 msgid "_Enable Third-Party Repositories"
 msgstr "Aktifkan R_epositori Pihak Ketiga"
+
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:211
+msgid "Setup Failed"
+msgstr "Penyiapan Gagal"
+
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:213
+msgid "Close"
+msgstr "Tutup"
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
 #. * detect any distribution.
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:406
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:239
 #, c-format
 msgid "_Start Using %s"
 msgstr "_Mulai memakai %s"
@@ -707,40 +664,18 @@ msgstr "_Mulai memakai %s"
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
 #. * detect any distribution.
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:413
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:246
 #, c-format
 msgid "%s is ready to be used."
 msgstr "%s siap digunakan."
 
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:431
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:499
-#: gnome-initial-setup/pages/summary/gis-summary-page.ui:8
-msgid "All done!"
-msgstr "Semua selesai!"
-
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:457
-msgid "Setup Failed"
-msgstr "Penyiapan Gagal"
-
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:459
-msgid "Close"
-msgstr "Tutup"
-
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:472
-msgid "Almost done"
-msgstr "Hampir selesai"
-
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:568
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:270
 msgid "Setup Complete"
 msgstr "Penyiapan Selesai"
 
-#: gnome-initial-setup/pages/summary/gis-summary-page.ui:39
-msgid "Downloading additional language packs"
-msgstr "Mengunduh paket bahasa tambahan"
-
-#: gnome-initial-setup/pages/summary/gis-summary-page.ui:47
-msgid "Cancel Download"
-msgstr "Batal Unduh"
+#: gnome-initial-setup/pages/summary/gis-summary-page.ui:8
+msgid "All done!"
+msgstr "Semua selesai!"
 
 #: gnome-initial-setup/pages/timezone/gis-location-entry.c:117
 msgid "Search cities"
@@ -818,439 +753,26 @@ msgstr "Harap cari kota yang berdekatan"
 #. * keep or remove. The %s is getting replaced with the name and version
 #. * of the OS, e.g. "GNOME 3.38"
 #.
-#: gnome-initial-setup/pages/welcome/gis-welcome-page.c:79
+#: gnome-initial-setup/pages/welcome/gis-welcome-page.c:62
 #, c-format
 msgid "Welcome to %s !"
 msgstr "Selamat datang di %s!"
 
-#: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:12
-msgid "Welcome to Ubuntu 24.04 LTS"
-msgstr "Selamat Datang ke Ubuntu 24.04 LTS"
-
-#: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:13
-msgid ""
-"Complete your setup with additional settings and we'll\n"
-"have you up and running in no time"
-msgstr ""
-"Lengkapi penyiapan Anda dengan pengaturan tambahan\n"
-"dan kami akan membuat sistem Anda berjalan segera"
+#: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:4
+msgid "Setup"
+msgstr "Penyiapan"
 
 #: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:32
-msgid "View release notes"
-msgstr "Lihat catatan rilis"
-
-#: gnome-initial-setup/pages/apps/gis-apps-page.c:95
-msgid "Ready to go"
-msgstr "Siap pergi"
-
-#: gnome-initial-setup/pages/apps/gis-apps-page.blp:8
-msgid "Get started with more applications"
-msgstr "Memulai dengan lebih banyak aplikasi"
-
-#: gnome-initial-setup/pages/apps/gis-apps-page.blp:9
-msgid "Ubuntu's App Center has a range of apps you can get started with."
-msgstr ""
-"Pusat App Ubuntu memiliki sejumlah aplikasi yang dapat mulai Anda pakai."
-
-#: gnome-initial-setup/pages/apps/gis-apps-page.blp:28
-msgid "Open App Center"
-msgstr "Buka Pusat App"
-
-#: gnome-initial-setup/pages/eula/gis-eula-page.blp:4
-msgid "End-User License Agreement"
-msgstr "Perjanjian Lisensi Pengguna Akhir"
-
-#. GNOME Initial Setup
-#. TRANSLATORS: The place-holder is an error message
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:73
-#, c-format
-msgid "Failed to grant consent for the Initial Setup application: %s"
-msgstr "Gagal memberikan persetujuan ke aplikasi Penyiapan Awal: %s"
-
-#. TRANSLATORS: The place-holder is an error message
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:75
-#, c-format
-msgid "Failed to withdraw consent for the Initial Setup application: %s"
-msgstr "Gagal mencabut persetujuan bagi aplikasi Penyiapan Awal: %s"
-
-#. Platform source used by timed systemd collection
-#. TRANSLATORS: The place-holder is an error message
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:80
-#, c-format
-msgid "Failed to grant consent for the system data collector: %s"
-msgstr "Gagal memberikan persetujuan ke pengumpul data sistem: %s"
-
-#. TRANSLATORS: The place-holder is an error message
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:82
-#, c-format
-msgid "Failed to withdraw consent for the system data collector: %s"
-msgstr "Gagal mencabut persetujuan bagi pengumpul data sistem: %s"
-
-#. Platform source used by release upgrader collection
-#. TRANSLATORS: The place-holder is an error message
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:87
-#, c-format
-msgid "Failed to grant consent for the release upgrader application: %s"
-msgstr "Gagal memberikan persetujuan bagi aplikasi peningkat rilis: %s"
-
-#. TRANSLATORS: The place-holder is an error message
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:89
-#, c-format
-msgid "Failed to withdraw consent for the release upgrader application: %s"
-msgstr "Gagal mencabut persetujuan bagi aplikasi peningkat rilis: %s"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:381
-#, c-format
 msgid ""
-"With telemetry log: %s\n"
-"Without telemetry log: %s"
+"Setup will guide you through making an account and enabling some features. "
+"We’ll have you up and running in no time."
 msgstr ""
-"Dengan log telemetri: %s\n"
-"Tanpa log telemetri: %s"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:411
-#, c-format
-msgid "Failed to collect telemetry report: %s"
-msgstr "Gagal mengumpulkan laporan telemetri: %s"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:571
-#, c-format
-msgid "Failed to generate report: %s"
-msgstr "Gagal membuat laporan: %s"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:589
-#, c-format
-msgid "Failed to write report: %s"
-msgstr "Gagal menulis laporan: %s"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:647
-msgid "Show First Report"
-msgstr "Tunjukkan Laporan Pertama"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:9
-#, fuzzy
-msgid "Utile Depends On It: Help Improve Ubuntu"
-msgstr "Bantu Memperbaiki Ubuntu"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:10
-#, fuzzy
-msgid ""
-"Help improve Ubuntu by sharing your system and error reports with them.\n"
-"Reports are sent anonymously."
-msgstr ""
-"Bantu kami memperbaiki Ubuntu dengan berbagi laporan sistem dan galat Anda "
-"dengan kami.\n"
-"Laporan dikirim secara anonim."
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:31
-msgid "Share _system data with the Ubuntu team"
-msgstr "Bagikan data _sistem dengan tim Ubuntu"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:32
-msgid "This includes hardware information, language and timezone"
-msgstr "Ini termasuk informasi perangkat keras, bahasa, dan zona waktu"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:46
-msgid "Learn more about system reporting"
-msgstr "Pelajari lebih lanjut tentang pelaporan sistem"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:57
-msgid "Legal notice"
-msgstr "Pemberitahuan hukum"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:68
-msgid "Show Report"
-msgstr "Tunjukkan Laporan"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:95
-msgid "Share _error reports with the Ubuntu team"
-msgstr "Bagikan laporan galat d_engan tim Ubuntu"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:96
-msgid "This includes crash reports and related system logs"
-msgstr "Ini termasuk laporan crash dan log sistem terkait"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:110
-msgid "Learn more about error reporting"
-msgstr "Pelajari lebih lanjut tentang pelaporan galat"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:148
-msgid "System Report"
-msgstr "Laporan Sistem"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-attach-page.blp:21
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:21
-msgid "Enable Ubuntu Pro"
-msgstr "Aktifkan Ubuntu Pro"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-attach-page.blp:29
-msgid "_Attach machine via your Ubuntu One account"
-msgstr "C_antolkan mesin melalui akun Ubuntu One Anda"
-
-#. Translators: translators: This is the other way to attach a machine to Ubuntu Pro
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-attach-page.blp:82
-msgid "Or add a _token manually"
-msgstr "Atau tambahkan sebuah _token secara manual"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-attach-page.blp:117
-msgid "Token"
-msgstr "Token"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:54
-msgid "Upgrade this device to Ubuntu Pro. Free for personal use."
-msgstr ""
-"Tingkatkan perangkat ini ke Ubuntu Pro. Bebas untuk penggunaan pribadi."
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:105
-msgid ""
-"Fulfill FedRAMP, FIPS, STIG and HIPAA and other compliance and hardening "
-"requirements with certified tooling and crypto-modules"
-msgstr ""
-"Penuhi FedRAMP, FIPS, STIG, dan HIPAA serta persyaratan hardening dan "
-"kepatuhan lain dengan perkakas tersertifikasi dan modul kripto"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:130
-msgid "Enable Ubuntu Pro now, or skip this step."
-msgstr "Fungsikan Ubuntu Pro sekarang, atau lewati langkah ini."
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:133
-msgid "_Enable Ubuntu Pro"
-msgstr "_Fungsikan Ubuntu Pro"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:152
-msgid "_Skip for now"
-msgstr "Lewait _sekarang"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:153
-msgid "You can enable Ubuntu Pro later in the Security Center"
-msgstr "Anda dapat memfungsikan Ubuntu Pro nanti dalam Pusat Keamanan"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-services-page.blp:22
-msgid "Ubuntu Pro Services"
-msgstr "Layanan Ubuntu Pro"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-services-page.blp:29
-msgid "Your subscription"
-msgstr "Langganan Anda"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-services-page.blp:44
-msgid "Your enabled services"
-msgstr "Layanan Anda yang difungsikan"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-services-page.blp:47
-msgid ""
-"You can change the default enablements for your token on the ubuntu.com/pro "
-"web interface. You can also change enabled services in the Settings menu or "
-"with the `<span font_family='monospace'>pro</span>` command-line."
-msgstr ""
-"Anda dapat mengubah pemfungsian baku bagi token Anda pada antar muka web "
-"ubuntu.com/pro. Anda juga dapat mengubah layanan yang difungsikan dalam menu "
-"Pengaturan atau dengan perintah baris  `<span font_family='monospace'>pro</"
-"span>`."
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-services-page.blp:53
-msgid "Other available services"
-msgstr "Layanan lain yang tersedia"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:221
-msgid "Valid token"
-msgstr "Token valid"
-
-#. TRANSLATORS: The error shown when attaching an
-#. Ubuntu Pro contact fails.
-#. It may be due to various reasons, most common is
-#. an invalid token.
-#.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:236
-msgid "Invalid token or attach failure"
-msgstr "Token tidak valid atau kegagalan pencantolan"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:244
-msgid "Code expired"
-msgstr "Kode sudah kedaluwarsa"
-
-#. TRANSLATORS: the placeholder %s is a link to ubuntu.com/pro/attach.
-#. Use HTML encoded format for special characters such as '&'.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:259
-#, c-format
-msgid "Enter this code on %s"
-msgstr "Masukkan kode ini di %s"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:316
-msgid "An internet connection is required to enable Ubuntu Pro"
-msgstr "Koneksi internet diperlukan untuk mengaktifkan Ubuntu Pro"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:466
-#, c-format
-msgid "Get security updates on a wide range of packages until %s"
-msgstr "Dapatkan pemutakhiran keamanan pada berbagai macam paket sampai %s"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:474
-msgid "Ubuntu Pro"
-msgstr "Ubuntu Pro"
-
-#. TRANSLATORS: The anbox-cloud Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:609
-msgid "Scalable Android in the cloud"
-msgstr "Android yang Scalable di cloud"
-
-#. TRANSLATORS: The cc-eal Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:612
-msgid "Common Criteria EAL2 Provisioning Packages"
-msgstr "Paket Provisi Common Criteria EAL2"
-
-#. TRANSLATORS: The esm-apps Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:615
-msgid "Expanded Security Maintenance for Applications"
-msgstr "Pemeliharaan Keamanan yang Diperluas bagi Aplikasi"
-
-#. TRANSLATORS: The esm-infra Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:618
-msgid "Expanded Security Maintenance for Infrastructure"
-msgstr "Pemeliharaan Keamanan yang Diperluas bagi Infrastruktur"
-
-#. TRANSLATORS: The fips Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:621
-msgid "NIST-certified FIPS crypto packages"
-msgstr "Paket kripto FIPS tersertifikasi NIST"
-
-#. TRANSLATORS: The fips-preview Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:624
-msgid "Preview of FIPS crypto packages undergoing certification with NIST"
-msgstr ""
-"Pratinjau atas paket-paket kripto FIPS yang sedang dalam proses sertifikasi "
-"dengan NIST"
-
-#. TRANSLATORS: The fips-updates Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:627
-msgid "FIPS compliant crypto packages with stable security updates"
-msgstr "Paket-paket kripto patuh FIPS dengan pembaruan keamanan stabil"
-
-#. TRANSLATORS: The landscape Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:630
-msgid "Management and administration tool for Ubuntu"
-msgstr "Alat manajemen dan administrasi untuk Ubuntu"
-
-#. TRANSLATORS: The livepatch Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:633
-msgid "Canonical kernel Livepatch service"
-msgstr "Layanan Livepatch kernel Canonical"
-
-#. TRANSLATORS: The realtime-kernel Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:636
-msgid "Ubuntu kernel with PREEMPT_RT patches integrated"
-msgstr "Kernel Ubuntu dengan patch PREEMPT_RT yang terintegrasi"
-
-#. TRANSLATORS: The ros Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:639
-msgid "Security Updates for the Robot Operating System"
-msgstr "Pembaruan Keamanan bagi Robot Operating System"
-
-#. TRANSLATORS: The ros-updates Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:642
-msgid "All Updates for the Robot Operating System"
-msgstr "Semua Pembaruan bagi Robot Operating System"
-
-#. TRANSLATORS: The usg Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:645
-msgid "Security compliance and audit tools"
-msgstr "Kepatuhan keamanan dan perkakas audit"
-
-#. TRANSLATORS: Use HTML encoded format for special characters such as &amp' for '&'. %s is a URL.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:1230
-#, c-format
-msgid "Learn more at %s"
-msgstr "Pelajari lebih lanjut di %s"
-
-#. TRANSLATORS: Subtitle telling who can provide the Ubuntu Pro token.
-#. Use HTML encoded format for special characters such as &amp' for '&'. %s is a URL.
-#.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:1247
-#, c-format
-msgid "From your admin, or from %s"
-msgstr "Dari admin Anda, atau dari %s"
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:75
-msgid "Blue"
-msgstr "Biru"
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:78
-msgid "Teal"
-msgstr "Teal"
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:81
-msgid "Green"
-msgstr "Hijau"
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:84
-msgid "Yellow"
-msgstr "Kuning"
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:87
-msgid "Orange"
-msgstr "Oranye"
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:90
-msgid "Red"
-msgstr "Merah"
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:93
-msgid "Pink"
-msgstr "Merah Muda"
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:96
-msgid "Purple"
-msgstr "Ungu"
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:99
-msgid "Slate"
-msgstr "Slate"
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:102
-msgid "Warty Brown"
-msgstr "Coklat Warty"
-
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:469
-msgid "Appearance"
-msgstr "Penampilan"
-
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
-msgid "Choose how Ubuntu looks"
-msgstr "Pilih bagaiman Ubuntu tampil"
-
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
-msgid "Personalize your desktop's appearance"
-msgstr "Personalisasikan penampilan desktop Anda"
-
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
-msgid "Style"
-msgstr "Gaya"
-
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:53
-msgid "_Default"
-msgstr "_Baku"
-
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:82
-msgid "Da_rk"
-msgstr "_Gelap"
-
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:100
-msgid "OLED screen detected. Dark style may save power."
-msgstr "Layar OLED terdeteksi. Gaya gelap mungkin menghemat daya."
-
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:112
-msgid "Accent Color"
-msgstr "Warna Aksen"
+"Penyiapan akan memandu Anda dalam membuat akun dan mengaktifkan beberapa "
+"fitur. Kami akan membuat Anda siap dan bekerja dalam waktu singkat."
+
+#: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:36
+msgid "_Start Setup"
+msgstr "_Mulai Penyiapan"
 
 #: po/EXTRA_STRINGS.sh:1
 msgid "Force live user mode"
@@ -1292,134 +814,3 @@ msgstr "Coba ${NAME}"
 #, sh-format
 msgid "Install ${PRETTY_NAME}"
 msgstr "Pasang ${PRETTY_NAME}"
-
-#, c-format
-#~ msgid "Failed to show privacy policy: %s"
-#~ msgstr "Gagal menampilkan kebijakan privasi: %s"
-
-#, c-format
-#~ msgid "Failed to get report information: %s"
-#~ msgstr "Gagal memperoleh informasi laporan: %s"
-
-#~ msgid "Help improve Ubuntu"
-#~ msgstr "Bantu memperbaiki Ubuntu"
-
-#~ msgid "Show the First Report"
-#~ msgstr "Tampilkan Laporan Pertama"
-
-#~ msgid "Cancel"
-#~ msgstr "Batal"
-
-#~ msgid "Ubuntu Report Contents"
-#~ msgstr "Isi Laporan Ubuntu"
-
-#~ msgid "You can change your mind later in Settings → Privacy → Diagnostics."
-#~ msgstr ""
-#~ "Anda dapat berubah pikiran nanti dalam Pengaturan → Privasi → Diagnostik."
-
-#, c-format
-#~ msgid ""
-#~ "Sends technical reports that do not contain personal information. Data is "
-#~ "collected by %1$s (<a href='%2$s'>privacy policy</a>)."
-#~ msgstr ""
-#~ "Mengirimkan laporan teknis yang tidak mengandung informasi pribadi. Data "
-#~ "dikumpulkan oleh %1$s (<a href='%2$s'>kebijakan privasi</a>)."
-
-#~ msgid "Privacy controls can be changed at any time from the Settings app."
-#~ msgstr "Kendali privasi dapat diubah setiap saat dari aplikasi Pengaturan."
-
-#, c-format
-#~ msgid ""
-#~ "Turn on location services to let applications know your geographical "
-#~ "location. You can change this anytime in System Settings."
-#~ msgstr ""
-#~ "Nyalakan layanan lokasi agar aplikasi tahu lokasi geografis Anda. Anda "
-#~ "dapat mengubah ini kapan pun dalam Pengaturan Sistem."
-
-#~ msgid "Location services"
-#~ msgstr "Layanan lokasi"
-
-#~ msgid "Data privacy"
-#~ msgstr "Privasi data"
-
-#, c-format
-#~ msgid "Failed to send report decline: %s"
-#~ msgstr "Gagal mengirim penolakan laporan: %s"
-
-#, c-format
-#~ msgid "Failed to send report information: %s"
-#~ msgstr "Gagal mengirim informasi laporan: %s"
-
-#, c-format
-#~ msgid ""
-#~ "Help us improve Ubuntu by sharing your system data with us. This includes "
-#~ "things like your machine model, installed software and the location you "
-#~ "chose for your timezone."
-#~ msgstr ""
-#~ "Bantu kami memperbaiki Ubuntu dengan berbagi data sistem Anda dengan "
-#~ "kami. Ini termasuk hal-hal seperti model mesin Anda, perangkat lunak "
-#~ "terpasang, dan lokasi yang Anda pilih dari zona waktu Anda."
-
-#~ msgid "Yes, share system data with the Ubuntu team"
-#~ msgstr "Ya, bagikan data sistem dengan tim Ubuntu"
-
-#~ msgid "No, don't share system data"
-#~ msgstr "Tidak, jangan bagikan data sistem"
-
-#~ msgid "From your admin, or from ubuntu.com/pro"
-#~ msgstr "Dari admin Anda, atau dari ubuntu.com/pro"
-
-#~ msgid "Upgrade this machine to Ubuntu Pro. Free for up to 5 machines."
-#~ msgstr "Tingkatkan mesin ini ke Ubuntu Pro. Gratis untuk hingga 5 mesin."
-
-#~ msgid ""
-#~ "Upgrade this machine to Ubuntu Pro for security updates on a much wider "
-#~ "range of packages, until 2034. Fulfill FedRAMP, FIPS, STIG and HIPAA and "
-#~ "other compliance and hardening requirements with certified tooling and "
-#~ "crypto-modules. Free for up to 5 machines.\n"
-#~ "\n"
-#~ "More information on <a href=\"https://ubuntu.com/pro\">ubuntu.com/pro</a>."
-#~ msgstr ""
-#~ "Tingkatkan mesin ini ke Ubuntu Pro untuk pembaruan keamanan atas paket "
-#~ "dengan rentang yang jauh lebih lebar, sampai 2034. Penuhi FedRAMP, FIPS, "
-#~ "STIG, dan HIPAA serta persyaratan kepatuhan dan hardening lain dengan "
-#~ "perkakas tersertifikasi dan modul kripto. Gratis sampai dengan 5 mesin.\n"
-#~ "\n"
-#~ "Informasi lebih lanjut pada <a href=\"https://ubuntu.com/pro\">ubuntu.com/"
-#~ "pro</a>."
-
-#~ msgid "Or add _token manually"
-#~ msgstr "Atau tambahkan _token secara manual"
-
-#~ msgid "Get security updates on a wide range of packages until 2034"
-#~ msgstr ""
-#~ "Dapatkan pembaruan keamanan atas paket dengan rentang yang lebar, sampai "
-#~ "2034."
-
-#~ msgid ""
-#~ "Fulfill FedRAMP, FIPS, STIG and HIPAA and other compliance and hardening "
-#~ "requirements with certified tooling and crypto-modules."
-#~ msgstr ""
-#~ "Penuhi FedRAMP, FIPS, STIG, dan HIPAA serta persyaratan kepatuhan dan "
-#~ "hardening lain dengan perkakas tersertifikasi dan modul kripto."
-
-#~ msgid "Learn more at <a href=\"https://ubuntu.com/pro\">ubuntu.com/pro</a>."
-#~ msgstr ""
-#~ "Pelajari lebih lanjut pada <a href=\"https://ubuntu.com/pro\">ubuntu.com/"
-#~ "pro</a>."
-
-#~ msgid ""
-#~ "You can always enable Ubuntu Pro later via the Software & Updates "
-#~ "application"
-#~ msgstr ""
-#~ "Anda selalu dapat memfungsikan Ubuntu Pro nanti melalui aplikasi "
-#~ "Perangkat Lunak & Pembaruan"
-
-#~ msgid "Downloading language packs…"
-#~ msgstr "Mengunduh pak bahasa..."
-
-#~ msgid "Canceled additional downloads"
-#~ msgstr "Membatalkan unduhan tambahan"
-
-#~ msgid "Unable to download additional language packs"
-#~ msgstr "Tidak bisa mengunduh pak bahasa tambahan"

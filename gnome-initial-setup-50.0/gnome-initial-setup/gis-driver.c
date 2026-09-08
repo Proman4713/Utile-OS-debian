@@ -33,8 +33,6 @@
 #include "cc-common-language.h"
 #include "gis-assistant.h"
 
-static GisDriver *default_driver = NULL;
-
 #define GIS_TYPE_DRIVER_MODE (gis_driver_mode_get_type ())
 
 /* Statically include this for now. Maybe later
@@ -47,7 +45,6 @@ gis_driver_mode_get_type (void) {
       static const GEnumValue values[] = {
         { GIS_DRIVER_MODE_NEW_USER, "GIS_DRIVER_MODE_NEW_USER", "new_user" },
         { GIS_DRIVER_MODE_EXISTING_USER, "GIS_DRIVER_MODE_EXISTING_USER", "existing_user" },
-        { GIS_DRIVER_MODE_UPGRADE, "GIS_DRIVER_MODE_UPGRADE", "upgrading_user" },
         { 0, NULL, NULL }
       };
       enum_type_id = g_enum_register_static("GisDriverMode", values);
@@ -654,24 +651,6 @@ gis_driver_is_small_screen (GisDriver *driver)
   return driver->small_screen;
 }
 
-static void
-gis_driver_shutdown (GApplication *app)
-{
-  GisDriver *driver = GIS_DRIVER (app);
-
-  G_APPLICATION_CLASS (gis_driver_parent_class)->shutdown (app);
-
-  if (driver->mode == GIS_DRIVER_MODE_EXISTING_USER)
-    {
-      gis_ensure_stamp_files (driver);
-      gis_ensure_upgrade_stamp_files (driver);
-    }
-  else if (driver->mode == GIS_DRIVER_MODE_UPGRADE)
-    {
-      gis_ensure_upgrade_stamp_files (driver);
-    }
-}
-
 static gboolean
 monitor_is_small (GdkMonitor *monitor)
 {
@@ -896,8 +875,7 @@ gis_driver_startup (GApplication *app)
                     (gpointer)app);
 
   /* Only allow closing the window in existing user mode*/
-  if (driver->mode != GIS_DRIVER_MODE_EXISTING_USER &&
-      driver->mode != GIS_DRIVER_MODE_UPGRADE) {
+  if (driver->mode != GIS_DRIVER_MODE_EXISTING_USER) {
     g_signal_connect (driver->main_window,
                       "close-request",
                       G_CALLBACK (window_close_request_cb),
@@ -933,7 +911,6 @@ gis_driver_class_init (GisDriverClass *klass)
   gobject_class->finalize = gis_driver_finalize;
   application_class->startup = gis_driver_startup;
   application_class->activate = gis_driver_activate;
-  application_class->shutdown = gis_driver_shutdown;
 
   signals[REBUILD_PAGES] =
     g_signal_new ("rebuild-pages",
@@ -1047,20 +1024,8 @@ gis_driver_save_data (GisDriver  *driver,
 GisDriver *
 gis_driver_new (GisDriverMode mode)
 {
-  g_assert (default_driver == NULL);
-
-  default_driver =
-         g_object_new (GIS_TYPE_DRIVER,
+  return g_object_new (GIS_TYPE_DRIVER,
                        "application-id", "org.gnome.InitialSetup",
                        "mode", mode,
                        NULL);
-  return default_driver;
-}
-
-GisDriver *
-gis_driver_get_default (void)
-{
-  g_assert (default_driver != NULL);
-
-  return default_driver;
 }

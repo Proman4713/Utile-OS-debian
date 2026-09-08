@@ -14,79 +14,59 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
-"issues\n"
-"POT-Creation-Date: 2026-09-09 01:52+0300\n"
-"PO-Revision-Date: 2026-04-21 08:51+0000\n"
-"Last-Translator: Luke Na <Unknown>\n"
+"issues/\n"
+"POT-Creation-Date: 2025-11-28 10:48+0000\n"
+"PO-Revision-Date: 2026-01-10 12:18+0800\n"
+"Last-Translator: lumingzh <lumingzh@qq.com>\n"
 "Language-Team: Chinese (China) <i18n-zh@googlegroups.com>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2026-07-01 12:24+0000\n"
-"X-Generator: Launchpad (build c38ea58da9d7185c4996adfc854ab433551cdcdd)\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Gtranslator 49.0\n"
 
 #: data/gnome-initial-setup.desktop.in.in:2
-#: gnome-initial-setup/gis-driver.c:890
+#: gnome-initial-setup/gis-driver.c:869
 msgid "Initial Setup"
 msgstr "初始配置"
 
-#: gnome-initial-setup/gis-assistant.c:425
+#: gnome-initial-setup/gis-assistant.c:401
 msgid "_Next"
 msgstr "前进(_N)"
 
-#: gnome-initial-setup/gis-assistant.c:426
-msgid "_Finish"
-msgstr "完成(_F)"
-
-#: gnome-initial-setup/gis-assistant.c:427
+#: gnome-initial-setup/gis-assistant.c:402
 msgid "_Accept"
 msgstr "接受(_A)"
 
-#: gnome-initial-setup/gis-assistant.c:428
+#: gnome-initial-setup/gis-assistant.c:403
 msgid "_Skip"
 msgstr "跳过(_S)"
 
-#: gnome-initial-setup/gis-assistant.c:429
+#: gnome-initial-setup/gis-assistant.c:404
 msgid "_Previous"
 msgstr "后退(_P)"
 
-#: gnome-initial-setup/gis-assistant.c:430
+#: gnome-initial-setup/gis-assistant.c:405
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:254
 msgid "_Cancel"
 msgstr "取消(_C)"
 
-#: gnome-initial-setup/gis-webkit.c:54
-msgid "Scan the QR Code…"
-msgstr "扫描二维码…"
-
-#: gnome-initial-setup/gis-webkit.c:244
-msgid "Open in default web browser"
-msgstr "在默认网页浏览器中打开"
-
-#: gnome-initial-setup/gis-webkit.c:247
-msgid "Open in default file handler"
-msgstr "在默认文件处理程序中打开"
-
-#: gnome-initial-setup/gnome-initial-setup.c:362
+#: gnome-initial-setup/gnome-initial-setup.c:280
 msgid "Force existing user mode"
 msgstr "强制现有用户模式"
 
-#: gnome-initial-setup/gnome-initial-setup.c:364
-msgid "Force Upgrade user"
-msgstr "强制升级用户"
-
-#: gnome-initial-setup/gnome-initial-setup.c:378
+#: gnome-initial-setup/gnome-initial-setup.c:294
 msgid "— GNOME initial setup"
 msgstr "— GNOME 初始配置"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.c:181
 msgid "Failed to cache account"
-msgstr "缓存账户失败"
+msgstr "缓存账号失败"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.c:231
 msgid "Failed to register account"
-msgstr "注册账户失败"
+msgstr "注册帐号失败"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.c:420
 msgid "No supported way to authenticate with this domain"
@@ -110,8 +90,8 @@ msgid ""
 "used on this device. You can also use this account to access company "
 "resources on the internet."
 msgstr ""
-"企业登录允许在本机上使用已有的、集中式管理的用户账户。您也可以使用此账户访问"
-"公司在互联网上的资源。"
+"企业登录允许在本机上使用已有的、集中式管理的用户帐号。您也可以使用此帐号访问"
+"互联网上公司所有的资源。"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:27
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:153
@@ -146,7 +126,6 @@ msgstr ""
 "为您的计算机设置一个唯一的计算机名。"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:179
-#: gnome-initial-setup/pages/account/gis-account-page-local.ui:151
 msgid "_Computer"
 msgstr "计算机(_C)"
 
@@ -162,34 +141,19 @@ msgstr "管理员密码"
 msgid "C_ontinue"
 msgstr "继续(_O)"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:210
-#, c-format
-msgid "The hostname is too long."
-msgstr "主机名过长。"
-
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:214
-msgid "The hostname must start with a lower case letter from a-z or a digit."
-msgstr "主机名必须以小写字母 a–z 或数字开头。"
-
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:218
-msgid ""
-"The hostname should only consist of lower case letters from a-z, digits and "
-"a hyphen: -"
-msgstr "主机名只能由小写字母 a–z、数字和连字符“-”组成。"
-
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:545
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:321
 msgid "We need a few details to complete setup."
 msgstr "我们需要一些详细信息来完成设置。"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:704
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:476
 msgid "Administrator"
 msgstr "管理员"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:710
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:753
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:482
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:525
 #, c-format
 msgid "Failed to create user '%s': "
-msgstr "创建用户 '%s' 失败： "
+msgstr "创建用户 '%s' 失败："
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:28
 msgid "Change Avatar"
@@ -212,13 +176,13 @@ msgstr "请提供名称和用户名。您还可以选择图片。"
 msgid "_Full Name"
 msgstr "全名(_F)"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.ui:217
+#: gnome-initial-setup/pages/account/gis-account-page-local.ui:159
 msgid "Set up _parental controls for this user"
 msgstr "为该用户设置家长控制(_P)"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.ui:223
+#: gnome-initial-setup/pages/account/gis-account-page-local.ui:165
 msgid "For use by a parent or supervisor, who must set up their own password."
-msgstr "供家长或监护人使用，他们必须设置自己的密码。"
+msgstr "由家长或超级用户使用，必须设置各自密码。"
 
 #: gnome-initial-setup/pages/account/gis-account-page.ui:32
 msgid "_Enterprise Login"
@@ -241,7 +205,7 @@ msgstr "未找到此域或领域"
 #: gnome-initial-setup/pages/account/um-realm-manager.c:796
 #, c-format
 msgid "Cannot log in as %s at the %s domain"
-msgstr "无法以 %s 身份登录 %s 域"
+msgstr "无法以 %s 在 %s 域登录"
 
 #: gnome-initial-setup/pages/account/um-realm-manager.c:788
 msgid "Invalid password, please try again"
@@ -259,32 +223,32 @@ msgstr "抱歉，此用户名不可用。请尝试换一个用户名。"
 #: gnome-initial-setup/pages/account/um-utils.c:156
 #, c-format
 msgid "The username is too long."
-msgstr "用户名过长。"
+msgstr "用户名太长。"
 
 #: gnome-initial-setup/pages/account/um-utils.c:159
 msgid "The username must start with a lower case letter from a-z."
-msgstr "用户名必须以小写字母 a–z 开头。"
+msgstr "用户名必须以从 a-z 的小写字母开始。"
 
 #: gnome-initial-setup/pages/account/um-utils.c:162
 msgid "That username isn’t available. Please try another."
-msgstr "此用户名不可用，请尝试更换。"
+msgstr "此用户名不可用。请尝试换一个用户名。"
 
 #: gnome-initial-setup/pages/account/um-utils.c:165
 msgid ""
 "The username should only consist of lower case letters from a-z, digits, and "
 "the following characters: - _"
-msgstr "用户名只能由小写字母 a–z、数字和下列字符组成：- _"
+msgstr "用户名只能由从 a-z 的小写字母、数字和下列字符组成：- _"
 
 #: gnome-initial-setup/pages/account/um-utils.c:169
 msgid "This will be used to name your home folder and can’t be changed."
-msgstr "这将用于命名您的主文件夹，且无法更改。"
+msgstr "这将用于创建您的主目录且无法更改。"
 
 #: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:257
 msgid "Preview"
 msgstr "预览"
 
 #: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:325
-#: gnome-initial-setup/pages/language/cc-language-chooser.c:244
+#: gnome-initial-setup/pages/language/cc-language-chooser.c:242
 msgid "More…"
 msgstr "更多…"
 
@@ -295,24 +259,24 @@ msgstr "更多…"
 msgid "No inputs found"
 msgstr "未找到输入设备"
 
-#: gnome-initial-setup/pages/keyboard/gis-keyboard-page.c:484
+#: gnome-initial-setup/pages/keyboard/gis-keyboard-page.c:502
 #: gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui:16
 msgid "Typing"
 msgstr "输入"
 
 #: gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui:17
 msgid "Select your keyboard layout or an input method."
-msgstr "选择您的键盘布局或输入法。"
+msgstr "选择您的键盘布局或者其他输入方式。"
 
 #: gnome-initial-setup/pages/keyboard/input-chooser.ui:8
 msgid "Search keyboards and input methods"
 msgstr "搜索键盘布局和输入法"
 
-#: gnome-initial-setup/pages/language/cc-language-chooser.c:264
+#: gnome-initial-setup/pages/language/cc-language-chooser.c:262
 msgid "No languages found"
 msgstr "未找到其他语言"
 
-#: gnome-initial-setup/pages/language/gis-language-page.c:146
+#: gnome-initial-setup/pages/language/gis-language-page.c:268
 #: gnome-initial-setup/pages/language/gis-language-page.ui:14
 msgid "Welcome"
 msgstr "欢迎"
@@ -368,11 +332,11 @@ msgstr ""
 
 #: gnome-initial-setup/pages/network/gis-network-page.ui:57
 msgid "No wireless available"
-msgstr "无线网络不可用"
+msgstr "无线不可用"
 
 #: gnome-initial-setup/pages/network/gis-network-page.ui:70
 msgid "Turn On"
-msgstr "开启"
+msgstr "打开"
 
 #. Translators: The placeholder is the user’s full name.
 #: gnome-initial-setup/pages/parental-controls/gis-parental-controls-page.c:106
@@ -418,13 +382,13 @@ msgstr "密码强度：%s。"
 msgid "The passwords do not match."
 msgstr "密码不匹配。"
 
-#: gnome-initial-setup/pages/password/gis-password-page.c:427
+#: gnome-initial-setup/pages/password/gis-password-page.c:430
 msgid "Password"
 msgstr "密码"
 
 #: gnome-initial-setup/pages/password/gis-password-page.ui:68
 msgid "_Confirm Password"
-msgstr "确认密码(_C)"
+msgstr "确定密码(_C)"
 
 #: gnome-initial-setup/pages/password/gis-password-page.ui:92
 msgid "Password _Hint"
@@ -432,12 +396,12 @@ msgstr "密码提示(_H)"
 
 #: gnome-initial-setup/pages/password/gis-password-page.ui:103
 msgid "Password hint will be shown in case you forget your password."
-msgstr "如果您忘记了密码，将会显示密码提示。"
+msgstr "以防您忘记密码将显示密码提示。"
 
 #: gnome-initial-setup/pages/password/pw-utils.c:81
 msgctxt "Password hint"
 msgid "The new password needs to be different from the old one."
-msgstr "新密码和旧密码不能相同。"
+msgstr "新密码需要跟旧密码不相同。"
 
 #: gnome-initial-setup/pages/password/pw-utils.c:83
 msgctxt "Password hint"
@@ -572,90 +536,90 @@ msgstr "优秀"
 #. Translators: the first parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu".
 #.
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:68
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:70
 #, c-format
 msgid ""
 "Sends technical reports that do not contain personal information. Data is "
-"collected by %1$s (<u><a href='%2$s'>privacy policy</a></u>)."
+"collected by %1$s (<a href='%2$s'>privacy policy</a>)."
 msgstr ""
-"发送不包含个人信息的技术报告。数据由 %1$s 收集（<u><a href='%2$s'>p隐私政策</"
-"a></u>）。"
+"发送不包含私人信息的技术报告。数据收集方为 %1$s（<a href='%2$s'>隐私政策</"
+"a>）。"
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu".
 #.
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:79
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:82
 #, c-format
 msgid ""
 "Sends technical reports that do not contain personal information. Data is "
 "collected by %s."
-msgstr "发送不包含个人信息的技术报告。数据由 %1$s 收集。"
+msgstr "发送不包含私人信息的技术报告。数据收集方为 %s。"
 
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:123
-#, c-format
-msgid ""
-"Allows apps to determine your geographical location (<u><a "
-"href='%1$s'>privacy policy</a></u>)."
-msgstr "允许应用确定您的地理位置（<u><a href='%1$s'>隐私政策</a></u>）。"
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:125
+msgid "Allows apps to determine your geographical location."
+msgstr "允许应用确定您的地理位置。"
 
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:174
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:14
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:28
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:171
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:15
+msgid "Privacy"
+msgstr "隐私"
+
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:33
 msgid "Location Services"
-msgstr "定位服务"
+msgstr "位置服务"
 
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:17
-msgid ""
-"Turn on location services to let applications know your geographical "
-"location."
-msgstr "开启定位服务，让应用程序知晓您的地理位置。"
-
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:56
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:65
 msgid "Automatic Problem Reporting"
 msgstr "自动提交问题报告"
 
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:99
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:134
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:138
-msgid "You can change this later in the Settings app"
-msgstr "您可以稍后在“设置”中进行更改"
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:97
+msgid "Privacy controls can be changed at any time from the Settings app."
+msgstr "隐私控制可以随时在“设置”应用里更改。"
 
-#: gnome-initial-setup/pages/software/gis-software-page.c:123
+#: gnome-initial-setup/pages/software/gis-software-page.c:127
 #: gnome-initial-setup/pages/software/gis-software-page.ui:11
 msgid "Third-Party Repositories"
 msgstr "第三方软件源"
 
-#: gnome-initial-setup/pages/software/gis-software-page.c:125
+#: gnome-initial-setup/pages/software/gis-software-page.c:129
 #, c-format
 msgid ""
 "Third-party repositories provide access to additional software from selected "
 "<a href='%s'>external sources</a>, including popular apps and drivers that "
 "are important for some devices. Some proprietary software is included."
 msgstr ""
-"第三方软件源允许您访问来自选定<a href='%s'>外部来源</a>的额外软件，包括流行的"
-"应用及某些设备不可或缺的驱动程序。其中也包含了一些专有软件。"
+"第三方软件源提供了对来自选择的<a href='%s'>外部来源</a>额外软件的访问，包括流"
+"行的应用及某些设备所需的驱动。也包含了一些专有软件。"
 
-#: gnome-initial-setup/pages/software/gis-software-page.c:127
+#: gnome-initial-setup/pages/software/gis-software-page.c:131
 msgid ""
 "Third-party repositories provide access to additional software from selected "
 "external sources, including popular apps and drivers that are important for "
 "some devices. Some proprietary software is included."
 msgstr ""
-"第三方软件源允许您访问来自选定的额外软件，包括流行的应用及某些设备不可或缺的"
-"驱动程序。其中也包含了一些专有软件。"
+"第三方软件源提供了对来自选择的外部来源额外软件的访问，包括流行的应用及某些设"
+"备所需的驱动。也包含了一些专有软件。"
 
-#: gnome-initial-setup/pages/software/gis-software-page.c:139
+#: gnome-initial-setup/pages/software/gis-software-page.c:143
 msgid "_Disable Third-Party Repositories"
 msgstr "禁用第三方软件源(_D)"
 
-#: gnome-initial-setup/pages/software/gis-software-page.c:144
+#: gnome-initial-setup/pages/software/gis-software-page.c:148
 msgid "_Enable Third-Party Repositories"
 msgstr "启用第三方软件源(_E)"
+
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:211
+msgid "Setup Failed"
+msgstr "配置失败"
+
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:213
+msgid "Close"
+msgstr "关闭"
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
 #. * detect any distribution.
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:406
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:239
 #, c-format
 msgid "_Start Using %s"
 msgstr "开始使用 %s(_S)"
@@ -663,40 +627,18 @@ msgstr "开始使用 %s(_S)"
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
 #. * detect any distribution.
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:413
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:246
 #, c-format
 msgid "%s is ready to be used."
 msgstr "%s 已准备就绪。"
 
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:431
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:499
-#: gnome-initial-setup/pages/summary/gis-summary-page.ui:8
-msgid "All done!"
-msgstr "全部搞定！"
-
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:457
-msgid "Setup Failed"
-msgstr "配置失败"
-
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:459
-msgid "Close"
-msgstr "关闭"
-
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:472
-msgid "Almost done"
-msgstr "即将完成"
-
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:568
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:270
 msgid "Setup Complete"
 msgstr "配置完成"
 
-#: gnome-initial-setup/pages/summary/gis-summary-page.ui:39
-msgid "Downloading additional language packs"
-msgstr "正在下载额外的语言包"
-
-#: gnome-initial-setup/pages/summary/gis-summary-page.ui:47
-msgid "Cancel Download"
-msgstr "取消下载"
+#: gnome-initial-setup/pages/summary/gis-summary-page.ui:8
+msgid "All done!"
+msgstr "全部搞定！"
 
 #: gnome-initial-setup/pages/timezone/gis-location-entry.c:117
 msgid "Search cities"
@@ -772,430 +714,24 @@ msgstr "请搜索就近的城市"
 #. * keep or remove. The %s is getting replaced with the name and version
 #. * of the OS, e.g. "GNOME 3.38"
 #.
-#: gnome-initial-setup/pages/welcome/gis-welcome-page.c:79
+#: gnome-initial-setup/pages/welcome/gis-welcome-page.c:62
 #, c-format
 msgid "Welcome to %s !"
 msgstr "欢迎来到 %s！"
 
-#: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:12
-msgid "Welcome to Ubuntu 24.04 LTS"
-msgstr "欢迎使用 Ubuntu 24.04 LTS"
-
-#: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:13
-msgid ""
-"Complete your setup with additional settings and we'll\n"
-"have you up and running in no time"
-msgstr "完成一些额外的设置，我们很快就能让您开始使用系统了"
+#: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:4
+msgid "Setup"
+msgstr "设置"
 
 #: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:32
-msgid "View release notes"
-msgstr "查看发行说明"
-
-#: gnome-initial-setup/pages/apps/gis-apps-page.c:95
-msgid "Ready to go"
-msgstr "准备就绪"
-
-#: gnome-initial-setup/pages/apps/gis-apps-page.blp:8
-msgid "Get started with more applications"
-msgstr "发现更多精彩应用"
-
-#: gnome-initial-setup/pages/apps/gis-apps-page.blp:9
-msgid "Ubuntu's App Center has a range of apps you can get started with."
-msgstr "Ubuntu App Center 提供了多种应用，助您快速上手。"
-
-#: gnome-initial-setup/pages/apps/gis-apps-page.blp:28
-msgid "Open App Center"
-msgstr "打开 App Center"
-
-#: gnome-initial-setup/pages/eula/gis-eula-page.blp:4
-msgid "End-User License Agreement"
-msgstr "终端用户许可协议"
-
-#. GNOME Initial Setup
-#. TRANSLATORS: The place-holder is an error message
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:73
-#, c-format
-msgid "Failed to grant consent for the Initial Setup application: %s"
-msgstr "无法为“初始设置”应用授予许可：%s"
-
-#. TRANSLATORS: The place-holder is an error message
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:75
-#, c-format
-msgid "Failed to withdraw consent for the Initial Setup application: %s"
-msgstr "无法撤销对“初始设置”应用的许可：%s"
-
-#. Platform source used by timed systemd collection
-#. TRANSLATORS: The place-holder is an error message
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:80
-#, c-format
-msgid "Failed to grant consent for the system data collector: %s"
-msgstr "无法为系统数据收集器授予许可：%s"
-
-#. TRANSLATORS: The place-holder is an error message
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:82
-#, c-format
-msgid "Failed to withdraw consent for the system data collector: %s"
-msgstr "无法为系统数据收集器授予许可：%s"
-
-#. Platform source used by release upgrader collection
-#. TRANSLATORS: The place-holder is an error message
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:87
-#, c-format
-msgid "Failed to grant consent for the release upgrader application: %s"
-msgstr "无法为版本升级应用授予许可：%s"
-
-#. TRANSLATORS: The place-holder is an error message
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:89
-#, c-format
-msgid "Failed to withdraw consent for the release upgrader application: %s"
-msgstr "无法为版本升级应用授予许可：%s"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:381
-#, c-format
 msgid ""
-"With telemetry log: %s\n"
-"Without telemetry log: %s"
-msgstr ""
-"包含遥测日志：%s\n"
-"不含遥测日志：%s"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:411
-#, c-format
-msgid "Failed to collect telemetry report: %s"
-msgstr "无法收集遥测报告：%s"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:571
-#, c-format
-msgid "Failed to generate report: %s"
-msgstr "无法生成报告：%s"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:589
-#, c-format
-msgid "Failed to write report: %s"
-msgstr "无法写入报告：%s"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:647
-msgid "Show First Report"
-msgstr "显示首份报告"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:9
-#, fuzzy
-msgid "Utile Depends On It: Help Improve Ubuntu"
-msgstr "共同打造 Ubuntu"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:10
-#, fuzzy
-msgid ""
-"Help improve Ubuntu by sharing your system and error reports with them.\n"
-"Reports are sent anonymously."
-msgstr ""
-"与我们分享您的系统和错误报告，帮助我们改进 Ubuntu。\n"
-"报告将匿名发送。"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:31
-msgid "Share _system data with the Ubuntu team"
-msgstr "与 Ubuntu 团队分享系统数据(_S)"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:32
-msgid "This includes hardware information, language and timezone"
-msgstr "这包括硬件信息、语言和时区"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:46
-msgid "Learn more about system reporting"
-msgstr "了解更多关于系统报告的信息"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:57
-msgid "Legal notice"
-msgstr "法律声明"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:68
-msgid "Show Report"
-msgstr "显示报告"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:95
-msgid "Share _error reports with the Ubuntu team"
-msgstr "与 Ubuntu 团队分享错误报告(_E)"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:96
-msgid "This includes crash reports and related system logs"
-msgstr "这包括崩溃报告和相关系统日志"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:110
-msgid "Learn more about error reporting"
-msgstr "了解更多关于错误报告的信息"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:148
-msgid "System Report"
-msgstr "系统报告"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-attach-page.blp:21
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:21
-msgid "Enable Ubuntu Pro"
-msgstr "启用 Ubuntu Pro"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-attach-page.blp:29
-msgid "_Attach machine via your Ubuntu One account"
-msgstr "通过 Ubuntu One 账户绑定此设备(_A)"
-
-#. Translators: translators: This is the other way to attach a machine to Ubuntu Pro
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-attach-page.blp:82
-msgid "Or add a _token manually"
-msgstr "或手动添加令牌(_T)"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-attach-page.blp:117
-msgid "Token"
-msgstr "令牌"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:54
-msgid "Upgrade this device to Ubuntu Pro. Free for personal use."
-msgstr "将此设备升级至 Ubuntu Pro。个人使用免费。"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:105
-msgid ""
-"Fulfill FedRAMP, FIPS, STIG and HIPAA and other compliance and hardening "
-"requirements with certified tooling and crypto-modules"
-msgstr ""
-"通过经认证的工具和加密模块，满足 FedRAMP、FIPS、STIG、HIPAA 等合规与安全加固"
-"要求。"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:130
-msgid "Enable Ubuntu Pro now, or skip this step."
-msgstr "现在启用 Ubuntu Pro，或跳过此步骤。"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:133
-msgid "_Enable Ubuntu Pro"
-msgstr "启用 Ubuntu Pro(_E)"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:152
-msgid "_Skip for now"
-msgstr "暂时跳过(_S)"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:153
-msgid "You can enable Ubuntu Pro later in the Security Center"
-msgstr "您可以稍后在“安全中心”启用 Ubuntu Pro"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-services-page.blp:22
-msgid "Ubuntu Pro Services"
-msgstr "Ubuntu Pro 服务"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-services-page.blp:29
-msgid "Your subscription"
-msgstr "您的订阅"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-services-page.blp:44
-msgid "Your enabled services"
-msgstr "您已启用的服务"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-services-page.blp:47
-msgid ""
-"You can change the default enablements for your token on the ubuntu.com/pro "
-"web interface. You can also change enabled services in the Settings menu or "
-"with the `<span font_family='monospace'>pro</span>` command-line."
-msgstr ""
-"您可以在 ubuntu.com/pro 的网页界面更改令牌的默认启用服务。也可以在“设置”菜单"
-"中或使用 `<span font_family='monospace'>pro</span>` 命令行来更改启用的服务。"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-services-page.blp:53
-msgid "Other available services"
-msgstr "其他可用服务"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:221
-msgid "Valid token"
-msgstr "令牌有效"
-
-#. TRANSLATORS: The error shown when attaching an
-#. Ubuntu Pro contact fails.
-#. It may be due to various reasons, most common is
-#. an invalid token.
-#.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:236
-msgid "Invalid token or attach failure"
-msgstr "令牌无效或绑定失败"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:244
-msgid "Code expired"
-msgstr "代码已过期"
-
-#. TRANSLATORS: the placeholder %s is a link to ubuntu.com/pro/attach.
-#. Use HTML encoded format for special characters such as '&'.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:259
-#, c-format
-msgid "Enter this code on %s"
-msgstr "请在 %s 上输入此代码"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:316
-msgid "An internet connection is required to enable Ubuntu Pro"
-msgstr "启用 Ubuntu Pro 需要互联网连接"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:466
-#, c-format
-msgid "Get security updates on a wide range of packages until %s"
-msgstr "在更广泛的软件包中获取安全更新，直至 %s"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:474
-msgid "Ubuntu Pro"
-msgstr "Ubuntu Pro"
-
-#. TRANSLATORS: The anbox-cloud Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:609
-msgid "Scalable Android in the cloud"
-msgstr "云端可扩展 Android"
-
-#. TRANSLATORS: The cc-eal Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:612
-msgid "Common Criteria EAL2 Provisioning Packages"
-msgstr "通用准则 EAL2 预配软件包"
-
-#. TRANSLATORS: The esm-apps Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:615
-msgid "Expanded Security Maintenance for Applications"
-msgstr "应用程序扩展安全维护（ESM Apps）"
-
-#. TRANSLATORS: The esm-infra Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:618
-msgid "Expanded Security Maintenance for Infrastructure"
-msgstr "基础架构扩展安全维护（ESM Infra）"
-
-#. TRANSLATORS: The fips Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:621
-msgid "NIST-certified FIPS crypto packages"
-msgstr "通过 NIST 认证的 FIPS 加密软件包"
-
-#. TRANSLATORS: The fips-preview Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:624
-msgid "Preview of FIPS crypto packages undergoing certification with NIST"
-msgstr "正在 NIST 认证中的 FIPS 加密软件包预览版"
-
-#. TRANSLATORS: The fips-updates Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:627
-msgid "FIPS compliant crypto packages with stable security updates"
-msgstr "符合 FIPS 的加密软件包，提供稳定的安全更新"
-
-#. TRANSLATORS: The landscape Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:630
-msgid "Management and administration tool for Ubuntu"
-msgstr "Ubuntu 的管理与运维工具"
-
-#. TRANSLATORS: The livepatch Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:633
-msgid "Canonical kernel Livepatch service"
-msgstr "Canonical 内核热补丁（Livepatch）服务"
-
-#. TRANSLATORS: The realtime-kernel Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:636
-msgid "Ubuntu kernel with PREEMPT_RT patches integrated"
-msgstr "集成 PREEMPT_RT 补丁的 Ubuntu 实时内核"
-
-#. TRANSLATORS: The ros Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:639
-msgid "Security Updates for the Robot Operating System"
-msgstr "机器人操作系统（ROS）安全更新"
-
-#. TRANSLATORS: The ros-updates Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:642
-msgid "All Updates for the Robot Operating System"
-msgstr "机器人操作系统（ROS）的全部更新"
-
-#. TRANSLATORS: The usg Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:645
-msgid "Security compliance and audit tools"
-msgstr "安全合规与审计工具"
-
-#. TRANSLATORS: Use HTML encoded format for special characters such as &amp' for '&'. %s is a URL.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:1230
-#, c-format
-msgid "Learn more at %s"
-msgstr "访问 %s 了解更多"
-
-#. TRANSLATORS: Subtitle telling who can provide the Ubuntu Pro token.
-#. Use HTML encoded format for special characters such as &amp' for '&'. %s is a URL.
-#.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:1247
-#, c-format
-msgid "From your admin, or from %s"
-msgstr "从您的管理员处获取，或访问 %s"
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:75
-msgid "Blue"
-msgstr "蓝色"
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:78
-msgid "Teal"
-msgstr "青色"
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:81
-msgid "Green"
-msgstr "绿色"
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:84
-msgid "Yellow"
-msgstr "黄色"
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:87
-msgid "Orange"
-msgstr "橙色"
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:90
-msgid "Red"
-msgstr "红色"
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:93
-msgid "Pink"
-msgstr "粉红"
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:96
-msgid "Purple"
-msgstr "紫色"
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:99
-msgid "Slate"
-msgstr "岩灰"
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:102
-msgid "Warty Brown"
-msgstr "经典棕色（Warty Brown）"
-
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:469
-msgid "Appearance"
-msgstr "外观"
-
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
-msgid "Choose how Ubuntu looks"
-msgstr "选择 Ubuntu 的外观"
-
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
-msgid "Personalize your desktop's appearance"
-msgstr "个性化您的桌面外观"
-
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
-msgid "Style"
-msgstr "样式"
-
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:53
-msgid "_Default"
-msgstr "默认(_D)"
-
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:82
-msgid "Da_rk"
-msgstr "暗色(_R)"
-
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:100
-msgid "OLED screen detected. Dark style may save power."
-msgstr "检测到 OLED 屏幕。深色样式可能更省电。"
-
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:112
-msgid "Accent Color"
-msgstr "强调色"
+"Setup will guide you through making an account and enabling some features. "
+"We’ll have you up and running in no time."
+msgstr "安装程序将指导您创建帐户并启用某些功能。我们将协助您迅速完成配置。"
+
+#: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:36
+msgid "_Start Setup"
+msgstr "开始配置(_S)"
 
 #: po/EXTRA_STRINGS.sh:1
 msgid "Force live user mode"
@@ -1237,121 +773,388 @@ msgstr "试用 ${NAME}"
 msgid "Install ${PRETTY_NAME}"
 msgstr "安装 ${PRETTY_NAME}"
 
-#~ msgid "Show the First Report"
-#~ msgstr "显示第一份报告"
+#~ msgid "Set a Password"
+#~ msgstr "设置密码"
+
+#~ msgid "Privacy Policy"
+#~ msgstr "隐私政策"
+
+#~ msgid ""
+#~ "Allows apps to determine your geographical location. Uses the Mozilla "
+#~ "Location Service (<a href='https://location.services.mozilla.com/"
+#~ "privacy'>privacy policy</a>)."
+#~ msgstr ""
+#~ "允许应用确定您的地理位置。使用 Mozilla 位置服务（<a href='https://"
+#~ "location.services.mozilla.com/privacy'>隐私政策</a>）。"
+
+#~ msgid "Please check the name and username. You can choose a picture too."
+#~ msgstr "请检查名称和用户名。您还可以选择图片。"
+
+#~ msgid "Edit avatar"
+#~ msgstr "编辑头像"
+
+#~ msgid "Online Accounts"
+#~ msgstr "在线帐号"
+
+#~ msgid "Connect Your Online Accounts"
+#~ msgstr "连接您的在线帐号"
+
+#~ msgid ""
+#~ "Connect your accounts to easily access your email, online calendar, "
+#~ "contacts, documents and photos."
+#~ msgstr "连接帐号，轻松访问您的邮件、在线日历、联系人、文档和照片。"
+
+#~ msgid "Accounts can be added and removed at any time from the Settings app."
+#~ msgstr "账号可以在“设置”应用里随时添加和移除。"
 
 #, c-format
-#~ msgid "Failed to get report information: %s"
-#~ msgstr "获取报告信息失败：%s"
+#~ msgid "%s Account"
+#~ msgstr "%s 帐号"
 
 #, c-format
-#~ msgid "Failed to show privacy policy: %s"
-#~ msgstr "显示隐私政策失败：%s"
+#~ msgid "%s is ready to be used. We hope that you love it!"
+#~ msgstr "%s 已就绪。我们希望您喜欢它！"
+
+#~ msgid "Install or Try?"
+#~ msgstr "安装还是试用？"
+
+#~ msgid ""
+#~ "This live media can be used to install GNOME, or it can be used to try "
+#~ "GNOME as a temporary system. Installation can be started at any time "
+#~ "using the install icon in Activities."
+#~ msgstr ""
+#~ "本现场（live）媒体可被用来安装 GNOME，它也可被用来作为临时的系统以试用 "
+#~ "GNOME。在试用中，可以点击活动栏中的安装图标随时开始系统安装。"
+
+#~ msgid "Try"
+#~ msgstr "试用"
+
+#~ msgid "Take a Picture…"
+#~ msgstr "拍张照片…"
+
+#~ msgid "Avatar image"
+#~ msgstr "头像图片"
+
+#~ msgid "_Confirm"
+#~ msgstr "确认(_C)"
+
+#~ msgid "This is a weak password."
+#~ msgstr "这是一个弱密码。"
+
+#, c-format
+#~ msgid ""
+#~ "Sending reports of technical problems helps us to improve %s. Reports are "
+#~ "sent anonymously and are scrubbed of personal data."
+#~ msgstr ""
+#~ "发送技术问题的报告来帮助我们改进 %s 。报告以匿名发送并且清除了个人信息。"
+
+#, c-format
+#~ msgid "Problem data will be collected by %s:"
+#~ msgstr "问题数据将被 %s 收集："
+
+#~ msgid "Uses Mozilla Location Service:"
+#~ msgstr "使用 Mozilla 位置服务："
+
+#~ msgid "Loading…"
+#~ msgstr "正在加载…"
+
+#~ msgid ""
+#~ "Connecting to the Internet will enable you to set the time, add your "
+#~ "details, and enable you to access your email, calendar, and contacts. It "
+#~ "is also necessary for enterprise login accounts."
+#~ msgstr ""
+#~ "连接到互联网后，您可以设置时间，添加详细个人资料，访问您的邮件、日历和联系"
+#~ "人。企业登录帐号也需要联网。"
+
+#~ msgid "License Agreements"
+#~ msgstr "许可协议"
+
+#~ msgid ""
+#~ "I have _agreed to the terms and conditions in this end user license "
+#~ "agreement."
+#~ msgstr "我同意最终用户授权协议所述条件及款项(_A)。"
+
+#~ msgid "No regions found"
+#~ msgstr "未找到地区"
+
+#~ msgid "Region"
+#~ msgstr "地区"
+
+#~ msgid "Choose your country or region."
+#~ msgstr "选择您的国家或地区。"
+
+#~ msgid "Software Repositories"
+#~ msgstr "软件源"
+
+#~ msgid "Access additional software from selected third party sources."
+#~ msgstr "从选中的第三方源获取附加软件。"
+
+#~ msgid ""
+#~ "Some of this software is proprietary and therefore has restrictions on "
+#~ "use, sharing, and access to source code."
+#~ msgstr "此软件包含专利部件，所以在使用、分享和获取源码上有限制。"
+
+#~ msgid "Additional Software Repositories"
+#~ msgstr "附加软件源"
+
+#~ msgid "<a href=\"more\">Find out more…</a>"
+#~ msgstr "<a href=\"more\">查找更多…</a>"
+
+#~ msgid ""
+#~ "Proprietary software typically has restrictions on how it can be used and "
+#~ "on access to source code. This prevents anyone but the software owner "
+#~ "from inspecting, improving or learning from its code."
+#~ msgstr ""
+#~ "专有软件通常在使用和源码的获取上有限制。这样就阻止了除软件所有者外的任何人"
+#~ "检查、改进和学习它的代码。"
+
+#~ msgid ""
+#~ "In contrast, Free Software can be freely run, copied, distributed, "
+#~ "studied and modified."
+#~ msgstr "相反地，自由软件可以被自由的运行、复制、分发、学习和修改。"
+
+#~ msgid "Ready to Go"
+#~ msgstr "准备好了"
+
+#~ msgid "You’re ready to go!"
+#~ msgstr "一切就续！"
+
+#~ msgid "preferences-system"
+#~ msgstr "preferences-system"
+
+#~ msgid "Disable image"
+#~ msgstr "禁用图像"
+
+#~ msgctxt "Password hint"
+#~ msgid "Try to avoid common words."
+#~ msgstr "请避免在密码中使用常用的词。"
+
+#~ msgctxt "Password hint"
+#~ msgid "Try to use more numbers."
+#~ msgstr "尝试在密码中使用更多的数字。"
+
+#~ msgctxt "Password hint"
+#~ msgid ""
+#~ "Password needs to be longer. Try to add more letters, numbers and "
+#~ "punctuation."
+#~ msgstr "尝试在密码中混合使用字母，数字和标点符号。"
+
+#~ msgid ""
+#~ "Proprietary software sources provide access to additional software, "
+#~ "including web browsers and games. This software typically has "
+#~ "restrictions on use and access to source code, and is not provided by %s."
+#~ msgstr ""
+#~ "专有软件源提供了包括 Web 浏览器和游戏在内的其他软件。这些软件通常在使用和"
+#~ "源码的获取上有限制，也不是由 %s 提供的。"
+
+#~ msgid "Proprietary Software Sources"
+#~ msgstr "专有软件源"
+
+#~ msgid "A user with the username ‘%s’ already exists."
+#~ msgstr "名为“%s”的用户已存在。"
+
+#~ msgid "_Verify"
+#~ msgstr "验证(_V)"
+
+#~ msgctxt "Password strength"
+#~ msgid "Strength: Weak"
+#~ msgstr "密码强度：弱"
+
+#~ msgctxt "Password strength"
+#~ msgid "Strength: Low"
+#~ msgstr "密码强度：低"
+
+#~ msgctxt "Password strength"
+#~ msgid "Strength: Medium"
+#~ msgstr "密码强度：中等"
+
+#~ msgctxt "Password strength"
+#~ msgid "Strength: Good"
+#~ msgstr "密码强度：较高"
+
+#~ msgctxt "Password strength"
+#~ msgid "Strength: High"
+#~ msgstr "密码强度：高"
+
+#~ msgid "Are these the right details? You can change them if you want."
+#~ msgstr "这些详细信息正确吗？如果需要您可以修改。"
+
+#~ msgid "You can review your online accounts (and add others) after setup."
+#~ msgstr "您可以在安装后查看在线帐号(及添加其他帐号)。"
+
+#~ msgid ""
+#~ "We think that your time zone is %s. Press Next to continue or search for "
+#~ "a city to manually set the time zone."
+#~ msgstr "我们认为你的时区是 %s.按下一步继续或者手动搜索城市设置时区。"
 
 #~ msgid "Cancel"
 #~ msgstr "取消"
 
-#~ msgid "Ubuntu Report Contents"
-#~ msgstr "Ubuntu 报告内容"
+#~ msgid "Your username cannot be changed after setup."
+#~ msgstr "您的用户名在设置完后将不能修改。"
 
-#~ msgid "Help improve Ubuntu"
-#~ msgstr "为 Ubuntu 添砖加瓦"
+#~ msgid "No password"
+#~ msgstr "无密码"
 
-#, c-format
-#~ msgid ""
-#~ "Sends technical reports that do not contain personal information. Data is "
-#~ "collected by %1$s (<a href='%2$s'>privacy policy</a>)."
-#~ msgstr ""
-#~ "发送不包含私人信息的技术报告。数据收集方为 %1$s（<a href='%2$s'>隐私政策</"
-#~ "a>）。"
+#~ msgctxt "Password strength"
+#~ msgid "Too short"
+#~ msgstr "太短"
 
-#~ msgid "Privacy controls can be changed at any time from the Settings app."
-#~ msgstr "隐私控制可以随时在“设置”应用里更改。"
+#~ msgctxt "Password strength"
+#~ msgid "Not good enough"
+#~ msgstr "不够好"
 
-#~ msgid "Data privacy"
-#~ msgstr "数据隐私"
+#~ msgctxt "Password strength"
+#~ msgid "Weak"
+#~ msgstr "弱"
 
-#~ msgid "Or add _token manually"
-#~ msgstr "或手动添加令牌(_T)"
+#~ msgctxt "Password strength"
+#~ msgid "Fair"
+#~ msgstr "一般"
 
-#~ msgid "Location services"
-#~ msgstr "定位服务"
+#~ msgctxt "Password strength"
+#~ msgid "Good"
+#~ msgstr "好"
 
-#~ msgid "Downloading language packs…"
-#~ msgstr "正在下载语言包…"
+#~ msgid "Login"
+#~ msgstr "登录"
 
-#~ msgid "Canceled additional downloads"
-#~ msgstr "已取消额外下载"
+#~ msgid "Create an Enterprise Account"
+#~ msgstr "创建企业帐号"
 
-#~ msgid "Unable to download additional language packs"
-#~ msgstr "无法下载额外的语言包"
+#~ msgid "Create a Local Account"
+#~ msgstr "建立本地帐号"
 
-#, c-format
-#~ msgid ""
-#~ "Turn on location services to let applications know your geographical "
-#~ "location. You can change this anytime in System Settings."
-#~ msgstr "开启定位服务以便应用了解您的地理位置。您可随时在“系统设置”中更改。"
+#~ msgid "Other"
+#~ msgstr "其他"
 
-#, c-format
-#~ msgid "Failed to send report decline: %s"
-#~ msgstr "发送拒绝报告失败：%s"
+#~ msgid "No input source selected"
+#~ msgstr "未选择输入源"
 
-#, c-format
-#~ msgid "Failed to send report information: %s"
-#~ msgstr "发送报告信息失败：%s"
+#~ msgid "Add an Input Source"
+#~ msgstr "添加输入源"
 
-#, c-format
-#~ msgid ""
-#~ "Help us improve Ubuntu by sharing your system data with us. This includes "
-#~ "things like your machine model, installed software and the location you "
-#~ "chose for your timezone."
-#~ msgstr ""
-#~ "与我们分享您的系统数据以帮助改进 Ubuntu。包括您的机器型号、已安装软件以及"
-#~ "您为时区选择的位置等信息。"
+#~ msgid "page 1"
+#~ msgstr "第 1 页"
 
-#~ msgid "Yes, share system data with the Ubuntu team"
-#~ msgstr "是，与 Ubuntu 团队共享系统数据"
+#~ msgctxt "Online Account"
+#~ msgid "Other"
+#~ msgstr "其他"
 
-#~ msgid "No, don't share system data"
-#~ msgstr "否，不共享系统数据"
+#~ msgid "Mail"
+#~ msgstr "邮件"
 
-#~ msgid "You can change your mind later in Settings → Privacy → Diagnostics."
-#~ msgstr "您可以稍后在“设置”→“隐私”→“诊断”中改变主意。"
+#~ msgid "Contacts"
+#~ msgstr "联系人"
 
-#~ msgid ""
-#~ "Upgrade this machine to Ubuntu Pro for security updates on a much wider "
-#~ "range of packages, until 2034. Fulfill FedRAMP, FIPS, STIG and HIPAA and "
-#~ "other compliance and hardening requirements with certified tooling and "
-#~ "crypto-modules. Free for up to 5 machines.\n"
-#~ "\n"
-#~ "More information on <a href=\"https://ubuntu.com/pro\">ubuntu.com/pro</a>."
-#~ msgstr ""
-#~ "将此设备升级为 Ubuntu Pro，可在更广泛的软件包范围内获得安全更新，直至 "
-#~ "2034 年。借助经认证的工具和加密模块，满足 FedRAMP、FIPS、STIG、HIPAA 等合"
-#~ "规与加固要求。最多 5 台设备可免费使用。\n"
-#~ "\n"
-#~ "更多信息请访问 <a href=\"https://ubuntu.com/pro\">ubuntu.com/pro</a>。"
+#~ msgid "Chat"
+#~ msgstr "聊天"
 
-#~ msgid "From your admin, or from ubuntu.com/pro"
-#~ msgstr "由管理员提供，或从 ubuntu.com/pro 获取"
+#~ msgid "Resources"
+#~ msgstr "源"
 
-#~ msgid "Upgrade this machine to Ubuntu Pro. Free for up to 5 machines."
-#~ msgstr "将此设备升级为 Ubuntu Pro。最多 5 台设备可免费使用。"
+#~ msgid "Error creating account"
+#~ msgstr "建立帐号时出错"
 
-#~ msgid "Get security updates on a wide range of packages until 2034"
-#~ msgstr "在广泛的软件包范围内获取安全更新，直至 2034 年"
+#~ msgid "Error removing account"
+#~ msgstr "移除帐号时出错"
 
-#~ msgid ""
-#~ "Fulfill FedRAMP, FIPS, STIG and HIPAA and other compliance and hardening "
-#~ "requirements with certified tooling and crypto-modules."
-#~ msgstr ""
-#~ "通过经认证的工具和加密模块满足 FedRAMP、FIPS、STIG、HIPAA 等合规与加固要"
-#~ "求。"
+#~ msgid "Are you sure you want to remove the account?"
+#~ msgstr "您确定要移除这个帐号吗？"
 
-#~ msgid "Learn more at <a href=\"https://ubuntu.com/pro\">ubuntu.com/pro</a>."
-#~ msgstr "了解更多：<a href=\"https://ubuntu.com/pro\">ubuntu.com/pro</a>。"
+#~ msgid "This will not remove the account on the server."
+#~ msgstr "这不会将该帐号从服务器上移除。"
 
-#~ msgid ""
-#~ "You can always enable Ubuntu Pro later via the Software & Updates "
-#~ "application"
-#~ msgstr "您随时可以通过“软件和更新”应用程序启用 Ubuntu Pro"
+#~ msgid "_Remove"
+#~ msgstr "移除(_R)"
+
+#~ msgid "Connect to your existing data in the cloud"
+#~ msgstr "连接到您已有的云数据"
+
+#~ msgid "_Add Account"
+#~ msgstr "添加帐号(_A)"
+
+#~ msgid "Select keyboard layouts"
+#~ msgstr "选择键盘布局"
+
+#~ msgid "Search for a location"
+#~ msgstr "搜索位置"
+
+#~ msgid "_Determine your location automatically"
+#~ msgstr "自动确定您的位置(_D)"
+
+#~ msgid "No network devices found."
+#~ msgstr "未发现网络设备。"
+
+#~ msgid "Thank You"
+#~ msgstr "谢谢"
+
+#~ msgid "You may change these options at any time in Settings."
+#~ msgstr "您可以随时在“系统设置”中更改这些选项。"
+
+#~ msgid "_Start using GNOME 3"
+#~ msgstr "开始使用 GNOME 3(_S)"
+
+#~ msgid "Login settings are used by all users when logging into the system"
+#~ msgstr "所有用户登录系统时都将使用这些登录设置"
+
+#~ msgid "Select input sources"
+#~ msgstr "选择输入源"
+
+#~ msgid "_Back"
+#~ msgstr "返回(_B)"
+
+#~ msgid "Your session needs to be restarted for changes to take effect"
+#~ msgstr "需要重启会话，以使更改生效"
+
+#~ msgid "Restart Now"
+#~ msgstr "现在重启"
+
+#~ msgctxt "Language"
+#~ msgid "None"
+#~ msgstr "无"
+
+#~ msgid "Sorry"
+#~ msgstr "对不起"
+
+#~ msgid "Input methods can't be used on the login screen"
+#~ msgstr "在登录界面无法使用输入法"
+
+#~ msgid "Select an input source"
+#~ msgstr "选择一个输入源"
+
+#~ msgid "Keyboard Layout"
+#~ msgstr "键盘布局"
+
+#~ msgid "Remove Input Source"
+#~ msgstr "移除输入源"
+
+#~ msgid "Move Input Source Up"
+#~ msgstr "上移输入源"
+
+#~ msgid "Unspecified"
+#~ msgstr "未指定"
+
+#~ msgid "_Use Local Login"
+#~ msgstr "使用本地登录(_U)"
+
+#~ msgid "English"
+#~ msgstr "英语"
+
+#~ msgid "British English"
+#~ msgstr "英国英语"
+
+#~ msgid "German"
+#~ msgstr "德语"
+
+#~ msgid "French"
+#~ msgstr "法语"
+
+#~ msgid "Spanish"
+#~ msgstr "西班牙语"
+
+#~ msgid "Chinese (simplified)"
+#~ msgstr "中文(简体)"
+
+#~ msgid "Use %s"
+#~ msgstr "使用 %s"

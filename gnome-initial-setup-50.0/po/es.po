@@ -8,71 +8,51 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
-"issues\n"
-"POT-Creation-Date: 2026-09-09 01:52+0300\n"
-"PO-Revision-Date: 2026-04-14 01:42+0000\n"
-"Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
+"issues/\n"
+"POT-Creation-Date: 2026-01-29 16:10+0000\n"
+"PO-Revision-Date: 2026-02-12 15:28+0100\n"
+"Last-Translator: Daniel Mustieles García <daniel.mustieles@gmail.com>\n"
 "Language-Team: Spanish - Spain <gnome-es-list@gnome.org>\n"
 "Language: es_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2026-07-01 12:24+0000\n"
-"X-Generator: Launchpad (build c38ea58da9d7185c4996adfc854ab433551cdcdd)\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"X-Generator: Gtranslator 49.0\n"
 
 #: data/gnome-initial-setup.desktop.in.in:2
-#: gnome-initial-setup/gis-driver.c:890
+#: gnome-initial-setup/gis-driver.c:869
 msgid "Initial Setup"
 msgstr "Configuración inicial"
 
-#: gnome-initial-setup/gis-assistant.c:425
+#: gnome-initial-setup/gis-assistant.c:401
 msgid "_Next"
-msgstr "_Siguiente"
+msgstr "Siguie_nte"
 
-#: gnome-initial-setup/gis-assistant.c:426
-msgid "_Finish"
-msgstr "_Terminar"
-
-#: gnome-initial-setup/gis-assistant.c:427
+#: gnome-initial-setup/gis-assistant.c:402
 msgid "_Accept"
 msgstr "_Aceptar"
 
-#: gnome-initial-setup/gis-assistant.c:428
+#: gnome-initial-setup/gis-assistant.c:403
 msgid "_Skip"
 msgstr "_Omitir"
 
-#: gnome-initial-setup/gis-assistant.c:429
+#: gnome-initial-setup/gis-assistant.c:404
 msgid "_Previous"
-msgstr "A_nterior"
+msgstr "_Anterior"
 
-#: gnome-initial-setup/gis-assistant.c:430
+#: gnome-initial-setup/gis-assistant.c:405
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:254
 msgid "_Cancel"
 msgstr "_Cancelar"
 
-#: gnome-initial-setup/gis-webkit.c:54
-msgid "Scan the QR Code…"
-msgstr "Escanear el código QR…"
-
-#: gnome-initial-setup/gis-webkit.c:244
-msgid "Open in default web browser"
-msgstr "Abrir en navegador web predeterminado"
-
-#: gnome-initial-setup/gis-webkit.c:247
-msgid "Open in default file handler"
-msgstr "Abrir en manejador de archivos predeterminado"
-
-#: gnome-initial-setup/gnome-initial-setup.c:362
+#: gnome-initial-setup/gnome-initial-setup.c:280
 msgid "Force existing user mode"
-msgstr "Forzar el modo de usuario existente"
+msgstr "Forzar el modo del nuevo existente"
 
-#: gnome-initial-setup/gnome-initial-setup.c:364
-msgid "Force Upgrade user"
-msgstr "Forzar usuario de actualización"
-
-#: gnome-initial-setup/gnome-initial-setup.c:378
+#: gnome-initial-setup/gnome-initial-setup.c:294
 msgid "— GNOME initial setup"
-msgstr ". Configuración inicial de GNOME"
+msgstr "— Configuración inicial de GNOME"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.c:181
 msgid "Failed to cache account"
@@ -80,19 +60,19 @@ msgstr "Falló al guardar en caché la cuenta"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.c:231
 msgid "Failed to register account"
-msgstr "No se pudo registrar la cuenta"
+msgstr "Falló al registrar la cuenta"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.c:420
 msgid "No supported way to authenticate with this domain"
-msgstr "No hay una manera compatible de autenticarse con este dominio"
+msgstr "No hay una manera soportada de autenticar con este dominio"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.c:459
 msgid "Failed to join domain"
-msgstr "No se pudo unir al dominio"
+msgstr "Falló al unirse al dominio"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.c:526
 msgid "Failed to log into domain"
-msgstr "No se pudo acceder al dominio"
+msgstr "Falló al iniciar sesión en el dominio"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:12
 msgid "Enterprise Login"
@@ -142,7 +122,6 @@ msgstr ""
 "contraseña del dominio y elija un nombre de equipo único para su equipo."
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:179
-#: gnome-initial-setup/pages/account/gis-account-page-local.ui:151
 msgid "_Computer"
 msgstr "_Equipo"
 
@@ -158,34 +137,16 @@ msgstr "Contraseña del administrador"
 msgid "C_ontinue"
 msgstr "C_ontinuar"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:210
-#, c-format
-msgid "The hostname is too long."
-msgstr "El nombre de anfitrión es demasiado extenso."
-
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:214
-msgid "The hostname must start with a lower case letter from a-z or a digit."
-msgstr ""
-"El nombre de anfitrión debe comenzar por una minúscula latina o un dígito."
-
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:218
-msgid ""
-"The hostname should only consist of lower case letters from a-z, digits and "
-"a hyphen: -"
-msgstr ""
-"El nombre de anfitrión solo debe tener minúsculas latinas, dígitos y un "
-"guion: -"
-
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:545
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:321
 msgid "We need a few details to complete setup."
 msgstr "Hacen falta algunos detalles para completar la configuración."
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:704
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:476
 msgid "Administrator"
 msgstr "Administrador"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:710
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:753
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:482
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:525
 #, c-format
 msgid "Failed to create user '%s': "
 msgstr "Falló al crear el usuario «%s»: "
@@ -212,11 +173,11 @@ msgstr ""
 msgid "_Full Name"
 msgstr "_Nombre completo"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.ui:217
+#: gnome-initial-setup/pages/account/gis-account-page-local.ui:159
 msgid "Set up _parental controls for this user"
 msgstr "Establecer el control parental para este usuario"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.ui:223
+#: gnome-initial-setup/pages/account/gis-account-page-local.ui:165
 msgid "For use by a parent or supervisor, who must set up their own password."
 msgstr ""
 "Para usar por un adulto o supervisor, quien debe establecer su propia "
@@ -247,7 +208,7 @@ msgstr "No se puede iniciar sesión como %s en el dominio %s"
 
 #: gnome-initial-setup/pages/account/um-realm-manager.c:788
 msgid "Invalid password, please try again"
-msgstr "Contraseña incorrecta; inténtelo de nuevo"
+msgstr "Contraseña no válida, inténtelo de nuevo"
 
 #: gnome-initial-setup/pages/account/um-realm-manager.c:801
 #, c-format
@@ -288,18 +249,17 @@ msgid "Preview"
 msgstr "Vista previa"
 
 #: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:325
-#: gnome-initial-setup/pages/language/cc-language-chooser.c:244
+#: gnome-initial-setup/pages/language/cc-language-chooser.c:242
 msgid "More…"
 msgstr "Más…"
 
 #. Translators: a search for input methods or keyboard layouts
 #. * did not yield any results
-#.
 #: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:347
 msgid "No inputs found"
 msgstr "No se han encontrado fuentes de entrada"
 
-#: gnome-initial-setup/pages/keyboard/gis-keyboard-page.c:484
+#: gnome-initial-setup/pages/keyboard/gis-keyboard-page.c:502
 #: gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui:16
 msgid "Typing"
 msgstr "Escritura"
@@ -312,11 +272,11 @@ msgstr "Seleccione la distribución de su teclado o un método de entrada."
 msgid "Search keyboards and input methods"
 msgstr "Buscar teclados y métodos de entrada"
 
-#: gnome-initial-setup/pages/language/cc-language-chooser.c:264
+#: gnome-initial-setup/pages/language/cc-language-chooser.c:262
 msgid "No languages found"
 msgstr "No se han encontrado idiomas"
 
-#: gnome-initial-setup/pages/language/gis-language-page.c:146
+#: gnome-initial-setup/pages/language/gis-language-page.c:268
 #: gnome-initial-setup/pages/language/gis-language-page.ui:14
 msgid "Welcome"
 msgstr "Bienvenido"
@@ -328,7 +288,6 @@ msgstr "Seleccione un idioma de la lista o busque un idioma específico"
 #. Translators: This is meant to be a warm, engaging welcome message,
 #. * like greeting somebody at the door. If the exclamation mark is not
 #. * suitable for this in your language you may replace it.
-#.
 #: gnome-initial-setup/pages/language/gis-welcome-widget.c:132
 msgid "Welcome!"
 msgstr "Bienvenido."
@@ -408,7 +367,8 @@ msgstr "Tenga cuidado de no perder su contraseña."
 msgid "Set a Parent Password"
 msgstr "Establecer una contraseña de adulto"
 
-#. Translators: The placeholder is the full name of the child user on the system.
+#. Translators: The placeholder is the full name of the child user on the
+#. system.
 #: gnome-initial-setup/pages/password/gis-password-page.c:101
 #, c-format
 msgid "This password will control access to the parental controls for %s."
@@ -425,7 +385,7 @@ msgstr "Fortaleza de la contraseña: %s."
 msgid "The passwords do not match."
 msgstr "Las contraseñas no coinciden."
 
-#: gnome-initial-setup/pages/password/gis-password-page.c:427
+#: gnome-initial-setup/pages/password/gis-password-page.c:430
 msgid "Password"
 msgstr "Contraseña"
 
@@ -593,20 +553,18 @@ msgstr "excelente"
 
 #. Translators: the first parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu".
-#.
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:68
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:70
 #, c-format
 msgid ""
 "Sends technical reports that do not contain personal information. Data is "
-"collected by %1$s (<u><a href='%2$s'>privacy policy</a></u>)."
+"collected by %1$s (<a href='%2$s'>privacy policy</a>)."
 msgstr ""
 "Envía informes técnicos que no contienen información personal. Los datos los "
-"recopila %1$s (<u><a href='%2$s'>política de privacidad</a></u>)."
+"recopila %1$s (<a href='%2$s'>política de privacidad</a>)."
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu".
-#.
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:79
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:82
 #, c-format
 msgid ""
 "Sends technical reports that do not contain personal information. Data is "
@@ -615,45 +573,35 @@ msgstr ""
 "Envía informes técnicos que no contienen información personal. Los datos los "
 "recopila %s."
 
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:123
-#, c-format
-msgid ""
-"Allows apps to determine your geographical location (<u><a "
-"href='%1$s'>privacy policy</a></u>)."
-msgstr ""
-"Permite a las aplicaciones determinar su ubicación geográfica (<u><a "
-"href='%1$s'>política de privacidad</a></u>)."
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:125
+msgid "Allows apps to determine your geographical location."
+msgstr "Permite a las aplicaciones determinar su ubicación geográfica."
 
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:174
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:14
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:28
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:171
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:15
+msgid "Privacy"
+msgstr "Privacidad"
+
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:33
 msgid "Location Services"
 msgstr "Servicios de ubicación"
 
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:17
-msgid ""
-"Turn on location services to let applications know your geographical "
-"location."
-msgstr ""
-"Active los servicios de ubicación para que las aplicaciones puedan conocer "
-"su ubicación geográfica."
-
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:56
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:65
 msgid "Automatic Problem Reporting"
 msgstr "Informar de problemas automáticamente"
 
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:99
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:134
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:138
-msgid "You can change this later in the Settings app"
-msgstr "Puede cambiar esta opción posteriormente en la aplicación de ajustes"
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:97
+msgid "Privacy controls can be changed at any time from the Settings app."
+msgstr ""
+"Los controles de privacidad se pueden cambiar en cualquier momento desde la "
+"aplicación de Configuración."
 
-#: gnome-initial-setup/pages/software/gis-software-page.c:123
+#: gnome-initial-setup/pages/software/gis-software-page.c:127
 #: gnome-initial-setup/pages/software/gis-software-page.ui:11
 msgid "Third-Party Repositories"
 msgstr "Repositorios de terceros"
 
-#: gnome-initial-setup/pages/software/gis-software-page.c:125
+#: gnome-initial-setup/pages/software/gis-software-page.c:129
 #, c-format
 msgid ""
 "Third-party repositories provide access to additional software from selected "
@@ -665,7 +613,7 @@ msgstr ""
 "y controladores importantes para algunos dispositivos. También incluyen "
 "software propietario."
 
-#: gnome-initial-setup/pages/software/gis-software-page.c:127
+#: gnome-initial-setup/pages/software/gis-software-page.c:131
 msgid ""
 "Third-party repositories provide access to additional software from selected "
 "external sources, including popular apps and drivers that are important for "
@@ -676,18 +624,26 @@ msgstr ""
 "controladores importantes para algunos dispositivos. También incluyen "
 "software propietario."
 
-#: gnome-initial-setup/pages/software/gis-software-page.c:139
+#: gnome-initial-setup/pages/software/gis-software-page.c:143
 msgid "_Disable Third-Party Repositories"
 msgstr "_Desactivar repositorios de terceros"
 
-#: gnome-initial-setup/pages/software/gis-software-page.c:144
+#: gnome-initial-setup/pages/software/gis-software-page.c:148
 msgid "_Enable Third-Party Repositories"
 msgstr "_Activar repositorios de terceros"
+
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:211
+msgid "Setup Failed"
+msgstr "Falló la configuración"
+
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:213
+msgid "Close"
+msgstr "Cerrar"
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
 #. * detect any distribution.
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:406
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:239
 #, c-format
 msgid "_Start Using %s"
 msgstr "_Empezar a usar %s"
@@ -695,50 +651,29 @@ msgstr "_Empezar a usar %s"
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
 #. * detect any distribution.
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:413
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:246
 #, c-format
 msgid "%s is ready to be used."
 msgstr "%s está listo para usarse."
 
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:431
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:499
-#: gnome-initial-setup/pages/summary/gis-summary-page.ui:8
-msgid "All done!"
-msgstr "Terminado"
-
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:457
-msgid "Setup Failed"
-msgstr "Falló la configuración"
-
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:459
-msgid "Close"
-msgstr "Cerrar"
-
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:472
-msgid "Almost done"
-msgstr "Casi terminado"
-
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:568
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:270
 msgid "Setup Complete"
 msgstr "Configuración completada"
 
-#: gnome-initial-setup/pages/summary/gis-summary-page.ui:39
-msgid "Downloading additional language packs"
-msgstr "Descargando paquetes de idiomas adicionales"
-
-#: gnome-initial-setup/pages/summary/gis-summary-page.ui:47
-msgid "Cancel Download"
-msgstr "Cancelar descarga"
+#: gnome-initial-setup/pages/summary/gis-summary-page.ui:8
+msgid "All done!"
+msgstr "Terminado"
 
 #: gnome-initial-setup/pages/timezone/gis-location-entry.c:117
 msgid "Search cities"
 msgstr "Buscar ciudades"
 
 #. Recurse, adding the ADM1 name to the country name
-#. Translators: this is the name of a location followed by a region, for example:
+#. Translators: this is the name of a location followed by a region, for
+#. example:
 #. * 'London, United Kingdom'
-#. * You shouldn't need to translate this string unless the language has a different comma.
-#.
+#. * You shouldn't need to translate this string unless the language has a
+#. different comma.
 #: gnome-initial-setup/pages/timezone/gis-location-entry.c:557
 #: gnome-initial-setup/pages/timezone/gis-location-entry.c:582
 #, c-format
@@ -754,7 +689,6 @@ msgstr "%s, %s"
 
 #. Translators: UTC here means the Coordinated Universal Time.
 #. * %:::z will be replaced by the offset from UTC e.g. UTC+02
-#.
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.c:320
 msgid "UTC%:::z"
 msgstr "UTC%:::z"
@@ -784,7 +718,7 @@ msgstr "Zona horaria actual: %s en %s; hora actual: %s"
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.c:505
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.ui:16
 msgid "Time Zone"
-msgstr "Zona horaria"
+msgstr "Zona horaria "
 
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.ui:17
 msgid ""
@@ -805,455 +739,26 @@ msgstr "Busque una ciudad cercana"
 #. * space (U200a) to improve the spacing in the title, which you can
 #. * keep or remove. The %s is getting replaced with the name and version
 #. * of the OS, e.g. "GNOME 3.38"
-#.
-#: gnome-initial-setup/pages/welcome/gis-welcome-page.c:79
+#: gnome-initial-setup/pages/welcome/gis-welcome-page.c:62
 #, c-format
 msgid "Welcome to %s !"
-msgstr "Le damos la bienvenida a %s"
+msgstr "Bienvenido/a a %s"
 
-#: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:12
-msgid "Welcome to Ubuntu 24.04 LTS"
-msgstr "Le damos la bienvenida a Ubuntu 24.04 LTS"
-
-#: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:13
-msgid ""
-"Complete your setup with additional settings and we'll\n"
-"have you up and running in no time"
-msgstr ""
-"Complete su configuración con opciones adicionales y lo\n"
-"tendremos listo y funcionando en poco tiempo"
+#: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:4
+msgid "Setup"
+msgstr "Configuración"
 
 #: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:32
-msgid "View release notes"
-msgstr "Ver novedades de la versión"
-
-#: gnome-initial-setup/pages/apps/gis-apps-page.c:95
-msgid "Ready to go"
-msgstr "Listo para comenzar"
-
-#: gnome-initial-setup/pages/apps/gis-apps-page.blp:8
-msgid "Get started with more applications"
-msgstr "Comience con más aplicaciones"
-
-#: gnome-initial-setup/pages/apps/gis-apps-page.blp:9
-msgid "Ubuntu's App Center has a range of apps you can get started with."
-msgstr ""
-"El centro de aplicaciones de Ubuntu tiene una variedad de aplicaciones con "
-"las que puede comenzar."
-
-#: gnome-initial-setup/pages/apps/gis-apps-page.blp:28
-msgid "Open App Center"
-msgstr "Abrir el Centro de aplicaciones"
-
-#: gnome-initial-setup/pages/eula/gis-eula-page.blp:4
-msgid "End-User License Agreement"
-msgstr "Acuerdo de licencia de usuario final"
-
-#. GNOME Initial Setup
-#. TRANSLATORS: The place-holder is an error message
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:73
-#, c-format
-msgid "Failed to grant consent for the Initial Setup application: %s"
-msgstr ""
-"Error al otorgar el consentimiento para la aplicación de configuración "
-"inicial: %s"
-
-#. TRANSLATORS: The place-holder is an error message
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:75
-#, c-format
-msgid "Failed to withdraw consent for the Initial Setup application: %s"
-msgstr ""
-"Error al retirar el consentimiento para la aplicación de configuración "
-"inicial: %s"
-
-#. Platform source used by timed systemd collection
-#. TRANSLATORS: The place-holder is an error message
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:80
-#, c-format
-msgid "Failed to grant consent for the system data collector: %s"
-msgstr ""
-"Error al otorgar el consentimiento para el recopilador de datos del sistema: "
-"%s"
-
-#. TRANSLATORS: The place-holder is an error message
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:82
-#, c-format
-msgid "Failed to withdraw consent for the system data collector: %s"
-msgstr ""
-"Error al retirar el consentimiento para el recopilador de datos del sistema: "
-"%s"
-
-#. Platform source used by release upgrader collection
-#. TRANSLATORS: The place-holder is an error message
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:87
-#, c-format
-msgid "Failed to grant consent for the release upgrader application: %s"
-msgstr ""
-"Error al otorgar el consentimiento para la aplicación del actualizador: %s"
-
-#. TRANSLATORS: The place-holder is an error message
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:89
-#, c-format
-msgid "Failed to withdraw consent for the release upgrader application: %s"
-msgstr ""
-"Error al retirar el consentimiento para la aplicación del actualizador: %s"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:381
-#, c-format
 msgid ""
-"With telemetry log: %s\n"
-"Without telemetry log: %s"
+"Setup will guide you through making an account and enabling some features. "
+"We’ll have you up and running in no time."
 msgstr ""
-"Con registro de telemetría: %s\n"
-"Sin registro de telemetría: %s"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:411
-#, c-format
-msgid "Failed to collect telemetry report: %s"
-msgstr "Error al recopilar el informe de telemetría: %s"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:571
-#, c-format
-msgid "Failed to generate report: %s"
-msgstr "Error al generar el informe: %s"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:589
-#, c-format
-msgid "Failed to write report: %s"
-msgstr "Error al escribir el informe: %s"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:647
-msgid "Show First Report"
-msgstr "Mostrar primer informe"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:9
-#, fuzzy
-msgid "Utile Depends On It: Help Improve Ubuntu"
-msgstr "Ayudar a mejorar Ubuntu"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:10
-#, fuzzy
-msgid ""
-"Help improve Ubuntu by sharing your system and error reports with them.\n"
-"Reports are sent anonymously."
-msgstr ""
-"Ayúdenos a mejorar Ubuntu compartiendo con nosotros informes sobre su "
-"sistema y los errores.\n"
-"Los informes se envían de forma anónima."
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:31
-msgid "Share _system data with the Ubuntu team"
-msgstr "Compartir datos del _sistema con el equipo de Ubuntu"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:32
-msgid "This includes hardware information, language and timezone"
-msgstr "Se incluye información sobre el hardware, el idioma y la zona horaria"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:46
-msgid "Learn more about system reporting"
-msgstr "Más información sobre los informes del sistema"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:57
-msgid "Legal notice"
-msgstr "Aviso legal"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:68
-msgid "Show Report"
-msgstr "Mostrar informe"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:95
-msgid "Share _error reports with the Ubuntu team"
-msgstr "Compartir informes de _errores con el equipo de Ubuntu"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:96
-msgid "This includes crash reports and related system logs"
-msgstr "Se incluyen informes de bloques y registros del sistema relacionados"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:110
-msgid "Learn more about error reporting"
-msgstr "Más información sobre los informes de errores"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:148
-msgid "System Report"
-msgstr "Informe del sistema"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-attach-page.blp:21
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:21
-msgid "Enable Ubuntu Pro"
-msgstr "Activar Ubuntu Pro"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-attach-page.blp:29
-msgid "_Attach machine via your Ubuntu One account"
-msgstr "_Conecte la máquina a través de su cuenta de Ubuntu One"
-
-#. Translators: translators: This is the other way to attach a machine to Ubuntu Pro
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-attach-page.blp:82
-msgid "Or add a _token manually"
-msgstr "O añada un _token manualmente"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-attach-page.blp:117
-msgid "Token"
-msgstr "Ficha"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:54
-msgid "Upgrade this device to Ubuntu Pro. Free for personal use."
-msgstr "Actualice este dispositivo a Ubuntu Pro. Gratis para uso personal."
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:105
-msgid ""
-"Fulfill FedRAMP, FIPS, STIG and HIPAA and other compliance and hardening "
-"requirements with certified tooling and crypto-modules"
-msgstr ""
-"Cumpla FedRAMP, FIPS, STIG y HIPAA y otros requisitos de cumplimiento y "
-"fortalecimiento con herramientas y módulos de cifrado certificados"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:130
-msgid "Enable Ubuntu Pro now, or skip this step."
-msgstr "Active Ubuntu Pro ahora o saltese este paso."
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:133
-msgid "_Enable Ubuntu Pro"
-msgstr "_Activar Ubuntu Pro"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:152
-msgid "_Skip for now"
-msgstr "_Omitir por ahora"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:153
-msgid "You can enable Ubuntu Pro later in the Security Center"
-msgstr "Puede activar Ubuntu Pro más adelante en el Centro de seguridad"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-services-page.blp:22
-msgid "Ubuntu Pro Services"
-msgstr "Servicios de Ubuntu Pro"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-services-page.blp:29
-msgid "Your subscription"
-msgstr "Su suscripción"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-services-page.blp:44
-msgid "Your enabled services"
-msgstr "Servicios que ha activado"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-services-page.blp:47
-msgid ""
-"You can change the default enablements for your token on the ubuntu.com/pro "
-"web interface. You can also change enabled services in the Settings menu or "
-"with the `<span font_family='monospace'>pro</span>` command-line."
-msgstr ""
-"Puede cambiar los valores predeterminados  para su token en la interfaz web "
-"de ubuntu.com/pro. También puede modificar los servicios activados en el "
-"menú Configuración o con el comando «<span font_family='monospace'>pro</"
-"span>»."
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-services-page.blp:53
-msgid "Other available services"
-msgstr "Otros servicios disponibles"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:221
-msgid "Valid token"
-msgstr "Ficha válida"
-
-#. TRANSLATORS: The error shown when attaching an
-#. Ubuntu Pro contact fails.
-#. It may be due to various reasons, most common is
-#. an invalid token.
-#.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:236
-msgid "Invalid token or attach failure"
-msgstr "Token no válido o error al adjuntar"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:244
-msgid "Code expired"
-msgstr "Código caducado"
-
-#. TRANSLATORS: the placeholder %s is a link to ubuntu.com/pro/attach.
-#. Use HTML encoded format for special characters such as '&'.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:259
-#, c-format
-msgid "Enter this code on %s"
-msgstr "Introduzca este código en %s"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:316
-msgid "An internet connection is required to enable Ubuntu Pro"
-msgstr "Es necesaria una conexión a Internet para activar Ubuntu Pro"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:466
-#, c-format
-msgid "Get security updates on a wide range of packages until %s"
-msgstr ""
-"Obtenga actualizaciones de seguridad para una amplia variedad de paquetes "
-"hasta %s"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:474
-msgid "Ubuntu Pro"
-msgstr "Ubuntu Pro"
-
-#. TRANSLATORS: The anbox-cloud Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:609
-msgid "Scalable Android in the cloud"
-msgstr "Android escalable en la nube"
-
-#. TRANSLATORS: The cc-eal Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:612
-msgid "Common Criteria EAL2 Provisioning Packages"
-msgstr "Paquetes de aprovisionamiento de Common Criteria EAL2"
-
-#. TRANSLATORS: The esm-apps Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:615
-msgid "Expanded Security Maintenance for Applications"
-msgstr "Mantenimiento de seguridad ampliado para aplicaciones"
-
-#. TRANSLATORS: The esm-infra Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:618
-msgid "Expanded Security Maintenance for Infrastructure"
-msgstr "Mantenimiento de seguridad ampliado para infraestructura"
-
-#. TRANSLATORS: The fips Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:621
-msgid "NIST-certified FIPS crypto packages"
-msgstr "Paquetes criptográficos FIPS certificados por el NIST"
-
-#. TRANSLATORS: The fips-preview Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:624
-msgid "Preview of FIPS crypto packages undergoing certification with NIST"
-msgstr ""
-"Vista previa de los paquetes criptográficos FIPS que se encuentran en "
-"proceso de certificación con NIST"
-
-#. TRANSLATORS: The fips-updates Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:627
-msgid "FIPS compliant crypto packages with stable security updates"
-msgstr ""
-"Paquetes criptográficos compatibles con FIPS con actualizaciones de "
-"seguridad estables"
-
-#. TRANSLATORS: The landscape Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:630
-msgid "Management and administration tool for Ubuntu"
-msgstr "Herramienta de gestión y administración para Ubuntu"
-
-#. TRANSLATORS: The livepatch Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:633
-msgid "Canonical kernel Livepatch service"
-msgstr "Servicio Livepatch del kernel de Canonical"
-
-#. TRANSLATORS: The realtime-kernel Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:636
-msgid "Ubuntu kernel with PREEMPT_RT patches integrated"
-msgstr "Kernel de Ubuntu con parches PREEMPT_RT integrados"
-
-#. TRANSLATORS: The ros Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:639
-msgid "Security Updates for the Robot Operating System"
-msgstr "Actualizaciones de seguridad para el sistema operativo del robot"
-
-#. TRANSLATORS: The ros-updates Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:642
-msgid "All Updates for the Robot Operating System"
-msgstr "Todas las actualizaciones para el sistema operativo del robot"
-
-#. TRANSLATORS: The usg Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:645
-msgid "Security compliance and audit tools"
-msgstr "Herramientas de auditoría y cumplimiento de seguridad"
-
-#. TRANSLATORS: Use HTML encoded format for special characters such as &amp' for '&'. %s is a URL.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:1230
-#, c-format
-msgid "Learn more at %s"
-msgstr "Más información en %s"
-
-#. TRANSLATORS: Subtitle telling who can provide the Ubuntu Pro token.
-#. Use HTML encoded format for special characters such as &amp' for '&'. %s is a URL.
-#.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:1247
-#, c-format
-msgid "From your admin, or from %s"
-msgstr "Desde su administrador o desde %s"
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:75
-msgid "Blue"
-msgstr "Azul"
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:78
-msgid "Teal"
-msgstr "Verde azulado"
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:81
-msgid "Green"
-msgstr "Verde"
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:84
-msgid "Yellow"
-msgstr "Amarillo"
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:87
-msgid "Orange"
-msgstr "Naranja"
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:90
-msgid "Red"
-msgstr "Rojo"
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:93
-msgid "Pink"
-msgstr "Rosa"
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:96
-msgid "Purple"
-msgstr "Morado"
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:99
-msgid "Slate"
-msgstr "Pizarra"
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:102
-msgid "Warty Brown"
-msgstr "Marrón verrugoso"
-
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:469
-msgid "Appearance"
-msgstr "Aspecto"
-
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
-msgid "Choose how Ubuntu looks"
-msgstr "Elija el aspecto de Ubuntu"
-
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
-msgid "Personalize your desktop's appearance"
-msgstr "Personalice el aspecto de su escritorio"
-
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
-msgid "Style"
-msgstr "Estilo"
-
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:53
-msgid "_Default"
-msgstr "_Predeterminado"
-
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:82
-msgid "Da_rk"
-msgstr "O_scuro"
-
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:100
-msgid "OLED screen detected. Dark style may save power."
-msgstr ""
-"Se ha detectado una pantalla OLED. El estilo oscuro podría ahorrar energía."
-
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:112
-msgid "Accent Color"
-msgstr "Color de resaltado"
+"La configuración le guiará para crear una cuenta y activar algunas "
+"características. Estará todo listo y funcionando en poco tiempo."
+
+#: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:36
+msgid "_Start Setup"
+msgstr "_Iniciar configuración"
 
 #: po/EXTRA_STRINGS.sh:1
 msgid "Force live user mode"
@@ -1296,136 +801,565 @@ msgstr "Probar ${NAME}"
 msgid "Install ${PRETTY_NAME}"
 msgstr "Instalar ${PRETTY_NAME}"
 
-#, c-format
-#~ msgid "Failed to show privacy policy: %s"
-#~ msgstr "No se pudo mostrar la normativa de privacidad: %s"
+#, fuzzy
+#~ msgid "Set a Password"
+#~ msgstr "Establecer una contraseña"
 
-#~ msgid "Help improve Ubuntu"
-#~ msgstr "Ayudar a mejorar Ubuntu"
+#, fuzzy
+#~ msgid "Privacy Policy"
+#~ msgstr "política de privacidad"
 
-#~ msgid "Show the First Report"
-#~ msgstr "Mostrar el primer informe"
+#, fuzzy
+#~ msgid ""
+#~ "Allows apps to determine your geographical location. Uses the Mozilla "
+#~ "Location Service (<a href='https://location.services.mozilla.com/"
+#~ "privacy'>privacy policy</a>)."
+#~ msgstr "Permite que las aplicaciones determinen su ubicación geográfica. "
 
-#, c-format
-#~ msgid "Failed to get report information: %s"
-#~ msgstr "No se pudo obtener la información del informe: %s"
+#, fuzzy
+#~ msgid "Please check the name and username. You can choose a picture too."
+#~ msgstr "Por favor verifique el nombre y el nombre de usuario. "
 
+#, fuzzy
+#~ msgid "Edit avatar"
+#~ msgstr "Editar avatar"
+
+#, fuzzy
+#~ msgid "Online Accounts"
+#~ msgstr "Cuentas en línea"
+
+#, fuzzy
+#~ msgid "Connect Your Online Accounts"
+#~ msgstr "Conecte sus cuentas en línea"
+
+#, fuzzy
+#~ msgid ""
+#~ "Connect your accounts to easily access your email, online calendar, "
+#~ "contacts, documents and photos."
+#~ msgstr ""
+#~ "Conecte sus cuentas para acceder fácilmente a su correo electrónico, "
+#~ "calendario en línea, contactos, documentos y fotografías."
+
+#, fuzzy
+#~ msgid "Accounts can be added and removed at any time from the Settings app."
+#~ msgstr ""
+#~ "Las cuentas se pueden agregar y eliminar en cualquier momento desde la "
+#~ "aplicación Configuración."
+
+#, fuzzy, c-format
+#~ msgid "%s Account"
+#~ msgstr "%s cuenta"
+
+#, fuzzy, c-format
+#~ msgid "%s is ready to be used. We hope that you love it!"
+#~ msgstr "%s está listo para ser utilizado. "
+
+#, fuzzy
+#~ msgid "Install or Try?"
+#~ msgstr "¿Instalar o probar?"
+
+#, fuzzy
+#~ msgid ""
+#~ "This live media can be used to install GNOME, or it can be used to try "
+#~ "GNOME as a temporary system. Installation can be started at any time "
+#~ "using the install icon in Activities."
+#~ msgstr ""
+#~ "Este medio en vivo se puede utilizar para instalar GNOME o para probar "
+#~ "GNOME como sistema temporal. "
+
+#, fuzzy
+#~ msgid "Try"
+#~ msgstr "Intentar"
+
+#, fuzzy
+#~ msgid "Avatar image"
+#~ msgstr "imagen de avatar"
+
+#, fuzzy
+#~ msgid "Take a Picture…"
+#~ msgstr "Toma una foto…"
+
+#, fuzzy
+#~ msgid "_Confirm"
+#~ msgstr "_Confirmar"
+
+#, fuzzy
+#~ msgid "This is a weak password."
+#~ msgstr "Esta es una contraseña débil."
+
+#, fuzzy, c-format
+#~ msgid ""
+#~ "Sending reports of technical problems helps us to improve %s. Reports are "
+#~ "sent anonymously and are scrubbed of personal data."
+#~ msgstr "Enviar informes de problemas técnicos nos ayuda a mejorar %s. "
+
+#, fuzzy, c-format
+#~ msgid "Problem data will be collected by %s:"
+#~ msgstr "Los datos del problema serán recopilados por %s:"
+
+#, fuzzy
+#~ msgid "Uses Mozilla Location Service:"
+#~ msgstr "Utiliza el servicio de ubicación de Mozilla:"
+
+#, fuzzy
+#~ msgid "Loading…"
+#~ msgstr "Cargando…"
+
+#, fuzzy
+#~ msgid ""
+#~ "Connecting to the Internet will enable you to set the time, add your "
+#~ "details, and enable you to access your email, calendar, and contacts. It "
+#~ "is also necessary for enterprise login accounts."
+#~ msgstr ""
+#~ "Conectarse a Internet le permitirá configurar la hora, agregar sus datos "
+#~ "y acceder a su correo electrónico, calendario y contactos. "
+
+#, fuzzy
+#~ msgid "preferences-system"
+#~ msgstr "sistema de preferencias"
+
+#, fuzzy
+#~ msgid "License Agreements"
+#~ msgstr "Acuerdos de licencia"
+
+#, fuzzy
+#~ msgid ""
+#~ "I have _agreed to the terms and conditions in this end user license "
+#~ "agreement."
+#~ msgstr ""
+#~ "He _aceptado los términos y condiciones de este acuerdo de licencia de "
+#~ "usuario final."
+
+#, fuzzy
+#~ msgid "No regions found"
+#~ msgstr "No se encontraron regiones"
+
+#, fuzzy
+#~ msgid "Region"
+#~ msgstr "Región"
+
+#, fuzzy
+#~ msgid "Choose your country or region."
+#~ msgstr "Elija su país o región."
+
+#, fuzzy
+#~ msgid "Software Repositories"
+#~ msgstr "Repositorios de software"
+
+#, fuzzy
+#~ msgid "Access additional software from selected third party sources."
+#~ msgstr "Acceda a software adicional de fuentes de terceros seleccionadas."
+
+#, fuzzy
+#~ msgid ""
+#~ "Some of this software is proprietary and therefore has restrictions on "
+#~ "use, sharing, and access to source code."
+#~ msgstr ""
+#~ "Parte de este software es propietario y, por lo tanto, tiene "
+#~ "restricciones de uso, intercambio y acceso al código fuente."
+
+#, fuzzy
+#~ msgid "Additional Software Repositories"
+#~ msgstr "Repositorios de software adicionales"
+
+#, fuzzy
+#~ msgid "<a href=\"more\">Find out more…</a>"
+#~ msgstr "<a href=\"more\">Más información...</a>"
+
+#, fuzzy
+#~ msgid ""
+#~ "Proprietary software typically has restrictions on how it can be used and "
+#~ "on access to source code. This prevents anyone but the software owner "
+#~ "from inspecting, improving or learning from its code."
+#~ msgstr ""
+#~ "El software propietario suele tener restricciones sobre cómo se puede "
+#~ "utilizar y sobre el acceso al código fuente. "
+
+#, fuzzy
+#~ msgid ""
+#~ "In contrast, Free Software can be freely run, copied, distributed, "
+#~ "studied and modified."
+#~ msgstr ""
+#~ "En cambio, el Software Libre puede ejecutarse, copiarse, distribuirse, "
+#~ "estudiarse y modificarse libremente."
+
+#, fuzzy
+#~ msgid "Ready to Go"
+#~ msgstr "Listo para comenzar"
+
+#, fuzzy
+#~ msgid "You’re ready to go!"
+#~ msgstr "¡Estás listo para comenzar!"
+
+#, fuzzy
+#~ msgid "Disable image"
+#~ msgstr "Desactivar imagen"
+
+#, fuzzy
+#~ msgctxt "Password hint"
+#~ msgid "Try to avoid common words."
+#~ msgstr "Trate de evitar palabras comunes."
+
+#, fuzzy
+#~ msgctxt "Password hint"
+#~ msgid "Try to use more numbers."
+#~ msgstr "Intenta usar más números."
+
+#, fuzzy
+#~ msgctxt "Password hint"
+#~ msgid ""
+#~ "Password needs to be longer. Try to add more letters, numbers and "
+#~ "punctuation."
+#~ msgstr "La contraseña debe ser más larga. "
+
+#, fuzzy
+#~ msgid ""
+#~ "Proprietary software sources provide access to additional software, "
+#~ "including web browsers and games. This software typically has "
+#~ "restrictions on use and access to source code, and is not provided by %s."
+#~ msgstr ""
+#~ "Las fuentes de software patentado brindan acceso a software adicional, "
+#~ "incluidos navegadores web y juegos. "
+
+#, fuzzy
+#~ msgid "Proprietary Software Sources"
+#~ msgstr "Fuentes de software propietario"
+
+#, fuzzy
+#~ msgid "A user with the username ‘%s’ already exists."
+#~ msgstr "Ya existe un usuario con el nombre de usuario '%s'."
+
+#, fuzzy
+#~ msgid "_Verify"
+#~ msgstr "_Verificar"
+
+#, fuzzy
+#~ msgctxt "Password strength"
+#~ msgid "Strength: Weak"
+#~ msgstr "Fuerza: Débil"
+
+#, fuzzy
+#~ msgctxt "Password strength"
+#~ msgid "Strength: Low"
+#~ msgstr "Fuerza: Baja"
+
+#, fuzzy
+#~ msgctxt "Password strength"
+#~ msgid "Strength: Medium"
+#~ msgstr "Fuerza: Media"
+
+#, fuzzy
+#~ msgctxt "Password strength"
+#~ msgid "Strength: Good"
+#~ msgstr "Fuerza: Buena"
+
+#, fuzzy
+#~ msgctxt "Password strength"
+#~ msgid "Strength: High"
+#~ msgstr "Fuerza: Alta"
+
+#, fuzzy
+#~ msgid "Are these the right details? You can change them if you want."
+#~ msgstr "¿Son estos los detalles correctos? "
+
+#, fuzzy
+#~ msgid "You can review your online accounts (and add others) after setup."
+#~ msgstr ""
+#~ "Puede revisar sus cuentas en línea (y agregar otras) después de la "
+#~ "configuración."
+
+#, fuzzy
+#~ msgid ""
+#~ "We think that your time zone is %s. Press Next to continue or search for "
+#~ "a city to manually set the time zone."
+#~ msgstr "Creemos que su zona horaria es %s. "
+
+#, fuzzy
 #~ msgid "Cancel"
 #~ msgstr "Cancelar"
 
-#~ msgid "You can change your mind later in Settings → Privacy → Diagnostics."
+#, fuzzy
+#~ msgid "Your username cannot be changed after setup."
 #~ msgstr ""
-#~ "Si cambia de opinión, diríjase a Configuración ▸ Privacidad ▸ Diagósticos."
+#~ "Su nombre de usuario no se puede cambiar después de la configuración."
 
-#~ msgid "Ubuntu Report Contents"
-#~ msgstr "Contenidos del informe de Ubuntu"
-
-#, c-format
+#, fuzzy
 #~ msgid ""
-#~ "Sends technical reports that do not contain personal information. Data is "
-#~ "collected by %1$s (<a href='%2$s'>privacy policy</a>)."
+#~ "In order to use enterprise logins, this computer needs to be enrolled in "
+#~ "the domain. Please have your network administrator type their domain "
+#~ "password here, and choose a unique computer name for your computer."
 #~ msgstr ""
-#~ "Envía informes técnicos que no contienen información personal. Los datos "
-#~ "los recopila %1$s (<a href='%2$s'>política de privacidad</a>)."
+#~ "Para poder utilizar inicios de sesión empresariales, esta computadora "
+#~ "debe estar inscrita en el dominio. "
 
-#~ msgid "Privacy controls can be changed at any time from the Settings app."
+#, fuzzy
+#~ msgid "No password"
+#~ msgstr "Sin contraseña"
+
+#, fuzzy
+#~ msgctxt "Password strength"
+#~ msgid "Too short"
+#~ msgstr "demasiado corto"
+
+#, fuzzy
+#~ msgctxt "Password strength"
+#~ msgid "Not good enough"
+#~ msgstr "No es lo suficientemente bueno"
+
+#, fuzzy
+#~ msgctxt "Password strength"
+#~ msgid "Weak"
+#~ msgstr "Débil"
+
+#, fuzzy
+#~ msgctxt "Password strength"
+#~ msgid "Fair"
+#~ msgstr "Justo"
+
+#, fuzzy
+#~ msgctxt "Password strength"
+#~ msgid "Good"
+#~ msgstr "Bien"
+
+#, fuzzy
+#~ msgid "Login"
+#~ msgstr "Acceso"
+
+#, fuzzy
+#~ msgid "Create an Enterprise Account"
+#~ msgstr "Crear una cuenta empresarial"
+
+#, fuzzy
+#~ msgid "Create a Local Account"
+#~ msgstr "Crear una cuenta local"
+
+#, fuzzy
+#~ msgid "page 1"
+#~ msgstr "pagina 1"
+
+#, fuzzy
+#~ msgid "Other"
+#~ msgstr "Otro"
+
+#, fuzzy
+#~ msgid "No input source selected"
+#~ msgstr "No se seleccionó ninguna fuente de entrada"
+
+#, fuzzy
+#~ msgid "Add an Input Source"
+#~ msgstr "Agregar una fuente de entrada"
+
+#, fuzzy
+#~ msgid "Thank You"
+#~ msgstr "Gracias"
+
+#, fuzzy
+#~ msgid "That's it!"
+#~ msgstr "¡Eso es todo!"
+
+#, fuzzy
+#~ msgid "_Start using GNOME 3"
+#~ msgstr "_Empezar a usar GNOME 3"
+
+#, fuzzy
+#~ msgctxt "Online Account"
+#~ msgid "Other"
+#~ msgstr "Otro"
+
+#, fuzzy
+#~ msgid "Mail"
+#~ msgstr "Correo"
+
+#, fuzzy
+#~ msgid "Contacts"
+#~ msgstr "Contactos"
+
+#, fuzzy
+#~ msgid "Chat"
+#~ msgstr "Charlar"
+
+#, fuzzy
+#~ msgid "Resources"
+#~ msgstr "Recursos"
+
+#, fuzzy
+#~ msgid "Error creating account"
+#~ msgstr "Error al crear cuenta"
+
+#, fuzzy
+#~ msgid "Error removing account"
+#~ msgstr "Error al eliminar la cuenta"
+
+#, fuzzy
+#~ msgid "Are you sure you want to remove the account?"
+#~ msgstr "¿Estás seguro de que deseas eliminar la cuenta?"
+
+#, fuzzy
+#~ msgid "This will not remove the account on the server."
+#~ msgstr "Esto no eliminará la cuenta en el servidor."
+
+#, fuzzy
+#~ msgid "_Remove"
+#~ msgstr "_Eliminar"
+
+#, fuzzy
+#~ msgid "Connect to your existing data in the cloud"
+#~ msgstr "Conéctese a sus datos existentes en la nube"
+
+#, fuzzy
+#~ msgid "_Add Account"
+#~ msgstr "_Agregar cuenta"
+
+#, fuzzy
+#~ msgid "Select keyboard layouts"
+#~ msgstr "Seleccionar diseños de teclado"
+
+#, fuzzy
+#~ msgid "Login settings are used by all users when logging into the system"
 #~ msgstr ""
-#~ "Los controles de privacidad se pueden cambiar en cualquier momento desde "
-#~ "la aplicación de Configuración."
+#~ "Todos los usuarios utilizan la configuración de inicio de sesión al "
+#~ "iniciar sesión en el sistema."
 
-#, c-format
-#~ msgid "Failed to send report decline: %s"
-#~ msgstr "Error al enviar el rechazo de informe: %s"
+#, fuzzy
+#~ msgid "Search for a location"
+#~ msgstr "Buscar una ubicación"
 
-#, c-format
-#~ msgid "Failed to send report information: %s"
-#~ msgstr "Error al enviar la información del informe: %s"
+#, fuzzy
+#~ msgid "_Determine your location automatically"
+#~ msgstr "_Determina tu ubicación automáticamente"
 
-#~ msgid "Location services"
-#~ msgstr "Servicios de ubicación"
+#, fuzzy
+#~ msgid "No network devices found."
+#~ msgstr "No se encontraron dispositivos de red."
 
-#~ msgid "Data privacy"
-#~ msgstr "Privacidad de datos"
+#, fuzzy
+#~ msgid "You may change these options at any time in Settings."
+#~ msgstr "Puede cambiar estas opciones en cualquier momento en Configuración."
 
-#, c-format
-#~ msgid ""
-#~ "Turn on location services to let applications know your geographical "
-#~ "location. You can change this anytime in System Settings."
+#, fuzzy
+#~ msgid "Select input sources"
+#~ msgstr "Seleccionar fuentes de entrada"
+
+#, fuzzy
+#~ msgid "_Back"
+#~ msgstr "_Atrás"
+
+#, fuzzy
+#~ msgid "Sorry"
+#~ msgstr "Lo siento"
+
+#, fuzzy
+#~ msgid "Input methods can't be used on the login screen"
 #~ msgstr ""
-#~ "Active los servicios de ubicación para que las aplicaciones sepan dónde "
-#~ "se encuentra. Puede cambiarlo en cualquier momento en Configuración del "
-#~ "sistema."
+#~ "Los métodos de entrada no se pueden utilizar en la pantalla de inicio de "
+#~ "sesión"
 
-#~ msgid "Yes, share system data with the Ubuntu team"
-#~ msgstr "Sí, compartir datos del sistema con el equipo de Ubuntu"
-
-#~ msgid "No, don't share system data"
-#~ msgstr "No compartir datos del sistema"
-
-#, c-format
-#~ msgid ""
-#~ "Help us improve Ubuntu by sharing your system data with us. This includes "
-#~ "things like your machine model, installed software and the location you "
-#~ "chose for your timezone."
+#, fuzzy
+#~ msgid "Your session needs to be restarted for changes to take effect"
 #~ msgstr ""
-#~ "Ayúdenos a mejorar Ubuntu compartiendo los datos de su sistema con "
-#~ "nosotros. Esto incluye información como el modelo de su equipo, software "
-#~ "instalado y la ubicación que eligió para su zona horaria."
+#~ "Es necesario reiniciar su sesión para que los cambios surtan efecto."
 
-#~ msgid ""
-#~ "Upgrade this machine to Ubuntu Pro for security updates on a much wider "
-#~ "range of packages, until 2034. Fulfill FedRAMP, FIPS, STIG and HIPAA and "
-#~ "other compliance and hardening requirements with certified tooling and "
-#~ "crypto-modules. Free for up to 5 machines.\n"
-#~ "\n"
-#~ "More information on <a href=\"https://ubuntu.com/pro\">ubuntu.com/pro</a>."
-#~ msgstr ""
-#~ "Actualice esta máquina a Ubuntu Pro para obtener actualizaciones de "
-#~ "seguridad en una gama mucho más amplia de paquetes, hasta 2034. Cumpla "
-#~ "los requisitos de conformidad y refuerzo de FedRAMP, FIPS, STIG e HIPAA, "
-#~ "entre otros, con herramientas y módulos criptográficos certificados. "
-#~ "Gratuito para hasta 5 máquinas.\n"
-#~ "\n"
-#~ "Más información en <a href=\"https://ubuntu.com/pro\">ubuntu.com/pro</a>."
+#, fuzzy
+#~ msgid "Restart Now"
+#~ msgstr "Reiniciar ahora"
 
-#~ msgid "Get security updates on a wide range of packages until 2034"
-#~ msgstr ""
-#~ "Obtenga actualizaciones de seguridad en una amplia gama de paquetes hasta "
-#~ "2034"
+#, fuzzy
+#~ msgctxt "Language"
+#~ msgid "None"
+#~ msgstr "Ninguno"
 
-#~ msgid "Learn more at <a href=\"https://ubuntu.com/pro\">ubuntu.com/pro</a>."
-#~ msgstr ""
-#~ "Aprenda más en <a href=\"https://ubuntu.com/pro\">ubuntu.com/pro</a>."
+#, fuzzy
+#~ msgid "Select an input source"
+#~ msgstr "Seleccione una fuente de entrada"
 
-#~ msgid "Or add _token manually"
-#~ msgstr "O agregue el _token manualmente"
+#, fuzzy
+#~ msgid "Unspecified"
+#~ msgstr "No especificado"
 
-#~ msgid ""
-#~ "Fulfill FedRAMP, FIPS, STIG and HIPAA and other compliance and hardening "
-#~ "requirements with certified tooling and crypto-modules."
-#~ msgstr ""
-#~ "Cumpla con los requisitos de FedRAMP, FIPS, STIG y HIPAA, y otras "
-#~ "normativas y requisitos de reforzamiento de la seguridad con herramientas "
-#~ "y módulos criptográficos certificados."
+#, fuzzy
+#~ msgid "_Use Local Login"
+#~ msgstr "_Usar inicio de sesión local"
 
-#~ msgid ""
-#~ "You can always enable Ubuntu Pro later via the Software & Updates "
-#~ "application"
-#~ msgstr ""
-#~ "Siempre puede activar Ubuntu Pro más tarde a través de la aplicación "
-#~ "Software y Actualizaciones."
+#, fuzzy
+#~ msgid "Keyboard Layout"
+#~ msgstr "Distribución del teclado"
 
-#~ msgid "From your admin, or from ubuntu.com/pro"
-#~ msgstr "Desde su administrador o desde ubuntu.com/pro"
+#, fuzzy
+#~ msgid "Remove Input Source"
+#~ msgstr "Eliminar fuente de entrada"
 
-#~ msgid "Upgrade this machine to Ubuntu Pro. Free for up to 5 machines."
-#~ msgstr "Actualizar esta máquina a Ubuntu Pro. Gratis para hasta 5 máquinas."
+#, fuzzy
+#~ msgid "Move Input Source Up"
+#~ msgstr "Mover fuente de entrada hacia arriba"
 
-#~ msgid "Downloading language packs…"
-#~ msgstr "Descargando paquetes de idiomas…"
+#, fuzzy
+#~ msgid "English"
+#~ msgstr "Inglés"
 
-#~ msgid "Canceled additional downloads"
-#~ msgstr "Descargas adicionales canceladas"
+#, fuzzy
+#~ msgid "British English"
+#~ msgstr "inglés británico"
 
-#~ msgid "Unable to download additional language packs"
-#~ msgstr "No se pueden descargar paquetes de idiomas adicionales"
+#, fuzzy
+#~ msgid "German"
+#~ msgstr "Alemán"
+
+#, fuzzy
+#~ msgid "French"
+#~ msgstr "Francés"
+
+#, fuzzy
+#~ msgid "Spanish"
+#~ msgstr "Español"
+
+#, fuzzy
+#~ msgid "Chinese (simplified)"
+#~ msgstr "Chino (simplificado)"
+
+#, fuzzy
+#~ msgid "Use %s"
+#~ msgstr "Usar %s"
+
+#, fuzzy
+#~ msgid "_Login Name"
+#~ msgstr "_Nombre de inicio de sesión"
+
+#, fuzzy
+#~ msgid "Link other accounts"
+#~ msgstr "Vincular otras cuentas"
+
+#, fuzzy
+#~ msgid "Remove"
+#~ msgstr "Eliminar"
+
+#, fuzzy
+#~ msgid "Enjoy GNOME!"
+#~ msgstr "¡Disfruta de GNOME!"
+
+#, fuzzy
+#~ msgid "New to GNOME 3 and need help finding your way around?"
+#~ msgstr "¿Eres nuevo en GNOME 3 y necesitas ayuda para orientarte?"
+
+#, fuzzy
+#~ msgid "_Take a Tour"
+#~ msgstr "_Haga un recorrido"
+
+#, fuzzy
+#~ msgid "Choose How to Login"
+#~ msgstr "Elija cómo iniciar sesión"
+
+#, fuzzy
+#~ msgid "Show _all"
+#~ msgstr "Mostrar _todo"
+
+#, fuzzy
+#~ msgid "_Require a password to use this account"
+#~ msgstr "_Requerir una contraseña para usar esta cuenta"
+
+#, fuzzy
+#~ msgid "_Act as administrator of this computer"
+#~ msgstr "_Actuar como administrador de esta computadora"
+
+#, fuzzy
+#~ msgid "_Done"
+#~ msgstr "_Hecho"

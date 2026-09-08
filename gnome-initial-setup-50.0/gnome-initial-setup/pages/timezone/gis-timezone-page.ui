@@ -15,7 +15,7 @@
             <property name="margin_top">24</property>
             <property name="title" translatable="yes">Time Zone</property>
             <property name="subtitle" translatable="yes">The time zone will be set automatically if your location can be found. You can also search for a city to set it yourself.</property>
-            <property name="icon-name">ubuntu-timezone</property>
+            <property name="icon_name">find-location-symbolic</property>
             <property name="show_icon" bind-source="GisTimezonePage" bind-property="small-screen" bind-flags="invert-boolean|sync-create"/>
           </object>
         </child>

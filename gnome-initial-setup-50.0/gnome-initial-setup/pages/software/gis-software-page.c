@@ -72,6 +72,7 @@ should_show_software_page (void)
   return has_fedora_third_party != NULL;
 }
 
+#ifdef HAVE_WEBKITGTK
 static char *
 external_sources_link (void)
 {
@@ -79,6 +80,7 @@ external_sources_link (void)
     return "https://docs.fedoraproject.org/en-US/workstation-working-group/third-party-repos/";
   return NULL;
 }
+#endif
 
 static gboolean
 gis_software_page_apply (GisPage      *gis_page,
@@ -94,7 +96,7 @@ gis_software_page_apply (GisPage      *gis_page,
       program = find_fedora_third_party ();
       if (program)
         {
-          gis_elevate (program, "enable", "root", cancellable, &error);
+          gis_elevate (program, "enable", "root", &error);
           if (error && !g_error_matches (error, G_IO_ERROR, G_IO_ERROR_CANCELLED))
             g_warning ("%s failed: %s", program, error->message);
         }
@@ -118,7 +120,9 @@ gis_software_page_locale_changed (GisPage *gis_page)
   g_autofree char *subtitle = NULL;
   const char *link = NULL;
 
+#ifdef HAVE_WEBKITGTK
   link = external_sources_link ();
+#endif
 
   gis_page_set_title (GIS_PAGE (page), _("Third-Party Repositories"));
   if (link != NULL)

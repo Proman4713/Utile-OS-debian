@@ -9,1201 +9,649 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
 "issues\n"
-"POT-Creation-Date: 2026-09-09 01:52+0300\n"
-"PO-Revision-Date: 2026-04-14 01:45+0000\n"
-"Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
+"POT-Creation-Date: 2014-09-11 18:48+0000\n"
+"PO-Revision-Date: 2014-09-12 15:50+0530\n"
+"Last-Translator: Krishnababu Krothapalli <kkrothap@redhat.com>\n"
 "Language-Team: Telugu <kde-i18n-doc@kde.org>\n"
 "Language: te\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2026-07-01 12:24+0000\n"
-"X-Generator: Launchpad (build c38ea58da9d7185c4996adfc854ab433551cdcdd)\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 1.5\n"
 
-#: data/gnome-initial-setup.desktop.in.in:2
-#: gnome-initial-setup/gis-driver.c:890
+#: ../data/gnome-initial-setup.desktop.in.in.h:1
 msgid "Initial Setup"
 msgstr "ఆరంభ అమరిక"
 
-#: gnome-initial-setup/gis-assistant.c:425
+#: ../gnome-initial-setup/gis-assistant.c:379
 msgid "_Next"
 msgstr "తరువాత (_N)"
 
-#: gnome-initial-setup/gis-assistant.c:426
-msgid "_Finish"
-msgstr ""
-
-#: gnome-initial-setup/gis-assistant.c:427
+#: ../gnome-initial-setup/gis-assistant.c:380
 msgid "_Accept"
 msgstr "అంగీకరించు (_A)"
 
-#: gnome-initial-setup/gis-assistant.c:428
+#: ../gnome-initial-setup/gis-assistant.c:381
 msgid "_Skip"
 msgstr "దాటవేయి (_S)"
 
-#: gnome-initial-setup/gis-assistant.c:429
+#: ../gnome-initial-setup/gis-assistant.c:382
 msgid "_Previous"
 msgstr "ముందలి (_P)"
 
-#: gnome-initial-setup/gis-assistant.c:430
-#: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:254
+#: ../gnome-initial-setup/gis-assistant.c:383
 msgid "_Cancel"
 msgstr "రద్దుచేయి (_C)"
 
-#: gnome-initial-setup/gis-webkit.c:54
-msgid "Scan the QR Code…"
-msgstr ""
-
-#: gnome-initial-setup/gis-webkit.c:244
-msgid "Open in default web browser"
-msgstr ""
-
-#: gnome-initial-setup/gis-webkit.c:247
-msgid "Open in default file handler"
-msgstr ""
-
-#: gnome-initial-setup/gnome-initial-setup.c:362
+#: ../gnome-initial-setup/gnome-initial-setup.c:194
 msgid "Force existing user mode"
 msgstr "మనుగడలోవున్న వాడుకరి రీతికి వత్తిడిచేయి"
 
-#: gnome-initial-setup/gnome-initial-setup.c:364
-msgid "Force Upgrade user"
-msgstr ""
+#: ../gnome-initial-setup/gnome-initial-setup.c:200
+msgid "- GNOME initial setup"
+msgstr "- గ్నోమ్ ఆరంభ అమరిక"
 
-#: gnome-initial-setup/gnome-initial-setup.c:378
-msgid "— GNOME initial setup"
-msgstr ""
+#: ../gnome-initial-setup/pages/account/gis-account-page.c:231
+#: ../gnome-initial-setup/pages/account/gis-account-page-local.ui.h:2
+msgid "About You"
+msgstr "మీ గురించి"
 
-#: gnome-initial-setup/pages/account/gis-account-page-enterprise.c:181
-msgid "Failed to cache account"
-msgstr ""
-
-#: gnome-initial-setup/pages/account/gis-account-page-enterprise.c:231
+#: ../gnome-initial-setup/pages/account/gis-account-page-enterprise.c:179
 msgid "Failed to register account"
 msgstr "ఖాతాను నమోదుచేయుటలో విఫలమైంది"
 
-#: gnome-initial-setup/pages/account/gis-account-page-enterprise.c:420
+#: ../gnome-initial-setup/pages/account/gis-account-page-enterprise.c:373
 msgid "No supported way to authenticate with this domain"
 msgstr "ఈ డొమైన్‌తో ధృవీకరించుటకు తోడ్పాటునిచ్చు మార్గంలేదు"
 
-#: gnome-initial-setup/pages/account/gis-account-page-enterprise.c:459
+#: ../gnome-initial-setup/pages/account/gis-account-page-enterprise.c:413
 msgid "Failed to join domain"
 msgstr "డొమైన్ నందు జేరుటకు విఫలమైంది"
 
-#: gnome-initial-setup/pages/account/gis-account-page-enterprise.c:526
+#: ../gnome-initial-setup/pages/account/gis-account-page-enterprise.c:481
 msgid "Failed to log into domain"
 msgstr "డొమైన్ నందు లాగిన్ అగుటకు విఫలమైంది"
 
-#: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:12
+#: ../gnome-initial-setup/pages/account/gis-account-page-enterprise.ui.h:1
 msgid "Enterprise Login"
 msgstr "ఎంటర్‌ప్రైజ్ లాగిన్"
 
-#: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:13
+#: ../gnome-initial-setup/pages/account/gis-account-page-enterprise.ui.h:2
 msgid ""
 "Enterprise login allows an existing centrally managed user account to be "
-"used on this device. You can also use this account to access company "
-"resources on the internet."
+"used on this device."
 msgstr ""
+"మనుగడలోవున్న కేంద్రీయ నిర్వాహిత వాడుకరి ఖాతాను ఈ పరికరంపైన ఉపయోగించుటకు "
+"ఎంటర్‌ప్రైజ్ లాగిన్ అనుమతించును."
 
-#: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:27
-#: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:153
+#: ../gnome-initial-setup/pages/account/gis-account-page-enterprise.ui.h:3
 msgid "_Domain"
 msgstr "డొమైన్ (_D)"
 
-#: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:40
-#: gnome-initial-setup/pages/account/gis-account-page-local.ui:104
+#: ../gnome-initial-setup/pages/account/gis-account-page-enterprise.ui.h:4
+#: ../gnome-initial-setup/pages/account/gis-account-page-local.ui.h:5
 msgid "_Username"
 msgstr "వాడుకరిపేరు (_U)"
 
-#: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:53
-#: gnome-initial-setup/pages/password/gis-password-page.ui:31
+#: ../gnome-initial-setup/pages/account/gis-account-page-enterprise.ui.h:5
+#: ../gnome-initial-setup/pages/password/gis-password-page.ui.h:3
 msgid "_Password"
 msgstr "సంకేతపదం (_P)"
 
-#: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:99
+#: ../gnome-initial-setup/pages/account/gis-account-page-enterprise.ui.h:6
 msgid "Enterprise domain or realm name"
 msgstr "ఎంటర్‌ప్రైజ్ డొమైన్ లేదా రియాల్మ్ పేరు"
 
-#: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:126
+#: ../gnome-initial-setup/pages/account/gis-account-page-enterprise.ui.h:7
+msgid "C_ontinue"
+msgstr "కొనసాగించు (_o)"
+
+#: ../gnome-initial-setup/pages/account/gis-account-page-enterprise.ui.h:8
 msgid "Domain Administrator Login"
 msgstr "డొమైన్ నిర్వాహకుని లాగిన్"
 
-#: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:141
+#: ../gnome-initial-setup/pages/account/gis-account-page-enterprise.ui.h:9
 msgid ""
 "In order to use enterprise logins, this computer needs to be enrolled in a "
 "domain. Please have your network administrator type the domain password "
 "here, and choose a unique computer name for your computer."
 msgstr ""
-"ఎంటర్‌ప్రైజ్ లాగిన్లను వుపయోగించుటకు, ఈ కంప్యూటర్ డొమైన్ నందు నమోదు కావాలి. మీ నెట్వర్కు నిర్వహణాధికారిని "
-"డొమైన్ సంకేతపదంను యిక్కడ ప్రవేశపెట్టమని  చెప్పండి, మీ కంప్యూటర్ కొరకు వొక విశిష్ట కంప్యూటర్ పేరు "
-"ఎంచుకోండి."
+"ఎంటర్‌ప్రైజ్ లాగిన్లను వుపయోగించుటకు, ఈ కంప్యూటర్ డొమైన్ నందు నమోదు కావాలి. "
+"మీ నెట్వర్కు నిర్వహణాధికారిని డొమైన్ సంకేతపదంను యిక్కడ ప్రవేశపెట్టమని  "
+"చెప్పండి, మీ కంప్యూటర్ కొరకు వొక విశిష్ట కంప్యూటర్ పేరు ఎంచుకోండి."
 
-#: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:179
-#: gnome-initial-setup/pages/account/gis-account-page-local.ui:151
+#: ../gnome-initial-setup/pages/account/gis-account-page-enterprise.ui.h:10
 msgid "_Computer"
 msgstr "కంప్యూటర్ (_C)"
 
-#: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:203
+#: ../gnome-initial-setup/pages/account/gis-account-page-enterprise.ui.h:11
 msgid "Administrator _Name"
 msgstr "నిర్వహణాధికారి పేరు (_N)"
 
-#: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:227
+#: ../gnome-initial-setup/pages/account/gis-account-page-enterprise.ui.h:12
 msgid "Administrator Password"
 msgstr "నిర్వహణాధికారి సంకేతపదం"
 
-#: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:260
-msgid "C_ontinue"
-msgstr "కొనసాగించు (_o)"
+#: ../gnome-initial-setup/pages/account/gis-account-page-local.c:203
+msgid "Are these the right details? You can change them if you want."
+msgstr "ఇవి సరైనా వివరములేనా? కావాలంటే మీరు వాటిని మార్చవచ్చు."
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:210
-#, c-format
-msgid "The hostname is too long."
-msgstr ""
-
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:214
-msgid "The hostname must start with a lower case letter from a-z or a digit."
-msgstr ""
-
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:218
-msgid ""
-"The hostname should only consist of lower case letters from a-z, digits and "
-"a hyphen: -"
-msgstr ""
-
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:545
+#: ../gnome-initial-setup/pages/account/gis-account-page-local.c:404
+#: ../gnome-initial-setup/pages/account/gis-account-page-local.ui.h:3
 msgid "We need a few details to complete setup."
 msgstr "అమర్పును పూర్తిచేయుటకు మాకు కొద్ది వివరాలు కావాలి."
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:704
-msgid "Administrator"
-msgstr ""
+#: ../gnome-initial-setup/pages/account/gis-account-page-local.ui.h:1
+msgid "Avatar image"
+msgstr "అవతారం చిత్రం"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:710
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:753
-#, c-format
-msgid "Failed to create user '%s': "
-msgstr ""
-
-#: gnome-initial-setup/pages/account/gis-account-page-local.ui:28
-msgid "Change Avatar"
-msgstr ""
-
-#: gnome-initial-setup/pages/account/gis-account-page-local.ui:46
-msgid "Remove Avatar"
-msgstr ""
-
-#: gnome-initial-setup/pages/account/gis-account-page-local.ui:64
-#: gnome-initial-setup/pages/account/gis-account-page.c:274
-msgid "About You"
-msgstr "మీ గురించి"
-
-#: gnome-initial-setup/pages/account/gis-account-page-local.ui:65
-msgid "Please provide a name and username. You can choose a picture too."
-msgstr ""
-
-#: gnome-initial-setup/pages/account/gis-account-page-local.ui:81
+#: ../gnome-initial-setup/pages/account/gis-account-page-local.ui.h:4
 msgid "_Full Name"
 msgstr "పూర్తి పేరు (_F)"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.ui:217
-msgid "Set up _parental controls for this user"
-msgstr ""
+#: ../gnome-initial-setup/pages/account/gis-account-page.ui.h:1
+#| msgid "Create an Enterprise Account"
+msgid "Set Up _Enterprise Login"
+msgstr "ఎంటర్‌ప్రైజ్ ఖాతాను అమర్చండి (_E)"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.ui:223
-msgid "For use by a parent or supervisor, who must set up their own password."
-msgstr ""
+#: ../gnome-initial-setup/pages/account/um-photo-dialog.c:246
+msgid "Disable image"
+msgstr "చిత్రాన్ని అచేతనించు"
 
-#: gnome-initial-setup/pages/account/gis-account-page.ui:32
-msgid "_Enterprise Login"
-msgstr ""
+#: ../gnome-initial-setup/pages/account/um-photo-dialog.c:264
+msgid "Take a photo..."
+msgstr "ఒక ఫోటో తీయండి..."
 
-#: gnome-initial-setup/pages/account/gis-account-page.ui:41
-msgid "Go online to set up Enterprise Login."
-msgstr ""
-
-#: gnome-initial-setup/pages/account/um-realm-manager.c:310
+#: ../gnome-initial-setup/pages/account/um-realm-manager.c:310
 msgid "Cannot automatically join this type of domain"
 msgstr "ఈ రకమైన డొమైన్‌కు స్వయంచాలకంగా జేరలేము"
 
-#: gnome-initial-setup/pages/account/um-realm-manager.c:373
+#: ../gnome-initial-setup/pages/account/um-realm-manager.c:373
 #, c-format
 msgid "No such domain or realm found"
 msgstr "అటువంటి డొమైన్ లేదా రియాల్మ్ కనుగొనబడలేదు"
 
-#: gnome-initial-setup/pages/account/um-realm-manager.c:782
-#: gnome-initial-setup/pages/account/um-realm-manager.c:796
+#: ../gnome-initial-setup/pages/account/um-realm-manager.c:782
+#: ../gnome-initial-setup/pages/account/um-realm-manager.c:796
 #, c-format
 msgid "Cannot log in as %s at the %s domain"
 msgstr "%s వలె %s డొమైన్ వద్ద లాగిన్ కాలేకపోయింది"
 
-#: gnome-initial-setup/pages/account/um-realm-manager.c:788
+#: ../gnome-initial-setup/pages/account/um-realm-manager.c:788
 msgid "Invalid password, please try again"
 msgstr "సంకేతపదం చెల్లదు, దయచేసి మరలా ప్రయత్నించండి"
 
-#: gnome-initial-setup/pages/account/um-realm-manager.c:801
+#: ../gnome-initial-setup/pages/account/um-realm-manager.c:801
 #, c-format
-msgid "Couldn’t connect to the %s domain: %s"
-msgstr ""
+msgid "Couldn't connect to the %s domain: %s"
+msgstr "%s డొమైన్‌కు అనుసంధానం కాలేకపోయింది: %s"
 
-#: gnome-initial-setup/pages/account/um-utils.c:153
-msgid "Sorry, that user name isn’t available. Please try another."
-msgstr ""
-
-#: gnome-initial-setup/pages/account/um-utils.c:156
+#: ../gnome-initial-setup/pages/account/um-utils.c:245
 #, c-format
+#| msgid "A user with the username '%s' already exists"
+msgid "A user with the username '%s' already exists."
+msgstr "'%s' వాడుకరిపేరుతో ఒక వాడుకరి ఇదివరకే ఉన్నారు."
+
+#: ../gnome-initial-setup/pages/account/um-utils.c:249
+#, c-format
+#| msgid "The username is too long"
 msgid "The username is too long."
 msgstr "వాడుకరిపేరు మరీ పొడవుగా ఉంది."
 
-#: gnome-initial-setup/pages/account/um-utils.c:159
-msgid "The username must start with a lower case letter from a-z."
-msgstr ""
+#: ../gnome-initial-setup/pages/account/um-utils.c:252
+#| msgid "The username cannot start with a '-'"
+msgid "The username cannot start with a '-'."
+msgstr "వాడుకరిపేరు '-' తో ప్రారంభంకాలేదు."
 
-#: gnome-initial-setup/pages/account/um-utils.c:162
-msgid "That username isn’t available. Please try another."
-msgstr ""
-
-#: gnome-initial-setup/pages/account/um-utils.c:165
+#: ../gnome-initial-setup/pages/account/um-utils.c:255
+#| msgid ""
+#| "The username must only consist of:\n"
+#| " ➣ letters from the English alphabet\n"
+#| " ➣ digits\n"
+#| " ➣ any of the characters '.', '-' and '_'"
 msgid ""
-"The username should only consist of lower case letters from a-z, digits, and "
-"the following characters: - _"
+"The username should only consist of lower and upper case letters from a-z, "
+"digits and any of characters '.', '-' and '_'."
 msgstr ""
+"వాడుకరిపేరు చిన్నబడి లేదా పెద్దబడి అక్షరాలను a-z వరకు, అంకెలను మరియు '.', "
+"'-', '_' వీ‍టిలో వేటినైనా మాత్రమే కలిగివుండాలి."
 
-#: gnome-initial-setup/pages/account/um-utils.c:169
-msgid "This will be used to name your home folder and can’t be changed."
+#: ../gnome-initial-setup/pages/account/um-utils.c:259
+msgid "This will be used to name your home folder and can't be changed."
 msgstr ""
+"మీ నివాస సంచయం పేరు పెట్టుటకు యిది వుపయోగించబడును మరియు దీనిని మార్చలేము."
 
-#: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:257
+#: ../gnome-initial-setup/pages/eulas/gis-eula-page.c:301
+#: ../gnome-initial-setup/pages/eulas/gis-eula-page.ui.h:1
+msgid "License Agreements"
+msgstr "లైసెన్స్ ఒప్పందాలు"
+
+#: ../gnome-initial-setup/pages/eulas/gis-eula-page.ui.h:2
+msgid ""
+"I have _agreed to the terms and conditions in this end user license "
+"agreement."
+msgstr ""
+"ఈ వాడుకరి ఒప్పంద పత్రమునందలి నియమ నిబంధనలను నేను అంగీకరిస్తున్నాను (_a)."
+
+#: ../gnome-initial-setup/pages/goa/gis-goa-page.c:87
+msgid "Add Account"
+msgstr "ఖాతాను జతచేయి"
+
+#: ../gnome-initial-setup/pages/goa/gis-goa-page.c:90
+msgid "Cancel"
+msgstr "రద్దు"
+
+#: ../gnome-initial-setup/pages/goa/gis-goa-page.c:335
+msgid "Online Accounts"
+msgstr "ఆన్‌లైన్ ఖాతాలు"
+
+#: ../gnome-initial-setup/pages/goa/gis-goa-page.ui.h:1
+msgid "Connect Your Online Accounts"
+msgstr "మీ ఆన్‌లైన్ ఖాతాలకు అనుసంధానమవ్వండి"
+
+#: ../gnome-initial-setup/pages/goa/gis-goa-page.ui.h:2
+msgid ""
+"Connecting your accounts will allow you to easily access your email, online "
+"calendar, contacts, documents and photos."
+msgstr ""
+"ఖాతాలను అనుసంధానిస్తే మీరు మీ ఈమెయిల్, ఆన్‌లైన్ క్యాలెండర్, పరిచయాలు, పత్రాలు "
+"మరియ చిత్రాలు సులువుగా ఏక్సెస్ చేసుకోవచ్చు."
+
+#: ../gnome-initial-setup/pages/goa/gis-goa-page.ui.h:3
+msgid "You can review your online accounts (and add others) after setup."
+msgstr ""
+"అమర్పు తరువాత మీరు మీ ఆన్‌లైన్ ఖాతాలు పునఃపరిశీలించవచ్చు (మరియు ఇతరములు "
+"జతచేయవచ్చు)."
+
+#: ../gnome-initial-setup/pages/keyboard/cc-input-chooser.c:234
 msgid "Preview"
 msgstr "మునుజూపు"
 
-#: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:325
-#: gnome-initial-setup/pages/language/cc-language-chooser.c:244
+#: ../gnome-initial-setup/pages/keyboard/cc-input-chooser.c:289
+#: ../gnome-initial-setup/pages/language/cc-language-chooser.c:212
+#: ../gnome-initial-setup/pages/region/cc-region-chooser.c:210
 msgid "More…"
 msgstr "మరిన్ని..."
 
 #. Translators: a search for input methods or keyboard layouts
 #. * did not yield any results
 #.
-#: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:347
+#: ../gnome-initial-setup/pages/keyboard/cc-input-chooser.c:310
 msgid "No inputs found"
 msgstr "ఏ ఇన్పుట్లు కనబడలేదు"
 
-#: gnome-initial-setup/pages/keyboard/gis-keyboard-page.c:484
-#: gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui:16
+#: ../gnome-initial-setup/pages/keyboard/gis-keyboard-page.c:219
+#: ../gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui.h:1
 msgid "Typing"
 msgstr "టైపుచేస్తున్నారు"
 
-#: gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui:17
+#: ../gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui.h:2
 msgid "Select your keyboard layout or an input method."
 msgstr "మీ కీబోర్డ్ నమూనాను లేదా ఇన్పుట్ పద్దతిని ఎంపికచేయండి."
 
-#: gnome-initial-setup/pages/keyboard/input-chooser.ui:8
-msgid "Search keyboards and input methods"
-msgstr ""
-
-#: gnome-initial-setup/pages/language/cc-language-chooser.c:264
+#: ../gnome-initial-setup/pages/language/cc-language-chooser.c:229
 msgid "No languages found"
 msgstr "ఎటువంటి భాషలు కనపడలేదు"
 
-#: gnome-initial-setup/pages/language/gis-language-page.c:146
-#: gnome-initial-setup/pages/language/gis-language-page.ui:14
+#: ../gnome-initial-setup/pages/language/gis-language-page.c:281
 msgid "Welcome"
 msgstr "స్వాగతం"
 
-#: gnome-initial-setup/pages/language/gis-language-page.ui:41
-msgid "Select a language from the list, or search for a specific language."
-msgstr ""
-
-#. Translators: This is meant to be a warm, engaging welcome message,
-#. * like greeting somebody at the door. If the exclamation mark is not
-#. * suitable for this in your language you may replace it.
-#.
-#: gnome-initial-setup/pages/language/gis-welcome-widget.c:132
+#: ../gnome-initial-setup/pages/language/gis-welcome-widget.c:119
 msgid "Welcome!"
 msgstr "స్వాగతం!"
 
-#: gnome-initial-setup/pages/language/language-chooser.ui:11
-msgid "Search languages"
-msgstr ""
-
-#: gnome-initial-setup/pages/language/language-chooser.ui:21
-msgid "Available languages"
-msgstr ""
-
-#: gnome-initial-setup/pages/network/gis-network-page.c:319
+#: ../gnome-initial-setup/pages/network/gis-network-page.c:305
 msgctxt "Wireless access point"
 msgid "Other…"
 msgstr "ఇతర..."
 
-#: gnome-initial-setup/pages/network/gis-network-page.c:401
-msgid "Wireless networking is disabled"
-msgstr ""
-
-#: gnome-initial-setup/pages/network/gis-network-page.c:408
+#: ../gnome-initial-setup/pages/network/gis-network-page.c:352
 msgid "Checking for available wireless networks"
 msgstr "అందుబాటులోవున్న నిస్తంత్రి నెట్‌వర్కుల కోసం చూస్తోంది"
 
-#: gnome-initial-setup/pages/network/gis-network-page.c:809
+#: ../gnome-initial-setup/pages/network/gis-network-page.c:602
 msgid "Network"
 msgstr "నెట్‌వర్క్"
 
-#: gnome-initial-setup/pages/network/gis-network-page.ui:15
+#: ../gnome-initial-setup/pages/network/gis-network-page.ui.h:1
 msgid "Wi-Fi"
 msgstr "వై-ఫై"
 
-#: gnome-initial-setup/pages/network/gis-network-page.ui:16
+#: ../gnome-initial-setup/pages/network/gis-network-page.ui.h:2
 msgid ""
-"Connecting to the internet helps you get new apps, information, and other "
-"upgrades. It also helps set the time and your location automatically."
+"Connecting to the Internet will enable you to set the time, add your "
+"details, and enable you to access your email, calendar, and contacts. It is "
+"also necessary for enterprise login accounts."
 msgstr ""
+"అంతర్జాలమునకు అనుసంధానించగనే మీరు సమయం అమర్చవచ్చు, మీ వివరాలు జతచేయవచ్చు, "
+"మరియు ఈమెయిల్‌కు, క్యాలెండర్‌కు, పరిచయాలకు ఏక్సెస్ పొందవచ్చు. ఇది "
+"ఎంటర్‌ప్రైజ్ లాగిన్ ఖాతాలకు కూడా తప్పనిసరి."
 
-#: gnome-initial-setup/pages/network/gis-network-page.ui:57
+#: ../gnome-initial-setup/pages/network/gis-network-page.ui.h:3
+#| msgid "Network is not available."
 msgid "No wireless available"
 msgstr "వైరులేని నెట్‌వర్కు అందుబాటులోలేదు"
 
-#: gnome-initial-setup/pages/network/gis-network-page.ui:70
-msgid "Turn On"
-msgstr ""
-
-#. Translators: The placeholder is the user’s full name.
-#: gnome-initial-setup/pages/parental-controls/gis-parental-controls-page.c:106
-#, c-format
-msgid "Parental Controls for %s"
-msgstr ""
-
-#: gnome-initial-setup/pages/parental-controls/gis-parental-controls-page.c:108
-msgid "Set restrictions on what this user can run or install."
-msgstr ""
-
-#: gnome-initial-setup/pages/parental-controls/gis-parental-controls-page.c:215
-msgid "Parental Controls"
-msgstr ""
-
-#. Translators: The placeholder is for the user’s full name.
-#: gnome-initial-setup/pages/password/gis-password-page.c:92
-#, c-format
-msgid "Set a Password for %s"
-msgstr ""
-
-#: gnome-initial-setup/pages/password/gis-password-page.c:94
-msgid "Be careful not to lose your password."
-msgstr "మీ సంకేతపదం కోల్పోకుండా చూసుకోండి."
-
-#: gnome-initial-setup/pages/password/gis-password-page.c:99
-msgid "Set a Parent Password"
-msgstr ""
-
-#. Translators: The placeholder is the full name of the child user on the system.
-#: gnome-initial-setup/pages/password/gis-password-page.c:101
-#, c-format
-msgid "This password will control access to the parental controls for %s."
-msgstr ""
-
-#: gnome-initial-setup/pages/password/gis-password-page.c:223
-#, c-format
-msgid "Password strength: %s."
-msgstr ""
-
-#: gnome-initial-setup/pages/password/gis-password-page.c:249
-#: gnome-initial-setup/pages/password/gis-password-page.c:251
+#: ../gnome-initial-setup/pages/password/gis-password-page.c:144
+#| msgid "Passwords do not match"
 msgid "The passwords do not match."
 msgstr "సంకేతపదాలు సరిపోలుటలేదు."
 
-#: gnome-initial-setup/pages/password/gis-password-page.c:427
+#: ../gnome-initial-setup/pages/password/gis-password-page.c:266
 msgid "Password"
 msgstr "సంకేతపదం"
 
-#: gnome-initial-setup/pages/password/gis-password-page.ui:68
-msgid "_Confirm Password"
-msgstr ""
+#: ../gnome-initial-setup/pages/password/gis-password-page.ui.h:1
+msgid "Set a Password"
+msgstr "సంకేతపదం అమర్చు"
 
-#: gnome-initial-setup/pages/password/gis-password-page.ui:92
-msgid "Password _Hint"
-msgstr ""
+#: ../gnome-initial-setup/pages/password/gis-password-page.ui.h:2
+msgid "Be careful not to lose your password."
+msgstr "మీ సంకేతపదం కోల్పోకుండా చూసుకోండి."
 
-#: gnome-initial-setup/pages/password/gis-password-page.ui:103
-msgid "Password hint will be shown in case you forget your password."
-msgstr ""
+#: ../gnome-initial-setup/pages/password/gis-password-page.ui.h:4
+msgid "_Verify"
+msgstr "నిర్ధారించు (_V)"
 
-#: gnome-initial-setup/pages/password/pw-utils.c:81
+#: ../gnome-initial-setup/pages/password/pw-utils.c:81
 msgctxt "Password hint"
 msgid "The new password needs to be different from the old one."
 msgstr "కొత్త సంకేతపదం పాతం దానికి భిన్నంగా ఉండాలి."
 
-#: gnome-initial-setup/pages/password/pw-utils.c:83
+#: ../gnome-initial-setup/pages/password/pw-utils.c:83
+msgctxt "Password hint"
+msgid "Try changing some letters and numbers."
+msgstr "కొన్ని అక్షరాలు మరియు అంకెలు మార్చి ప్రయత్నించండి."
+
+#: ../gnome-initial-setup/pages/password/pw-utils.c:85
+#: ../gnome-initial-setup/pages/password/pw-utils.c:93
+msgctxt "Password hint"
+msgid "Try changing the password a bit more."
+msgstr "సంకేతపదం ఇంకొద్దిగా మార్చి ప్రయత్నించండి."
+
+#: ../gnome-initial-setup/pages/password/pw-utils.c:87
+msgctxt "Password hint"
+msgid "A password without your user name would be stronger."
+msgstr "మీ వాడుకరి పేరులేని సంకేతపదం పటిష్టంగా ఉంటుంది."
+
+#: ../gnome-initial-setup/pages/password/pw-utils.c:89
+msgctxt "Password hint"
+msgid "Try to avoid using your name in the password."
+msgstr "సంకేతపదంనందు మీ పేరు ఉపయోగించకుండా ప్రయత్నించండి."
+
+#: ../gnome-initial-setup/pages/password/pw-utils.c:91
+msgctxt "Password hint"
+msgid "Try to avoid some of the words included in the password."
+msgstr "సంకేతపదంనందు కొన్ని పదాలు చేర్చకుండా ఉండటానికి ప్రయత్నించండి."
+
+#: ../gnome-initial-setup/pages/password/pw-utils.c:95
+msgctxt "Password hint"
+msgid "Try to avoid common words."
+msgstr "సాదారణ పదాలు విస్మరించడానికి ప్రయత్నించండి."
+
+#: ../gnome-initial-setup/pages/password/pw-utils.c:97
+msgctxt "Password hint"
+msgid "Try to avoid reordering existing words."
+msgstr "ఉన్న పదాలను తిరగేసి వాడకుండా ఉంటానికి ప్రయత్నించండి."
+
+#: ../gnome-initial-setup/pages/password/pw-utils.c:99
+msgctxt "Password hint"
+msgid "Try to use more numbers."
+msgstr "మరిన్ని అంకెలను వాడటానికి ప్రయత్నించండి."
+
+#: ../gnome-initial-setup/pages/password/pw-utils.c:101
+msgctxt "Password hint"
+msgid "Try to use more uppercase letters."
+msgstr "మరిన్న పెద్దబడి అక్షరాలను వాడుటకు ప్రయత్నించండి."
+
+#: ../gnome-initial-setup/pages/password/pw-utils.c:103
+msgctxt "Password hint"
+msgid "Try to use more lowercase letters."
+msgstr "మరిన్ని చిన్నబడి అక్షరాలను వాడుటకు ప్రయత్నించండి."
+
+#: ../gnome-initial-setup/pages/password/pw-utils.c:105
+msgctxt "Password hint"
+msgid "Try to use more special characters, like punctuation."
+msgstr "మరిన్ని ప్రత్యేక అక్షరాలు, విరామచిహ్నాలు వంటివి వాడుటకు ప్రయత్నించండి."
+
+#: ../gnome-initial-setup/pages/password/pw-utils.c:107
+msgctxt "Password hint"
+msgid "Try to use a mixture of letters, numbers and punctuation."
+msgstr "అక్షరాలు, అంకెలు మరియు విరామచిహ్నాల మిశ్రమాన్ని వాడుటకు ప్రయత్నించండి."
+
+#: ../gnome-initial-setup/pages/password/pw-utils.c:109
+msgctxt "Password hint"
+msgid "Try to avoid repeating the same character."
+msgstr "ఒకే అక్షారాన్ని తిరిగివాడకుండా ఉండుటకు ప్రయత్నించండి."
+
+#: ../gnome-initial-setup/pages/password/pw-utils.c:111
 msgctxt "Password hint"
 msgid ""
-"This password is very similar to your last one. Try changing some letters "
-"and numbers."
+"Try to avoid repeating the same type of character: you need to mix up "
+"letters, numbers and punctuation."
 msgstr ""
+"ఒకే రకమైన అక్షరాన్ని తిరిగివాడకుండా ఉండుటకు ప్రయత్నించండి: మీరు అక్షరాలు, "
+"అంకెలు మరియు విరామచిహ్నాలు కలగలపాలి."
 
-#: gnome-initial-setup/pages/password/pw-utils.c:85
-#: gnome-initial-setup/pages/password/pw-utils.c:93
+#: ../gnome-initial-setup/pages/password/pw-utils.c:113
+msgctxt "Password hint"
+msgid "Try to avoid sequences like 1234 or abcd."
+msgstr "1234 లేదా abcd వంటి వరుసలను విస్మరించడాని ప్రయత్నించండి."
+
+#: ../gnome-initial-setup/pages/password/pw-utils.c:115
+msgctxt "Password hint"
+msgid "Try to add more letters, numbers and symbols."
+msgstr "మరిన్ని అక్షరాలు, అంకెలు మరియు చిహ్నాలు జతచేయుటకు ప్రయత్నించండి."
+
+#: ../gnome-initial-setup/pages/password/pw-utils.c:117
+#| msgid ""
+#| "Try to use at least 8 different characters. Mix upper and lower case and "
+#| "use a number or two."
+msgctxt "Password hint"
+msgid "Mix uppercase and lowercase and use a number or two."
+msgstr ""
+"పెద్దబడి మరియు చిన్నబడి అక్షరాలను కలగలిపి మరియు ఒకటి లేదా రెండు అంకెలను "
+"వాడండి."
+
+#: ../gnome-initial-setup/pages/password/pw-utils.c:119
 msgctxt "Password hint"
 msgid ""
-"This password is very similar to your last one. Try changing the password a "
-"bit more."
+"Good password! Adding more letters, numbers and punctuation will make it "
+"stronger."
 msgstr ""
+"మంచి సంకేతపదం! మరిన్ని అక్షరాలు, అంకెలు మరియు విరామచిహ్నాలు చేర్చితే "
+"పటిష్టంగా ఉంటుంది."
 
-#: gnome-initial-setup/pages/password/pw-utils.c:87
-msgctxt "Password hint"
-msgid ""
-"This is a weak password. A password without your user name would be stronger."
-msgstr ""
+#: ../gnome-initial-setup/pages/password/pw-utils.c:141
+#| msgid "Strength: %s"
+msgctxt "Password strength"
+msgid "Strength: Weak"
+msgstr "పటిష్టత: బలహీనం"
 
-#: gnome-initial-setup/pages/password/pw-utils.c:89
-msgctxt "Password hint"
-msgid "This is a weak password. Try to avoid using your name in the password."
-msgstr ""
+#: ../gnome-initial-setup/pages/password/pw-utils.c:145
+#| msgid "Strength: %s"
+msgctxt "Password strength"
+msgid "Strength: Low"
+msgstr "పటిష్టత: తక్కువ"
 
-#: gnome-initial-setup/pages/password/pw-utils.c:91
-msgctxt "Password hint"
-msgid ""
-"This is a weak password. Try to avoid some of the words included in the "
-"password."
-msgstr ""
+#: ../gnome-initial-setup/pages/password/pw-utils.c:148
+#| msgid "Strength: %s"
+msgctxt "Password strength"
+msgid "Strength: Medium"
+msgstr "పటిష్టత: మద్యమం"
 
-#: gnome-initial-setup/pages/password/pw-utils.c:95
-msgctxt "Password hint"
-msgid "This is a weak password. Try to avoid common words."
-msgstr ""
+#: ../gnome-initial-setup/pages/password/pw-utils.c:151
+#| msgid "Strength: %s"
+msgctxt "Password strength"
+msgid "Strength: Good"
+msgstr "పటిష్టత: పర్లేదు"
 
-#: gnome-initial-setup/pages/password/pw-utils.c:97
-msgctxt "Password hint"
-msgid "This is a weak password. Try to avoid reordering existing words."
-msgstr ""
+#: ../gnome-initial-setup/pages/password/pw-utils.c:154
+#| msgid "Strength: %s"
+msgctxt "Password strength"
+msgid "Strength: High"
+msgstr "పటిష్టత: ఎక్కువ"
 
-#: gnome-initial-setup/pages/password/pw-utils.c:99
-msgctxt "Password hint"
-msgid "This is a weak password. Try to use more numbers."
-msgstr ""
+#: ../gnome-initial-setup/pages/region/cc-region-chooser.c:228
+msgid "No regions found"
+msgstr "ఏ ప్రాంతములు కనపడలేదు"
 
-#: gnome-initial-setup/pages/password/pw-utils.c:101
-msgctxt "Password hint"
-msgid "This is a weak password. Try to use more uppercase letters."
-msgstr ""
+#: ../gnome-initial-setup/pages/region/gis-region-page.c:226
+#: ../gnome-initial-setup/pages/region/gis-region-page.ui.h:1
+msgid "Region"
+msgstr "ప్రాంతము"
 
-#: gnome-initial-setup/pages/password/pw-utils.c:103
-msgctxt "Password hint"
-msgid "This is a weak password. Try to use more lowercase letters."
-msgstr ""
-
-#: gnome-initial-setup/pages/password/pw-utils.c:105
-msgctxt "Password hint"
-msgid ""
-"This is a weak password. Try to use more special characters, like "
-"punctuation."
-msgstr ""
-
-#: gnome-initial-setup/pages/password/pw-utils.c:107
-msgctxt "Password hint"
-msgid ""
-"This is a weak password. Try to use a mixture of letters, numbers and "
-"punctuation."
-msgstr ""
-
-#: gnome-initial-setup/pages/password/pw-utils.c:109
-msgctxt "Password hint"
-msgid "This is a weak password. Try to avoid repeating the same character."
-msgstr ""
-
-#: gnome-initial-setup/pages/password/pw-utils.c:111
-msgctxt "Password hint"
-msgid ""
-"This is a weak password. Try to avoid repeating the same type of character: "
-"you need to mix up letters, numbers and punctuation."
-msgstr ""
-
-#: gnome-initial-setup/pages/password/pw-utils.c:113
-msgctxt "Password hint"
-msgid "This is a weak password. Try to avoid sequences like 1234 or abcd."
-msgstr ""
-
-#: gnome-initial-setup/pages/password/pw-utils.c:115
-msgctxt "Password hint"
-msgid ""
-"This is a weak password. Try to add more letters, numbers and punctuation."
-msgstr ""
-
-#: gnome-initial-setup/pages/password/pw-utils.c:117
-msgctxt "Password hint"
-msgid "Mix uppercase and lowercase and try to use a number or two."
-msgstr ""
-
-#: gnome-initial-setup/pages/password/pw-utils.c:119
-msgctxt "Password hint"
-msgid ""
-"Adding more letters, numbers and punctuation will make the password stronger."
-msgstr ""
-
-#. TRANSLATORS: this string describes a password as being poor
-#: gnome-initial-setup/pages/password/pw-utils.c:146
-msgid "poor"
-msgstr ""
-
-#. TRANSLATORS: this string describes a password as being weak
-#: gnome-initial-setup/pages/password/pw-utils.c:150
-msgid "weak"
-msgstr ""
-
-#. TRANSLATORS: this string describes a password as being strong
-#: gnome-initial-setup/pages/password/pw-utils.c:154
-#: gnome-initial-setup/pages/password/pw-utils.c:157
-msgid "strong"
-msgstr ""
-
-#. TRANSLATORS: this string describes a password as being excellent
-#: gnome-initial-setup/pages/password/pw-utils.c:161
-msgid "excellent"
-msgstr ""
-
-#. Translators: the first parameter here is the name of a distribution,
-#. * like "Fedora" or "Ubuntu".
-#.
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:68
-#, c-format
-msgid ""
-"Sends technical reports that do not contain personal information. Data is "
-"collected by %1$s (<u><a href='%2$s'>privacy policy</a></u>)."
-msgstr ""
+#: ../gnome-initial-setup/pages/region/gis-region-page.ui.h:2
+msgid "Choose your country or region."
+msgstr "మీ దేశము లేదా ప్రాంతమును ఎంచుకోండి"
 
 #. Translators: the parameter here is the name of a distribution,
-#. * like "Fedora" or "Ubuntu".
-#.
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:79
-#, c-format
-msgid ""
-"Sends technical reports that do not contain personal information. Data is "
-"collected by %s."
-msgstr ""
-
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:123
-#, c-format
-msgid ""
-"Allows apps to determine your geographical location (<u><a "
-"href='%1$s'>privacy policy</a></u>)."
-msgstr ""
-
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:174
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:14
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:28
-msgid "Location Services"
-msgstr ""
-
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:17
-msgid ""
-"Turn on location services to let applications know your geographical "
-"location."
-msgstr ""
-
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:56
-msgid "Automatic Problem Reporting"
-msgstr ""
-
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:99
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:134
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:138
-msgid "You can change this later in the Settings app"
-msgstr ""
-
-#: gnome-initial-setup/pages/software/gis-software-page.c:123
-#: gnome-initial-setup/pages/software/gis-software-page.ui:11
-msgid "Third-Party Repositories"
-msgstr ""
-
-#: gnome-initial-setup/pages/software/gis-software-page.c:125
-#, c-format
-msgid ""
-"Third-party repositories provide access to additional software from selected "
-"<a href='%s'>external sources</a>, including popular apps and drivers that "
-"are important for some devices. Some proprietary software is included."
-msgstr ""
-
-#: gnome-initial-setup/pages/software/gis-software-page.c:127
-msgid ""
-"Third-party repositories provide access to additional software from selected "
-"external sources, including popular apps and drivers that are important for "
-"some devices. Some proprietary software is included."
-msgstr ""
-
-#: gnome-initial-setup/pages/software/gis-software-page.c:139
-msgid "_Disable Third-Party Repositories"
-msgstr ""
-
-#: gnome-initial-setup/pages/software/gis-software-page.c:144
-msgid "_Enable Third-Party Repositories"
-msgstr ""
-
-#. Translators: the parameter here is the name of a distribution,
-#. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
+#. * like "Fedora" or "Ubuntu". It falls back to "GNOME 3" if we can't
 #. * detect any distribution.
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:406
+#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:332
 #, c-format
-msgid "_Start Using %s"
-msgstr ""
+msgid "_Start using %s"
+msgstr "%s ని వాడటం మొదలుపెట్టండి (_S)"
 
 #. Translators: the parameter here is the name of a distribution,
-#. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
+#. * like "Fedora" or "Ubuntu". It falls back to "GNOME 3" if we can't
 #. * detect any distribution.
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:413
+#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:339
 #, c-format
-msgid "%s is ready to be used."
+msgid ""
+"Thank you for choosing %s.\n"
+"We hope that you love it."
 msgstr ""
+"%s ఎంచుకున్నందుకు ధన్వవాదములు.\n"
+"మీరు దీనిని అభిమానిస్తారని ఆశిస్తున్నాము."
 
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:431
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:499
-#: gnome-initial-setup/pages/summary/gis-summary-page.ui:8
-msgid "All done!"
-msgstr ""
+#: ../gnome-initial-setup/pages/summary/gis-summary-page.c:365
+msgid "Ready to Go"
+msgstr "వెళ్ళడానికి సిద్దం"
 
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:457
-msgid "Setup Failed"
-msgstr ""
+#: ../gnome-initial-setup/pages/summary/gis-summary-page.ui.h:1
+msgid "You're all set!"
+msgstr "మీరు సంసిద్దంగా ఉన్నారు!"
 
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:459
-msgid "Close"
-msgstr ""
-
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:472
-msgid "Almost done"
-msgstr ""
-
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:568
-msgid "Setup Complete"
-msgstr ""
-
-#: gnome-initial-setup/pages/summary/gis-summary-page.ui:39
-msgid "Downloading additional language packs"
-msgstr ""
-
-#: gnome-initial-setup/pages/summary/gis-summary-page.ui:47
-msgid "Cancel Download"
-msgstr ""
-
-#: gnome-initial-setup/pages/timezone/gis-location-entry.c:117
-msgid "Search cities"
-msgstr ""
-
-#. Recurse, adding the ADM1 name to the country name
-#. Translators: this is the name of a location followed by a region, for example:
-#. * 'London, United Kingdom'
-#. * You shouldn't need to translate this string unless the language has a different comma.
-#.
-#: gnome-initial-setup/pages/timezone/gis-location-entry.c:557
-#: gnome-initial-setup/pages/timezone/gis-location-entry.c:582
+#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:183
 #, c-format
-msgid "%s, %s"
+msgid ""
+"We think that your time zone is %s. Press Next to continue or search for a "
+"city to manually set the time zone."
 msgstr ""
+"మేము మీ సమయక్షేత్రం %s అనుకుంటున్నాము. కొనసాగించాలంటే తరువాత ను నొక్కండి లేదా "
+"సమయ క్షేత్రం మీరే అమర్చాలనుకుంటే పట్టణం కొరకు వెతకండి."
 
-#. Translators: "city, country"
-#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:284
-#, c-format
-msgctxt "timezone loc"
-msgid "%s, %s"
-msgstr ""
-
-#. Translators: UTC here means the Coordinated Universal Time.
-#. * %:::z will be replaced by the offset from UTC e.g. UTC+02
-#.
-#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:320
-msgid "UTC%:::z"
-msgstr ""
-
-#. Translators: This is the time format used in 12-hour mode.
-#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:324
-msgid "%l:%M %p"
-msgstr ""
-
-#. Translators: This is the time format used in 24-hour mode.
-#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:327
-msgid "%R"
-msgstr ""
-
-#. Translators: "timezone (utc shift)"
-#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:330
-#, c-format
-msgctxt "timezone map"
-msgid "%s (%s)"
-msgstr ""
-
-#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:339
-#, c-format
-msgid "Current timezone: %s at %s; current time: %s"
-msgstr ""
-
-#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:505
-#: gnome-initial-setup/pages/timezone/gis-timezone-page.ui:16
+#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.c:489
+#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.ui.h:1
 msgid "Time Zone"
 msgstr "సమయక్షేత్రం"
 
-#: gnome-initial-setup/pages/timezone/gis-timezone-page.ui:17
-msgid ""
-"The time zone will be set automatically if your location can be found. You "
-"can also search for a city to set it yourself."
-msgstr ""
-
-#: gnome-initial-setup/pages/timezone/gis-timezone-page.ui:49
+#: ../gnome-initial-setup/pages/timezone/gis-timezone-page.ui.h:2
 msgid "Please search for a nearby city"
 msgstr "దయచేసి దగ్గరలోని పట్టణం కొరకు వెతుకుము"
 
-#. Translators: This is meant to be a warm, engaging welcome message,
-#. * like greeting somebody at the door. If the exclamation mark is not
-#. * suitable for this in your language you may replace it. The space
-#. * before the exclamation mark in this string is a typographical thin
-#. * space (U200a) to improve the spacing in the title, which you can
-#. * keep or remove. The %s is getting replaced with the name and version
-#. * of the OS, e.g. "GNOME 3.38"
-#.
-#: gnome-initial-setup/pages/welcome/gis-welcome-page.c:79
-#, c-format
-msgid "Welcome to %s !"
-msgstr ""
-
-#: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:12
-msgid "Welcome to Ubuntu 24.04 LTS"
-msgstr ""
-
-#: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:13
-msgid ""
-"Complete your setup with additional settings and we'll\n"
-"have you up and running in no time"
-msgstr ""
-
-#: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:32
-msgid "View release notes"
-msgstr ""
-
-#: gnome-initial-setup/pages/apps/gis-apps-page.c:95
-msgid "Ready to go"
-msgstr ""
-
-#: gnome-initial-setup/pages/apps/gis-apps-page.blp:8
-msgid "Get started with more applications"
-msgstr ""
-
-#: gnome-initial-setup/pages/apps/gis-apps-page.blp:9
-msgid "Ubuntu's App Center has a range of apps you can get started with."
-msgstr ""
-
-#: gnome-initial-setup/pages/apps/gis-apps-page.blp:28
-msgid "Open App Center"
-msgstr ""
-
-#: gnome-initial-setup/pages/eula/gis-eula-page.blp:4
-msgid "End-User License Agreement"
-msgstr ""
-
-#. GNOME Initial Setup
-#. TRANSLATORS: The place-holder is an error message
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:73
-#, c-format
-msgid "Failed to grant consent for the Initial Setup application: %s"
-msgstr ""
-
-#. TRANSLATORS: The place-holder is an error message
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:75
-#, c-format
-msgid "Failed to withdraw consent for the Initial Setup application: %s"
-msgstr ""
-
-#. Platform source used by timed systemd collection
-#. TRANSLATORS: The place-holder is an error message
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:80
-#, c-format
-msgid "Failed to grant consent for the system data collector: %s"
-msgstr ""
-
-#. TRANSLATORS: The place-holder is an error message
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:82
-#, c-format
-msgid "Failed to withdraw consent for the system data collector: %s"
-msgstr ""
-
-#. Platform source used by release upgrader collection
-#. TRANSLATORS: The place-holder is an error message
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:87
-#, c-format
-msgid "Failed to grant consent for the release upgrader application: %s"
-msgstr ""
-
-#. TRANSLATORS: The place-holder is an error message
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:89
-#, c-format
-msgid "Failed to withdraw consent for the release upgrader application: %s"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:381
-#, c-format
-msgid ""
-"With telemetry log: %s\n"
-"Without telemetry log: %s"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:411
-#, c-format
-msgid "Failed to collect telemetry report: %s"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:571
-#, c-format
-msgid "Failed to generate report: %s"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:589
-#, c-format
-msgid "Failed to write report: %s"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:647
-msgid "Show First Report"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:9
-msgid "Utile Depends On It: Help Improve Ubuntu"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:10
-msgid ""
-"Help improve Ubuntu by sharing your system and error reports with them.\n"
-"Reports are sent anonymously."
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:31
-msgid "Share _system data with the Ubuntu team"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:32
-msgid "This includes hardware information, language and timezone"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:46
-msgid "Learn more about system reporting"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:57
-msgid "Legal notice"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:68
-msgid "Show Report"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:95
-msgid "Share _error reports with the Ubuntu team"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:96
-msgid "This includes crash reports and related system logs"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:110
-msgid "Learn more about error reporting"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:148
-msgid "System Report"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-attach-page.blp:21
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:21
-msgid "Enable Ubuntu Pro"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-attach-page.blp:29
-msgid "_Attach machine via your Ubuntu One account"
-msgstr ""
-
-#. Translators: translators: This is the other way to attach a machine to Ubuntu Pro
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-attach-page.blp:82
-msgid "Or add a _token manually"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-attach-page.blp:117
-msgid "Token"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:54
-msgid "Upgrade this device to Ubuntu Pro. Free for personal use."
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:105
-msgid ""
-"Fulfill FedRAMP, FIPS, STIG and HIPAA and other compliance and hardening "
-"requirements with certified tooling and crypto-modules"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:130
-msgid "Enable Ubuntu Pro now, or skip this step."
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:133
-msgid "_Enable Ubuntu Pro"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:152
-msgid "_Skip for now"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:153
-msgid "You can enable Ubuntu Pro later in the Security Center"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-services-page.blp:22
-msgid "Ubuntu Pro Services"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-services-page.blp:29
-msgid "Your subscription"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-services-page.blp:44
-msgid "Your enabled services"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-services-page.blp:47
-msgid ""
-"You can change the default enablements for your token on the ubuntu.com/pro "
-"web interface. You can also change enabled services in the Settings menu or "
-"with the `<span font_family='monospace'>pro</span>` command-line."
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-services-page.blp:53
-msgid "Other available services"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:221
-msgid "Valid token"
-msgstr ""
-
-#. TRANSLATORS: The error shown when attaching an
-#. Ubuntu Pro contact fails.
-#. It may be due to various reasons, most common is
-#. an invalid token.
-#.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:236
-msgid "Invalid token or attach failure"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:244
-msgid "Code expired"
-msgstr ""
-
-#. TRANSLATORS: the placeholder %s is a link to ubuntu.com/pro/attach.
-#. Use HTML encoded format for special characters such as '&'.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:259
-#, c-format
-msgid "Enter this code on %s"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:316
-msgid "An internet connection is required to enable Ubuntu Pro"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:466
-#, c-format
-msgid "Get security updates on a wide range of packages until %s"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:474
-msgid "Ubuntu Pro"
-msgstr ""
-
-#. TRANSLATORS: The anbox-cloud Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:609
-msgid "Scalable Android in the cloud"
-msgstr ""
-
-#. TRANSLATORS: The cc-eal Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:612
-msgid "Common Criteria EAL2 Provisioning Packages"
-msgstr ""
-
-#. TRANSLATORS: The esm-apps Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:615
-msgid "Expanded Security Maintenance for Applications"
-msgstr ""
-
-#. TRANSLATORS: The esm-infra Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:618
-msgid "Expanded Security Maintenance for Infrastructure"
-msgstr ""
-
-#. TRANSLATORS: The fips Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:621
-msgid "NIST-certified FIPS crypto packages"
-msgstr ""
-
-#. TRANSLATORS: The fips-preview Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:624
-msgid "Preview of FIPS crypto packages undergoing certification with NIST"
-msgstr ""
-
-#. TRANSLATORS: The fips-updates Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:627
-msgid "FIPS compliant crypto packages with stable security updates"
-msgstr ""
-
-#. TRANSLATORS: The landscape Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:630
-msgid "Management and administration tool for Ubuntu"
-msgstr ""
-
-#. TRANSLATORS: The livepatch Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:633
-msgid "Canonical kernel Livepatch service"
-msgstr ""
-
-#. TRANSLATORS: The realtime-kernel Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:636
-msgid "Ubuntu kernel with PREEMPT_RT patches integrated"
-msgstr ""
-
-#. TRANSLATORS: The ros Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:639
-msgid "Security Updates for the Robot Operating System"
-msgstr ""
-
-#. TRANSLATORS: The ros-updates Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:642
-msgid "All Updates for the Robot Operating System"
-msgstr ""
-
-#. TRANSLATORS: The usg Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:645
-msgid "Security compliance and audit tools"
-msgstr ""
-
-#. TRANSLATORS: Use HTML encoded format for special characters such as &amp' for '&'. %s is a URL.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:1230
-#, c-format
-msgid "Learn more at %s"
-msgstr ""
-
-#. TRANSLATORS: Subtitle telling who can provide the Ubuntu Pro token.
-#. Use HTML encoded format for special characters such as &amp' for '&'. %s is a URL.
-#.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:1247
-#, c-format
-msgid "From your admin, or from %s"
-msgstr ""
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:75
-msgid "Blue"
-msgstr ""
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:78
-msgid "Teal"
-msgstr ""
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:81
-msgid "Green"
-msgstr ""
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:84
-msgid "Yellow"
-msgstr ""
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:87
-msgid "Orange"
-msgstr ""
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:90
-msgid "Red"
-msgstr ""
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:93
-msgid "Pink"
-msgstr ""
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:96
-msgid "Purple"
-msgstr ""
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:99
-msgid "Slate"
-msgstr ""
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:102
-msgid "Warty Brown"
-msgstr ""
-
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:469
-msgid "Appearance"
-msgstr ""
-
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
-msgid "Choose how Ubuntu looks"
-msgstr ""
-
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
-msgid "Personalize your desktop's appearance"
-msgstr ""
-
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
-msgid "Style"
-msgstr ""
-
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:53
-msgid "_Default"
-msgstr ""
-
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:82
-msgid "Da_rk"
-msgstr ""
-
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:100
-msgid "OLED screen detected. Dark style may save power."
-msgstr ""
-
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:112
-msgid "Accent Color"
-msgstr ""
-
-#: po/EXTRA_STRINGS.sh:1
-msgid "Force live user mode"
-msgstr ""
-
-#: po/EXTRA_STRINGS.sh:2
-msgid "Force OEM mode"
-msgstr ""
-
-#: po/EXTRA_STRINGS.sh:3
-msgid "Try or Install?"
-msgstr ""
-
-#: po/EXTRA_STRINGS.sh:4
-#, sh-format
-msgid ""
-"You can try a temporary version of ${NAME} without making changes to the "
-"computer. If you decide to install later, just launch the installer from the "
-"Activities view.\n"
-"\n"
-"        Alternatively, choose install to launch the installer."
-msgstr ""
-
-#: po/EXTRA_STRINGS.sh:7
-msgid "Install to Disk…"
-msgstr ""
-
-#: po/EXTRA_STRINGS.sh:8
-#, sh-format
-msgid "Try ${NAME}"
-msgstr ""
-
-#: po/EXTRA_STRINGS.sh:9
-#, sh-format
-msgid "Install ${PRETTY_NAME}"
-msgstr ""
-
-#~ msgid "Cancel"
-#~ msgstr "రద్దు"
+#~ msgid "No password"
+#~ msgstr "సంకేతపదం లేదు"
+
+#~ msgid "_Confirm password"
+#~ msgstr "సంకేతపదాన్ని నిర్థారించండి (_C)"
+
+#, fuzzy
+#~ msgid "Choose a _password"
+#~ msgstr "సంకేతపదం లేదు"
+
+#~ msgctxt "Password strength"
+#~ msgid "Too short"
+#~ msgstr "మరీ చిన్నది"
+
+#~ msgctxt "Password strength"
+#~ msgid "Not good enough"
+#~ msgstr "తగినంత లేదు"
+
+#~ msgctxt "Password strength"
+#~ msgid "Weak"
+#~ msgstr "బలహీనం"
+
+#~ msgctxt "Password strength"
+#~ msgid "Fair"
+#~ msgstr "బాగుంది"
+
+#~ msgctxt "Password strength"
+#~ msgid "Good"
+#~ msgstr "మంచిది"
+
+#~ msgctxt "Password strength"
+#~ msgid "Strong"
+#~ msgstr "దృఢం"
+
+#~ msgid "Login"
+#~ msgstr "ప్రవేశించండి"
+
+#~ msgid "Create a Local Account"
+#~ msgstr "ఒక స్థానిక ఖాతాను సృష్టించు"
+
+#~ msgid "page 1"
+#~ msgstr "పుట 1"
+
+#~ msgid "Error creating account"
+#~ msgstr "ఖాతాను సృష్టించుటలో దోషం"
+
+#~ msgid "Error removing account"
+#~ msgstr "ఖాతాను తీసివేయుటలో దోషం"
+
+#~ msgid "Are you sure you want to remove the account?"
+#~ msgstr "మీరు ఖచ్ఛితంగా ఈ ఖాతాను తీసివేయాలనుకుంటున్నారా?"
+
+#~ msgid "This will not remove the account on the server."
+#~ msgstr "ఇది ఖాతాను సేవకము నుండి తీసివేయదులేండి."
+
+#~ msgid "_Remove"
+#~ msgstr "తీసివేయి (_R)"
+
+#~ msgid "Connect to your existing data in the cloud"
+#~ msgstr "క్లౌండ్ నందు వున్న మీ దత్తాంశముకు అనుసంధానంకమ్ము"
+
+#~ msgid "_Add Account"
+#~ msgstr "ఖాతాను జతచేయి (_A)"
+
+#~ msgid "Other"
+#~ msgstr "ఇతర"
+
+#~ msgid "Input Sources"
+#~ msgstr "ఇన్పుట్ మూలాలు"
+
+#~ msgid "Select input sources"
+#~ msgstr "నివేశ మూలాలను ఎంచుకోండి"
+
+#~ msgid "Login settings are used by all users when logging into the system"
+#~ msgstr "వ్యవస్థనకు లాగిన్ అగునప్పుడు లాగన్ అమరికలు అందరి వాడుకరుల చేత వుపయోగించబడును"
+
+#~ msgid "Add an Input Source"
+#~ msgstr "ఇన్‌పుట్ వనరుని జతచేయి"
+
+#~ msgid "Search for a location"
+#~ msgstr "ఒక స్థానము కోసం వెతకండి"
+
+#~ msgid "Location"
+#~ msgstr "ప్రాంతం"
+
+#~ msgid "_Determine your location automatically"
+#~ msgstr "మీ స్థానమును స్వయంచాలకంగా నిర్థారించుము (_D)"
+
+#~ msgid "No network devices found."
+#~ msgstr "ఎటువంటి నెట్‌వర్కు పరికరాలు కనపడలేదు."
+
+#~ msgid "Wireless Networks"
+#~ msgstr "నిస్తంత్రి నెట్‌వర్కులు"
+
+#~ msgid "Thank You"
+#~ msgstr "ధన్యవాదములు"
+
+#~ msgid "Your computer is ready to use."
+#~ msgstr "మీ కంప్యూటరు వినియోగానికి సిద్ధంగా ఉంది."
+
+#~ msgid "You may change these options at any time in Settings."
+#~ msgstr "మీరు ఈ ఐచ్ఛికాలను ఏ క్షణాన్నయినా అమరికలకు వెళ్ళి మార్చుకోవచ్చు."

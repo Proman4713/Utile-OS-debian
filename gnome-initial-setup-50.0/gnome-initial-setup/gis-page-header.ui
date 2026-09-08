@@ -2,46 +2,35 @@
 <interface domain="gtk30">
   <template class="GisPageHeader" parent="GtkBox">
     <property name="orientation">vertical</property>
-    <property name="spacing">34</property>
+    <property name="spacing">18</property>
     <child>
       <object class="GtkImage" id="icon">
-        <property name="pixel_size">196</property>
+        <property name="pixel_size">96</property>
+        <style>
+          <class name="dim-label"/>
+        </style>
       </object>
     </child>
     <child>
-      <object class="GisFocusableBin" id="box">
-        <accessibility>
-          <relation name="labelled-by">title</relation>
-          <relation name="described-by">subtitle</relation>
-        </accessibility>
+      <object class="GtkBox" id="box">
+        <property name="orientation">vertical</property>
+        <property name="spacing">6</property>
         <child>
-          <object class="GtkBox">
-            <property name="accessible-role">none</property>
-            <property name="orientation">vertical</property>
-            <property name="spacing">0</property>
-            <child>
-              <object class="GtkLabel" id="title">
-              <property name="accessible-role">none</property>
-                <property name="justify">center</property>
-                <property name="max_width_chars">65</property>
-                <property name="wrap">True</property>
-                <property name="visible">False</property>
-                <style>
-                  <class name="title-1"/>
-                </style>
-              </object>
-            </child>
-            <child>
-              <object class="GtkLabel" id="subtitle">
-              <property name="accessible-role">none</property>
-                <property name="margin-top">15</property>
-                <property name="justify">center</property>
-                <property name="max_width_chars">65</property>
-                <property name="wrap">True</property>
-                <property name="visible">False</property>
-                <signal name="activate-link" handler="gis_activate_link" object="GisPageHeader" swapped="no" />
-              </object>
-            </child>
+          <object class="GtkLabel" id="title">
+            <property name="justify">center</property>
+            <property name="max_width_chars">65</property>
+            <property name="wrap">True</property>
+            <style>
+              <class name="title-1"/>
+            </style>
+          </object>
+        </child>
+        <child>
+          <object class="GtkLabel" id="subtitle">
+            <property name="justify">center</property>
+            <property name="max_width_chars">65</property>
+            <property name="wrap">True</property>
+            <signal name="activate-link" handler="gis_activate_link" object="GisPageHeader" swapped="no" />
           </object>
         </child>
       </object>

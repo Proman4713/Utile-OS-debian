@@ -291,6 +291,7 @@ main (int    argc,
 #define FILE(path) \
   copy_file_from_homedir (src, dest, path);
 
+  FILE (".config/gnome-initial-setup-done");
   FILE (".config/dconf/user");
   FILE (".config/monitors.xml");
 

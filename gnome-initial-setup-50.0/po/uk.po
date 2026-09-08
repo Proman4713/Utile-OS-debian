@@ -3,78 +3,57 @@
 # This file is distributed under the same license as the gnome-initial-setup package.
 # Daniel Korostil <ted.korostiled@gmail.com>, 2013, 2014, 2015, 2016, 2017.
 # Yuri Chornoivan <yurchor@ukr.net>, 2020, 2021, 2022, 2023, 2024, 2025, 2026.
-# Ardev <prisecardev@gmail.com>, 2026.
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup master\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
-"issues\n"
-"POT-Creation-Date: 2026-09-09 01:52+0300\n"
-"PO-Revision-Date: 2026-04-21 09:09+0000\n"
-"Last-Translator: Anton Matsiuk <dnxb42@gmail.com>\n"
-"Language-Team: Ukrainian\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/issu"
+"es/\n"
+"POT-Creation-Date: 2025-11-28 10:48+0000\n"
+"PO-Revision-Date: 2026-01-09 23:21+0200\n"
+"Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
+"Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2026-07-01 12:24+0000\n"
-"X-Generator: Launchpad (build c38ea58da9d7185c4996adfc854ab433551cdcdd)\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Lokalize 23.04.3\n"
 "X-Project-Style: gnome\n"
 
 #: data/gnome-initial-setup.desktop.in.in:2
-#: gnome-initial-setup/gis-driver.c:890
+#: gnome-initial-setup/gis-driver.c:869
 msgid "Initial Setup"
-msgstr "Початкове Налаштування"
+msgstr "Перший запуск"
 
-#: gnome-initial-setup/gis-assistant.c:425
+#: gnome-initial-setup/gis-assistant.c:401
 msgid "_Next"
 msgstr "_Далі"
 
-#: gnome-initial-setup/gis-assistant.c:426
-msgid "_Finish"
-msgstr "_Завершити"
-
-#: gnome-initial-setup/gis-assistant.c:427
+#: gnome-initial-setup/gis-assistant.c:402
 msgid "_Accept"
-msgstr "_Прийняти"
+msgstr "_Ухвалити"
 
-#: gnome-initial-setup/gis-assistant.c:428
+#: gnome-initial-setup/gis-assistant.c:403
 msgid "_Skip"
 msgstr "_Пропустити"
 
-#: gnome-initial-setup/gis-assistant.c:429
+#: gnome-initial-setup/gis-assistant.c:404
 msgid "_Previous"
 msgstr "_Назад"
 
-#: gnome-initial-setup/gis-assistant.c:430
+#: gnome-initial-setup/gis-assistant.c:405
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:254
 msgid "_Cancel"
 msgstr "_Скасувати"
 
-#: gnome-initial-setup/gis-webkit.c:54
-msgid "Scan the QR Code…"
-msgstr "Сканувати QR-код…"
-
-#: gnome-initial-setup/gis-webkit.c:244
-msgid "Open in default web browser"
-msgstr "Відкрити в типовому веб браузері"
-
-#: gnome-initial-setup/gis-webkit.c:247
-msgid "Open in default file handler"
-msgstr "Відкрити в типовій файловій програмі"
-
-#: gnome-initial-setup/gnome-initial-setup.c:362
+#: gnome-initial-setup/gnome-initial-setup.c:280
 msgid "Force existing user mode"
-msgstr "Примусово наявний режим користувача"
+msgstr "Примусовий режим для наявного користувача"
 
-#: gnome-initial-setup/gnome-initial-setup.c:364
-msgid "Force Upgrade user"
-msgstr "Примусово Удосконалити користувача"
-
-#: gnome-initial-setup/gnome-initial-setup.c:378
+#: gnome-initial-setup/gnome-initial-setup.c:294
 msgid "— GNOME initial setup"
-msgstr "— Початкове налаштування GNOME"
+msgstr "— Перший запуск GNOME"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.c:181
 msgid "Failed to cache account"
@@ -86,11 +65,11 @@ msgstr "Не вдалося зареєструвати обліковий зап
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.c:420
 msgid "No supported way to authenticate with this domain"
-msgstr "Немає підтримуваного способу аутентифікації з цим доменом"
+msgstr "Непідтримуваний спосіб засвідчення з цим доменом"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.c:459
 msgid "Failed to join domain"
-msgstr "Не вдалось під'єднатись до домену"
+msgstr "Не вдалось долучитись до домену"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.c:526
 msgid "Failed to log into domain"
@@ -98,7 +77,7 @@ msgstr "Не вдалось увійти до домену"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:12
 msgid "Enterprise Login"
-msgstr "Комерційний Вхід"
+msgstr "Комерційний вхід"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:13
 msgid ""
@@ -106,9 +85,9 @@ msgid ""
 "used on this device. You can also use this account to access company "
 "resources on the internet."
 msgstr ""
-"Комерційний вхід дозволяє наявному обліковому запису який централізовано "
-"керується, бути використаним на цьому пристрої. Ви також можете скористатись "
-"цим обліковим записом, для доступу до ресурсів компанії в інтернеті."
+"Комерційний вхід дозволяє наявним обліковим записам централізовано "
+"використовуватись на цьому пристрою. Ви також можете скористатися цим "
+"обліковим записом для доступу до ресурсів компанії у інтернеті."
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:27
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:153
@@ -118,7 +97,7 @@ msgstr "_Домен"
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:40
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:104
 msgid "_Username"
-msgstr "_Ім'я користувача"
+msgstr "_Користувач"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:53
 #: gnome-initial-setup/pages/password/gis-password-page.ui:31
@@ -127,7 +106,7 @@ msgstr "_Пароль"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:99
 msgid "Enterprise domain or realm name"
-msgstr "Комерційний домен або назва галузі"
+msgstr "Комерційний домен або назва області"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:126
 msgid "Domain Administrator Login"
@@ -139,19 +118,17 @@ msgid ""
 "domain. Please have your network administrator type the domain password "
 "here, and choose a unique computer name for your computer."
 msgstr ""
-"Комп'ютер потрібно зареєструвати в домені, щоб використовувати комерційні "
-"облікові записи. Будь-ласка, попрохайте вашого мережевого адміністратора "
-"ввести тут пароль домену, та обрати унікальне ім'я пристрою для вашого "
-"комп'ютера."
+"Комп'ютер потрібно зареєструвати в домені, щоб використовувати комерційний "
+"вхід. Попрохайте вашого мережевого адміністратора ввести тут пароль домену і "
+"виберіть унікальну назву комп'ютера."
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:179
-#: gnome-initial-setup/pages/account/gis-account-page-local.ui:151
 msgid "_Computer"
 msgstr "_Комп'ютер"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:203
 msgid "Administrator _Name"
-msgstr "Ім'я _адміністратора"
+msgstr "_Адміністратор"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:227
 msgid "Administrator Password"
@@ -161,35 +138,19 @@ msgstr "Пароль адміністратора"
 msgid "C_ontinue"
 msgstr "Пр_одовжити"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:210
-#, c-format
-msgid "The hostname is too long."
-msgstr "Назва хосту є надто довгою."
-
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:214
-msgid "The hostname must start with a lower case letter from a-z or a digit."
-msgstr "Назва хосту має починатися з малої літери, від a до z або цифри."
-
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:218
-msgid ""
-"The hostname should only consist of lower case letters from a-z, digits and "
-"a hyphen: -"
-msgstr ""
-"Назва хосту має складатися лише з малих літер від a до z, цифр та дефісів: -"
-
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:545
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:321
 msgid "We need a few details to complete setup."
 msgstr "Нам потрібно кілька дрібничок, щоб завершити."
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:704
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:476
 msgid "Administrator"
 msgstr "Адміністратор"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:710
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:753
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:482
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:525
 #, c-format
 msgid "Failed to create user '%s': "
-msgstr "Не вдалося створити запис користувача '%s': "
+msgstr "Не вдалося створити запис користувача «%s»: "
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:28
 msgid "Change Avatar"
@@ -206,21 +167,20 @@ msgstr "Про себе"
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:65
 msgid "Please provide a name and username. You can choose a picture too."
-msgstr ""
-"Будь-ласка, вкажіть ім'я та ім'я користувача. Ви також можете обрати малюнок."
+msgstr "Вкажіть користувача. Можете також вибрати малюнок."
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:81
 msgid "_Full Name"
-msgstr "_Ім'я та прізвище"
+msgstr "Повне і_м'я"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.ui:217
+#: gnome-initial-setup/pages/account/gis-account-page-local.ui:159
 msgid "Set up _parental controls for this user"
-msgstr "Налаштувати _батьківський контроль для цього користувача"
+msgstr "Встановити _батьківський контроль для цього користувача"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.ui:223
+#: gnome-initial-setup/pages/account/gis-account-page-local.ui:165
 msgid "For use by a parent or supervisor, who must set up their own password."
 msgstr ""
-"Для використання батьками або доглядачем, які мають налаштувати свій власний "
+"Для використання батьками або опікунами, які мають налаштувати власний "
 "пароль."
 
 #: gnome-initial-setup/pages/account/gis-account-page.ui:32
@@ -238,13 +198,13 @@ msgstr "Неможливо автоматично долучити цей тип
 #: gnome-initial-setup/pages/account/um-realm-manager.c:373
 #, c-format
 msgid "No such domain or realm found"
-msgstr "Не було знайдено такого домену чи галузі"
+msgstr "Немає такого домену чи області"
 
 #: gnome-initial-setup/pages/account/um-realm-manager.c:782
 #: gnome-initial-setup/pages/account/um-realm-manager.c:796
 #, c-format
 msgid "Cannot log in as %s at the %s domain"
-msgstr "Неможливо увійти як %s на домен %s"
+msgstr "Неможливо ввійти як %s на домен %s"
 
 #: gnome-initial-setup/pages/account/um-realm-manager.c:788
 msgid "Invalid password, please try again"
@@ -253,78 +213,79 @@ msgstr "Неправильний пароль, спробуйте ще раз"
 #: gnome-initial-setup/pages/account/um-realm-manager.c:801
 #, c-format
 msgid "Couldn’t connect to the %s domain: %s"
-msgstr "Неможливо з'єднатись з %s доменом: %s"
+msgstr "Неможливо з'єднатись з доменом %s: %s"
 
 #: gnome-initial-setup/pages/account/um-utils.c:153
 msgid "Sorry, that user name isn’t available. Please try another."
-msgstr "Вибачте, це ім'я користувача недоступне. Будь ласка, спробуйте інше."
+msgstr ""
+"Вибачте, таким ім'ям користувача скористатися не можна. Будь ласка, "
+"спробуйте інше."
 
 #: gnome-initial-setup/pages/account/um-utils.c:156
 #, c-format
 msgid "The username is too long."
-msgstr "Ім'я користувача занадто довге."
+msgstr "Перейменуйте користувача на меншу кількість символів."
 
 #: gnome-initial-setup/pages/account/um-utils.c:159
 msgid "The username must start with a lower case letter from a-z."
-msgstr "Ім'я користувача має починатись із малої літери в межах a-z."
+msgstr "Ім'я користувача має починатися із малої літери з набору a-z."
 
 #: gnome-initial-setup/pages/account/um-utils.c:162
 msgid "That username isn’t available. Please try another."
-msgstr "Це ім'я користувача недоступне. Будь ласка, спробуйте інше."
+msgstr "Цей ім'я користувача зайнято. Будь ласка, спробуйте інше."
 
 #: gnome-initial-setup/pages/account/um-utils.c:165
 msgid ""
 "The username should only consist of lower case letters from a-z, digits, and "
 "the following characters: - _"
 msgstr ""
-"Ім'я користувача має містити лише маленькі літери a-z, цифри та наступні "
+"Ім'я користувача має містити лише літери нижнього регістру a-z, цифри і такі "
 "символи: - _"
 
 #: gnome-initial-setup/pages/account/um-utils.c:169
 msgid "This will be used to name your home folder and can’t be changed."
-msgstr ""
-"Це буде використано, щоб назвати вашу домашню теку, і цю назву неможливо "
-"буде змінити."
+msgstr "Так буде названо вашу домашню теку і її неможливо змінити."
 
 #: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:257
 msgid "Preview"
 msgstr "Попередній перегляд"
 
 #: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:325
-#: gnome-initial-setup/pages/language/cc-language-chooser.c:244
+#: gnome-initial-setup/pages/language/cc-language-chooser.c:242
 msgid "More…"
-msgstr "Більше…"
+msgstr "Ще…"
 
 #. Translators: a search for input methods or keyboard layouts
 #. * did not yield any results
 #.
 #: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:347
 msgid "No inputs found"
-msgstr "Не знайдено жодного вводу"
+msgstr "Не знайдено жодного введення"
 
-#: gnome-initial-setup/pages/keyboard/gis-keyboard-page.c:484
+#: gnome-initial-setup/pages/keyboard/gis-keyboard-page.c:502
 #: gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui:16
 msgid "Typing"
 msgstr "Введення"
 
 #: gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui:17
 msgid "Select your keyboard layout or an input method."
-msgstr "Вибрати розкладку вашої клавіатури або спосіб введення."
+msgstr "Вибрати розкладку клавіатури або спосіб введення."
 
 #: gnome-initial-setup/pages/keyboard/input-chooser.ui:8
 msgid "Search keyboards and input methods"
-msgstr "Шукати клавіатури і методи введення"
+msgstr "Шукати клавіатури і способи введення"
 
-#: gnome-initial-setup/pages/language/cc-language-chooser.c:264
+#: gnome-initial-setup/pages/language/cc-language-chooser.c:262
 msgid "No languages found"
 msgstr "Не знайдено жодної мови"
 
-#: gnome-initial-setup/pages/language/gis-language-page.c:146
+#: gnome-initial-setup/pages/language/gis-language-page.c:268
 #: gnome-initial-setup/pages/language/gis-language-page.ui:14
 msgid "Welcome"
-msgstr "Ласкаво просимо"
+msgstr "Вітаємо"
 
 #: gnome-initial-setup/pages/language/gis-language-page.ui:41
+#| msgid "Select a language from the list, or search an specific language."
 msgid "Select a language from the list, or search for a specific language."
 msgstr "Виберіть мову зі списку або виконайте пошук певної мови."
 
@@ -334,7 +295,7 @@ msgstr "Виберіть мову зі списку або виконайте п
 #.
 #: gnome-initial-setup/pages/language/gis-welcome-widget.c:132
 msgid "Welcome!"
-msgstr "Ласкаво просимо!"
+msgstr "Вітаємо!"
 
 #: gnome-initial-setup/pages/language/language-chooser.ui:11
 msgid "Search languages"
@@ -351,11 +312,11 @@ msgstr "Інший…"
 
 #: gnome-initial-setup/pages/network/gis-network-page.c:401
 msgid "Wireless networking is disabled"
-msgstr "Бездротову мережу вимкнено"
+msgstr "Радіомережу вимкнено"
 
 #: gnome-initial-setup/pages/network/gis-network-page.c:408
 msgid "Checking for available wireless networks"
-msgstr "Пошук доступних бездротових мереж"
+msgstr "Перевіряння на доступність радіомереж"
 
 #: gnome-initial-setup/pages/network/gis-network-page.c:809
 msgid "Network"
@@ -370,13 +331,13 @@ msgid ""
 "Connecting to the internet helps you get new apps, information, and other "
 "upgrades. It also helps set the time and your location automatically."
 msgstr ""
-"З'єднання із інтернетом допоможе вам в отриманні нових програм, інформації "
-"та інших оновлень. Воно також допомагає встановити час та ваше "
-"місцезнаходження автоматично."
+"З'єднання із інтернетом допоможе вам в отриманні нових програм, даних та "
+"інших оновлень. Воно також допоможе в автоматичному встановленні часу та "
+"місця вашого перебування."
 
 #: gnome-initial-setup/pages/network/gis-network-page.ui:57
 msgid "No wireless available"
-msgstr "Бездротовий зв'язок недоступний"
+msgstr "Радіомережа недоступна."
 
 #: gnome-initial-setup/pages/network/gis-network-page.ui:70
 msgid "Turn On"
@@ -391,7 +352,7 @@ msgstr "Батьківський контроль для %s"
 #: gnome-initial-setup/pages/parental-controls/gis-parental-controls-page.c:108
 msgid "Set restrictions on what this user can run or install."
 msgstr ""
-"Встановити обмеження на те, що може запускати та інсталювати цей користувач."
+"Встановити обмеження щодо того, що може запускати і встановлювати користувач."
 
 #: gnome-initial-setup/pages/parental-controls/gis-parental-controls-page.c:215
 msgid "Parental Controls"
@@ -405,17 +366,19 @@ msgstr "Вказати пароль для %s"
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:94
 msgid "Be careful not to lose your password."
-msgstr "Будьте обережні, не втратьте ваш пароль."
+msgstr "Будьте обережні, не втратьте пароль."
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:99
 msgid "Set a Parent Password"
-msgstr "Налаштувати батьківський пароль"
+msgstr "Вказати батьківський пароль"
 
 #. Translators: The placeholder is the full name of the child user on the system.
 #: gnome-initial-setup/pages/password/gis-password-page.c:101
 #, c-format
 msgid "This password will control access to the parental controls for %s."
-msgstr "Цей пароль буде керувати доступом до батьківського контролю для %s."
+msgstr ""
+"За допомогою цього пароля буде обмежено доступ до батьківського контролю для "
+"%s."
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:223
 #, c-format
@@ -425,9 +388,9 @@ msgstr "Складність пароля: %s."
 #: gnome-initial-setup/pages/password/gis-password-page.c:249
 #: gnome-initial-setup/pages/password/gis-password-page.c:251
 msgid "The passwords do not match."
-msgstr "Паролі не збігаються."
+msgstr "Пароль не збігається."
 
-#: gnome-initial-setup/pages/password/gis-password-page.c:427
+#: gnome-initial-setup/pages/password/gis-password-page.c:430
 msgid "Password"
 msgstr "Пароль"
 
@@ -454,8 +417,8 @@ msgid ""
 "This password is very similar to your last one. Try changing some letters "
 "and numbers."
 msgstr ""
-"Цей пароль дуже подібний до вашого попереднього. Спробуйте змінити деякі "
-"букви та числа."
+"Цей пароль дуже схожий на ваш попередній. Спробуйте змінити деякі букви і "
+"числа."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:85
 #: gnome-initial-setup/pages/password/pw-utils.c:93
@@ -464,56 +427,51 @@ msgid ""
 "This password is very similar to your last one. Try changing the password a "
 "bit more."
 msgstr ""
-"Цей пароль дуже подібний до вашого попереднього. Спробуйте ще трохи "
-"позмінювати ваш пароль."
+"Цей пароль дуже схожий на попередній. Спробуйте ще трохи переінакшити пароль."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:87
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. A password without your user name would be stronger."
 msgstr ""
-"Цей пароль є слабким. Пароль без зазначення вашого імені користувача в ньому "
-"буде сильнішим."
+"Цей пароль — слабкий. Пароль без зазначення користувача в ньому — сильніший."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:89
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid using your name in the password."
-msgstr ""
-"Цей пароль є слабким. Спробуйте уникнути використання вашого імені в паролі."
+msgstr "Цей пароль слабкий. Намагайтесь уникати свого імені в паролі."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:91
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to avoid some of the words included in the "
 "password."
-msgstr ""
-"Цей пароль є слабким. Спробуйте уникнути деяких слів, які включені в цей "
-"пароль."
+msgstr "Цей пароль слабкий. Намагайтесь уникати деяких слів у паролі."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:95
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid common words."
-msgstr "Цей пароль є слабким. Спробуйте уникнути загальновживаних слів."
+msgstr "Цей пароль — слабкий. Намагайтесь уникати загальновживані слова."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:97
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid reordering existing words."
-msgstr "Цей пароль є слабким. Спробуйте уникнути перетасовування наявних слів."
+msgstr "Цей пароль — слабкий. Намагайтесь уникати перетасовані вживані слова."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:99
 msgctxt "Password hint"
 msgid "This is a weak password. Try to use more numbers."
-msgstr "Цей пароль є слабким. Спробуйте використати більше чисел."
+msgstr "Цей пароль — слабкий. Намагайтесь уживати якнайбільше чисел."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:101
 msgctxt "Password hint"
 msgid "This is a weak password. Try to use more uppercase letters."
-msgstr "Цей пароль є слабким. Спробуйте використати більше великих літер."
+msgstr "Цей пароль — слабкий. Намагайтесь уживати якнайбільше великих букв."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:103
 msgctxt "Password hint"
 msgid "This is a weak password. Try to use more lowercase letters."
-msgstr "Цей пароль є слабким. Спробуйте використати більше маленьких літер."
+msgstr "Цей пароль — слабкий. Намагайтесь уживати якнайбільше маленьких букв."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:105
 msgctxt "Password hint"
@@ -521,8 +479,8 @@ msgid ""
 "This is a weak password. Try to use more special characters, like "
 "punctuation."
 msgstr ""
-"Цей пароль є слабким. Спробуйте використати більше спеціальних символів, "
-"таких як розділові знаки."
+"Це слабкий пароль. Намагайтесь уживати більше спеціальних символів, як-от "
+"розділові знаки."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:107
 msgctxt "Password hint"
@@ -530,14 +488,12 @@ msgid ""
 "This is a weak password. Try to use a mixture of letters, numbers and "
 "punctuation."
 msgstr ""
-"Цей пароль є слабким. Спробуйте використати суміш літер, чисел та розділових "
-"знаків."
+"Це слабкий пароль. Намагайтесь змішувати букви, числа і розділові знаки."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:109
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid repeating the same character."
-msgstr ""
-"Цей пароль є слабким. Спробуйте уникнути повторення однакових символів."
+msgstr "Це слабкий пароль. Намагайтесь уникати повторення однакових символів."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:111
 msgctxt "Password hint"
@@ -545,36 +501,33 @@ msgid ""
 "This is a weak password. Try to avoid repeating the same type of character: "
 "you need to mix up letters, numbers and punctuation."
 msgstr ""
-"Цей пароль є слабким. Спробуйте уникнути повторення однакового типу "
-"символів: вам варто змішати літери, числа та розділові знаки."
+"Це слабкий пароль. Намагайтесь уникати повторення однакового типу символів: "
+"варто змішувати букви, числа та розділові знаки."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:113
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid sequences like 1234 or abcd."
 msgstr ""
-"Цей пароль є слабким. Спробуйте уникнути послідовностей, таких як 1234 або "
-"abcd."
+"Це слабкий пароль. Намагайтесь уникати послідовностей, як-от 1234 або abcd."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:115
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to add more letters, numbers and punctuation."
 msgstr ""
-"Цей пароль є слабким. Спробуйте додати більше літер, цифр і розділових "
+"Це надто простий пароль. Спробуйте додати більше літер, цифр і розділових "
 "знаків."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:117
 msgctxt "Password hint"
 msgid "Mix uppercase and lowercase and try to use a number or two."
-msgstr "Змішайте великі літери з малими і спробуйте використати число або два."
+msgstr "Змішуйте великі літери з малими і спробуйте додати декілька цифр."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:119
 msgctxt "Password hint"
 msgid ""
 "Adding more letters, numbers and punctuation will make the password stronger."
-msgstr ""
-"Додавання більшої кількості літер, цифр і розділових знаків зробить пароль "
-"надійнішим."
+msgstr "Додавання літер, цифр і розділових знаків зробить пароль надійнішим!"
 
 #. TRANSLATORS: this string describes a password as being poor
 #: gnome-initial-setup/pages/password/pw-utils.c:146
@@ -600,19 +553,19 @@ msgstr "чудовий"
 #. Translators: the first parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu".
 #.
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:68
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:70
 #, c-format
 msgid ""
 "Sends technical reports that do not contain personal information. Data is "
-"collected by %1$s (<u><a href='%2$s'>privacy policy</a></u>)."
+"collected by %1$s (<a href='%2$s'>privacy policy</a>)."
 msgstr ""
-"Відправляє технічні звіти які не мають персональної інформації. Дані зібрані "
-"за допомогою %1$s (<u><a href='%2$s'>політика конфіденційності</a></u>)."
+"Надсилає технічні звіти, які не міститиму особистих даних. Дані буде зібрано "
+"%1$s (<a href='%2$s'>правила конфіденційності</a>)."
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu".
 #.
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:79
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:82
 #, c-format
 msgid ""
 "Sends technical reports that do not contain personal information. Data is "
@@ -621,120 +574,95 @@ msgstr ""
 "Надсилає технічні звіти, які не міститимуть особистих даних. Дані буде "
 "зібрано %s."
 
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:123
-#, c-format
-msgid ""
-"Allows apps to determine your geographical location (<u><a "
-"href='%1$s'>privacy policy</a></u>)."
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:125
+msgid "Allows apps to determine your geographical location."
 msgstr ""
-"Дозволити програмам визначати ваше географічне місцезнаходження (<u><a "
-"href='%1$s'>політика конфіденційності</a></u>)."
+"Дозволяє програмам визначати географічні координати місця, де ви перебуваєте."
 
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:174
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:14
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:28
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:171
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:15
+msgid "Privacy"
+msgstr "Конфіденційність"
+
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:33
 msgid "Location Services"
-msgstr "Геолокаційні служби"
+msgstr "Служби розташування"
 
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:17
-msgid ""
-"Turn on location services to let applications know your geographical "
-"location."
-msgstr ""
-"Увімкнути локаційні сервіси, щоб програми могли дізнаватися ваше географічне "
-"місцезнаходження."
-
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:56
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:65
 msgid "Automatic Problem Reporting"
 msgstr "Автоматичне звітування про проблеми"
 
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:99
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:134
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:138
-msgid "You can change this later in the Settings app"
-msgstr "Ви можете змінити це потім в програмі Налаштувань"
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:97
+msgid "Privacy controls can be changed at any time from the Settings app."
+msgstr "Правила конфіденційності можна змінити в будь-яку мить у Параметрах."
 
-#: gnome-initial-setup/pages/software/gis-software-page.c:123
+#: gnome-initial-setup/pages/software/gis-software-page.c:127
 #: gnome-initial-setup/pages/software/gis-software-page.ui:11
 msgid "Third-Party Repositories"
-msgstr "Репозиторії сторонніх розробників"
+msgstr "Сторонні сховища"
 
-#: gnome-initial-setup/pages/software/gis-software-page.c:125
+#: gnome-initial-setup/pages/software/gis-software-page.c:129
 #, c-format
 msgid ""
 "Third-party repositories provide access to additional software from selected "
 "<a href='%s'>external sources</a>, including popular apps and drivers that "
 "are important for some devices. Some proprietary software is included."
 msgstr ""
-"Репозиторії сторонніх розробників надають доступ до додаткового програмного "
-"забезпечення з обраних <a href='%s'>додаткових джерел</a>, включаючи "
-"популярні програми та драйвери які є важливими для деяких пристроїв. Деяке "
-"приватне програмне забезпечення із закритим кодом теж включено."
+"Сторонні сховища надають доступ до додаткового програмного забезпечення з "
+"вибраних <a href='%s'>зовнішніх джерел</a>. Там можна знайти популярні "
+"програми, а також драйвери, які важливі для працездатності деяких пристроїв. "
+"Також там може зберігатися програмне забезпечення із закритим кодом."
 
-#: gnome-initial-setup/pages/software/gis-software-page.c:127
+#: gnome-initial-setup/pages/software/gis-software-page.c:131
 msgid ""
 "Third-party repositories provide access to additional software from selected "
 "external sources, including popular apps and drivers that are important for "
 "some devices. Some proprietary software is included."
 msgstr ""
-"Репозиторії сторонніх розробників надають доступ до додаткового програмного "
-"забезпечення з обраних додаткових джерел, включаючи популярні програми та "
-"драйвери які є важливими для деяких пристроїв. Деяке приватне програмне "
-"забезпечення із закритим кодом теж включено."
+"Сторонні сховища надають доступ до додаткового програмного забезпечення з "
+"вибраних зовнішніх джерел. Там можна знайти популярні програми, а також "
+"драйвери, які важливі для працездатності деяких пристроїв. Також там може "
+"зберігатися програмне забезпечення із закритим кодом."
 
-#: gnome-initial-setup/pages/software/gis-software-page.c:139
+#: gnome-initial-setup/pages/software/gis-software-page.c:143
 msgid "_Disable Third-Party Repositories"
-msgstr "_Вимкнути репозиторії сторонніх розробників"
+msgstr "Ви_мкнути сторонні сховища"
 
-#: gnome-initial-setup/pages/software/gis-software-page.c:144
+#: gnome-initial-setup/pages/software/gis-software-page.c:148
 msgid "_Enable Third-Party Repositories"
-msgstr "_Увімкнути репозиторії сторонніх розробників"
+msgstr "_Увімкнути сторонні сховища"
+
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:211
+msgid "Setup Failed"
+msgstr "Помилка встановлення"
+
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:213
+msgid "Close"
+msgstr "Закрити"
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
 #. * detect any distribution.
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:406
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:239
 #, c-format
 msgid "_Start Using %s"
-msgstr "_Розпочати використання %s"
+msgstr "_Почати роботу з %s"
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
 #. * detect any distribution.
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:413
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:246
 #, c-format
 msgid "%s is ready to be used."
 msgstr "%s готова до використання."
 
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:431
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:499
-#: gnome-initial-setup/pages/summary/gis-summary-page.ui:8
-msgid "All done!"
-msgstr "Все виконано!"
-
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:457
-msgid "Setup Failed"
-msgstr "Помилка встановлення"
-
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:459
-msgid "Close"
-msgstr "Закрити"
-
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:472
-msgid "Almost done"
-msgstr "Майже готово"
-
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:568
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:270
 msgid "Setup Complete"
 msgstr "Налаштовування завершено"
 
-#: gnome-initial-setup/pages/summary/gis-summary-page.ui:39
-msgid "Downloading additional language packs"
-msgstr "Завантаження додаткових пакунків мов"
-
-#: gnome-initial-setup/pages/summary/gis-summary-page.ui:47
-msgid "Cancel Download"
-msgstr "Скасувати Завантаження"
+#: gnome-initial-setup/pages/summary/gis-summary-page.ui:8
+msgid "All done!"
+msgstr "Виконано!"
 
 #: gnome-initial-setup/pages/timezone/gis-location-entry.c:117
 msgid "Search cities"
@@ -797,12 +725,12 @@ msgid ""
 "The time zone will be set automatically if your location can be found. You "
 "can also search for a city to set it yourself."
 msgstr ""
-"Часовий пояс буде налаштовано автоматично, якщо ваше розташування можливо "
-"визначити. Також можна знайти місто і вказати часовий пояс самостійно."
+"Часовий пояс буде визначено автоматично, якщо ваше розміщення можна "
+"визначити. Можете знайти місто і вказати самостійно."
 
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.ui:49
 msgid "Please search for a nearby city"
-msgstr "Будь-ласка, зробіть пошук міста яке поряд"
+msgstr "Пошукайте міста поблизу"
 
 #. Translators: This is meant to be a warm, engaging welcome message,
 #. * like greeting somebody at the door. If the exclamation mark is not
@@ -812,448 +740,31 @@ msgstr "Будь-ласка, зробіть пошук міста яке пор�
 #. * keep or remove. The %s is getting replaced with the name and version
 #. * of the OS, e.g. "GNOME 3.38"
 #.
-#: gnome-initial-setup/pages/welcome/gis-welcome-page.c:79
+#: gnome-initial-setup/pages/welcome/gis-welcome-page.c:62
 #, c-format
 msgid "Welcome to %s !"
-msgstr "Ласкаво просимо в %s!"
+msgstr "Вітаємо у %s!"
 
-#: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:12
-msgid "Welcome to Ubuntu 24.04 LTS"
-msgstr "Ласкаво просимо в Ubuntu 26.04 LTS"
-
-#: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:13
-msgid ""
-"Complete your setup with additional settings and we'll\n"
-"have you up and running in no time"
-msgstr ""
-"Завершіть ваше налаштування з додатковими параметрами\n"
-"і ми миттєво налаштуємо вас на роботу"
+#: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:4
+msgid "Setup"
+msgstr "Налаштування"
 
 #: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:32
-msgid "View release notes"
-msgstr "Переглянути примітки до релізу"
-
-#: gnome-initial-setup/pages/apps/gis-apps-page.c:95
-msgid "Ready to go"
-msgstr "Готовий розпочинати"
-
-#: gnome-initial-setup/pages/apps/gis-apps-page.blp:8
-msgid "Get started with more applications"
-msgstr "Розпочати з більшою кількістю застосунків"
-
-#: gnome-initial-setup/pages/apps/gis-apps-page.blp:9
-msgid "Ubuntu's App Center has a range of apps you can get started with."
-msgstr ""
-"В Центрі застосунків Ubuntu міститься безліч програм, з якими ви можете "
-"розпочати роботу."
-
-#: gnome-initial-setup/pages/apps/gis-apps-page.blp:28
-msgid "Open App Center"
-msgstr "Відкрити Центр застосунків"
-
-#: gnome-initial-setup/pages/eula/gis-eula-page.blp:4
-msgid "End-User License Agreement"
-msgstr "Ліцензійна Угода Кінцевого Користувача"
-
-#. GNOME Initial Setup
-#. TRANSLATORS: The place-holder is an error message
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:73
-#, c-format
-msgid "Failed to grant consent for the Initial Setup application: %s"
-msgstr ""
-"Виникла помилка при надані дозволу на Початкове Встановлення програми: %s"
-
-#. TRANSLATORS: The place-holder is an error message
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:75
-#, c-format
-msgid "Failed to withdraw consent for the Initial Setup application: %s"
-msgstr ""
-"Виникла помилка при відкликанні дозволу на Початкове Встановлення програми: "
-"%s"
-
-#. Platform source used by timed systemd collection
-#. TRANSLATORS: The place-holder is an error message
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:80
-#, c-format
-msgid "Failed to grant consent for the system data collector: %s"
-msgstr "Виникла помилка при надані дозволу на збір даних системою: %s"
-
-#. TRANSLATORS: The place-holder is an error message
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:82
-#, c-format
-msgid "Failed to withdraw consent for the system data collector: %s"
-msgstr "Виникла помилка при відкликані дозволу на збір даних системою: %s"
-
-#. Platform source used by release upgrader collection
-#. TRANSLATORS: The place-holder is an error message
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:87
-#, c-format
-msgid "Failed to grant consent for the release upgrader application: %s"
-msgstr ""
-"Виникла помилка при надані дозволу програмі з удосконалення випуску: %s"
-
-#. TRANSLATORS: The place-holder is an error message
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:89
-#, c-format
-msgid "Failed to withdraw consent for the release upgrader application: %s"
-msgstr ""
-"Виникла помилка при відкликані дозволу програми з удосконалення випуску: %s"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:381
-#, c-format
 msgid ""
-"With telemetry log: %s\n"
-"Without telemetry log: %s"
+"Setup will guide you through making an account and enabling some features. "
+"We’ll have you up and running in no time."
 msgstr ""
-"З тимчасовими логами: %s\n"
-"Без тимчасових логів: %s"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:411
-#, c-format
-msgid "Failed to collect telemetry report: %s"
-msgstr "Виникла помилка при зібранні звіту телеметрії: %s"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:571
-#, c-format
-msgid "Failed to generate report: %s"
-msgstr "Виникла помилка при генерації звіту: %s"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:589
-#, c-format
-msgid "Failed to write report: %s"
-msgstr "Виникла помилка при записі звіту: %s"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:647
-msgid "Show First Report"
-msgstr "Відобразити перший звіт"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:9
-#, fuzzy
-msgid "Utile Depends On It: Help Improve Ubuntu"
-msgstr "Допоможіть покращити Ubuntu"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:10
-#, fuzzy
-msgid ""
-"Help improve Ubuntu by sharing your system and error reports with them.\n"
-"Reports are sent anonymously."
-msgstr ""
-"Допоможіть нам покращити Ubuntu поділившись з нами звітами про вашу систему "
-"та помилки.\n"
-"Звіти надсилаються анонімно."
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:31
-msgid "Share _system data with the Ubuntu team"
-msgstr "Поділитись _системними даними з командою Ubuntu"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:32
-msgid "This includes hardware information, language and timezone"
-msgstr "Це включає інформацію про апаратне забезпечення, мову та часовий пояс"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:46
-msgid "Learn more about system reporting"
-msgstr "Вивчити більше про системне звітування"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:57
-msgid "Legal notice"
-msgstr "Правове сповіщення"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:68
-msgid "Show Report"
-msgstr "Показати Звіт"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:95
-msgid "Share _error reports with the Ubuntu team"
-msgstr "Ділитись _звітами про помилки з командою Ubuntu"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:96
-msgid "This includes crash reports and related system logs"
-msgstr "Це включає звіти аварійного вимикання та відносні системні логи"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:110
-msgid "Learn more about error reporting"
-msgstr "Вивчити більше про звітування помилок"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:148
-msgid "System Report"
-msgstr "Системний Звіт"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-attach-page.blp:21
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:21
-msgid "Enable Ubuntu Pro"
-msgstr "Увімкнути Ubuntu Pro"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-attach-page.blp:29
-msgid "_Attach machine via your Ubuntu One account"
-msgstr "_Приєднайте пристрій за допомогою облікового запису Ubuntu One"
-
-#. Translators: translators: This is the other way to attach a machine to Ubuntu Pro
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-attach-page.blp:82
-msgid "Or add a _token manually"
-msgstr "Або додайте _токен вручну"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-attach-page.blp:117
-msgid "Token"
-msgstr "Токен"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:54
-msgid "Upgrade this device to Ubuntu Pro. Free for personal use."
-msgstr ""
-"Удоскональте цей пристрій до Ubuntu Pro. Безкоштовно для персонального "
-"використовування."
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:105
-msgid ""
-"Fulfill FedRAMP, FIPS, STIG and HIPAA and other compliance and hardening "
-"requirements with certified tooling and crypto-modules"
-msgstr ""
-"Виконайте FedRAMP, FIPS, STIG та HIPA і інші вимоги до отримання вимог та "
-"гартування з сертифікованим інструментарієм та крипто-модулями"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:130
-msgid "Enable Ubuntu Pro now, or skip this step."
-msgstr "Увімкніть Ubuntu Pro зараз, або пропустіть цей крок."
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:133
-msgid "_Enable Ubuntu Pro"
-msgstr "_Увімкнути Ubuntu Pro"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:152
-msgid "_Skip for now"
-msgstr "_Поки пропустити"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:153
-msgid "You can enable Ubuntu Pro later in the Security Center"
-msgstr "Ви можете увімкнути Ubuntu Pro пізніше в Центрі по Безпеці"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-services-page.blp:22
-msgid "Ubuntu Pro Services"
-msgstr "Ubuntu Pro Сервіси"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-services-page.blp:29
-msgid "Your subscription"
-msgstr "Ваша підписка"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-services-page.blp:44
-msgid "Your enabled services"
-msgstr "Ваші увімкнені сервіси"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-services-page.blp:47
-msgid ""
-"You can change the default enablements for your token on the ubuntu.com/pro "
-"web interface. You can also change enabled services in the Settings menu or "
-"with the `<span font_family='monospace'>pro</span>` command-line."
-msgstr ""
-"Ви можете змінити вмикання стандартних включень у веб інтерфейсі ubuntu.com/"
-"pro. Ви також можете змінити увімкнені служби у меню Налаштування або за "
-"допомогою командного рядка `<span font_family='monospace'>pro</span>`."
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-services-page.blp:53
-msgid "Other available services"
-msgstr "Інші доступні сервіси"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:221
-msgid "Valid token"
-msgstr "Дійсний токен"
-
-#. TRANSLATORS: The error shown when attaching an
-#. Ubuntu Pro contact fails.
-#. It may be due to various reasons, most common is
-#. an invalid token.
-#.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:236
-msgid "Invalid token or attach failure"
-msgstr "Токен не дійсний або помилка приєднання"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:244
-msgid "Code expired"
-msgstr "Термін дії коду минув"
-
-#. TRANSLATORS: the placeholder %s is a link to ubuntu.com/pro/attach.
-#. Use HTML encoded format for special characters such as '&'.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:259
-#, c-format
-msgid "Enter this code on %s"
-msgstr "Введіть цей код на %s"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:316
-msgid "An internet connection is required to enable Ubuntu Pro"
-msgstr "Щоб увімкнути Ubuntu Pro, потрібне підключення до Інтернету"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:466
-#, c-format
-msgid "Get security updates on a wide range of packages until %s"
-msgstr "Отримуйте безпекові оновлення на широкий діапазон програм до %s"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:474
-msgid "Ubuntu Pro"
-msgstr "Ubuntu Pro"
-
-#. TRANSLATORS: The anbox-cloud Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:609
-msgid "Scalable Android in the cloud"
-msgstr "Масштабований Android в хмарі"
-
-#. TRANSLATORS: The cc-eal Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:612
-msgid "Common Criteria EAL2 Provisioning Packages"
-msgstr "Паки Забезпечення Загальних Критеріїв EAL2"
-
-#. TRANSLATORS: The esm-apps Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:615
-msgid "Expanded Security Maintenance for Applications"
-msgstr "Розширена Підтримка Безпеки для Додатків"
-
-#. TRANSLATORS: The esm-infra Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:618
-msgid "Expanded Security Maintenance for Infrastructure"
-msgstr "Розширене Обслуговування Безпеки для Інфраструктури"
-
-#. TRANSLATORS: The fips Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:621
-msgid "NIST-certified FIPS crypto packages"
-msgstr "NIST-сертифіковані крипто-паки FIPS"
-
-#. TRANSLATORS: The fips-preview Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:624
-msgid "Preview of FIPS crypto packages undergoing certification with NIST"
-msgstr ""
-"Попередній перегляд крипто-паків FIPS, що проходять сертифікацію в NIST"
-
-#. TRANSLATORS: The fips-updates Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:627
-msgid "FIPS compliant crypto packages with stable security updates"
-msgstr "Сумісні з FIPS крипто-паки, зі стабільними оновленнями безпеки"
-
-#. TRANSLATORS: The landscape Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:630
-msgid "Management and administration tool for Ubuntu"
-msgstr "Інструмент керування та адміністрування для Ubuntu"
-
-#. TRANSLATORS: The livepatch Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:633
-msgid "Canonical kernel Livepatch service"
-msgstr "Сервіс виправлень ядра Canonical Livepatch"
-
-#. TRANSLATORS: The realtime-kernel Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:636
-msgid "Ubuntu kernel with PREEMPT_RT patches integrated"
-msgstr "Ядро Ubuntu з інтегрованими патчами PREEMPT_RT"
-
-#. TRANSLATORS: The ros Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:639
-msgid "Security Updates for the Robot Operating System"
-msgstr "Оновлення Безпеки для Операційної Системи Робота"
-
-#. TRANSLATORS: The ros-updates Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:642
-msgid "All Updates for the Robot Operating System"
-msgstr "Всі Оновлення для Операційної Системи Робота"
-
-#. TRANSLATORS: The usg Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:645
-msgid "Security compliance and audit tools"
-msgstr "Інструменти дотримання вимог безпеки та аудиту"
-
-#. TRANSLATORS: Use HTML encoded format for special characters such as &amp' for '&'. %s is a URL.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:1230
-#, c-format
-msgid "Learn more at %s"
-msgstr "Вивчити більше на %s"
-
-#. TRANSLATORS: Subtitle telling who can provide the Ubuntu Pro token.
-#. Use HTML encoded format for special characters such as &amp' for '&'. %s is a URL.
-#.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:1247
-#, c-format
-msgid "From your admin, or from %s"
-msgstr "Від твого адміністратора, або від %s"
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:75
-msgid "Blue"
-msgstr "Синій"
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:78
-msgid "Teal"
-msgstr "Бірюзовий"
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:81
-msgid "Green"
-msgstr "Зелений"
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:84
-msgid "Yellow"
-msgstr "Жовтий"
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:87
-msgid "Orange"
-msgstr "Оранжевий"
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:90
-msgid "Red"
-msgstr "Червоний"
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:93
-msgid "Pink"
-msgstr "Розовий"
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:96
-msgid "Purple"
-msgstr "Фіолетовий"
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:99
-msgid "Slate"
-msgstr "Стан"
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:102
-msgid "Warty Brown"
-msgstr "Бородавчастий коричневий"
-
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:469
-msgid "Appearance"
-msgstr "Зовнішній вигляд"
-
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
-msgid "Choose how Ubuntu looks"
-msgstr "Оберіть як виглядатиме Ubuntu"
-
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
-msgid "Personalize your desktop's appearance"
-msgstr "Персоналізуйте зовнішній вигляд вашого десктопу"
-
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
-msgid "Style"
-msgstr "Стиль"
-
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:53
-msgid "_Default"
-msgstr "_Типово"
-
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:82
-msgid "Da_rk"
-msgstr "Тем_ний"
-
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:100
-msgid "OLED screen detected. Dark style may save power."
-msgstr "Знайдено OLED екран. Темний стиль може зберігати більше енергій."
-
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:112
-msgid "Accent Color"
-msgstr "Акцентований Колір"
+"«Налаштування» допоможуть вам пройти процедуру створення облікового запису "
+"та вмикання деяких можливостей. Щоб почати роботу, вам знадобиться зовсім "
+"трохи часу."
+
+#: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:36
+msgid "_Start Setup"
+msgstr "_Почати налаштовування"
 
 #: po/EXTRA_STRINGS.sh:1
 msgid "Force live user mode"
-msgstr "Примусовий режим користувача live"
+msgstr "Примусовий режим користувача портативної системи"
 
 #: po/EXTRA_STRINGS.sh:2
 msgid "Force OEM mode"
@@ -1261,7 +772,7 @@ msgstr "Примусовий режим OEM"
 
 #: po/EXTRA_STRINGS.sh:3
 msgid "Try or Install?"
-msgstr "Спробувати чи Інсталювати?"
+msgstr "Спробувати чи встановити?"
 
 #: po/EXTRA_STRINGS.sh:4
 #, sh-format
@@ -1272,15 +783,16 @@ msgid ""
 "\n"
 "        Alternatively, choose install to launch the installer."
 msgstr ""
-"Ви можете спробувати тимчасову версію ${NAME} без внесення змін до пристрою. "
-"Якщо, пізніше, ви вирішите інсталювати систему, просто запустіть інсталятор "
-"з меню Активностей.\n"
+"Ви можете спробувати тимчасову версію ${NAME} без внесення змін до робочих "
+"процедур вашого комп'ютера. Якщо ви пізніше захочете встановити систему, "
+"просто запустіть засіб встановлення з меню «Дії».\n"
 "\n"
-"        Крім того, ви можете вибрати «Інсталювати», щоб запустити інсталятор."
+"        Крім того, ви можете вибрати «Встановити», щоб запустити засіб "
+"встановлення."
 
 #: po/EXTRA_STRINGS.sh:7
 msgid "Install to Disk…"
-msgstr "Інсталювати на Диск…"
+msgstr "Встановити на диск…"
 
 #: po/EXTRA_STRINGS.sh:8
 #, sh-format
@@ -1290,138 +802,92 @@ msgstr "Спробувати ${NAME}"
 #: po/EXTRA_STRINGS.sh:9
 #, sh-format
 msgid "Install ${PRETTY_NAME}"
-msgstr "Інсталювати ${PRETTY_NAME}"
+msgstr "Встановити ${PRETTY_NAME}"
 
-#, c-format
-#~ msgid "Failed to show privacy policy: %s"
-#~ msgstr "Не вдалося показати політику конфіденційності: %s"
+#~ msgid "Set a Password"
+#~ msgstr "Вказати пароль"
 
-#~ msgid "Help improve Ubuntu"
-#~ msgstr "Допоможіть покращити Ubuntu"
-
-#~ msgid "Cancel"
-#~ msgstr "Скасувати"
-
-#~ msgid "Privacy controls can be changed at any time from the Settings app."
-#~ msgstr ""
-#~ "Правила конфіденційності можна змінити в будь-яку мить у Параметрах."
-
-#~ msgid "Location services"
-#~ msgstr "Геолокаційні служби"
-
-#~ msgid "Data privacy"
-#~ msgstr "Конфіденційність даних"
-
-#, c-format
-#~ msgid "Failed to send report information: %s"
-#~ msgstr "Не вдалося надіслати інформаційний звіт: %s"
-
-#~ msgid "Or add _token manually"
-#~ msgstr "Або додайте _токен вручну"
+#~ msgid "Privacy Policy"
+#~ msgstr "Правила конфіденційності"
 
 #~ msgid ""
-#~ "You can always enable Ubuntu Pro later via the Software & Updates "
-#~ "application"
+#~ "Allows apps to determine your geographical location. Uses the Mozilla "
+#~ "Location Service (<a href='https://location.services.mozilla.com/"
+#~ "privacy'>privacy policy</a>)."
 #~ msgstr ""
-#~ "Ви завжди можете увімкнути Ubuntu Pro пізніше за допомогою програми "
-#~ "Software & Updates"
+#~ "Дозволяє програмам визначати географічні координати місця, де ви "
+#~ "перебуваєте. Використовує Mozilla Location Service (<a href='https://"
+#~ "location.services.mozilla.com/privacy'>умови конфіденційності</a>)."
 
-#~ msgid "Canceled additional downloads"
-#~ msgstr "Скасовано додаткові завантаження"
+#~ msgid "Please check the name and username. You can choose a picture too."
+#~ msgstr "Перевірте користувача. Можете також вибрати малюнок."
 
-#~ msgid "Downloading language packs…"
-#~ msgstr "Завантаження мовних паків…"
+#~ msgid "Edit avatar"
+#~ msgstr "Редагувати аватар"
 
-#~ msgid "Unable to download additional language packs"
-#~ msgstr "Не вдається завантажити додаткові мовні паки"
+#~ msgid "Online Accounts"
+#~ msgstr "Мережевий обліковий запис"
+
+#~ msgid "Connect Your Online Accounts"
+#~ msgstr "З'єднатись з мережевим обліковим записом"
+
+#~ msgid ""
+#~ "Connect your accounts to easily access your email, online calendar, "
+#~ "contacts, documents and photos."
+#~ msgstr ""
+#~ "З'єднання ваших облікових записів для легкого доступу до вашої пошти, "
+#~ "контактів, документів і світлин у мережі."
+
+#~ msgid "Accounts can be added and removed at any time from the Settings app."
+#~ msgstr ""
+#~ "Облікові записи можна додати і вилучити в будь-яку мить з Параметрів."
+
+#, c-format
+#~ msgid "%s Account"
+#~ msgstr "Обліковий запис %s"
+
+#~ msgid "Install or Try?"
+#~ msgstr "Встановити або спробувати?"
+
+#~ msgid ""
+#~ "This live media can be used to install GNOME, or it can be used to try "
+#~ "GNOME as a temporary system. Installation can be started at any time "
+#~ "using the install icon in Activities."
+#~ msgstr ""
+#~ "Цим портативним носієм можна скористатися для встановлення GNOME або для "
+#~ "того, щоб спробувати GNOME як тимчасову систему. Встановлення системи "
+#~ "можна розпочати, коли ви захочете, за допомогою піктограми встановлення у "
+#~ "меню «Діяльність»."
+
+#~ msgid "Try"
+#~ msgstr "Спробувати"
+
+#~ msgid "Avatar image"
+#~ msgstr "Зображення аватара"
+
+#~ msgid "Take a Picture…"
+#~ msgstr "Зробити фотографію…"
+
+#~ msgid "_Confirm"
+#~ msgstr "_Підтвердити"
+
+#~ msgid "This is a weak password."
+#~ msgstr "Це слабкий пароль."
 
 #, c-format
 #~ msgid ""
-#~ "Sends technical reports that do not contain personal information. Data is "
-#~ "collected by %1$s (<a href='%2$s'>privacy policy</a>)."
+#~ "Sending reports of technical problems helps us to improve %s. Reports are "
+#~ "sent anonymously and are scrubbed of personal data."
 #~ msgstr ""
-#~ "Надсилає технічні звіти, які не містять персональних даних. Дані зібрані "
-#~ "системою %1$s (<a href='%2$s'>політика конфіденційності</a>)."
+#~ "Надсилання звітів щодо технічних проблем допоможе нам покращити %s. Звіти "
+#~ "надсилаються анонімно та відкидають особисті дані."
 
 #, c-format
-#~ msgid ""
-#~ "Turn on location services to let applications know your geographical "
-#~ "location. You can change this anytime in System Settings."
-#~ msgstr ""
-#~ "Увімкнути служби геолокації, щоб програми могли знати ваше "
-#~ "місцерозташування. Ви можете змінити це, в будь-який момент, в Системних "
-#~ "Налаштуваннях."
+#~ msgid "Problem data will be collected by %s:"
+#~ msgstr "Проблемні дані буде збирати %s:"
 
-#, c-format
-#~ msgid "Failed to get report information: %s"
-#~ msgstr "Не вдалося отримати інформацію звіту: %s"
+#~ msgid "Uses Mozilla Location Service:"
+#~ msgstr "Використовується служби розташування Mozilla:"
 
-#~ msgid "Ubuntu Report Contents"
-#~ msgstr "Вміст Звіту Ubuntu"
-
-#, c-format
-#~ msgid "Failed to send report decline: %s"
-#~ msgstr "Не вдалося надіслати відмову звіту: %s"
-
-#, c-format
-#~ msgid ""
-#~ "Help us improve Ubuntu by sharing your system data with us. This includes "
-#~ "things like your machine model, installed software and the location you "
-#~ "chose for your timezone."
-#~ msgstr ""
-#~ "Допоможіть нам покращити Ubuntu, поділившись з нами системними даними. Це "
-#~ "включає такі дані, як: модель пристрою, встановлені програми та локацію "
-#~ "яку ви обрали для часового поясу."
-
-#~ msgid "Yes, share system data with the Ubuntu team"
-#~ msgstr "Так, ділитися системними даними з командою Ubuntu"
-
-#~ msgid "No, don't share system data"
-#~ msgstr "Ні, не ділитися системними даними"
-
-#~ msgid "Show the First Report"
-#~ msgstr "Показати Перший Звіт"
-
-#~ msgid "You can change your mind later in Settings → Privacy → Diagnostics."
-#~ msgstr ""
-#~ "Ви можете змінити вашу думку пізніше в Налаштування → Приватність → "
-#~ "Діагностика."
-
-#~ msgid ""
-#~ "Upgrade this machine to Ubuntu Pro for security updates on a much wider "
-#~ "range of packages, until 2034. Fulfill FedRAMP, FIPS, STIG and HIPAA and "
-#~ "other compliance and hardening requirements with certified tooling and "
-#~ "crypto-modules. Free for up to 5 machines.\n"
-#~ "\n"
-#~ "More information on <a href=\"https://ubuntu.com/pro\">ubuntu.com/pro</a>."
-#~ msgstr ""
-#~ "Оновіть цей пристрій до Ubuntu Pro, для оновлень безпеки для набагато "
-#~ "ширшого спектру паків до 2034 року. Виконуйте вимоги FedRAMP, FIPS, STIG, "
-#~ "HIPAA та інші відповідні вимоги і затвердження вимог за допомогою "
-#~ "сертифікованого інструментарію та крипто-модулів. Безкоштовно до 5 "
-#~ "пристрої. \n"
-#~ "\n"
-#~ "Більше інформації дивіться на <a href=\"https://ubuntu.com/"
-#~ "pro\">ubuntu.com/pro</a>."
-
-#~ msgid "From your admin, or from ubuntu.com/pro"
-#~ msgstr "Від вашого адміністратора, або від ubuntu.com/pro"
-
-#~ msgid "Upgrade this machine to Ubuntu Pro. Free for up to 5 machines."
-#~ msgstr "Оновіть цей пристрій до Ubuntu Pro. Безкоштовно до 5 пристроїв."
-
-#~ msgid "Get security updates on a wide range of packages until 2034"
-#~ msgstr "Отримуйте оновлення безпеки для широкого спектру паків до 2034 року"
-
-#~ msgid ""
-#~ "Fulfill FedRAMP, FIPS, STIG and HIPAA and other compliance and hardening "
-#~ "requirements with certified tooling and crypto-modules."
-#~ msgstr ""
-#~ "Виконуйте вимоги FedRAMP, FIPS, STIG, HIPAA та інші відповідні вимоги і "
-#~ "затвердження вимог за допомогою сертифікованого інструментарію та крипто-"
-#~ "модулів."
-
-#~ msgid "Learn more at <a href=\"https://ubuntu.com/pro\">ubuntu.com/pro</a>."
-#~ msgstr ""
-#~ "Дізнайтеся більше на <a href=\"https://ubuntu.com/pro\">ubuntu.com/pro</"
-#~ "a>."
+#~ msgid "Loading…"
+#~ msgstr "Завантаження…"

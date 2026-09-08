@@ -37,7 +37,6 @@ typedef struct _GisPage      GisPage;
 #include "gis-util.h"
 
 void gis_ensure_stamp_files (GisDriver *driver);
-void gis_ensure_upgrade_stamp_files (GisDriver *driver);
 gboolean gis_get_mock_mode (void);
 
 #endif /* __GNOME_INITIAL_SETUP_H__ */

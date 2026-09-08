@@ -7,69 +7,48 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
-"issues\n"
-"POT-Creation-Date: 2026-09-09 01:52+0300\n"
-"PO-Revision-Date: 2026-04-14 01:42+0000\n"
-"Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
+"issues/\n"
+"POT-Creation-Date: 2026-01-29 16:10+0000\n"
+"PO-Revision-Date: 2026-03-02 23:12-0500\n"
+"Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
 "Language: ug\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2026-07-01 12:24+0000\n"
-"X-Generator: Launchpad (build c38ea58da9d7185c4996adfc854ab433551cdcdd)\n"
+"X-Generator: Poedit 3.8\n"
 
 #: data/gnome-initial-setup.desktop.in.in:2
-#: gnome-initial-setup/gis-driver.c:890
+#: gnome-initial-setup/gis-driver.c:869
 msgid "Initial Setup"
 msgstr "دەسلەپكى تەڭشەش"
 
-#: gnome-initial-setup/gis-assistant.c:425
+#: gnome-initial-setup/gis-assistant.c:401
 msgid "_Next"
 msgstr "كېيىنكى(_N)"
 
-#: gnome-initial-setup/gis-assistant.c:426
-msgid "_Finish"
-msgstr "تامام(_F)"
-
-#: gnome-initial-setup/gis-assistant.c:427
+#: gnome-initial-setup/gis-assistant.c:402
 msgid "_Accept"
 msgstr "قوشۇل(_A)"
 
-#: gnome-initial-setup/gis-assistant.c:428
+#: gnome-initial-setup/gis-assistant.c:403
 msgid "_Skip"
 msgstr "ئاتلا(_S)"
 
-#: gnome-initial-setup/gis-assistant.c:429
+#: gnome-initial-setup/gis-assistant.c:404
 msgid "_Previous"
 msgstr "ئالدىنقى(_P)"
 
-#: gnome-initial-setup/gis-assistant.c:430
+#: gnome-initial-setup/gis-assistant.c:405
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:254
 msgid "_Cancel"
 msgstr "ۋاز كەچ(_C)"
 
-#: gnome-initial-setup/gis-webkit.c:54
-msgid "Scan the QR Code…"
-msgstr ""
-
-#: gnome-initial-setup/gis-webkit.c:244
-msgid "Open in default web browser"
-msgstr ""
-
-#: gnome-initial-setup/gis-webkit.c:247
-msgid "Open in default file handler"
-msgstr ""
-
-#: gnome-initial-setup/gnome-initial-setup.c:362
+#: gnome-initial-setup/gnome-initial-setup.c:280
 msgid "Force existing user mode"
 msgstr "مەجبۇرىي نۆۋەتتىكى ئىشلەتكۈچى ھالىتى"
 
-#: gnome-initial-setup/gnome-initial-setup.c:364
-msgid "Force Upgrade user"
-msgstr ""
-
-#: gnome-initial-setup/gnome-initial-setup.c:378
+#: gnome-initial-setup/gnome-initial-setup.c:294
 msgid "— GNOME initial setup"
 msgstr "— GNOME دەسلەپكى تەڭشەش"
 
@@ -141,7 +120,6 @@ msgstr ""
 "كومپيۇتېرىڭىزغا خاس كومپيۇتېر نامىنى تاللاڭ."
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:179
-#: gnome-initial-setup/pages/account/gis-account-page-local.ui:151
 msgid "_Computer"
 msgstr "كومپيۇتېر(_C)"
 
@@ -157,35 +135,16 @@ msgstr "باشقۇرغۇچى ئىم"
 msgid "C_ontinue"
 msgstr "داۋاملاشتۇر(_O)"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:210
-#, c-format
-msgid "The hostname is too long."
-msgstr "مۇلازىمېتىر ئىسمى بەك ئۇزۇن."
-
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:214
-msgid "The hostname must start with a lower case letter from a-z or a digit."
-msgstr ""
-"مۇلازىمېتىر ئىسمى چوقۇم a-z غىچە كىچىك ھەرپ ياكى بىر سان بىلەن باشلىنىشى "
-"كېرەك."
-
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:218
-msgid ""
-"The hostname should only consist of lower case letters from a-z, digits and "
-"a hyphen: -"
-msgstr ""
-"مۇلازىمېتىر ئىسمى چوقۇم a-z غىچە كىچىك ھەرپ، سان ۋە بىر ئاستى سىزىقتىن "
-"تەركىپ تېپىشى كېرەك -"
-
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:545
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:321
 msgid "We need a few details to complete setup."
 msgstr "بىز تەڭشەشنى تاماملاش ئۈچۈن بىر قانچە تەپسىلاتقا ئېھتىياجلىق."
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:704
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:476
 msgid "Administrator"
 msgstr "باشقۇرغۇچى"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:710
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:753
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:482
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:525
 #, c-format
 msgid "Failed to create user '%s': "
 msgstr "ئىشلەتكۈچى «%s» نى قۇرالمىدى: "
@@ -211,11 +170,11 @@ msgstr "ئىسىم ۋە ئىشلەتكۈچى ئاتىنى تەمىنلەڭ. رە
 msgid "_Full Name"
 msgstr "تولۇق ئاتى(_F)"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.ui:217
+#: gnome-initial-setup/pages/account/gis-account-page-local.ui:159
 msgid "Set up _parental controls for this user"
 msgstr "بۇ ئىشلەتكۈچىنىڭ ئاتا-ئانا كونتروللۇق تەڭشىكى(_p)"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.ui:223
+#: gnome-initial-setup/pages/account/gis-account-page-local.ui:165
 msgid "For use by a parent or supervisor, who must set up their own password."
 msgstr ""
 "ئاتا-ئانا ياكى باشقۇرغۇچىلار ئىشلىتىدۇ، ئۇلارنىڭ ئۆزى ئىم تەڭشىشى كېرەك."
@@ -287,7 +246,7 @@ msgid "Preview"
 msgstr "ئالدىن كۆزەت"
 
 #: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:325
-#: gnome-initial-setup/pages/language/cc-language-chooser.c:244
+#: gnome-initial-setup/pages/language/cc-language-chooser.c:242
 msgid "More…"
 msgstr "تېخىمۇ كۆپ…"
 
@@ -298,7 +257,7 @@ msgstr "تېخىمۇ كۆپ…"
 msgid "No inputs found"
 msgstr "ھېچقانداق كىرگۈزۈش بايقالمىدى"
 
-#: gnome-initial-setup/pages/keyboard/gis-keyboard-page.c:484
+#: gnome-initial-setup/pages/keyboard/gis-keyboard-page.c:502
 #: gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui:16
 msgid "Typing"
 msgstr "كىرگۈزۈۋاتىدۇ"
@@ -311,11 +270,11 @@ msgstr "ھەرپتاختا جايلاشتۇرۇش ياكى كىرگۈزۈش ئۇ
 msgid "Search keyboards and input methods"
 msgstr "ھەرپتاختا ۋە كىرگۈزۈش ئۇسۇلى ئىزدەيدۇ"
 
-#: gnome-initial-setup/pages/language/cc-language-chooser.c:264
+#: gnome-initial-setup/pages/language/cc-language-chooser.c:262
 msgid "No languages found"
 msgstr "تىل تېپىلمىدى"
 
-#: gnome-initial-setup/pages/language/gis-language-page.c:146
+#: gnome-initial-setup/pages/language/gis-language-page.c:268
 #: gnome-initial-setup/pages/language/gis-language-page.ui:14
 msgid "Welcome"
 msgstr "مەرھابا"
@@ -423,7 +382,7 @@ msgstr "ئىم كۈچلۈكلۈكى: %s."
 msgid "The passwords do not match."
 msgstr "ئىم ماس كەلمىدى."
 
-#: gnome-initial-setup/pages/password/gis-password-page.c:427
+#: gnome-initial-setup/pages/password/gis-password-page.c:430
 msgid "Password"
 msgstr "ئىم"
 
@@ -589,17 +548,19 @@ msgstr "مۇنەۋۋەر"
 #. Translators: the first parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu".
 #.
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:68
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:70
 #, c-format
 msgid ""
 "Sends technical reports that do not contain personal information. Data is "
-"collected by %1$s (<u><a href='%2$s'>privacy policy</a></u>)."
+"collected by %1$s (<a href='%2$s'>privacy policy</a>)."
 msgstr ""
+"شەخسىي ئۇچۇرلارنى ئۆز ئىچىگە ئالمىغان تېخنىكىلىق دوكلات ئەۋەتىدۇ. سانلىق "
+"مەلۇماتلار %1$s (<a href='%2$s'> شەخسىيەت تۈزۈمى</a>) ئارقىلىق توپلىنىدۇ."
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu".
 #.
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:79
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:82
 #, c-format
 msgid ""
 "Sends technical reports that do not contain personal information. Data is "
@@ -608,41 +569,34 @@ msgstr ""
 "شەخسىي ئۇچۇرلارنى ئۆز ئىچىگە ئالمىغان تېخنىكىلىق دوكلات ئەۋەتىدۇ. سانلىق "
 "مەلۇماتلار %1$s ئارقىلىق توپلىنىدۇ."
 
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:123
-#, c-format
-msgid ""
-"Allows apps to determine your geographical location (<u><a "
-"href='%1$s'>privacy policy</a></u>)."
-msgstr ""
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:125
+msgid "Allows apps to determine your geographical location."
+msgstr "پىروگراممىنىڭ جۇغراپىيەلىك ئورنىڭىزنى جەزملىشىگە يول قويىدۇ."
 
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:174
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:14
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:28
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:171
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:15
+msgid "Privacy"
+msgstr "شەخسىيەت"
+
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:33
 msgid "Location Services"
 msgstr "ئورۇن مۇلازىمىتى"
 
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:17
-msgid ""
-"Turn on location services to let applications know your geographical "
-"location."
-msgstr ""
-
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:56
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:65
 msgid "Automatic Problem Reporting"
 msgstr "ئاپتوماتىك مەسىلە مەلۇم قىلغۇچ"
 
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:99
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:134
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:138
-msgid "You can change this later in the Settings app"
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:97
+msgid "Privacy controls can be changed at any time from the Settings app."
 msgstr ""
+"شەخسىيەت كونتروللىرىنى تەڭشەك ئەپتىن خالىغان ۋاقىتتا ئۆزگەرتكىلى بولىدۇ."
 
-#: gnome-initial-setup/pages/software/gis-software-page.c:123
+#: gnome-initial-setup/pages/software/gis-software-page.c:127
 #: gnome-initial-setup/pages/software/gis-software-page.ui:11
 msgid "Third-Party Repositories"
 msgstr "ئۈچىنچى تەرەپ خەزىنىسى"
 
-#: gnome-initial-setup/pages/software/gis-software-page.c:125
+#: gnome-initial-setup/pages/software/gis-software-page.c:129
 #, c-format
 msgid ""
 "Third-party repositories provide access to additional software from selected "
@@ -654,7 +608,7 @@ msgstr ""
 "مۇھىم بولغان داڭلىق ئەپ ۋە قوزغاتقۇچلار بار. بەزى مەخسۇس يۇمشاق دېتاللارمۇ "
 "بۇنىڭ ئىچىدە."
 
-#: gnome-initial-setup/pages/software/gis-software-page.c:127
+#: gnome-initial-setup/pages/software/gis-software-page.c:131
 msgid ""
 "Third-party repositories provide access to additional software from selected "
 "external sources, including popular apps and drivers that are important for "
@@ -665,18 +619,26 @@ msgstr ""
 "بولغان داڭلىق ئەپلەر ۋە قوزغاتقۇچلار بار. بەزى مەخسۇس يۇمشاق دېتاللارمۇ "
 "بۇنىڭ ئىچىدە."
 
-#: gnome-initial-setup/pages/software/gis-software-page.c:139
+#: gnome-initial-setup/pages/software/gis-software-page.c:143
 msgid "_Disable Third-Party Repositories"
 msgstr "ئۈچىنچى تەرەپ خەزىنىسىنى چەكلە(_D)"
 
-#: gnome-initial-setup/pages/software/gis-software-page.c:144
+#: gnome-initial-setup/pages/software/gis-software-page.c:148
 msgid "_Enable Third-Party Repositories"
 msgstr "ئۈچىنچى تەرەپ خەزىنىسىنى قوزغات(_E)"
+
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:211
+msgid "Setup Failed"
+msgstr "تەڭشىيەلمىدى"
+
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:213
+msgid "Close"
+msgstr "ياپ"
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
 #. * detect any distribution.
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:406
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:239
 #, c-format
 msgid "_Start Using %s"
 msgstr "%s ئىشلىتىشنى باشلا(_S)"
@@ -684,40 +646,18 @@ msgstr "%s ئىشلىتىشنى باشلا(_S)"
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
 #. * detect any distribution.
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:413
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:246
 #, c-format
 msgid "%s is ready to be used."
 msgstr "«%s» ئىشلىتىشكە تەييار بولدى."
 
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:431
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:499
-#: gnome-initial-setup/pages/summary/gis-summary-page.ui:8
-msgid "All done!"
-msgstr "ھەممىسى تامام!"
-
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:457
-msgid "Setup Failed"
-msgstr "تەڭشىيەلمىدى"
-
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:459
-msgid "Close"
-msgstr "ياپ"
-
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:472
-msgid "Almost done"
-msgstr ""
-
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:568
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:270
 msgid "Setup Complete"
 msgstr "ئورنىتىش تامام"
 
-#: gnome-initial-setup/pages/summary/gis-summary-page.ui:39
-msgid "Downloading additional language packs"
-msgstr ""
-
-#: gnome-initial-setup/pages/summary/gis-summary-page.ui:47
-msgid "Cancel Download"
-msgstr ""
+#: gnome-initial-setup/pages/summary/gis-summary-page.ui:8
+msgid "All done!"
+msgstr "ھەممىسى تامام!"
 
 #: gnome-initial-setup/pages/timezone/gis-location-entry.c:117
 msgid "Search cities"
@@ -795,429 +735,26 @@ msgstr "يېقىن ئەتراپتىكى شەھەرنى ئىزدەڭ"
 #. * keep or remove. The %s is getting replaced with the name and version
 #. * of the OS, e.g. "GNOME 3.38"
 #.
-#: gnome-initial-setup/pages/welcome/gis-welcome-page.c:79
+#: gnome-initial-setup/pages/welcome/gis-welcome-page.c:62
 #, c-format
 msgid "Welcome to %s !"
 msgstr "%s غا خۇش كەپسىز!"
 
-#: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:12
-msgid "Welcome to Ubuntu 24.04 LTS"
-msgstr "‪Ubuntu 24.04 LTS ‬غا خۇش كەپسىز"
-
-#: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:13
-msgid ""
-"Complete your setup with additional settings and we'll\n"
-"have you up and running in no time"
-msgstr ""
-"قوشۇمچە تەڭشەك ئارقىلىق تەڭشىشىڭىزنى تاماملاڭ، بىز دەرھال قوزغىتىپ ۋە ئىجرا "
-"قىلىمىز"
+#: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:4
+msgid "Setup"
+msgstr "ئورنات"
 
 #: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:32
-msgid "View release notes"
-msgstr "تارقىتىش باياناتىنى كۆرسەت"
-
-#: gnome-initial-setup/pages/apps/gis-apps-page.c:95
-msgid "Ready to go"
-msgstr "تەييار بولدى"
-
-#: gnome-initial-setup/pages/apps/gis-apps-page.blp:8
-msgid "Get started with more applications"
-msgstr "تېخىمۇ كۆپ پىروگرامما ئىشلىتىشنى باشلاش"
-
-#: gnome-initial-setup/pages/apps/gis-apps-page.blp:9
-msgid "Ubuntu's App Center has a range of apps you can get started with."
-msgstr ""
-"Ubuntu پىروگرامما مەركىزىدە سىز ئىشلىتىشنى باشلىيالايدىغان نۇرغۇن پىروگرامما "
-"بار."
-
-#: gnome-initial-setup/pages/apps/gis-apps-page.blp:28
-msgid "Open App Center"
-msgstr "پىروگرامما مەركىزىنى ئاچ"
-
-#: gnome-initial-setup/pages/eula/gis-eula-page.blp:4
-msgid "End-User License Agreement"
-msgstr ""
-
-#. GNOME Initial Setup
-#. TRANSLATORS: The place-holder is an error message
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:73
-#, c-format
-msgid "Failed to grant consent for the Initial Setup application: %s"
-msgstr ""
-
-#. TRANSLATORS: The place-holder is an error message
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:75
-#, c-format
-msgid "Failed to withdraw consent for the Initial Setup application: %s"
-msgstr ""
-
-#. Platform source used by timed systemd collection
-#. TRANSLATORS: The place-holder is an error message
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:80
-#, c-format
-msgid "Failed to grant consent for the system data collector: %s"
-msgstr ""
-
-#. TRANSLATORS: The place-holder is an error message
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:82
-#, c-format
-msgid "Failed to withdraw consent for the system data collector: %s"
-msgstr ""
-
-#. Platform source used by release upgrader collection
-#. TRANSLATORS: The place-holder is an error message
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:87
-#, c-format
-msgid "Failed to grant consent for the release upgrader application: %s"
-msgstr ""
-
-#. TRANSLATORS: The place-holder is an error message
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:89
-#, c-format
-msgid "Failed to withdraw consent for the release upgrader application: %s"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:381
-#, c-format
 msgid ""
-"With telemetry log: %s\n"
-"Without telemetry log: %s"
+"Setup will guide you through making an account and enabling some features. "
+"We’ll have you up and running in no time."
 msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:411
-#, c-format
-msgid "Failed to collect telemetry report: %s"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:571
-#, c-format
-msgid "Failed to generate report: %s"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:589
-#, c-format
-msgid "Failed to write report: %s"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:647
-msgid "Show First Report"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:9
-#, fuzzy
-msgid "Utile Depends On It: Help Improve Ubuntu"
-msgstr "Ubuntu نى ياخشىلاشقا ياردەم"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:10
-msgid ""
-"Help improve Ubuntu by sharing your system and error reports with them.\n"
-"Reports are sent anonymously."
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:31
-msgid "Share _system data with the Ubuntu team"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:32
-msgid "This includes hardware information, language and timezone"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:46
-msgid "Learn more about system reporting"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:57
-msgid "Legal notice"
-msgstr "قانۇنىي ئۇقتۇرۇش"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:68
-msgid "Show Report"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:95
-msgid "Share _error reports with the Ubuntu team"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:96
-msgid "This includes crash reports and related system logs"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:110
-msgid "Learn more about error reporting"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:148
-msgid "System Report"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-attach-page.blp:21
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:21
-msgid "Enable Ubuntu Pro"
-msgstr "Ubuntu Pro نى قوزغات"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-attach-page.blp:29
-msgid "_Attach machine via your Ubuntu One account"
-msgstr "كومپيۇتېرنى Ubuntu One ھېساباتىڭىزدا قوشۇڭ(_A)"
-
-#. Translators: translators: This is the other way to attach a machine to Ubuntu Pro
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-attach-page.blp:82
-msgid "Or add a _token manually"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-attach-page.blp:117
-msgid "Token"
-msgstr "پەرمان تاختا"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:54
-msgid "Upgrade this device to Ubuntu Pro. Free for personal use."
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:105
-msgid ""
-"Fulfill FedRAMP, FIPS, STIG and HIPAA and other compliance and hardening "
-"requirements with certified tooling and crypto-modules"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:130
-msgid "Enable Ubuntu Pro now, or skip this step."
-msgstr "Ubuntu Pro نى قوزغىتىڭ ياكى بۇ باسقۇچتىن ئاتلاڭ."
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:133
-msgid "_Enable Ubuntu Pro"
-msgstr "Ubuntu Pro نى قوزغات(_E)"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:152
-msgid "_Skip for now"
-msgstr "ھازىرچە ئاتلا(_S)"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:153
-msgid "You can enable Ubuntu Pro later in the Security Center"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-services-page.blp:22
-msgid "Ubuntu Pro Services"
-msgstr "Ubuntu Pro مۇلازىمىتى"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-services-page.blp:29
-msgid "Your subscription"
-msgstr "مۇشتەرىلىكىڭىز"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-services-page.blp:44
-msgid "Your enabled services"
-msgstr "قوزغاتقان مۇلازىمىتىڭىز"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-services-page.blp:47
-msgid ""
-"You can change the default enablements for your token on the ubuntu.com/pro "
-"web interface. You can also change enabled services in the Settings menu or "
-"with the `<span font_family='monospace'>pro</span>` command-line."
-msgstr ""
-"سىز ubuntu.com/pro تور بېكىتىدىكى ئارايۈزدىكى پەرمان تاختىڭىز ئارقىلىق "
-"كۆڭۈلدىكى قوزغىتىشلىرىڭىزنى ئۆزگەرتەلەيسىز.ئۇنىڭدىن باشقا قوزغاتقان "
-"مۇلازىمەتنى تەڭشەك تىزىملىكى ياكى«<span font_family='monospace'>pro</span>» "
-"بۇيرۇق قۇرى ئارقىلىق ئۆزگەرتەلەيسىز."
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-services-page.blp:53
-msgid "Other available services"
-msgstr "باشقا ئىشلەتكىلى بولىدىغان مۇلازىمەت"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:221
-msgid "Valid token"
-msgstr "ئىناۋەتلىك پەرمان تاختا"
-
-#. TRANSLATORS: The error shown when attaching an
-#. Ubuntu Pro contact fails.
-#. It may be due to various reasons, most common is
-#. an invalid token.
-#.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:236
-msgid "Invalid token or attach failure"
-msgstr "ئىناۋەتسىز پەرمان تاختا ياكى قوشالمىدى"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:244
-msgid "Code expired"
-msgstr "كودنىڭ ۋاقتى ئۆتتى"
-
-#. TRANSLATORS: the placeholder %s is a link to ubuntu.com/pro/attach.
-#. Use HTML encoded format for special characters such as '&'.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:259
-#, c-format
-msgid "Enter this code on %s"
-msgstr "بۇ كود %s غا كىرگۈزۈلىدۇ"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:316
-msgid "An internet connection is required to enable Ubuntu Pro"
-msgstr "Ubuntu Pro نى قوزغىتىشتا ئىنتېرنېت باغلىنىشى زۆرۈر"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:466
-#, c-format
-msgid "Get security updates on a wide range of packages until %s"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:474
-msgid "Ubuntu Pro"
-msgstr "Ubuntu Pro"
-
-#. TRANSLATORS: The anbox-cloud Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:609
-msgid "Scalable Android in the cloud"
-msgstr "بۇلۇتتىكى كېڭەيتىشچان Android"
-
-#. TRANSLATORS: The cc-eal Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:612
-msgid "Common Criteria EAL2 Provisioning Packages"
-msgstr "ئاممىباب ئۆلچەملىك Eal2 تەمىنلەش بوغچىسى"
-
-#. TRANSLATORS: The esm-apps Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:615
-msgid "Expanded Security Maintenance for Applications"
-msgstr "پىروگرامما ئۈچۈن كېڭەيتىلگەن بىخەتەرلىك ئاسراش"
-
-#. TRANSLATORS: The esm-infra Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:618
-msgid "Expanded Security Maintenance for Infrastructure"
-msgstr "قۇرۇلما ئۈچۈن كېڭەيتىلگەن بىخەتەرلىك ئاسراش"
-
-#. TRANSLATORS: The fips Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:621
-msgid "NIST-certified FIPS crypto packages"
-msgstr "NIST دەلىللەنگەن FIPS شىفىرلاش بوغچىسى"
-
-#. TRANSLATORS: The fips-preview Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:624
-msgid "Preview of FIPS crypto packages undergoing certification with NIST"
-msgstr "NIST دەلىللەنگەن FIPS شىفىرلاش بوغچىسىنى ئالدىن كۆزىتىۋاتىدۇ"
-
-#. TRANSLATORS: The fips-updates Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:627
-msgid "FIPS compliant crypto packages with stable security updates"
-msgstr "مۇقىم بىخەتەرلىك يېڭىلىنىشى بار FIPS ئۆلچىمىگە ئۇيغۇن شىفىرلاش بوغچىسى"
-
-#. TRANSLATORS: The landscape Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:630
-msgid "Management and administration tool for Ubuntu"
-msgstr "Ubuntu نىڭ باشقۇرۇش قورالى"
-
-#. TRANSLATORS: The livepatch Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:633
-msgid "Canonical kernel Livepatch service"
-msgstr "Canonical نىڭ يادرونى شۇئان ياماش مۇلازىمىتى"
-
-#. TRANSLATORS: The realtime-kernel Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:636
-msgid "Ubuntu kernel with PREEMPT_RT patches integrated"
-msgstr "PREEMPT_RT يامىقى توپلاشتۇرۇلغان Ubuntu يادروسى"
-
-#. TRANSLATORS: The ros Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:639
-msgid "Security Updates for the Robot Operating System"
-msgstr "ماشىنا ئادەم مەشغۇلات سىستېمىسىنىڭ بىخەتەرلىك يېڭىلانمىسى"
-
-#. TRANSLATORS: The ros-updates Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:642
-msgid "All Updates for the Robot Operating System"
-msgstr "ماشىنا ئادەم مەشغۇلات سىستېمىسىنىڭ بارلىق يېڭىلانمىسى"
-
-#. TRANSLATORS: The usg Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:645
-msgid "Security compliance and audit tools"
-msgstr "بىخەتەرلىك ماسلىشىش ۋە مۇپەتتىش قورالى"
-
-#. TRANSLATORS: Use HTML encoded format for special characters such as &amp' for '&'. %s is a URL.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:1230
-#, c-format
-msgid "Learn more at %s"
-msgstr ""
-
-#. TRANSLATORS: Subtitle telling who can provide the Ubuntu Pro token.
-#. Use HTML encoded format for special characters such as &amp' for '&'. %s is a URL.
-#.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:1247
-#, c-format
-msgid "From your admin, or from %s"
-msgstr ""
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:75
-msgid "Blue"
-msgstr ""
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:78
-msgid "Teal"
-msgstr ""
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:81
-msgid "Green"
-msgstr ""
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:84
-msgid "Yellow"
-msgstr ""
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:87
-msgid "Orange"
-msgstr ""
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:90
-msgid "Red"
-msgstr ""
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:93
-msgid "Pink"
-msgstr ""
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:96
-msgid "Purple"
-msgstr ""
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:99
-msgid "Slate"
-msgstr ""
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:102
-msgid "Warty Brown"
-msgstr ""
-
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:469
-msgid "Appearance"
-msgstr ""
-
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
-msgid "Choose how Ubuntu looks"
-msgstr ""
-
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
-msgid "Personalize your desktop's appearance"
-msgstr ""
-
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
-msgid "Style"
-msgstr ""
-
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:53
-msgid "_Default"
-msgstr ""
-
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:82
-msgid "Da_rk"
-msgstr ""
-
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:100
-msgid "OLED screen detected. Dark style may save power."
-msgstr ""
-
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:112
-msgid "Accent Color"
-msgstr ""
+"تەڭشەش سىزنى ھېسابات قۇرۇش ۋە بەزى ئىقتىدارلارنى قوزغىتىشقا يېتەكلەيدۇ. بىز "
+"سىزنى كۆپ ساقلاتمايلا قىسقا ۋاقىت ئىچىدە تاماملايمىز."
+
+#: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:36
+msgid "_Start Setup"
+msgstr "ئونىتىشنى باشلا(_S)"
 
 #: po/EXTRA_STRINGS.sh:1
 msgid "Force live user mode"
@@ -1260,129 +797,148 @@ msgstr "${NAME} نى سىناي"
 msgid "Install ${PRETTY_NAME}"
 msgstr "${PRETTY_NAME} نى ئورنات"
 
-#~ msgid "Cancel"
-#~ msgstr "ۋاز كەچ"
+#~ msgid "Unspecified"
+#~ msgstr "بەلگىلەنمىگەن"
 
-#~ msgid "Downloading language packs…"
-#~ msgstr "تىل بوغچىسى چۈشۈرۈۋاتىدۇ…"
+#~ msgid "_Back"
+#~ msgstr "كەينى(_B)"
 
-#~ msgid "Canceled additional downloads"
-#~ msgstr "قوشۇمچە چۈشۈرۈشتىن ۋاز كەچ"
+#~ msgid "_Use Local Login"
+#~ msgstr "يەرلىك ھېساباتتا كىر(_U)"
 
-#~ msgid "Unable to download additional language packs"
-#~ msgstr "قوشۇمچە تىل بوغچىسىنى چۈشۈرەلمەيدۇ"
+#~ msgid "Login"
+#~ msgstr "كىرىش"
 
-#, c-format
-#~ msgid ""
-#~ "Sends technical reports that do not contain personal information. Data is "
-#~ "collected by %1$s (<a href='%2$s'>privacy policy</a>)."
-#~ msgstr ""
-#~ "شەخسىي ئۇچۇرلارنى ئۆز ئىچىگە ئالمىغان تېخنىكىلىق دوكلات ئەۋەتىدۇ. سانلىق "
-#~ "مەلۇماتلار %1$s (<a href='%2$s'> شەخسىيەت تۈزۈمى</a>) ئارقىلىق توپلىنىدۇ."
+#~ msgid "Create a Local Account"
+#~ msgstr "يەرلىك ھېسابات قۇرۇش"
 
-#, c-format
-#~ msgid ""
-#~ "Turn on location services to let applications know your geographical "
-#~ "location. You can change this anytime in System Settings."
-#~ msgstr ""
-#~ "ئورۇن مۇلازىمىتى ئېچىلسا پىروگرامما جۇغراپىيەلىك ئورنىڭىزنى بىلەلەيدۇ. "
-#~ "بۇنى خالىغان ۋاقىتتا سىستېما تەڭشەكتىن ئۆزگەرتەلەيسىز."
+#~ msgid "page 1"
+#~ msgstr "1-بەت"
 
-#, c-format
-#~ msgid "Failed to show privacy policy: %s"
-#~ msgstr "شەخسىيەت تۈزۈمىنى كۆرسىتەلمىدى: %s"
+#~ msgid "Create an Enterprise Account"
+#~ msgstr "شىركەت ھېساباتى قۇرۇش"
 
-#~ msgid "Location services"
-#~ msgstr "ئورۇن مۇلازىمىتى"
+#~ msgctxt "Password strength"
+#~ msgid "Too short"
+#~ msgstr "بەك قىسقا"
 
-#~ msgid "Data privacy"
-#~ msgstr "سانلىق مەلۇمات شەخسىيىتى"
+#~ msgctxt "Password strength"
+#~ msgid "Not good enough"
+#~ msgstr "تازا ياخشى ئەمەس"
 
-#, c-format
-#~ msgid "Failed to get report information: %s"
-#~ msgstr "دوكلات ئۇچۇرىغا ئېرىشەلمىدى: %s"
+#~ msgctxt "Password strength"
+#~ msgid "Weak"
+#~ msgstr "ئاجىز"
 
-#~ msgid "Ubuntu Report Contents"
-#~ msgstr "Ubuntu دوكلات مەزمۇنى"
+#~ msgctxt "Password strength"
+#~ msgid "Fair"
+#~ msgstr "ياخشىراق"
+
+#~ msgctxt "Password strength"
+#~ msgid "Good"
+#~ msgstr "ياخشى"
 
 #, c-format
-#~ msgid "Failed to send report decline: %s"
-#~ msgstr "رەت قىلىش دوكلاتنى يوللىيالمىدى: %s"
+#~ msgid "A user with the username '%s' already exists"
+#~ msgstr "‹%s› ئاتلىق ئىشلەتكۈچىدىن بىرى مەۋجۇت"
 
-#, c-format
-#~ msgid "Failed to send report information: %s"
-#~ msgstr "دوكلات ئۇچۇرىنى يوللىيالمىدى: %s"
+#~ msgid "License Agreements"
+#~ msgstr "ئىجازەتنامە"
 
-#, c-format
-#~ msgid ""
-#~ "Help us improve Ubuntu by sharing your system data with us. This includes "
-#~ "things like your machine model, installed software and the location you "
-#~ "chose for your timezone."
-#~ msgstr ""
-#~ "سىستېما سانلىق مەلۇماتلىرىڭىزنى بىز بىلەن ئورتاقلىشىش ئارقىلىق Ubuntu نى "
-#~ "ياخشىلاشقا ياردەملىشىڭ. بۇ ماشىنىڭىزنىڭ تىپى، ئورنىتىلغان يۇمشاق دېتال ۋە "
-#~ "سىز ۋاقىت رايونىنى تاللىغان ئورۇنغا ئوخشاش نەرسىلەرنى ئۆز ئىچىگە ئالىدۇ."
+#~ msgid "Add Account"
+#~ msgstr "ھېسابات قوشۇش"
 
-#~ msgid "Yes, share system data with the Ubuntu team"
-#~ msgstr "ھەئە، سىستېما سانلىق مەلۇماتىنى Ubuntu قوشۇنىدىكىلەرگە ھەمبەھىرلە"
+#~ msgid "Error creating account"
+#~ msgstr "ھېسابات قۇرۇۋاتقاندا خاتالىق كۆرۈلدى"
 
-#~ msgid "No, don't share system data"
-#~ msgstr "ياق، سىستېما سانلىق مەلۇماتىنى ھەمبەھىرلىمە"
+#~ msgid "Error removing account"
+#~ msgstr "ھېساباتنى چىقىرىۋېتىشتە خاتالىق كۆرۈلدى"
 
-#~ msgid "Show the First Report"
-#~ msgstr "تۇنجى دوكلاتنى كۆرسەت"
+#~ msgid "Are you sure you want to remove the account?"
+#~ msgstr "ھېساباتنى راستلا چىقىرىۋېتەمسىز؟"
 
-#~ msgid "You can change your mind later in Settings → Privacy → Diagnostics."
-#~ msgstr "كېيىن تەڭشەك ← شەخسىيەت ← دىياگنوزدىن ئۆزگەرتەلەيسىز."
+#~ msgid "This will not remove the account on the server."
+#~ msgstr "بۇ مۇلازىمېتىردىكى ھېساباتنى چىقىرىۋەتمەيدۇ."
+
+#~ msgid "Online Accounts"
+#~ msgstr "توردىكى ھېساباتلار"
+
+#~ msgid "Connect to your existing data in the cloud"
+#~ msgstr "بۇلۇتتىكى سانلىق-مەلۇماتلىرىڭىزغا باغلىنىڭ"
 
 #~ msgid ""
-#~ "Upgrade this machine to Ubuntu Pro for security updates on a much wider "
-#~ "range of packages, until 2034. Fulfill FedRAMP, FIPS, STIG and HIPAA and "
-#~ "other compliance and hardening requirements with certified tooling and "
-#~ "crypto-modules. Free for up to 5 machines.\n"
-#~ "\n"
-#~ "More information on <a href=\"https://ubuntu.com/pro\">ubuntu.com/pro</a>."
+#~ "Adding accounts will allow you to transparently connect to your online "
+#~ "photos, contacts, mail, and more."
 #~ msgstr ""
-#~ "بۇ كومپيۇتېرنى Ubuntu Pro نۇسخىسىغا يۈكسەلدۈرسىڭىز تېخىمۇ كەڭ دائىرىدىكى "
-#~ "يۇمشاق دېتال بوغچىسىنى 2034-يىلىغىچە يېڭىلاشقا ئېرىشەلەيسىز. دەلىللەنگەن "
-#~ "قورال ۋە شىفىرلاش بۆلىكى ئارقىلىق FedRAMP، FIPS، STIG ۋە HIPAA شۇنداقلا "
-#~ "باشقا قائىدىگە ئۇيغۇنلاشتۇرۇش ۋە كۈچەيتىش تەلىپىنى قاندۇرىدۇ. ئەڭ كۆپ "
-#~ "بولغاندا 5 ئۈسكۈنىنى ھەقسىز يېڭىلاشقا بولىدۇ."
+#~ "ھېساباتلار قوشۇلسا، توردىكى سۈرەتلەرنى، ئالاقەداشلارنى، ئېلخەتنى ۋە باشقا "
+#~ "نۇرغۇن نەرسىلەرنى كۆرۈشكە ئىمكانىيەت تۇغۇلىدۇ."
 
-#~ msgid "Or add _token manually"
-#~ msgstr "ياكى پەرمان تاختىسىنى قولدا قوشۇڭ(_T)"
+#~ msgid "Keyboard Layout"
+#~ msgstr "ھەرپتاختا ئورۇنلاشتۇرۇلۇشى"
 
-#~ msgid "From your admin, or from ubuntu.com/pro"
-#~ msgstr "باشقۇرغۇچىڭىز ياكى ubuntu.com/pro دىن"
+#~ msgid "Select input sources"
+#~ msgstr "كىرگۈزۈش مەنبەلىرىنى تاللاش"
 
-#~ msgid "Upgrade this machine to Ubuntu Pro. Free for up to 5 machines."
-#~ msgstr ""
-#~ "بۇ كومپيۇتېر Ubuntu Pro غا يۈكسەلدۈرۈلسە، ئەڭ كۆپ بولغاندا 5 كومپيۇتېرنى "
-#~ "ھەقسىز يېڭىلىغىلى بولىدۇ."
+#~ msgid "Add Input Source"
+#~ msgstr "كىرگۈزۈش مەنبەسى قوشۇش"
 
-#~ msgid "Get security updates on a wide range of packages until 2034"
-#~ msgstr ""
-#~ "كەڭ دائىرىدىكى يۇمشاق دېتال بوغچىسىنىڭ بىخەتەرلىك يېڭىلىنىشىغا 2034-"
-#~ "يىلىغىچە ئېرىشەلەيسىز"
+#~ msgid "Remove Input Source"
+#~ msgstr "كىرگۈزۈش مەنبەسىنى چىقىرىۋېتىش"
 
-#~ msgid ""
-#~ "Fulfill FedRAMP, FIPS, STIG and HIPAA and other compliance and hardening "
-#~ "requirements with certified tooling and crypto-modules."
-#~ msgstr ""
-#~ "دەلىللەنگەن قورال ۋە شىفىرلاش بۆلىكى ئارقىلىق FedRAMP، FIPS، STIG ۋە "
-#~ "HIPAA شۇنداقلا باشقا قائىدىگە ئۇيغۇنلاشتۇرۇش ۋە كۈچەيتىش تەلىپىنى "
-#~ "قاندۇرىدۇ."
+#~ msgid "Move Input Source Up"
+#~ msgstr "كىرگۈزۈش مەنبەسىنى ئۈستىگە يۆتكەش"
 
-#~ msgid "Learn more at <a href=\"https://ubuntu.com/pro\">ubuntu.com/pro</a>."
-#~ msgstr ""
-#~ "مول بىلىمنى <a href=\"https://ubuntu.com/pro\">ubuntu.com/pro</a> دىن "
-#~ "كۆرۈڭ."
+#~ msgid "Move Input Source Down"
+#~ msgstr "كىرگۈزۈش مەنبەسىنى ئاستىغا يۆتكەش"
 
-#~ msgid ""
-#~ "You can always enable Ubuntu Pro later via the Software & Updates "
-#~ "application"
-#~ msgstr "سىز كېيىن يۇمشاق دېتال ۋە يېڭىلانمىدىن Ubuntu Pro نى قوزغىتالايسىز"
+#~ msgid "Input Source Settings"
+#~ msgstr "كىرگۈزۈش مەنبەسى تەڭشىكى"
 
-#~ msgid "Privacy controls can be changed at any time from the Settings app."
-#~ msgstr ""
-#~ "شەخسىيەت كونتروللىرىنى تەڭشەك ئەپتىن خالىغان ۋاقىتتا ئۆزگەرتكىلى بولىدۇ."
+#~ msgid "Show Keyboard Layout"
+#~ msgstr "ھەرپ تاختا ئورۇنلاشتۇرۇشىنى كۆرسىتىش"
+
+#~ msgid "Select an input source"
+#~ msgstr "كىرگۈزۈش مەنبەسىنى تاللاڭ"
+
+#~ msgid "English"
+#~ msgstr "ئىنگلىزچە"
+
+#~ msgid "British English"
+#~ msgstr "ئەنگلىيە ئىنگلىزچە"
+
+#~ msgid "German"
+#~ msgstr "گېرمانچە"
+
+#~ msgid "French"
+#~ msgstr "فىرانسۇزچە"
+
+#~ msgid "Spanish"
+#~ msgstr "ئىسپانچە"
+
+#~ msgid "Chinese (simplified)"
+#~ msgstr "ئاددىي خەنزۇچە"
+
+#, c-format
+#~ msgid "Use %s"
+#~ msgstr "%s نى ئىشلىتىش"
+
+#~ msgid "Search for a location"
+#~ msgstr "ئورۇن ئىزدەش"
+
+#~ msgid "Choose Your Location"
+#~ msgstr "ئورنىڭىزنى تاللاڭ"
+
+#~ msgid "_Determine your location automatically"
+#~ msgstr "ئورنۇمنى ئاپتوماتىك بەلگىلىسۇن(_D)"
+
+#~ msgid "No network devices found."
+#~ msgstr "تور ئۈسكۈنىسى تېپىلمىدى."
+
+#~ msgid "Thank You"
+#~ msgstr "تەشەككۈرلەر"
+
+#~ msgid "You may change these options at any time in Settings."
+#~ msgstr "بۇ تاللانمىلارنى سىز خالىغان ۋاقىتتا «تەڭشەكلەر»دىن ئۆزگەرتەلەيسىز."
+
+#~ msgid "_Login Name"
+#~ msgstr "كىرىش ئاتى(_L)"

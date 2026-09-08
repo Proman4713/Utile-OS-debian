@@ -366,6 +366,9 @@ gis_password_page_constructed (GObject *object)
 
   validate (page);
   update_header (page);
+  gtk_accessible_update_relation (GTK_ACCESSIBLE (page),
+                                  GTK_ACCESSIBLE_RELATION_LABELLED_BY,
+                                  page->header, NULL, -1);
 
   gtk_widget_set_visible (GTK_WIDGET (page), TRUE);
 }

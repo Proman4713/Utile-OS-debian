@@ -43,7 +43,6 @@ typedef enum {
 typedef enum {
   GIS_DRIVER_MODE_NEW_USER,
   GIS_DRIVER_MODE_EXISTING_USER,
-  GIS_DRIVER_MODE_UPGRADE,
 } GisDriverMode;
 
 GisAssistant *gis_driver_get_assistant (GisDriver *driver);
@@ -127,8 +126,6 @@ gchar *gis_driver_conf_get_string (GisDriver *driver,
                                    const gchar *key);
 
 GisDriver *gis_driver_new (GisDriverMode mode);
-
-GisDriver *gis_driver_get_default (void);
 
 G_END_DECLS
 

@@ -3,7 +3,4 @@
   <gresource prefix="/org/gnome/initial-setup">
     <file preprocess="xml-stripblanks" alias="gis-network-page.ui">gis-network-page.ui</file>
   </gresource>
-  <gresource prefix="/org/gnome/InitialSetup/icons">
-    <file preprocess="xml-stripblanks" alias="scalable/actions/ubuntu-network.svg">network.svg</file>
-  </gresource>
 </gresources>

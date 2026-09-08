@@ -4,76 +4,55 @@
 # Tom Tryfonidis <tomtryf@gmail.com>, 2012.
 # Dimitris Spingos (Δημήτρης Σπίγγος) <dmtrs32@gmail.com>, 2013, 2015.
 # Efstathios Iosifidis <iosifidis@opensuse.org>, 2013, 2018.
-# Simos Xenitellis <simos@simos.info>, 2026.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
-"issues\n"
-"POT-Creation-Date: 2026-09-09 01:52+0300\n"
-"PO-Revision-Date: 2026-04-14 01:47+0000\n"
-"Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
+"issues/\n"
+"POT-Creation-Date: 2026-01-29 16:10+0000\n"
+"PO-Revision-Date: 2026-02-07 21:55+0200\n"
+"Last-Translator: Efstathios Iosifidis <eiosifidis@gmail.com>\n"
 "Language-Team: Ελληνικά <>\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2026-07-01 12:24+0000\n"
-"X-Generator: Launchpad (build c38ea58da9d7185c4996adfc854ab433551cdcdd)\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.4.2\n"
 "X-Project-Style: gnome\n"
 
 #: data/gnome-initial-setup.desktop.in.in:2
-#: gnome-initial-setup/gis-driver.c:890
+#: gnome-initial-setup/gis-driver.c:869
 msgid "Initial Setup"
 msgstr "Αρχική ρύθμιση"
 
-#: gnome-initial-setup/gis-assistant.c:425
+#: gnome-initial-setup/gis-assistant.c:401
 msgid "_Next"
-msgstr "Ε_πόμενο"
+msgstr "Επόμε_νο"
 
-#: gnome-initial-setup/gis-assistant.c:426
-msgid "_Finish"
-msgstr "_Ολοκλήρωση"
-
-#: gnome-initial-setup/gis-assistant.c:427
+#: gnome-initial-setup/gis-assistant.c:402
 msgid "_Accept"
 msgstr "_Αποδοχή"
 
-#: gnome-initial-setup/gis-assistant.c:428
+#: gnome-initial-setup/gis-assistant.c:403
 msgid "_Skip"
-msgstr "Πα_ράλειψη"
+msgstr "Παράλει_ψη"
 
-#: gnome-initial-setup/gis-assistant.c:429
+#: gnome-initial-setup/gis-assistant.c:404
 msgid "_Previous"
 msgstr "_Προηγούμενο"
 
-#: gnome-initial-setup/gis-assistant.c:430
+#: gnome-initial-setup/gis-assistant.c:405
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:254
 msgid "_Cancel"
-msgstr "Α_κύρωση"
+msgstr "Ακύ_ρωση"
 
-#: gnome-initial-setup/gis-webkit.c:54
-msgid "Scan the QR Code…"
-msgstr "Σάρωση του κωδικού QR…"
-
-#: gnome-initial-setup/gis-webkit.c:244
-msgid "Open in default web browser"
-msgstr "Άνοιγμα στον προεπιλεγμένο περιηγητή ιστού"
-
-#: gnome-initial-setup/gis-webkit.c:247
-msgid "Open in default file handler"
-msgstr "Άνοιγμα στον προεπιλεγμένο χειριστή αρχείων"
-
-#: gnome-initial-setup/gnome-initial-setup.c:362
+#: gnome-initial-setup/gnome-initial-setup.c:280
 msgid "Force existing user mode"
 msgstr "Εξαναγκασμός υπάρχουσας λειτουργίας χρήστη"
 
-#: gnome-initial-setup/gnome-initial-setup.c:364
-msgid "Force Upgrade user"
-msgstr "Εξαναγκασμός αναβάθμισης χρήστη"
-
-#: gnome-initial-setup/gnome-initial-setup.c:378
+#: gnome-initial-setup/gnome-initial-setup.c:294
 msgid "— GNOME initial setup"
 msgstr "— Αρχική ρύθμιση GNOME"
 
@@ -87,8 +66,7 @@ msgstr "Αποτυχία εγγραφής του λογαριασμού"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.c:420
 msgid "No supported way to authenticate with this domain"
-msgstr ""
-"Κανένας υποστηριζόμενος τρόπος ελέγχου ταυτότητας χρήστη με αυτόν τον τομέα"
+msgstr "Κανένας υποστηριζόμενος τρόπος πιστοποίησης με αυτόν τον τομέα"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.c:459
 msgid "Failed to join domain"
@@ -148,13 +126,12 @@ msgstr ""
 "όνομα για τον υπολογιστή σας."
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:179
-#: gnome-initial-setup/pages/account/gis-account-page-local.ui:151
 msgid "_Computer"
 msgstr "_Υπολογιστής"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:203
 msgid "Administrator _Name"
-msgstr "Όνομα _διαχειριστή"
+msgstr "Ό_νομα διαχειριστή"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:227
 msgid "Administrator Password"
@@ -164,34 +141,17 @@ msgstr "Κωδικός πρόσβασης διαχειριστή"
 msgid "C_ontinue"
 msgstr "_Συνέχεια"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:210
-#, c-format
-msgid "The hostname is too long."
-msgstr "Το όνομα συστήματος είναι πολύ μεγάλο."
-
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:214
-msgid "The hostname must start with a lower case letter from a-z or a digit."
-msgstr "Το όνομα συστήματος πρέπει να ξεκινά με πεζό γράμμα από a-z ή αριθμό."
-
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:218
-msgid ""
-"The hostname should only consist of lower case letters from a-z, digits and "
-"a hyphen: -"
-msgstr ""
-"Το όνομα συστήματος πρέπει να αποτελείται μόνο από πεζά γράμματα από a-z, "
-"αριθμούς και παύλα: -"
-
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:545
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:321
 msgid "We need a few details to complete setup."
 msgstr ""
 "Χρειαζόμαστε περισσότερες λεπτομέρειες για να ολοκληρώσουμε τη ρύθμιση."
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:704
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:476
 msgid "Administrator"
 msgstr "Διαχειριστής"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:710
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:753
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:482
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:525
 #, c-format
 msgid "Failed to create user '%s': "
 msgstr "Αποτυχία δημιουργίας χρήστη «%s»: "
@@ -217,13 +177,13 @@ msgstr ""
 
 #: gnome-initial-setup/pages/account/gis-account-page-local.ui:81
 msgid "_Full Name"
-msgstr "Ονοματε_πώνυμο"
+msgstr "Ονομα_τεπώνυμο"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.ui:217
+#: gnome-initial-setup/pages/account/gis-account-page-local.ui:159
 msgid "Set up _parental controls for this user"
 msgstr "Ρύθμιση _γονικού ελέγχου για αυτόν τον χρήστη"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.ui:223
+#: gnome-initial-setup/pages/account/gis-account-page-local.ui:165
 msgid "For use by a parent or supervisor, who must set up their own password."
 msgstr ""
 "Για χρήση από γονέα ή επιβλέποντα, ο οποίος πρέπει να δημιουργήσει το δικό "
@@ -297,7 +257,7 @@ msgid "Preview"
 msgstr "Προεπισκόπηση"
 
 #: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:325
-#: gnome-initial-setup/pages/language/cc-language-chooser.c:244
+#: gnome-initial-setup/pages/language/cc-language-chooser.c:242
 msgid "More…"
 msgstr "Περισσότερα…"
 
@@ -308,7 +268,7 @@ msgstr "Περισσότερα…"
 msgid "No inputs found"
 msgstr "Δε βρέθηκαν είσοδοι"
 
-#: gnome-initial-setup/pages/keyboard/gis-keyboard-page.c:484
+#: gnome-initial-setup/pages/keyboard/gis-keyboard-page.c:502
 #: gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui:16
 msgid "Typing"
 msgstr "Πληκτρολόγηση"
@@ -321,11 +281,11 @@ msgstr "Επιλέξτε τη διάταξη του πληκτρολογίου �
 msgid "Search keyboards and input methods"
 msgstr "Αναζήτηση πληκτρολογίων και μεθόδων εισόδου"
 
-#: gnome-initial-setup/pages/language/cc-language-chooser.c:264
+#: gnome-initial-setup/pages/language/cc-language-chooser.c:262
 msgid "No languages found"
 msgstr "Δε βρέθηκαν γλώσσες"
 
-#: gnome-initial-setup/pages/language/gis-language-page.c:146
+#: gnome-initial-setup/pages/language/gis-language-page.c:268
 #: gnome-initial-setup/pages/language/gis-language-page.ui:14
 msgid "Welcome"
 msgstr "Καλώς ήλθατε"
@@ -436,7 +396,7 @@ msgstr "Ισχύς συνθηματικού: %s."
 msgid "The passwords do not match."
 msgstr "Δεν ταιριάζουν τα συνθηματικά."
 
-#: gnome-initial-setup/pages/password/gis-password-page.c:427
+#: gnome-initial-setup/pages/password/gis-password-page.c:430
 msgid "Password"
 msgstr "Συνθηματικό"
 
@@ -625,19 +585,20 @@ msgstr "εξαιρετικό"
 #. Translators: the first parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu".
 #.
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:68
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:70
 #, c-format
 msgid ""
 "Sends technical reports that do not contain personal information. Data is "
-"collected by %1$s (<u><a href='%2$s'>privacy policy</a></u>)."
+"collected by %1$s (<a href='%2$s'>privacy policy</a>)."
 msgstr ""
-"Στέλνει τεχνικές αναφορές που δεν περιέχουν προσωπικά δεδομένα. Τα δεδομένα "
-"συλλέγονται από %1$s (<u><a href='%2$s'>πολιτική απορρήτου</a></u>)."
+"Στέλνει τεχνικές αναφορές στις οποίες αφαιρούνται αυτόματα τα προσωπικά "
+"στοιχεία. Τα δεδομένα συλλέγονται από την %1$s (<a href='%2$s'>πολιτική "
+"απορρήτου</a>)."
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu".
 #.
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:79
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:82
 #, c-format
 msgid ""
 "Sends technical reports that do not contain personal information. Data is "
@@ -646,45 +607,35 @@ msgstr ""
 "Στέλνει τεχνικές αναφορές στις οποίες αφαιρούνται αυτόματα τα προσωπικά "
 "στοιχεία. Τα δεδομένα συλλέγονται από την %s."
 
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:123
-#, c-format
-msgid ""
-"Allows apps to determine your geographical location (<u><a "
-"href='%1$s'>privacy policy</a></u>)."
-msgstr ""
-"Επιτρέπει στις εφαρμογές να προσδιορίζουν τη γεωγραφική σας τοποθεσία (<u><a "
-"href='%1$s'>πολιτική απορρήτου</a></u>)."
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:125
+msgid "Allows apps to determine your geographical location."
+msgstr "Επιτρέπει στις εφαρμογές να προσδιορίζουν την τοποθεσία σας."
 
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:174
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:14
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:28
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:171
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:15
+msgid "Privacy"
+msgstr "Ιδιωτικότητα"
+
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:33
 msgid "Location Services"
 msgstr "Υπηρεσίες τοποθεσίας"
 
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:17
-msgid ""
-"Turn on location services to let applications know your geographical "
-"location."
-msgstr ""
-"Ενεργοποιήστε τις υπηρεσίες τοποθεσίας για να επιτρέψετε στις εφαρμογές να "
-"γνωρίζουν τη γεωγραφική σας τοποθεσία."
-
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:56
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:65
 msgid "Automatic Problem Reporting"
 msgstr "Αυτόματη αναφορά προβλήματος"
 
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:99
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:134
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:138
-msgid "You can change this later in the Settings app"
-msgstr "Μπορείτε να το αλλάξετε και μετά μέσα από τις Ρυθμίσεις"
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:97
+msgid "Privacy controls can be changed at any time from the Settings app."
+msgstr ""
+"Οι ρυθμίσεις ιδιωτικότητας μπορούν να αλλαχθούν οποιαδήποτε στιγμή από τις "
+"Ρυθμίσεις."
 
-#: gnome-initial-setup/pages/software/gis-software-page.c:123
+#: gnome-initial-setup/pages/software/gis-software-page.c:127
 #: gnome-initial-setup/pages/software/gis-software-page.ui:11
 msgid "Third-Party Repositories"
 msgstr "Αποθετήρια τρίτων"
 
-#: gnome-initial-setup/pages/software/gis-software-page.c:125
+#: gnome-initial-setup/pages/software/gis-software-page.c:129
 #, c-format
 msgid ""
 "Third-party repositories provide access to additional software from selected "
@@ -696,7 +647,7 @@ msgstr ""
 "και οδηγών που είναι σημαντικά για ορισμένες συσκευές. Περιλαμβάνεται και "
 "κάποιο ιδιόκτητο λογισμικό."
 
-#: gnome-initial-setup/pages/software/gis-software-page.c:127
+#: gnome-initial-setup/pages/software/gis-software-page.c:131
 msgid ""
 "Third-party repositories provide access to additional software from selected "
 "external sources, including popular apps and drivers that are important for "
@@ -707,18 +658,26 @@ msgstr ""
 "υλικολογισμικό που είναι σημαντικό για ορισμένες συσκευές. Περιλαμβάνεται "
 "κάποιο ιδιοταγές λογισμικό."
 
-#: gnome-initial-setup/pages/software/gis-software-page.c:139
+#: gnome-initial-setup/pages/software/gis-software-page.c:143
 msgid "_Disable Third-Party Repositories"
 msgstr "_Απενεργοποίηση αποθετηρίων τρίτων"
 
-#: gnome-initial-setup/pages/software/gis-software-page.c:144
+#: gnome-initial-setup/pages/software/gis-software-page.c:148
 msgid "_Enable Third-Party Repositories"
 msgstr "_Ενεργοποίηση αποθετηρίων τρίτων"
+
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:211
+msgid "Setup Failed"
+msgstr "Η ρύθμιση απέτυχε"
+
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:213
+msgid "Close"
+msgstr "Κλείσιμο"
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
 #. * detect any distribution.
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:406
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:239
 #, c-format
 msgid "_Start Using %s"
 msgstr "Ξε_κινήστε τη χρήση του %s"
@@ -726,40 +685,18 @@ msgstr "Ξε_κινήστε τη χρήση του %s"
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
 #. * detect any distribution.
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:413
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:246
 #, c-format
 msgid "%s is ready to be used."
 msgstr "Το %s είναι έτοιμο προς χρήση."
 
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:431
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:499
-#: gnome-initial-setup/pages/summary/gis-summary-page.ui:8
-msgid "All done!"
-msgstr "Έτοιμο!"
-
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:457
-msgid "Setup Failed"
-msgstr "Η ρύθμιση απέτυχε"
-
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:459
-msgid "Close"
-msgstr "Κλείσιμο"
-
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:472
-msgid "Almost done"
-msgstr "Σχεδόν τελειώσαμε"
-
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:568
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:270
 msgid "Setup Complete"
 msgstr "Η ρύθμιση ολοκληρώθηκε"
 
-#: gnome-initial-setup/pages/summary/gis-summary-page.ui:39
-msgid "Downloading additional language packs"
-msgstr "Γίνεται λήψη πρόσθετων πακέτων γλωσσικής υποστήριξης"
-
-#: gnome-initial-setup/pages/summary/gis-summary-page.ui:47
-msgid "Cancel Download"
-msgstr "Ακύρωση λήψης"
+#: gnome-initial-setup/pages/summary/gis-summary-page.ui:8
+msgid "All done!"
+msgstr "Έτοιμο!"
 
 #: gnome-initial-setup/pages/timezone/gis-location-entry.c:117
 msgid "Search cities"
@@ -837,447 +774,26 @@ msgstr "Παρακαλούμε, αναζητήστε μια κοντινή πό�
 #. * keep or remove. The %s is getting replaced with the name and version
 #. * of the OS, e.g. "GNOME 3.38"
 #.
-#: gnome-initial-setup/pages/welcome/gis-welcome-page.c:79
+#: gnome-initial-setup/pages/welcome/gis-welcome-page.c:62
 #, c-format
 msgid "Welcome to %s !"
 msgstr "Καλώς ήλθατε στο %s !"
 
-#: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:12
-msgid "Welcome to Ubuntu 24.04 LTS"
-msgstr "Καλώς ήλθατε στο Ubuntu 24.04 LTS"
-
-#: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:13
-msgid ""
-"Complete your setup with additional settings and we'll\n"
-"have you up and running in no time"
-msgstr ""
-"Ολοκληρώστε την αρχικοποίηση με πρόσθετες ρυθμίσεις και \n"
-"θα είστε άμεσα έτοιμοι να ξεκινήσετε"
+#: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:4
+msgid "Setup"
+msgstr "Ρύθμιση"
 
 #: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:32
-msgid "View release notes"
-msgstr ""
-
-#: gnome-initial-setup/pages/apps/gis-apps-page.c:95
-msgid "Ready to go"
-msgstr "Έτοιμοι"
-
-#: gnome-initial-setup/pages/apps/gis-apps-page.blp:8
-msgid "Get started with more applications"
-msgstr "Ξεκινήστε με περισσότερες εφαρμογές"
-
-#: gnome-initial-setup/pages/apps/gis-apps-page.blp:9
-msgid "Ubuntu's App Center has a range of apps you can get started with."
-msgstr ""
-"Το App Center του Ubuntu έχει ένα μεγάλο εύρος λογισμικού για τα επόμενα "
-"βήματά σας."
-
-#: gnome-initial-setup/pages/apps/gis-apps-page.blp:28
-msgid "Open App Center"
-msgstr "Άνοιγμα του App Center"
-
-#: gnome-initial-setup/pages/eula/gis-eula-page.blp:4
-msgid "End-User License Agreement"
-msgstr "Άδεια Χρήσης Τελικού Χρήστη"
-
-#. GNOME Initial Setup
-#. TRANSLATORS: The place-holder is an error message
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:73
-#, c-format
-msgid "Failed to grant consent for the Initial Setup application: %s"
-msgstr "Αποτυχία παροχής συγκατάθεσης για την εφαρμογή Αρχικής ρύθμισης: %s"
-
-#. TRANSLATORS: The place-holder is an error message
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:75
-#, c-format
-msgid "Failed to withdraw consent for the Initial Setup application: %s"
-msgstr "Αποτυχία ανάκλησης συγκατάθεσης για την εφαρμογή Αρχικής ρύθμισης: %s"
-
-#. Platform source used by timed systemd collection
-#. TRANSLATORS: The place-holder is an error message
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:80
-#, c-format
-msgid "Failed to grant consent for the system data collector: %s"
-msgstr ""
-"Αποτυχία παροχής συγκατάθεσης για τον συλλέκτη δεδομένων συστήματος: %s"
-
-#. TRANSLATORS: The place-holder is an error message
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:82
-#, c-format
-msgid "Failed to withdraw consent for the system data collector: %s"
-msgstr ""
-"Αποτυχία ανάκλησης συγκατάθεσης για τον συλλέκτη δεδομένων συστήματος: %s"
-
-#. Platform source used by release upgrader collection
-#. TRANSLATORS: The place-holder is an error message
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:87
-#, c-format
-msgid "Failed to grant consent for the release upgrader application: %s"
-msgstr "Αποτυχία παροχής συγκατάθεσης για την εφαρμογή αναβάθμισης έκδοσης: %s"
-
-#. TRANSLATORS: The place-holder is an error message
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:89
-#, c-format
-msgid "Failed to withdraw consent for the release upgrader application: %s"
-msgstr ""
-"Αποτυχία ανάκλησης συγκατάθεσης για την εφαρμογή αναβάθμισης έκδοσης: %s"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:381
-#, c-format
 msgid ""
-"With telemetry log: %s\n"
-"Without telemetry log: %s"
+"Setup will guide you through making an account and enabling some features. "
+"We’ll have you up and running in no time."
 msgstr ""
-"Με καταγραφή τηλεμετρίας: %s\n"
-"Χωρίς καταγραφή τηλεμετρίας: %s"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:411
-#, c-format
-msgid "Failed to collect telemetry report: %s"
-msgstr "Αποτυχία συλλογής αναφοράς τηλεμετρίας: %s"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:571
-#, c-format
-msgid "Failed to generate report: %s"
-msgstr "Αποτυχία δημιουργίας αναφοράς: %s"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:589
-#, c-format
-msgid "Failed to write report: %s"
-msgstr "Αποτυχία εγγραφής αναφοράς: %s"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:647
-msgid "Show First Report"
-msgstr "Εμφάνιση Πρώτης Αναφοράς"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:9
-#, fuzzy
-msgid "Utile Depends On It: Help Improve Ubuntu"
-msgstr "Βοηθήστε να βελτιωθεί το Ubuntu"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:10
-#, fuzzy
-msgid ""
-"Help improve Ubuntu by sharing your system and error reports with them.\n"
-"Reports are sent anonymously."
-msgstr ""
-"Βοηθήστε μας να βελτιωθεί το Ubuntu με τη διαμοίραση των αναφορών συστήματος "
-"και σφαλμάτων μαζί μας.\n"
-"Οι αναφορές στέλνονται ανώνυμα."
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:31
-msgid "Share _system data with the Ubuntu team"
-msgstr "Διαμοίραση δεδομένων _συστήματος με την ομάδα Ubuntu"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:32
-msgid "This includes hardware information, language and timezone"
-msgstr ""
-"Περιλαμβάνει τα τεχνικά χαρακτηριστικά του υπολογιστή, τη γλώσσα και τη ζώνη "
-"ώρας"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:46
-msgid "Learn more about system reporting"
-msgstr "Μάθετε περισσότερα για τις αναφορές συστήματος"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:57
-msgid "Legal notice"
-msgstr "Νομική σημείωση"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:68
-msgid "Show Report"
-msgstr "Εμφάνιση αναφοράς"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:95
-msgid "Share _error reports with the Ubuntu team"
-msgstr "Διαμοιράστε τις αναφορές _σφαλμάτων με την ομάδα Ubuntu"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:96
-msgid "This includes crash reports and related system logs"
-msgstr ""
-"Συμπεριλαμβάνει στοιχεία από κατάρρευση εφαρμογών και συναφείς καταγραφές "
-"συστήματος"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:110
-msgid "Learn more about error reporting"
-msgstr "Μάθετε περισσότερα για τις αναφορές σφαλμάτων"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:148
-msgid "System Report"
-msgstr "Αναφορά συστήματος"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-attach-page.blp:21
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:21
-msgid "Enable Ubuntu Pro"
-msgstr "Ενεργοποίηση του Ubuntu Pro"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-attach-page.blp:29
-msgid "_Attach machine via your Ubuntu One account"
-msgstr "_Συνδέστε τον υπολογιστή σας μέσω σε λογαριασμό Ubuntu One"
-
-#. Translators: translators: This is the other way to attach a machine to Ubuntu Pro
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-attach-page.blp:82
-msgid "Or add a _token manually"
-msgstr "Ή προσθέστε ένα _διακριτικό (token) χειροκίνητα"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-attach-page.blp:117
-msgid "Token"
-msgstr "Διακριτικό"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:54
-msgid "Upgrade this device to Ubuntu Pro. Free for personal use."
-msgstr "Αναβαθμίστε αυτή τη συσκευή σε Ubuntu Pro. Δωρεάν για προσωπική χρήση."
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:105
-msgid ""
-"Fulfill FedRAMP, FIPS, STIG and HIPAA and other compliance and hardening "
-"requirements with certified tooling and crypto-modules"
-msgstr ""
-"Εκπληρώστε τις απαιτήσεις συμμόρφωσης και θωράκισης FedRAMP, FIPS, STIG και "
-"HIPAA και άλλων με πιστοποιημένα εργαλεία και κρυπτογραφικές μονάδες"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:130
-msgid "Enable Ubuntu Pro now, or skip this step."
-msgstr "Ενεργοποιήστε το Ubuntu Pro τώρα, ή παραλείψτε αυτό το βήμα."
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:133
-msgid "_Enable Ubuntu Pro"
-msgstr "_Ενεργοποίηση Ubuntu Pro"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:152
-msgid "_Skip for now"
-msgstr "Πα_ράλειψη προς το παρόν"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:153
-msgid "You can enable Ubuntu Pro later in the Security Center"
-msgstr "Μπορείτε να ενεργοποιήσετε το Ubuntu Pro αργότερα στο Κέντρο Ασφαλείας"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-services-page.blp:22
-msgid "Ubuntu Pro Services"
-msgstr "Υπηρεσίες Ubuntu Pro"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-services-page.blp:29
-msgid "Your subscription"
-msgstr "Η συνδρομή σας"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-services-page.blp:44
-msgid "Your enabled services"
-msgstr "Οι ενεργοποιημένες υπηρεσίες σας"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-services-page.blp:47
-msgid ""
-"You can change the default enablements for your token on the ubuntu.com/pro "
-"web interface. You can also change enabled services in the Settings menu or "
-"with the `<span font_family='monospace'>pro</span>` command-line."
-msgstr ""
-"Μπορείτε να αλλάξετε τις προεπιλεγμένες ενεργοποιήσεις για το διακριτικό σας "
-"στην ιστοσελίδα ubuntu.com/pro. Μπορείτε επίσης να αλλάξετε τις "
-"ενεργοποιημένες υπηρεσίες στο μενού Ρυθμίσεις ή με τη γραμμή εντολών `<span "
-"font_family='monospace'>pro</span>`."
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-services-page.blp:53
-msgid "Other available services"
-msgstr "Άλλες διαθέσιμες υπηρεσίες"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:221
-msgid "Valid token"
-msgstr "Έγκυρο διακριτικό"
-
-#. TRANSLATORS: The error shown when attaching an
-#. Ubuntu Pro contact fails.
-#. It may be due to various reasons, most common is
-#. an invalid token.
-#.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:236
-msgid "Invalid token or attach failure"
-msgstr "Μη έγκυρο διακριτικό ή αποτυχία προσάρτησης"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:244
-msgid "Code expired"
-msgstr "Ο κωδικός έληξε"
-
-#. TRANSLATORS: the placeholder %s is a link to ubuntu.com/pro/attach.
-#. Use HTML encoded format for special characters such as '&'.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:259
-#, c-format
-msgid "Enter this code on %s"
-msgstr "Εισάγετε αυτόν τον κωδικό στο %s"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:316
-msgid "An internet connection is required to enable Ubuntu Pro"
-msgstr "Απαιτείται σύνδεση στο διαδίκτυο για την ενεργοποίηση του Ubuntu Pro"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:466
-#, c-format
-msgid "Get security updates on a wide range of packages until %s"
-msgstr "Λάβετε ενημερώσεις ασφαλείας σε ένα ευρύ φάσμα πακέτων μέχρι %s"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:474
-msgid "Ubuntu Pro"
-msgstr "Ubuntu Pro"
-
-#. TRANSLATORS: The anbox-cloud Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:609
-msgid "Scalable Android in the cloud"
-msgstr "Κλιμακούμενο Android στο σύννεφο"
-
-#. TRANSLATORS: The cc-eal Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:612
-msgid "Common Criteria EAL2 Provisioning Packages"
-msgstr "Πακέτα Παροχής Common Criteria EAL2"
-
-#. TRANSLATORS: The esm-apps Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:615
-msgid "Expanded Security Maintenance for Applications"
-msgstr "Διευρυμένη Συντήρηση Ασφαλείας για Εφαρμογές"
-
-#. TRANSLATORS: The esm-infra Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:618
-msgid "Expanded Security Maintenance for Infrastructure"
-msgstr "Διευρυμένη Συντήρηση Ασφαλείας για Υποδομές"
-
-#. TRANSLATORS: The fips Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:621
-msgid "NIST-certified FIPS crypto packages"
-msgstr "Πιστοποιημένα από NIST κρυπτογραφικά πακέτα FIPS"
-
-#. TRANSLATORS: The fips-preview Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:624
-msgid "Preview of FIPS crypto packages undergoing certification with NIST"
-msgstr ""
-"Προεπισκόπηση κρυπτογραφικών πακέτων FIPS που υποβάλλονται σε πιστοποίηση "
-"NIST"
-
-#. TRANSLATORS: The fips-updates Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:627
-msgid "FIPS compliant crypto packages with stable security updates"
-msgstr "Συμβατά με FIPS κρυπτογραφικά πακέτα με σταθερές ενημερώσεις ασφαλείας"
-
-#. TRANSLATORS: The landscape Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:630
-msgid "Management and administration tool for Ubuntu"
-msgstr "Εργαλείο διαχείρισης για το Ubuntu"
-
-#. TRANSLATORS: The livepatch Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:633
-msgid "Canonical kernel Livepatch service"
-msgstr "Υπηρεσία Livepatch πυρήνα της Canonical"
-
-#. TRANSLATORS: The realtime-kernel Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:636
-msgid "Ubuntu kernel with PREEMPT_RT patches integrated"
-msgstr "Πυρήνας Ubuntu με ενσωματωμένη λειτουργία PREEMPT_RT"
-
-#. TRANSLATORS: The ros Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:639
-msgid "Security Updates for the Robot Operating System"
-msgstr "Ενημερώσεις Ασφαλείας για το Λειτουργικό Σύστημα Robot"
-
-#. TRANSLATORS: The ros-updates Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:642
-msgid "All Updates for the Robot Operating System"
-msgstr "Όλες οι Ενημερώσεις για το Robot Operating System"
-
-#. TRANSLATORS: The usg Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:645
-msgid "Security compliance and audit tools"
-msgstr "Εργαλεία συμμόρφωσης και ελέγχου ασφαλείας"
-
-#. TRANSLATORS: Use HTML encoded format for special characters such as &amp' for '&'. %s is a URL.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:1230
-#, c-format
-msgid "Learn more at %s"
-msgstr "Μάθετε περισσότερα στο %s"
-
-#. TRANSLATORS: Subtitle telling who can provide the Ubuntu Pro token.
-#. Use HTML encoded format for special characters such as &amp' for '&'. %s is a URL.
-#.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:1247
-#, c-format
-msgid "From your admin, or from %s"
-msgstr "Από τον διαχειριστή σας, ή από %s"
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:75
-msgid "Blue"
-msgstr "Μπλε"
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:78
-msgid "Teal"
-msgstr "Κυανοπράσινο"
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:81
-msgid "Green"
-msgstr "Πράσινο"
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:84
-msgid "Yellow"
-msgstr "Κίτρινο"
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:87
-msgid "Orange"
-msgstr "Πορτοκαλί"
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:90
-msgid "Red"
-msgstr "Κόκκινο"
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:93
-msgid "Pink"
-msgstr "Ροζ"
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:96
-msgid "Purple"
-msgstr "Μωβ"
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:99
-msgid "Slate"
-msgstr "Σχιστολιθικό"
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:102
-msgid "Warty Brown"
-msgstr "Καφετί"
-
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:469
-msgid "Appearance"
-msgstr "Εμφάνιση"
-
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
-msgid "Choose how Ubuntu looks"
-msgstr "Επιλέξτε την εμφάνιση του Ubuntu"
-
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
-msgid "Personalize your desktop's appearance"
-msgstr "Εξατομικεύστε την εμφάνιση της επιφάνειας εργασίας σας"
-
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
-msgid "Style"
-msgstr "Τεχνοτροπία"
-
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:53
-msgid "_Default"
-msgstr "_Προεπιλογή"
-
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:82
-msgid "Da_rk"
-msgstr "_Σκοτεινό"
-
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:100
-msgid "OLED screen detected. Dark style may save power."
-msgstr ""
-"Εντοπίστηκε οθόνη OLED. Το σκοτεινό στυλ μπορεί να εξοικονομήσει ενέργεια."
-
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:112
-msgid "Accent Color"
-msgstr "Χρώμα έμφασης"
+"Η ρύθμιση θα σας καθοδηγήσει στη δημιουργία λογαριασμού και την ενεργοποίηση "
+"ορισμένων λειτουργιών. Θα χρησιμοποιείτε το σύστημα σε χρόνο μηδέν."
+
+#: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:36
+msgid "_Start Setup"
+msgstr "Έ_ναρξη ρύθμισης"
 
 #: po/EXTRA_STRINGS.sh:1
 msgid "Force live user mode"
@@ -1314,81 +830,314 @@ msgstr "Εγκατάσταση στο δίσκο…"
 #: po/EXTRA_STRINGS.sh:8
 #, sh-format
 msgid "Try ${NAME}"
-msgstr "Δοκιμή του ${NAME}"
+msgstr "Δοκιμάστε ${NAME}"
 
 #: po/EXTRA_STRINGS.sh:9
 #, sh-format
 msgid "Install ${PRETTY_NAME}"
-msgstr "Εγκατάσταση του ${PRETTY_NAME}"
+msgstr "Εγκατάσταση ${PRETTY_NAME}"
+
+#~ msgid "Set a Password"
+#~ msgstr "Ορισμός κωδικού πρόσβασης"
+
+#~ msgid "Privacy Policy"
+#~ msgstr "Πολιτική ιδιωτικότητας"
+
+#~ msgid ""
+#~ "Allows apps to determine your geographical location. Uses the Mozilla "
+#~ "Location Service (<a href='https://location.services.mozilla.com/"
+#~ "privacy'>privacy policy</a>)."
+#~ msgstr ""
+#~ "Επιτρέπει τις εφαρμογές να καθορίσουν την τοποθεσία σας. Χρησιμοποιεί την "
+#~ "Υπηρεσία τοποθεσίας Mozilla (<a href='https://location.services.mozilla."
+#~ "com/privacy'>πολιτική απορρήτου</a>)."
+
+#~ msgid "Please check the name and username. You can choose a picture too."
+#~ msgstr ""
+#~ "Παρακαλούμε, ελέγξτε το όνομα σας και το όνομα χρήστη. Μπορείτε επίσης να "
+#~ "επιλέξετε μια εικόνα."
+
+#~ msgid "Edit avatar"
+#~ msgstr "Επεξεργασία ειδώλου"
+
+#~ msgid "Online Accounts"
+#~ msgstr "Διαδικτυακοί λογαριασμοί"
+
+#~ msgid "Connect Your Online Accounts"
+#~ msgstr "Σύνδεση σε δικτυακούς λογαριασμούς"
+
+#~ msgid ""
+#~ "Connect your accounts to easily access your email, online calendar, "
+#~ "contacts, documents and photos."
+#~ msgstr ""
+#~ "Η σύνδεση των λογαριασμών σας θα σας επιτρέψει εύκολη πρόσβαση στην "
+#~ "αλληλογραφία σας, στο διαδικτυακό ημερολόγιο, στις επαφές, στα έγγραφα "
+#~ "και τις φωτογραφίες σας."
+
+#~ msgid "Accounts can be added and removed at any time from the Settings app."
+#~ msgstr ""
+#~ "Λογαριασμοί μπορούν να προστεθούν και να διαγραφούν οποιαδήποτε στιγμή "
+#~ "από τις Ρυθμίσεις."
 
 #, c-format
-#~ msgid "Failed to show privacy policy: %s"
-#~ msgstr "Αποτυχία εμφάνισης πολιτικής ιδιωτικότητας: %s"
+#~ msgid "%s Account"
+#~ msgstr "%s λογαριασμός"
 
-#~ msgid "Help improve Ubuntu"
-#~ msgstr "Βοηθήστε να βελτιωθεί το Ubuntu"
+#~ msgid "Install or Try?"
+#~ msgstr "Εγκατάσταση ή δοκιμή;"
 
-#~ msgid "Show the First Report"
-#~ msgstr "Εμφάνιση της Πρώτης αναφοράς"
+#~ msgid ""
+#~ "This live media can be used to install GNOME, or it can be used to try "
+#~ "GNOME as a temporary system. Installation can be started at any time "
+#~ "using the install icon in Activities."
+#~ msgstr ""
+#~ "Αυτό το μέσο μπορεί να χρησιμοποιηθεί για να εγκαταστήσετε το GNOME ή "
+#~ "μπορεί να χρησιμοποιηθεί για να δοκιμάσετε το GNOME ως προσωρινό σύστημα. "
+#~ "Η εγκατάσταση μπορεί να ξεκινήσει ανά πάσα στιγμή χρησιμοποιώντας το "
+#~ "εικονίδιο εγκατάστασης στις Δραστηριότητες."
+
+#~ msgid "Try"
+#~ msgstr "Δοκιμή"
+
+#~ msgid "Avatar image"
+#~ msgstr "Προσωπική εικόνα"
+
+#~ msgid "Take a Picture…"
+#~ msgstr "Λήψη μιας φωτογραφίας…"
+
+#~ msgid "_Confirm"
+#~ msgstr "_Επιβεβαίωση"
+
+#~ msgid "This is a weak password."
+#~ msgstr "Αυτός είναι ένα ασθενές συνθηματικό."
 
 #, c-format
-#~ msgid "Failed to get report information: %s"
-#~ msgstr "Αποτυχία ετοιμασίας της αναφοράς πληροφοριών: %s"
+#~ msgid ""
+#~ "Sending reports of technical problems helps us to improve %s. Reports are "
+#~ "sent anonymously and are scrubbed of personal data."
+#~ msgstr ""
+#~ "Η αποστολή αναφορών σχετικά με τεχνικά προβλήματα μας βοηθούν να "
+#~ "βελτιώσουμε το %s. Οι αναφορές στέλνονται ανώνυμα και χωρίς προσωπικά "
+#~ "δεδομένα."
+
+#, c-format
+#~ msgid "Problem data will be collected by %s:"
+#~ msgstr "Τα δεδομένα του προβλήματος θα συλλεχθούν από το %s:"
+
+#~ msgid "Uses Mozilla Location Service:"
+#~ msgstr "Χρήση υπηρεσίας τοποθεσίας του Mozilla:"
+
+#~ msgid "Loading…"
+#~ msgstr "Γίνεται φόρτωση..."
+
+#~ msgid ""
+#~ "Connecting to the Internet will enable you to set the time, add your "
+#~ "details, and enable you to access your email, calendar, and contacts. It "
+#~ "is also necessary for enterprise login accounts."
+#~ msgstr ""
+#~ "Συνδεόμενοι στο διαδίκτυο θα μπορέσετε να ορίσετε την ώρα, να προσθέσετε "
+#~ "τα προσωπικά σας στοιχεία, και να ενεργοποιήσετε την πρόσβαση στην "
+#~ "αλληλογραφία σας, στο ημερολόγιο και τις επαφές σας. Είναι επίσης "
+#~ "απαραίτητο για εταιρικούς λογαριασμούς σύνδεσης."
+
+#~ msgid "preferences-system"
+#~ msgstr "preferences-system"
+
+#~ msgid "License Agreements"
+#~ msgstr "Άδεια χρήσης"
+
+#~ msgid ""
+#~ "I have _agreed to the terms and conditions in this end user license "
+#~ "agreement."
+#~ msgstr ""
+#~ "_Συμφώνησα με τους όρους και τις προϋποθέσεις της άδειας χρήσης του "
+#~ "τελικού χρήστη."
+
+#~ msgid "No regions found"
+#~ msgstr "Δε βρέθηκαν περιοχές"
+
+#~ msgid "Region"
+#~ msgstr "Περιοχή"
+
+#~ msgid "Choose your country or region."
+#~ msgstr "Επιλέξτε την χώρα σας ή περιοχή."
+
+#~ msgid "Software Repositories"
+#~ msgstr "Αποθετήρια λογισμικού"
+
+#~ msgid "Access additional software from selected third party sources."
+#~ msgstr "Πρόσβαση σε πρόσθετο λογισμικό από επιλεγμένες πηγές τρίτων."
+
+#~ msgid ""
+#~ "Some of this software is proprietary and therefore has restrictions on "
+#~ "use, sharing, and access to source code."
+#~ msgstr ""
+#~ "Ορισμένα από αυτά τα λογισμικά είναι ιδιόκτητα και επομένως έχει "
+#~ "περιορισμούς στη χρήση, τον διαμοιρασμό και την πρόσβαση στον πηγαίο "
+#~ "κώδικα."
+
+#~ msgid "Additional Software Repositories"
+#~ msgstr "Επιπρόσθετα αποθετήρια λογισμικού"
+
+#~ msgid "<a href=\"more\">Find out more…</a>"
+#~ msgstr "<a href=\"more\">Βρείτε περισσότερα…</a>"
+
+#~ msgid ""
+#~ "Proprietary software typically has restrictions on how it can be used and "
+#~ "on access to source code. This prevents anyone but the software owner "
+#~ "from inspecting, improving or learning from its code."
+#~ msgstr ""
+#~ "Το ιδιοταγές λογισμικό συνήθως έχει περιορισμούς ως προς τη χρήση του και "
+#~ "την πρόσβαση στον πηγαίο κώδικα. Αυτό εμποδίζει οποιονδήποτε εκτός του "
+#~ "ιδιοκτήτη του λογισμικού να ελέγξει, αναπτύξει ή να μάθει από τον κώδικα."
+
+#~ msgid ""
+#~ "In contrast, Free Software can be freely run, copied, distributed, "
+#~ "studied and modified."
+#~ msgstr ""
+#~ "Σε αντίθεση,το Ελεύθερο λογισμικό μπορεί ελεύθερα να εκτελεστεί, "
+#~ "αντιγραφτεί, διανεμηθεί, μελετηθεί και τροποποιηθεί."
+
+#~ msgid "Ready to Go"
+#~ msgstr "Έτοιμοι να ξεκινήσετε"
+
+#~ msgid "You’re ready to go!"
+#~ msgstr "Είστε έτοιμοι να ξεκινήσετε!"
+
+#~ msgid "Disable image"
+#~ msgstr "Απενεργοποίηση εικόνας"
+
+#~ msgctxt "Password hint"
+#~ msgid "Try to avoid common words."
+#~ msgstr "Προσπαθήστε να αποφύγετε συνηθισμένες λέξεις."
+
+#~ msgctxt "Password hint"
+#~ msgid "Try to use more numbers."
+#~ msgstr "Προσπαθήστε να χρησιμοποιήσετε περισσότερους αριθμούς."
+
+#~ msgctxt "Password hint"
+#~ msgid ""
+#~ "Password needs to be longer. Try to add more letters, numbers and "
+#~ "punctuation."
+#~ msgstr ""
+#~ "Τα συνθηματικά πρέπει να είναι μεγαλύτερα. Προσπαθήστε να προσθέσετε "
+#~ "περισσότερα γράμματα, αριθμούς και σημεία στίξης."
+
+#~ msgid ""
+#~ "Proprietary software sources provide access to additional software, "
+#~ "including web browsers and games. This software typically has "
+#~ "restrictions on use and access to source code, and is not provided by %s."
+#~ msgstr ""
+#~ "Οι ιδιοταγείς πηγές λογισμικού παρέχουν πρόσβαση σε επιπρόσθετο "
+#~ "λογισμικό, όπως περιηγητές Ιστού και παιχνίδια. Συνήθως αυτό το λογισμικό "
+#~ "έχει περιορισμούς ως προς τη χρήση του και την πρόσβαση στον πηγαίο "
+#~ "κώδικα, και δεν παρέχεται από το %s."
+
+#~ msgid "Proprietary Software Sources"
+#~ msgstr "Ιδιοταγείς πηγές λογισμικού"
+
+#~ msgid "A user with the username ‘%s’ already exists."
+#~ msgstr "Υπάρχει ήδη ένας χρήστης με όνομα «%s»"
+
+#~ msgid "_Verify"
+#~ msgstr "_Επαλήθευση"
+
+#~ msgctxt "Password strength"
+#~ msgid "Strength: Weak"
+#~ msgstr "Ισχύς: Ασθενής"
+
+#~ msgctxt "Password strength"
+#~ msgid "Strength: Low"
+#~ msgstr "Ισχύς: Χαμηλή"
+
+#~ msgctxt "Password strength"
+#~ msgid "Strength: Medium"
+#~ msgstr "Ισχύς: Μέτρια"
+
+#~ msgctxt "Password strength"
+#~ msgid "Strength: Good"
+#~ msgstr "Ισχύς: Καλή"
+
+#~ msgctxt "Password strength"
+#~ msgid "Strength: High"
+#~ msgstr "Ισχύς: Υψηλή"
+
+#~ msgid "Are these the right details? You can change them if you want."
+#~ msgstr ""
+#~ "Είναι σωστές αυτές οι λεπτομέρειες; Μπορείτε να τις αλλάξετε αν θέλετε."
+
+#~ msgid "You can review your online accounts (and add others) after setup."
+#~ msgstr ""
+#~ "Μπορείτε να επιθεωρήσετε τους διαδικτυακούς σας λογαριασμούς (και να "
+#~ "προσθέσετε άλλους) μετά την εγκατάσταση."
+
+#~ msgid ""
+#~ "We think that your time zone is %s. Press Next to continue or search for "
+#~ "a city to manually set the time zone."
+#~ msgstr ""
+#~ "Πιστεύουμε πως η ζώνη ώρας σας είναι η %s. Πατήστε επόμενο για να "
+#~ "συνεχίσετε ή αναζητήστε μια πόλη για να ρυθμίσετε χειροκίνητα την ζώνη "
+#~ "ώρας."
 
 #~ msgid "Cancel"
 #~ msgstr "Ακύρωση"
 
-#, c-format
+#~ msgid "Your username cannot be changed after setup."
+#~ msgstr "Το όνομα χρήστη σας δεν μπορεί να αλλαχθεί μετά τη ρύθμιση."
+
 #~ msgid ""
-#~ "Sends technical reports that do not contain personal information. Data is "
-#~ "collected by %1$s (<a href='%2$s'>privacy policy</a>)."
+#~ "In order to use enterprise logins, this computer needs to be enrolled in "
+#~ "the domain. Please have your network administrator type their domain "
+#~ "password here, and choose a unique computer name for your computer."
 #~ msgstr ""
-#~ "Στέλνει τεχνικές αναφορές στις οποίες αφαιρούνται αυτόματα τα προσωπικά "
-#~ "στοιχεία. Τα δεδομένα συλλέγονται από την %1$s (<a href='%2$s'>πολιτική "
-#~ "απορρήτου</a>)."
+#~ "Για να χρησιμοποιήσετε τις εταιρικές συνδέσεις, αυτός ο υπολογιστής "
+#~ "πρέπει να είναι\n"
+#~ "εγγεγραμμένος στον τομέα. Πείτε στον διαχειριστή του δικτύου σας "
+#~ "παρακαλώ\n"
+#~ "να πληκτρολογήσει εδώ τον κωδικό πρόσβασης του τομέα και επιλέξτε έναν "
+#~ "μοναδικό όνομα\n"
+#~ "υπολογιστή για τον υπολογιστή σας."
 
-#~ msgid "Privacy controls can be changed at any time from the Settings app."
-#~ msgstr ""
-#~ "Οι ρυθμίσεις ιδιωτικότητας μπορούν να αλλαχθούν οποιαδήποτε στιγμή από "
-#~ "τις Ρυθμίσεις."
+#~ msgid "No password"
+#~ msgstr "Χωρίς κωδικό πρόσβασης"
 
-#, c-format
-#~ msgid ""
-#~ "Turn on location services to let applications know your geographical "
-#~ "location. You can change this anytime in System Settings."
-#~ msgstr ""
-#~ "Ενεργοποίηση υπηρεσιών τοποθεσίας για να επιτρέπεται στις εφαρμογές να "
-#~ "γνωρίζουν την γεωγραφική σας τοποθεσία. Μπορείτε να το αλλάξετε "
-#~ "οποιαδήποτε στιγμή στις Ρυθμίσεις συστήματος."
+#~ msgctxt "Password strength"
+#~ msgid "Too short"
+#~ msgstr "Πολύ μικρό"
 
-#~ msgid "Location services"
-#~ msgstr "Υπηρεσίες τοποθεσίας"
+#~ msgctxt "Password strength"
+#~ msgid "Not good enough"
+#~ msgstr "Δεν είναι αρκετά καλό"
 
-#~ msgid "Data privacy"
-#~ msgstr "Ιδιωτικότητα δεδομένων"
+#~ msgctxt "Password strength"
+#~ msgid "Weak"
+#~ msgstr "Αδύναμο"
 
-#~ msgid "Ubuntu Report Contents"
-#~ msgstr "Περιεχόμενο του Ubuntu Report"
+#~ msgctxt "Password strength"
+#~ msgid "Fair"
+#~ msgstr "Μέτριο"
 
-#, c-format
-#~ msgid ""
-#~ "Help us improve Ubuntu by sharing your system data with us. This includes "
-#~ "things like your machine model, installed software and the location you "
-#~ "chose for your timezone."
-#~ msgstr ""
-#~ "Βοηθήστε μας να βελτιώσουμε το Ubuntu με τη διαμοίραση των πληροφοριών "
-#~ "συστήματός σας με εμάς. Περιλαμβάνει πληροφορίες όπως το μοντέλο του "
-#~ "υπολογιστή, το εγκατεστημένο λογισμικό και την τοποθεσία που επιλέξατε "
-#~ "για τη ζώνη ώρας."
+#~ msgctxt "Password strength"
+#~ msgid "Good"
+#~ msgstr "Καλό"
 
-#~ msgid "Yes, share system data with the Ubuntu team"
-#~ msgstr ""
-#~ "Ναι, να διαμοιράσω τα δεδομένα του συστήματός μου με την ομάδα Ubuntu"
+#~ msgid "Login"
+#~ msgstr "Σύνδεση"
 
-#~ msgid "No, don't share system data"
-#~ msgstr "Όχι, δεν θέλω να διαμοιράσω τα δεδομένα του συστήματός μου"
+#~ msgid "Create a Local Account"
+#~ msgstr "Δημιουργία τοπικού λογαριασμού"
 
-#~ msgid "You can change your mind later in Settings → Privacy → Diagnostics."
-#~ msgstr ""
-#~ "Σε περίπτωση που αλλάξετε γνώμη αργότερα, δείτε στις Ρυθμίσεις → "
-#~ "Ιδιωτικότητα → Διαγνωστικά."
+#~ msgid "page 1"
+#~ msgstr "σελίδα 1"
+
+#~ msgid "Create an Enterprise Account"
+#~ msgstr "Δημιουργία εταιρικού λογαριασμού"
+
+#~ msgid "Other"
+#~ msgstr "Άλλο"
+
+#~ msgid "No input source selected"
+#~ msgstr "Δεν επιλέχτηκε πηγή εισόδου"
+
+#~ msgid "Add an Input Source"
+#~ msgstr "Προσθήκη πηγής εισόδου"

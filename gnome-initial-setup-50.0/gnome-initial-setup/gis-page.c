@@ -38,8 +38,7 @@ struct _GisPagePrivate
   guint skippable : 1;
   guint needs_accept : 1;
   guint has_forward : 1;
-  guint hide_navigation : 1;
-  guint padding : 4;
+  guint padding : 5;
 };
 typedef struct _GisPagePrivate GisPagePrivate;
 
@@ -52,7 +51,6 @@ enum
   PROP_TITLE,
   PROP_COMPLETE,
   PROP_SKIPPABLE,
-  PROP_HIDE_NAVIGATION,
   PROP_NEEDS_ACCEPT,
   PROP_APPLYING,
   PROP_SMALL_SCREEN,
@@ -83,9 +81,6 @@ gis_page_get_property (GObject    *object,
       break;
     case PROP_SKIPPABLE:
       g_value_set_boolean (value, priv->skippable);
-      break;
-    case PROP_HIDE_NAVIGATION:
-      g_value_set_boolean (value, priv->hide_navigation);
       break;
     case PROP_NEEDS_ACCEPT:
       g_value_set_boolean (value, priv->needs_accept);
@@ -135,9 +130,6 @@ gis_page_set_property (GObject      *object,
       break;
     case PROP_SKIPPABLE:
       priv->skippable = g_value_get_boolean (value);
-      break;
-    case PROP_HIDE_NAVIGATION:
-      priv->hide_navigation = g_value_get_boolean (value);
       break;
     case PROP_NEEDS_ACCEPT:
       priv->needs_accept = g_value_get_boolean (value);
@@ -227,9 +219,6 @@ gis_page_class_init (GisPageClass *klass)
   obj_props[PROP_SKIPPABLE] =
     g_param_spec_boolean ("skippable", "", "", FALSE,
                           G_PARAM_STATIC_STRINGS | G_PARAM_READWRITE);
-  obj_props[PROP_HIDE_NAVIGATION] =
-    g_param_spec_boolean ("hide-navigation", "", "", FALSE,
-                          G_PARAM_STATIC_STRINGS | G_PARAM_READWRITE);
   obj_props[PROP_NEEDS_ACCEPT] =
     g_param_spec_boolean ("needs-accept", "", "", FALSE,
                           G_PARAM_STATIC_STRINGS | G_PARAM_READWRITE);
@@ -305,21 +294,6 @@ gis_page_set_skippable (GisPage *page, gboolean skippable)
 }
 
 gboolean
-gis_page_get_hide_navigation (GisPage *page)
-{
-  GisPagePrivate *priv = gis_page_get_instance_private (page);
-  return priv->hide_navigation;
-}
-
-void
-gis_page_set_hide_navigation (GisPage *page, gboolean hide_navigation)
-{
-  GisPagePrivate *priv = gis_page_get_instance_private (page);
-  priv->hide_navigation = hide_navigation;
-  g_object_notify_by_pspec (G_OBJECT (page), obj_props[PROP_HIDE_NAVIGATION]);
-}
-
-gboolean
 gis_page_get_needs_accept (GisPage *page)
 {
   GisPagePrivate *priv = gis_page_get_instance_private (page);
@@ -384,17 +358,6 @@ gis_page_apply_begin (GisPage                *page,
     }
 
   g_object_notify_by_pspec (G_OBJECT (page), obj_props[PROP_APPLYING]);
-}
-
-gboolean
-gis_page_go_back (GisPage *page)
-{
-  GisPageClass *klass = GIS_PAGE_GET_CLASS (page);
-
-  if (!klass->go_back)
-    return FALSE;
-
-  return klass->go_back (page);
 }
 
 void

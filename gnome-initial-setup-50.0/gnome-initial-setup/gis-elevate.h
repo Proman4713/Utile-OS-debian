@@ -34,13 +34,7 @@ gboolean
 gis_elevate (const char  *command,
              const char  *arg1,
              const char  *user,
-             GCancellable *cancellable,
              GError     **error);
-
-gboolean
-apt_get_install (GPtrArray     *packages,
-                 GCancellable  *cancellable,
-                 GError       **error);
 
 G_END_DECLS
 

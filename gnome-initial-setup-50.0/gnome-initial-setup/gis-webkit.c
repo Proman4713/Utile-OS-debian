@@ -17,114 +17,13 @@
  */
 
 #include "config.h"
-
-#include "gis-driver.h"
 #include "gis-webkit.h"
 
 #include <glib/gi18n.h>
-#include <adwaita.h>
-#include <gnome-qr-gtk/gnome-qr-widget.h>
 
 #ifdef HAVE_WEBKITGTK
 #include <webkit/webkit.h>
 #endif
-
-gboolean
-ignore_uri_activation (GtkLabel    *label,
-                       const gchar *uri,
-                       GtkWidget   *any_widget)
-{
-  return TRUE;
-}
-
-static gboolean
-gis_show_qr_code_dialog (const gchar *uri,
-                         GtkWidget   *parent,
-                         GtkLabel    *maybe_label)
-{
-  GtkWidget *headerbar;
-  AdwDialog *dialog;
-  GtkWidget *vbox;
-  GtkWidget *qr_box;
-  GtkWidget *qr_widget;
-  GtkWidget *uri_label;
-
-  dialog = adw_dialog_new ();
-  adw_dialog_set_can_close (dialog, TRUE);
-  adw_dialog_set_title (dialog, _("Scan the QR Code…"));
-
-  qr_widget = g_object_new (GNOME_TYPE_QR_WIDGET,
-                            "text", uri,
-                            "focusable", TRUE,
-                            "size", 300,
-                            "margin-top", 30,
-                            "margin-start", 30,
-                            "margin-end", 30,
-                            NULL);
-
-  qr_box = g_object_new (GTK_TYPE_BOX,
-                         "orientation", GTK_ORIENTATION_VERTICAL,
-                         "spacing", 10,
-                         "margin-start", 30,
-                         "margin-end", 30,
-                         "margin-top", 10,
-                         "margin-bottom", 10,
-                         NULL);
-  gtk_widget_add_css_class (qr_box, "card");
-  gtk_box_append (GTK_BOX (qr_box), qr_widget);
-
-  uri_label = g_object_new (GTK_TYPE_LABEL,
-                            "label", uri,
-                            "ellipsize", PANGO_ELLIPSIZE_MIDDLE,
-                            "max-width-chars", 35,
-                            "margin-bottom", 12,
-                            "margin-start", 12,
-                            "margin-end", 12,
-                            NULL);
-
-  gtk_widget_add_css_class (uri_label, "caption");
-  gtk_widget_add_css_class (uri_label, "monospace");
-  gtk_widget_set_tooltip_text (uri_label, uri);
-  gtk_box_append (GTK_BOX (qr_box), GTK_WIDGET (uri_label));
-
-  vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
-  gtk_widget_set_margin_bottom(GTK_WIDGET (vbox), 18);
-  gtk_box_append (GTK_BOX (vbox), qr_box);
-
-  if (GTK_IS_LABEL (maybe_label))
-    {
-      GtkWidget *label;
-
-      label = g_object_new (GTK_TYPE_LABEL,
-                            "label", gtk_label_get_label (maybe_label),
-                            "use-markup", gtk_label_get_use_markup (maybe_label),
-                            "wrap-mode", PANGO_WRAP_WORD,
-                            "max-width-chars", 35,
-                            "wrap", TRUE,
-                            "justify", GTK_JUSTIFY_CENTER,
-                            "margin-top", 12,
-                            "margin-start", 12,
-                            "margin-end", 12,
-                            NULL);
-
-      gtk_widget_add_css_class (label, "caption");
-      g_signal_connect (label, "activate-link", G_CALLBACK (ignore_uri_activation), NULL);
-
-      gtk_box_append (GTK_BOX (vbox), GTK_WIDGET (label));
-    }
-
-  GtkWidget *toolbar_view = adw_toolbar_view_new ();
-  adw_toolbar_view_set_content (ADW_TOOLBAR_VIEW (toolbar_view), vbox);
-  headerbar = adw_header_bar_new ();
-  adw_toolbar_view_add_top_bar (ADW_TOOLBAR_VIEW (toolbar_view), headerbar);
-
-  adw_dialog_set_child (dialog, toolbar_view);
-  adw_dialog_set_follows_content_size(dialog, TRUE);
-
-  adw_dialog_present (dialog, GTK_WIDGET (gtk_widget_get_root (parent)));
-
-  return TRUE;
-}
 
 #ifdef HAVE_WEBKITGTK
 static void
@@ -153,19 +52,6 @@ notify_title_cb (GObject    *object,
   gtk_window_set_title (dialog, webkit_web_view_get_title (web_view));
 }
 
-static void
-open_in_default_browser_cb (GtkWidget *button,
-                            gpointer   user_data)
-{
-  g_autoptr (GtkUriLauncher) uri_launcher = NULL;
-  WebKitWebView *view = WEBKIT_WEB_VIEW (user_data);
-
-  uri_launcher = gtk_uri_launcher_new (webkit_web_view_get_uri (view));
-  gtk_uri_launcher_launch (uri_launcher,
-                           GTK_WINDOW (gtk_widget_get_root (button)),
-                           NULL, NULL, NULL);
-}
-
 static GtkWidget *
 create_webview (void)
 {
@@ -190,20 +76,11 @@ gis_activate_link (GtkLabel    *label,
                    const gchar *uri,
                    GtkWidget   *any_widget)
 {
-  GNetworkMonitor *monitor;
   GtkWidget *headerbar;
   GtkWidget *dialog;
   GtkWidget *overlay;
   GtkWidget *view;
   GtkWidget *progress_bar;
-
-  monitor = g_network_monitor_get_default ();
-  if (!g_str_has_prefix (uri, "file:") &&
-      !g_network_monitor_get_network_available (monitor))
-    {
-      gis_show_qr_code_dialog (uri, any_widget, label);
-      return TRUE;
-    }
 
   headerbar = gtk_header_bar_new ();
   gtk_header_bar_set_show_title_buttons (GTK_HEADER_BAR (headerbar), TRUE);
@@ -236,39 +113,6 @@ gis_activate_link (GtkLabel    *label,
                            G_CALLBACK (notify_title_cb), dialog, 0);
   gtk_overlay_set_child (GTK_OVERLAY (overlay), view);
 
-  if (gis_driver_get_mode (gis_driver_get_default ()) != GIS_DRIVER_MODE_NEW_USER)
-    {
-      GtkWidget *button;
-      GtkIconTheme *icon_theme;
-      const char *icon_name = "external-link-symbolic";
-      const char *label = _("Open in default web browser");
-
-      if (g_str_has_prefix (uri, "file:"))
-        label = _("Open in default file handler");
-
-      icon_theme = gtk_icon_theme_get_for_display (gtk_widget_get_display (any_widget));
-      if (!gtk_icon_theme_has_icon (icon_theme, icon_name))
-        {
-          /* This is ugly, but for now we just fallback to something
-           * similar in non-yaru
-           */
-          icon_name = "emblem-symbolic-link";
-        }
-
-      button = gtk_button_new_from_icon_name (icon_name);
-      gtk_widget_set_tooltip_text (button, label);
-      gtk_accessible_update_property (GTK_ACCESSIBLE (button),
-                                      GTK_ACCESSIBLE_PROPERTY_LABEL,
-                                      label,
-                                      -1);
-
-      g_signal_connect_object (button, "clicked",
-                               G_CALLBACK (open_in_default_browser_cb),
-                               view, G_CONNECT_DEFAULT);
-
-      gtk_header_bar_pack_start (GTK_HEADER_BAR (headerbar), button);
-    }
-
   gtk_window_present (GTK_WINDOW (dialog));
 
   webkit_web_view_load_uri (WEBKIT_WEB_VIEW (view), uri);
@@ -281,7 +125,7 @@ gis_activate_link (GtkLabel    *label,
                    const gchar *uri,
                    GtkWidget   *any_widget)
 {
-  gis_show_qr_code_dialog (uri, any_widget, label);
-  return TRUE;
+  /* Fall back to default handler */
+  return FALSE;
 }
 #endif

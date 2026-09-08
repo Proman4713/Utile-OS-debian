@@ -8,70 +8,51 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
-"issues\n"
-"POT-Creation-Date: 2026-09-09 01:52+0300\n"
-"PO-Revision-Date: 2026-04-14 01:47+0000\n"
-"Last-Translator: Yaron <sh.yaron@gmail.com>\n"
+"issues/\n"
+"POT-Creation-Date: 2026-01-29 16:10+0000\n"
+"PO-Revision-Date: 2026-02-01 09:01+0200\n"
+"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2026-07-01 12:24+0000\n"
-"X-Generator: Launchpad (build c38ea58da9d7185c4996adfc854ab433551cdcdd)\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n==2 ? 1 : n>10 && n%10==0 ? "
+"2 : 3);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Poedit 3.8\n"
 
 #: data/gnome-initial-setup.desktop.in.in:2
-#: gnome-initial-setup/gis-driver.c:890
+#: gnome-initial-setup/gis-driver.c:869
 msgid "Initial Setup"
 msgstr "התקנה ראשונית"
 
-#: gnome-initial-setup/gis-assistant.c:425
+#: gnome-initial-setup/gis-assistant.c:401
 msgid "_Next"
 msgstr "ה_בא"
 
-#: gnome-initial-setup/gis-assistant.c:426
-msgid "_Finish"
-msgstr "_סיום"
-
-#: gnome-initial-setup/gis-assistant.c:427
+#: gnome-initial-setup/gis-assistant.c:402
 msgid "_Accept"
 msgstr "מו_סכם"
 
-#: gnome-initial-setup/gis-assistant.c:428
+#: gnome-initial-setup/gis-assistant.c:403
 msgid "_Skip"
 msgstr "ל_דלג"
 
-#: gnome-initial-setup/gis-assistant.c:429
+#: gnome-initial-setup/gis-assistant.c:404
 msgid "_Previous"
 msgstr "ה_קודם"
 
-#: gnome-initial-setup/gis-assistant.c:430
+#: gnome-initial-setup/gis-assistant.c:405
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:254
 msgid "_Cancel"
 msgstr "_ביטול"
 
-#: gnome-initial-setup/gis-webkit.c:54
-msgid "Scan the QR Code…"
-msgstr ""
-
-#: gnome-initial-setup/gis-webkit.c:244
-msgid "Open in default web browser"
-msgstr ""
-
-#: gnome-initial-setup/gis-webkit.c:247
-msgid "Open in default file handler"
-msgstr ""
-
-#: gnome-initial-setup/gnome-initial-setup.c:362
+#: gnome-initial-setup/gnome-initial-setup.c:280
 msgid "Force existing user mode"
 msgstr "אילוץ מצב משתמש קיים"
 
-#: gnome-initial-setup/gnome-initial-setup.c:364
-msgid "Force Upgrade user"
-msgstr ""
-
-#: gnome-initial-setup/gnome-initial-setup.c:378
+#: gnome-initial-setup/gnome-initial-setup.c:294
 msgid "— GNOME initial setup"
 msgstr "- הגדרות ראשוניות של GNOME"
 
@@ -97,7 +78,7 @@ msgstr "הכניסה למתחם נכשלה"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:12
 msgid "Enterprise Login"
-msgstr "כניסה ארגונית"
+msgstr "בכניסה ארגונית"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:13
 msgid ""
@@ -141,7 +122,6 @@ msgstr ""
 "שלך להזין את ססמת המתחם להלן ולבחור בשם ייחודי למחשב שלך."
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:179
-#: gnome-initial-setup/pages/account/gis-account-page-local.ui:151
 msgid "_Computer"
 msgstr "מ_חשב"
 
@@ -157,31 +137,16 @@ msgstr "ססמת המנהל"
 msgid "C_ontinue"
 msgstr "להמ_שיך"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:210
-#, c-format
-msgid "The hostname is too long."
-msgstr "שם המארח ארוך מדי."
-
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:214
-msgid "The hostname must start with a lower case letter from a-z or a digit."
-msgstr "שם המארח חייב להיפתח באות קטנה מ־a עד z או ספרה."
-
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:218
-msgid ""
-"The hostname should only consist of lower case letters from a-z, digits and "
-"a hyphen: -"
-msgstr "תוכן שם המארח אמור להיות מורכב מאותיות קטנות מ־a עד z, ספרות ומינוס: -"
-
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:545
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:321
 msgid "We need a few details to complete setup."
 msgstr "אנחנו צריכים כמה פרטים להשלמת ההתקנה."
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:704
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:476
 msgid "Administrator"
 msgstr "מנהל"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:710
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:753
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:482
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:525
 #, c-format
 msgid "Failed to create user '%s': "
 msgstr "יצירת המשתמש „%s” נכשלה: "
@@ -207,11 +172,11 @@ msgstr "נא לספק שם ושם משתמש. ניתן גם לבחור תמונ�
 msgid "_Full Name"
 msgstr "שם מ_לא"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.ui:217
+#: gnome-initial-setup/pages/account/gis-account-page-local.ui:159
 msgid "Set up _parental controls for this user"
 msgstr "הגדרת פיקוח הורים למשתמש זה_"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.ui:223
+#: gnome-initial-setup/pages/account/gis-account-page-local.ui:165
 msgid "For use by a parent or supervisor, who must set up their own password."
 msgstr "לשימוש על ידי הורה או מפקח, אשר בתורו חייב להגדיר ססמה משלו."
 
@@ -281,7 +246,7 @@ msgid "Preview"
 msgstr "תצוגה מקדימה"
 
 #: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:325
-#: gnome-initial-setup/pages/language/cc-language-chooser.c:244
+#: gnome-initial-setup/pages/language/cc-language-chooser.c:242
 msgid "More…"
 msgstr "עוד…"
 
@@ -292,7 +257,7 @@ msgstr "עוד…"
 msgid "No inputs found"
 msgstr "לא נמצא קלט"
 
-#: gnome-initial-setup/pages/keyboard/gis-keyboard-page.c:484
+#: gnome-initial-setup/pages/keyboard/gis-keyboard-page.c:502
 #: gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui:16
 msgid "Typing"
 msgstr "הקלדה"
@@ -305,11 +270,11 @@ msgstr "בחירת פריסות המקלדת שלך או שיטת קלט."
 msgid "Search keyboards and input methods"
 msgstr "חיפוש פריסות מקלדת ושיטות קלט"
 
-#: gnome-initial-setup/pages/language/cc-language-chooser.c:264
+#: gnome-initial-setup/pages/language/cc-language-chooser.c:262
 msgid "No languages found"
 msgstr "לא נמצאו שפות"
 
-#: gnome-initial-setup/pages/language/gis-language-page.c:146
+#: gnome-initial-setup/pages/language/gis-language-page.c:268
 #: gnome-initial-setup/pages/language/gis-language-page.ui:14
 msgid "Welcome"
 msgstr "ברוך בואך"
@@ -415,7 +380,7 @@ msgstr "חוזק הסיסמה: %s."
 msgid "The passwords do not match."
 msgstr "הססמאות אינן תואמות."
 
-#: gnome-initial-setup/pages/password/gis-password-page.c:427
+#: gnome-initial-setup/pages/password/gis-password-page.c:430
 msgid "Password"
 msgstr "ססמה"
 
@@ -568,58 +533,52 @@ msgstr "מצוין"
 #. Translators: the first parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu".
 #.
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:68
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:70
 #, c-format
 msgid ""
 "Sends technical reports that do not contain personal information. Data is "
-"collected by %1$s (<u><a href='%2$s'>privacy policy</a></u>)."
+"collected by %1$s (<a href='%2$s'>privacy policy</a>)."
 msgstr ""
+"שליחת דוחות טכניים שאינם מכילים מידע אישי. מידע נאסף על ידי %1$s (<a "
+"href='%2$s'>מדיניות פרטיות</a>)."
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu".
 #.
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:79
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:82
 #, c-format
 msgid ""
 "Sends technical reports that do not contain personal information. Data is "
 "collected by %s."
 msgstr "שליחת דוחות טכניים שאינם מכילים מידע אישי. מידע נאסף על ידי %s."
 
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:123
-#, c-format
-msgid ""
-"Allows apps to determine your geographical location (<u><a "
-"href='%1$s'>privacy policy</a></u>)."
-msgstr ""
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:125
+msgid "Allows apps to determine your geographical location."
+msgstr "מאפשר ליישומים לאתר את מקומך."
 
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:174
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:14
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:28
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:171
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:15
+msgid "Privacy"
+msgstr "פרטיות"
+
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:33
 msgid "Location Services"
 msgstr "שירותי איכון"
 
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:17
-msgid ""
-"Turn on location services to let applications know your geographical "
-"location."
-msgstr ""
-
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:56
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:65
 msgid "Automatic Problem Reporting"
 msgstr "דיווח בעיות אוטומטית"
 
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:99
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:134
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:138
-msgid "You can change this later in the Settings app"
-msgstr ""
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:97
+msgid "Privacy controls can be changed at any time from the Settings app."
+msgstr "ניתן לשנות את הפיקוח על הפרטיות בכל עת מיישום ההגדרות."
 
-#: gnome-initial-setup/pages/software/gis-software-page.c:123
+#: gnome-initial-setup/pages/software/gis-software-page.c:127
 #: gnome-initial-setup/pages/software/gis-software-page.ui:11
 msgid "Third-Party Repositories"
 msgstr "מאגרי צד־שלישי"
 
-#: gnome-initial-setup/pages/software/gis-software-page.c:125
+#: gnome-initial-setup/pages/software/gis-software-page.c:129
 #, c-format
 msgid ""
 "Third-party repositories provide access to additional software from selected "
@@ -630,7 +589,7 @@ msgstr ""
 "נבחרים, לרבות יישומים נפוצים וקושחות שחשובים לחלק מההתקנים. יש גם תכניות "
 "קנייניות."
 
-#: gnome-initial-setup/pages/software/gis-software-page.c:127
+#: gnome-initial-setup/pages/software/gis-software-page.c:131
 msgid ""
 "Third-party repositories provide access to additional software from selected "
 "external sources, including popular apps and drivers that are important for "
@@ -639,18 +598,26 @@ msgstr ""
 "מאגרי צד־שלישי מספקים גישה לתכניות נוספות ממקורות חיצוניים נבחרים, לרבות "
 "יישומים נפוצים וקושחות שחשובים לחלק מההתקנים. יש גם תכניות קנייניות."
 
-#: gnome-initial-setup/pages/software/gis-software-page.c:139
+#: gnome-initial-setup/pages/software/gis-software-page.c:143
 msgid "_Disable Third-Party Repositories"
 msgstr "ה_שבתת מאגרי צד־שלישי"
 
-#: gnome-initial-setup/pages/software/gis-software-page.c:144
+#: gnome-initial-setup/pages/software/gis-software-page.c:148
 msgid "_Enable Third-Party Repositories"
 msgstr "_אפשור מאגרי צד־שלישי"
+
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:211
+msgid "Setup Failed"
+msgstr "ההגדרה נכשלה"
+
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:213
+msgid "Close"
+msgstr "סגירה"
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
 #. * detect any distribution.
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:406
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:239
 #, c-format
 msgid "_Start Using %s"
 msgstr "להת_חיל להשתמש ב־%s"
@@ -658,40 +625,18 @@ msgstr "להת_חיל להשתמש ב־%s"
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
 #. * detect any distribution.
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:413
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:246
 #, c-format
 msgid "%s is ready to be used."
 msgstr "%s מוכן לשימוש."
 
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:431
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:499
-#: gnome-initial-setup/pages/summary/gis-summary-page.ui:8
-msgid "All done!"
-msgstr "הכל בוצע!"
-
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:457
-msgid "Setup Failed"
-msgstr "ההגדרה נכשלה"
-
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:459
-msgid "Close"
-msgstr "סגירה"
-
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:472
-msgid "Almost done"
-msgstr ""
-
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:568
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:270
 msgid "Setup Complete"
 msgstr "ההגדרה הושלמה"
 
-#: gnome-initial-setup/pages/summary/gis-summary-page.ui:39
-msgid "Downloading additional language packs"
-msgstr ""
-
-#: gnome-initial-setup/pages/summary/gis-summary-page.ui:47
-msgid "Cancel Download"
-msgstr ""
+#: gnome-initial-setup/pages/summary/gis-summary-page.ui:8
+msgid "All done!"
+msgstr "הכל בוצע!"
 
 #: gnome-initial-setup/pages/timezone/gis-location-entry.c:117
 msgid "Search cities"
@@ -769,427 +714,26 @@ msgstr "נא לחפש עיר סמוכה"
 #. * keep or remove. The %s is getting replaced with the name and version
 #. * of the OS, e.g. "GNOME 3.38"
 #.
-#: gnome-initial-setup/pages/welcome/gis-welcome-page.c:79
+#: gnome-initial-setup/pages/welcome/gis-welcome-page.c:62
 #, c-format
 msgid "Welcome to %s !"
 msgstr "ברוך בואך אל %s!"
 
-#: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:12
-msgid "Welcome to Ubuntu 24.04 LTS"
-msgstr "ברוך בואך לאובונטו 24.04 LTS"
-
-#: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:13
-msgid ""
-"Complete your setup with additional settings and we'll\n"
-"have you up and running in no time"
-msgstr ""
-"אפשר להשלים את ההתקנה שלך עם הגדרות נוספות ואנחנו\n"
-"נדאג להקים את כל המערכת לשימוש תוך זמן קצר"
+#: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:4
+msgid "Setup"
+msgstr "התקנה"
 
 #: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:32
-msgid "View release notes"
-msgstr "הצגת הערות הוצאה לאור"
-
-#: gnome-initial-setup/pages/apps/gis-apps-page.c:95
-msgid "Ready to go"
-msgstr "אפשר לצאת לדרך"
-
-#: gnome-initial-setup/pages/apps/gis-apps-page.blp:8
-msgid "Get started with more applications"
-msgstr "התחלת שימוש ביישומים נוספים"
-
-#: gnome-initial-setup/pages/apps/gis-apps-page.blp:9
-msgid "Ubuntu's App Center has a range of apps you can get started with."
-msgstr ""
-"במרכז היישומים של אובונטו יש מנעד רחב של יישומים שיסייעו לך להיכנס לעניינים."
-
-#: gnome-initial-setup/pages/apps/gis-apps-page.blp:28
-msgid "Open App Center"
-msgstr "פתיחת מרכז היישומים"
-
-#: gnome-initial-setup/pages/eula/gis-eula-page.blp:4
-msgid "End-User License Agreement"
-msgstr ""
-
-#. GNOME Initial Setup
-#. TRANSLATORS: The place-holder is an error message
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:73
-#, c-format
-msgid "Failed to grant consent for the Initial Setup application: %s"
-msgstr ""
-
-#. TRANSLATORS: The place-holder is an error message
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:75
-#, c-format
-msgid "Failed to withdraw consent for the Initial Setup application: %s"
-msgstr ""
-
-#. Platform source used by timed systemd collection
-#. TRANSLATORS: The place-holder is an error message
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:80
-#, c-format
-msgid "Failed to grant consent for the system data collector: %s"
-msgstr ""
-
-#. TRANSLATORS: The place-holder is an error message
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:82
-#, c-format
-msgid "Failed to withdraw consent for the system data collector: %s"
-msgstr ""
-
-#. Platform source used by release upgrader collection
-#. TRANSLATORS: The place-holder is an error message
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:87
-#, c-format
-msgid "Failed to grant consent for the release upgrader application: %s"
-msgstr ""
-
-#. TRANSLATORS: The place-holder is an error message
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:89
-#, c-format
-msgid "Failed to withdraw consent for the release upgrader application: %s"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:381
-#, c-format
 msgid ""
-"With telemetry log: %s\n"
-"Without telemetry log: %s"
+"Setup will guide you through making an account and enabling some features. "
+"We’ll have you up and running in no time."
 msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:411
-#, c-format
-msgid "Failed to collect telemetry report: %s"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:571
-#, c-format
-msgid "Failed to generate report: %s"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:589
-#, c-format
-msgid "Failed to write report: %s"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:647
-msgid "Show First Report"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:9
-#, fuzzy
-msgid "Utile Depends On It: Help Improve Ubuntu"
-msgstr "סיוע בשיפור אובונטו"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:10
-msgid ""
-"Help improve Ubuntu by sharing your system and error reports with them.\n"
-"Reports are sent anonymously."
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:31
-msgid "Share _system data with the Ubuntu team"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:32
-msgid "This includes hardware information, language and timezone"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:46
-msgid "Learn more about system reporting"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:57
-msgid "Legal notice"
-msgstr "הערה משפטית"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:68
-msgid "Show Report"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:95
-msgid "Share _error reports with the Ubuntu team"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:96
-msgid "This includes crash reports and related system logs"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:110
-msgid "Learn more about error reporting"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:148
-msgid "System Report"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-attach-page.blp:21
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:21
-msgid "Enable Ubuntu Pro"
-msgstr "הפעלת אובונטו פרו"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-attach-page.blp:29
-msgid "_Attach machine via your Ubuntu One account"
-msgstr "_צירוף המכונה הזאת דרך חשבון ה־Ubuntu One שלך"
-
-#. Translators: translators: This is the other way to attach a machine to Ubuntu Pro
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-attach-page.blp:82
-msgid "Or add a _token manually"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-attach-page.blp:117
-msgid "Token"
-msgstr "אסימון"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:54
-msgid "Upgrade this device to Ubuntu Pro. Free for personal use."
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:105
-msgid ""
-"Fulfill FedRAMP, FIPS, STIG and HIPAA and other compliance and hardening "
-"requirements with certified tooling and crypto-modules"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:130
-msgid "Enable Ubuntu Pro now, or skip this step."
-msgstr "הפעלת אובונטו פרו כעת, או לדלג על השלב הזה."
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:133
-msgid "_Enable Ubuntu Pro"
-msgstr "ה_פעלת אובונטו פרו"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:152
-msgid "_Skip for now"
-msgstr "ל_דלג לבינתיים"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:153
-msgid "You can enable Ubuntu Pro later in the Security Center"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-services-page.blp:22
-msgid "Ubuntu Pro Services"
-msgstr "שירותי אובנטו פרו"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-services-page.blp:29
-msgid "Your subscription"
-msgstr "המינוי שלך"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-services-page.blp:44
-msgid "Your enabled services"
-msgstr "השירותים שפועלים אצלך"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-services-page.blp:47
-msgid ""
-"You can change the default enablements for your token on the ubuntu.com/pro "
-"web interface. You can also change enabled services in the Settings menu or "
-"with the `<span font_family='monospace'>pro</span>` command-line."
-msgstr ""
-"אפשר לשנות את התכונות המאפשרות לאסימון שלך כברירת מחדל דרך מנשק המשתמש "
-"שב־ubuntu.com/pro. אפשר גם לשנות את השירותים הפעילים בתפריט ההגדרות או עם "
-"שורת הפקודה `<span font_family='monospace'>pro</span>`."
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-services-page.blp:53
-msgid "Other available services"
-msgstr "שירותים זמינים נוספים"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:221
-msgid "Valid token"
-msgstr "אסימון תקין"
-
-#. TRANSLATORS: The error shown when attaching an
-#. Ubuntu Pro contact fails.
-#. It may be due to various reasons, most common is
-#. an invalid token.
-#.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:236
-msgid "Invalid token or attach failure"
-msgstr "אסימון שגוי או כשל צירוף"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:244
-msgid "Code expired"
-msgstr "תוקף הקוד פג"
-
-#. TRANSLATORS: the placeholder %s is a link to ubuntu.com/pro/attach.
-#. Use HTML encoded format for special characters such as '&'.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:259
-#, c-format
-msgid "Enter this code on %s"
-msgstr "נא למלא את הקוד הזה ב־%s"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:316
-msgid "An internet connection is required to enable Ubuntu Pro"
-msgstr "צריך חיבור לאינטרנט כדי להפעיל את אובונטו פרו"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:466
-#, c-format
-msgid "Get security updates on a wide range of packages until %s"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:474
-msgid "Ubuntu Pro"
-msgstr "אובונטו פרו"
-
-#. TRANSLATORS: The anbox-cloud Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:609
-msgid "Scalable Android in the cloud"
-msgstr "Android גמיש בענן"
-
-#. TRANSLATORS: The cc-eal Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:612
-msgid "Common Criteria EAL2 Provisioning Packages"
-msgstr "חבילות פריסה של Common Criteria EAL2"
-
-#. TRANSLATORS: The esm-apps Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:615
-msgid "Expanded Security Maintenance for Applications"
-msgstr "תחזוקת אבטחה מורחבת עבור יישומים"
-
-#. TRANSLATORS: The esm-infra Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:618
-msgid "Expanded Security Maintenance for Infrastructure"
-msgstr "תחזוקת אבטחה מורחבת לתשתיות"
-
-#. TRANSLATORS: The fips Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:621
-msgid "NIST-certified FIPS crypto packages"
-msgstr "חבילות הצפנה FIPS מוסמכות NIST"
-
-#. TRANSLATORS: The fips-preview Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:624
-msgid "Preview of FIPS crypto packages undergoing certification with NIST"
-msgstr "תצוגה מקדימה של חבילות הצפנה FIPS בתהליך הסמכה מול NIST"
-
-#. TRANSLATORS: The fips-updates Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:627
-msgid "FIPS compliant crypto packages with stable security updates"
-msgstr "חבילות קריפטוגרפיות תואמות FIPS עם עדכונים אבטחה יציבים"
-
-#. TRANSLATORS: The landscape Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:630
-msgid "Management and administration tool for Ubuntu"
-msgstr "כלי ניהול ומדיניות לאובונטו"
-
-#. TRANSLATORS: The livepatch Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:633
-msgid "Canonical kernel Livepatch service"
-msgstr "שירות ההטלאה החיה של קנוניקל"
-
-#. TRANSLATORS: The realtime-kernel Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:636
-msgid "Ubuntu kernel with PREEMPT_RT patches integrated"
-msgstr "הליבה של אובונטו עם טלאי PREEMPT_RT מוטמעים בה"
-
-#. TRANSLATORS: The ros Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:639
-msgid "Security Updates for the Robot Operating System"
-msgstr "עדכוני אבטחה למערכת ההפעלה לרובוטים (ROS)"
-
-#. TRANSLATORS: The ros-updates Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:642
-msgid "All Updates for the Robot Operating System"
-msgstr "כל העדכונים למערכת ההפעלה לרובוטים (ROS)"
-
-#. TRANSLATORS: The usg Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:645
-msgid "Security compliance and audit tools"
-msgstr "תאימות אבטחה וכלי פיקוח"
-
-#. TRANSLATORS: Use HTML encoded format for special characters such as &amp' for '&'. %s is a URL.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:1230
-#, c-format
-msgid "Learn more at %s"
-msgstr ""
-
-#. TRANSLATORS: Subtitle telling who can provide the Ubuntu Pro token.
-#. Use HTML encoded format for special characters such as &amp' for '&'. %s is a URL.
-#.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:1247
-#, c-format
-msgid "From your admin, or from %s"
-msgstr ""
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:75
-msgid "Blue"
-msgstr ""
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:78
-msgid "Teal"
-msgstr ""
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:81
-msgid "Green"
-msgstr ""
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:84
-msgid "Yellow"
-msgstr ""
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:87
-msgid "Orange"
-msgstr ""
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:90
-msgid "Red"
-msgstr ""
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:93
-msgid "Pink"
-msgstr ""
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:96
-msgid "Purple"
-msgstr ""
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:99
-msgid "Slate"
-msgstr ""
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:102
-msgid "Warty Brown"
-msgstr ""
-
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:469
-msgid "Appearance"
-msgstr ""
-
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
-msgid "Choose how Ubuntu looks"
-msgstr ""
-
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
-msgid "Personalize your desktop's appearance"
-msgstr ""
-
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
-msgid "Style"
-msgstr ""
-
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:53
-msgid "_Default"
-msgstr ""
-
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:82
-msgid "Da_rk"
-msgstr ""
-
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:100
-msgid "OLED screen detected. Dark style may save power."
-msgstr ""
-
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:112
-msgid "Accent Color"
-msgstr ""
+"התקנה תדריך אותך דרך יצירת חשבון ואפשור כמה תכונות. נקבל בשבילך מערכת מוכנה "
+"ופועלת בזמן קצר."
+
+#: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:36
+msgid "_Start Setup"
+msgstr "התחלת ה_תקנה"
 
 #: po/EXTRA_STRINGS.sh:1
 msgid "Force live user mode"
@@ -1232,120 +776,398 @@ msgstr "להתנסות ב־${NAME}"
 msgid "Install ${PRETTY_NAME}"
 msgstr "להתקין את ${PRETTY_NAME}"
 
-#, c-format
-#~ msgid "Failed to show privacy policy: %s"
-#~ msgstr "הצגת מדיניות הפרטיות נכשלה: %s"
+#~ msgid "Set a Password"
+#~ msgstr "הגדרת ססמה"
 
-#~ msgid "Show the First Report"
-#~ msgstr "הצגת הדיווח הראשון"
+#~ msgid "Privacy Policy"
+#~ msgstr "מדיניות פרטיות"
+
+#~ msgid ""
+#~ "Allows apps to determine your geographical location. Uses the Mozilla "
+#~ "Location Service (<a href='https://location.services.mozilla.com/"
+#~ "privacy'>privacy policy</a>)."
+#~ msgstr ""
+#~ "מאפשר ליישומים לקבוע את המיקום הגאוגרפי שלך. עושה שימוש בשרת המיקום של "
+#~ "מוזילה (<a href='https://location.services.mozilla.com/privacy'>מדיניות "
+#~ "פרטיות</a>)."
+
+#~ msgid "Please check the name and username. You can choose a picture too."
+#~ msgstr "נא לבדוק את השם ואת שם המשתמש. ניתן גם לבחור תמונה."
+
+#~ msgid "Edit avatar"
+#~ msgstr "עריכת תמונה אישית"
+
+#~ msgid "Online Accounts"
+#~ msgstr "חשבונות מקוונים"
+
+#~ msgid "Connect Your Online Accounts"
+#~ msgstr "התחברות לחשבונות המקוונים שלך"
+
+#~ msgid ""
+#~ "Connect your accounts to easily access your email, online calendar, "
+#~ "contacts, documents and photos."
+#~ msgstr ""
+#~ "התחברות לחשבונות שלך לגישה נוחה לדוא״ל, לוח שנה מקוון, אנשי קשר, תמונות "
+#~ "ושאר מסמכים שלך."
+
+#~ msgid "Accounts can be added and removed at any time from the Settings app."
+#~ msgstr "ניתן להוסיף ולהסיר חשבונות בכל עת מיישום ההגדרות."
 
 #, c-format
-#~ msgid "Failed to get report information: %s"
-#~ msgstr "קבלת פרטי הדיווח נכשלה :%s"
+#~ msgid "%s Account"
+#~ msgstr "חשבון %s"
+
+#, c-format
+#~ msgid "%s is ready to be used. We hope that you love it!"
+#~ msgstr "‏%s מוכן לשימוש. אנו מקווים שישא חן בעיניך!"
+
+#~ msgid "Install or Try?"
+#~ msgstr "להתקין או לנסות?"
+
+#~ msgid ""
+#~ "This live media can be used to install GNOME, or it can be used to try "
+#~ "GNOME as a temporary system. Installation can be started at any time "
+#~ "using the install icon in Activities."
+#~ msgstr ""
+#~ "מדיה חיה זו יכולה לשמש להתקנת GNOME או כדי להתנסות ב־GNOME כמערת זמנית. "
+#~ "ניתן להתחיל התקנה בכל עת מסמל ההתקנה בפעילויות."
+
+#~ msgid "Try"
+#~ msgstr "להתנסות"
+
+#~ msgid "Avatar image"
+#~ msgstr "בחירת תמונה אישית"
+
+#~ msgid "Take a Picture…"
+#~ msgstr "צילום תמונה…"
+
+#~ msgid "_Confirm"
+#~ msgstr "_אישור"
+
+#~ msgid "This is a weak password."
+#~ msgstr "ססמה זו חלשה."
+
+#, c-format
+#~ msgid ""
+#~ "Sending reports of technical problems helps us to improve %s. Reports are "
+#~ "sent anonymously and are scrubbed of personal data."
+#~ msgstr ""
+#~ "שליחת דיווחים על בעיות טכניות תעזור לנו לשפר את %s. הדיווחים נשלחים "
+#~ "בעילום שם וללא מידע אישי."
+
+#, c-format
+#~ msgid "Problem data will be collected by %s:"
+#~ msgstr "מידע בעייתי יאסף על ידי %s:"
+
+#~ msgid "Uses Mozilla Location Service:"
+#~ msgstr "שימוש בשרת האיכון של מוזילה:"
+
+#~ msgid "Loading…"
+#~ msgstr "בטעינה…"
+
+#~ msgid ""
+#~ "Connecting to the Internet will enable you to set the time, add your "
+#~ "details, and enable you to access your email, calendar, and contacts. It "
+#~ "is also necessary for enterprise login accounts."
+#~ msgstr ""
+#~ "חיבור לאינטרנט יאפשר לך להגדיר את השעה, להוסיף את פרטיך, לאפשר לך לגשת "
+#~ "לדוא״ל, ללוח שנה ולאנשי הקשר שלך. קישור זה נדרש גם לחשבונות כניסה ארגונית."
+
+#~ msgid "Disable image"
+#~ msgstr "ביטול התמונה"
+
+#~ msgid "Take a photo..."
+#~ msgstr "צילום תמונה…"
+
+#~ msgid "A user with the username '%s' already exists."
+#~ msgstr "משתמש בשם '%s' כבר קיים."
+
+#~ msgid "License Agreements"
+#~ msgstr "הסכמי רישוי"
+
+#~ msgid ""
+#~ "I have _agreed to the terms and conditions in this end user license "
+#~ "agreement."
+#~ msgstr "הס_כמתי לתנאי השימוש בהסכם רישוי משתמש קצה זה."
+
+#~ msgid "_Verify"
+#~ msgstr "אי_מות"
+
+#~ msgctxt "Password hint"
+#~ msgid ""
+#~ "This is a weak password. Try to add more letters, numbers and symbols."
+#~ msgstr "זו ססמה חלשה. כדאי להוסיף תווים, מספרים וסימנים."
+
+#~ msgctxt "Password strength"
+#~ msgid "Strength: Weak"
+#~ msgstr "חוזק: חלשה"
+
+#~ msgctxt "Password strength"
+#~ msgid "Strength: Low"
+#~ msgstr "חוזק: חלשה"
+
+#~ msgctxt "Password strength"
+#~ msgid "Strength: Medium"
+#~ msgstr "חוזק: בינונית"
+
+#~ msgctxt "Password strength"
+#~ msgid "Strength: Good"
+#~ msgstr "חוזק: טובה"
+
+#~ msgctxt "Password strength"
+#~ msgid "Strength: High"
+#~ msgstr "חוזק: גבוהה"
+
+#~ msgid "No regions found"
+#~ msgstr "לא נמצאו אזורים"
+
+#~ msgid "Region"
+#~ msgstr "אזור"
+
+#~ msgid "Choose your country or region."
+#~ msgstr "בחירת המדינה או האזור שלך."
+
+#~ msgid "Ready to Go"
+#~ msgstr "מוכן לשימוש"
+
+#~ msgid "You're ready to go!"
+#~ msgstr "הכול מוכן לצאת לדרך!"
+
+#~ msgid ""
+#~ "Proprietary software sources provide access to additional software, "
+#~ "including web browsers and games. This software typically has "
+#~ "restrictions on use and access to source code, and is not provided by %s."
+#~ msgstr ""
+#~ "מקורת תכנה קניינית מספקות גישה לתכנות נוספות, לרבות דפדפנים ומשחקים. לרוב "
+#~ "לתכנות אלה הגבלות בשימוש ובגישה לקוד המקור, ואינן מסופקות על ידי %s."
+
+#~ msgid "Software Sources"
+#~ msgstr "מקורות תכנה"
+
+#~ msgid "Additional Software Sources"
+#~ msgstr "מקורות תכנה נוספים"
+
+#~ msgid "<a href=\"more\">Find out more…</a>"
+#~ msgstr "<a href=\"more\">למידע נוסף…</a>"
+
+#~ msgid "Proprietary Software Sources"
+#~ msgstr "מקורות תכנה קניינית"
+
+#~ msgid ""
+#~ "Proprietary software typically has restrictions on how it can be used and "
+#~ "on access to source code. This prevents anyone but the software owner "
+#~ "from inspecting, improving or learning from its code."
+#~ msgstr ""
+#~ "לרוב לתכנה קניינית יש הגבלות בשימוש ובגישה לקוד המקור. זה מונע כל אחד "
+#~ "מלבד בעלי התכנה מבדיקה, שיפור או למידה מהקוד שלה."
+
+#~ msgid ""
+#~ "In contrast, Free Software can be freely run, copied, distributed, "
+#~ "studied and modified."
+#~ msgstr ""
+#~ "בניגוד לכך, תכנה חופשית ניתנת להרצה, העתקה, הפצה, למידה ושינוי באופן "
+#~ "חופשי."
+
+#~ msgid "Are these the right details? You can change them if you want."
+#~ msgstr "האם אלה הפרטים הנכונים? ניתן לשנות אותם אם זהו רצונך."
+
+#~ msgid "You can review your online accounts (and add others) after setup."
+#~ msgstr "ניתן לסקור את החשבונות המקוונים שלך (ולהוסיף אחרים) לאחר ההתקנה."
+
+#~ msgid ""
+#~ "We think that your time zone is %s. Press Next to continue or search for "
+#~ "a city to manually set the time zone."
+#~ msgstr ""
+#~ "אנו סבורים כי אזור הזמן שלך הוא %s. ניתן ללחוץ על הבא כדי להמשיך או לחפש "
+#~ "אחר עיר כדי להגדיר את אזור הזמן ידנית."
 
 #~ msgid "Cancel"
 #~ msgstr "ביטול"
 
-#~ msgid "You can change your mind later in Settings → Privacy → Diagnostics."
-#~ msgstr "א"
+#~ msgid "Your username cannot be changed after setup."
+#~ msgstr "שם המשתמש שלך לא יהיה ניתן לשינוי לאחר ההתקנה."
 
-#~ msgid "Ubuntu Report Contents"
-#~ msgstr "דיווח על תוכן באובונטו"
-
-#~ msgid "From your admin, or from ubuntu.com/pro"
-#~ msgstr "דרך הנהלת המערכת או דרך ubuntu.com/pro"
-
-#~ msgid "Privacy controls can be changed at any time from the Settings app."
-#~ msgstr "ניתן לשנות את הפיקוח על הפרטיות בכל עת מיישום ההגדרות."
-
-#, c-format
-#~ msgid "Failed to send report decline: %s"
-#~ msgstr "שליחת סירוב דוח נכשלה: %s"
-
-#, c-format
-#~ msgid "Failed to send report information: %s"
-#~ msgstr "שליחת פרטי דוח נכשלה: %s"
-
-#, c-format
 #~ msgid ""
-#~ "Turn on location services to let applications know your geographical "
-#~ "location. You can change this anytime in System Settings."
+#~ "In order to use enterprise logins, this computer needs to be enrolled in "
+#~ "the domain. Please have your network administrator type their domain "
+#~ "password here, and choose a unique computer name for your computer."
 #~ msgstr ""
-#~ "להפעיל שירותי מיקום כדי לאפשר ליישומים לדעת מה מיקומך. אפשר לשנות את זה "
-#~ "בכל עת דרך הגדרות המערכת."
+#~ "כדי להשתמש בכניסה ארגונית על מחשב זה להיות רשום במתחם. נא לבקש ממנהל הרשת "
+#~ "שלך להזין את ססמת המתחם להלן ולבחור בשם ייחודי למחשב שלך."
 
-#~ msgid "Location services"
-#~ msgstr "שירותי מיקום"
+#~ msgid "No password"
+#~ msgstr "ללא ססמה"
 
-#~ msgid "Data privacy"
-#~ msgstr "פרטיות נתונים"
+#~ msgctxt "Password strength"
+#~ msgid "Too short"
+#~ msgstr "קצרה מדי"
 
-#~ msgid "Yes, share system data with the Ubuntu team"
-#~ msgstr "כן, לשתף את נתוני המערכת עם הצוות של אובונטו"
+#~ msgctxt "Password strength"
+#~ msgid "Not good enough"
+#~ msgstr "לא טובה מספיק"
 
-#~ msgid "No, don't share system data"
-#~ msgstr "לא, לא לשתף את נתוני המערכת"
+#~ msgctxt "Password strength"
+#~ msgid "Weak"
+#~ msgstr "חלשה"
 
-#, c-format
-#~ msgid ""
-#~ "Help us improve Ubuntu by sharing your system data with us. This includes "
-#~ "things like your machine model, installed software and the location you "
-#~ "chose for your timezone."
-#~ msgstr ""
-#~ "נשמח לעזרתך בשיפור אובונטו על ידי שיתוף נתוני המערכת של איתנו. לרבות "
-#~ "דברים כמו דגם המכונה שלך, התוכנות שמותקנות אצלך והמקום שבחרת כאזור זמן."
+#~ msgctxt "Password strength"
+#~ msgid "Fair"
+#~ msgstr "סבירה"
 
-#~ msgid "Or add _token manually"
-#~ msgstr "או להוסיף _אסימון ידנית"
+#~ msgctxt "Password strength"
+#~ msgid "Good"
+#~ msgstr "טובה"
 
-#~ msgid "Learn more at <a href=\"https://ubuntu.com/pro\">ubuntu.com/pro</a>."
-#~ msgstr "מידע נוסף ב־<a href=\"https://ubuntu.com/pro\">ubuntu.com/pro</a>."
+#~ msgid "Login"
+#~ msgstr "כניסה"
 
-#~ msgid "Upgrade this machine to Ubuntu Pro. Free for up to 5 machines."
-#~ msgstr "אפשר לשדרג את המכונה הזאת לאובונטו פרו. חינם עד 5 מכונות."
+#~ msgid "Create a Local Account"
+#~ msgstr "יצירת חשבון מקומי"
 
-#~ msgid "Get security updates on a wide range of packages until 2034"
-#~ msgstr "קבלת עדכוני אבטחה למגוון רחב של חבילות עד 2034"
+#~ msgid "page 1"
+#~ msgstr "עמוד 1"
 
-#~ msgid ""
-#~ "You can always enable Ubuntu Pro later via the Software & Updates "
-#~ "application"
-#~ msgstr "תמיד אפשר להפעיל את אובונטו פרו בהמשך דרך היישום תוכנה ועדכונים"
+#~ msgid "Create an Enterprise Account"
+#~ msgstr "יצירת חשבון ארגוני"
 
-#~ msgid ""
-#~ "Fulfill FedRAMP, FIPS, STIG and HIPAA and other compliance and hardening "
-#~ "requirements with certified tooling and crypto-modules."
-#~ msgstr ""
-#~ "עמידה בדרישות תאימות והקשחה של FedRAMP,‏ FIPS,‏ STIG,‏ HIPAA ועוד עם כלים "
-#~ "ומודולי הצפנה שהוסמכו."
+#~ msgctxt "Online Account"
+#~ msgid "Other"
+#~ msgstr "אחר"
 
-#~ msgid ""
-#~ "Upgrade this machine to Ubuntu Pro for security updates on a much wider "
-#~ "range of packages, until 2034. Fulfill FedRAMP, FIPS, STIG and HIPAA and "
-#~ "other compliance and hardening requirements with certified tooling and "
-#~ "crypto-modules. Free for up to 5 machines.\n"
-#~ "\n"
-#~ "More information on <a href=\"https://ubuntu.com/pro\">ubuntu.com/pro</a>."
-#~ msgstr ""
-#~ "אפשר לשדרג את המכונה הזאת ל־Ubuntu Pro כדי לקבל עדכונים למגוון משמעותית "
-#~ "רחב יותר של חבילות, עד 2034. כך ניתן לעמוד בדרישות תאימות והקשחה FedRAMP,‏ "
-#~ "FIPS,‏ STIG ו־ HIPAA עם כלים שהוסמכו ומודולי הצפנה. חינם עד 5 מכונות.\n"
-#~ "\n"
-#~ "יש מידע נוסף ב־<a href=\"https://ubuntu.com/pro\">ubuntu.com/pro</a>."
+#~ msgid "Mail"
+#~ msgstr "דואר"
 
-#~ msgid "Downloading language packs…"
-#~ msgstr "חבילות השפה מתקבלות…"
+#~ msgid "Contacts"
+#~ msgstr "אנשי קשר"
 
-#~ msgid "Canceled additional downloads"
-#~ msgstr "הורדות נוספות בוטלו"
+#~ msgid "Chat"
+#~ msgstr "צ׳אט"
 
-#~ msgid "Unable to download additional language packs"
-#~ msgstr "לא ניתן להוריד חבילות שפה נוספות"
+#~ msgid "Resources"
+#~ msgstr "משאבים"
 
-#, c-format
-#~ msgid ""
-#~ "Sends technical reports that do not contain personal information. Data is "
-#~ "collected by %1$s (<a href='%2$s'>privacy policy</a>)."
-#~ msgstr ""
-#~ "שליחת דוחות טכניים שאינם מכילים מידע אישי. מידע נאסף על ידי %1$s (<a "
-#~ "href='%2$s'>מדיניות פרטיות</a>)."
+#~ msgid "Error creating account"
+#~ msgstr "שגיאה ביצירת חשבון"
+
+#~ msgid "Error removing account"
+#~ msgstr "שגיאה בהסרת חשבון"
+
+#~ msgid "Are you sure you want to remove the account?"
+#~ msgstr "האם אכן ברצונך להסיר את החשבון?"
+
+#~ msgid "This will not remove the account on the server."
+#~ msgstr "פעולה זו לא תסיר את החשבון מהשרת."
+
+#~ msgid "_Remove"
+#~ msgstr "ה_סרה"
+
+#~ msgid "Connect to your existing data in the cloud"
+#~ msgstr "ניתן להתחבר לנתונים הנוכחיים שלך בענן"
+
+#~ msgid "_Add Account"
+#~ msgstr "הו_ספת חשבון"
+
+#~ msgid "Other"
+#~ msgstr "אחר"
+
+#~ msgid "Add an Input Source"
+#~ msgstr "הוספת מקור קלט"
+
+#~ msgid "Search for a location"
+#~ msgstr "חיפוש אחר מיקום"
+
+#~ msgid "_Determine your location automatically"
+#~ msgstr "_איתור המיקום שלך אוטומטית"
+
+#~ msgid "No network devices found."
+#~ msgstr "לא נמצא התקן רשת."
+
+#~ msgid "Thank You"
+#~ msgstr "תודה רבה לך"
+
+#~ msgid "You may change these options at any time in Settings."
+#~ msgstr "ניתן לשנות כל אחת מאפשרויות אלה בכל עת דרך ההגדרות."
+
+#~ msgid "_Start using GNOME 3"
+#~ msgstr "להת_חיל להשתמש ב־GNOME 3"
+
+#~ msgid "Login settings are used by all users when logging into the system"
+#~ msgstr "הגדרות הכניסה משמשות את כל המשתמשים בעת הכניסה למערכת"
+
+#~ msgid "Select input sources"
+#~ msgstr "נא לבחור במקורות קלט"
+
+#~ msgid "_Back"
+#~ msgstr "ה_קודם"
+
+#~ msgid "Unspecified"
+#~ msgstr "לא צוינה"
+
+#~ msgid "_Use Local Login"
+#~ msgstr "שימוש בחשבון מ_קומי"
+
+#~ msgid "Keyboard Layout"
+#~ msgstr "פריסת מקלדת"
+
+#~ msgid "Remove Input Source"
+#~ msgstr "הסרת מקור קלט"
+
+#~ msgid "Move Input Source Up"
+#~ msgstr "הגבהת מקור הקלט"
+
+#~ msgid "Input Source Settings"
+#~ msgstr "הגדרות מקור הקלט"
+
+#~ msgid "Select an input source"
+#~ msgstr "נא לבחור במקור קלט"
+
+#~ msgid "English"
+#~ msgstr "אנגלית"
+
+#~ msgid "British English"
+#~ msgstr "אנגלית בריטית"
+
+#~ msgid "German"
+#~ msgstr "גרמנית"
+
+#~ msgid "French"
+#~ msgstr "צרפתית"
+
+#~ msgid "Spanish"
+#~ msgstr "ספרדית"
+
+#~ msgid "Chinese (simplified)"
+#~ msgstr "סינית (מפושטת)"
+
+#~ msgid "Use %s"
+#~ msgstr "שימוש ב%s"
+
+#~ msgid "_Login Name"
+#~ msgstr "שם ה_כניסה"
+
+#~ msgid "Remove"
+#~ msgstr "הסרה"
+
+#~ msgid "Link other accounts"
+#~ msgstr "קישור לחשבונות באחרים"
+
+#~ msgid "Enjoy GNOME!"
+#~ msgstr "שיהיה לך בכיף עם GNOME!"
+
+#~ msgid "New to GNOME 3 and need help finding your way around?"
+#~ msgstr "עדיין לא ערכת היכרות עם GNOME 3 ודרושה לך עזרה כדי להתמצא?"
+
+#~ msgid "Choose How to Login"
+#~ msgstr "נא לבחור באופן הכניסה"
+
+#~ msgid "Show _all"
+#~ msgstr "הצגת ה_כול"
+
+#~ msgid "_Done"
+#~ msgstr "_בוצע"
+
+#~ msgid "_Require a password to use this account"
+#~ msgstr "_דרישת ססמה לצורך שימוש בחשבון זה"
+
+#~ msgid "_Act as administrator of this computer"
+#~ msgstr "הת_נהגות כמנהל המחשב"

@@ -37,8 +37,7 @@ struct _GisPrivacyPage
 {
   GisPage parent;
 
-  GtkWidget *header;
-  GtkWidget *location_switch_row;
+  GtkWidget *location_switch;
   GtkWidget *location_privacy_label;
   GtkWidget *reporting_group;
   GtkWidget *reporting_label;
@@ -55,23 +54,27 @@ update_os_data (GisPrivacyPage *page)
 {
   g_autofree char *name = g_get_os_info (G_OS_INFO_KEY_NAME);
   g_autofree char *subtitle = NULL;
+#ifdef HAVE_WEBKITGTK
   g_autofree char *privacy_policy = g_get_os_info (G_OS_INFO_KEY_PRIVACY_POLICY_URL);
+#endif
 
   if (!name)
     return FALSE;
 
+#ifdef HAVE_WEBKITGTK
   if (privacy_policy)
     {
       /* Translators: the first parameter here is the name of a distribution,
        * like "Fedora" or "Ubuntu".
        */
       subtitle = g_strdup_printf (_("Sends technical reports that do not contain personal information. "
-                                    "Data is collected by %1$s (<u><a href='%2$s'>privacy policy</a></u>)."),
+                                    "Data is collected by %1$s (<a href='%2$s'>privacy policy</a>)."),
                                     name, privacy_policy);
       gtk_label_set_markup (GTK_LABEL (page->reporting_label), subtitle);
 
       return TRUE;
     }
+#endif
 
   /* Translators: the parameter here is the name of a distribution,
    * like "Fedora" or "Ubuntu".
@@ -107,7 +110,6 @@ static void
 gis_privacy_page_constructed (GObject *object)
 {
   GisPrivacyPage *page = GIS_PRIVACY_PAGE (object);
-  g_autofree char *location_privacy_text = NULL;
 
   G_OBJECT_CLASS (gis_privacy_page_parent_class)->constructed (object);
 
@@ -116,16 +118,11 @@ gis_privacy_page_constructed (GObject *object)
   page->location_settings = g_settings_new ("org.gnome.system.location");
   page->privacy_settings = g_settings_new ("org.gnome.desktop.privacy");
 
-  adw_switch_row_set_active (ADW_SWITCH_ROW (page->location_switch_row), FALSE);
+  gtk_switch_set_active (GTK_SWITCH (page->location_switch), TRUE);
   gtk_switch_set_active (GTK_SWITCH (page->reporting_switch), TRUE);
 
-  location_privacy_text = g_strdup_printf (
-    _("Allows apps to determine your geographical location "
-      "(<u><a href='%1$s'>privacy policy</a></u>)."),
-      "https://beacondb.net/privacy");
-
   gtk_label_set_label (GTK_LABEL (page->location_privacy_label),
-                       location_privacy_text);
+                       _("Allows apps to determine your geographical location."));
 
   if (update_os_data (page))
     {
@@ -159,7 +156,7 @@ gis_privacy_page_apply (GisPage *gis_page,
   GisPrivacyPage *page = GIS_PRIVACY_PAGE (gis_page);
   gboolean active;
 
-  active = gtk_widget_is_visible (page->location_switch_row) && adw_switch_row_get_active (ADW_SWITCH_ROW (page->location_switch_row));
+  active = gtk_widget_is_visible (page->location_switch) && gtk_switch_get_active (GTK_SWITCH (page->location_switch));
   g_settings_set_boolean (page->location_settings, "enabled", active);
 
   active = gtk_widget_is_visible (page->reporting_switch) && gtk_switch_get_active (GTK_SWITCH (page->reporting_switch));
@@ -171,14 +168,14 @@ gis_privacy_page_apply (GisPage *gis_page,
 static void
 gis_privacy_page_locale_changed (GisPage *page)
 {
-  gis_page_set_title (GIS_PAGE (page), _("Location Services"));
+  gis_page_set_title (GIS_PAGE (page), _("Privacy"));
 }
 
 static void
 gis_privacy_page_shown (GisPage *gis_page)
 {
   GisPrivacyPage *page = GIS_PRIVACY_PAGE (gis_page);
-  gtk_widget_grab_focus (GTK_WIDGET (page->header));
+  gtk_widget_grab_focus (GTK_WIDGET (page->location_switch));
 }
 
 static void
@@ -188,8 +185,7 @@ gis_privacy_page_class_init (GisPrivacyPageClass *klass)
   GObjectClass *object_class = G_OBJECT_CLASS (klass);
 
   gtk_widget_class_set_template_from_resource (GTK_WIDGET_CLASS (klass), "/org/gnome/initial-setup/gis-privacy-page.ui");
-  gtk_widget_class_bind_template_child (GTK_WIDGET_CLASS (klass), GisPrivacyPage, header);
-  gtk_widget_class_bind_template_child (GTK_WIDGET_CLASS (klass), GisPrivacyPage, location_switch_row);
+  gtk_widget_class_bind_template_child (GTK_WIDGET_CLASS (klass), GisPrivacyPage, location_switch);
   gtk_widget_class_bind_template_child (GTK_WIDGET_CLASS (klass), GisPrivacyPage, location_privacy_label);
   gtk_widget_class_bind_template_child (GTK_WIDGET_CLASS (klass), GisPrivacyPage, reporting_group);
   gtk_widget_class_bind_template_child (GTK_WIDGET_CLASS (klass), GisPrivacyPage, reporting_label);

@@ -7,72 +7,49 @@
 # Asier Saratsua Garmendia  <asiersarasua@ni.eus>, 2025, 2026.
 #
 msgid ""
-msgstr ""
-"Project-Id-Version: gnome-initial-setup master\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
-"issues\n"
-"POT-Creation-Date: 2026-09-09 01:52+0300\n"
-"PO-Revision-Date: 2026-04-14 01:46+0000\n"
-"Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
+msgstr "Project-Id-Version: gnome-initial-setup master\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/issues/\n"
+"POT-Creation-Date: 2026-01-29 16:10+0000\n"
+"PO-Revision-Date: 2026-02-16 10:00+0100\n"
+"Last-Translator: Asier Saratsua Garmendia <asiersarasua@ni.eus>\n"
 "Language-Team: Basque <librezale@librezale.eus>\n"
 "Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2026-07-01 12:24+0000\n"
-"X-Generator: Launchpad (build c38ea58da9d7185c4996adfc854ab433551cdcdd)\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: data/gnome-initial-setup.desktop.in.in:2
-#: gnome-initial-setup/gis-driver.c:890
+#: gnome-initial-setup/gis-driver.c:869
 msgid "Initial Setup"
 msgstr "Hasierako konfigurazioa"
 
-#: gnome-initial-setup/gis-assistant.c:425
+#: gnome-initial-setup/gis-assistant.c:401
 msgid "_Next"
 msgstr "_Hurrengoa"
 
-#: gnome-initial-setup/gis-assistant.c:426
-msgid "_Finish"
-msgstr "_Amaitu"
-
-#: gnome-initial-setup/gis-assistant.c:427
+#: gnome-initial-setup/gis-assistant.c:402
 msgid "_Accept"
 msgstr "_Onartu"
 
-#: gnome-initial-setup/gis-assistant.c:428
+#: gnome-initial-setup/gis-assistant.c:403
 msgid "_Skip"
 msgstr "_Saltatu"
 
-#: gnome-initial-setup/gis-assistant.c:429
+#: gnome-initial-setup/gis-assistant.c:404
 msgid "_Previous"
 msgstr "_Aurrekoa"
 
-#: gnome-initial-setup/gis-assistant.c:430
+#: gnome-initial-setup/gis-assistant.c:405
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:254
 msgid "_Cancel"
 msgstr "_Utzi"
 
-#: gnome-initial-setup/gis-webkit.c:54
-msgid "Scan the QR Code…"
-msgstr "Eskaneatu QR kodea…"
-
-#: gnome-initial-setup/gis-webkit.c:244
-msgid "Open in default web browser"
-msgstr "Ireki web nabigatzaile lehenetsian"
-
-#: gnome-initial-setup/gis-webkit.c:247
-msgid "Open in default file handler"
-msgstr "Ireki fitxategi-kudeatzaile lehenetsian"
-
-#: gnome-initial-setup/gnome-initial-setup.c:362
+#: gnome-initial-setup/gnome-initial-setup.c:280
 msgid "Force existing user mode"
 msgstr "Behartu dagoen erabiltzaile-modura"
 
-#: gnome-initial-setup/gnome-initial-setup.c:364
-msgid "Force Upgrade user"
-msgstr ""
-
-#: gnome-initial-setup/gnome-initial-setup.c:378
+#: gnome-initial-setup/gnome-initial-setup.c:294
 msgid "— GNOME initial setup"
 msgstr "— GNOMEren hasierako konfigurazioa"
 
@@ -105,10 +82,7 @@ msgid ""
 "Enterprise login allows an existing centrally managed user account to be "
 "used on this device. You can also use this account to access company "
 "resources on the internet."
-msgstr ""
-"Enpresako saio-hasieran baimenduta dago erabiltzaileen kontu zentralizatua "
-"erabiltzea gailu honetan. Kontu hau enpresaren interneteko baliabideak "
-"atzitzeko ere erabil dezakezu."
+msgstr "Enpresako saio-hasieran baimenduta dago erabiltzaileen kontu zentralizatua erabiltzea gailu honetan. Kontu hau enpresaren interneteko baliabideak atzitzeko ere erabil dezakezu."
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:27
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:153
@@ -138,14 +112,9 @@ msgid ""
 "In order to use enterprise logins, this computer needs to be enrolled in a "
 "domain. Please have your network administrator type the domain password "
 "here, and choose a unique computer name for your computer."
-msgstr ""
-"Enpresako saio-hasierak erabili ahal izateko, ordenagailu hau domeinuari "
-"elkartu behar zaio. Sareko administratzaileak idatz dezala domeinuaren "
-"pasahitza hemen, eta aukeratu ordenagailu bakar baten izena ordenagailu "
-"honentzako."
+msgstr "Enpresako saio-hasierak erabili ahal izateko, ordenagailu hau domeinuari elkartu behar zaio. Sareko administratzaileak idatz dezala domeinuaren pasahitza hemen, eta aukeratu ordenagailu bakar baten izena ordenagailu honentzako."
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:179
-#: gnome-initial-setup/pages/account/gis-account-page-local.ui:151
 msgid "_Computer"
 msgstr "_Ordenagailua"
 
@@ -161,35 +130,16 @@ msgstr "Administratzailearen pasahitza"
 msgid "C_ontinue"
 msgstr "_Jarraitu"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:210
-#, c-format
-msgid "The hostname is too long."
-msgstr "Ostalari-izena luzeegia da."
-
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:214
-msgid "The hostname must start with a lower case letter from a-z or a digit."
-msgstr ""
-"Ostalari-izena a-tik z-rako hizki xehe batekin edo digitu batekin hasi behar "
-"da."
-
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:218
-msgid ""
-"The hostname should only consist of lower case letters from a-z, digits and "
-"a hyphen: -"
-msgstr ""
-"Ostalari-izenak a-tik z-rako hizki xeheak, digituak eta gidoiak (-) soilik "
-"izan ditzake."
-
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:545
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:321
 msgid "We need a few details to complete setup."
 msgstr "Xehetasun gutxi batzuk behar dira konfigurazioa amaitzeko."
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:704
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:476
 msgid "Administrator"
 msgstr "Administratzailea"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:710
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:753
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:482
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:525
 #, c-format
 msgid "Failed to create user '%s': "
 msgstr "Huts egin du '%s' erabiltzailea sortzeak: "
@@ -215,15 +165,13 @@ msgstr "Eman izena eta erabiltzaile-izena. Argazki bat ere aukera dezakezu."
 msgid "_Full Name"
 msgstr "_Izen osoa"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.ui:217
+#: gnome-initial-setup/pages/account/gis-account-page-local.ui:159
 msgid "Set up _parental controls for this user"
 msgstr "Konfiguratu _gurasoen kontrola erabiltzaile honentzat"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.ui:223
+#: gnome-initial-setup/pages/account/gis-account-page-local.ui:165
 msgid "For use by a parent or supervisor, who must set up their own password."
-msgstr ""
-"Guraso edo gainbegirale batek erabiltzeko, bere pasahitz propioa izan behar "
-"du."
+msgstr "Guraso edo gainbegirale batek erabiltzeko, bere pasahitz propioa izan behar du."
 
 #: gnome-initial-setup/pages/account/gis-account-page.ui:32
 msgid "_Enterprise Login"
@@ -278,9 +226,7 @@ msgstr "Erabiltzaile-izen hori ez dago erabilgarri. Saiatu beste batekin."
 msgid ""
 "The username should only consist of lower case letters from a-z, digits, and "
 "the following characters: - _"
-msgstr ""
-"Erabiltzaile-izenak honako karaktereak soilik eduki ditzake:  alfabetoko a-z "
-"arteko hizki minuskulak, digituak eta '.', '-' eta '_' karaktereak."
+msgstr "Erabiltzaile-izenak honako karaktereak soilik eduki ditzake:  alfabetoko a-z arteko hizki minuskulak, digituak eta '.', '-' eta '_' karaktereak."
 
 #: gnome-initial-setup/pages/account/um-utils.c:169
 msgid "This will be used to name your home folder and can’t be changed."
@@ -291,7 +237,7 @@ msgid "Preview"
 msgstr "Aurrebista"
 
 #: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:325
-#: gnome-initial-setup/pages/language/cc-language-chooser.c:244
+#: gnome-initial-setup/pages/language/cc-language-chooser.c:242
 msgid "More…"
 msgstr "Gehiago…"
 
@@ -302,7 +248,7 @@ msgstr "Gehiago…"
 msgid "No inputs found"
 msgstr "Ez da sarrerarik aurkitu"
 
-#: gnome-initial-setup/pages/keyboard/gis-keyboard-page.c:484
+#: gnome-initial-setup/pages/keyboard/gis-keyboard-page.c:502
 #: gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui:16
 msgid "Typing"
 msgstr "Idazketa"
@@ -315,16 +261,17 @@ msgstr "Hautatu teklatuaren diseinua edo sarrerako metodoa."
 msgid "Search keyboards and input methods"
 msgstr "Bilatu teklatuak eta sarrerako metodoak"
 
-#: gnome-initial-setup/pages/language/cc-language-chooser.c:264
+#: gnome-initial-setup/pages/language/cc-language-chooser.c:262
 msgid "No languages found"
 msgstr "Ez da hizkuntzarik aurkitu"
 
-#: gnome-initial-setup/pages/language/gis-language-page.c:146
+#: gnome-initial-setup/pages/language/gis-language-page.c:268
 #: gnome-initial-setup/pages/language/gis-language-page.ui:14
 msgid "Welcome"
 msgstr "Ongi etorri"
 
 #: gnome-initial-setup/pages/language/gis-language-page.ui:41
+#| msgid "Select a language from the list, or search an specific language."
 msgid "Select a language from the list, or search for a specific language."
 msgstr "Hautatu hizkuntza bat zerrendatik, edo bilatu hizkuntza jakin bat."
 
@@ -369,10 +316,7 @@ msgstr "Wifia"
 msgid ""
 "Connecting to the internet helps you get new apps, information, and other "
 "upgrades. It also helps set the time and your location automatically."
-msgstr ""
-"Internetera konektatuz gero, app berriak, informazioa eta beste eguneratze "
-"batzuk jasoko dituzu. Zure kokapena eta ordu-zona automatikoki ezartzen ere "
-"laguntzen du."
+msgstr "Internetera konektatuz gero, app berriak, informazioa eta beste eguneratze batzuk jasoko dituzu. Zure kokapena eta ordu-zona automatikoki ezartzen ere laguntzen du."
 
 #: gnome-initial-setup/pages/network/gis-network-page.ui:57
 msgid "No wireless available"
@@ -390,8 +334,7 @@ msgstr "Gurasoen kontrola %s erabiltzailearentzat"
 
 #: gnome-initial-setup/pages/parental-controls/gis-parental-controls-page.c:108
 msgid "Set restrictions on what this user can run or install."
-msgstr ""
-"Ezarri mugak erabiltzaile horrek exekutatu edo instalatu dezakeen inguruan."
+msgstr "Ezarri mugak erabiltzaile horrek exekutatu edo instalatu dezakeen inguruan."
 
 #: gnome-initial-setup/pages/parental-controls/gis-parental-controls-page.c:215
 msgid "Parental Controls"
@@ -415,9 +358,7 @@ msgstr "Ezarri gurasoen pasahitz bat"
 #: gnome-initial-setup/pages/password/gis-password-page.c:101
 #, c-format
 msgid "This password will control access to the parental controls for %s."
-msgstr ""
-"Pasahitz honek gurasoen kontrolaren atzipena kontrolatuko du %s "
-"erabiltzailearentzat"
+msgstr "Pasahitz honek gurasoen kontrolaren atzipena kontrolatuko du %s erabiltzailearentzat"
 
 #: gnome-initial-setup/pages/password/gis-password-page.c:223
 #, c-format
@@ -429,7 +370,7 @@ msgstr "Pasahitzaren sendotasuna: %s."
 msgid "The passwords do not match."
 msgstr "Pasahitzak ez datoz bat."
 
-#: gnome-initial-setup/pages/password/gis-password-page.c:427
+#: gnome-initial-setup/pages/password/gis-password-page.c:430
 msgid "Password"
 msgstr "Pasahitza"
 
@@ -455,9 +396,7 @@ msgctxt "Password hint"
 msgid ""
 "This password is very similar to your last one. Try changing some letters "
 "and numbers."
-msgstr ""
-"Pasahitz hau erabilitako azkenaren oso antzekoa da. Saiatu hizki eta zenbaki "
-"batzuk aldatzen."
+msgstr "Pasahitz hau erabilitako azkenaren oso antzekoa da. Saiatu hizki eta zenbaki batzuk aldatzen."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:85
 #: gnome-initial-setup/pages/password/pw-utils.c:93
@@ -465,17 +404,13 @@ msgctxt "Password hint"
 msgid ""
 "This password is very similar to your last one. Try changing the password a "
 "bit more."
-msgstr ""
-"Pasahitz hau erabilitako azkenaren oso antzekoa da. Saiatu pasahitza pixka "
-"bat gehiago aldatzen."
+msgstr "Pasahitz hau erabilitako azkenaren oso antzekoa da. Saiatu pasahitza pixka bat gehiago aldatzen."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:87
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. A password without your user name would be stronger."
-msgstr ""
-"Pasahitza ahula da. Zure erabiltzaile-izenik gabeko pasahitz bat askoz ere "
-"sendoagoa litzateke."
+msgstr "Pasahitza ahula da. Zure erabiltzaile-izenik gabeko pasahitz bat askoz ere sendoagoa litzateke."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:89
 msgctxt "Password hint"
@@ -487,8 +422,7 @@ msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to avoid some of the words included in the "
 "password."
-msgstr ""
-"Pasahitza ahula da. Saiatu ez erabiltzen pasahitzean sartutako hitz batzuk."
+msgstr "Pasahitza ahula da. Saiatu ez erabiltzen pasahitzean sartutako hitz batzuk."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:95
 msgctxt "Password hint"
@@ -520,18 +454,14 @@ msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to use more special characters, like "
 "punctuation."
-msgstr ""
-"Pasahitza ahula da. Saiatu karaktere berezi gehiago erabiltzen, adibidez "
-"harridura-ikurrak."
+msgstr "Pasahitza ahula da. Saiatu karaktere berezi gehiago erabiltzen, adibidez harridura-ikurrak."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:107
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to use a mixture of letters, numbers and "
 "punctuation."
-msgstr ""
-"Pasahitza ahula da. Saiatu hizki, zenbaki eta ikurren arteko nahasketa "
-"batekin."
+msgstr "Pasahitza ahula da. Saiatu hizki, zenbaki eta ikurren arteko nahasketa batekin."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:109
 msgctxt "Password hint"
@@ -543,29 +473,23 @@ msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to avoid repeating the same type of character: "
 "you need to mix up letters, numbers and punctuation."
-msgstr ""
-"Pasahitza ahula da. Saiatu ez erabiltzen karaktere mota bera: hizki, zenbaki "
-"eta ikurrak nahastu behar dituzu."
+msgstr "Pasahitza ahula da. Saiatu ez erabiltzen karaktere mota bera: hizki, zenbaki eta ikurrak nahastu behar dituzu."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:113
 msgctxt "Password hint"
 msgid "This is a weak password. Try to avoid sequences like 1234 or abcd."
-msgstr ""
-"Pasahitza ahula da. Saiatu ez erabiltzen 1234 edo abc bezalako sekuentziak."
+msgstr "Pasahitza ahula da. Saiatu ez erabiltzen 1234 edo abc bezalako sekuentziak."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:115
 msgctxt "Password hint"
 msgid ""
 "This is a weak password. Try to add more letters, numbers and punctuation."
-msgstr ""
-"Pasahitza ahula da. Saiatu hizki, zenbaki eta ikurren arteko nahasketa "
-"gehiagorekin."
+msgstr "Pasahitza ahula da. Saiatu hizki, zenbaki eta ikurren arteko nahasketa gehiagorekin."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:117
 msgctxt "Password hint"
 msgid "Mix uppercase and lowercase and try to use a number or two."
-msgstr ""
-"Nahastu hizki maiuskulak eta minuskulak eta erabili zenbaki bat edo bi."
+msgstr "Nahastu hizki maiuskulak eta minuskulak eta erabili zenbaki bat edo bi."
 
 #: gnome-initial-setup/pages/password/pw-utils.c:119
 msgctxt "Password hint"
@@ -597,97 +521,84 @@ msgstr "bikaina"
 #. Translators: the first parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu".
 #.
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:68
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:70
 #, c-format
 msgid ""
 "Sends technical reports that do not contain personal information. Data is "
-"collected by %1$s (<u><a href='%2$s'>privacy policy</a></u>)."
-msgstr ""
+"collected by %1$s (<a href='%2$s'>privacy policy</a>)."
+msgstr "Txosten teknikoak bidaltzen ditu, betiere informazio pertsonala automatikoki kenduta. Datuak honek biltzen ditu: %1$s (<a href='%2$s'>pribatutasun-politika</a>)."
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu".
 #.
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:79
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:82
 #, c-format
 msgid ""
 "Sends technical reports that do not contain personal information. Data is "
 "collected by %s."
-msgstr ""
-"Txosten teknikoak bidaltzen ditu, betiere informazio pertsonala automatikoki "
-"kenduta. Datuak honek biltzen ditu: %s."
+msgstr "Txosten teknikoak bidaltzen ditu, betiere informazio pertsonala automatikoki kenduta. Datuak honek biltzen ditu: %s."
 
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:123
-#, c-format
-msgid ""
-"Allows apps to determine your geographical location (<u><a "
-"href='%1$s'>privacy policy</a></u>)."
-msgstr ""
-"Aplikazioei zure kokaleku geografikoa ezagutzea baimentzen die (<u><a "
-"href='%1$s'>pribatutasun-politika</a></u>)."
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:125
+msgid "Allows apps to determine your geographical location."
+msgstr "Onartu aplikazioek zure kokaleku geografikoa ezagutu dezaten."
 
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:174
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:14
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:28
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:171
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:15
+msgid "Privacy"
+msgstr "Pribatutasuna"
+
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:33
 msgid "Location Services"
 msgstr "Kokaleku-zerbitzuak"
 
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:17
-msgid ""
-"Turn on location services to let applications know your geographical "
-"location."
-msgstr ""
-"Gaitu kokapen zerbitzuak aplikazioek zure kokaleku geografikoa jakin dezaten."
-
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:56
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:65
 msgid "Automatic Problem Reporting"
 msgstr "Eman erroreen berri automatikoki"
 
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:99
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:134
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:138
-msgid "You can change this later in the Settings app"
-msgstr "Geroago ere aldatu ahalko duzu hau Ezarpenak aplikaziotik"
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:97
+msgid "Privacy controls can be changed at any time from the Settings app."
+msgstr "Pribatutasunaren kontrolak edozein unetan aldatu daitezke ezarpenetan."
 
-#: gnome-initial-setup/pages/software/gis-software-page.c:123
+#: gnome-initial-setup/pages/software/gis-software-page.c:127
 #: gnome-initial-setup/pages/software/gis-software-page.ui:11
 msgid "Third-Party Repositories"
 msgstr "Hirugarrenen biltegiak"
 
-#: gnome-initial-setup/pages/software/gis-software-page.c:125
+#: gnome-initial-setup/pages/software/gis-software-page.c:129
 #, c-format
 msgid ""
 "Third-party repositories provide access to additional software from selected "
 "<a href='%s'>external sources</a>, including popular apps and drivers that "
 "are important for some devices. Some proprietary software is included."
-msgstr ""
-"Hirugarrenen biltegiek <a href='%s'>kanpoko iturburu hautatuetako</a> "
-"software gehigarria atzitzeko aukera ematen dute. Aplikazio ezagunak daude "
-"horietan, eta baita zenbait gailutarako garrantzitsua diren kontrolagailuak "
-"ere. Software jabeduna ere badago hor."
+msgstr "Hirugarrenen biltegiek <a href='%s'>kanpoko iturburu hautatuetako</a> software gehigarria atzitzeko aukera ematen dute. Aplikazio ezagunak daude horietan, eta baita zenbait gailutarako garrantzitsua diren kontrolagailuak ere. Software jabeduna ere badago hor."
 
-#: gnome-initial-setup/pages/software/gis-software-page.c:127
+#: gnome-initial-setup/pages/software/gis-software-page.c:131
 msgid ""
 "Third-party repositories provide access to additional software from selected "
 "external sources, including popular apps and drivers that are important for "
 "some devices. Some proprietary software is included."
-msgstr ""
-"Hirugarrenen biltegiek kanpoko iturburu hautatuetako software gehigarria "
-"atzitzeko aukera ematen dute. Aplikazio ezagunak daude horietan, eta baita "
-"zenbait gailuetarako garrantzitsua diren kontrolagailuak ere. Jabedun "
-"zenbait software ere badago hor."
+msgstr "Hirugarrenen biltegiek kanpoko iturburu hautatuetako software gehigarria atzitzeko aukera ematen dute. Aplikazio ezagunak daude horietan, eta baita zenbait gailuetarako garrantzitsua diren kontrolagailuak ere. Jabedun zenbait software ere badago hor."
 
-#: gnome-initial-setup/pages/software/gis-software-page.c:139
+#: gnome-initial-setup/pages/software/gis-software-page.c:143
 msgid "_Disable Third-Party Repositories"
 msgstr "_Desgaitu hirugarrenen biltegiak"
 
-#: gnome-initial-setup/pages/software/gis-software-page.c:144
+#: gnome-initial-setup/pages/software/gis-software-page.c:148
 msgid "_Enable Third-Party Repositories"
 msgstr "_Gaitu hirugarrenen biltegiak"
+
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:211
+msgid "Setup Failed"
+msgstr "Konfigurazioak huts egin du"
+
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:213
+msgid "Close"
+msgstr "Itxi"
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
 #. * detect any distribution.
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:406
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:239
 #, c-format
 msgid "_Start Using %s"
 msgstr "_Hasi %s erabiltzen"
@@ -695,40 +606,18 @@ msgstr "_Hasi %s erabiltzen"
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
 #. * detect any distribution.
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:413
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:246
 #, c-format
 msgid "%s is ready to be used."
 msgstr "%s erabiltzeko prest dago."
 
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:431
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:499
-#: gnome-initial-setup/pages/summary/gis-summary-page.ui:8
-msgid "All done!"
-msgstr "Eginda"
-
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:457
-msgid "Setup Failed"
-msgstr "Konfigurazioak huts egin du"
-
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:459
-msgid "Close"
-msgstr "Itxi"
-
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:472
-msgid "Almost done"
-msgstr "Gutxi falta da"
-
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:568
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:270
 msgid "Setup Complete"
 msgstr "Konfigurazioa osatu da"
 
-#: gnome-initial-setup/pages/summary/gis-summary-page.ui:39
-msgid "Downloading additional language packs"
-msgstr "Hizkuntza-pakete gehigarriak deskargatzen"
-
-#: gnome-initial-setup/pages/summary/gis-summary-page.ui:47
-msgid "Cancel Download"
-msgstr "Ezeztatu deskarga"
+#: gnome-initial-setup/pages/summary/gis-summary-page.ui:8
+msgid "All done!"
+msgstr "Eginda"
 
 #: gnome-initial-setup/pages/timezone/gis-location-entry.c:117
 msgid "Search cities"
@@ -790,9 +679,7 @@ msgstr "Ordu-zona"
 msgid ""
 "The time zone will be set automatically if your location can be found. You "
 "can also search for a city to set it yourself."
-msgstr ""
-"Ordu-zona automatikoki konfiguratuko da zure kokalekua aurkitzen bada. Herri "
-"bat ere bilatu dezakezu zuk zeuk konfiguratzeko."
+msgstr "Ordu-zona automatikoki konfiguratuko da zure kokalekua aurkitzen bada. Herri bat ere bilatu dezakezu zuk zeuk konfiguratzeko."
 
 #: gnome-initial-setup/pages/timezone/gis-timezone-page.ui:49
 msgid "Please search for a nearby city"
@@ -806,438 +693,24 @@ msgstr "Bilatu hurbileko herri bat"
 #. * keep or remove. The %s is getting replaced with the name and version
 #. * of the OS, e.g. "GNOME 3.38"
 #.
-#: gnome-initial-setup/pages/welcome/gis-welcome-page.c:79
+#: gnome-initial-setup/pages/welcome/gis-welcome-page.c:62
 #, c-format
 msgid "Welcome to %s !"
 msgstr "Ongi etorri %s sistemara"
 
-#: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:12
-msgid "Welcome to Ubuntu 24.04 LTS"
-msgstr "Ongi etorri Ubuntu 24.04 LTSra"
-
-#: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:13
-msgid ""
-"Complete your setup with additional settings and we'll\n"
-"have you up and running in no time"
-msgstr ""
-"Osatu sistemaren konfigurazioa ezarpen gehigarriekin\n"
-"eta berehala izango duzu erabiltzeko prest"
+#: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:4
+msgid "Setup"
+msgstr "Konfigurazioa"
 
 #: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:32
-msgid "View release notes"
-msgstr ""
-
-#: gnome-initial-setup/pages/apps/gis-apps-page.c:95
-msgid "Ready to go"
-msgstr "Gertu"
-
-#: gnome-initial-setup/pages/apps/gis-apps-page.blp:8
-msgid "Get started with more applications"
-msgstr "Eman hasiera aplikazio gehiagorekin"
-
-#: gnome-initial-setup/pages/apps/gis-apps-page.blp:9
-msgid "Ubuntu's App Center has a range of apps you can get started with."
-msgstr ""
-"Ubunturen Aplikazioen zentroak martxan jartzeko aplikazio sorta paregabea "
-"dakarkizu."
-
-#: gnome-initial-setup/pages/apps/gis-apps-page.blp:28
-msgid "Open App Center"
-msgstr "Ireki Aplikazioen zentroa"
-
-#: gnome-initial-setup/pages/eula/gis-eula-page.blp:4
-msgid "End-User License Agreement"
-msgstr "Amaierako erabiltzailearen lizentzia-onarpena"
-
-#. GNOME Initial Setup
-#. TRANSLATORS: The place-holder is an error message
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:73
-#, c-format
-msgid "Failed to grant consent for the Initial Setup application: %s"
-msgstr ""
-
-#. TRANSLATORS: The place-holder is an error message
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:75
-#, c-format
-msgid "Failed to withdraw consent for the Initial Setup application: %s"
-msgstr ""
-
-#. Platform source used by timed systemd collection
-#. TRANSLATORS: The place-holder is an error message
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:80
-#, c-format
-msgid "Failed to grant consent for the system data collector: %s"
-msgstr ""
-
-#. TRANSLATORS: The place-holder is an error message
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:82
-#, c-format
-msgid "Failed to withdraw consent for the system data collector: %s"
-msgstr ""
-
-#. Platform source used by release upgrader collection
-#. TRANSLATORS: The place-holder is an error message
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:87
-#, c-format
-msgid "Failed to grant consent for the release upgrader application: %s"
-msgstr ""
-
-#. TRANSLATORS: The place-holder is an error message
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:89
-#, c-format
-msgid "Failed to withdraw consent for the release upgrader application: %s"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:381
-#, c-format
 msgid ""
-"With telemetry log: %s\n"
-"Without telemetry log: %s"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:411
-#, c-format
-msgid "Failed to collect telemetry report: %s"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:571
-#, c-format
-msgid "Failed to generate report: %s"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:589
-#, c-format
-msgid "Failed to write report: %s"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:647
-msgid "Show First Report"
-msgstr "Erakutsi aurreneko txostena"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:9
-#, fuzzy
-msgid "Utile Depends On It: Help Improve Ubuntu"
-msgstr "Lagundu Ubuntu hobetzen"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:10
-#, fuzzy
-msgid ""
-"Help improve Ubuntu by sharing your system and error reports with them.\n"
-"Reports are sent anonymously."
-msgstr ""
-"Lagun gaitzazu Ubuntu hobetzen, sistemaren informazioa eta errore-txostenak "
-"gurekin partekatuz.\n"
-"Txostenak era anonimoan bidaliko dira."
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:31
-msgid "Share _system data with the Ubuntu team"
-msgstr "Partekatu _sistemaren datuak Ubuntu taldearekin"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:32
-msgid "This includes hardware information, language and timezone"
-msgstr "Honen baitan doaz hardwarearen informazioa, hizkuntza eta ordu-eremua"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:46
-msgid "Learn more about system reporting"
-msgstr "Sistemako datuen txostenari buruzko informazio gehiago"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:57
-msgid "Legal notice"
-msgstr "Lege-oharra"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:68
-msgid "Show Report"
-msgstr "Erakutsi txostena"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:95
-msgid "Share _error reports with the Ubuntu team"
-msgstr "Partekatu _errore-txostenak Ubuntu taldearekin"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:96
-msgid "This includes crash reports and related system logs"
-msgstr ""
-"Honen baitan doaz sistemako arazoen txostenak eta hauei lotutako sistemako "
-"erregistroak"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:110
-msgid "Learn more about error reporting"
-msgstr "Errore-txostenei buruzko informazio gehiago"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:148
-msgid "System Report"
-msgstr "Sistemaren txostena"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-attach-page.blp:21
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:21
-msgid "Enable Ubuntu Pro"
-msgstr "Gaitu Ubuntu Pro"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-attach-page.blp:29
-msgid "_Attach machine via your Ubuntu One account"
-msgstr "_Erantsi makina zure Ubuntu One kontuari"
-
-#. Translators: translators: This is the other way to attach a machine to Ubuntu Pro
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-attach-page.blp:82
-msgid "Or add a _token manually"
-msgstr "Edo gehitu _token bat eskuz"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-attach-page.blp:117
-msgid "Token"
-msgstr "Tokena"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:54
-msgid "Upgrade this device to Ubuntu Pro. Free for personal use."
-msgstr "Gaitu Ubuntu Pro gailu honetan. Doakoa erabilera pertsonalerako."
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:105
-msgid ""
-"Fulfill FedRAMP, FIPS, STIG and HIPAA and other compliance and hardening "
-"requirements with certified tooling and crypto-modules"
-msgstr ""
-"Bete FedRAMP, FIPS, STIG eta HIPAA, eta bestelako betetze eta sendotzen "
-"eskakizunak, erreminta ziurtatuekin eta kripto-moduluekin"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:130
-msgid "Enable Ubuntu Pro now, or skip this step."
-msgstr "Gaitu Ubuntu Pro orain, edo saltatu urrats hau."
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:133
-msgid "_Enable Ubuntu Pro"
-msgstr "_Gaitu Ubuntu Pro"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:152
-msgid "_Skip for now"
-msgstr "_Saltatu oraingoz"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:153
-msgid "You can enable Ubuntu Pro later in the Security Center"
-msgstr "Geroago ere gaitu dezakezu Ubuntu Pro Segurtasun zentrotik"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-services-page.blp:22
-msgid "Ubuntu Pro Services"
-msgstr "Ubuntu Pro zerbitzuak"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-services-page.blp:29
-msgid "Your subscription"
-msgstr "Zure harpidetza"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-services-page.blp:44
-msgid "Your enabled services"
-msgstr "Gaitutako zerbitzuak"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-services-page.blp:47
-msgid ""
-"You can change the default enablements for your token on the ubuntu.com/pro "
-"web interface. You can also change enabled services in the Settings menu or "
-"with the `<span font_family='monospace'>pro</span>` command-line."
-msgstr ""
-"Zure tokenarentzat gaitutako zerbitzuak uneoro alda ditzakezu ubuntu.com/pro "
-"helbideko web interfazetik. Gaitutako zerbitzuak Ezarpenak menutik edo "
-"`<span font_family='monospace'>pro</span>` komando-lerrotik ere alda "
-"ditzakezu."
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-services-page.blp:53
-msgid "Other available services"
-msgstr "Beste zerbitzu erabilgarriak"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:221
-msgid "Valid token"
-msgstr "Baliozko tokena"
-
-#. TRANSLATORS: The error shown when attaching an
-#. Ubuntu Pro contact fails.
-#. It may be due to various reasons, most common is
-#. an invalid token.
-#.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:236
-msgid "Invalid token or attach failure"
-msgstr "Token baliogabea, edo hutsegitea eranstean"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:244
-msgid "Code expired"
-msgstr "Kodea iraungi da"
-
-#. TRANSLATORS: the placeholder %s is a link to ubuntu.com/pro/attach.
-#. Use HTML encoded format for special characters such as '&'.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:259
-#, c-format
-msgid "Enter this code on %s"
-msgstr "Sartu kode hau hemen: %s"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:316
-msgid "An internet connection is required to enable Ubuntu Pro"
-msgstr "Internetera konexioa behar da Ubuntu Pro gaitzeko"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:466
-#, c-format
-msgid "Get security updates on a wide range of packages until %s"
-msgstr "Eskuratu segurtasun-eguneratzeak pakete sorta zabalarentzat, %s arte"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:474
-msgid "Ubuntu Pro"
-msgstr "Ubuntu Pro"
-
-#. TRANSLATORS: The anbox-cloud Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:609
-msgid "Scalable Android in the cloud"
-msgstr "Android eskalagarria hodeian"
-
-#. TRANSLATORS: The cc-eal Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:612
-msgid "Common Criteria EAL2 Provisioning Packages"
-msgstr ""
-
-#. TRANSLATORS: The esm-apps Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:615
-msgid "Expanded Security Maintenance for Applications"
-msgstr "Segurtasunezko mantentze-zerbitzu hedatua aplikazioentzat"
-
-#. TRANSLATORS: The esm-infra Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:618
-msgid "Expanded Security Maintenance for Infrastructure"
-msgstr "Segurtasunezko mantentze-zerbitzu hedatua azpiegiturarentzat"
-
-#. TRANSLATORS: The fips Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:621
-msgid "NIST-certified FIPS crypto packages"
-msgstr "NIST ziurtapendun FIPS kripto paketeak"
-
-#. TRANSLATORS: The fips-preview Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:624
-msgid "Preview of FIPS crypto packages undergoing certification with NIST"
-msgstr "FIPS kripto paketeen aurrebistak, NIST ziurtapena lortzeko prozesuan"
-
-#. TRANSLATORS: The fips-updates Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:627
-msgid "FIPS compliant crypto packages with stable security updates"
-msgstr ""
-"FIPS betetzen duten kripto paketeak, segurtasun-eguneratze egonkorrekin"
-
-#. TRANSLATORS: The landscape Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:630
-msgid "Management and administration tool for Ubuntu"
-msgstr "Ubunturako kudeaketa eta administrazio tresna"
-
-#. TRANSLATORS: The livepatch Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:633
-msgid "Canonical kernel Livepatch service"
-msgstr "Canonicalen kernel Livepatch zerbitzua"
-
-#. TRANSLATORS: The realtime-kernel Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:636
-msgid "Ubuntu kernel with PREEMPT_RT patches integrated"
-msgstr "Ubuntu kernela, PREEMPT_RT adabakiekin"
-
-#. TRANSLATORS: The ros Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:639
-msgid "Security Updates for the Robot Operating System"
-msgstr "Segurtasun-eguneratzeak Robot sistema eragilerako"
-
-#. TRANSLATORS: The ros-updates Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:642
-msgid "All Updates for the Robot Operating System"
-msgstr "Robot sistema eragilerako eguneratze guztiak"
-
-#. TRANSLATORS: The usg Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:645
-msgid "Security compliance and audit tools"
-msgstr "Segurtasunaren betetzea eta ikuskapen tresnak"
-
-#. TRANSLATORS: Use HTML encoded format for special characters such as &amp' for '&'. %s is a URL.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:1230
-#, c-format
-msgid "Learn more at %s"
-msgstr "Informazio gehiago hemen: %s"
-
-#. TRANSLATORS: Subtitle telling who can provide the Ubuntu Pro token.
-#. Use HTML encoded format for special characters such as &amp' for '&'. %s is a URL.
-#.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:1247
-#, c-format
-msgid "From your admin, or from %s"
-msgstr "Zure administratzaileari eskatu, edo hemendik lortu: %s"
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:75
-msgid "Blue"
-msgstr "Urdina"
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:78
-msgid "Teal"
-msgstr "Anila"
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:81
-msgid "Green"
-msgstr "Berdea"
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:84
-msgid "Yellow"
-msgstr "Horia"
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:87
-msgid "Orange"
-msgstr "Laranja"
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:90
-msgid "Red"
-msgstr "Gorria"
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:93
-msgid "Pink"
-msgstr "Arrosa"
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:96
-msgid "Purple"
-msgstr "Morea"
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:99
-msgid "Slate"
-msgstr "Grisa"
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:102
-msgid "Warty Brown"
-msgstr "Warty marroia"
-
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:469
-msgid "Appearance"
-msgstr "Itxura"
-
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
-msgid "Choose how Ubuntu looks"
-msgstr ""
-
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
-msgid "Personalize your desktop's appearance"
-msgstr ""
-
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
-msgid "Style"
-msgstr ""
-
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:53
-msgid "_Default"
-msgstr ""
-
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:82
-msgid "Da_rk"
-msgstr ""
-
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:100
-msgid "OLED screen detected. Dark style may save power."
-msgstr ""
-
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:112
-msgid "Accent Color"
-msgstr ""
+"Setup will guide you through making an account and enabling some features. "
+"We’ll have you up and running in no time."
+msgstr "Konfigurazio-urratsak jarraituta, kontu bat sortu ahal izango duzu eta zenbait eginbide gaituko dituzu. Berehalako batean egongo zara lanean."
+
+#: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:36
+msgid "_Start Setup"
+msgstr "_Hasi konfigurazioa"
 
 #: po/EXTRA_STRINGS.sh:1
 msgid "Force live user mode"
@@ -1259,10 +732,7 @@ msgid ""
 "Activities view.\n"
 "\n"
 "        Alternatively, choose install to launch the installer."
-msgstr ""
-"${NAME} aplikazioaren behin-behineko bertsio bat probatu dezakezu "
-"ordenagailuan aldaketarik egin gabe. Geroago instalatu nahi baduzu, abiarazi "
-"instalatzailea jardueren ikuspegi orokorretik.\n"
+msgstr "${NAME} aplikazioaren behin-behineko bertsio bat probatu dezakezu ordenagailuan aldaketarik egin gabe. Geroago instalatu nahi baduzu, abiarazi instalatzailea jardueren ikuspegi orokorretik.\n"
 "\n"
 "        Bestela, abiarazi instalatzailea eta instalatu."
 
@@ -1280,48 +750,407 @@ msgstr "Probatu ${NAME}"
 msgid "Install ${PRETTY_NAME}"
 msgstr "Instalatu ${PRETTY_NAME}"
 
-#~ msgid "Cancel"
-#~ msgstr "Utzi"
+#~ msgid "Set a Password"
+#~ msgstr "Ezarri pasahitza"
+
+#~ msgid "Privacy Policy"
+#~ msgstr "Pribatutasunaren araua"
+
+#~ msgid ""
+#~ "Allows apps to determine your geographical location. Uses the Mozilla "
+#~ "Location Service (<a href='https://location.services.mozilla.com/"
+#~ "privacy'>privacy policy</a>)."
+#~ msgstr ""
+#~ "Aplikazioek zure kokaleku geografikoa ezagutu dezaten ahalbidetzen du. "
+#~ "Mozilla Location Service erabiltzen du (<a href='https://"
+#~ "location.services.mozilla.com/privacy'>pribatutasun-politika</a>)."
+
+#~ msgid "Please check the name and username. You can choose a picture too."
+#~ msgstr ""
+#~ "Egiaztatu izena eta erabiltzaile-izena. Argazki bat ere aukera dezakezu."
+
+#~ msgid "Edit avatar"
+#~ msgstr "Editatu avatarra"
+
+#~ msgid "Online Accounts"
+#~ msgstr "Lineako kontuak"
+
+#~ msgid "Connect Your Online Accounts"
+#~ msgstr "Konektatu zure lineako kontuak"
+
+#~ msgid ""
+#~ "Connect your accounts to easily access your email, online calendar, "
+#~ "contacts, documents and photos."
+#~ msgstr ""
+#~ "Konektatu zure kontuak posta elektroniko, lineako egutegia, kontaktuak, "
+#~ "dokumentuak eta argazkiak modu errazean atzitzeko."
+
+#~ msgid "Accounts can be added and removed at any time from the Settings app."
+#~ msgstr "Kontuak edozein unetan gehitu eta kendu daitezke ezarpenetan."
 
 #, c-format
-#~ msgid "Failed to show privacy policy: %s"
-#~ msgstr "Huts egin du pribatutasun-politika erakustean: %s"
+#~ msgid "%s Account"
+#~ msgstr "%s kontua"
 
 #, c-format
-#~ msgid "Failed to get report information: %s"
-#~ msgstr "Huts egin du txosteneko informazioa eskuratzean: %s"
+#~ msgid "%s is ready to be used. We hope that you love it!"
+#~ msgstr "%s erabiltzeko prest dago. Espero dugu gustuko izango duzula!"
 
-#~ msgid "Help improve Ubuntu"
-#~ msgstr "Lagundu Ubuntu hobetzen"
+#~ msgid "Install or Try?"
+#~ msgstr "Instalatu ala probatu?"
 
-#~ msgid "Show the First Report"
-#~ msgstr "Erakutsi aurreneko txostena"
+#~ msgid ""
+#~ "This live media can be used to install GNOME, or it can be used to try "
+#~ "GNOME as a temporary system. Installation can be started at any time "
+#~ "using the install icon in Activities."
+#~ msgstr ""
+#~ "Live euskarri hau GNOME instalatzeko edo behin-behineko sistema gisa "
+#~ "probatzeko erabili daiteke. Instalazioa edozein momentutan abiarazi "
+#~ "daiteke jardueren atalean ageri den instalazio-ikonoaren bidez."
+
+#~ msgid "Try"
+#~ msgstr "Probatu"
+
+#~ msgid "Take a Picture…"
+#~ msgstr "Atera argazki bat…"
+
+#~ msgid "Avatar image"
+#~ msgstr "Avatar irudia"
+
+#~ msgid "_Confirm"
+#~ msgstr "_Berretsi"
+
+#~ msgid "This is a weak password."
+#~ msgstr "Pasahitza ahula da."
 
 #, c-format
 #~ msgid ""
-#~ "Sends technical reports that do not contain personal information. Data is "
-#~ "collected by %1$s (<a href='%2$s'>privacy policy</a>)."
+#~ "Sending reports of technical problems helps us to improve %s. Reports are "
+#~ "sent anonymously and are scrubbed of personal data."
 #~ msgstr ""
-#~ "Txosten teknikoak bidaltzen ditu, betiere informazio pertsonala "
-#~ "automatikoki kenduta. Datuak honek biltzen ditu: %1$s (<a "
-#~ "href='%2$s'>pribatutasun-politika</a>)."
-
-#~ msgid "Privacy controls can be changed at any time from the Settings app."
-#~ msgstr ""
-#~ "Pribatutasunaren kontrolak edozein unetan aldatu daitezke ezarpenetan."
-
-#~ msgid "Ubuntu Report Contents"
-#~ msgstr "Ubunturen txostenaren edukiak"
+#~ "Arazo teknikoei buruzko txostenak bidaltzean '%s' hobetzen laguntzen "
+#~ "gaituzu. Txostenak anonimo gisa bidaltzen dira eta datu pertsonaletatik "
+#~ "garbi daude."
 
 #, c-format
-#~ msgid "Failed to send report decline: %s"
-#~ msgstr "Errorea txosten ezeztapena bidaltzean: %s"
+#~ msgid "Problem data will be collected by %s:"
+#~ msgstr "datuen arazoa %s(e)k bil ditzake:"
 
-#, c-format
-#~ msgid "Failed to send report information: %s"
-#~ msgstr "Errorea txosten informazioa bildatzean: %s"
+#~ msgid "Uses Mozilla Location Service:"
+#~ msgstr "Mozilla-ren kokalekua zerbitzua erabiltzen du:"
 
-#~ msgid "You can change your mind later in Settings → Privacy → Diagnostics."
+#~ msgid "Loading…"
+#~ msgstr "Kargatzen…"
+
+#~ msgid ""
+#~ "Connecting to the Internet will enable you to set the time, add your "
+#~ "details, and enable you to access your email, calendar, and contacts. It "
+#~ "is also necessary for enterprise login accounts."
 #~ msgstr ""
-#~ "Iritziz aldatuz gero, hemendik konfigura dezakezu: Ezarpenak → "
-#~ "Pribatutasuna → Diagnostikoa"
+#~ "Internetera konektatzeak ordua ezartzea eta zure xehetasunak gehitzea "
+#~ "baimentzen dizu. Gainera, zure posta elektronikoa, egutegia eta "
+#~ "kontaktuak atzitzea gaitzen du. Beharrezkoa da baita ere enpresako saio-"
+#~ "hasierako kontuentzako."
+
+#~ msgid "License Agreements"
+#~ msgstr "Lizentzia-kontratua"
+
+#~ msgid ""
+#~ "I have _agreed to the terms and conditions in this end user license "
+#~ "agreement."
+#~ msgstr ""
+#~ "Azken erabiltzailearentzako lizentzia-kontratu honen baldintzak _onartzen "
+#~ "ditut."
+
+#~ msgid "No regions found"
+#~ msgstr "Ez da eskualderik aurkitu"
+
+#~ msgid "Region"
+#~ msgstr "Eskualdea"
+
+#~ msgid "Choose your country or region."
+#~ msgstr "Aukeratu zure herrialdea edo eskualdea."
+
+#~ msgid "Software Repositories"
+#~ msgstr "Software-biltegiak"
+
+#~ msgid "Access additional software from selected third party sources."
+#~ msgstr "Atzitu software gehigarria hautatutako hirugarrenen iturburuetatik."
+
+#~ msgid ""
+#~ "Some of this software is proprietary and therefore has restrictions on "
+#~ "use, sharing, and access to source code."
+#~ msgstr ""
+#~ "Software horietako batzuk jabedunak dira, eta ondorioz, murriztapenak "
+#~ "dituzte erabiltzean, partekatzean eta kodearen iturburua atzitzean."
+
+#~ msgid "Additional Software Repositories"
+#~ msgstr "Software gehigarrien biltegiak"
+
+#~ msgid "<a href=\"more\">Find out more…</a>"
+#~ msgstr "<a href=\"more\">Bilatu gehiago…</a>"
+
+#~ msgid ""
+#~ "Proprietary software typically has restrictions on how it can be used and "
+#~ "on access to source code. This prevents anyone but the software owner "
+#~ "from inspecting, improving or learning from its code."
+#~ msgstr ""
+#~ "Jabedun softwareak murriztapenak eduki ohi ditu bai bere erabilpenean bai "
+#~ "bere iturburuko kodea atzitzean. Honek bere jabea ez den beste edonori "
+#~ "kodea aztertzea, hobetzea edo ikastea debekatzen dio."
+
+#~ msgid ""
+#~ "In contrast, Free Software can be freely run, copied, distributed, "
+#~ "studied and modified."
+#~ msgstr ""
+#~ "Alderantziz, Softwarea Librea libreki exekutatu, kopiatu, banatu, ikertu "
+#~ "eta eralda daiteke."
+
+#~ msgid "Ready to Go"
+#~ msgstr "Hasteko prest"
+
+#~ msgid "You’re ready to go!"
+#~ msgstr "Dena konfiguratu duzu."
+
+#~ msgid "preferences-system"
+#~ msgstr "preferences-system"
+
+#~ msgid "Disable image"
+#~ msgstr "Desgaitu irudia"
+
+#~| msgctxt "Password hint"
+#~| msgid "This is a weak password. Try to avoid common words."
+#~ msgctxt "Password hint"
+#~ msgid "Try to avoid common words."
+#~ msgstr "Saihestu hitz arruntak erabiltzea."
+
+#~| msgctxt "Password hint"
+#~| msgid "This is a weak password. Try to use more numbers."
+#~ msgctxt "Password hint"
+#~ msgid "Try to use more numbers."
+#~ msgstr "Erabili zenbaki gehiago."
+
+#~| msgctxt "Password hint"
+#~| msgid ""
+#~| "This is a weak password. Try to use a mixture of letters, numbers and "
+#~| "punctuation."
+#~ msgctxt "Password hint"
+#~ msgid ""
+#~ "Password needs to be longer. Try to add more letters, numbers and "
+#~ "punctuation."
+#~ msgstr "Erabili hizki, zenbaki eta puntuazio ikurren nahasketa bat."
+
+#~ msgid ""
+#~ "Proprietary software sources provide access to additional software, "
+#~ "including web browsers and games. This software typically has "
+#~ "restrictions on use and access to source code, and is not provided by %s."
+#~ msgstr ""
+#~ "Jabedun softwarearen iturburuak software gehigarria eskuratzea eskaintzen "
+#~ "du, web arakatzaileak eta jokoak barne. Software mota honek murriztapenak "
+#~ "eduki ohi ditu bai bere erabilpenean bai bere iturburuko kodea atzitzean, "
+#~ "eta '%s'(e)k ez du hornitzen."
+
+#~ msgid "Proprietary Software Sources"
+#~ msgstr "Jabedun softwareen iturburuak"
+
+#~| msgid "A user with the username '%s' already exists."
+#~ msgid "A user with the username ‘%s’ already exists."
+#~ msgstr "“%s“ erabiltzaile-izeneko erabiltzaile bat badago lehendik ere."
+
+#~ msgid "_Verify"
+#~ msgstr "_Egiaztatu"
+
+#~ msgctxt "Password strength"
+#~ msgid "Strength: Weak"
+#~ msgstr "Sendotasuna: ahula"
+
+#~ msgctxt "Password strength"
+#~ msgid "Strength: Low"
+#~ msgstr "Sendotasuna: baxua"
+
+#~ msgctxt "Password strength"
+#~ msgid "Strength: Medium"
+#~ msgstr "Sendotasuna: ertaina"
+
+#~ msgctxt "Password strength"
+#~ msgid "Strength: Good"
+#~ msgstr "Sendotasuna: ona"
+
+#~ msgctxt "Password strength"
+#~ msgid "Strength: High"
+#~ msgstr "Sendotasuna: altua"
+
+#~ msgid "Are these the right details? You can change them if you want."
+#~ msgstr "Xehetasun egokiak dira? Nahi duzunean alda ditzakezu."
+
+#~ msgid "You can review your online accounts (and add others) after setup."
+#~ msgstr ""
+#~ "Zure lineako kontuak (eta beste batzuk gehitu) gainbegira ditzakezu "
+#~ "konfigurazioaren ondoren."
+
+#~ msgid ""
+#~ "We think that your time zone is %s. Press Next to continue or search for "
+#~ "a city to manually set the time zone."
+#~ msgstr ""
+#~ "Ordu-zona '%s' dela dirudi. Sakatu Hurrengoa jarraitzeko edo bilatu herri "
+#~ "bat ordu-zona eskuz ezartzeko."
+
+#~ msgid "Cancel"
+#~ msgstr "Utzi"
+
+#~ msgid "Your username cannot be changed after setup."
+#~ msgstr "Zure erabiltzaile-izena ezingo da aldatu konfigurazioaren ondoren."
+
+#~ msgid ""
+#~ "In order to use enterprise logins, this computer needs to be enrolled in "
+#~ "the domain. Please have your network administrator type their domain "
+#~ "password here, and choose a unique computer name for your computer."
+#~ msgstr ""
+#~ "Enpresako saio-hasierak erabili ahal izateko, ordenagailu hau domeinuari "
+#~ "elkartu behar zaio. Sareko administratzaileak idatz dezala domeinuaren "
+#~ "pasahitza hemen, eta aukeratu ordenagailu bakar baten izena ordenagailu "
+#~ "honentzako."
+
+#~ msgid "No password"
+#~ msgstr "Pasahitzik ez"
+
+#~ msgctxt "Password strength"
+#~ msgid "Too short"
+#~ msgstr "Laburregia"
+
+#~ msgctxt "Password strength"
+#~ msgid "Not good enough"
+#~ msgstr "Ez da onegia"
+
+#~ msgctxt "Password strength"
+#~ msgid "Weak"
+#~ msgstr "Ahula"
+
+#~ msgctxt "Password strength"
+#~ msgid "Fair"
+#~ msgstr "Erdipurdikoa"
+
+#~ msgctxt "Password strength"
+#~ msgid "Good"
+#~ msgstr "Ona"
+
+#~ msgid "Login"
+#~ msgstr "Saio-hasiera"
+
+#~ msgid "Create a Local Account"
+#~ msgstr "Sortu lokaleko kontu bat"
+
+#~ msgid "page 1"
+#~ msgstr "1. orrialdea"
+
+#~ msgid "Create an Enterprise Account"
+#~ msgstr "Sortu enpresako kontu bat"
+
+#~ msgctxt "Online Account"
+#~ msgid "Other"
+#~ msgstr "Bestelakoa"
+
+#~ msgid "Mail"
+#~ msgstr "Posta elektronikoa"
+
+#~ msgid "Contacts"
+#~ msgstr "Kontaktuak"
+
+#~ msgid "Chat"
+#~ msgstr "Berriketa"
+
+#~ msgid "Resources"
+#~ msgstr "Baliabideak"
+
+#~ msgid "Error creating account"
+#~ msgstr "Errorea kontua sortzean"
+
+#~ msgid "Error removing account"
+#~ msgstr "Errorea kontua kentzean"
+
+#~ msgid "Are you sure you want to remove the account?"
+#~ msgstr "Ziur zaude kontua kendu nahi duzula?"
+
+#~ msgid "This will not remove the account on the server."
+#~ msgstr "Honek ez du kontua zerbitzaritik kenduko."
+
+#~ msgid "_Remove"
+#~ msgstr "_Kendu"
+
+#~ msgid "Connect to your existing data in the cloud"
+#~ msgstr "Konektatu hodeian dituzun datuekin"
+
+#~ msgid "_Add Account"
+#~ msgstr "_Gehitu kontua"
+
+#~ msgid "Other"
+#~ msgstr "Bestelakoa"
+
+#~ msgid "Add an Input Source"
+#~ msgstr "Gehitu sarrerako iturburu bat"
+
+#~ msgid "Search for a location"
+#~ msgstr "Bilatu kokaleku bat"
+
+#~ msgid "_Determine your location automatically"
+#~ msgstr "_Zehaztu zure kokalekua automatikoki"
+
+#~ msgid "No network devices found."
+#~ msgstr "Ez da sareko interfazerik aurkitu."
+
+#~ msgid "Thank You"
+#~ msgstr "Eskerrik asko"
+
+#~ msgid "You may change these options at any time in Settings."
+#~ msgstr "Aukera hauek edozein momentutan alda ditzakezu Ezarpenak atalean."
+
+#~ msgid "_Start using GNOME 3"
+#~ msgstr "_Hasi GNOME 3 erabiltzen"
+
+#~ msgid "Unspecified"
+#~ msgstr "Zehaztu gabea"
+
+#~ msgid "_Back"
+#~ msgstr "_Atzera"
+
+#~ msgid "_Use Local Login"
+#~ msgstr "Erabili _lokaleko saio-hasiera"
+
+#~ msgid "Keyboard Layout"
+#~ msgstr "Teklatuaren diseinua"
+
+#~ msgid "Select input sources"
+#~ msgstr "Hautatu sarrerako iturburuak"
+
+#~ msgid "Remove Input Source"
+#~ msgstr "Kendu sarrerako iturburua"
+
+#~ msgid "Move Input Source Up"
+#~ msgstr "Eraman sarrerako iturburua gora"
+
+#~ msgid "Input Source Settings"
+#~ msgstr "Sarrerako iturburuaren ezarpenak"
+
+#~ msgid "Select an input source"
+#~ msgstr "Hautatu sarrerako iturburua"
+
+#~ msgid "English"
+#~ msgstr "Ingelesa"
+
+#~ msgid "British English"
+#~ msgstr "Ingelesa (Britainia Handia)"
+
+#~ msgid "German"
+#~ msgstr "Alemana"
+
+#~ msgid "French"
+#~ msgstr "Frantsesa"
+
+#~ msgid "Spanish"
+#~ msgstr "Espainiera"
+
+#~ msgid "Chinese (simplified)"
+#~ msgstr "Txinera (soildua)"
+
+#~ msgid "Use %s"
+#~ msgstr "Erabili %s"

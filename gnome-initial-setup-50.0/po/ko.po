@@ -8,75 +8,55 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-initial-setup master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
-"issues\n"
-"POT-Creation-Date: 2026-09-09 01:52+0300\n"
-"PO-Revision-Date: 2026-04-14 01:46+0000\n"
-"Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
+"issues/\n"
+"POT-Creation-Date: 2026-01-29 16:10+0000\n"
+"PO-Revision-Date: 2026-02-22 21:58+0900\n"
+"Last-Translator: Seong-ho Cho <shcho@gnome.org>\n"
 "Language-Team: 한국어 <gnome-kr@googlegroups.com>\n"
 "Language: ko\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2026-07-01 12:24+0000\n"
-"X-Generator: Launchpad (build c38ea58da9d7185c4996adfc854ab433551cdcdd)\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.7\n"
 
 #: data/gnome-initial-setup.desktop.in.in:2
-#: gnome-initial-setup/gis-driver.c:890
+#: gnome-initial-setup/gis-driver.c:869
 msgid "Initial Setup"
 msgstr "초기 설정"
 
-#: gnome-initial-setup/gis-assistant.c:425
+#: gnome-initial-setup/gis-assistant.c:401
 msgid "_Next"
 msgstr "다음(_N)"
 
-#: gnome-initial-setup/gis-assistant.c:426
-msgid "_Finish"
-msgstr "마치기(_F)"
-
-#: gnome-initial-setup/gis-assistant.c:427
+#: gnome-initial-setup/gis-assistant.c:402
 msgid "_Accept"
 msgstr "수락(_A)"
 
-#: gnome-initial-setup/gis-assistant.c:428
+#: gnome-initial-setup/gis-assistant.c:403
 msgid "_Skip"
 msgstr "건너뛰기(_S)"
 
-#: gnome-initial-setup/gis-assistant.c:429
+#: gnome-initial-setup/gis-assistant.c:404
 msgid "_Previous"
 msgstr "이전(_P)"
 
-#: gnome-initial-setup/gis-assistant.c:430
+#: gnome-initial-setup/gis-assistant.c:405
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:254
 msgid "_Cancel"
 msgstr "취소(_C)"
 
-#: gnome-initial-setup/gis-webkit.c:54
-msgid "Scan the QR Code…"
-msgstr ""
-
-#: gnome-initial-setup/gis-webkit.c:244
-msgid "Open in default web browser"
-msgstr ""
-
-#: gnome-initial-setup/gis-webkit.c:247
-msgid "Open in default file handler"
-msgstr ""
-
-#: gnome-initial-setup/gnome-initial-setup.c:362
+#: gnome-initial-setup/gnome-initial-setup.c:280
 msgid "Force existing user mode"
-msgstr "기존 사용자 모드를 강제합니다"
+msgstr "기존 사용자 모드 강제"
 
-#: gnome-initial-setup/gnome-initial-setup.c:364
-msgid "Force Upgrade user"
-msgstr ""
-
-#: gnome-initial-setup/gnome-initial-setup.c:378
+#: gnome-initial-setup/gnome-initial-setup.c:294
 msgid "— GNOME initial setup"
 msgstr "— 그놈 초기 설정"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.c:181
 msgid "Failed to cache account"
-msgstr "계정을 캐싱하는데 실패하였습니다"
+msgstr "계정 캐싱에 실패했습니다"
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.c:231
 msgid "Failed to register account"
@@ -141,7 +121,6 @@ msgstr ""
 "라 입력하십시오."
 
 #: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:179
-#: gnome-initial-setup/pages/account/gis-account-page-local.ui:151
 msgid "_Computer"
 msgstr "컴퓨터(_C)"
 
@@ -157,31 +136,16 @@ msgstr "관리자 암호"
 msgid "C_ontinue"
 msgstr "계속(_O)"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:210
-#, c-format
-msgid "The hostname is too long."
-msgstr "호스트 이름이 너무 깁니다."
-
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:214
-msgid "The hostname must start with a lower case letter from a-z or a digit."
-msgstr "호스트 이름은 소문자 a-z 혹은 숫자로 시작해야 합니다."
-
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:218
-msgid ""
-"The hostname should only consist of lower case letters from a-z, digits and "
-"a hyphen: -"
-msgstr "호스트 이름은 소문자 a-z, 숫자 및 하이픈(-)으로만 구성해야 합니다."
-
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:545
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:321
 msgid "We need a few details to complete setup."
 msgstr "설정을 완료하려면 몇 가지 세부 정보가 필요합니다."
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:704
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:476
 msgid "Administrator"
 msgstr "관리자"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:710
-#: gnome-initial-setup/pages/account/gis-account-page-local.c:753
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:482
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:525
 #, c-format
 msgid "Failed to create user '%s': "
 msgstr "'%s' 사용자 계정 만들기 실패: "
@@ -207,11 +171,11 @@ msgstr "이름과 사용자 이름을 확인하십시오. 그림을 선택할 �
 msgid "_Full Name"
 msgstr "전체 이름(_F)"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.ui:217
+#: gnome-initial-setup/pages/account/gis-account-page-local.ui:159
 msgid "Set up _parental controls for this user"
 msgstr "이 사용자의 자녀 보호 관리 설정(_P)"
 
-#: gnome-initial-setup/pages/account/gis-account-page-local.ui:223
+#: gnome-initial-setup/pages/account/gis-account-page-local.ui:165
 msgid "For use by a parent or supervisor, who must set up their own password."
 msgstr "자녀 보호 관리자 또는 감독자로 설정하려면, 암호를 설정해야 합니다."
 
@@ -282,7 +246,7 @@ msgid "Preview"
 msgstr "미리보기"
 
 #: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:325
-#: gnome-initial-setup/pages/language/cc-language-chooser.c:244
+#: gnome-initial-setup/pages/language/cc-language-chooser.c:242
 msgid "More…"
 msgstr "자세히…"
 
@@ -293,7 +257,7 @@ msgstr "자세히…"
 msgid "No inputs found"
 msgstr "입력기가 없습니다"
 
-#: gnome-initial-setup/pages/keyboard/gis-keyboard-page.c:484
+#: gnome-initial-setup/pages/keyboard/gis-keyboard-page.c:502
 #: gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui:16
 msgid "Typing"
 msgstr "입력"
@@ -306,11 +270,11 @@ msgstr "키보드 배치 또는 입력기를 선택하십시오."
 msgid "Search keyboards and input methods"
 msgstr "키보드 배치 또는 입력기 검색"
 
-#: gnome-initial-setup/pages/language/cc-language-chooser.c:264
+#: gnome-initial-setup/pages/language/cc-language-chooser.c:262
 msgid "No languages found"
 msgstr "발견한 언어가 없습니다"
 
-#: gnome-initial-setup/pages/language/gis-language-page.c:146
+#: gnome-initial-setup/pages/language/gis-language-page.c:268
 #: gnome-initial-setup/pages/language/gis-language-page.ui:14
 msgid "Welcome"
 msgstr "환영합니다"
@@ -416,7 +380,7 @@ msgstr "암호 강도: %s."
 msgid "The passwords do not match."
 msgstr "암호가 일치하지 않습니다."
 
-#: gnome-initial-setup/pages/password/gis-password-page.c:427
+#: gnome-initial-setup/pages/password/gis-password-page.c:430
 msgid "Password"
 msgstr "암호"
 
@@ -569,17 +533,19 @@ msgstr "최상"
 #. Translators: the first parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu".
 #.
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:68
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:70
 #, c-format
 msgid ""
 "Sends technical reports that do not contain personal information. Data is "
-"collected by %1$s (<u><a href='%2$s'>privacy policy</a></u>)."
+"collected by %1$s (<a href='%2$s'>privacy policy</a>)."
 msgstr ""
+"보내는 기술 보고서에는 개인 정보가 들어있지 않습니다. 데이터는 %1$s(에)서 수"
+"집합니다(<a href='%2$s'>개인 정보 보호 정책</a>)."
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu".
 #.
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:79
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:82
 #, c-format
 msgid ""
 "Sends technical reports that do not contain personal information. Data is "
@@ -588,41 +554,33 @@ msgstr ""
 "보내는 기술 보고서에는 개인 정보가 들어있지 않습니다. 데이터는 %s에서 수집합"
 "니다."
 
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:123
-#, c-format
-msgid ""
-"Allows apps to determine your geographical location (<u><a "
-"href='%1$s'>privacy policy</a></u>)."
-msgstr ""
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:125
+msgid "Allows apps to determine your geographical location."
+msgstr "앱의 위치 정보 확인을 허용합니다."
 
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:174
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:14
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:28
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:171
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:15
+msgid "Privacy"
+msgstr "개인 정보"
+
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:33
 msgid "Location Services"
 msgstr "위치 정보 서비스"
 
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:17
-msgid ""
-"Turn on location services to let applications know your geographical "
-"location."
-msgstr ""
-
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:56
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:65
 msgid "Automatic Problem Reporting"
 msgstr "자동 문제 보고"
 
-#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:99
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:134
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:138
-msgid "You can change this later in the Settings app"
-msgstr ""
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:97
+msgid "Privacy controls can be changed at any time from the Settings app."
+msgstr "설정 앱에서 언제든 개인 정보 처리 방식을 바꿀 수 있습니다."
 
-#: gnome-initial-setup/pages/software/gis-software-page.c:123
+#: gnome-initial-setup/pages/software/gis-software-page.c:127
 #: gnome-initial-setup/pages/software/gis-software-page.ui:11
 msgid "Third-Party Repositories"
 msgstr "서드 파티 저장소"
 
-#: gnome-initial-setup/pages/software/gis-software-page.c:125
+#: gnome-initial-setup/pages/software/gis-software-page.c:129
 #, c-format
 msgid ""
 "Third-party repositories provide access to additional software from selected "
@@ -633,7 +591,7 @@ msgstr ""
 "택 <a href='%s'>외부 저장소</a>에서 추가 프로그램에 접근할 수 있게 해줍니다. "
 "일부 상업용 프로그램도 들어있습니다."
 
-#: gnome-initial-setup/pages/software/gis-software-page.c:127
+#: gnome-initial-setup/pages/software/gis-software-page.c:131
 msgid ""
 "Third-party repositories provide access to additional software from selected "
 "external sources, including popular apps and drivers that are important for "
@@ -643,18 +601,26 @@ msgstr ""
 "택 외부 저장소에서 추가 프로그램에 접근할 수 있게 해줍니다. 일부 상업용 프로"
 "그램도 들어있습니다."
 
-#: gnome-initial-setup/pages/software/gis-software-page.c:139
+#: gnome-initial-setup/pages/software/gis-software-page.c:143
 msgid "_Disable Third-Party Repositories"
 msgstr "서드 파티 저장소 미사용(_D)"
 
-#: gnome-initial-setup/pages/software/gis-software-page.c:144
+#: gnome-initial-setup/pages/software/gis-software-page.c:148
 msgid "_Enable Third-Party Repositories"
 msgstr "서드 파티 저장소 사용(_E)"
+
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:211
+msgid "Setup Failed"
+msgstr "설치 실패"
+
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:213
+msgid "Close"
+msgstr "닫기"
 
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
 #. * detect any distribution.
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:406
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:239
 #, c-format
 msgid "_Start Using %s"
 msgstr "%s 시작(_S)"
@@ -662,40 +628,18 @@ msgstr "%s 시작(_S)"
 #. Translators: the parameter here is the name of a distribution,
 #. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
 #. * detect any distribution.
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:413
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:246
 #, c-format
 msgid "%s is ready to be used."
 msgstr "%s을(를) 사용할 수 있도록 준비했습니다."
 
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:431
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:499
-#: gnome-initial-setup/pages/summary/gis-summary-page.ui:8
-msgid "All done!"
-msgstr "모두 끝났습니다!"
-
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:457
-msgid "Setup Failed"
-msgstr "설치 실패"
-
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:459
-msgid "Close"
-msgstr "닫기"
-
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:472
-msgid "Almost done"
-msgstr ""
-
-#: gnome-initial-setup/pages/summary/gis-summary-page.c:568
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:270
 msgid "Setup Complete"
 msgstr "설치 완료"
 
-#: gnome-initial-setup/pages/summary/gis-summary-page.ui:39
-msgid "Downloading additional language packs"
-msgstr ""
-
-#: gnome-initial-setup/pages/summary/gis-summary-page.ui:47
-msgid "Cancel Download"
-msgstr ""
+#: gnome-initial-setup/pages/summary/gis-summary-page.ui:8
+msgid "All done!"
+msgstr "모두 끝났습니다!"
 
 #: gnome-initial-setup/pages/timezone/gis-location-entry.c:117
 msgid "Search cities"
@@ -773,426 +717,26 @@ msgstr "인근 도시를 검색하십시오"
 #. * keep or remove. The %s is getting replaced with the name and version
 #. * of the OS, e.g. "GNOME 3.38"
 #.
-#: gnome-initial-setup/pages/welcome/gis-welcome-page.c:79
+#: gnome-initial-setup/pages/welcome/gis-welcome-page.c:62
 #, c-format
 msgid "Welcome to %s !"
 msgstr "%s 사용을 환영합니다!"
 
-#: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:12
-msgid "Welcome to Ubuntu 24.04 LTS"
-msgstr "Ubuntu 24.04 LTS에 오신 것을 환영합니다."
-
-#: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:13
-msgid ""
-"Complete your setup with additional settings and we'll\n"
-"have you up and running in no time"
-msgstr ""
-"추가 설정을 통해 설정을 완료하면\n"
-"바로 실행이 가능합니다."
+#: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:4
+msgid "Setup"
+msgstr "설정"
 
 #: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:32
-msgid "View release notes"
-msgstr "릴리즈 노트 보기"
-
-#: gnome-initial-setup/pages/apps/gis-apps-page.c:95
-msgid "Ready to go"
-msgstr "시작할 준비가 되었습니다"
-
-#: gnome-initial-setup/pages/apps/gis-apps-page.blp:8
-msgid "Get started with more applications"
-msgstr "더 많은 어플리케이션으로 시작하기"
-
-#: gnome-initial-setup/pages/apps/gis-apps-page.blp:9
-msgid "Ubuntu's App Center has a range of apps you can get started with."
-msgstr "Ubuntu의 App Center에는 시작할 수 있는 다양한 앱이 있습니다."
-
-#: gnome-initial-setup/pages/apps/gis-apps-page.blp:28
-msgid "Open App Center"
-msgstr "App Center 열기"
-
-#: gnome-initial-setup/pages/eula/gis-eula-page.blp:4
-msgid "End-User License Agreement"
-msgstr ""
-
-#. GNOME Initial Setup
-#. TRANSLATORS: The place-holder is an error message
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:73
-#, c-format
-msgid "Failed to grant consent for the Initial Setup application: %s"
-msgstr ""
-
-#. TRANSLATORS: The place-holder is an error message
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:75
-#, c-format
-msgid "Failed to withdraw consent for the Initial Setup application: %s"
-msgstr ""
-
-#. Platform source used by timed systemd collection
-#. TRANSLATORS: The place-holder is an error message
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:80
-#, c-format
-msgid "Failed to grant consent for the system data collector: %s"
-msgstr ""
-
-#. TRANSLATORS: The place-holder is an error message
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:82
-#, c-format
-msgid "Failed to withdraw consent for the system data collector: %s"
-msgstr ""
-
-#. Platform source used by release upgrader collection
-#. TRANSLATORS: The place-holder is an error message
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:87
-#, c-format
-msgid "Failed to grant consent for the release upgrader application: %s"
-msgstr ""
-
-#. TRANSLATORS: The place-holder is an error message
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:89
-#, c-format
-msgid "Failed to withdraw consent for the release upgrader application: %s"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:381
-#, c-format
 msgid ""
-"With telemetry log: %s\n"
-"Without telemetry log: %s"
+"Setup will guide you through making an account and enabling some features. "
+"We’ll have you up and running in no time."
 msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:411
-#, c-format
-msgid "Failed to collect telemetry report: %s"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:571
-#, c-format
-msgid "Failed to generate report: %s"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:589
-#, c-format
-msgid "Failed to write report: %s"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:647
-msgid "Show First Report"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:9
-#, fuzzy
-msgid "Utile Depends On It: Help Improve Ubuntu"
-msgstr "Ubuntu 개선에 도움주기"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:10
-msgid ""
-"Help improve Ubuntu by sharing your system and error reports with them.\n"
-"Reports are sent anonymously."
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:31
-msgid "Share _system data with the Ubuntu team"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:32
-msgid "This includes hardware information, language and timezone"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:46
-msgid "Learn more about system reporting"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:57
-msgid "Legal notice"
-msgstr "법적 공지"
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:68
-msgid "Show Report"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:95
-msgid "Share _error reports with the Ubuntu team"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:96
-msgid "This includes crash reports and related system logs"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:110
-msgid "Learn more about error reporting"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:148
-msgid "System Report"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-attach-page.blp:21
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:21
-msgid "Enable Ubuntu Pro"
-msgstr "Ubuntu Pro 활성화"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-attach-page.blp:29
-msgid "_Attach machine via your Ubuntu One account"
-msgstr "Ubuntu One 계정으로 기기에 로그인(A)"
-
-#. Translators: translators: This is the other way to attach a machine to Ubuntu Pro
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-attach-page.blp:82
-msgid "Or add a _token manually"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-attach-page.blp:117
-msgid "Token"
-msgstr "토큰"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:54
-msgid "Upgrade this device to Ubuntu Pro. Free for personal use."
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:105
-msgid ""
-"Fulfill FedRAMP, FIPS, STIG and HIPAA and other compliance and hardening "
-"requirements with certified tooling and crypto-modules"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:130
-msgid "Enable Ubuntu Pro now, or skip this step."
-msgstr "Ubuntu Pro를 활성화 하거나, 이 단계를 건너뜁니다"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:133
-msgid "_Enable Ubuntu Pro"
-msgstr "Ubuntu Pro 활성화(E)"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:152
-msgid "_Skip for now"
-msgstr "지금은 건너뛰기(S)"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:153
-msgid "You can enable Ubuntu Pro later in the Security Center"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-services-page.blp:22
-msgid "Ubuntu Pro Services"
-msgstr "Ubuntu Pro 서비스"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-services-page.blp:29
-msgid "Your subscription"
-msgstr "나의 구독"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-services-page.blp:44
-msgid "Your enabled services"
-msgstr "나의 활성화된 서비스"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-services-page.blp:47
-msgid ""
-"You can change the default enablements for your token on the ubuntu.com/pro "
-"web interface. You can also change enabled services in the Settings menu or "
-"with the `<span font_family='monospace'>pro</span>` command-line."
-msgstr ""
-"ubuntu.com/pro 웹 인터페이스에서 토큰의 기본 활성화를 변경할 수 있습니다. 설"
-"정 메뉴나 '<span font_family='monospace'>pro</span>' 명령줄에서 활성화된 서비"
-"스를 변경할 수도 있습니다."
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-services-page.blp:53
-msgid "Other available services"
-msgstr "다른 이용 가능한 서비스들"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:221
-msgid "Valid token"
-msgstr "유효한 토큰"
-
-#. TRANSLATORS: The error shown when attaching an
-#. Ubuntu Pro contact fails.
-#. It may be due to various reasons, most common is
-#. an invalid token.
-#.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:236
-msgid "Invalid token or attach failure"
-msgstr "유효하지 않은 토큰 또는 연결 실패"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:244
-msgid "Code expired"
-msgstr "코드 만료됨"
-
-#. TRANSLATORS: the placeholder %s is a link to ubuntu.com/pro/attach.
-#. Use HTML encoded format for special characters such as '&'.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:259
-#, c-format
-msgid "Enter this code on %s"
-msgstr "%s에 코드를 입력하십시오"
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:316
-msgid "An internet connection is required to enable Ubuntu Pro"
-msgstr "Ubuntu Pro를 활성화하려면 인터넷 연결이 필요합니다."
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:466
-#, c-format
-msgid "Get security updates on a wide range of packages until %s"
-msgstr ""
-
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:474
-msgid "Ubuntu Pro"
-msgstr "Ubuntu Pro"
-
-#. TRANSLATORS: The anbox-cloud Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:609
-msgid "Scalable Android in the cloud"
-msgstr "클라우드에서 확장 가능한 Android"
-
-#. TRANSLATORS: The cc-eal Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:612
-msgid "Common Criteria EAL2 Provisioning Packages"
-msgstr "공통 기준 EAL2 프로비저닝 패키지"
-
-#. TRANSLATORS: The esm-apps Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:615
-msgid "Expanded Security Maintenance for Applications"
-msgstr "애플리케이션에 대한 확장 보안 유지 관리"
-
-#. TRANSLATORS: The esm-infra Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:618
-msgid "Expanded Security Maintenance for Infrastructure"
-msgstr "인프라 보안 유지보수 확대"
-
-#. TRANSLATORS: The fips Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:621
-msgid "NIST-certified FIPS crypto packages"
-msgstr "NIST 인증 FIPS 암호화된 패키지"
-
-#. TRANSLATORS: The fips-preview Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:624
-msgid "Preview of FIPS crypto packages undergoing certification with NIST"
-msgstr "NIST 인증을 받은 FIPS 암호화 패키지 미리보기"
-
-#. TRANSLATORS: The fips-updates Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:627
-msgid "FIPS compliant crypto packages with stable security updates"
-msgstr "안정적인 보안 업데이트를 제공하는 FIPS 준수 암호화 패키지"
-
-#. TRANSLATORS: The landscape Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:630
-msgid "Management and administration tool for Ubuntu"
-msgstr "Ubuntu 관리 및 운영 도구"
-
-#. TRANSLATORS: The livepatch Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:633
-msgid "Canonical kernel Livepatch service"
-msgstr "정준 커널 라이브패치 서비스"
-
-#. TRANSLATORS: The realtime-kernel Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:636
-msgid "Ubuntu kernel with PREEMPT_RT patches integrated"
-msgstr "프리엠프루트 RT 패치가 통합된 우분투 커널(R)"
-
-#. TRANSLATORS: The ros Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:639
-msgid "Security Updates for the Robot Operating System"
-msgstr "로봇 운영 체제 보안 업데이트"
-
-#. TRANSLATORS: The ros-updates Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:642
-msgid "All Updates for the Robot Operating System"
-msgstr "로봇 운영 체제의 모든 업데이트"
-
-#. TRANSLATORS: The usg Ubuntu Pro Service description.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:645
-msgid "Security compliance and audit tools"
-msgstr "보안 규정 준수 및 감사 도구"
-
-#. TRANSLATORS: Use HTML encoded format for special characters such as &amp' for '&'. %s is a URL.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:1230
-#, c-format
-msgid "Learn more at %s"
-msgstr ""
-
-#. TRANSLATORS: Subtitle telling who can provide the Ubuntu Pro token.
-#. Use HTML encoded format for special characters such as &amp' for '&'. %s is a URL.
-#.
-#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:1247
-#, c-format
-msgid "From your admin, or from %s"
-msgstr ""
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:75
-msgid "Blue"
-msgstr ""
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:78
-msgid "Teal"
-msgstr ""
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:81
-msgid "Green"
-msgstr ""
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:84
-msgid "Yellow"
-msgstr ""
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:87
-msgid "Orange"
-msgstr ""
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:90
-msgid "Red"
-msgstr ""
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:93
-msgid "Pink"
-msgstr ""
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:96
-msgid "Purple"
-msgstr ""
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:99
-msgid "Slate"
-msgstr ""
-
-#. TRANSLATORS: An accent color.
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:102
-msgid "Warty Brown"
-msgstr ""
-
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:469
-msgid "Appearance"
-msgstr ""
-
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
-msgid "Choose how Ubuntu looks"
-msgstr ""
-
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
-msgid "Personalize your desktop's appearance"
-msgstr ""
-
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
-msgid "Style"
-msgstr ""
-
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:53
-msgid "_Default"
-msgstr ""
-
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:82
-msgid "Da_rk"
-msgstr ""
-
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:100
-msgid "OLED screen detected. Dark style may save power."
-msgstr ""
-
-#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:112
-msgid "Accent Color"
-msgstr ""
+"설정 과정에서 계정을 만들고 몇가지 기능을 사용할 수 있게 안내해드립니다. 이"
+"후 바로 사용하실 수 있도록 준비해드리겠습니다."
+
+#: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:36
+msgid "_Start Setup"
+msgstr "설정 시작(_S)"
 
 #: po/EXTRA_STRINGS.sh:1
 msgid "Force live user mode"
@@ -1235,125 +779,210 @@ msgstr "${NAME} 체험"
 msgid "Install ${PRETTY_NAME}"
 msgstr "${PRETTY_NAME} 설치"
 
-#, c-format
-#~ msgid "Failed to show privacy policy: %s"
-#~ msgstr "개인 정보 정책을 표시하지 못했습니다: %s"
+#~ msgid "Set a Password"
+#~ msgstr "암호 지정"
 
-#, c-format
-#~ msgid "Failed to get report information: %s"
-#~ msgstr "보고서 정보를 가져오는 데 실패했습니다: %s"
+#~ msgid "Privacy Policy"
+#~ msgstr "개인 정보 정책"
 
-#~ msgid "Show the First Report"
-#~ msgstr "첫번째 보고서 보이기"
-
-#~ msgid "Cancel"
-#~ msgstr "취소"
-
-#~ msgid "You can change your mind later in Settings → Privacy → Diagnostics."
+#~ msgid ""
+#~ "Allows apps to determine your geographical location. Uses the Mozilla "
+#~ "Location Service (<a href='https://location.services.mozilla.com/"
+#~ "privacy'>privacy policy</a>)."
 #~ msgstr ""
-#~ "마음이 바뀌면 나중에 설정 → 개인 정보 → 진단 에서 변경하실 수 있습니다."
+#~ "앱에서 위치 정보를 확인하도록 허용합니다. 모질라 위치 서비스를 활용합니다"
+#~ "(<a href='https://location.services.mozilla.com/privacy'>개인정보 취급 정"
+#~ "책</a>)."
+
+#~ msgid "Please check the name and username. You can choose a picture too."
+#~ msgstr "이름과 사용자 이름을 확인하십시오. 그림을 선택할 수도 있습니다."
+
+#~ msgid "Edit avatar"
+#~ msgstr "아바타 편집"
+
+#~ msgid "Online Accounts"
+#~ msgstr "온라인 계정"
+
+#~ msgid "Connect Your Online Accounts"
+#~ msgstr "온라인 계정 연결"
+
+#~ msgid ""
+#~ "Connect your accounts to easily access your email, online calendar, "
+#~ "contacts, documents and photos."
+#~ msgstr ""
+#~ "전자메일 계정, 온라인 달력, 연락처, 문서, 사진에 쉽게 접근할 계정에 연결합"
+#~ "니다."
+
+#~ msgid "Accounts can be added and removed at any time from the Settings app."
+#~ msgstr "계정은 설정 앱에서 언제든 추가하고 제거할 수 있습니다."
+
+#, c-format
+#~ msgid "%s Account"
+#~ msgstr "%s 계정"
+
+#~ msgid "Install or Try?"
+#~ msgstr "설치/사용 해보시겠습니까?"
+
+#~ msgid ""
+#~ "This live media can be used to install GNOME, or it can be used to try "
+#~ "GNOME as a temporary system. Installation can be started at any time "
+#~ "using the install icon in Activities."
+#~ msgstr ""
+#~ "이 라이브 미디어는 그놈을 설치할 때 사용할 수 있거나 그놈을 임시 시스템으"
+#~ "로 사용해볼 목적으로 활용할 수 있습니다. 설치는 현재 활동의 설치 아이콘을 "
+#~ "눌러 언제든 시작하실 수 있습니다."
+
+#~ msgid "Try"
+#~ msgstr "사용해보기"
+
+#~ msgid "Take a Picture…"
+#~ msgstr "사진 찍기…"
+
+#~ msgid "Avatar image"
+#~ msgstr "아바타 이미지"
+
+#~ msgid "_Confirm"
+#~ msgstr "확인(_C)"
+
+#~ msgid "This is a weak password."
+#~ msgstr "암호가 약합니다."
 
 #, c-format
 #~ msgid ""
-#~ "Sends technical reports that do not contain personal information. Data is "
-#~ "collected by %1$s (<a href='%2$s'>privacy policy</a>)."
+#~ "Sending reports of technical problems helps us to improve %s. Reports are "
+#~ "sent anonymously and are scrubbed of personal data."
 #~ msgstr ""
-#~ "보내는 기술 보고서에는 개인 정보가 들어있지 않습니다. 데이터는 %1$s(에)서 "
-#~ "수집합니다(<a href='%2$s'>개인 정보 보호 정책</a>)."
-
-#~ msgid "Privacy controls can be changed at any time from the Settings app."
-#~ msgstr "설정 앱에서 언제든 개인 정보 처리 방식을 바꿀 수 있습니다."
-
-#~ msgid "Ubuntu Report Contents"
-#~ msgstr "우분투 보고서 내용"
+#~ "기술적 문제 보고를 보내시면 %s을(를) 개선하는데 도움을 줍니다. 보고서는 익"
+#~ "명으로 보내며 개인 데이터는 빠집니다."
 
 #, c-format
-#~ msgid "Failed to send report decline: %s"
-#~ msgstr "보고서 거부를 보내지 못했습니다: %s"
+#~ msgid "Problem data will be collected by %s:"
+#~ msgstr "%s에서 문제 데이터를 수집합니다:"
 
-#, c-format
-#~ msgid "Failed to send report information: %s"
-#~ msgstr "보고서 정보를 보내지 못했습니다: %s"
+#~ msgid "Uses Mozilla Location Service:"
+#~ msgstr "모질라 위치 정보 서비스 활용:"
 
-#, c-format
+#~ msgid "Loading…"
+#~ msgstr "불러오는 중…"
+
 #~ msgid ""
-#~ "Turn on location services to let applications know your geographical "
-#~ "location. You can change this anytime in System Settings."
+#~ "Connecting to the Internet will enable you to set the time, add your "
+#~ "details, and enable you to access your email, calendar, and contacts. It "
+#~ "is also necessary for enterprise login accounts."
 #~ msgstr ""
-#~ "위치 서비스를 켜서 어플리케이션이 내 지리적 위치를 알 수 있도록 합니다. 시"
-#~ "스템 설정에서 언제든지 변경할 수 있습니다."
+#~ "인터넷에 연결하면 시간 설정, 개인 세부정보 추가, 전자메일, 달력, 연락처 접"
+#~ "근 활성화를 할 수 있습니다. 기업 로그인 계정에 필요합니다."
 
-#~ msgid "Location services"
-#~ msgstr "위치 서비스"
+#~ msgid "preferences-system"
+#~ msgstr "preferences-system"
 
-#~ msgid "Data privacy"
-#~ msgstr "데이터 프라이버시"
+#~ msgid "License Agreements"
+#~ msgstr "라이선스 동의서"
 
-#, c-format
 #~ msgid ""
-#~ "Help us improve Ubuntu by sharing your system data with us. This includes "
-#~ "things like your machine model, installed software and the location you "
-#~ "chose for your timezone."
+#~ "I have _agreed to the terms and conditions in this end user license "
+#~ "agreement."
+#~ msgstr "최종 사용자 라이선스 동의서의 조항에 동의합니다(_A)."
+
+#~ msgid "No regions found"
+#~ msgstr "지역을 찾을 수 없습니다"
+
+#~ msgid "Region"
+#~ msgstr "지역"
+
+#~ msgid "Choose your country or region."
+#~ msgstr "국가 또는 지역을 선택하십시오."
+
+#~ msgid "Software Repositories"
+#~ msgstr "프로그램 저장소"
+
+#~ msgid "Access additional software from selected third party sources."
+#~ msgstr "선택한 서드 파티 소스로부터 추가 프로그램에 접근합니다."
+
+#~ msgid ""
+#~ "Some of this software is proprietary and therefore has restrictions on "
+#~ "use, sharing, and access to source code."
 #~ msgstr ""
-#~ "시스템 데이터를 공유하여 Ubuntu를 개선하는 데 도움을 주세요. 여기에는 컴퓨"
-#~ "터 모델, 설치된 소프트웨어, 시간대 확인을 위해 선택한 위치 등이 포함됩니"
+#~ "이 프로그램의 일부는 상업용으로 사용, 공유 및 소스 코드 접근을 제한합니다."
+
+#~ msgid "Additional Software Repositories"
+#~ msgstr "추가 프로그램 저장소"
+
+#~ msgid "<a href=\"more\">Find out more…</a>"
+#~ msgstr "<a href=\"more\">더 찾아보기…</a>"
+
+#~ msgid ""
+#~ "Proprietary software typically has restrictions on how it can be used and "
+#~ "on access to source code. This prevents anyone but the software owner "
+#~ "from inspecting, improving or learning from its code."
+#~ msgstr ""
+#~ "상업용 프로그램은 보통 사용 방식과 소스 코드 접근을 제한합니다. 프로그램"
+#~ "의 소유자만 코드를 살펴보거나 개선할 수 있습니다."
+
+#~ msgid ""
+#~ "In contrast, Free Software can be freely run, copied, distributed, "
+#~ "studied and modified."
+#~ msgstr ""
+#~ "반면에 자유 프로그램은 자유롭게 실행, 복사, 배포, 연구, 수정할 수 있습니"
 #~ "다."
 
-#~ msgid "Yes, share system data with the Ubuntu team"
-#~ msgstr "네, 시스템 데이터를 Ubuntu 팀과 공유합니다."
+#~ msgid "Ready to Go"
+#~ msgstr "준비 완료"
 
-#~ msgid "No, don't share system data"
-#~ msgstr "아니요, 시스템 데이터를 공유하지 않겠습니다."
+#~ msgid "You’re ready to go!"
+#~ msgstr "준비됐습니다!"
 
-#~ msgid "From your admin, or from ubuntu.com/pro"
-#~ msgstr "관리자 또는 ubuntu.com/pro에서"
+#~ msgid "Disable image"
+#~ msgstr "이미지 비활성화"
 
-#~ msgid "Upgrade this machine to Ubuntu Pro. Free for up to 5 machines."
-#~ msgstr "이 기기를 Ubuntu Pro로 업그레이드하십시오. 5대까지 무료입니다."
+#~ msgctxt "Password hint"
+#~ msgid "Try to avoid common words."
+#~ msgstr "일반적인 단어를 피해보십시오."
 
-#~ msgid "Get security updates on a wide range of packages until 2034"
-#~ msgstr "2034년까지 다양한 패키지에 대한 보안 업데이트를 받으세요."
+#~ msgctxt "Password hint"
+#~ msgid "Try to use more numbers."
+#~ msgstr "더 많은 숫자를 사용해보십시오."
+
+#~ msgctxt "Password hint"
+#~ msgid ""
+#~ "Password needs to be longer. Try to add more letters, numbers and "
+#~ "punctuation."
+#~ msgstr "암호가 좀더 길어야 합니다. 문자, 숫자, 마침표를 혼용해보십시오."
 
 #~ msgid ""
-#~ "Upgrade this machine to Ubuntu Pro for security updates on a much wider "
-#~ "range of packages, until 2034. Fulfill FedRAMP, FIPS, STIG and HIPAA and "
-#~ "other compliance and hardening requirements with certified tooling and "
-#~ "crypto-modules. Free for up to 5 machines.\n"
-#~ "\n"
-#~ "More information on <a href=\"https://ubuntu.com/pro\">ubuntu.com/pro</a>."
+#~ "Proprietary software sources provide access to additional software, "
+#~ "including web browsers and games. This software typically has "
+#~ "restrictions on use and access to source code, and is not provided by %s."
 #~ msgstr ""
-#~ "2034년까지 훨씬 더 다양한 패키지에 대한 보안 업데이트를 위해 이 기기를 우"
-#~ "분투 프로로 업그레이드하세요. 인증된 툴링 및 암호화 모듈을 통해 FedRAMP, "
-#~ "FIPS, STIG 및 HIPAA 및 기타 규정 준수 및 강화 요구 사항을 충족하세요. 최"
-#~ "대 5대의 기기에 대해 무료로 제공됩니다"
+#~ "상업용 프로그램 공급원에서는 웹 브라우저 및 게임 같은 추가 프로그램 접근책"
+#~ "을 제공합니다. 이 프로그램은 보통 사용 및 소스 코드 접근을 제한하며, %s에"
+#~ "서 제공하지 않습니다."
 
-#~ msgid "Or add _token manually"
-#~ msgstr "또는 토큰을 수동으로 추가(T)"
+#~ msgid "Proprietary Software Sources"
+#~ msgstr "상업용 프로그램 공급원"
 
-#~ msgid ""
-#~ "Fulfill FedRAMP, FIPS, STIG and HIPAA and other compliance and hardening "
-#~ "requirements with certified tooling and crypto-modules."
-#~ msgstr ""
-#~ "인증된 툴링 및 암호화 모듈을 통해 FedRAMP, FIPS, STIG 및 HIPAA 및 기타 규"
-#~ "정 준수 및 강화 요구 사항을 충족하세요."
+#~ msgid "A user with the username ‘%s’ already exists."
+#~ msgstr "이미 ‘%s’ 이름을 가진 사용자가 있습니다."
 
-#~ msgid "Learn more at <a href=\"https://ubuntu.com/pro\">ubuntu.com/pro</a>."
-#~ msgstr ""
-#~ "<a href=\"https://ubuntu.com/pro\">ubuntu.com/pro</a> 에서 자세히 알아보"
-#~ "기."
+#~ msgid "_Verify"
+#~ msgstr "검증(_V)"
 
-#~ msgid ""
-#~ "You can always enable Ubuntu Pro later via the Software & Updates "
-#~ "application"
-#~ msgstr ""
-#~ "소프트웨어 및 업데이트 애플리케이션을 통해 나중에 언제든지 Ubuntu Pro를 활"
-#~ "성화할 수 있습니다"
+#~ msgctxt "Password strength"
+#~ msgid "Strength: Weak"
+#~ msgstr "강도: 약함"
 
-#~ msgid "Canceled additional downloads"
-#~ msgstr "추가 다운로드 취소"
+#~ msgctxt "Password strength"
+#~ msgid "Strength: Low"
+#~ msgstr "강도: 낮음"
 
-#~ msgid "Downloading language packs…"
-#~ msgstr "언어 팩을  다운로드 하는 중입니다..."
+#~ msgctxt "Password strength"
+#~ msgid "Strength: Medium"
+#~ msgstr "강도: 적당"
 
-#~ msgid "Unable to download additional language packs"
-#~ msgstr "추가 언어 팩을 다운로드할 수 없습니다."
+#~ msgctxt "Password strength"
+#~ msgid "Strength: Good"
+#~ msgstr "강도: 양호"
+
+#~ msgctxt "Password strength"
+#~ msgid "Strength: High"
+#~ msgstr "강도: 강함"

@@ -5,7 +5,4 @@
     <file preprocess="xml-stripblanks" alias="gis-bubble-widget.ui">gis-bubble-widget.ui</file>
     <file alias="gis-bubble-widget.css">gis-bubble-widget.css</file>
   </gresource>
-  <gresource prefix="/org/gnome/InitialSetup/icons">
-    <file preprocess="xml-stripblanks" alias="scalable/actions/ubuntu-timezone.svg">timezone.svg</file>
-  </gresource>
 </gresources>

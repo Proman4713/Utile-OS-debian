@@ -124,12 +124,9 @@ set_localed_input (GisKeyboardPage *self)
         GString *layouts;
         GString *variants;
         GSList *l;
-        const char *locale_helper;
-        const char * const *argv;
-        g_auto(GStrv) envp = NULL;
-        g_autoptr(GError) error = NULL;
-        GSpawnFlags spawn_flags;
-        GPid child_pid;
+
+        if (!priv->localed)
+                return;
 
 	cc_input_chooser_get_layout (CC_INPUT_CHOOSER (priv->input_chooser), &layout, &variant);
         if (layout == NULL)
@@ -160,32 +157,53 @@ set_localed_input (GisKeyboardPage *self)
 #undef LAYOUT
 #undef VARIANT
 
-        locale_helper = LIBEXECDIR "/gnome-initial-setup-set-debian-keyboard";
-        envp = g_get_environ ();
-        envp = g_environ_unsetenv (envp, "SHELL");
-        argv = (const char * const []) { "pkexec", locale_helper, layouts->str, variants->str, NULL };
-        spawn_flags = G_SPAWN_DO_NOT_REAP_CHILD |
-                      G_SPAWN_SEARCH_PATH |
-                      G_SPAWN_CHILD_INHERITS_STDOUT |
-                      G_SPAWN_CHILD_INHERITS_STDERR |
-                      G_SPAWN_STDIN_FROM_DEV_NULL;
-
-        if (!g_spawn_async (NULL, (char **)argv, envp, spawn_flags, NULL, NULL, &child_pid, &error))
-                g_warning ("Failed to launch %s as root: %s", locale_helper, error->message);
-        else
-                g_spawn_close_pid (child_pid);
-
+        g_dbus_proxy_call (priv->localed,
+                           "SetX11Keyboard",
+                           g_variant_new ("(ssssbb)", layouts->str, "", variants->str, "", TRUE, TRUE),
+                           G_DBUS_CALL_FLAGS_NONE,
+                           -1, NULL, NULL, NULL);
         g_string_free (layouts, TRUE);
         g_string_free (variants, TRUE);
 }
 
 static void
+change_locale_permission_acquired (GObject      *source,
+				   GAsyncResult *res,
+				   gpointer      data)
+{
+	GisKeyboardPage *page = GIS_KEYBOARD_PAGE (data);
+	GisKeyboardPagePrivate *priv = gis_keyboard_page_get_instance_private (page);
+	GError *error = NULL;
+	gboolean allowed;
+
+	allowed = g_permission_acquire_finish (priv->permission, res, &error);
+	if (error) {
+		if (!g_error_matches (error, G_IO_ERROR, G_IO_ERROR_CANCELLED))
+			g_warning ("Failed to acquire permission: %s", error->message);
+		g_error_free (error);
+		return;
+	}
+
+	if (allowed)
+		set_localed_input (GIS_KEYBOARD_PAGE (data));
+}
+
+static void
 update_input (GisKeyboardPage *self)
 {
+	GisKeyboardPagePrivate *priv = gis_keyboard_page_get_instance_private (self);
+
 	set_input_settings (self);
 
 	if (gis_driver_get_mode (GIS_PAGE (self)->driver) == GIS_DRIVER_MODE_NEW_USER) {
-		set_localed_input (self);
+		if (g_permission_get_allowed (priv->permission)) {
+			set_localed_input (self);
+		} else if (g_permission_get_can_acquire (priv->permission)) {
+			g_permission_acquire_async (priv->permission,
+						    NULL,
+						    change_locale_permission_acquired,
+						    self);
+		}
 	}
 }
 

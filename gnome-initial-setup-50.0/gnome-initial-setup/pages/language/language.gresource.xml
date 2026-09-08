@@ -7,7 +7,4 @@
   <gresource prefix="/org/gnome/control-center">
     <file preprocess="xml-stripblanks" alias="language-chooser.ui">language-chooser.ui</file>
   </gresource>
-  <gresource prefix="/org/gnome/InitialSetup/icons">
-    <file preprocess="xml-stripblanks" alias="scalable/places/distributor-logo.svg">distributor-logo.svg</file>
-  </gresource>
 </gresources>

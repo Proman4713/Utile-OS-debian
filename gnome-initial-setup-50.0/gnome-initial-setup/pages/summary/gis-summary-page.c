@@ -21,22 +21,15 @@
 
 /* Summary page {{{1 */
 
-#include "config.h"
-
 #define PAGE_ID "summary"
 
-#include <locale.h>
-
-#define GNOME_SYSTEM_LOCALE_DIR "org.gnome.system.locale"
-#define REGION_KEY "region"
-
+#include "config.h"
 #include "summary-resources.h"
 #include "gis-summary-page.h"
 
 #include <glib/gstdio.h>
 #include <glib/gi18n.h>
 #include <gio/gio.h>
-#include <polkit/polkit.h>
 #include <stdlib.h>
 #include <errno.h>
 
@@ -46,91 +39,14 @@
 
 struct _GisSummaryPagePrivate {
   GtkWidget *start_button;
-  GtkWidget *start_box;
-  GtkWidget *spinner;
-  GtkWidget *cancel_button;
-  GtkWidget *status_stack;
-
-  GPermission *permission;
-  GDBusProxy *localed;
-
   AdwStatusPage *status_page;
 
   ActUser *user_account;
   const gchar *user_password;
-
-  GCancellable *cancellable;
 };
 typedef struct _GisSummaryPagePrivate GisSummaryPagePrivate;
 
 G_DEFINE_TYPE_WITH_PRIVATE (GisSummaryPage, gis_summary_page, GIS_TYPE_PAGE);
-
-static void
-set_localed_locale (GisSummaryPage *self)
-{
-  GisSummaryPagePrivate *priv = gis_summary_page_get_instance_private (self);
-  g_autoptr (GVariantBuilder) b = NULL;
-  g_autofree gchar *s = NULL;
-  GisDriver *driver;
-
-  driver = GIS_PAGE (self)->driver;
-  const char *locale = gis_driver_get_user_language(driver);
-
-  b = g_variant_builder_new (G_VARIANT_TYPE ("as"));
-  s = g_strconcat ("LANG=", locale, NULL);
-  g_variant_builder_add (b, "s", s);
-
-  g_dbus_proxy_call (priv->localed,
-                     "SetLocale",
-                     g_variant_new ("(asb)", b, TRUE),
-                     G_DBUS_CALL_FLAGS_NONE,
-                     -1, NULL, NULL, NULL);
-
-  act_user_set_language (priv->user_account, locale);
-}
-
-static void
-change_locale_permission_acquired (GObject      *source,
-                                   GAsyncResult *res,
-                                   gpointer      data)
-{
-  GisSummaryPage *page = GIS_SUMMARY_PAGE(data);
-  GisSummaryPagePrivate *priv = gis_summary_page_get_instance_private (page);
-  GError *error = NULL;
-  gboolean allowed;
-
-  allowed = g_permission_acquire_finish (priv->permission, res, &error);
-  if (error) {
-      if (!g_error_matches (error, G_IO_ERROR, G_IO_ERROR_CANCELLED))
-        g_message ("Failed to acquire permission: %s", error->message);
-      g_error_free (error);
-      return;
-  }
-
-  if (allowed)
-    set_localed_locale (page);
-}
-
-static void
-apply_system_locale_changes (GisSummaryPage  *page)
-{
-  GisDriver *driver;
-
-  GisSummaryPagePrivate *priv = gis_summary_page_get_instance_private (page);
-  driver = GIS_PAGE (page)->driver;
-
-  if (gis_driver_get_mode (driver) == GIS_DRIVER_MODE_NEW_USER) {
-      if (g_permission_get_allowed (priv->permission)) {
-          set_localed_locale (page);
-      }
-      else if (g_permission_get_can_acquire (priv->permission)) {
-          g_permission_acquire_async (priv->permission,
-                                      NULL,
-                                      change_locale_permission_acquired,
-                                      page);
-      }
-  }
-}
 
 static void
 request_info_query (GisSummaryPage  *page,
@@ -273,121 +189,38 @@ done_cb (GtkButton *button, GisSummaryPage *page)
       log_user_in (page);
       break;
     case GIS_DRIVER_MODE_EXISTING_USER:
-    case GIS_DRIVER_MODE_UPGRADE:
       g_application_quit (G_APPLICATION (GIS_PAGE (page)->driver));
     default:
       break;
     }
 }
 
-static GPtrArray *
-get_lang_support_packages_for_locale (const gchar   *locale,
-                                      GCancellable  *cancellable,
-                                      GError       **error)
-{
-  g_autoptr (GSubprocess) subprocess = NULL;
-  g_autofree gchar *stdout_buf = NULL;
-  g_autofree gchar *stderr_buf = NULL;
-
-  subprocess = g_subprocess_new (G_SUBPROCESS_FLAGS_STDOUT_PIPE |
-                                 G_SUBPROCESS_FLAGS_STDERR_PIPE,
-                                 error,
-                                 "/usr/bin/check-language-support",
-                                 "-l",
-                                 locale,
-                                 NULL);
-
-  if (!subprocess)
-          return NULL;
-
-  if (!g_subprocess_communicate_utf8 (subprocess, NULL, cancellable,
-                                      &stdout_buf, &stderr_buf, error)) {
-    g_prefix_error_literal (error, "Failed to communicate with check-language-support: ");
-    return NULL;
-  }
-
-
-
-  if (!g_subprocess_wait_check (subprocess, cancellable, error)) {
-    g_prefix_error_literal (error, "check-language-support returned an error: ");
-    return NULL;
-  }
-
-  if (stderr_buf && *stderr_buf != '\0')
-    g_warning ("check-language-support stderr: %s", stderr_buf);
-
-  if (!stdout_buf || *stdout_buf == '\0')
-    return g_ptr_array_new_with_free_func (g_free);
-
-  g_auto (GStrv) packages_split = g_strsplit (g_strstrip (stdout_buf), " ", -1);
-  return g_ptr_array_new_take_null_terminated ((gpointer *) g_steal_pointer (&packages_split), g_free);
-}
-
-static gboolean
-install_language_support (const gchar   *locale,
-                          GCancellable  *cancellable,
-                          GError       **error)
-{
-  g_autoptr (GPtrArray) packages = NULL;
-  g_autofree gchar *locale_for_install = NULL;
-
-  char *suffix = strchr (locale, '.');
-  if (suffix)
-    locale_for_install = g_strndup (locale, suffix - locale);
-  else
-    locale_for_install = g_strdup (locale);
-
-  packages = get_lang_support_packages_for_locale (locale_for_install, cancellable, error);
-  if (!packages)
-    return FALSE;
-
-  if (packages->len == 0) {
-    g_message ("No packages to install for locale: %s", locale_for_install);
-    return TRUE;
-  }
-
-  if (!apt_get_install (packages, cancellable, error)) {
-    g_prefix_error_literal (error, "Error installing language support: ");
-    return FALSE;
-  }
-
-  return TRUE;
-}
-
-static gboolean
-check_network_connection (void)
-{
-    g_autoptr (GNetworkMonitor) monitor = g_network_monitor_get_default ();
-    return g_network_monitor_get_network_available (monitor);
-}
-
 static void
-installation_task_async (GTask        *task,
-                         gpointer      source_object,
-                         gpointer      task_data,
-                         GCancellable *cancellable)
+gis_summary_page_shown (GisPage *page)
 {
-  const gchar *locale = task_data;
-  g_autoptr (GError) error = NULL;
+  GisSummaryPage *summary = GIS_SUMMARY_PAGE (page);
+  GisSummaryPagePrivate *priv = gis_summary_page_get_instance_private (summary);
+  g_autoptr(GError) local_error = NULL;
 
-  if (g_cancellable_set_error_if_cancelled (cancellable, &error)) {
-    g_task_return_error (task, g_steal_pointer(&error));
-    return;
-  }
+  if (!gis_driver_save_data (GIS_PAGE (page)->driver, &local_error))
+    {
+      g_warning ("Error saving data: %s", local_error->message);
 
-  if (!install_language_support (locale, cancellable, &error)) {
-    g_task_return_error (task, g_steal_pointer (&error));
-    return;
-  }
+      GtkWindow *parent = GTK_WINDOW (gtk_widget_get_root (GTK_WIDGET (page)));
+      GtkWidget *dialog = adw_message_dialog_new (parent,
+                                                  _("Setup Failed"),
+                                                  local_error->message);
+      adw_message_dialog_add_response (ADW_MESSAGE_DIALOG (dialog), "close", _("Close"));
+      /* FIXME: Provide some more options for debugging or recovery */
 
-  g_task_return_boolean (task, TRUE);
-}
+      gtk_window_present (GTK_WINDOW (dialog));
+    }
 
-static void
-update_status_stack (GisSummaryPage    *page)
-{
-  GisSummaryPagePrivate *priv = gis_summary_page_get_instance_private (page);
-  gtk_stack_set_visible_child (GTK_STACK (priv->status_stack), priv->start_box);
+  gis_driver_get_user_permissions (GIS_PAGE (page)->driver,
+                                   &priv->user_account,
+                                   &priv->user_password);
+
+  gtk_widget_grab_focus (priv->start_button);
 }
 
 static void
@@ -416,146 +249,15 @@ update_distro_name (GisSummaryPage *page)
 }
 
 static void
-installation_task_done (GObject      *source_object,
-                        GAsyncResult *res,
-                        gpointer      user_data)
-{
-  g_autoptr (GError) error = NULL;
-  GisSummaryPage *page = user_data;
-  GisSummaryPagePrivate *priv = gis_summary_page_get_instance_private (page);
-
-  if (g_task_propagate_boolean (G_TASK (res), &error)) {
-    apply_system_locale_changes(page);
-    update_status_stack (page);
-    update_distro_name (page);
-    adw_status_page_set_title (priv->status_page, _("All done!"));
-    return;
-  }
-
-  if (g_error_matches (error, G_IO_ERROR, G_IO_ERROR_CANCELLED)) {
-    update_status_stack (page);
-    return;
-  }
-
-  update_status_stack (page);
-  g_warning ("Installation failed: %s", error->message);
-}
-
-static void
-gis_summary_page_shown (GisPage *page)
-{
-  GisSummaryPage *summary = GIS_SUMMARY_PAGE (page);
-  GisSummaryPagePrivate *priv = gis_summary_page_get_instance_private (summary);
-  g_autoptr(GError) local_error = NULL;
-
-  if (!gis_driver_save_data (GIS_PAGE (page)->driver, &local_error))
-    {
-      g_warning ("Error saving data: %s", local_error->message);
-
-      GtkWindow *parent = GTK_WINDOW (gtk_widget_get_root (GTK_WIDGET (page)));
-      GtkWidget *dialog = adw_message_dialog_new (parent,
-                                                  _("Setup Failed"),
-                                                  local_error->message);
-      adw_message_dialog_add_response (ADW_MESSAGE_DIALOG (dialog), "close", _("Close"));
-      /* FIXME: Provide some more options for debugging or recovery */
-
-      gtk_window_present (GTK_WINDOW (dialog));
-    }
-
-  gis_driver_get_user_permissions (GIS_PAGE (page)->driver,
-                                   &priv->user_account,
-                                   &priv->user_password);
-
-  /* Skip installation attempt if there is no active connection. */
-  if (check_network_connection ()) {
-    adw_status_page_set_description (priv->status_page, "");
-    adw_status_page_set_title (priv->status_page, _("Almost done"));
-    gtk_stack_set_visible_child_name (GTK_STACK(priv->status_stack), "download_box");
-    gtk_spinner_start (GTK_SPINNER (priv->spinner));
-
-    g_cancellable_cancel (priv->cancellable);
-
-    g_clear_pointer (&priv->cancellable, g_free);
-    priv->cancellable = g_cancellable_new ();
-
-    g_autoptr (GTask) task = g_task_new (page, priv->cancellable,
-                                             installation_task_done, page);
-
-    GisDriver *driver = GIS_PAGE(page)->driver;
-    const char *locale = gis_driver_get_user_language(driver);
-    g_task_set_task_data (task, g_strdup (locale), g_free);
-    g_task_set_return_on_cancel (task, TRUE);
-    g_task_run_in_thread (task, installation_task_async);
-  }
-}
-
-static void
-status_stack_reset_cb (GtkButton *button, GisSummaryPage *page)
-{
-    GisSummaryPagePrivate *priv = gis_summary_page_get_instance_private(page);
-    g_cancellable_cancel(priv->cancellable);
-    update_status_stack(page);
-    update_distro_name(page);
-    adw_status_page_set_title(priv->status_page, _("All done!"));
-}
-
-static void
-localed_proxy_ready (GObject      *source,
-                     GAsyncResult *res,
-                     gpointer      data)
-{
-  GisSummaryPage *self = data;
-  GisSummaryPagePrivate *priv = gis_summary_page_get_instance_private (self);
-  GDBusProxy *proxy;
-  GError *error = NULL;
-
-  proxy = g_dbus_proxy_new_finish (res, &error);
-
-  if (!proxy) {
-      if (!g_error_matches (error, G_IO_ERROR, G_IO_ERROR_CANCELLED))
-        g_message ("Failed to contact localed: %s", error->message);
-      g_error_free (error);
-      return;
-  }
-
-  priv->localed = proxy;
-}
-
-static void
 gis_summary_page_constructed (GObject *object)
 {
   GisSummaryPage *page = GIS_SUMMARY_PAGE (object);
   GisSummaryPagePrivate *priv = gis_summary_page_get_instance_private (page);
-  g_autoptr(GtkCssProvider) css_provider = NULL;
-  GDBusConnection *bus;
 
   G_OBJECT_CLASS (gis_summary_page_parent_class)->constructed (object);
 
-  css_provider = gtk_css_provider_new ();
-  gtk_css_provider_load_from_string (css_provider,
-    "statuspage.ready-to-go .icon { -gtk-icon-size: 280px; }");
-  gtk_style_context_add_provider_for_display (gdk_display_get_default (),
-                                              GTK_STYLE_PROVIDER (css_provider),
-                                              GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
-
-  gis_page_set_hide_navigation (GIS_PAGE (page), TRUE);
-
   update_distro_name (page);
   g_signal_connect (priv->start_button, "clicked", G_CALLBACK (done_cb), page);
-  g_signal_connect (priv->cancel_button, "clicked", G_CALLBACK (status_stack_reset_cb), page);
-
-  priv->permission = polkit_permission_new_sync ("org.freedesktop.locale1.set-locale", NULL, NULL, NULL);
-  bus = g_bus_get_sync (G_BUS_TYPE_SYSTEM, NULL, NULL);
-  g_dbus_proxy_new (bus,
-                    G_DBUS_PROXY_FLAGS_GET_INVALIDATED_PROPERTIES,
-                    NULL,
-                    "org.freedesktop.locale1",
-                    "/org/freedesktop/locale1",
-                    "org.freedesktop.locale1",
-                    priv->cancellable,
-                    (GAsyncReadyCallback) localed_proxy_ready,
-                    object);
-  g_object_unref (bus);
 
   gis_page_set_complete (GIS_PAGE (page), TRUE);
 
@@ -578,11 +280,7 @@ gis_summary_page_class_init (GisSummaryPageClass *klass)
   gtk_widget_class_set_template_from_resource (GTK_WIDGET_CLASS (klass), "/org/gnome/initial-setup/gis-summary-page.ui");
 
   gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisSummaryPage, start_button);
-  gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisSummaryPage, start_box);
   gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisSummaryPage, status_page);
-  gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisSummaryPage, spinner);
-  gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisSummaryPage, cancel_button);
-  gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisSummaryPage, status_stack);
 
   page_class->page_id = PAGE_ID;
   page_class->locale_changed = gis_summary_page_locale_changed;

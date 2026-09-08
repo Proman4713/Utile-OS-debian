@@ -4,76 +4,17 @@
     <child>
       <object class="AdwStatusPage" id="status_page">
         <property name="accessible-role">group</property>
-        <property name="icon-name">ubuntu-ready-to-go</property>
+        <property name="icon-name">ready-to-go</property>
         <property name="title" translatable="yes">All done!</property>
-        <style>
-          <class name="ready-to-go"/>
-        </style>
 
         <child>
-          <object class="GtkStack" id="status_stack">
-          <property name="halign">center</property>
-
-            <child>
-              <object class="GtkBox" id="download_box">
-                <property name="orientation">vertical</property>
-                <property name="halign">center</property>
-                <property name="spacing">10</property>
-                <child>
-                  <object class="GtkBox" id="spinner_box">
-                    <property name="orientation">horizontal</property>
-                    <property name="name">spinner</property>
-                    <property name="spacing">10</property>
-                    <property name="halign">center</property>
-                    <child>
-                      <object class="GtkSpinner" id="spinner">
-                        <property name="halign">center</property>
-                        <style>
-                          <class name="suggested-action"/>
-                          <class name="pill"/>
-                        </style>
-                      </object>
-                    </child>
-                    <child>
-                      <object class="GtkLabel" id="spinner_label">
-                        <property name="label" translatable="yes">Downloading additional language packs</property>
-                        <property name="halign">center</property>
-                      </object>
-                    </child>
-                  </object>
-                </child>
-                <child>
-                  <object class="GtkButton" id="cancel_button">
-                    <property name="label" translatable="yes">Cancel Download</property>
-                    <property name="use_underline">True</property>
-                    <property name="halign">center</property>
-                    <style>
-                      <class name="pill"/>
-                    </style>
-                  </object>
-                </child>
-              </object>
-            </child>
-
-            <child>
-              <object class="GtkBox" id="start_box">
-                <property name="orientation">vertical</property>
-                <property name="halign">center</property>
-                <property name="spacing">10</property>
-                <child>
-                  <object class="GtkButton" id="start_button">
-                    <property name="name">start</property>
-                    <property name="use_underline">True</property>
-                    <property name="halign">center</property>
-                    <style>
-                      <class name="suggested-action"/>
-                      <class name="pill"/>
-                    </style>
-                  </object>
-                  </child>
-              </object>
-            </child>
-
+          <object class="GtkButton" id="start_button">
+            <property name="use_underline">True</property>
+            <property name="halign">center</property>
+            <style>
+              <class name="suggested-action"/>
+              <class name="pill"/>
+            </style>
           </object>
         </child>
 

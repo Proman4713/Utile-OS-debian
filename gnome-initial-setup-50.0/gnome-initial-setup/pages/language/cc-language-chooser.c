@@ -30,8 +30,6 @@
 #include <gtk/gtk.h>
 
 #define GNOME_DESKTOP_USE_UNSTABLE_API
-#define LANGUAGE_LIST_PATH "/usr/share/language-selector/data/languagelist"
-
 #include <libgnome-desktop/gnome-languages.h>
 
 #include "cc-common-language.h"
@@ -312,54 +310,13 @@ add_languages (CcLanguageChooser  *chooser,
         gtk_list_box_set_placeholder (GTK_LIST_BOX (priv->language_list), priv->no_results);
 }
 
-static GStrv
-parse_language_list (void)
-{
-    g_autofree gchar *contents = NULL;
-    g_autoptr (GError) error = NULL;
-
-    if (!g_file_get_contents (LANGUAGE_LIST_PATH, &contents, NULL, &error)) {
-        g_critical ("Error reading file: %s", error->message);
-        return NULL;
-    }
-
-    g_auto (GStrv) lines = g_strsplit (contents, "\n", -1);
-    g_autoptr (GStrvBuilder) builder = g_strv_builder_new ();
-
-    for (gchar **line = lines; *line != NULL; line++) {
-        const gchar *trimmed = g_strstrip (*line);
-
-        /* Skip empty lines and commented out lines */
-        if (trimmed[0] == '\0' || trimmed[0] == '#') {
-            continue;
-        }
-
-        g_auto (GStrv) tokens = g_strsplit (trimmed, ";", -1);
-        gint token_count = g_strv_length (tokens);
-
-        /* Language code we use is the 4th entry in a ; delimited list */
-        if (token_count >= 4)
-            g_strv_builder_add (builder, g_strdup (tokens[3]));
-    }
-
-    return g_strv_builder_end (builder);
-}
-
 static void
 add_all_languages (CcLanguageChooser *chooser)
 {
         g_auto(GStrv) locale_ids = NULL;
         g_autoptr(GHashTable) initial = NULL;
 
-        /* Make use of the static language list in
-         * /usr/share/language-selector/data/languagelist. If not present, fall
-         * back to using gnome_get_all_locales().
-         */
-        if (!(locale_ids = parse_language_list ())) {
-                g_warn_if_reached ();
-                locale_ids = gnome_get_all_locales ();
-        }
-
+        locale_ids = gnome_get_all_locales ();
         initial = cc_common_language_get_initial_languages ();
         add_languages (chooser, locale_ids, initial);
 }

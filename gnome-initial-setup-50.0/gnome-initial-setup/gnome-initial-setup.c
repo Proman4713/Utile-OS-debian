@@ -32,7 +32,6 @@
 #include "pages/welcome/gis-welcome-page.h"
 #include "pages/language/gis-language-page.h"
 #include "pages/keyboard/gis-keyboard-page.h"
-#include "pages/eula/gis-eula-page.h"
 #include "pages/network/gis-network-page.h"
 #include "pages/timezone/gis-timezone-page.h"
 #include "pages/privacy/gis-privacy-page.h"
@@ -41,20 +40,13 @@
 #include "pages/parental-controls/gis-parental-controls-page.h"
 #include "pages/password/gis-password-page.h"
 #include "pages/summary/gis-summary-page.h"
-#include "pages/ubuntu-insights/gis-ubuntu-insights-page.h"
-#include "pages/ubuntu-pro/gis-ubuntupro-page.h"
-#include "pages/apps/gis-apps-page.h"
-#include "pages/appearance/gis-appearance-page.h"
 
 #define VENDOR_PAGES_GROUP "pages"
 #define VENDOR_SKIP_KEY "skip"
 #define VENDOR_NEW_USER_ONLY_KEY "new_user_only"
 #define VENDOR_EXISTING_USER_ONLY_KEY "existing_user_only"
 
-static gboolean is_desktop (const gchar *name);
-
 static gboolean force_existing_user_mode;
-static gboolean force_upgrade_user_mode;
 
 static GPtrArray *skipped_pages;
 
@@ -64,61 +56,25 @@ typedef struct {
   const gchar *page_id;
   PreparePage prepare_page_func;
   gboolean new_user_only;
-  gboolean upgrade_user;
 } PageData;
 
-#define PAGE(name, new_user_only, upgrade_user) \
-  { #name, gis_prepare_ ## name ## _page, new_user_only, upgrade_user }
+#define PAGE(name, new_user_only) { #name, gis_prepare_ ## name ## _page, new_user_only }
 
 static PageData page_table[] = {
-  PAGE (welcome, FALSE, FALSE),
-  PAGE (language, FALSE, FALSE),
-  PAGE (keyboard, FALSE, FALSE),
-  PAGE (eula,     TRUE, FALSE),
-  PAGE (network,  FALSE, FALSE),
-  PAGE (account,  TRUE, FALSE),
-  PAGE (password, TRUE, FALSE),
-  PAGE (ubuntu_pro, TRUE, FALSE),
-  PAGE (privacy,  FALSE, FALSE),
-  PAGE (ubuntu_insights, FALSE, TRUE),
-  PAGE (timezone, TRUE, FALSE),
-  PAGE (software, TRUE, FALSE),
+  PAGE (welcome, FALSE),
+  PAGE (language, FALSE),
+  PAGE (keyboard, FALSE),
+  PAGE (network,  FALSE),
+  PAGE (privacy,  FALSE),
+  PAGE (timezone, TRUE),
+  PAGE (software, TRUE),
+  PAGE (account,  TRUE),
+  PAGE (password, TRUE),
 #ifdef HAVE_PARENTAL_CONTROLS
-  PAGE (parental_controls, TRUE, FALSE),
-  PAGE (parent_password, TRUE, FALSE),
+  PAGE (parental_controls, TRUE),
+  PAGE (parent_password, TRUE),
 #endif
-  PAGE (summary,  FALSE, FALSE),
-  { NULL },
-};
-
-static PageData ubuntu_page_table[] = {
-  PAGE (welcome,         FALSE, TRUE),
-  PAGE (ubuntu_pro,      FALSE, TRUE),
-  /* Showing privacy panel since we switched to baeconDB since last LTS,
-   * so it's better to ask for consent again.
-   * This can be dropped after 26.04.
-   */
-  PAGE (privacy,         FALSE, TRUE),
-  PAGE (ubuntu_insights, FALSE, TRUE),
-  PAGE (account,         TRUE, FALSE),
-  PAGE (password,        TRUE, FALSE),
-  PAGE (appearance,      FALSE, TRUE),
-  PAGE (apps,            FALSE, FALSE),
-  { NULL },
-};
-
-static PageData unity_page_table[] = {
-  PAGE (welcome,         FALSE, TRUE),
-  /* Showing privacy panel since we switched to baeconDB since last LTS,
-   * so it's better to ask for consent again.
-   * This can be dropped after 26.04.
-   */
-  PAGE (privacy,         FALSE, TRUE),
-  PAGE (ubuntu_insights, FALSE, TRUE),
-  PAGE (account,         TRUE, FALSE),
-  PAGE (password,        TRUE, FALSE),
-  PAGE (appearance,      FALSE, FALSE),
-  PAGE (apps,            FALSE, FALSE),
+  PAGE (summary,  FALSE),
   { NULL },
 };
 
@@ -133,9 +89,7 @@ should_skip_page (const gchar  *page_id,
   /* special case welcome. We only want to show it if language
    * is skipped
    */
-  if ((strcmp (page_id, "welcome") == 0) &&
-      !is_desktop ("ubuntu") &&
-      !is_desktop ("unity"))
+  if (strcmp (page_id, "welcome") == 0)
     return !should_skip_page ("language", skip_pages);
 
   /* check through our skip pages list for pages we don't want */
@@ -234,24 +188,6 @@ destroy_page (gpointer data)
     gis_assistant_remove_page (GIS_ASSISTANT (assistant), page);
 }
 
-static gboolean
-is_desktop (const gchar *name)
-{
-  /* note that, for first user account creation inside gnome-initial-setup user,
-   * XDG_CURRENT_DESKTOP is set to "GNOME-Greeter:GNOME"
-   */
-
-  const gchar *xdg_current_desktop;
-  g_auto(GStrv) tokens = NULL;
-
-  xdg_current_desktop = g_getenv ("XDG_CURRENT_DESKTOP");
-  if (xdg_current_desktop == NULL)
-    return FALSE;
-
-  tokens = g_strsplit (xdg_current_desktop, ":", -1);
-  return g_strv_contains ((const gchar * const*) tokens, name);
-}
-
 static void
 rebuild_pages_cb (GisDriver *driver)
 {
@@ -264,13 +200,7 @@ rebuild_pages_cb (GisDriver *driver)
 
   assistant = gis_driver_get_assistant (driver);
   current_page = gis_assistant_get_current_page (assistant);
-
-  if (is_desktop ("ubuntu"))
-    page_data = ubuntu_page_table;
-  else if (is_desktop ("unity"))
-    page_data = unity_page_table;
-  else
-    page_data = page_table;
+  page_data = page_table;
 
   g_ptr_array_free (skipped_pages, TRUE);
   skipped_pages = g_ptr_array_new_with_free_func (destroy_page);
@@ -278,7 +208,7 @@ rebuild_pages_cb (GisDriver *driver)
   if (current_page != NULL) {
     destroy_pages_after (assistant, current_page);
 
-    for (; page_data->page_id != NULL; ++page_data)
+    for (page_data = page_table; page_data->page_id != NULL; ++page_data)
       if (g_str_equal (page_data->page_id, GIS_PAGE_GET_CLASS (current_page)->page_id))
         break;
 
@@ -286,7 +216,6 @@ rebuild_pages_cb (GisDriver *driver)
   }
 
   is_new_user = (gis_driver_get_mode (driver) == GIS_DRIVER_MODE_NEW_USER);
-  gboolean is_upgrade = (gis_driver_get_mode (driver) == GIS_DRIVER_MODE_UPGRADE);
   skip_pages = pages_to_skip_from_file (driver, is_new_user);
 
   for (; page_data->page_id != NULL; ++page_data) {
@@ -295,14 +224,6 @@ rebuild_pages_cb (GisDriver *driver)
     if ((page_data->new_user_only && !is_new_user) ||
         (should_skip_page (page_data->page_id, skip_pages)))
       skipped = TRUE;
-
-    if (is_upgrade)
-      {
-        skipped = TRUE;
-
-        if (page_data->upgrade_user)
-          skipped = should_skip_page (page_data->page_id, skip_pages);
-      }
 
     page = page_data->prepare_page_func (driver);
     if (!page)
@@ -322,9 +243,6 @@ rebuild_pages_cb (GisDriver *driver)
 static GisDriverMode
 get_mode (void)
 {
-  if (force_upgrade_user_mode)
-    return GIS_DRIVER_MODE_UPGRADE;
-
   if (force_existing_user_mode)
     return GIS_DRIVER_MODE_EXISTING_USER;
   else
@@ -360,8 +278,6 @@ main (int argc, char *argv[])
   GOptionEntry entries[] = {
     { "existing-user", 0, 0, G_OPTION_ARG_NONE, &force_existing_user_mode,
       _("Force existing user mode"), NULL },
-    { "upgrade-user", 0, 0, G_OPTION_ARG_NONE, &force_upgrade_user_mode,
-      _("Force Upgrade user"), NULL },
     { NULL }
   };
 
@@ -395,6 +311,20 @@ main (int argc, char *argv[])
 
   driver = gis_driver_new (mode);
 
+  /* On first login, GNOME Shell offers to run a tour. If we also run Initial
+   * Setup, the two immovable, centred windows will sit atop one another.
+   * Until we have the ability to run Initial Setup in the "kiosk" mode, like
+   * it does in new-user mode, disable Initial Setup for existing users.
+   *
+   * https://gitlab.gnome.org/GNOME/gnome-initial-setup/-/issues/120#note_1019004
+   * https://gitlab.gnome.org/GNOME/gnome-initial-setup/-/issues/12
+   */
+  if (mode == GIS_DRIVER_MODE_EXISTING_USER) {
+    g_message ("Skipping gnome-initial-setup for existing user");
+    gis_ensure_stamp_files (driver);
+    exit (EXIT_SUCCESS);
+  }
+
   /* We only do this in existing-user mode, because if gdm launches us
    * in new-user mode and we just exit, gdm's special g-i-s session
    * never terminates. */
@@ -425,54 +355,6 @@ gis_ensure_stamp_files (GisDriver *driver)
       g_warning ("Unable to create %s: %s", done_file, error->message);
       g_clear_error (&error);
   }
-}
-
-static gboolean
-touch_file (GFile   *file,
-            GError **error)
-{
-  g_autoptr (GFile) parent = NULL;
-  g_autoptr (GFileOutputStream) stream = NULL;
-  g_autoptr (GError) local_error = NULL;
-
-  parent = g_file_get_parent (file);
-  g_file_make_directory_with_parents (parent, NULL, &local_error);
-
-  if (local_error && !g_error_matches (local_error, G_IO_ERROR, G_IO_ERROR_EXISTS))
-    {
-      g_propagate_error (error, g_steal_pointer (&local_error));
-      return FALSE;
-    }
-  g_clear_error (&local_error);
-
-  stream = g_file_create (file, G_FILE_CREATE_NONE, NULL, &local_error);
-
-  if (local_error && !g_error_matches (local_error, G_IO_ERROR, G_IO_ERROR_EXISTS))
-    {
-      g_propagate_error (error, g_steal_pointer (&local_error));
-      return FALSE;
-    }
-
-  if (stream)
-    g_output_stream_close (G_OUTPUT_STREAM (stream), NULL, NULL);
-
-  return TRUE;
-}
-
-void
-gis_ensure_upgrade_stamp_files (GisDriver *driver)
-{
-  const char *done_file_name = NULL;
-  g_autoptr (GFile) done_file = NULL;
-  g_autoptr (GError) error = NULL;
-
-  done_file_name = "upgrade-" LSB_RELEASE_VERSION_ID "-done";
-  done_file = g_file_new_build_filename (g_get_user_config_dir (),
-                                         "gnome-initial-setup",
-                                         done_file_name, NULL);
-
-  if (!touch_file (done_file, &error))
-    g_critical ("Unable to create %s: %s", g_file_peek_path (done_file), error->message);
 }
 
 /**

@@ -25,7 +25,6 @@
 #include <glib/gi18n.h>
 
 #include "gis-page-header.h"
-#include "gis-focusable-bin.h"
 #include "gis-webkit.h"
 
 enum {
@@ -34,10 +33,7 @@ enum {
   PROP_SUBTITLE,
   PROP_ICON_NAME,
   PROP_PAINTABLE,
-  PROP_HEIGHT_REQUEST,
   PROP_SHOW_ICON,
-  PROP_PIXEL_SIZE,
-  PROP_ACCESSIBLE_TITLE,
   PROP_LAST,
 };
 
@@ -51,10 +47,6 @@ struct _GisPageHeader
   GtkWidget *icon;
   GtkWidget *subtitle;
   GtkWidget *title;
-
-  gint pixel_size;
-  guint height_request;
-  gboolean show_icon;
 };
 
 G_DEFINE_TYPE (GisPageHeader, gis_page_header, GTK_TYPE_BOX)
@@ -72,19 +64,6 @@ update_box_visibility (GisPageHeader *header)
                                        gtk_widget_get_visible (header->title));
 }
 
-static gboolean
-gis_page_header_grab_focus (GtkWidget *widget)
-{
-  GisPageHeader *header = GIS_PAGE_HEADER (widget);
-  gboolean retval = gtk_widget_grab_focus (GTK_WIDGET (header->box));
-
-  /* Ensure that when grab_focus is called on the header (which happens when
-   * switching between pages), the "focus ring" is hidden.
-   */
-  gtk_window_set_focus_visible (GTK_WINDOW (gtk_widget_get_root (GTK_WIDGET (header))), FALSE);
-  return retval;
-}
-
 static void
 gis_page_header_init (GisPageHeader *header)
 {
@@ -94,19 +73,6 @@ gis_page_header_init (GisPageHeader *header)
                             G_CALLBACK(update_box_visibility), header);
   g_signal_connect_swapped (header->title, "notify::visible",
                             G_CALLBACK(update_box_visibility), header);
-}
-
-static void
-update_icon_properties (GisPageHeader *header)
-{
-  if (!header->icon)
-    return;
-
-  g_object_set (G_OBJECT (header->icon),
-                "pixel-size", header->pixel_size,
-                "height-request", header->height_request,
-                "visible", header->show_icon,
-                NULL);
 }
 
 static void
@@ -135,20 +101,8 @@ gis_page_header_get_property (GObject    *object,
       g_object_get_property (G_OBJECT (header->icon), "paintable", value);
       break;
 
-    case PROP_HEIGHT_REQUEST:
-      g_value_set_uint (value, header->height_request);
-      break;
-
-    case PROP_PIXEL_SIZE:
-      g_value_set_int (value, header->pixel_size);
-      break;
-
     case PROP_SHOW_ICON:
-      g_value_set_boolean (value, header->show_icon);
-      break;
-
-    case PROP_ACCESSIBLE_TITLE:
-      g_value_set_boolean (value, gtk_widget_get_can_focus (header->box));
+      g_value_set_boolean (value, gtk_widget_get_visible (header->icon));
       break;
 
     default:
@@ -179,31 +133,14 @@ gis_page_header_set_property (GObject      *object,
 
     case PROP_ICON_NAME:
       g_object_set_property (G_OBJECT (header->icon), "icon-name", value);
-      update_icon_properties (header);
       break;
 
     case PROP_PAINTABLE:
       g_object_set_property (G_OBJECT (header->icon), "paintable", value);
-      update_icon_properties (header);
-      break;
-
-    case PROP_HEIGHT_REQUEST:
-      header->height_request = g_value_get_uint (value);
-      update_icon_properties (header);
-      break;
-
-    case PROP_PIXEL_SIZE:
-      header->pixel_size = g_value_get_int (value);
-      update_icon_properties (header);
       break;
 
     case PROP_SHOW_ICON:
-      header->show_icon = g_value_get_boolean (value);
-      update_icon_properties (header);
-      break;
-
-    case PROP_ACCESSIBLE_TITLE:
-      gtk_widget_set_can_focus (header->box, g_value_get_boolean (value));
+      gtk_widget_set_visible (header->icon, g_value_get_boolean (value));
       break;
 
     default:
@@ -216,9 +153,7 @@ static void
 gis_page_header_class_init (GisPageHeaderClass *klass)
 {
   GObjectClass *gobject_class = G_OBJECT_CLASS (klass);
-  GtkWidgetClass *widget_class = GTK_WIDGET_CLASS (klass);
 
-  g_type_ensure (GIS_TYPE_FOCUSABLE_BIN);
   gtk_widget_class_set_template_from_resource (GTK_WIDGET_CLASS (klass), "/org/gnome/initial-setup/gis-page-header.ui");
 
   gtk_widget_class_bind_template_child (GTK_WIDGET_CLASS (klass), GisPageHeader, box);
@@ -254,31 +189,11 @@ gis_page_header_class_init (GisPageHeaderClass *klass)
                          GDK_TYPE_PAINTABLE,
                          G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS);
 
-  obj_props[PROP_HEIGHT_REQUEST] =
-    g_param_spec_uint ("height-request",
-                       "", "",
-                       0, G_MAXUINT, 0,
-                       G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS | G_PARAM_CONSTRUCT);
-
-  obj_props[PROP_PIXEL_SIZE] =
-    g_param_spec_int ("pixel-size",
-                      "", "",
-                      0, G_MAXINT, 280, /* 280 matches the default image size */
-                      G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS | G_PARAM_CONSTRUCT);
-
   obj_props[PROP_SHOW_ICON] =
     g_param_spec_boolean ("show-icon",
                           "", "",
                           FALSE,
-                          G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS | G_PARAM_CONSTRUCT);
-
-  obj_props[PROP_ACCESSIBLE_TITLE] =
-    g_param_spec_boolean ("use-accessible-title",
-                          "", "",
-                          FALSE,
-                          G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS | G_PARAM_CONSTRUCT);
+                          G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS);
 
   g_object_class_install_properties (gobject_class, PROP_LAST, obj_props);
-
-  widget_class->grab_focus = gis_page_header_grab_focus;
 }
