@@ -1,0 +1,229 @@
+From: Sergio Costas <sergio.costas@canonical.com>
+Date: Thu, 21 Mar 2024 12:57:52 +0000
+Subject: privacy: Uniform style with flutter installer
+
+---
+ .../enable-location-services.svg}                  |  0
+ .../pages/privacy/gis-privacy-page.c               | 24 +++++++----
+ .../pages/privacy/gis-privacy-page.ui              | 50 +++++++++++-----------
+ .../pages/privacy/privacy.gresource.xml            |  3 ++
+ 4 files changed, 45 insertions(+), 32 deletions(-)
+ copy gnome-initial-setup/pages/{timezone/timezone.svg => privacy/enable-location-services.svg} (100%)
+
+diff --git a/gnome-initial-setup/pages/timezone/timezone.svg b/gnome-initial-setup/pages/privacy/enable-location-services.svg
+similarity index 100%
+copy from gnome-initial-setup/pages/timezone/timezone.svg
+copy to gnome-initial-setup/pages/privacy/enable-location-services.svg
+diff --git a/gnome-initial-setup/pages/privacy/gis-privacy-page.c b/gnome-initial-setup/pages/privacy/gis-privacy-page.c
+index d36e2aa..e000d7f 100644
+--- a/gnome-initial-setup/pages/privacy/gis-privacy-page.c
++++ b/gnome-initial-setup/pages/privacy/gis-privacy-page.c
+@@ -37,7 +37,8 @@ struct _GisPrivacyPage
+ {
+   GisPage parent;
+ 
+-  GtkWidget *location_switch;
++  GtkWidget *header;
++  GtkWidget *location_switch_row;
+   GtkWidget *location_privacy_label;
+   GtkWidget *reporting_group;
+   GtkWidget *reporting_label;
+@@ -65,7 +66,7 @@ update_os_data (GisPrivacyPage *page)
+        * like "Fedora" or "Ubuntu".
+        */
+       subtitle = g_strdup_printf (_("Sends technical reports that do not contain personal information. "
+-                                    "Data is collected by %1$s (<a href='%2$s'>privacy policy</a>)."),
++                                    "Data is collected by %1$s (<u><a href='%2$s'>privacy policy</a></u>)."),
+                                     name, privacy_policy);
+       gtk_label_set_markup (GTK_LABEL (page->reporting_label), subtitle);
+ 
+@@ -106,6 +107,7 @@ static void
+ gis_privacy_page_constructed (GObject *object)
+ {
+   GisPrivacyPage *page = GIS_PRIVACY_PAGE (object);
++  g_autofree char *location_privacy_text = NULL;
+ 
+   G_OBJECT_CLASS (gis_privacy_page_parent_class)->constructed (object);
+ 
+@@ -114,11 +116,16 @@ gis_privacy_page_constructed (GObject *object)
+   page->location_settings = g_settings_new ("org.gnome.system.location");
+   page->privacy_settings = g_settings_new ("org.gnome.desktop.privacy");
+ 
+-  gtk_switch_set_active (GTK_SWITCH (page->location_switch), TRUE);
++  adw_switch_row_set_active (ADW_SWITCH_ROW (page->location_switch_row), TRUE);
+   gtk_switch_set_active (GTK_SWITCH (page->reporting_switch), TRUE);
+ 
++  location_privacy_text = g_strdup_printf (
++    _("Allows apps to determine your geographical location "
++      "(<u><a href='%1$s'>privacy policy</a></u>)."),
++      "https://beacondb.net/privacy");
++
+   gtk_label_set_label (GTK_LABEL (page->location_privacy_label),
+-                       _("Allows apps to determine your geographical location."));
++                       location_privacy_text);
+ 
+   if (update_os_data (page))
+     {
+@@ -152,7 +159,7 @@ gis_privacy_page_apply (GisPage *gis_page,
+   GisPrivacyPage *page = GIS_PRIVACY_PAGE (gis_page);
+   gboolean active;
+ 
+-  active = gtk_widget_is_visible (page->location_switch) && gtk_switch_get_active (GTK_SWITCH (page->location_switch));
++  active = gtk_widget_is_visible (page->location_switch_row) && adw_switch_row_get_active (ADW_SWITCH_ROW (page->location_switch_row));
+   g_settings_set_boolean (page->location_settings, "enabled", active);
+ 
+   active = gtk_widget_is_visible (page->reporting_switch) && gtk_switch_get_active (GTK_SWITCH (page->reporting_switch));
+@@ -164,14 +171,14 @@ gis_privacy_page_apply (GisPage *gis_page,
+ static void
+ gis_privacy_page_locale_changed (GisPage *page)
+ {
+-  gis_page_set_title (GIS_PAGE (page), _("Privacy"));
++  gis_page_set_title (GIS_PAGE (page), _("Location Services"));
+ }
+ 
+ static void
+ gis_privacy_page_shown (GisPage *gis_page)
+ {
+   GisPrivacyPage *page = GIS_PRIVACY_PAGE (gis_page);
+-  gtk_widget_grab_focus (GTK_WIDGET (page->location_switch));
++  gtk_widget_grab_focus (GTK_WIDGET (page->header));
+ }
+ 
+ static void
+@@ -181,7 +188,8 @@ gis_privacy_page_class_init (GisPrivacyPageClass *klass)
+   GObjectClass *object_class = G_OBJECT_CLASS (klass);
+ 
+   gtk_widget_class_set_template_from_resource (GTK_WIDGET_CLASS (klass), "/org/gnome/initial-setup/gis-privacy-page.ui");
+-  gtk_widget_class_bind_template_child (GTK_WIDGET_CLASS (klass), GisPrivacyPage, location_switch);
++  gtk_widget_class_bind_template_child (GTK_WIDGET_CLASS (klass), GisPrivacyPage, header);
++  gtk_widget_class_bind_template_child (GTK_WIDGET_CLASS (klass), GisPrivacyPage, location_switch_row);
+   gtk_widget_class_bind_template_child (GTK_WIDGET_CLASS (klass), GisPrivacyPage, location_privacy_label);
+   gtk_widget_class_bind_template_child (GTK_WIDGET_CLASS (klass), GisPrivacyPage, reporting_group);
+   gtk_widget_class_bind_template_child (GTK_WIDGET_CLASS (klass), GisPrivacyPage, reporting_label);
+diff --git a/gnome-initial-setup/pages/privacy/gis-privacy-page.ui b/gnome-initial-setup/pages/privacy/gis-privacy-page.ui
+index 81fe4ad..04b02d5 100644
+--- a/gnome-initial-setup/pages/privacy/gis-privacy-page.ui
++++ b/gnome-initial-setup/pages/privacy/gis-privacy-page.ui
+@@ -8,14 +8,13 @@
+ 
+         <child>
+           <object class="AdwPreferencesGroup">
+-            <property name="accessible-role">group</property>
+             <child>
+               <object class="GisPageHeader" id="header">
+                 <property name="use-accessible-title">true</property>
+-                <property name="margin_top">24</property>
+-                <property name="title" translatable="yes">Privacy</property>
+-                <property name="icon_name">preferences-system-privacy-symbolic</property>
++                <property name="title" translatable="yes">Location Services</property>
++                <property name="icon_name">enable-location-services</property>
+                 <property name="show_icon" bind-source="GisPrivacyPage" bind-property="small-screen" bind-flags="invert-boolean|sync-create"/>
++                <property name="subtitle" translatable="yes">Turn on location services to let applications know your geographical location.</property>
+               </object>
+             </child>
+           </object>
+@@ -23,31 +22,22 @@
+ 
+         <child>
+           <object class="AdwPreferencesGroup">
+-            <property name="accessible-role">group</property>
+-            <accessibility>
+-              <relation name="labelled-by">header</relation>
+-              <relation name="described-by">header</relation>
+-            </accessibility>
+             <child>
+-              <object class="AdwActionRow">
++              <object class="AdwSwitchRow" id="location_switch_row">
+                 <property name="use-markup">True</property>
+                 <property name="title" translatable="yes">Location Services</property>
+-                <property name="activatable-widget">location_switch</property>
+-                <child>
+-                  <object class="GtkSwitch" id="location_switch">
+-                    <property name="valign">center</property>
+-                  </object>
+-                </child>
+               </object>
+             </child>
+             <child>
+               <object class="GtkLabel" id="location_privacy_label">
++                <property name="accessible-role">link</property>
+                 <property name="margin-top">12</property>
+                 <property name="wrap">True</property>
+                 <property name="wrap-mode">word-char</property>
+                 <property name="use-markup">True</property>
+                 <property name="ellipsize">none</property>
+                 <property name="xalign">0.0</property>
++                <property name="accessible-role">link</property>
+                 <signal name="activate-link" handler="gis_activate_link" object="GisPrivacyPage" swapped="no" />
+                 <style>
+                   <class name="caption" />
+@@ -65,6 +55,7 @@
+               <object class="AdwActionRow" id="reporting_row">
+                 <property name="title" translatable="yes">Automatic Problem Reporting</property>
+                 <property name="activatable-widget">reporting_switch</property>
++                <property name="focusable">False</property>
+                 <child>
+                   <object class="GtkSwitch" id="reporting_switch">
+                     <property name="valign">center</property>
+@@ -74,12 +65,14 @@
+             </child>
+             <child>
+               <object class="GtkLabel" id="reporting_label">
++                <property name="accessible-role">link</property>
+                 <property name="margin-top">12</property>
+                 <property name="wrap">True</property>
+                 <property name="wrap-mode">word-char</property>
+                 <property name="use-markup">True</property>
+                 <property name="ellipsize">none</property>
+                 <property name="xalign">0.0</property>
++                <property name="accessible-role">link</property>
+                 <signal name="activate-link" handler="gis_activate_link" object="GisPrivacyPage" swapped="no" />
+                 <style>
+                   <class name="caption" />
+@@ -92,17 +85,26 @@
+         <child>
+           <object class="AdwPreferencesGroup">
+             <child>
+-              <object class="GtkLabel" id="footer_label">
++              <object class="GisFocusableBin" id="box">
+                 <property name="valign">end</property>
+                 <property name="vexpand">True</property>
+-                <property name="label" translatable="yes">Privacy controls can be changed at any time from the Settings app.</property>
+-                <property name="xalign">0.5</property>
+-                <property name="justify">center</property>
+-                <property name="wrap">True</property>
++                <property name="margin_top">18</property>
+                 <property name="margin_bottom">18</property>
+-                <style>
+-                  <class name="dim-label"/>
+-                </style>
++                <accessibility>
++                  <relation name="labelled-by">footer_label</relation>
++                </accessibility>
++                <child>
++                  <object class="GtkLabel" id="footer_label">
++                    <property name="accessible-role">none</property>
++                    <property name="label" translatable="yes">You can change this later in the Settings app</property>
++                    <property name="xalign">0.5</property>
++                    <property name="justify">center</property>
++                    <property name="wrap">True</property>
++                    <style>
++                      <class name="dim-label"/>
++                    </style>
++                  </object>
++                </child>
+               </object>
+             </child>
+           </object>
+diff --git a/gnome-initial-setup/pages/privacy/privacy.gresource.xml b/gnome-initial-setup/pages/privacy/privacy.gresource.xml
+index be75b34..f1e8019 100644
+--- a/gnome-initial-setup/pages/privacy/privacy.gresource.xml
++++ b/gnome-initial-setup/pages/privacy/privacy.gresource.xml
+@@ -3,4 +3,7 @@
+   <gresource prefix="/org/gnome/initial-setup">
+     <file preprocess="xml-stripblanks" alias="gis-privacy-page.ui">gis-privacy-page.ui</file>
+   </gresource>
++  <gresource prefix="/org/gnome/InitialSetup/icons">
++    <file preprocess="xml-stripblanks" alias="scalable/actions/enable-location-services.svg">enable-location-services.svg</file>
++  </gresource>
+ </gresources>

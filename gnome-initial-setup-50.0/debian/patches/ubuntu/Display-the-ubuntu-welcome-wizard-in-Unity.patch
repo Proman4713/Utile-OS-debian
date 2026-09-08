@@ -1,0 +1,37 @@
+From: Sebastien Bacher <seb128@ubuntu.com>
+Date: Thu, 12 Jul 2018 16:51:34 +0200
+Subject: Display the ubuntu welcome wizard in Unity
+
+---
+ gnome-initial-setup/gnome-initial-setup.c | 11 +++++++++++
+ 1 file changed, 11 insertions(+)
+
+diff --git a/gnome-initial-setup/gnome-initial-setup.c b/gnome-initial-setup/gnome-initial-setup.c
+index 472efca..f365b65 100644
+--- a/gnome-initial-setup/gnome-initial-setup.c
++++ b/gnome-initial-setup/gnome-initial-setup.c
+@@ -91,6 +91,15 @@ static PageData ubuntu_page_table[] = {
+   { NULL },
+ };
+ 
++static PageData unity_page_table[] = {
++  PAGE (welcome,        FALSE),
++  PAGE (privacy,        FALSE),
++  PAGE (account,        TRUE),
++  PAGE (password,       TRUE),
++  PAGE (apps,           FALSE),
++  { NULL },
++};
++
+ #undef PAGE
+ 
+ static gboolean
+@@ -236,6 +245,8 @@ rebuild_pages_cb (GisDriver *driver)
+ 
+   if (is_desktop ("ubuntu"))
+     page_data = ubuntu_page_table;
++  else if (is_desktop ("unity"))
++    page_data = unity_page_table;
+   else
+     page_data = page_table;
+ 

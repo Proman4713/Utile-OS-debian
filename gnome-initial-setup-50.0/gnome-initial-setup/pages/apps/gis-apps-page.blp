@@ -1,0 +1,34 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $GisAppsPage: $GisPage {
+  Adw.PreferencesPage {
+    Adw.PreferencesGroup {
+      $GisPageHeader header {
+        title: _("Get started with more applications");
+        subtitle: _("Ubuntu's App Center has a range of apps you can get started with.");
+        use-accessible-title: true;
+        show-icon: "0";
+      }
+
+      Box {
+        orientation: vertical;
+        spacing: 48;
+        margin-top: 48;
+
+        Picture {
+          file: "resource:///org/gnome/initial-setup/app-center.svg";
+          height-request: 423;
+          focusable: false;
+        }
+
+        Button app_center {
+          margin-top: 0;
+          halign: center;
+          label: _("Open App Center");
+          clicked => $open_software();
+        }
+      }
+    }
+  }
+}

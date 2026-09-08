@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+<interface>
+  <requires lib="gtk+" version="3.0"/>
+  <template class="GisPrivacyPage" parent="GisPage">
+
+    <child>
+      <object class="AdwPreferencesPage">
+
+        <child>
+          <object class="AdwPreferencesGroup">
+            <child>
+              <object class="GisPageHeader" id="header">
+                <property name="use-accessible-title">true</property>
+                <property name="title" translatable="yes">Location Services</property>
+                <property name="icon_name">enable-location-services</property>
+                <property name="show_icon" bind-source="GisPrivacyPage" bind-property="small-screen" bind-flags="invert-boolean|sync-create"/>
+                <property name="subtitle" translatable="yes">Turn on location services to let applications know your geographical location.</property>
+              </object>
+            </child>
+          </object>
+        </child>
+
+        <child>
+          <object class="AdwPreferencesGroup">
+            <child>
+              <object class="AdwSwitchRow" id="location_switch_row">
+                <property name="use-markup">True</property>
+                <property name="title" translatable="yes">Location Services</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkLabel" id="location_privacy_label">
+                <property name="accessible-role">link</property>
+                <property name="margin-top">12</property>
+                <property name="wrap">True</property>
+                <property name="wrap-mode">word-char</property>
+                <property name="use-markup">True</property>
+                <property name="ellipsize">none</property>
+                <property name="xalign">0.0</property>
+                <property name="accessible-role">link</property>
+                <signal name="activate-link" handler="gis_activate_link" object="GisPrivacyPage" swapped="no" />
+                <style>
+                  <class name="caption" />
+                </style>
+              </object>
+            </child>
+          </object>
+        </child>
+
+        <child>
+          <object class="AdwPreferencesGroup" id="reporting_group">
+            <property name="margin-top">12</property>
+            <property name="visible">False</property>
+            <child>
+              <object class="AdwActionRow" id="reporting_row">
+                <property name="title" translatable="yes">Automatic Problem Reporting</property>
+                <property name="activatable-widget">reporting_switch</property>
+                <property name="focusable">False</property>
+                <child>
+                  <object class="GtkSwitch" id="reporting_switch">
+                    <property name="valign">center</property>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="GtkLabel" id="reporting_label">
+                <property name="accessible-role">link</property>
+                <property name="margin-top">12</property>
+                <property name="wrap">True</property>
+                <property name="wrap-mode">word-char</property>
+                <property name="use-markup">True</property>
+                <property name="ellipsize">none</property>
+                <property name="xalign">0.0</property>
+                <property name="accessible-role">link</property>
+                <signal name="activate-link" handler="gis_activate_link" object="GisPrivacyPage" swapped="no" />
+                <style>
+                  <class name="caption" />
+                </style>
+              </object>
+            </child>
+          </object>
+        </child>
+
+        <child>
+          <object class="AdwPreferencesGroup">
+            <child>
+              <object class="GisFocusableBin" id="box">
+                <property name="valign">end</property>
+                <property name="vexpand">True</property>
+                <property name="margin_top">18</property>
+                <property name="margin_bottom">18</property>
+                <accessibility>
+                  <relation name="labelled-by">footer_label</relation>
+                </accessibility>
+                <child>
+                  <object class="GtkLabel" id="footer_label">
+                    <property name="accessible-role">none</property>
+                    <property name="label" translatable="yes">You can change this later in the Settings app</property>
+                    <property name="xalign">0.5</property>
+                    <property name="justify">center</property>
+                    <property name="wrap">True</property>
+                    <style>
+                      <class name="dim-label"/>
+                    </style>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </child>
+
+      </object>
+    </child>
+
+  </template>
+</interface>

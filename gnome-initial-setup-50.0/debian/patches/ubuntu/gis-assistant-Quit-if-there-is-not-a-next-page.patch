@@ -1,0 +1,45 @@
+From: =?utf-8?b?Ik1hcmNvIFRyZXZpc2FuIChUcmV2acOxbyki?= <mail@3v1n0.net>
+Date: Thu, 11 Dec 2025 05:19:21 +0100
+Subject: gis-assistant: Quit if there is not a next page
+
+If we've reached the end of the pages to show, we can safely quit
+---
+ gnome-initial-setup/gis-assistant.c | 14 +++++++++++++-
+ 1 file changed, 13 insertions(+), 1 deletion(-)
+
+diff --git a/gnome-initial-setup/gis-assistant.c b/gnome-initial-setup/gis-assistant.c
+index 68bf434..55b1625 100644
+--- a/gnome-initial-setup/gis-assistant.c
++++ b/gnome-initial-setup/gis-assistant.c
+@@ -27,6 +27,8 @@
+ #include <gtk/gtk.h>
+ 
+ #include "gis-assistant.h"
++#include "gio/gio.h"
++#include "gis-driver.h"
+ 
+ enum {
+   PROP_0,
+@@ -110,11 +112,21 @@ find_next_page (GisAssistant *self,
+ static void
+ switch_to_next_page (GisAssistant *assistant)
+ {
++  GisDriver *driver;
+   GisPage *page;
+ 
+   page = find_next_page (assistant, assistant->current_page);
+   if (page)
+-    switch_to (assistant, page);
++    {
++      switch_to (assistant, page);
++      return;
++    }
++
++  g_return_if_fail (assistant->current_page);
++
++  driver = GIS_PAGE (assistant->current_page)->driver;
++  if (gis_driver_get_mode (driver) != GIS_DRIVER_MODE_NEW_USER)
++    g_application_quit (G_APPLICATION (driver));
+ }
+ 
+ static void

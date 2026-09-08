@@ -1,0 +1,116 @@
+include:
+  - project: "GNOME/citemplates"
+    file: "templates/default-rules.yml"
+  - project: "Infrastructure/freedesktop-ci-templates"
+    ref: "fb9d50ccb3cbbb4c6dc5f9ef53a0ad3cb0d8a177"
+    file:
+      - "templates/fedora.yml"
+  - component: gitlab.gnome.org/GNOME/citemplates/release-service@master
+    inputs:
+      job-stage: "deploy"
+      dist-job-name: "build-gnomeos"
+  - component: "gitlab.gnome.org/GNOME/citemplates/gnomeos-basic-ci@master"
+    inputs:
+      meson-options: "$MESON_OPTIONS"
+      grcov-c: "disabled"
+      before-script: "bash .gitlab-ci/install-accountsservice.sh"
+
+variables:
+  FDO_UPSTREAM_REPO: gnome/gnome-initial-setup
+  AUTO_FEATURES: "enabled"
+  OPTIONS: ""
+  # In general, we would like warnings to be fatal. However, code copied from
+  # gnome-control-center uses many deprecated functions. Until we have a good
+  # answer to sharing that code (#68), make those warnings non-fatal.
+  MESON_OPTIONS: >-
+    --wrap-mode=nofallback
+    --fatal-meson-warnings
+    --auto-features ${AUTO_FEATURES}
+    ${OPTIONS}
+    -Dwerror=true -Dc_args=-Wno-error=deprecated-declarations
+
+stages:
+  - prepare
+  - build
+  - deploy
+
+.fedora.container.common:
+  variables:
+    # When branching a stable release, change 'main'
+    # to the release number/branch to ensure that
+    # a new image will be created, tailored for the
+    # stable branch.
+    FDO_DISTRIBUTION_TAG: '2025-11-28.00-main'
+    FDO_DISTRIBUTION_VERSION: 43
+
+# See also https://gitlab.gnome.org/Infrastructure/freedesktop-ci-templates
+build.container.fedora@x86_64:
+  extends:
+  - '.fdo.container-build@fedora'
+  - '.fedora.container.common'
+  stage: 'prepare'
+  variables:
+    # no need to pull the whole tree for rebuilding the image
+    GIT_STRATEGY: none
+    # Expiry sets fdo.expires on the image
+    FDO_EXPIRES_AFTER: 8w
+    FDO_DISTRIBUTION_EXEC: >-
+      bash .gitlab-ci/install-accountsservice.sh &&
+      dnf builddep -y malcontent-ui-libs &&
+      bash .gitlab-ci/install-malcontent.sh
+    FDO_DISTRIBUTION_PACKAGES: >-
+      @c-development
+      accountsservice-devel
+      ccache
+      desktop-file-utils
+      fontconfig-devel
+      gdm-devel
+      geoclue2-devel
+      geocode-glib-devel
+      git
+      gi-docgen
+      gtk-doc
+      glib2-devel
+      gnome-desktop4-devel
+      gsettings-desktop-schemas-devel
+      gtk4-devel
+      ibus-devel
+      json-c-devel
+      krb5-devel
+      libgweather4-devel
+      libadwaita-devel
+      libnma-gtk4-devel
+      libpwquality-devel
+      libsecret-devel
+      meson
+      polkit-devel
+      webkitgtk6.0-devel
+
+fedora build:
+  extends:
+    - '.fdo.distribution-image@fedora'
+    - '.fedora.container.common'
+  stage: build
+  script:
+    - git config --global --add safe.directory $CI_PROJECT_DIR
+
+    - meson setup $MESON_OPTIONS _build .
+
+    - cd _build
+    - ninja -v
+    # Check that strings can be extracted
+    - ninja -v gnome-initial-setup-pot
+    - meson dist --include-subprojects
+    - mv "${CI_PROJECT_DIR}/_build/meson-dist/" "${CI_PROJECT_DIR}/public-dist/"
+  artifacts:
+    when: always
+    name: "${CI_JOB_NAME}-${CI_COMMIT_REF_NAME}"
+    paths:
+      - "${CI_PROJECT_DIR}/_build/meson-logs"
+      - "public-dist"
+  parallel:
+    matrix:
+      - AUTO_FEATURES: "disabled"
+        OPTIONS: ""
+      - AUTO_FEATURES: "enabled"
+        OPTIONS: '-Dvendor-conf-file=/var/lib/weird-vendor-specific-path.ini'

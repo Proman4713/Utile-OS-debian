@@ -1,0 +1,166 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $GisUbuntuProOfferPage: Adw.Bin {
+  Adw.PreferencesPage {
+    Adw.PreferencesGroup {
+      Adw.Clamp {
+        margin-top: 20;
+        maximum-size: 300;
+
+        child: Picture ubuntu_pro_logo {
+          valign: start;
+          content-fit: scale_down;
+          can-shrink: true;
+          height-request: 75;
+        };
+      }
+
+      $GisPageHeader header {
+        margin-top: "75";
+        title: _("Enable Ubuntu Pro");
+        show-icon: false;
+        use-accessible-title: true;
+      }
+    }
+
+    Adw.PreferencesGroup {
+      Box {
+        orientation: vertical;
+        vexpand: false;
+        hexpand: false;
+        valign: start;
+
+        $GisFocusableBin {
+          vexpand: false;
+          hexpand: false;
+          valign: start;
+          Grid {
+            halign: fill;
+            column-spacing: 8;
+            margin-top: 8;
+            margin-bottom: 8;
+            margin-start: 0;
+            margin-end: 0;
+            row-spacing: 6;
+
+            Label {
+              wrap: true;
+              halign: start;
+              valign: start;
+              xalign: 0;
+              width-chars: 65;
+              margin-bottom: 12;
+              label: _("Upgrade this device to Ubuntu Pro. Free for personal use.");
+
+              layout {
+                column: "0";
+                row: "0";
+                column-span: "2";
+              }
+            }
+
+            Label {
+              label: "•";
+              valign: start;
+              accessible-role: none;
+
+              layout {
+                column: "0";
+                row: "1";
+              }
+            }
+
+            Label security_updates_label {
+              wrap: true;
+              halign: start;
+              valign: start;
+              xalign: 0;
+
+              layout {
+                column: "1";
+                row: "1";
+              }
+            }
+
+            Label {
+              label: "•";
+              valign: start;
+              accessible-role: none;
+
+              layout {
+                column: "0";
+                row: "2";
+              }
+            }
+
+            Label {
+              wrap: true;
+              halign: start;
+              valign: start;
+              xalign: 0;
+              width-chars: 65;
+              attributes: "line-height 1.2";
+              label: _(
+                "Fulfill FedRAMP, FIPS, STIG and HIPAA and other compliance and hardening requirements with certified tooling and crypto-modules"
+              );
+
+              layout {
+                column: "1";
+                row: "2";
+              }
+            }
+          }
+        }
+        Label learn_more {
+          wrap: true;
+          halign: start;
+          valign: start;
+          xalign: 0;
+          use-markup: true;
+          margin-top: 12;
+          width-chars: 65;
+
+          activate-link => $gis_activate_link(template) not-swapped;
+        }
+      }
+    }
+
+    Adw.PreferencesGroup {
+      title: _("Enable Ubuntu Pro now, or skip this step.");
+
+      Adw.ActionRow enable_pro_row {
+        title: _("_Enable Ubuntu Pro");
+        use-underline: true;
+        activatable-widget: enable_pro_select;
+
+        [prefix]
+        CheckButton enable_pro_select {
+          group: skip_pro_select;
+          focus-on-click: false;
+          can-focus: false;
+        }
+
+        [suffix]
+        Image offline_warning {
+          icon-name: "dialog-warning-symbolic";
+          visible: false;
+        }
+      }
+
+      Adw.ActionRow {
+        title: _("_Skip for now");
+        subtitle: _("You can enable Ubuntu Pro later in the Security Center");
+        use-underline: true;
+        use-markup: false;
+        activatable-widget: skip_pro_select;
+
+        [prefix]
+        CheckButton skip_pro_select {
+          focus-on-click: false;
+          can-focus: false;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,67 @@
+From: Nathan Pratta Teodosio <nathan.teodosio@canonical.com>
+Date: Fri, 15 Mar 2024 12:12:49 +0100
+Subject: gis-page: Allow to override the go-back behavior
+
+---
+ gnome-initial-setup/gis-assistant.c |  4 +++-
+ gnome-initial-setup/gis-page.c      | 11 +++++++++++
+ gnome-initial-setup/gis-page.h      |  2 ++
+ 3 files changed, 16 insertions(+), 1 deletion(-)
+
+diff --git a/gnome-initial-setup/gis-assistant.c b/gnome-initial-setup/gis-assistant.c
+index 55b1625..a4df5b1 100644
+--- a/gnome-initial-setup/gis-assistant.c
++++ b/gnome-initial-setup/gis-assistant.c
+@@ -175,7 +175,9 @@ void
+ gis_assistant_previous_page (GisAssistant *assistant)
+ {
+   g_return_if_fail (assistant->current_page != NULL);
+-  switch_to (assistant, find_prev_page (assistant, assistant->current_page));
++
++  if (!gis_page_go_back (assistant->current_page))
++    switch_to (assistant, find_prev_page (assistant, assistant->current_page));
+ }
+ 
+ static void
+diff --git a/gnome-initial-setup/gis-page.c b/gnome-initial-setup/gis-page.c
+index 7376b0b..399f26f 100644
+--- a/gnome-initial-setup/gis-page.c
++++ b/gnome-initial-setup/gis-page.c
+@@ -386,6 +386,17 @@ gis_page_apply_begin (GisPage                *page,
+   g_object_notify_by_pspec (G_OBJECT (page), obj_props[PROP_APPLYING]);
+ }
+ 
++gboolean
++gis_page_go_back (GisPage *page)
++{
++  GisPageClass *klass = GIS_PAGE_GET_CLASS (page);
++
++  if (!klass->go_back)
++    return FALSE;
++
++  return klass->go_back (page);
++}
++
+ void
+ gis_page_apply_complete (GisPage *page,
+                          gboolean valid)
+diff --git a/gnome-initial-setup/gis-page.h b/gnome-initial-setup/gis-page.h
+index 742cc71..adb11e0 100644
+--- a/gnome-initial-setup/gis-page.h
++++ b/gnome-initial-setup/gis-page.h
+@@ -59,6 +59,7 @@ struct _GisPageClass
+   void         (*locale_changed) (GisPage *page);
+   gboolean     (*apply) (GisPage *page,
+                          GCancellable *cancellable);
++  gboolean     (*go_back) (GisPage *page);
+   gboolean     (*save_data) (GisPage  *page,
+                              GError  **error);
+   void         (*shown) (GisPage *page);
+@@ -83,6 +84,7 @@ void         gis_page_locale_changed (GisPage *page);
+ void         gis_page_apply_begin (GisPage *page, GisPageApplyCallback callback, gpointer user_data);
+ void         gis_page_apply_cancel (GisPage *page);
+ void         gis_page_apply_complete (GisPage *page, gboolean valid);
++gboolean     gis_page_go_back (GisPage *page);
+ gboolean     gis_page_get_applying (GisPage *page);
+ gboolean     gis_page_save_data (GisPage  *page,
+                                  GError  **error);

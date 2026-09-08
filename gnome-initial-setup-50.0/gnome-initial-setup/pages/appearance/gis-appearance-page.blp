@@ -1,0 +1,149 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $GisAppearancePage: $GisPage {
+  Adw.PreferencesPage {
+    Adw.PreferencesGroup {
+      $GisPageHeader header {
+        margin-top: 36;
+        title: _("Choose how Ubuntu looks");
+        subtitle: _("Personalize your desktop's appearance");
+        show-icon: false;
+        use-accessible-title: true;
+      }
+    }
+
+    Adw.PreferencesGroup {
+      title: _("Style");
+
+      Adw.PreferencesRow {
+        activatable: false;
+        focusable: false;
+
+        Adw.Clamp {
+          maximum-size: 400;
+          tightening-threshold: 300;
+
+          Grid {
+            column-homogeneous: true;
+            column-spacing: 24;
+            row-spacing: 12;
+            margin-start: 12;
+            margin-end: 12;
+            margin-top: 18;
+            margin-bottom: 12;
+            hexpand: true;
+
+            ToggleButton default_toggle {
+              toggled => $on_color_scheme_toggle_active_cb() swapped;
+
+              styles [
+                "background-preview-button",
+              ]
+
+              layout {
+                column: "0";
+                row: "0";
+              }
+
+              $CcBackgroundPreview default_preview {}
+            }
+
+            Label default_label {
+              label: _("_Default");
+              use-underline: true;
+              mnemonic-widget: default_toggle;
+
+              layout {
+                column: "0";
+                row: "1";
+              }
+            }
+
+            ToggleButton dark_toggle {
+              group: default_toggle;
+              toggled => $on_color_scheme_toggle_active_cb() swapped;
+
+              styles [
+                "background-preview-button",
+              ]
+
+              layout {
+                column: "1";
+                row: "0";
+              }
+
+              $CcBackgroundPreview dark_preview {
+                is-dark: true;
+              }
+            }
+
+            Label dark_label {
+              label: _("Da_rk");
+              use-underline: true;
+              mnemonic-widget: dark_toggle;
+
+              layout {
+                column: "1";
+                row: "1";
+              }
+            }
+          }
+        }
+      }
+    }
+
+    Adw.PreferencesGroup {
+      Label oled_label {
+        valign: start;
+        vexpand: true;
+        label: _("OLED screen detected. Dark style may save power.");
+        visible: false;
+        justify: center;
+        wrap: true;
+
+        styles [
+          "dim-label",
+        ]
+      }
+    }
+
+    Adw.PreferencesGroup {
+      title: _("Accent Color");
+
+      Adw.PreferencesRow {
+        activatable: false;
+        focusable: false;
+
+        Box accent_box {
+          spacing: 12;
+          margin-top: 12;
+          margin-bottom: 12;
+          halign: center;
+        }
+      }
+    }
+
+    Adw.PreferencesGroup {
+      $GisFocusableBin {
+        vexpand: true;
+        valign: end;
+        accessibility{
+          labelled-by: [
+            footer_label,
+          ];
+        }
+        Label footer_label {
+          accessible-role: none;
+          label: _("You can change this later in the Settings app");
+          justify: center;
+          wrap: true;
+
+          styles [
+            "dim-label",
+          ]
+        }
+      }
+    }
+  }
+}

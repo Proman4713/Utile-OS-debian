@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+  <gresource prefix="/org/gnome/initial-setup">
+    <file preprocess="xml-stripblanks" alias="gis-ubuntu-insights-page.ui">gis-ubuntu-insights-page.ui</file>
+    <file>gis-ubuntu-insights-page.css</file>
+  </gresource>
+  <gresource prefix="/org/gnome/InitialSetup/icons">
+    <file preprocess="xml-stripblanks" alias="scalable/places/ubuntu-insights.svg">ubuntu-insights.svg</file>
+  </gresource>
+</gresources>

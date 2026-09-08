@@ -1,0 +1,26 @@
+From: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Date: Thu, 11 Apr 2019 17:54:09 +0100
+Subject: gis-privacy: Set default to false
+
+Change the default value of the location switch to false
+which is what the Canonical legal team recommended us to do
+
+Bug-Ubuntu: https://bugs.launchpad.net/bugs/1821901
+Forwarded: not-needed
+---
+ gnome-initial-setup/pages/privacy/gis-privacy-page.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/gnome-initial-setup/pages/privacy/gis-privacy-page.c b/gnome-initial-setup/pages/privacy/gis-privacy-page.c
+index e000d7f..2e1e0b5 100644
+--- a/gnome-initial-setup/pages/privacy/gis-privacy-page.c
++++ b/gnome-initial-setup/pages/privacy/gis-privacy-page.c
+@@ -116,7 +116,7 @@ gis_privacy_page_constructed (GObject *object)
+   page->location_settings = g_settings_new ("org.gnome.system.location");
+   page->privacy_settings = g_settings_new ("org.gnome.desktop.privacy");
+ 
+-  adw_switch_row_set_active (ADW_SWITCH_ROW (page->location_switch_row), TRUE);
++  adw_switch_row_set_active (ADW_SWITCH_ROW (page->location_switch_row), FALSE);
+   gtk_switch_set_active (GTK_SWITCH (page->reporting_switch), TRUE);
+ 
+   location_privacy_text = g_strdup_printf (

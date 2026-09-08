@@ -1,0 +1,22 @@
+From: =?utf-8?b?Ik1hcmNvIFRyZXZpc2FuIChUcmV2acOxbyki?= <mail@3v1n0.net>
+Date: Fri, 12 Dec 2025 04:16:37 +0100
+Subject: Show locations service page for the existing user
+
+We allow users to enable location services, checking their privacy
+rights
+---
+ gnome-initial-setup/gnome-initial-setup.c | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/gnome-initial-setup/gnome-initial-setup.c b/gnome-initial-setup/gnome-initial-setup.c
+index fb4a500..5e3a9c5 100644
+--- a/gnome-initial-setup/gnome-initial-setup.c
++++ b/gnome-initial-setup/gnome-initial-setup.c
+@@ -87,6 +87,7 @@ static PageData page_table[] = {
+ static PageData ubuntu_page_table[] = {
+   PAGE (welcome,        FALSE),
+   PAGE (ubuntu_pro,     FALSE),
++  PAGE (privacy,        FALSE),
+   PAGE (account,        TRUE),
+   PAGE (password,       TRUE),
+   PAGE (apps,           FALSE),

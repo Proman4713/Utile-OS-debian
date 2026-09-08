@@ -1,0 +1,2213 @@
+From: Nathan Pratta Teodosio <nathan.teodosio@canonical.com>
+Date: Fri, 15 Mar 2024 12:12:49 +0100
+Subject: ubuntu-pro: Add pages to configure ubuntu Pro
+
+Co-Authored-By: Marco Trevisan <marco.trevisan@canonical.com>
+---
+ gnome-initial-setup/gis-assistant.c                |    2 +-
+ gnome-initial-setup/gnome-initial-setup.c          |    2 +
+ gnome-initial-setup/pages/meson.build              |    1 +
+ gnome-initial-setup/pages/ubuntu-pro/checkmark.svg |    1 +
+ gnome-initial-setup/pages/ubuntu-pro/fail.svg      |    1 +
+ .../pages/ubuntu-pro/gis-ubuntupro-attach-page.blp |  137 +++
+ .../pages/ubuntu-pro/gis-ubuntupro-offer-page.blp  |  166 +++
+ .../pages/ubuntu-pro/gis-ubuntupro-page.blp        |   17 +
+ .../pages/ubuntu-pro/gis-ubuntupro-page.c          | 1286 ++++++++++++++++++++
+ .../pages/ubuntu-pro/gis-ubuntupro-page.h          |   63 +
+ .../ubuntu-pro/gis-ubuntupro-services-page.blp     |   57 +
+ gnome-initial-setup/pages/ubuntu-pro/meson.build   |   27 +
+ .../pages/ubuntu-pro/ubuntu-pro-dark.svg           |  115 ++
+ .../pages/ubuntu-pro/ubuntu-pro.svg                |   22 +
+ .../pages/ubuntu-pro/ubuntupro.gresource.xml       |   16 +
+ gnome-initial-setup/pages/ubuntu-pro/utils.c       |   93 ++
+ gnome-initial-setup/pages/ubuntu-pro/utils.h       |   26 +
+ po/POTFILES.in                                     |    5 +
+ 18 files changed, 2036 insertions(+), 1 deletion(-)
+ create mode 100644 gnome-initial-setup/pages/ubuntu-pro/checkmark.svg
+ create mode 100644 gnome-initial-setup/pages/ubuntu-pro/fail.svg
+ create mode 100644 gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-attach-page.blp
+ create mode 100644 gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp
+ create mode 100644 gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.blp
+ create mode 100644 gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c
+ create mode 100644 gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.h
+ create mode 100644 gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-services-page.blp
+ create mode 100644 gnome-initial-setup/pages/ubuntu-pro/meson.build
+ create mode 100644 gnome-initial-setup/pages/ubuntu-pro/ubuntu-pro-dark.svg
+ create mode 100644 gnome-initial-setup/pages/ubuntu-pro/ubuntu-pro.svg
+ create mode 100644 gnome-initial-setup/pages/ubuntu-pro/ubuntupro.gresource.xml
+ create mode 100644 gnome-initial-setup/pages/ubuntu-pro/utils.c
+ create mode 100644 gnome-initial-setup/pages/ubuntu-pro/utils.h
+
+diff --git a/gnome-initial-setup/gis-assistant.c b/gnome-initial-setup/gis-assistant.c
+index a4df5b1..5cb31ca 100644
+--- a/gnome-initial-setup/gis-assistant.c
++++ b/gnome-initial-setup/gis-assistant.c
+@@ -423,7 +423,7 @@ gis_assistant_locale_changed (GisAssistant *assistant)
+   GList *l;
+ 
+   gtk_button_set_label (GTK_BUTTON (assistant->forward), _("_Next"));
+-  gtk_button_set_label (GTK_BUTTON (assistant->done), _("_Done"));
++  gtk_button_set_label (GTK_BUTTON (assistant->done), _("_Finish"));
+   gtk_button_set_label (GTK_BUTTON (assistant->accept), _("_Accept"));
+   gtk_button_set_label (GTK_BUTTON (assistant->skip), _("_Skip"));
+   gtk_button_set_label (GTK_BUTTON (assistant->back), _("_Previous"));
+diff --git a/gnome-initial-setup/gnome-initial-setup.c b/gnome-initial-setup/gnome-initial-setup.c
+index 98455b6..472efca 100644
+--- a/gnome-initial-setup/gnome-initial-setup.c
++++ b/gnome-initial-setup/gnome-initial-setup.c
+@@ -40,6 +40,7 @@
+ #include "pages/parental-controls/gis-parental-controls-page.h"
+ #include "pages/password/gis-password-page.h"
+ #include "pages/summary/gis-summary-page.h"
++#include "pages/ubuntu-pro/gis-ubuntupro-page.h"
+ #include "pages/apps/gis-apps-page.h"
+ 
+ #define VENDOR_PAGES_GROUP "pages"
+@@ -83,6 +84,7 @@ static PageData page_table[] = {
+ 
+ static PageData ubuntu_page_table[] = {
+   PAGE (welcome,        FALSE),
++  PAGE (ubuntu_pro,     FALSE),
+   PAGE (account,        TRUE),
+   PAGE (password,       TRUE),
+   PAGE (apps,           FALSE),
+diff --git a/gnome-initial-setup/pages/meson.build b/gnome-initial-setup/pages/meson.build
+index 460fabf..d68a4f4 100644
+--- a/gnome-initial-setup/pages/meson.build
++++ b/gnome-initial-setup/pages/meson.build
+@@ -9,6 +9,7 @@ pages = [
+    'software',
+    'summary',
+    'welcome',
++   'ubuntu-pro',
+    'apps',
+ ]
+ 
+diff --git a/gnome-initial-setup/pages/ubuntu-pro/checkmark.svg b/gnome-initial-setup/pages/ubuntu-pro/checkmark.svg
+new file mode 100644
+index 0000000..a0c8602
+--- /dev/null
++++ b/gnome-initial-setup/pages/ubuntu-pro/checkmark.svg
+@@ -0,0 +1 @@
++<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"><g fill="none" fill-rule="nonzero"><path fill="#0e8420" d="M8 1a7 7 0 110 14A7 7 0 018 1zm2.83 3.502L6.863 9.884 5.174 8.096l-1.09 1.03 2.92 3.096 5.034-6.83-1.208-.89z"/><path fill="#fff" d="M10.83 4.502l1.208.89-5.033 6.83-2.922-3.096 1.091-1.03 1.689 1.789z"/></g></svg>
+\ No newline at end of file
+diff --git a/gnome-initial-setup/pages/ubuntu-pro/fail.svg b/gnome-initial-setup/pages/ubuntu-pro/fail.svg
+new file mode 100644
+index 0000000..e3c9a52
+--- /dev/null
++++ b/gnome-initial-setup/pages/ubuntu-pro/fail.svg
+@@ -0,0 +1 @@
++<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16"><defs><filter id="darkreader-image-filter"><feColorMatrix type="matrix" values="-0.193 -0.490 -1.120 0.000 1.698 -0.965 0.293 -1.105 0.000 1.673 -0.946 -0.489 -0.296 0.000 1.630 0.000 0.000 0.000 1.000 0.000"/></filter></defs><image width="16" height="16" filter="url(#darkreader-image-filter)" xlink:href="data:image/svg+xml,%3Csvg width='16' height='16' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Ccircle stroke='%23c7162b' stroke-width='1.5' fill='%23c7162b' cx='8' cy='8' r='6.25'/%3E%3Cpath fill='%23FFF' fill-rule='nonzero' d='M10.282 4.638l1.06 1.06L9.05 7.99l2.293 2.292-1.06 1.06L7.99 9.05 5.7 11.343l-1.06-1.06 2.29-2.293L4.64 5.7l1.06-1.06 2.291 2.29z'/%3E%3C/g%3E%3C/svg%3E"/></svg>
+\ No newline at end of file
+diff --git a/gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-attach-page.blp b/gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-attach-page.blp
+new file mode 100644
+index 0000000..393a4c6
+--- /dev/null
++++ b/gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-attach-page.blp
+@@ -0,0 +1,137 @@
++using Gtk 4.0;
++using Adw 1;
++
++template $GisUbuntuProAttachPage: Adw.Bin {
++  Adw.PreferencesPage {
++    Adw.PreferencesGroup {
++      Adw.Clamp {
++        margin-top: 20;
++        maximum-size: 300;
++
++        child: Picture ubuntu_pro_logo {
++          valign: start;
++          content-fit: scale_down;
++          can-shrink: true;
++          height-request: 75;
++        };
++      }
++
++      $GisPageHeader header {
++        margin-top: "75";
++        title: _("Enable Ubuntu Pro");
++        show-icon: false;
++        use-accessible-title: true;
++      }
++    }
++
++    Adw.PreferencesGroup {
++      Adw.ExpanderRow pin_status {
++        title: _("_Attach machine via your Ubuntu One account");
++        use-underline: true;
++        enable-expansion: true;
++        show-enable-switch: false;
++        use-markup: true;
++        expanded: bind token_status.expanded inverted bidirectional;
++
++        [prefix]
++        CheckButton magic_radio {
++          valign: center;
++          active: bind pin_status.expanded bidirectional;
++          activate => $on_magic_clicked();
++          focus-on-click: false;
++          can-focus: false;
++        }
++
++        [suffix]
++        Spinner pin_spinner {
++          visible: true;
++        }
++
++        [suffix]
++        Image pin_status_icon {
++          visible: false;
++        }
++
++        Adw.ActionRow {
++          [prefix]
++          Box {
++            orientation: vertical;
++            margin-top: 6;
++            spacing: 6;
++
++            Label pin_label {
++              selectable: true;
++              visible: true;
++              halign: start;
++              attributes: "scale 2";
++            }
++
++            Label pin_hint {
++              halign: start;
++
++              styles [
++                "subtitle",
++              ]
++            }
++          }
++        }
++      }
++
++      Adw.ExpanderRow token_status {
++        /* Translators: translators: This is the other way to attach a machine to Ubuntu Pro */
++        title: _("Or add a _token manually");
++        use-underline: true;
++        enable-expansion: true;
++        show-enable-switch: false;
++
++        [prefix]
++        CheckButton token_radio {
++          group: magic_radio;
++          valign: center;
++          active: bind token_status.expanded;
++          toggled => $on_radio_toggled();
++          focus-on-click: false;
++          can-focus: false;
++        }
++
++        [suffix]
++        Spinner token_spinner {
++          visible: true;
++        }
++
++        [suffix]
++        Image token_status_icon {
++          visible: false;
++        }
++
++        Adw.ActionRow {
++          [prefix]
++          Box {
++            orientation: vertical;
++            margin-top: 6;
++            spacing: 6;
++
++            Entry token_field {
++              sensitive: false;
++              width-chars: 60;
++              placeholder-text: _("Token");
++              activate => $request_token_attach();
++              changed => $on_token_typing();
++            }
++
++            Label token_hint {
++              halign: start;
++              use-markup: true;
++
++              activate-link => $gis_activate_link(template) not-swapped;
++
++              styles [
++                "subtitle",
++              ]
++            }
++          }
++        }
++      }
++    }
++  }
++}
+diff --git a/gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp b/gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp
+new file mode 100644
+index 0000000..18f99fb
+--- /dev/null
++++ b/gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp
+@@ -0,0 +1,166 @@
++using Gtk 4.0;
++using Adw 1;
++
++template $GisUbuntuProOfferPage: Adw.Bin {
++  Adw.PreferencesPage {
++    Adw.PreferencesGroup {
++      Adw.Clamp {
++        margin-top: 20;
++        maximum-size: 300;
++
++        child: Picture ubuntu_pro_logo {
++          valign: start;
++          content-fit: scale_down;
++          can-shrink: true;
++          height-request: 75;
++        };
++      }
++
++      $GisPageHeader header {
++        margin-top: "75";
++        title: _("Enable Ubuntu Pro");
++        show-icon: false;
++        use-accessible-title: true;
++      }
++    }
++
++    Adw.PreferencesGroup {
++      Box {
++        orientation: vertical;
++        vexpand: false;
++        hexpand: false;
++        valign: start;
++
++        $GisFocusableBin {
++          vexpand: false;
++          hexpand: false;
++          valign: start;
++          Grid {
++            halign: fill;
++            column-spacing: 8;
++            margin-top: 8;
++            margin-bottom: 8;
++            margin-start: 0;
++            margin-end: 0;
++            row-spacing: 6;
++
++            Label {
++              wrap: true;
++              halign: start;
++              valign: start;
++              xalign: 0;
++              width-chars: 65;
++              margin-bottom: 12;
++              label: _("Upgrade this device to Ubuntu Pro. Free for personal use.");
++
++              layout {
++                column: "0";
++                row: "0";
++                column-span: "2";
++              }
++            }
++
++            Label {
++              label: "•";
++              valign: start;
++              accessible-role: none;
++
++              layout {
++                column: "0";
++                row: "1";
++              }
++            }
++
++            Label security_updates_label {
++              wrap: true;
++              halign: start;
++              valign: start;
++              xalign: 0;
++
++              layout {
++                column: "1";
++                row: "1";
++              }
++            }
++
++            Label {
++              label: "•";
++              valign: start;
++              accessible-role: none;
++
++              layout {
++                column: "0";
++                row: "2";
++              }
++            }
++
++            Label {
++              wrap: true;
++              halign: start;
++              valign: start;
++              xalign: 0;
++              width-chars: 65;
++              attributes: "line-height 1.2";
++              label: _(
++                "Fulfill FedRAMP, FIPS, STIG and HIPAA and other compliance and hardening requirements with certified tooling and crypto-modules"
++              );
++
++              layout {
++                column: "1";
++                row: "2";
++              }
++            }
++          }
++        }
++        Label learn_more {
++          wrap: true;
++          halign: start;
++          valign: start;
++          xalign: 0;
++          use-markup: true;
++          margin-top: 12;
++          width-chars: 65;
++
++          activate-link => $gis_activate_link(template) not-swapped;
++        }
++      }
++    }
++
++    Adw.PreferencesGroup {
++      title: _("Enable Ubuntu Pro now, or skip this step.");
++
++      Adw.ActionRow enable_pro_row {
++        title: _("_Enable Ubuntu Pro");
++        use-underline: true;
++        activatable-widget: enable_pro_select;
++
++        [prefix]
++        CheckButton enable_pro_select {
++          group: skip_pro_select;
++          focus-on-click: false;
++          can-focus: false;
++        }
++
++        [suffix]
++        Image offline_warning {
++          icon-name: "dialog-warning-symbolic";
++          visible: false;
++        }
++      }
++
++      Adw.ActionRow {
++        title: _("_Skip for now");
++        subtitle: _("You can enable Ubuntu Pro later in the Security Center");
++        use-underline: true;
++        use-markup: false;
++        activatable-widget: skip_pro_select;
++
++        [prefix]
++        CheckButton skip_pro_select {
++          focus-on-click: false;
++          can-focus: false;
++        }
++      }
++    }
++  }
++}
+diff --git a/gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.blp b/gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.blp
+new file mode 100644
+index 0000000..35c629f
+--- /dev/null
++++ b/gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.blp
+@@ -0,0 +1,17 @@
++using Gtk 4.0;
++
++template $GisUbuntuProPage: $GisPage {
++  Stack stack {
++    transition-type: slide_left_right;
++    vexpand: true;
++    hexpand: true;
++    hhomogeneous: false;
++    vhomogeneous: false;
++
++    $GisUbuntuProOfferPage offer_page {}
++
++    $GisUbuntuProAttachPage attach_page {}
++
++    $GisUbuntuProServicesPage services_page {}
++  }
++}
+diff --git a/gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c b/gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c
+new file mode 100644
+index 0000000..14b5cf2
+--- /dev/null
++++ b/gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c
+@@ -0,0 +1,1286 @@
++/* -*- mode: C; c-file-style: "gnu"; indent-tabs-mode: nil; -*- */
++/*
++ * Copyright (C) 2022 Canonical Ltd.
++ *
++ * This program is free software; you can redistribute it and/or
++ * modify it under the terms of the GNU General Public License as
++ * published by the Free Software Foundation; either version 2 of the
++ * License, or (at your option) any later version.
++ *
++ * This program is distributed in the hope that it will be useful, but
++ * WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++ * General Public License for more details.
++ *
++ * You should have received a copy of the GNU General Public License
++ * along with this program; if not, see <http://www.gnu.org/licenses/>.
++ */
++
++/* Canonical Ubuntu Pro page {{{1 */
++
++#include "config.h"
++
++#define PAGE_ID "UbuntuPro"
++#define CHECK_ICON "pro-checkmark"
++#define FAIL_ICON "pro-fail"
++#define LOGO "/org/gnome/initial-setup/ubuntu-pro.svg"
++#define LOGO_DARK "/org/gnome/initial-setup/ubuntu-pro-dark.svg"
++#define UBUNTU_ADVANTAGE_STATUS_FILE "/var/lib/ubuntu-advantage/status.json"
++
++#include "gis-page-header.h"
++#include "gis-ubuntupro-page.h"
++#include "gis-webkit.h"
++#include "ubuntupro-resources.h"
++#include "utils.h"
++
++#include <glib/gi18n.h>
++#include <gio/gio.h>
++#include <gio/gunixinputstream.h>
++#include <polkit/polkit.h>
++#include <json-glib/json-glib.h>
++#include <time.h>
++#include <pthread.h>
++
++/* For debugging faster, flip this to be able to skip to 3rd page
++ * without needing to attach to Ubuntu Pro first. */
++static gboolean SuccessfullyAttached = FALSE;
++
++typedef enum {
++  NONE = 0,
++  SUCCESS,
++  FAIL,
++  EXPIRED,
++} status_t;
++
++struct _GisUbuntuProPagePrivate
++{
++  GtkWidget *offer_page;
++  GtkWidget *attach_page;
++  GtkWidget *services_page;
++  GtkWidget *stack;
++
++  enum {
++    OFFER_PAGE,
++    ATTACH_PAGE,
++    SERVICES_PAGE,
++  } current_page;
++};
++typedef struct _GisUbuntuProPagePrivate GisUbuntuProPagePrivate;
++
++struct _GisUbuntuProOfferPagePrivate
++{
++  GtkWidget *ubuntu_pro_logo;
++  GtkWidget *enable_pro_row;
++  GtkWidget *skip_pro_select;
++  GtkWidget *offline_warning;
++  GtkWidget *pro_status_image;
++  GtkWidget *security_updates_label;
++  GtkWidget *header;
++  GtkWidget *learn_more;
++  gint       network_cb;
++};
++typedef struct _GisUbuntuProOfferPagePrivate GisUbuntuProOfferPagePrivate;
++
++struct _GisUbuntuProAttachPagePrivate
++{
++  GtkWidget *ubuntu_pro_logo;
++  GtkWidget *pin_label;
++  GtkWidget *token_field;
++  GtkWidget *token_status;
++  GtkWidget *token_spinner;
++  GtkWidget *pin_spinner;
++  GtkWidget *token_status_icon;
++  GtkWidget *token_hint;
++  GtkWidget *pin_hint;
++  GtkWidget *pin_status;
++  GtkWidget *pin_status_icon;
++  GtkWidget *token_radio;
++  GtkWidget *magic_radio;
++  GtkWidget *header;
++  /* This being here is a hack that makes changing the 2nd page's button
++   * from Skip to Next once the machine is attached possible. */
++  GisUbuntuProPage *main_page;
++
++  gboolean          complete;
++  gboolean          magic_token_polling;
++  gboolean          attaching;
++  gpointer          expired_by;
++  pthread_t         poll_id;
++  guint             attach_idle;
++  enum active_radio_t {
++    MAGIC,
++    TOKEN,
++  } active_radio;
++  gchar *contract_token;
++  gchar *token;
++};
++typedef struct _GisUbuntuProAttachPagePrivate GisUbuntuProAttachPagePrivate;
++
++struct _GisUbuntuProServicesPagePrivate
++{
++  GtkWidget *ubuntu_pro_logo;
++  GtkWidget *enabled_services_header;
++  GtkWidget *available_services_header;
++  GtkWidget *contract_name;
++  GtkWidget *checkmark;
++  GtkWidget *header;
++};
++typedef struct _GisUbuntuProServicesPagePrivate GisUbuntuProServicesPagePrivate;
++
++struct _RestJSONResponse
++{
++  gint64 expires_in;
++  gchar *token;
++  gchar *code;
++  gchar *contract_token;
++};
++
++typedef struct _RestJSONResponse RestJSONResponse;
++static gboolean magic_parser (gchar *,
++                              RestJSONResponse *);
++static gboolean gis_ubuntupro_page_apply (GisPage *,
++                                          GCancellable *);
++
++G_DEFINE_TYPE_WITH_PRIVATE (GisUbuntuProPage, gis_ubuntupro_page, GIS_TYPE_PAGE);
++G_DEFINE_TYPE_WITH_PRIVATE (GisUbuntuProOfferPage, gis_ubuntupro_offer_page, ADW_TYPE_BIN);
++G_DEFINE_TYPE_WITH_PRIVATE (GisUbuntuProAttachPage, gis_ubuntupro_attach_page, ADW_TYPE_BIN);
++G_DEFINE_TYPE_WITH_PRIVATE (GisUbuntuProServicesPage, gis_ubuntupro_services_page, ADW_TYPE_BIN);
++
++/* The user may go back any number of pages during attachment, so we can't
++ * blindly skip to the services list page.
++ * Furthermore, after attachment the user can again navigate back to any page
++ * and then hit the attach page again.
++ */
++static void
++consider_going_to_next_page (GisUbuntuProAttachPagePrivate *priv)
++{
++  static gboolean never_called = TRUE;
++  GisUbuntuProPage *page = GIS_UBUNTUPRO_PAGE (priv->main_page);
++  GisUbuntuProPagePrivate *main_priv = gis_ubuntupro_page_get_instance_private (page);
++
++  if (never_called && main_priv->current_page == ATTACH_PAGE)
++    {
++      gis_page_set_complete (GIS_PAGE (priv->main_page), TRUE);
++      gis_page_apply_begin (GIS_PAGE (priv->main_page), NULL, NULL);
++    }
++  never_called = FALSE;
++}
++
++static void
++update_attach_page (GisUbuntuProAttachPage *attach_page,
++                    status_t                status)
++{
++  GisUbuntuProAttachPagePrivate *priv = gis_ubuntupro_attach_page_get_instance_private (attach_page);
++  GtkWidget *label, *icon, *spinner;
++  g_autofree gchar *hint = NULL;
++  g_autofree gchar *subtitle = NULL;
++  gboolean ready_to_attach;
++
++  if (priv->active_radio == MAGIC)
++    {
++      icon = priv->pin_status_icon;
++      label = priv->pin_status;
++      spinner = priv->pin_spinner;
++      ready_to_attach = SuccessfullyAttached ||
++                        (priv->contract_token && !priv->attaching);
++    }
++  else
++    {
++      icon = priv->token_status_icon;
++      label = priv->token_status;
++      spinner = priv->token_spinner;
++      ready_to_attach = SuccessfullyAttached || (!priv->attaching &&
++                                                 gtk_entry_get_text_length (GTK_ENTRY (priv->token_field)) > 0);
++    }
++  gis_page_set_complete (GIS_PAGE (priv->main_page), ready_to_attach);
++
++  if (priv->attaching)
++    gtk_spinner_start (GTK_SPINNER (spinner));
++  else
++    gtk_spinner_stop (GTK_SPINNER (spinner));
++  gtk_widget_set_visible (spinner, priv->attaching);
++
++  gtk_widget_set_sensitive (priv->token_radio, !priv->attaching);
++  gtk_widget_set_sensitive (priv->magic_radio, !priv->attaching);
++  gtk_widget_set_sensitive (priv->token_field, !priv->attaching &&
++                            priv->active_radio == TOKEN);
++  /* I don't know why this is needed, but otherwise even though the entry is
++   * sensitive, the blinking cursor doesn't appear and one cannot type in it */
++  if (gtk_widget_is_sensitive (priv->token_field))
++    gtk_entry_grab_focus_without_selecting (GTK_ENTRY (priv->token_field));
++
++  if (SuccessfullyAttached)
++    {
++      consider_going_to_next_page (priv);
++      status = SUCCESS;
++    }
++  switch (status)
++    {
++    case SUCCESS:
++      subtitle = g_strconcat ("<span foreground=\"green\"><b>",
++                              _("Valid token"), "</b></span>", NULL);
++      adw_expander_row_set_subtitle (ADW_EXPANDER_ROW (label), subtitle);
++      gtk_image_set_from_icon_name (GTK_IMAGE (icon), CHECK_ICON);
++      gtk_widget_set_sensitive (GTK_WIDGET (priv->token_field), FALSE);
++      gtk_widget_set_sensitive (GTK_WIDGET (priv->magic_radio), FALSE);
++      gtk_widget_set_sensitive (GTK_WIDGET (priv->token_radio), FALSE);
++      break;
++
++    case FAIL:
++      subtitle = g_strconcat ("<span foreground=\"red\"><b>",
++                              /* TRANSLATORS: The error shown when attaching an
++                                 Ubuntu Pro contact fails.
++                                 It may be due to various reasons, most common is
++                                 an invalid token.
++                               */
++                              _("Invalid token or attach failure"), "</b></span>",
++                              NULL);
++      adw_expander_row_set_subtitle (ADW_EXPANDER_ROW (label), subtitle);
++      gtk_image_set_from_icon_name (GTK_IMAGE (icon), "dialog-error-symbolic");
++      break;
++
++    case EXPIRED:
++      hint = g_strdup ("Click the button to generate a new code.");
++      adw_expander_row_set_subtitle (ADW_EXPANDER_ROW (label), _("Code expired"));
++      gtk_image_set_from_icon_name (GTK_IMAGE (icon), "dialog-warning-symbolic");
++      break;
++
++    default:
++      adw_expander_row_set_subtitle (ADW_EXPANDER_ROW (label), NULL);
++      break;
++    }
++
++  if (!hint)
++    {
++      g_autofree gchar *url = g_strdup_printf ("<a href=\"https://ubuntu.com/pro/attach?magic-attach-code=%s\">ubuntu.com/pro/attach</a>",
++                                               gtk_label_get_text(GTK_LABEL (priv->pin_label)));
++      // TRANSLATORS: the placeholder %s is a link to ubuntu.com/pro/attach.
++      // Use HTML encoded format for special characters such as '&'.
++      hint = g_strdup_printf (_("Enter this code on %s"), url);
++    }
++  gtk_label_set_markup (GTK_LABEL (priv->pin_hint), hint);
++  gtk_widget_set_visible (GTK_WIDGET (priv->token_status_icon), FALSE);
++  gtk_widget_set_visible (GTK_WIDGET (priv->pin_status_icon), FALSE);
++  gtk_widget_set_visible (GTK_WIDGET (icon), status);
++
++  if (gis_driver_get_mode (GIS_PAGE (priv->main_page)->driver) == GIS_DRIVER_MODE_NEW_USER)
++    {
++      g_signal_connect_object (G_OBJECT (priv->pin_hint), "activate-link",
++                               G_CALLBACK (gis_activate_link), G_OBJECT (attach_page),
++                               G_CONNECT_DEFAULT);
++    }
++}
++
++typedef struct _UpdateUIData
++{
++  GisUbuntuProAttachPage *page;
++  status_t status;
++} UpdateUIData;
++
++static void
++update_attach_page_callback (gpointer data)
++{
++  g_autofree UpdateUIData *update_data = g_steal_pointer (&data);
++
++  update_attach_page (update_data->page, update_data->status);
++  g_clear_object (&update_data->page);
++}
++
++static void
++update_attach_page_in_idle (GisUbuntuProAttachPage *page,
++                            status_t                status)
++{
++  UpdateUIData *update_data;
++
++  update_data = g_new0 (UpdateUIData, 1);
++  update_data->page = g_object_ref (page);
++  update_data->status = status;
++
++  g_idle_add_once (update_attach_page_callback, g_steal_pointer (&update_data));
++}
++
++static void
++update_network_status (GisUbuntuProOfferPage *offer_page,
++                       gboolean               available)
++{
++  GisUbuntuProOfferPagePrivate *priv =
++    gis_ubuntupro_offer_page_get_instance_private (offer_page);
++
++  gtk_widget_set_sensitive (priv->enable_pro_row, available);
++  gtk_widget_set_visible (priv->offline_warning, !available);
++  gtk_check_button_set_active (GTK_CHECK_BUTTON (priv->skip_pro_select),
++                               !available);
++  adw_action_row_set_subtitle (ADW_ACTION_ROW (priv->enable_pro_row),
++                               available ?
++                               NULL :
++                               _("An internet connection is required to enable Ubuntu Pro"));
++}
++
++static void
++network_status_changed (GNetworkMonitor *monitor,
++                        gboolean         available,
++                        gpointer         user_data)
++{
++  GisUbuntuProOfferPage *offer_page = user_data;
++
++  update_network_status (offer_page, available);
++}
++
++/* This allows to use start padding for GtkCheckButtons that do not support it
++ * natively.
++ */
++static void
++set_children_valign_start (GtkWidget *widget)
++{
++  for (GtkWidget *c = gtk_widget_get_first_child (widget); c;
++       c = gtk_widget_get_next_sibling (c))
++    gtk_widget_set_valign (c, GTK_ALIGN_START);
++}
++
++/* In order to align the elements correctly we use insensitive check buttons
++ * as items, so that they are padded well with the rest of items.
++ * However we need to hide the check or radio button, so we use CSS for that.
++ */
++static void
++set_check_button_as_padded_label (GtkWidget *widget)
++{
++  g_return_if_fail (GTK_IS_CHECK_BUTTON (widget));
++
++  gtk_widget_set_sensitive (widget, FALSE);
++  gtk_widget_add_css_class (widget, "as-padded-label");
++}
++
++static void
++gis_ubuntupro_offer_page_dispose (GObject *object)
++{
++  GisUbuntuProOfferPage *offer_page = GIS_UBUNTUPRO_OFFER_PAGE (object);
++  GisUbuntuProOfferPagePrivate *offer_priv = gis_ubuntupro_offer_page_get_instance_private (offer_page);
++
++  GNetworkMonitor *network_monitor = g_network_monitor_get_default ();
++
++  g_signal_handler_disconnect (network_monitor, offer_priv->network_cb);
++
++  G_OBJECT_CLASS (gis_ubuntupro_offer_page_parent_class)->dispose (object);
++}
++
++static void
++gis_ubuntupro_page_dispose (GObject *object)
++{
++  G_OBJECT_CLASS (gis_ubuntupro_page_parent_class)->dispose (object);
++}
++
++static guint
++get_end_of_support_year (void)
++{
++  g_autofree char *version_id = NULL;
++
++  version_id = g_get_os_info (G_OS_INFO_KEY_VERSION_ID);
++  if (!version_id || !strchr (version_id, '.'))
++    return 36;
++
++  g_auto (GStrv) version_parts = g_strsplit (version_id, ".", 2);
++  gint64 year = g_ascii_strtoll (version_parts[0], NULL, 10);
++
++  return year + 10;
++}
++
++static void
++update_theme (GisUbuntuProPage *page,
++              GParamSpec *pspec,
++              AdwStyleManager *style_manager)
++{
++  GisUbuntuProPagePrivate *priv = gis_ubuntupro_page_get_instance_private (page);
++
++  GisUbuntuProOfferPage *offer_page = GIS_UBUNTUPRO_OFFER_PAGE (priv->offer_page);
++  GisUbuntuProOfferPagePrivate *offer_priv = gis_ubuntupro_offer_page_get_instance_private (offer_page);
++  GisUbuntuProAttachPage *attach_page = GIS_UBUNTUPRO_ATTACH_PAGE (priv->attach_page);
++  GisUbuntuProAttachPagePrivate *attach_priv = gis_ubuntupro_attach_page_get_instance_private (attach_page);
++  GisUbuntuProServicesPage *services_page = GIS_UBUNTUPRO_SERVICES_PAGE (priv->services_page);
++  GisUbuntuProServicesPagePrivate *services_priv = gis_ubuntupro_services_page_get_instance_private (services_page);
++
++  const gchar *logo = adw_style_manager_get_dark (style_manager) ? LOGO_DARK : LOGO;
++  gtk_picture_set_resource (GTK_PICTURE (offer_priv->ubuntu_pro_logo), logo);
++  gtk_picture_set_resource (GTK_PICTURE (attach_priv->ubuntu_pro_logo), logo);
++  gtk_picture_set_resource (GTK_PICTURE (services_priv->ubuntu_pro_logo), logo);
++}
++
++static void
++gis_ubuntupro_page_constructed (GObject *object)
++{
++  AdwStyleManager *style_manager;
++  GisUbuntuProPage *page = GIS_UBUNTUPRO_PAGE (object);
++  GisUbuntuProPagePrivate *priv = gis_ubuntupro_page_get_instance_private (page);
++
++  g_autoptr(GtkCssProvider) css_provider = NULL;
++
++  css_provider = gtk_css_provider_new ();
++  gtk_css_provider_load_from_string (css_provider,
++                                     "checkbutton.as-padded-label:disabled > * { color: inherit; }\n"
++                                     "checkbutton.as-padded-label > radio, check { opacity: 0; }\n");
++  gtk_style_context_add_provider_for_display (gdk_display_get_default (),
++                                              GTK_STYLE_PROVIDER (css_provider),
++                                              GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
++
++  G_OBJECT_CLASS (gis_ubuntupro_page_parent_class)->constructed (object);
++
++  GisUbuntuProOfferPage *offer_page = GIS_UBUNTUPRO_OFFER_PAGE (priv->offer_page);
++  GisUbuntuProOfferPagePrivate *offer_priv = gis_ubuntupro_offer_page_get_instance_private (offer_page);
++  GisUbuntuProAttachPage *attach_page = GIS_UBUNTUPRO_ATTACH_PAGE (priv->attach_page);
++  GisUbuntuProAttachPagePrivate *attach_priv = gis_ubuntupro_attach_page_get_instance_private (attach_page);
++
++  style_manager = adw_style_manager_get_default ();
++  g_signal_connect_object (style_manager,
++                           "notify::dark",
++                           G_CALLBACK (update_theme),
++                           G_OBJECT (page),
++                           G_CONNECT_SWAPPED);
++  update_theme (page, NULL, style_manager);
++
++  GNetworkMonitor *network_monitor = g_network_monitor_get_default ();
++  offer_priv->network_cb = g_signal_connect (network_monitor, "network-changed",
++                                             G_CALLBACK (network_status_changed),
++                                             offer_page);
++
++  update_network_status (offer_page,
++                         g_network_monitor_get_network_available (network_monitor));
++
++  /* Initializate priv values */
++  g_atomic_int_set (&attach_priv->magic_token_polling, FALSE);
++  g_atomic_pointer_set (&attach_priv->expired_by, 0);
++  attach_priv->active_radio = MAGIC;
++  attach_priv->contract_token = NULL;
++  attach_priv->main_page = page;
++  priv->current_page = OFFER_PAGE;
++
++  g_object_bind_property (offer_priv->skip_pro_select, "active", page, "skippable",
++                          G_BINDING_SYNC_CREATE);
++  g_object_bind_property (offer_priv->skip_pro_select, "active", page, "complete",
++                          G_BINDING_SYNC_CREATE | G_BINDING_INVERT_BOOLEAN);
++  gtk_check_button_set_active (GTK_CHECK_BUTTON (offer_priv->skip_pro_select), TRUE);
++
++  g_autofree char *year_str = g_strdup_printf ("20%02u", get_end_of_support_year ());
++  g_autofree char *security_updates_label = NULL;
++
++  // TRANSLATORS: translators: %s is a year, for example 2036.
++  security_updates_label = g_strdup_printf (
++    _("Get security updates on a wide range of packages until %s"), year_str);
++
++  gtk_label_set_label (GTK_LABEL (offer_priv->security_updates_label), security_updates_label);
++}
++
++static void
++gis_ubuntupro_page_locale_changed (GisPage *page)
++{
++  gis_page_set_title (GIS_PAGE (page), _("Ubuntu Pro"));
++}
++
++static gboolean
++poll_token_attach (GisUbuntuProAttachPagePrivate *priv)
++{
++  gchar *std_out, *std_err, *cmd;
++  RestJSONResponse resp; /* relevant response fields */
++
++  g_autoptr(GError) error = NULL;
++
++  cmd = g_strconcat ("/usr/bin/pro api u.pro.attach.magic.wait.v1 --args magic_token=", priv->token, NULL);
++  if (!g_spawn_command_line_sync (cmd, &std_out, &std_err, NULL, &error))
++    {
++      g_warning ("Failed to request magic token: %s", error->message);
++    }
++  else if (!magic_parser (std_out, &resp))
++    {
++      g_warning ("Couldn't parse response.");
++    }
++  else if (resp.contract_token != NULL)
++    {
++      g_free (g_atomic_pointer_exchange (&priv->contract_token,
++                                         g_strdup (resp.contract_token)));
++      return TRUE;
++    }
++  return FALSE;
++}
++
++static void *
++poll_magic_token (void *data)
++{
++  GisUbuntuProAttachPage *attach_page = GIS_UBUNTUPRO_ATTACH_PAGE (data);
++  GisUbuntuProAttachPagePrivate *priv = gis_ubuntupro_attach_page_get_instance_private (attach_page);
++  gboolean token_received;
++  gsize expired_by;
++
++  if (priv->active_radio != MAGIC)
++    pthread_exit (NULL);
++
++  g_atomic_int_set (&priv->magic_token_polling, TRUE);
++  expired_by = GPOINTER_TO_SIZE (g_atomic_pointer_get (&priv->expired_by));
++
++  if (g_get_monotonic_time () > expired_by)
++    {
++      update_attach_page_in_idle (attach_page, EXPIRED);
++      g_atomic_int_set (&priv->magic_token_polling, FALSE);
++    }
++
++  token_received = poll_token_attach (priv);
++  if (token_received)
++    update_attach_page_in_idle (attach_page, SUCCESS);
++  else if (g_get_monotonic_time () > expired_by)
++    update_attach_page_in_idle (attach_page, EXPIRED);
++  else
++    update_attach_page_in_idle (attach_page, FAIL);
++
++  g_atomic_int_set (&priv->magic_token_polling, FALSE);
++  pthread_exit (NULL);
++}
++
++static gboolean
++magic_parser (gchar            *ptr,  /* pointer to actual response */
++              RestJSONResponse *resp) /* relevant response fields */
++{
++  JsonNode *root;
++  JsonObject *data, *attributes, *response;
++  g_autoptr(JsonParser) parser = json_parser_new ();
++  g_autoptr(GError) error = NULL;
++
++  if (!json_parser_load_from_data (parser, ptr, -1, &error))
++    {
++      g_warning ("Couldn't parse magic token JSON; %s", error->message);
++      return FALSE;
++    }
++
++  root = json_parser_get_root (parser);
++  if (!JSON_NODE_HOLDS_OBJECT (root))
++    {
++      g_warning ("Invalid magic token JSON");
++      return FALSE;
++    }
++
++  response = json_node_get_object (root);
++
++  if (g_strcmp0 (json_object_get_string_member (response, "_schema_version"), "v1") != 0)
++    {
++      g_critical ("Schema version not handled in JSON: '%s'", ptr);
++      return FALSE;
++    }
++
++  if (g_strcmp0 (json_object_get_string_member (response, "result"), "success") != 0)
++    {
++      g_critical ("Magic fetching failed due to an error: '%s'", ptr);
++      return FALSE;
++    }
++
++  data = json_object_get_object_member (response, "data");
++  attributes = json_object_get_object_member (data, "attributes");
++
++  resp->expires_in = json_object_has_member (attributes, "expires_in") ?
++                     json_object_get_int_member (attributes, "expires_in") :
++                     0;
++  resp->token = json_object_has_member (attributes, "token") ?
++                g_strdup (json_object_get_string_member (attributes, "token")) :
++                NULL;
++  resp->code = json_object_has_member (attributes, "user_code") ?
++               g_strdup (json_object_get_string_member (attributes, "user_code")) :
++               NULL;
++  resp->contract_token = json_object_has_member (attributes, "contract_token") ?
++                         g_strdup (json_object_get_string_member (attributes, "contract_token")) :
++                         NULL;
++
++  return resp->expires_in > 0 &&
++         ((resp->token != NULL && *resp->token) ||
++          (resp->code != NULL && *resp->code) ||
++          (resp->contract_token != NULL && *resp->contract_token));
++}
++
++static void
++preferences_group_remove_all (AdwPreferencesGroup *group)
++{
++  GtkWidget *row;
++
++  while ((row = adw_preferences_group_get_row (group, 0)))
++    adw_preferences_group_remove (group, row);
++}
++
++const struct
++{
++  const char *name;
++  const char *description;
++} service_names[] = {
++  { "anbox-cloud",
++    /* TRANSLATORS: The anbox-cloud Ubuntu Pro Service description. */
++    N_("Scalable Android in the cloud") },
++  { "cc-eal",
++    /* TRANSLATORS: The cc-eal Ubuntu Pro Service description. */
++    N_("Common Criteria EAL2 Provisioning Packages") },
++  { "esm-apps",
++    /* TRANSLATORS: The esm-apps Ubuntu Pro Service description. */
++    N_("Expanded Security Maintenance for Applications") },
++  { "esm-infra",
++    /* TRANSLATORS: The esm-infra Ubuntu Pro Service description. */
++    N_("Expanded Security Maintenance for Infrastructure") },
++  { "fips",
++    /* TRANSLATORS: The fips Ubuntu Pro Service description. */
++    N_("NIST-certified FIPS crypto packages") },
++  { "fips-preview",
++    /* TRANSLATORS: The fips-preview Ubuntu Pro Service description. */
++    N_("Preview of FIPS crypto packages undergoing certification with NIST") },
++  { "fips-updates",
++    /* TRANSLATORS: The fips-updates Ubuntu Pro Service description. */
++    N_("FIPS compliant crypto packages with stable security updates") },
++  { "landscape",
++    /* TRANSLATORS: The landscape Ubuntu Pro Service description. */
++    N_("Management and administration tool for Ubuntu") },
++  { "livepatch",
++    /* TRANSLATORS: The livepatch Ubuntu Pro Service description. */
++    N_("Canonical kernel Livepatch service") },
++  { "realtime-kernel",
++    /* TRANSLATORS: The realtime-kernel Ubuntu Pro Service description. */
++    N_("Ubuntu kernel with PREEMPT_RT patches integrated") },
++  { "ros",
++    /* TRANSLATORS: The ros Ubuntu Pro Service description. */
++    N_("Security Updates for the Robot Operating System") },
++  { "ros-updates",
++    /* TRANSLATORS: The ros-updates Ubuntu Pro Service description. */
++    N_("All Updates for the Robot Operating System") },
++  { "usg",
++    /* TRANSLATORS: The usg Ubuntu Pro Service description. */
++    N_("Security compliance and audit tools") },
++};
++
++static const char *
++get_translated_service_description (const char *service_name)
++{
++  for (unsigned i = 0; i < G_N_ELEMENTS (service_names); ++i)
++    if (g_strcmp0 (service_name, service_names[i].name) == 0)
++      return service_names[i].description;
++
++  g_return_val_if_reached (NULL);
++}
++
++static void
++display_ua_services (GisUbuntuProServicesPagePrivate *priv)
++{
++  g_autoptr(JsonParser) parser = json_parser_new ();
++  JsonNode *root_node;
++  JsonObject *root, *services, *contract;
++  JsonArray *services_array;
++  g_autoptr(GError) error = NULL;
++  guint i, n_services;
++  gboolean has_enabled_services = FALSE;
++  gboolean has_available_services = FALSE;
++  const char *status, *description, *available, *contract_name, *name;
++
++  if (!json_parser_load_from_file (parser, UBUNTU_ADVANTAGE_STATUS_FILE, &error))
++    {
++      g_warning ("Could not parse JSON from %s: %s",
++                 UBUNTU_ADVANTAGE_STATUS_FILE,
++                 error->message);
++      return;
++    }
++
++  root_node = json_parser_get_root (parser);
++  if (!JSON_NODE_HOLDS_OBJECT (root_node))
++    {
++      g_warning ("Invalid status JSON in %s, not an object",
++                 UBUNTU_ADVANTAGE_STATUS_FILE);
++      return;
++    }
++
++  root = json_node_get_object (root_node);
++
++  contract = json_object_get_object_member (root, "contract");
++  contract_name = json_object_get_string_member (contract, "name");
++  adw_preferences_row_set_title (ADW_PREFERENCES_ROW (priv->contract_name),
++                                 contract_name);
++
++  services_array = json_object_get_array_member (root, "services");
++  n_services = json_array_get_length (services_array);
++
++  preferences_group_remove_all (ADW_PREFERENCES_GROUP (priv->enabled_services_header));
++  preferences_group_remove_all (ADW_PREFERENCES_GROUP (priv->available_services_header));
++
++  /* Get services description, status and availability */
++  for (i = 0; i < n_services; i++)
++    {
++      services = json_array_get_object_element (services_array, i);
++      if (json_object_has_member (services, "status") &&
++          json_object_has_member (services, "available"))
++        {
++          AdwPreferencesGroup *target_group = NULL;
++          AdwActionRow *row;
++          gboolean is_service;
++
++          name = json_object_get_string_member (services, "name");
++          status = json_object_get_string_member (services, "status");
++          available = json_object_get_string_member (services, "available");
++
++          if (g_str_equal (status, "enabled"))
++            {
++              target_group = ADW_PREFERENCES_GROUP (priv->enabled_services_header);
++              has_enabled_services = TRUE;
++              is_service = TRUE;
++            }
++          else if (g_str_equal (available, "yes"))
++            {
++              target_group = ADW_PREFERENCES_GROUP (priv->available_services_header);
++              has_available_services = TRUE;
++              is_service = FALSE;
++            }
++
++          if (!target_group)
++            continue;
++
++          row = ADW_ACTION_ROW (adw_action_row_new ());
++          if (is_service)
++            {
++              GtkWidget *icon = gtk_image_new_from_icon_name ("pro-checkmark");
++
++              gtk_image_set_pixel_size (GTK_IMAGE (icon), 22);
++              adw_action_row_add_suffix (row, icon);
++            }
++
++          description = get_translated_service_description (name);
++          if (G_UNLIKELY (!description))
++            description = json_object_get_string_member (services, "status");
++          if (G_UNLIKELY (!description))
++            description = name;
++
++          adw_preferences_row_set_title (ADW_PREFERENCES_ROW (row), description);
++          adw_preferences_group_add (target_group, GTK_WIDGET (row));
++        }
++    }
++
++  /* Display enabled and disabled but available services */
++
++  gtk_widget_set_visible (priv->enabled_services_header, has_enabled_services);
++  gtk_widget_set_visible (priv->available_services_header, has_available_services);
++}
++
++static void
++go_to_attach_page (GisUbuntuProPage *pro_page,
++                   status_t          status)
++{
++  GisUbuntuProPagePrivate *pro_page_priv = gis_ubuntupro_page_get_instance_private (pro_page);
++  GisUbuntuProAttachPage *attach_page = GIS_UBUNTUPRO_ATTACH_PAGE (pro_page_priv->attach_page);
++  GisUbuntuProAttachPagePrivate *attach_page_priv = gis_ubuntupro_attach_page_get_instance_private (attach_page);
++
++  if (gis_page_get_applying (GIS_PAGE (pro_page)))
++    gis_page_apply_complete (GIS_PAGE (pro_page), FALSE);
++
++  gtk_stack_set_visible_child (GTK_STACK (pro_page_priv->stack), GTK_WIDGET (attach_page));
++  pro_page_priv->current_page = ATTACH_PAGE;
++  gtk_entry_buffer_set_text (gtk_entry_get_buffer (GTK_ENTRY (attach_page_priv->token_field)), "", 0);
++  update_attach_page (attach_page, status);
++}
++
++static void
++go_to_attach_page_idle (void *data)
++{
++  go_to_attach_page (GIS_UBUNTUPRO_PAGE (data), NONE);
++}
++
++static void
++on_magic_read (GObject      *source_object,
++               GAsyncResult *res,
++               gpointer      user_data)
++{
++  GisUbuntuProPage *pro_page = user_data;
++  GisUbuntuProPagePrivate *pro_page_priv = gis_ubuntupro_page_get_instance_private (pro_page);
++  GisUbuntuProAttachPage *attach_page = GIS_UBUNTUPRO_ATTACH_PAGE (pro_page_priv->attach_page);
++  GisUbuntuProAttachPagePrivate *priv = gis_ubuntupro_attach_page_get_instance_private (attach_page);
++  g_autoptr(GError) error = NULL;
++  g_autofree char *std_out = NULL;
++  int rc;
++
++  std_out = g_data_input_stream_read_line_finish (G_DATA_INPUT_STREAM (source_object),
++                                                  res, NULL, &error);
++  g_debug ("Received response %s", std_out);
++
++  if (!std_out)
++    {
++      if (g_error_matches (error, G_IO_ERROR, G_IO_ERROR_CANCELLED))
++        {
++          gis_page_apply_complete (GIS_PAGE (pro_page), FALSE);
++          return;
++        }
++
++      g_warning ("Failed to request magic token: %s",
++                 error ? error->message : "empty token result received");
++      go_to_attach_page (pro_page, FAIL);
++      return;
++    }
++
++  RestJSONResponse resp;
++  if (!magic_parser (std_out, &resp))
++    {
++      g_warning ("Couldn't parse response: %s", std_out);
++      go_to_attach_page (pro_page, FAIL);
++      return;
++    }
++
++  gtk_label_set_text (GTK_LABEL (priv->pin_label), resp.code);
++  g_atomic_pointer_set (&priv->expired_by,
++                        GSIZE_TO_POINTER (g_get_monotonic_time () +
++                                          (resp.expires_in * G_USEC_PER_SEC)));
++  g_atomic_pointer_set (&priv->token, g_steal_pointer (&resp.token));
++  g_atomic_int_set (&priv->magic_token_polling, TRUE);
++
++  rc = pthread_create (&priv->poll_id, NULL, poll_magic_token, attach_page);
++  if (rc)
++    {
++      g_warning ("Couldn't create PIN polling thread");
++      go_to_attach_page (pro_page, FAIL);
++      return;
++    }
++  g_free (resp.token);
++  g_free (resp.code);
++
++  go_to_attach_page (pro_page, NONE);
++}
++
++static void
++request_magic_attach (GisUbuntuProPage *page,
++                      GCancellable     *cancellable)
++{
++  GisUbuntuProPagePrivate *pro_page_priv = gis_ubuntupro_page_get_instance_private (page);
++  GisUbuntuProAttachPage *attach_page = GIS_UBUNTUPRO_ATTACH_PAGE (pro_page_priv->attach_page);
++  GisUbuntuProAttachPagePrivate *attach_priv = gis_ubuntupro_attach_page_get_instance_private (attach_page);
++
++  g_autoptr(GIOChannel) channel = NULL;
++  g_autoptr(GInputStream) stream = NULL;
++  g_autoptr(GDataInputStream) data_stream = NULL;
++  g_autoptr(GSource) source = NULL;
++  g_autoptr(GError) error = NULL;
++  const char * cmd_line[] = {"/usr/bin/pro", "api", "u.pro.attach.magic.initiate.v1", NULL};
++  int stdout_fd;
++
++  if (g_atomic_int_get (&attach_priv->magic_token_polling) || attach_priv->attaching)
++    {
++      gis_page_apply_complete (GIS_PAGE (page), FALSE);
++      g_idle_add_once (go_to_attach_page_idle, page);
++      return;
++    }
++
++  if (!g_spawn_async_with_pipes (NULL, (char **) cmd_line, NULL, G_SPAWN_DEFAULT,
++                                 NULL, NULL, NULL, NULL, &stdout_fd, NULL,
++                                 &error))
++    {
++      g_warning ("Failed to request magic token: %s", error->message);
++      return;
++    }
++
++  stream = g_unix_input_stream_new (stdout_fd, TRUE);
++  data_stream = g_data_input_stream_new (stream);
++  g_data_input_stream_read_line_async (data_stream, G_PRIORITY_DEFAULT,
++                                       cancellable, on_magic_read, page);
++}
++
++static void
++on_ua_attach_requested (GObject      *source,
++                        GAsyncResult *result,
++                        gpointer      user_data)
++{
++  g_autoptr (GisUbuntuProAttachPage) attach_page = GIS_UBUNTUPRO_ATTACH_PAGE (g_steal_pointer (&user_data));
++  GisUbuntuProAttachPagePrivate *priv = gis_ubuntupro_attach_page_get_instance_private (attach_page);
++
++  g_autoptr(GError) error = NULL;
++  g_autoptr(GVariant) retval = g_dbus_connection_call_finish (G_DBUS_CONNECTION (source), result, &error);
++  status_t status;
++
++  gis_page_set_hide_navigation (GIS_PAGE (priv->main_page), FALSE);
++  gis_page_apply_complete (GIS_PAGE (priv->main_page), FALSE);
++  g_clear_handle_id (&priv->attach_idle, g_source_remove);
++
++  if (retval == NULL)
++    {
++      g_warning ("Failed to attach token: %s", error->message);
++      status = FAIL;
++    }
++  else
++    {
++      SuccessfullyAttached = TRUE;
++      status = SUCCESS;
++      pthread_cancel (priv->poll_id);
++      gis_page_set_complete (GIS_PAGE (priv->main_page), TRUE);
++      g_clear_pointer (&priv->contract_token, g_free);
++      g_free (g_atomic_pointer_exchange (&priv->token, NULL));
++    }
++  priv->attaching = FALSE;
++  update_attach_page (attach_page, status);
++}
++
++static void
++ua_attach (const gchar            *token,
++           GisUbuntuProAttachPage *attach_page,
++           GCancellable           *cancellable)
++{
++  GisUbuntuProAttachPagePrivate *priv = gis_ubuntupro_attach_page_get_instance_private (attach_page);
++  GDBusConnection *bus;
++
++  g_autoptr(GError) error = NULL;
++  status_t status = NONE;
++
++  if (priv->attaching)
++    return;
++
++  bus = g_bus_get_sync (G_BUS_TYPE_SYSTEM, NULL, &error);
++  if (bus == NULL)
++    {
++      g_warning ("Failed to get system bus: %s", error->message);
++    }
++  else
++    {
++      priv->attaching = TRUE;
++      update_attach_page (attach_page, status);
++
++      g_dbus_connection_call (bus,
++                              "com.canonical.UbuntuAdvantage",
++                              "/com/canonical/UbuntuAdvantage/Manager",
++                              "com.canonical.UbuntuAdvantage.Manager",
++                              "Attach",
++                              g_variant_new ("(s)", token),
++                              G_VARIANT_TYPE ("()"),
++                              G_DBUS_CALL_FLAGS_NONE,
++                              543210, /* I have observed that -1, the default timeout, is not enough. */
++                              cancellable,
++                              on_ua_attach_requested,
++                              g_object_ref (attach_page));
++    }
++}
++
++static void
++on_token_typing (GtkButton *button, GisUbuntuProAttachPage *page)
++{
++  GisUbuntuProAttachPagePrivate *priv = gis_ubuntupro_attach_page_get_instance_private (page);
++
++  gis_page_set_complete (
++    GIS_PAGE (priv->main_page),
++    gtk_entry_get_text_length (GTK_ENTRY (priv->token_field)) > 0);
++}
++
++static void
++request_token_attach (GtkButton *button, GisUbuntuProAttachPage *page)
++{
++  GisUbuntuProAttachPagePrivate *priv = gis_ubuntupro_attach_page_get_instance_private (page);
++
++  gis_page_apply_begin (GIS_PAGE (priv->main_page), NULL, NULL);
++}
++
++static void
++on_magic_clicked (GtkButton *button, GisUbuntuProAttachPage *page)
++{
++  GisUbuntuProAttachPagePrivate *priv = gis_ubuntupro_attach_page_get_instance_private (page);
++
++  priv->active_radio = MAGIC;
++
++  gis_page_apply_begin (GIS_PAGE (priv->main_page), NULL, NULL);
++}
++
++static void
++on_radio_toggled (GtkButton *button, GisUbuntuProAttachPage *page)
++{
++  GisUbuntuProAttachPagePrivate *priv = gis_ubuntupro_attach_page_get_instance_private (page);
++  status_t status = NONE;
++
++  priv->active_radio = gtk_check_button_get_active (GTK_CHECK_BUTTON (priv->token_radio)) ? TOKEN : MAGIC;
++  update_attach_page (page, status);
++}
++
++static void
++page_shown (GisPage *gis_page)
++{
++  GisUbuntuProPage *page = GIS_UBUNTUPRO_PAGE (gis_page);
++  GisUbuntuProPagePrivate *priv = gis_ubuntupro_page_get_instance_private (page);
++  GisUbuntuProOfferPage *offer_page = GIS_UBUNTUPRO_OFFER_PAGE (priv->offer_page);
++  GisUbuntuProOfferPagePrivate *offer_priv = gis_ubuntupro_offer_page_get_instance_private (offer_page);
++  GisUbuntuProAttachPage *attach_page = GIS_UBUNTUPRO_ATTACH_PAGE (priv->attach_page);
++  GisUbuntuProAttachPagePrivate *attach_priv = gis_ubuntupro_attach_page_get_instance_private (attach_page);
++  GisUbuntuProServicesPage *services_page = GIS_UBUNTUPRO_SERVICES_PAGE (priv->services_page);
++  GisUbuntuProServicesPagePrivate *services_priv = gis_ubuntupro_services_page_get_instance_private (services_page);
++
++  switch (priv->current_page)
++    {
++      case OFFER_PAGE:
++        gtk_widget_grab_focus (offer_priv->header);
++        break;
++
++      case ATTACH_PAGE:
++        gtk_widget_grab_focus (attach_priv->header);
++        break;
++
++      case SERVICES_PAGE:
++        gtk_widget_grab_focus (services_priv->header);
++        break;
++    }
++}
++
++
++/* Callback for the Previous button */
++static gboolean
++gis_ubuntupro_page_go_back (GisPage *gis_page)
++{
++  GisUbuntuProPage *page = GIS_UBUNTUPRO_PAGE (gis_page);
++  GisUbuntuProPagePrivate *priv = gis_ubuntupro_page_get_instance_private (page);
++  GisUbuntuProOfferPage *offer_page = GIS_UBUNTUPRO_OFFER_PAGE (priv->offer_page);
++  GisUbuntuProAttachPage *attach_page = GIS_UBUNTUPRO_ATTACH_PAGE (priv->attach_page);
++  GisUbuntuProAttachPagePrivate *attach_page_priv = gis_ubuntupro_attach_page_get_instance_private (attach_page);
++
++  switch (priv->current_page)
++    {
++    case OFFER_PAGE:
++      return FALSE;
++
++    case ATTACH_PAGE:
++      gis_page_set_complete (gis_page, TRUE);
++      if (g_get_monotonic_time () + (60 * G_USEC_PER_SEC) >
++          GPOINTER_TO_SIZE (g_atomic_pointer_get (&attach_page_priv->expired_by)))
++        {
++          if (attach_page_priv->poll_id)
++            {
++              pthread_cancel (attach_page_priv->poll_id);
++              attach_page_priv->poll_id = 0;
++            }
++
++          g_atomic_int_set (&attach_page_priv->magic_token_polling, FALSE);
++          g_free (g_atomic_pointer_exchange (&attach_page_priv->token, NULL));
++        }
++      gtk_stack_set_visible_child (GTK_STACK (priv->stack), GTK_WIDGET (offer_page));
++      priv->current_page = OFFER_PAGE;
++      break;
++
++    case SERVICES_PAGE:
++      gtk_stack_set_visible_child (GTK_STACK (priv->stack), GTK_WIDGET (attach_page));
++      priv->current_page = ATTACH_PAGE;
++      break;
++    }
++  page_shown(gis_page);
++  return TRUE;
++}
++
++static void
++on_attach_idle (gpointer data)
++{
++  GisUbuntuProPage *page = GIS_UBUNTUPRO_PAGE (data);
++  GisUbuntuProPagePrivate *priv = gis_ubuntupro_page_get_instance_private (page);
++  GisUbuntuProAttachPage *attach_page = GIS_UBUNTUPRO_ATTACH_PAGE (priv->attach_page);
++  GisUbuntuProAttachPagePrivate *attach_priv = gis_ubuntupro_attach_page_get_instance_private (attach_page);
++
++  gis_page_set_hide_navigation (GIS_PAGE (page), TRUE);
++  attach_priv->attach_idle = 0;
++}
++
++/* Callback for the Next button */
++static gboolean
++gis_ubuntupro_page_apply (GisPage      *gis_page,
++                          GCancellable *cancellable)
++{
++  GisUbuntuProPage *page = GIS_UBUNTUPRO_PAGE (gis_page);
++  GisUbuntuProPagePrivate *priv = gis_ubuntupro_page_get_instance_private (page);
++  GisUbuntuProOfferPage *offer_page = GIS_UBUNTUPRO_OFFER_PAGE (priv->offer_page);
++  GisUbuntuProOfferPagePrivate *offer_priv = gis_ubuntupro_offer_page_get_instance_private (offer_page);
++  GisUbuntuProAttachPage *attach_page = GIS_UBUNTUPRO_ATTACH_PAGE (priv->attach_page);
++  GisUbuntuProAttachPagePrivate *attach_priv = gis_ubuntupro_attach_page_get_instance_private (attach_page);
++
++  switch (priv->current_page)
++    {
++    case OFFER_PAGE:
++      if (gtk_check_button_get_active (GTK_CHECK_BUTTON (offer_priv->skip_pro_select)))
++        return FALSE;
++      /* Request magic token already if didn't yet and advance to next local page */
++      request_magic_attach (page, cancellable);
++      break;
++
++    case ATTACH_PAGE:
++      if (SuccessfullyAttached)
++        {
++          GisUbuntuProServicesPage *services_page = GIS_UBUNTUPRO_SERVICES_PAGE (priv->services_page);
++          display_ua_services (gis_ubuntupro_services_page_get_instance_private (services_page));
++          gtk_stack_set_visible_child (GTK_STACK (priv->stack), priv->services_page);
++          gis_page_apply_complete (GIS_PAGE (page), FALSE);
++          priv->current_page = SERVICES_PAGE;
++        }
++      else
++        {
++          const char *token;
++          if (attach_priv->active_radio == MAGIC)
++            token = attach_priv->contract_token;
++          else
++            token = gtk_editable_get_text (GTK_EDITABLE (attach_priv->token_field));
++          ua_attach (token, attach_page, cancellable);
++          g_clear_handle_id (&attach_priv->attach_idle, g_source_remove);
++          attach_priv->attach_idle = g_idle_add_once (on_attach_idle, page);
++        }
++      break;
++
++    case SERVICES_PAGE:
++      return FALSE;
++    }
++  page_shown(gis_page);
++  return TRUE;
++}
++
++static void
++gis_ubuntupro_page_class_init (GisUbuntuProPageClass *klass)
++{
++  GisPageClass *page_class = GIS_PAGE_CLASS (klass);
++  GObjectClass *object_class = G_OBJECT_CLASS (klass);
++
++  gtk_widget_class_set_template_from_resource (GTK_WIDGET_CLASS (klass), "/org/gnome/initial-setup/gis-ubuntupro-page.ui");
++
++  gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisUbuntuProPage, offer_page);
++  gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisUbuntuProPage, attach_page);
++  gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisUbuntuProPage, services_page);
++  gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisUbuntuProPage, stack);
++  gtk_widget_class_bind_template_callback (GTK_WIDGET_CLASS (klass), request_magic_attach);
++  gtk_widget_class_bind_template_callback (GTK_WIDGET_CLASS (klass), on_radio_toggled);
++
++  page_class->page_id = PAGE_ID;
++  page_class->locale_changed = gis_ubuntupro_page_locale_changed;
++  page_class->apply = gis_ubuntupro_page_apply;
++  page_class->go_back = gis_ubuntupro_page_go_back;
++  page_class->shown = page_shown;
++  object_class->constructed = gis_ubuntupro_page_constructed;
++  object_class->dispose = gis_ubuntupro_page_dispose;
++}
++static void
++gis_ubuntupro_offer_page_class_init (GisUbuntuProOfferPageClass *klass)
++{
++  GObjectClass *object_class = G_OBJECT_CLASS (klass);
++
++  gtk_widget_class_set_template_from_resource (GTK_WIDGET_CLASS (klass), "/org/gnome/initial-setup/gis-ubuntupro-offer-page.ui");
++
++  gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisUbuntuProOfferPage, ubuntu_pro_logo);
++  gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisUbuntuProOfferPage, enable_pro_row);
++  gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisUbuntuProOfferPage, skip_pro_select);
++  gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisUbuntuProOfferPage, offline_warning);
++  gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisUbuntuProOfferPage, security_updates_label);
++  gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisUbuntuProOfferPage, header);
++  gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisUbuntuProOfferPage, learn_more);
++
++  gtk_widget_class_bind_template_callback (GTK_WIDGET_CLASS (klass), set_children_valign_start);
++  gtk_widget_class_bind_template_callback (GTK_WIDGET_CLASS (klass), gis_activate_link);
++
++  object_class->dispose = gis_ubuntupro_offer_page_dispose;
++}
++
++static void
++gis_ubuntupro_attach_page_class_init (GisUbuntuProAttachPageClass *klass)
++{
++  gtk_widget_class_set_template_from_resource (GTK_WIDGET_CLASS (klass), "/org/gnome/initial-setup/gis-ubuntupro-attach-page.ui");
++
++  gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisUbuntuProAttachPage, ubuntu_pro_logo);
++  gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisUbuntuProAttachPage, pin_label);
++  gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisUbuntuProAttachPage, token_field);
++  gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisUbuntuProAttachPage, token_status);
++  gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisUbuntuProAttachPage, token_spinner);
++  gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisUbuntuProAttachPage, token_status_icon);
++  gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisUbuntuProAttachPage, token_hint);
++  gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisUbuntuProAttachPage, pin_status);
++  gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisUbuntuProAttachPage, pin_spinner);
++  gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisUbuntuProAttachPage, pin_status_icon);
++  gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisUbuntuProAttachPage, pin_hint);
++  gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisUbuntuProAttachPage, token_radio);
++  gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisUbuntuProAttachPage, magic_radio);
++  gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisUbuntuProAttachPage, header);
++
++  gtk_widget_class_bind_template_callback (GTK_WIDGET_CLASS (klass), on_magic_clicked);
++  gtk_widget_class_bind_template_callback (GTK_WIDGET_CLASS (klass), on_radio_toggled);
++  gtk_widget_class_bind_template_callback (GTK_WIDGET_CLASS (klass), on_token_typing);
++  gtk_widget_class_bind_template_callback (GTK_WIDGET_CLASS (klass), request_token_attach);
++  gtk_widget_class_bind_template_callback (GTK_WIDGET_CLASS (klass), set_children_valign_start);
++  gtk_widget_class_bind_template_callback (GTK_WIDGET_CLASS (klass), set_check_button_as_padded_label);
++  gtk_widget_class_bind_template_callback (GTK_WIDGET_CLASS (klass), gis_activate_link);
++}
++static void
++gis_ubuntupro_services_page_class_init (GisUbuntuProServicesPageClass *klass)
++{
++  gtk_widget_class_set_template_from_resource (GTK_WIDGET_CLASS (klass), "/org/gnome/initial-setup/gis-ubuntupro-services-page.ui");
++
++  gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisUbuntuProServicesPage, ubuntu_pro_logo);
++  gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisUbuntuProServicesPage, enabled_services_header);
++  gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisUbuntuProServicesPage, available_services_header);
++  gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisUbuntuProServicesPage, contract_name);
++  gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisUbuntuProServicesPage, checkmark);
++  gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisUbuntuProServicesPage, header);
++}
++
++static void
++gis_ubuntupro_page_init (GisUbuntuProPage *page)
++{
++  g_resources_register (ubuntupro_get_resource ());
++
++  /* Magic that makes stuff compile */
++  g_type_ensure (GIS_TYPE_PAGE_HEADER);
++  g_type_ensure (GIS_TYPE_UBUNTUPRO_OFFER_PAGE);
++  g_type_ensure (GIS_TYPE_UBUNTUPRO_ATTACH_PAGE);
++  g_type_ensure (GIS_TYPE_UBUNTUPRO_SERVICES_PAGE);
++
++  gtk_widget_init_template (GTK_WIDGET (page));
++}
++static void
++gis_ubuntupro_offer_page_init (GisUbuntuProOfferPage *page)
++{
++  GisUbuntuProOfferPagePrivate *offer_priv;
++
++  g_resources_register (ubuntupro_get_resource ());
++
++  gtk_widget_init_template (GTK_WIDGET (page));
++
++  offer_priv = gis_ubuntupro_offer_page_get_instance_private (page);
++
++  /* TRANSLATORS: Use HTML encoded format for special characters such as &amp' for '&'. %s is a URL. */
++  g_autofree gchar *link = g_strdup_printf (_("Learn more at %s"),
++                                            "<a href=\"https://ubuntu.com/pro\">ubuntu.com/pro</a>");
++  gtk_label_set_label (GTK_LABEL (offer_priv->learn_more), link);
++}
++static void
++gis_ubuntupro_attach_page_init (GisUbuntuProAttachPage *page)
++{
++  GisUbuntuProAttachPagePrivate *attach_priv;
++
++  g_resources_register (ubuntupro_get_resource ());
++
++  gtk_widget_init_template (GTK_WIDGET (page));
++
++  attach_priv = gis_ubuntupro_attach_page_get_instance_private (page);
++  /* TRANSLATORS: Subtitle telling who can provide the Ubuntu Pro token.
++     Use HTML encoded format for special characters such as &amp' for '&'. %s is a URL.
++   */
++  g_autofree gchar *link = g_strdup_printf (_("From your admin, or from %s"),
++                                            "<a href=\"https://ubuntu.com/pro/dashboard\">ubuntu.com/pro</a>");
++  gtk_label_set_label (GTK_LABEL (attach_priv->token_hint), link);
++}
++static void
++gis_ubuntupro_services_page_init (GisUbuntuProServicesPage *page)
++{
++  g_resources_register (ubuntupro_get_resource ());
++
++  gtk_widget_init_template (GTK_WIDGET (page));
++}
++
++GisPage *
++gis_prepare_ubuntu_pro_page (GisDriver *driver)
++{
++  gboolean attached;
++  gboolean skip_checks = !!g_getenv ("GIS_SHOW_ALL_PAGES");
++
++  if (!skip_checks && !is_ubuntu_pro_supported ())
++    {
++      g_message ("Ubuntu Pro is not supported on non-LTS Ubuntu releases.");
++      return NULL;
++    }
++
++  if (skip_checks && !get_ubuntu_advantage_attached (&attached))
++    {
++      g_warning ("Couldn't fetch the Ubuntu Pro status.");
++      return NULL;
++    }
++
++  if (skip_checks && attached && !g_getenv ("GIS_SHOW_ALL_PAGES"))
++    {
++      g_warning ("Ubuntu Pro is already attached. Skipping Ubuntu Pro pages.");
++      return NULL;
++    }
++
++  return g_object_new (GIS_TYPE_UBUNTUPRO_PAGE,
++                       "driver", driver,
++                       NULL);
++}
+diff --git a/gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.h b/gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.h
+new file mode 100644
+index 0000000..4d81246
+--- /dev/null
++++ b/gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.h
+@@ -0,0 +1,63 @@
++/* -*- mode: C; c-file-style: "gnu"; indent-tabs-mode: nil; -*- */
++/*
++ * Copyright (C) 2018 Canonical Ltd.
++ *
++ * This program is free software; you can redistribute it and/or
++ * modify it under the terms of the GNU General Public License as
++ * published by the Free Software Foundation; either version 2 of the
++ * License, or (at your option) any later version.
++ *
++ * This program is distributed in the hope that it will be useful, but
++ * WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++ * General Public License for more details.
++ *
++ * You should have received a copy of the GNU General Public License
++ * along with this program; if not, see <http://www.gnu.org/licenses/>.
++ */
++
++#ifndef __GIS_UBUNTUPRO_PAGE_H__
++#define __GIS_UBUNTUPRO_PAGE_H__
++
++#include <glib-object.h>
++
++#include "gis-page.h"
++
++G_BEGIN_DECLS
++
++#define GIS_TYPE_UBUNTUPRO_PAGE (gis_ubuntupro_page_get_type ())
++#define GIS_TYPE_UBUNTUPRO_OFFER_PAGE (gis_ubuntupro_offer_page_get_type ())
++#define GIS_TYPE_UBUNTUPRO_ATTACH_PAGE (gis_ubuntupro_attach_page_get_type ())
++#define GIS_TYPE_UBUNTUPRO_SERVICES_PAGE (gis_ubuntupro_services_page_get_type ())
++
++G_DECLARE_DERIVABLE_TYPE (GisUbuntuProPage, gis_ubuntupro_page, GIS, UBUNTUPRO_PAGE, GisPage)
++G_DECLARE_DERIVABLE_TYPE (GisUbuntuProOfferPage, gis_ubuntupro_offer_page, GIS, UBUNTUPRO_OFFER_PAGE, AdwBin)
++G_DECLARE_DERIVABLE_TYPE (GisUbuntuProAttachPage, gis_ubuntupro_attach_page, GIS, UBUNTUPRO_ATTACH_PAGE, AdwBin)
++G_DECLARE_DERIVABLE_TYPE (GisUbuntuProServicesPage, gis_ubuntupro_services_page, GIS, UBUNTUPRO_SERVICES_PAGE, AdwBin)
++
++struct _GisUbuntuProPageClass
++{
++  GisPageClass parent_class;
++};
++
++struct _GisUbuntuProOfferPageClass
++{
++  AdwBinClass parent_class;
++};
++
++struct _GisUbuntuProAttachPageClass
++{
++  AdwBinClass parent_class;
++};
++
++struct _GisUbuntuProServicesPageClass
++{
++  AdwBinClass parent_class;
++};
++
++GisPage *gis_prepare_ubuntu_pro_page (GisDriver *driver);
++
++
++G_END_DECLS
++
++#endif /* __GIS_UBUNTUPRO_PAGE_H__ */
+diff --git a/gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-services-page.blp b/gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-services-page.blp
+new file mode 100644
+index 0000000..3524c86
+--- /dev/null
++++ b/gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-services-page.blp
+@@ -0,0 +1,57 @@
++using Gtk 4.0;
++using Adw 1;
++
++template $GisUbuntuProServicesPage: Adw.Bin {
++  Adw.PreferencesPage {
++    Adw.PreferencesGroup {
++      Adw.Clamp {
++        margin-top: 20;
++        maximum-size: 300;
++
++        child: Picture ubuntu_pro_logo {
++          valign: start;
++          content-fit: scale_down;
++          can-shrink: true;
++          height-request: 75;
++        };
++      }
++    }
++
++    Adw.PreferencesGroup {
++      $GisPageHeader header {
++        title: _("Ubuntu Pro Services");
++        show-icon: false;
++        use-accessible-title: true;
++      }
++    }
++
++    Adw.PreferencesGroup subscription-group {
++      title: _("Your subscription");
++      accessible-role: group;
++
++      Adw.ActionRow contract_name {
++        can-focus: true;
++
++        [suffix]
++        Image checkmark {
++          icon-name: "pro-checkmark";
++          pixel-size: 22;
++        }
++      }
++    }
++
++    Adw.PreferencesGroup enabled_services_header {
++      title: _("Your enabled services");
++      /* Translators: translators: Use HTML encoded format for special characters such as '&' */
++      description: _(
++            "You can change the default enablements for your token on the ubuntu.com/pro web interface. You can also change enabled services in the Settings menu or with the `<span font_family='monospace'>pro</span>` command-line."
++          );
++      accessible-role: group;
++    }
++
++    Adw.PreferencesGroup available_services_header {
++      title: _("Other available services");
++      accessible-role: group;
++    }
++  }
++}
+diff --git a/gnome-initial-setup/pages/ubuntu-pro/meson.build b/gnome-initial-setup/pages/ubuntu-pro/meson.build
+new file mode 100644
+index 0000000..e1b84d5
+--- /dev/null
++++ b/gnome-initial-setup/pages/ubuntu-pro/meson.build
+@@ -0,0 +1,27 @@
++blueprint_compiler = find_program('blueprint-compiler')
++
++blueprints = custom_target(
++    'ubuntu-pro-ui-files',
++    input: files(
++        'gis-ubuntupro-attach-page.blp',
++        'gis-ubuntupro-offer-page.blp',
++        'gis-ubuntupro-page.blp',
++        'gis-ubuntupro-services-page.blp',
++    ),
++    output: '.',
++    command: [blueprint_compiler,  'batch-compile', '--minify', '@OUTPUT@', '@CURRENT_SOURCE_DIR@', '@INPUT@'],
++)
++
++sources += gnome.compile_resources(
++    'ubuntupro-resources',
++    files('ubuntupro.gresource.xml'),
++    c_name: 'ubuntupro',
++    dependencies: blueprints,
++)
++
++sources += files(
++    'gis-ubuntupro-page.c',
++    'gis-ubuntupro-page.h',
++    'utils.c',
++    'utils.h',
++)
+diff --git a/gnome-initial-setup/pages/ubuntu-pro/ubuntu-pro-dark.svg b/gnome-initial-setup/pages/ubuntu-pro/ubuntu-pro-dark.svg
+new file mode 100644
+index 0000000..2ff8676
+--- /dev/null
++++ b/gnome-initial-setup/pages/ubuntu-pro/ubuntu-pro-dark.svg
+@@ -0,0 +1,115 @@
++<?xml version="1.0" encoding="UTF-8" standalone="no"?>
++<svg
++   id="Layer_1"
++   data-name="Layer 1"
++   viewBox="0 0 1463.27051 400"
++   version="1.1"
++   sodipodi:docname="ubuntu-pro-dark.svg"
++   inkscape:version="1.4.3 (fcd0343856, 2026-01-01)"
++   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
++   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
++   xmlns="http://www.w3.org/2000/svg"
++   xmlns:svg="http://www.w3.org/2000/svg">
++  <sodipodi:namedview
++     id="namedview15"
++     pagecolor="#ffffff"
++     bordercolor="#666666"
++     borderopacity="1.0"
++     inkscape:showpageshadow="2"
++     inkscape:pageopacity="0.0"
++     inkscape:pagecheckerboard="0"
++     inkscape:deskcolor="#d1d1d1"
++     inkscape:zoom="0.71210347"
++     inkscape:cx="730.93311"
++     inkscape:cy="199.40922"
++     inkscape:window-width="2126"
++     inkscape:window-height="1164"
++     inkscape:window-x="0"
++     inkscape:window-y="0"
++     inkscape:window-maximized="1"
++     inkscape:current-layer="Layer_1" />
++  <rect
++     fill="#e95420"
++     width="232.955"
++     height="400"
++     id="rect1" />
++  <path
++     fill="#fff"
++     d="M29.3844,264.63989c1.985-13.177,14.274-22.256,27.442-20.28,13.186,1.97701,22.264,14.265,20.28,27.442-1.968,13.17799-14.256,22.255-27.442,20.279-13.169-1.97601-22.248-14.264-20.28-27.441"
++     id="path1" />
++  <path
++     fill="#fff"
++     d="M130.1423,210.2558c2.79601-13.03101,15.62-21.323,28.64999-18.536,13.03,2.79599,21.33101,15.62,18.53601,28.64999-2.79501,13.03101-15.619,21.332-28.65001,18.536-13.03-2.79599-21.33199-15.618-18.536-28.64999"
++     id="path2" />
++  <path
++     fill="#fff"
++     d="M107.6711,330.319c-17.379-3.727-31.911-14.827-40.075-30.566-6.437,2.925-13.669,3.82301-20.624,2.537,9.872,24.266,30.824,41.888,56.54,47.393,5.661,1.218,11.408,1.805,17.138,1.769-4.436-5.825-6.903-12.848-7.05901-20.175-1.985-.216-3.969-.545-5.92-.958"
++     id="path3"
++     inkscape:label="path3" />
++  <path
++     fill="#fff"
++     d="M124.7058,325.391c2.796-13.021,15.62-21.322,28.65-18.536,13.03,2.79601,21.33301,15.62,18.537,28.651-2.79601,13.03-15.62001,21.331-28.651,18.535-13.03-2.787-21.332-15.619-18.536-28.65"
++     id="path4" />
++  <path
++     fill="#fff"
++     d="M181.8842,321.5859c7.491-9.45,12.772-20.633,15.327-32.526,4.435-20.717.29201-42.456-11.373-60.09499-2.77899,6.549-7.508,12.09-13.56599,15.897,6.507,12.26999,8.492,26.43199,5.57401,40.049-1.43201,6.67-3.95201,12.953-7.507,18.7,5.661,4.659,9.68199,10.924,11.545,17.975"
++     id="path5" />
++  <path
++     fill="#fff"
++     d="M51.3896,233.6158c.621-.033,1.226-.05099,1.847-.05099,2.434,0,4.867.258,7.284.776,3.917.847,7.628,2.34,11.01,4.43599,10.85699-15.62,28.392-24.99899,47.376-25.336.104-1.81999.34599-3.64099.72499-5.437,1.10501-5.16901,3.36601-10.00099,6.59401-14.13499-30.342-2.39801-59.821,13.25499-74.836,39.74699"
++     id="path6" />
++  <rect
++     fill="none"
++     width="232.95799"
++     height="400"
++     id="rect6" />
++  <g
++     id="g15"
++     style="fill:#ffffff;fill-opacity:1">
++    <path
++       fill="#fff"
++       d="M352.33496,356.3877c-14.44629,0-26.01953-2.7959-34.71729-8.3877-8.70117-5.59277-15.02832-13.20117-18.98926-22.83398-3.96094-9.62988-5.94141-20.4248-5.94141-32.3877v-101.35449h18.17383v99.25781c0,17.24219,3.84473,29.78711,11.53369,37.62988,7.68896,7.84473,17.66796,11.76562,29.94043,11.76562,12.42529,0,22.48438-3.96094,30.17334-11.88281s11.53369-20.42383,11.53369-37.5127v-99.25781h18.17383v101.35449c0,11.96289-1.98047,22.75781-5.94141,32.3877-3.96094,9.63281-10.29199,17.24121-18.98975,22.83398-8.70068,5.5918-20.35107,8.3877-34.94971,8.3877Z"
++       id="path7"
++       style="fill:#ffffff;fill-opacity:1" />
++    <path
++       fill="#fff"
++       d="M496.0957,355.68848c-6.8374,0-13.04834-.34961-18.64014-1.04883-5.59229-.69824-10.5249-1.55371-14.79541-2.5625-4.27441-1.00879-7.9624-1.98047-11.06787-2.91211v-174.05127l17.4751-3.0293v66.87158c2.7959-2.01758,7.02637-4.07812,12.69873-6.1748,5.66846-2.09766,12.23242-3.14551,19.68848-3.14551,11.6499,0,21.51221,2.67969,29.59082,8.03809,8.0752,5.35938,14.24951,12.7793,18.52344,22.25195,4.27051,9.47656,6.40771,20.35059,6.40771,32.62012,0,13.04785-2.48682,24.27148-7.45605,33.66797-4.97314,9.40039-11.96289,16.66016-20.97021,21.78613-9.01025,5.12598-19.49512,7.68848-31.45459,7.68848ZM495.8623,340.07715c8.38818,0,15.72754-1.86328,22.01855-5.5918,6.29102-3.72754,11.14404-9.12305,14.5625-16.19336,3.41504-7.06641,5.12598-15.64746,5.12598-25.74609,0-6.52441-.6626-12.65918-1.98047-18.40723-1.32129-5.74512-3.49463-10.79492-6.52393-15.14551-3.02881-4.34668-6.98975-7.72461-11.88281-10.13477-4.89307-2.40723-10.83447-3.6123-17.82471-3.6123-6.68066,0-12.73828,1.12891-18.17383,3.37891-5.43896,2.25391-9.47656,4.4668-12.11621,6.64062v81.7832c2.17334.62207,5.47559,1.28125,9.90283,1.98047,4.42676.69922,10.05518,1.04785,16.89209,1.04785Z"
++       id="path8"
++       style="fill:#ffffff;fill-opacity:1" />
++    <path
++       fill="#fff"
++       d="M634.96191,355.22266c-12.11621,0-21.70947-2.29395-28.77588-6.87402-7.06982-4.5791-12.11572-11.06738-15.14502-19.45508-3.02881-8.3877-4.54346-18.09375-4.54346-29.125v-67.57031h17.4751v62.91016c0,10.875,1.08496,19.57227,3.26221,26.0957,2.17334,6.52441,5.7085,11.22461,10.60156,14.09668,4.89258,2.87598,11.37695,4.31055,19.45508,4.31055,6.52441,0,12.30908-.34961,17.35889-1.04785,5.0459-.69922,8.34766-1.28223,9.90234-1.74805v-104.61719h17.24219v116.5c-4.66016,1.24512-10.91455,2.64355-18.75684,4.19434-7.84521,1.55078-17.20557,2.33008-28.07617,2.33008Z"
++       id="path9"
++       style="fill:#ffffff;fill-opacity:1" />
++    <path
++       fill="#fff"
++       d="M720.93799,352.89258v-116.5c4.81299-1.24121,11.104-2.63965,18.87305-4.19434,7.76562-1.55078,17.08545-2.33008,27.95996-2.33008,12.58203,0,22.36816,2.33008,29.3584,6.99023,6.98975,4.66016,11.91943,11.14746,14.79541,19.45605,2.87256,8.31152,4.31055,17.98047,4.31055,29.00781v67.57031h-17.4751v-62.67676c0-11.02734-1.01221-19.80566-3.02881-26.3291-2.021-6.52441-5.43945-11.26074-10.25244-14.21289-4.81641-2.94922-11.49707-4.42773-20.0376-4.42773-6.52441,0-12.27295.38965-17.24219,1.16504-4.97314.7793-8.23486,1.39844-9.78613,1.86426v104.61719h-17.4751Z"
++       id="path10"
++       style="fill:#ffffff;fill-opacity:1" />
++    <path
++       fill="#fff"
++       d="M893.3584,355.45605c-10.25244,0-18.33057-1.78809-24.23242-5.35938-5.90479-3.57129-10.05908-8.93066-12.46533-16.07715-2.41016-7.14258-3.61133-16.07715-3.61133-26.79492v-109.97607l17.4751-3.02881v37.97852h47.29883v14.67969h-47.29883v61.74512c0,8.54395.96826,15.06836,2.91211,19.57129,1.94043,4.50781,4.73682,7.57227,8.38818,9.2041,3.64795,1.63086,7.9585,2.44629,12.93164,2.44629,5.90137,0,10.83447-.69922,14.79541-2.09668,3.96094-1.39844,7.10645-2.63965,9.43652-3.72852l3.72803,14.21289c-2.33008,1.39844-6.1748,2.95312-11.53369,4.66016s-11.30029,2.56348-17.82422,2.56348Z"
++       id="path11"
++       style="fill:#ffffff;fill-opacity:1" />
++    <path
++       fill="#fff"
++       d="M992.61377,355.22266c-12.11621,0-21.70947-2.29395-28.77588-6.87402-7.06982-4.5791-12.11572-11.06738-15.14502-19.45508-3.02881-8.3877-4.54346-18.09375-4.54346-29.125v-67.57031h17.4751v62.91016c0,10.875,1.08496,19.57227,3.26221,26.0957,2.17334,6.52441,5.7085,11.22461,10.60156,14.09668,4.89258,2.87598,11.37695,4.31055,19.45508,4.31055,6.52441,0,12.30908-.34961,17.35889-1.04785,5.0459-.69922,8.34766-1.28223,9.90234-1.74805v-104.61719h17.24219v116.5c-4.66016,1.24512-10.91455,2.64355-18.75684,4.19434-7.84521,1.55078-17.20557,2.33008-28.07617,2.33008Z"
++       id="path12"
++       style="fill:#ffffff;fill-opacity:1" />
++    <path
++       fill="#fff"
++       d="M1133.10986,352.89258v-158.43994c5.90186-1.55078,12.69873-2.67969,20.3877-3.37842,7.68896-.69922,14.79541-1.04883,21.31934-1.04883,22.83398,0,39.95947,4.39062,51.37646,13.16504,11.41699,8.77734,17.12549,21.24316,17.12549,37.39648,0,12.27246-2.83594,22.13477-8.50439,29.59082-5.67188,7.45605-13.82715,12.85449-24.46484,16.19336-10.6416,3.3418-23.4165,5.00977-38.32861,5.00977h-20.73682v61.51172h-18.17432ZM1151.28418,275.76953h19.10596c11.02734,0,20.58057-.96875,28.65869-2.91211,8.0752-1.94043,14.32959-5.47559,18.75684-10.60156,4.42676-5.12598,6.64062-12.42578,6.64062-21.90234,0-9.16309-2.33008-16.22949-6.99023-21.20312-4.66016-4.96973-10.71777-8.46387-18.17383-10.48438-7.45605-2.01758-15.37842-3.0293-23.76611-3.0293-5.43896,0-10.13574.19629-14.09668.58203-3.96094.38965-7.33936.73926-10.13525,1.04883v68.50195Z"
++       id="path13"
++       style="fill:#ffffff;fill-opacity:1" />
++    <path
++       fill="#fff"
++       d="M1271.27686,352.89258v-115.10156c4.0376-1.70801,9.58984-3.45508,16.65967-5.24316,7.06641-1.7832,15.5708-2.67969,25.51367-2.67969,3.26172,0,6.48389.19727,9.66943.58301,3.18164.38965,6.05811.85547,8.62109,1.39746,2.56299.54688,4.46338,1.04883,5.7085,1.51465l-3.49512,14.91211c-1.39795-.61914-4.04102-1.28125-7.92188-1.98047-3.88477-.69922-8.854-1.04883-14.91211-1.04883-5.90527,0-10.79834.42969-14.6792,1.28223-3.88428.85547-6.44727,1.59473-7.68896,2.21289v104.15137h-17.4751Z"
++       id="path14"
++       style="fill:#ffffff;fill-opacity:1" />
++    <path
++       fill="#fff"
++       d="M1407.5835,355.68848c-10.71826,0-20.271-2.60254-28.65918-7.80566-8.38818-5.20215-14.95215-12.54199-19.68848-22.01855-4.74023-9.47266-7.10645-20.58008-7.10645-33.31836,0-12.73535,2.36621-23.80273,7.10645-33.20312,4.73633-9.39648,11.30029-16.73535,19.68848-22.01855,8.38818-5.27832,17.94092-7.92188,28.65918-7.92188,10.87061,0,20.50391,2.64355,28.89209,7.92188,8.3877,5.2832,14.94824,12.62207,19.68848,22.01855,4.73633,9.40039,7.10645,20.46777,7.10645,33.20312,0,12.73828-2.37012,23.8457-7.10645,33.31836-4.74023,9.47656-11.26416,16.81641-19.57227,22.01855-8.31152,5.20312-17.98096,7.80566-29.0083,7.80566ZM1407.5835,340.07715c7.76514,0,14.4458-1.94043,20.03809-5.82422,5.5918-3.88086,9.90234-9.39648,12.93115-16.54297,3.0293-7.14355,4.54346-15.53125,4.54346-25.16406,0-9.62988-1.51416-18.01758-4.54346-25.16406-3.02881-7.14355-7.33936-12.65918-12.93115-16.54297-5.59229-3.88086-12.27295-5.8252-20.03809-5.8252-7.61279,0-14.21289,1.94434-19.80518,5.8252-5.5918,3.88379-9.90234,9.39941-12.93164,16.54297-3.02881,7.14648-4.54346,15.53418-4.54346,25.16406,0,9.63281,1.51465,18.02051,4.54346,25.16406,3.0293,7.14648,7.33984,12.66211,12.93164,16.54297,5.59229,3.88379,12.19238,5.82422,19.80518,5.82422Z"
++       id="path15"
++       style="fill:#ffffff;fill-opacity:1" />
++  </g>
++</svg>
+diff --git a/gnome-initial-setup/pages/ubuntu-pro/ubuntu-pro.svg b/gnome-initial-setup/pages/ubuntu-pro/ubuntu-pro.svg
+new file mode 100644
+index 0000000..eb21a8b
+--- /dev/null
++++ b/gnome-initial-setup/pages/ubuntu-pro/ubuntu-pro.svg
+@@ -0,0 +1,22 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1461.27051 400">
++  <g>
++    <path d="M350.33496,357.3877c-14.44629,0-26.01953-2.7959-34.71729-8.3877-8.70117-5.59277-15.02832-13.20117-18.98926-22.83398-3.96094-9.62988-5.94141-20.4248-5.94141-32.3877v-101.35449h18.17383v99.25781c0,17.24219,3.84473,29.78711,11.53369,37.62988,7.68896,7.84473,17.66796,11.76562,29.94043,11.76562,12.42529,0,22.48438-3.96094,30.17334-11.88281s11.53369-20.42383,11.53369-37.5127v-99.25781h18.17383v101.35449c0,11.96289-1.98047,22.75781-5.94141,32.3877-3.96094,9.63281-10.29199,17.24121-18.98975,22.83398-8.70068,5.5918-20.35107,8.3877-34.94971,8.3877Z"/>
++    <path d="M494.0957,356.68848c-6.8374,0-13.04834-.34961-18.64014-1.04883-5.59229-.69824-10.5249-1.55371-14.79541-2.5625-4.27441-1.00879-7.9624-1.98047-11.06787-2.91211v-174.05127l17.4751-3.0293v66.87158c2.7959-2.01758,7.02637-4.07812,12.69873-6.1748,5.66846-2.09766,12.23242-3.14551,19.68848-3.14551,11.6499,0,21.51221,2.67969,29.59082,8.03809,8.0752,5.35938,14.24951,12.7793,18.52344,22.25195,4.27051,9.47656,6.40771,20.35059,6.40771,32.62012,0,13.04785-2.48682,24.27148-7.45605,33.66797-4.97314,9.40039-11.96289,16.66016-20.97021,21.78613-9.01025,5.12598-19.49512,7.68848-31.45459,7.68848ZM493.8623,341.07715c8.38818,0,15.72754-1.86328,22.01855-5.5918,6.29102-3.72754,11.14404-9.12305,14.5625-16.19336,3.41504-7.06641,5.12598-15.64746,5.12598-25.74609,0-6.52441-.6626-12.65918-1.98047-18.40723-1.32129-5.74512-3.49463-10.79492-6.52393-15.14551-3.02881-4.34668-6.98975-7.72461-11.88281-10.13477-4.89307-2.40723-10.83447-3.6123-17.82471-3.6123-6.68066,0-12.73828,1.12891-18.17383,3.37891-5.43896,2.25391-9.47656,4.4668-12.11621,6.64062v81.7832c2.17334.62207,5.47559,1.28125,9.90283,1.98047,4.42676.69922,10.05518,1.04785,16.89209,1.04785Z"/>
++    <path d="M632.96191,356.22266c-12.11621,0-21.70947-2.29395-28.77588-6.87402-7.06982-4.5791-12.11572-11.06738-15.14502-19.45508-3.02881-8.3877-4.54346-18.09375-4.54346-29.125v-67.57031h17.4751v62.91016c0,10.875,1.08496,19.57227,3.26221,26.0957,2.17334,6.52441,5.7085,11.22461,10.60156,14.09668,4.89258,2.87598,11.37695,4.31055,19.45508,4.31055,6.52441,0,12.30908-.34961,17.35889-1.04785,5.0459-.69922,8.34766-1.28223,9.90234-1.74805v-104.61719h17.24219v116.5c-4.66016,1.24512-10.91455,2.64355-18.75684,4.19434-7.84521,1.55078-17.20557,2.33008-28.07617,2.33008Z"/>
++    <path d="M718.93799,353.89258v-116.5c4.81299-1.24121,11.104-2.63965,18.87305-4.19434,7.76562-1.55078,17.08545-2.33008,27.95996-2.33008,12.58203,0,22.36816,2.33008,29.3584,6.99023,6.98975,4.66016,11.91943,11.14746,14.79541,19.45605,2.87256,8.31152,4.31055,17.98047,4.31055,29.00781v67.57031h-17.4751v-62.67676c0-11.02734-1.01221-19.80566-3.02881-26.3291-2.021-6.52441-5.43945-11.26074-10.25244-14.21289-4.81641-2.94922-11.49707-4.42773-20.0376-4.42773-6.52441,0-12.27295.38965-17.24219,1.16504-4.97314.7793-8.23486,1.39844-9.78613,1.86426v104.61719h-17.4751Z"/>
++    <path d="M891.3584,356.45605c-10.25244,0-18.33057-1.78809-24.23242-5.35938-5.90479-3.57129-10.05908-8.93066-12.46533-16.07715-2.41016-7.14258-3.61133-16.07715-3.61133-26.79492v-109.97607l17.4751-3.02881v37.97852h47.29883v14.67969h-47.29883v61.74512c0,8.54395.96826,15.06836,2.91211,19.57129,1.94043,4.50781,4.73682,7.57227,8.38818,9.2041,3.64795,1.63086,7.9585,2.44629,12.93164,2.44629,5.90137,0,10.83447-.69922,14.79541-2.09668,3.96094-1.39844,7.10645-2.63965,9.43652-3.72852l3.72803,14.21289c-2.33008,1.39844-6.1748,2.95312-11.53369,4.66016s-11.30029,2.56348-17.82422,2.56348Z"/>
++    <path d="M990.61377,356.22266c-12.11621,0-21.70947-2.29395-28.77588-6.87402-7.06982-4.5791-12.11572-11.06738-15.14502-19.45508-3.02881-8.3877-4.54346-18.09375-4.54346-29.125v-67.57031h17.4751v62.91016c0,10.875,1.08496,19.57227,3.26221,26.0957,2.17334,6.52441,5.7085,11.22461,10.60156,14.09668,4.89258,2.87598,11.37695,4.31055,19.45508,4.31055,6.52441,0,12.30908-.34961,17.35889-1.04785,5.0459-.69922,8.34766-1.28223,9.90234-1.74805v-104.61719h17.24219v116.5c-4.66016,1.24512-10.91455,2.64355-18.75684,4.19434-7.84521,1.55078-17.20557,2.33008-28.07617,2.33008Z"/>
++    <path d="M1131.10986,353.89258v-158.43994c5.90186-1.55078,12.69873-2.67969,20.3877-3.37842,7.68896-.69922,14.79541-1.04883,21.31934-1.04883,22.83398,0,39.95947,4.39062,51.37646,13.16504,11.41699,8.77734,17.12549,21.24316,17.12549,37.39648,0,12.27246-2.83594,22.13477-8.50439,29.59082-5.67188,7.45605-13.82715,12.85449-24.46484,16.19336-10.6416,3.3418-23.4165,5.00977-38.32861,5.00977h-20.73682v61.51172h-18.17432ZM1149.28418,276.76953h19.10596c11.02734,0,20.58057-.96875,28.65869-2.91211,8.0752-1.94043,14.32959-5.47559,18.75684-10.60156,4.42676-5.12598,6.64062-12.42578,6.64062-21.90234,0-9.16309-2.33008-16.22949-6.99023-21.20312-4.66016-4.96973-10.71777-8.46387-18.17383-10.48438-7.45605-2.01758-15.37842-3.0293-23.76611-3.0293-5.43896,0-10.13574.19629-14.09668.58203-3.96094.38965-7.33936.73926-10.13525,1.04883v68.50195Z"/>
++    <path d="M1269.27686,353.89258v-115.10156c4.0376-1.70801,9.58984-3.45508,16.65967-5.24316,7.06641-1.7832,15.5708-2.67969,25.51367-2.67969,3.26172,0,6.48389.19727,9.66943.58301,3.18164.38965,6.05811.85547,8.62109,1.39746,2.56299.54688,4.46338,1.04883,5.7085,1.51465l-3.49512,14.91211c-1.39795-.61914-4.04102-1.28125-7.92188-1.98047-3.88477-.69922-8.854-1.04883-14.91211-1.04883-5.90527,0-10.79834.42969-14.6792,1.28223-3.88428.85547-6.44727,1.59473-7.68896,2.21289v104.15137h-17.4751Z"/>
++    <path d="M1405.5835,356.68848c-10.71826,0-20.271-2.60254-28.65918-7.80566-8.38818-5.20215-14.95215-12.54199-19.68848-22.01855-4.74023-9.47266-7.10645-20.58008-7.10645-33.31836,0-12.73535,2.36621-23.80273,7.10645-33.20312,4.73633-9.39648,11.30029-16.73535,19.68848-22.01855,8.38818-5.27832,17.94092-7.92188,28.65918-7.92188,10.87061,0,20.50391,2.64355,28.89209,7.92188,8.3877,5.2832,14.94824,12.62207,19.68848,22.01855,4.73633,9.40039,7.10645,20.46777,7.10645,33.20312,0,12.73828-2.37012,23.8457-7.10645,33.31836-4.74023,9.47656-11.26416,16.81641-19.57227,22.01855-8.31152,5.20312-17.98096,7.80566-29.0083,7.80566ZM1405.5835,341.07715c7.76514,0,14.4458-1.94043,20.03809-5.82422,5.5918-3.88086,9.90234-9.39648,12.93115-16.54297,3.0293-7.14355,4.54346-15.53125,4.54346-25.16406,0-9.62988-1.51416-18.01758-4.54346-25.16406-3.02881-7.14355-7.33936-12.65918-12.93115-16.54297-5.59229-3.88086-12.27295-5.8252-20.03809-5.8252-7.61279,0-14.21289,1.94434-19.80518,5.8252-5.5918,3.88379-9.90234,9.39941-12.93164,16.54297-3.02881,7.14648-4.54346,15.53418-4.54346,25.16406,0,9.63281,1.51465,18.02051,4.54346,25.16406,3.0293,7.14648,7.33984,12.66211,12.93164,16.54297,5.59229,3.88379,12.19238,5.82422,19.80518,5.82422Z"/>
++  </g>
++  <rect fill="#e95420" width="232.955" height="400"/>
++  <path fill="#fff" d="M29.3844,264.63989c1.985-13.177,14.274-22.256,27.442-20.28,13.186,1.97701,22.264,14.265,20.28,27.442-1.968,13.17799-14.256,22.255-27.442,20.279-13.169-1.97601-22.248-14.264-20.28-27.441"/>
++  <path fill="#fff" d="M130.1423,210.2558c2.79601-13.03101,15.62-21.323,28.64999-18.536,13.03,2.79599,21.33101,15.62,18.53601,28.64999-2.79501,13.03101-15.619,21.332-28.65001,18.536-13.03-2.79599-21.33199-15.618-18.536-28.64999"/>
++  <path fill="#fff" d="M107.6711,330.319c-17.379-3.727-31.911-14.827-40.075-30.566-6.437,2.925-13.669,3.82301-20.624,2.537,9.872,24.266,30.824,41.888,56.54,47.393,5.661,1.218,11.408,1.805,17.138,1.769-4.436-5.825-6.903-12.848-7.05901-20.175-1.985-.216-3.969-.545-5.92-.958"/>
++  <path fill="#fff" d="M124.7058,325.391c2.796-13.021,15.62-21.322,28.65-18.536,13.03,2.79601,21.33301,15.62,18.537,28.651-2.79601,13.03-15.62001,21.331-28.651,18.535-13.03-2.787-21.332-15.619-18.536-28.65"/>
++  <path fill="#fff" d="M181.8842,321.5859c7.491-9.45,12.772-20.633,15.327-32.526,4.435-20.717.29201-42.456-11.373-60.09499-2.77899,6.549-7.508,12.09-13.56599,15.897,6.507,12.26999,8.492,26.43199,5.57401,40.049-1.43201,6.67-3.95201,12.953-7.507,18.7,5.661,4.659,9.68199,10.924,11.545,17.975"/>
++  <path fill="#fff" d="M51.3896,233.6158c.621-.033,1.226-.05099,1.847-.05099,2.434,0,4.867.258,7.284.776,3.917.847,7.628,2.34,11.01,4.43599,10.85699-15.62,28.392-24.99899,47.376-25.336.104-1.81999.34599-3.64099.72499-5.437,1.10501-5.16901,3.36601-10.00099,6.59401-14.13499-30.342-2.39801-59.821,13.25499-74.836,39.74699"/>
++  <rect fill="none" width="232.95799" height="400"/>
++</svg>
+\ No newline at end of file
+diff --git a/gnome-initial-setup/pages/ubuntu-pro/ubuntupro.gresource.xml b/gnome-initial-setup/pages/ubuntu-pro/ubuntupro.gresource.xml
+new file mode 100644
+index 0000000..ee8851d
+--- /dev/null
++++ b/gnome-initial-setup/pages/ubuntu-pro/ubuntupro.gresource.xml
+@@ -0,0 +1,16 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<gresources>
++  <gresource prefix="/org/gnome/initial-setup">
++    <file preprocess="xml-stripblanks" alias="gis-ubuntupro-page.ui">gis-ubuntupro-page.ui</file>
++    <file preprocess="xml-stripblanks" alias="gis-ubuntupro-offer-page.ui">gis-ubuntupro-offer-page.ui</file>
++    <file preprocess="xml-stripblanks" alias="gis-ubuntupro-attach-page.ui">gis-ubuntupro-attach-page.ui</file>
++    <file preprocess="xml-stripblanks" alias="gis-ubuntupro-services-page.ui">gis-ubuntupro-services-page.ui</file>
++    <file alias="ubuntu-pro-dark.svg">ubuntu-pro-dark.svg</file>
++    <file alias="ubuntu-pro.svg">ubuntu-pro.svg</file>
++  </gresource>
++  <gresource prefix="/org/gnome/InitialSetup/icons">
++    <file preprocess="xml-stripblanks" alias="scalable/actions/pro-checkmark.svg">checkmark.svg</file>
++    <file preprocess="xml-stripblanks" alias="scalable/actions/pro-fail.svg">fail.svg</file>
++  </gresource>
++</gresources>
++
+diff --git a/gnome-initial-setup/pages/ubuntu-pro/utils.c b/gnome-initial-setup/pages/ubuntu-pro/utils.c
+new file mode 100644
+index 0000000..f405186
+--- /dev/null
++++ b/gnome-initial-setup/pages/ubuntu-pro/utils.c
+@@ -0,0 +1,93 @@
++/* -*- mode: C; c-file-style: "gnu"; indent-tabs-mode: nil; -*- */
++/*
++ * Copyright (C) 2022-2024 Canonical Ltd.
++ *
++ * This program is free software; you can redistribute it and/or
++ * modify it under the terms of the GNU General Public License as
++ * published by the Free Software Foundation; either version 2 of the
++ * License, or (at your option) any later version.
++ *
++ * This program is distributed in the hope that it will be useful, but
++ * WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++ * General Public License for more details.
++ *
++ * You should have received a copy of the GNU General Public License
++ * along with this program; if not, see <http://www.gnu.org/licenses/>.
++ */
++
++#include "utils.h"
++
++#include <gio/gio.h>
++#include <adwaita.h>
++
++gboolean
++get_ubuntu_advantage_attached (gboolean *attached)
++{
++  g_autoptr(GError) error = NULL;
++  g_autoptr(GDBusConnection) bus = g_bus_get_sync (G_BUS_TYPE_SYSTEM, NULL, &error);
++  if (bus == NULL)
++    {
++      g_warning ("Failed to get system bus: %s", error->message);
++      return FALSE;
++    }
++
++  g_autoptr(GVariant) result = g_dbus_connection_call_sync (bus,
++                                                            "com.canonical.UbuntuAdvantage",
++                                                            "/com/canonical/UbuntuAdvantage/Manager",
++                                                            "org.freedesktop.DBus.Properties",
++                                                            "Get",
++                                                            g_variant_new ("(ss)",
++                                                              "com.canonical.UbuntuAdvantage.Manager",
++                                                              "Attached"),
++                                                            G_VARIANT_TYPE ("(v)"),
++                                                            G_DBUS_CALL_FLAGS_NONE,
++                                                            -1,
++                                                            NULL,
++                                                            &error);
++  if (result == NULL)
++    {
++      g_warning ("Failed to contact Ubuntu Advantage D-Bus service: %s", error->message);
++      return FALSE;
++    }
++
++  g_autoptr(GVariant) value = NULL;
++  g_variant_get (result, "(v)", &value);
++  if (!g_variant_is_of_type (value, G_VARIANT_TYPE ("b")))
++    {
++      g_warning ("Attached property has wrong type");
++      return FALSE;
++    }
++  g_variant_get (value, "b", attached);
++
++  return TRUE;
++}
++
++gboolean
++is_lts ()
++{
++  g_autofree gchar *version = g_get_os_info (G_OS_INFO_KEY_VERSION);
++
++  return version && g_strrstr (version, "LTS") != NULL;
++}
++
++gboolean
++is_ubuntu_pro_supported ()
++{
++  return is_lts ();
++}
++
++/* Routine from Gnome Control Center
++ * https://gitlab.gnome.org/GNOME/gnome-control-center/-/commit/a3b8964a */
++gboolean
++is_dark_theme (GtkWidget *widget)
++{
++  g_autofree char *theme_name = NULL;
++
++  theme_name = g_strdup (g_getenv ("GTK_THEME"));
++  if (theme_name != NULL)
++    return g_str_has_suffix (theme_name, "-dark");
++
++  AdwStyleManager *manager = adw_style_manager_get_default ();
++  return adw_style_manager_get_dark (manager);
++}
+diff --git a/gnome-initial-setup/pages/ubuntu-pro/utils.h b/gnome-initial-setup/pages/ubuntu-pro/utils.h
+new file mode 100644
+index 0000000..5b35a9a
+--- /dev/null
++++ b/gnome-initial-setup/pages/ubuntu-pro/utils.h
+@@ -0,0 +1,26 @@
++/* -*- mode: C; c-file-style: "gnu"; indent-tabs-mode: nil; -*- */
++/*
++ * Copyright (C) 2022-2024 Canonical Ltd.
++ *
++ * This program is free software; you can redistribute it and/or
++ * modify it under the terms of the GNU General Public License as
++ * published by the Free Software Foundation; either version 2 of the
++ * License, or (at your option) any later version.
++ *
++ * This program is distributed in the hope that it will be useful, but
++ * WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++ * General Public License for more details.
++ *
++ * You should have received a copy of the GNU General Public License
++ * along with this program; if not, see <http://www.gnu.org/licenses/>.
++ */
++
++#pragma once
++
++#include <gtk/gtk.h>
++
++gboolean get_ubuntu_advantage_attached (gboolean *);
++gboolean is_lts ();
++gboolean is_ubuntu_pro_supported ();
++gboolean is_dark_theme (GtkWidget *);
+diff --git a/po/POTFILES.in b/po/POTFILES.in
+index 954fde9..1a70b5b 100644
+--- a/po/POTFILES.in
++++ b/po/POTFILES.in
+@@ -45,4 +45,9 @@ gnome-initial-setup/pages/welcome/gis-welcome-page.c
+ gnome-initial-setup/pages/welcome/gis-welcome-page.ui
+ gnome-initial-setup/pages/apps/gis-apps-page.c
+ gnome-initial-setup/pages/apps/gis-apps-page.blp
++gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-attach-page.blp
++gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp
++gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.blp
++gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-services-page.blp
++gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c
+ po/EXTRA_STRINGS.sh

@@ -1,0 +1,137 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $GisUbuntuProAttachPage: Adw.Bin {
+  Adw.PreferencesPage {
+    Adw.PreferencesGroup {
+      Adw.Clamp {
+        margin-top: 20;
+        maximum-size: 300;
+
+        child: Picture ubuntu_pro_logo {
+          valign: start;
+          content-fit: scale_down;
+          can-shrink: true;
+          height-request: 75;
+        };
+      }
+
+      $GisPageHeader header {
+        margin-top: "75";
+        title: _("Enable Ubuntu Pro");
+        show-icon: false;
+        use-accessible-title: true;
+      }
+    }
+
+    Adw.PreferencesGroup {
+      Adw.ExpanderRow pin_status {
+        title: _("_Attach machine via your Ubuntu One account");
+        use-underline: true;
+        enable-expansion: true;
+        show-enable-switch: false;
+        use-markup: true;
+        expanded: bind token_status.expanded inverted bidirectional;
+
+        [prefix]
+        CheckButton magic_radio {
+          valign: center;
+          active: bind pin_status.expanded bidirectional;
+          activate => $on_magic_clicked();
+          focus-on-click: false;
+          can-focus: false;
+        }
+
+        [suffix]
+        Spinner pin_spinner {
+          visible: true;
+        }
+
+        [suffix]
+        Image pin_status_icon {
+          visible: false;
+        }
+
+        Adw.ActionRow {
+          [prefix]
+          Box {
+            orientation: vertical;
+            margin-top: 6;
+            spacing: 6;
+
+            Label pin_label {
+              selectable: true;
+              visible: true;
+              halign: start;
+              attributes: "scale 2";
+            }
+
+            Label pin_hint {
+              halign: start;
+
+              styles [
+                "subtitle",
+              ]
+            }
+          }
+        }
+      }
+
+      Adw.ExpanderRow token_status {
+        /* Translators: translators: This is the other way to attach a machine to Ubuntu Pro */
+        title: _("Or add a _token manually");
+        use-underline: true;
+        enable-expansion: true;
+        show-enable-switch: false;
+
+        [prefix]
+        CheckButton token_radio {
+          group: magic_radio;
+          valign: center;
+          active: bind token_status.expanded;
+          toggled => $on_radio_toggled();
+          focus-on-click: false;
+          can-focus: false;
+        }
+
+        [suffix]
+        Spinner token_spinner {
+          visible: true;
+        }
+
+        [suffix]
+        Image token_status_icon {
+          visible: false;
+        }
+
+        Adw.ActionRow {
+          [prefix]
+          Box {
+            orientation: vertical;
+            margin-top: 6;
+            spacing: 6;
+
+            Entry token_field {
+              sensitive: false;
+              width-chars: 60;
+              placeholder-text: _("Token");
+              activate => $request_token_attach();
+              changed => $on_token_typing();
+            }
+
+            Label token_hint {
+              halign: start;
+              use-markup: true;
+
+              activate-link => $gis_activate_link(template) not-swapped;
+
+              styles [
+                "subtitle",
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

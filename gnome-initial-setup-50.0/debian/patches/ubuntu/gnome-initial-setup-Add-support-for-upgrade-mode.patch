@@ -1,0 +1,345 @@
+From: =?utf-8?b?Ik1hcmNvIFRyZXZpc2FuIChUcmV2acOxbyki?= <mail@3v1n0.net>
+Date: Thu, 6 Nov 2025 11:03:01 +0100
+Subject: gnome-initial-setup: Add support for upgrade mode
+
+We can show pages to upgraders depending on case-by-case scenario
+---
+ data/gnome-initial-setup-upgrade-login.service.in  |  17 +++
+ data/meson.build                                   |   2 +
+ gnome-initial-setup/gis-driver.c                   |  13 ++-
+ gnome-initial-setup/gis-driver.h                   |   1 +
+ gnome-initial-setup/gnome-initial-setup.c          | 116 ++++++++++++++++-----
+ gnome-initial-setup/gnome-initial-setup.h          |   1 +
+ .../pages/summary/gis-summary-page.c               |   1 +
+ .../pages/welcome/gis-welcome-page.c               |   3 +
+ meson.build                                        |   5 +
+ 9 files changed, 132 insertions(+), 27 deletions(-)
+ create mode 100644 data/gnome-initial-setup-upgrade-login.service.in
+
+diff --git a/data/gnome-initial-setup-upgrade-login.service.in b/data/gnome-initial-setup-upgrade-login.service.in
+new file mode 100644
+index 0000000..7c37834
+--- /dev/null
++++ b/data/gnome-initial-setup-upgrade-login.service.in
+@@ -0,0 +1,17 @@
++[Unit]
++Description=GNOME Initial Setup
++
++BindsTo=gnome-session.target
++After=gnome-session.target
++
++ConditionPathExists=%E/gnome-initial-setup-done
++ConditionPathExists=!%E/gnome-initial-setup/upgrade-@version_id@-done
++
++# Never run in GDM
++ConditionUser=!@system
++ConditionEnvironment=XDG_SESSION_CLASS=user
++
++[Service]
++Type=oneshot
++ExecStart=@libexecdir@/gnome-initial-setup --upgrade-user
++Restart=no
+diff --git a/data/meson.build b/data/meson.build
+index 3c96a05..e922fce 100644
+--- a/data/meson.build
++++ b/data/meson.build
+@@ -19,10 +19,12 @@ i18n.merge_file(
+ data_conf = configuration_data()
+ data_conf.set('bindir', bin_dir)
+ data_conf.set('libexecdir', libexec_dir)
++data_conf.set('version_id', lsb_release_version_id)
+ 
+ unit_files = {
+     'gnome-initial-setup.service' : [],
+     'gnome-initial-setup-first-login.service' : [ 'gnome-session.target.wants/' ],
++    'gnome-initial-setup-upgrade-login.service' : [ 'gnome-session.target.wants/' ],
+     'gnome-initial-setup-copy-worker.service' : [ 'graphical-session-pre.target.wants/' ],
+ }
+ 
+diff --git a/gnome-initial-setup/gis-driver.c b/gnome-initial-setup/gis-driver.c
+index 9c830fe..d340655 100644
+--- a/gnome-initial-setup/gis-driver.c
++++ b/gnome-initial-setup/gis-driver.c
+@@ -47,6 +47,7 @@ gis_driver_mode_get_type (void) {
+       static const GEnumValue values[] = {
+         { GIS_DRIVER_MODE_NEW_USER, "GIS_DRIVER_MODE_NEW_USER", "new_user" },
+         { GIS_DRIVER_MODE_EXISTING_USER, "GIS_DRIVER_MODE_EXISTING_USER", "existing_user" },
++        { GIS_DRIVER_MODE_UPGRADE, "GIS_DRIVER_MODE_UPGRADE", "upgrading_user" },
+         { 0, NULL, NULL }
+       };
+       enum_type_id = g_enum_register_static("GisDriverMode", values);
+@@ -661,7 +662,14 @@ gis_driver_shutdown (GApplication *app)
+   G_APPLICATION_CLASS (gis_driver_parent_class)->shutdown (app);
+ 
+   if (driver->mode == GIS_DRIVER_MODE_EXISTING_USER)
+-    gis_ensure_stamp_files (driver);
++    {
++      gis_ensure_stamp_files (driver);
++      gis_ensure_upgrade_stamp_files (driver);
++    }
++  else if (driver->mode == GIS_DRIVER_MODE_UPGRADE)
++    {
++      gis_ensure_upgrade_stamp_files (driver);
++    }
+ }
+ 
+ static gboolean
+@@ -888,7 +896,8 @@ gis_driver_startup (GApplication *app)
+                     (gpointer)app);
+ 
+   /* Only allow closing the window in existing user mode*/
+-  if (driver->mode != GIS_DRIVER_MODE_EXISTING_USER) {
++  if (driver->mode != GIS_DRIVER_MODE_EXISTING_USER &&
++      driver->mode != GIS_DRIVER_MODE_UPGRADE) {
+     g_signal_connect (driver->main_window,
+                       "close-request",
+                       G_CALLBACK (window_close_request_cb),
+diff --git a/gnome-initial-setup/gis-driver.h b/gnome-initial-setup/gis-driver.h
+index 4255ec3..ca49366 100644
+--- a/gnome-initial-setup/gis-driver.h
++++ b/gnome-initial-setup/gis-driver.h
+@@ -43,6 +43,7 @@ typedef enum {
+ typedef enum {
+   GIS_DRIVER_MODE_NEW_USER,
+   GIS_DRIVER_MODE_EXISTING_USER,
++  GIS_DRIVER_MODE_UPGRADE,
+ } GisDriverMode;
+ 
+ GisAssistant *gis_driver_get_assistant (GisDriver *driver);
+diff --git a/gnome-initial-setup/gnome-initial-setup.c b/gnome-initial-setup/gnome-initial-setup.c
+index 5e3a9c5..8174437 100644
+--- a/gnome-initial-setup/gnome-initial-setup.c
++++ b/gnome-initial-setup/gnome-initial-setup.c
+@@ -52,6 +52,7 @@
+ static gboolean is_desktop (const gchar *name);
+ 
+ static gboolean force_existing_user_mode;
++static gboolean force_upgrade_user_mode;
+ 
+ static GPtrArray *skipped_pages;
+ 
+@@ -61,45 +62,48 @@ typedef struct {
+   const gchar *page_id;
+   PreparePage prepare_page_func;
+   gboolean new_user_only;
++  gboolean upgrade_user;
+ } PageData;
+ 
+-#define PAGE(name, new_user_only) { #name, gis_prepare_ ## name ## _page, new_user_only }
++#define PAGE(name, new_user_only, upgrade_user) \
++  { #name, gis_prepare_ ## name ## _page, new_user_only, upgrade_user }
+ 
+ static PageData page_table[] = {
+-  PAGE (welcome, FALSE),
+-  PAGE (language, FALSE),
+-  PAGE (keyboard, FALSE),
+-  PAGE (eula,     TRUE),
+-  PAGE (network,  FALSE),
+-  PAGE (privacy,  FALSE),
+-  PAGE (timezone, TRUE),
+-  PAGE (software, TRUE),
+-  PAGE (account,  TRUE),
+-  PAGE (password, TRUE),
++  PAGE (welcome, FALSE, FALSE),
++  PAGE (language, FALSE, FALSE),
++  PAGE (keyboard, FALSE, FALSE),
++  PAGE (eula,     TRUE, FALSE),
++  PAGE (network,  FALSE, FALSE),
++  PAGE (account,  TRUE, FALSE),
++  PAGE (password, TRUE, FALSE),
++  PAGE (ubuntu_pro, TRUE, FALSE),
++  PAGE (privacy,  FALSE, FALSE),
++  PAGE (timezone, TRUE, FALSE),
++  PAGE (software, TRUE, FALSE),
+ #ifdef HAVE_PARENTAL_CONTROLS
+-  PAGE (parental_controls, TRUE),
+-  PAGE (parent_password, TRUE),
++  PAGE (parental_controls, TRUE, FALSE),
++  PAGE (parent_password, TRUE, FALSE),
+ #endif
+-  PAGE (summary,  FALSE),
++  PAGE (summary,  FALSE, FALSE),
+   { NULL },
+ };
+ 
+ static PageData ubuntu_page_table[] = {
+-  PAGE (welcome,        FALSE),
+-  PAGE (ubuntu_pro,     FALSE),
+-  PAGE (privacy,        FALSE),
+-  PAGE (account,        TRUE),
+-  PAGE (password,       TRUE),
+-  PAGE (apps,           FALSE),
++  PAGE (welcome,         FALSE, TRUE),
++  PAGE (ubuntu_pro,      FALSE, TRUE),
++  PAGE (privacy,         FALSE, FALSE),
++  PAGE (account,         TRUE, FALSE),
++  PAGE (password,        TRUE, FALSE),
++  PAGE (apps,            FALSE, FALSE),
+   { NULL },
+ };
+ 
+ static PageData unity_page_table[] = {
+-  PAGE (welcome,        FALSE),
+-  PAGE (privacy,        FALSE),
+-  PAGE (account,        TRUE),
+-  PAGE (password,       TRUE),
+-  PAGE (apps,           FALSE),
++  PAGE (welcome,         FALSE, TRUE),
++  PAGE (privacy,         FALSE, FALSE),
++  PAGE (account,         TRUE, FALSE),
++  PAGE (password,        TRUE, FALSE),
++  PAGE (apps,            FALSE, FALSE),
+   { NULL },
+ };
+ 
+@@ -267,6 +271,7 @@ rebuild_pages_cb (GisDriver *driver)
+   }
+ 
+   is_new_user = (gis_driver_get_mode (driver) == GIS_DRIVER_MODE_NEW_USER);
++  gboolean is_upgrade = (gis_driver_get_mode (driver) == GIS_DRIVER_MODE_UPGRADE);
+   skip_pages = pages_to_skip_from_file (driver, is_new_user);
+ 
+   for (; page_data->page_id != NULL; ++page_data) {
+@@ -276,6 +281,14 @@ rebuild_pages_cb (GisDriver *driver)
+         (should_skip_page (page_data->page_id, skip_pages)))
+       skipped = TRUE;
+ 
++    if (is_upgrade)
++      {
++        skipped = TRUE;
++
++        if (page_data->upgrade_user)
++          skipped = should_skip_page (page_data->page_id, skip_pages);
++      }
++
+     page = page_data->prepare_page_func (driver);
+     if (!page)
+       continue;
+@@ -294,6 +307,9 @@ rebuild_pages_cb (GisDriver *driver)
+ static GisDriverMode
+ get_mode (void)
+ {
++  if (force_upgrade_user_mode)
++    return GIS_DRIVER_MODE_UPGRADE;
++
+   if (force_existing_user_mode)
+     return GIS_DRIVER_MODE_EXISTING_USER;
+   else
+@@ -329,6 +345,8 @@ main (int argc, char *argv[])
+   GOptionEntry entries[] = {
+     { "existing-user", 0, 0, G_OPTION_ARG_NONE, &force_existing_user_mode,
+       _("Force existing user mode"), NULL },
++    { "upgrade-user", 0, 0, G_OPTION_ARG_NONE, &force_upgrade_user_mode,
++      _("Force Upgrade user"), NULL },
+     { NULL }
+   };
+ 
+@@ -394,6 +412,54 @@ gis_ensure_stamp_files (GisDriver *driver)
+   }
+ }
+ 
++static gboolean
++touch_file (GFile   *file,
++            GError **error)
++{
++  g_autoptr (GFile) parent = NULL;
++  g_autoptr (GFileOutputStream) stream = NULL;
++  g_autoptr (GError) local_error = NULL;
++
++  parent = g_file_get_parent (file);
++  g_file_make_directory_with_parents (parent, NULL, &local_error);
++
++  if (local_error && !g_error_matches (local_error, G_IO_ERROR, G_IO_ERROR_EXISTS))
++    {
++      g_propagate_error (error, g_steal_pointer (&local_error));
++      return FALSE;
++    }
++  g_clear_error (&local_error);
++
++  stream = g_file_create (file, G_FILE_CREATE_NONE, NULL, &local_error);
++
++  if (local_error && !g_error_matches (local_error, G_IO_ERROR, G_IO_ERROR_EXISTS))
++    {
++      g_propagate_error (error, g_steal_pointer (&local_error));
++      return FALSE;
++    }
++
++  if (stream)
++    g_output_stream_close (G_OUTPUT_STREAM (stream), NULL, NULL);
++
++  return TRUE;
++}
++
++void
++gis_ensure_upgrade_stamp_files (GisDriver *driver)
++{
++  const char *done_file_name = NULL;
++  g_autoptr (GFile) done_file = NULL;
++  g_autoptr (GError) error = NULL;
++
++  done_file_name = "upgrade-" LSB_RELEASE_VERSION_ID "-done";
++  done_file = g_file_new_build_filename (g_get_user_config_dir (),
++                                         "gnome-initial-setup",
++                                         done_file_name, NULL);
++
++  if (!touch_file (done_file, &error))
++    g_critical ("Unable to create %s: %s", g_file_peek_path (done_file), error->message);
++}
++
+ /**
+  * gis_get_mock_mode:
+  *
+diff --git a/gnome-initial-setup/gnome-initial-setup.h b/gnome-initial-setup/gnome-initial-setup.h
+index af8b161..f1d35e5 100644
+--- a/gnome-initial-setup/gnome-initial-setup.h
++++ b/gnome-initial-setup/gnome-initial-setup.h
+@@ -37,6 +37,7 @@ typedef struct _GisPage      GisPage;
+ #include "gis-util.h"
+ 
+ void gis_ensure_stamp_files (GisDriver *driver);
++void gis_ensure_upgrade_stamp_files (GisDriver *driver);
+ gboolean gis_get_mock_mode (void);
+ 
+ #endif /* __GNOME_INITIAL_SETUP_H__ */
+diff --git a/gnome-initial-setup/pages/summary/gis-summary-page.c b/gnome-initial-setup/pages/summary/gis-summary-page.c
+index 8301591..1da48f4 100644
+--- a/gnome-initial-setup/pages/summary/gis-summary-page.c
++++ b/gnome-initial-setup/pages/summary/gis-summary-page.c
+@@ -273,6 +273,7 @@ done_cb (GtkButton *button, GisSummaryPage *page)
+       log_user_in (page);
+       break;
+     case GIS_DRIVER_MODE_EXISTING_USER:
++    case GIS_DRIVER_MODE_UPGRADE:
+       g_application_quit (G_APPLICATION (GIS_PAGE (page)->driver));
+     default:
+       break;
+diff --git a/gnome-initial-setup/pages/welcome/gis-welcome-page.c b/gnome-initial-setup/pages/welcome/gis-welcome-page.c
+index fb01330..751ce9a 100644
+--- a/gnome-initial-setup/pages/welcome/gis-welcome-page.c
++++ b/gnome-initial-setup/pages/welcome/gis-welcome-page.c
+@@ -123,6 +123,9 @@ gis_welcome_page_constructed (GObject *object)
+ 
+   gis_page_set_complete (GIS_PAGE (page), TRUE);
+ 
++  if (gis_driver_get_mode (GIS_PAGE (page)->driver) == GIS_DRIVER_MODE_UPGRADE)
++    g_object_set (priv->header, "subtitle", NULL, NULL);
++
+   if (gtk_widget_get_visible (priv->release_notes))
+     {
+       g_signal_connect_object (priv->release_notes, "activate-link",
+diff --git a/meson.build b/meson.build
+index 0e61dc7..9e556da 100644
+--- a/meson.build
++++ b/meson.build
+@@ -88,6 +88,11 @@ webkitgtk_dep = dependency('webkitgtk-6.0', required: get_option('webkitgtk'))
+ have_webkitgtk = webkitgtk_dep.found()
+ conf.set('HAVE_WEBKITGTK', have_webkitgtk)
+ 
++lsb_release_version_id = run_command(
++  find_program('lsb_release', required: true), '-rs',
++  check: true).stdout().strip()
++conf.set_quoted('LSB_RELEASE_VERSION_ID', lsb_release_version_id)
++
+ configure_file(output: 'config.h',
+                configuration: conf)
+ config_h_dir = include_directories('.')

@@ -1,0 +1,83 @@
+From: =?utf-8?b?Ik1hcmNvIFRyZXZpc2FuIChUcmV2acOxbyki?= <mail@3v1n0.net>
+Date: Wed, 28 Jan 2026 17:17:17 +0100
+Subject: gis-webkit: Add a button to open the link in external browser
+
+We may want to open a link in an external browser in case we're running
+a full ubuntu session.
+---
+ gnome-initial-setup/gis-webkit.c | 48 ++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 48 insertions(+)
+
+diff --git a/gnome-initial-setup/gis-webkit.c b/gnome-initial-setup/gis-webkit.c
+index b6557a7..c7bb2af 100644
+--- a/gnome-initial-setup/gis-webkit.c
++++ b/gnome-initial-setup/gis-webkit.c
+@@ -17,6 +17,8 @@
+  */
+ 
+ #include "config.h"
++
++#include "gis-driver.h"
+ #include "gis-webkit.h"
+ 
+ #include <glib/gi18n.h>
+@@ -151,6 +153,19 @@ notify_title_cb (GObject    *object,
+   gtk_window_set_title (dialog, webkit_web_view_get_title (web_view));
+ }
+ 
++static void
++open_in_default_browser_cb (GtkWidget *button,
++                            gpointer   user_data)
++{
++  g_autoptr (GtkUriLauncher) uri_launcher = NULL;
++  WebKitWebView *view = WEBKIT_WEB_VIEW (user_data);
++
++  uri_launcher = gtk_uri_launcher_new (webkit_web_view_get_uri (view));
++  gtk_uri_launcher_launch (uri_launcher,
++                           GTK_WINDOW (gtk_widget_get_root (button)),
++                           NULL, NULL, NULL);
++}
++
+ static GtkWidget *
+ create_webview (void)
+ {
+@@ -221,6 +236,39 @@ gis_activate_link (GtkLabel    *label,
+                            G_CALLBACK (notify_title_cb), dialog, 0);
+   gtk_overlay_set_child (GTK_OVERLAY (overlay), view);
+ 
++  if (gis_driver_get_mode (gis_driver_get_default ()) != GIS_DRIVER_MODE_NEW_USER)
++    {
++      GtkWidget *button;
++      GtkIconTheme *icon_theme;
++      const char *icon_name = "external-link-symbolic";
++      const char *label = _("Open in default web browser");
++
++      if (g_str_has_prefix (uri, "file:"))
++        label = _("Open in default file handler");
++
++      icon_theme = gtk_icon_theme_get_for_display (gtk_widget_get_display (any_widget));
++      if (!gtk_icon_theme_has_icon (icon_theme, icon_name))
++        {
++          /* This is ugly, but for now we just fallback to something
++           * similar in non-yaru
++           */
++          icon_name = "emblem-symbolic-link";
++        }
++
++      button = gtk_button_new_from_icon_name (icon_name);
++      gtk_widget_set_tooltip_text (button, label);
++      gtk_accessible_update_property (GTK_ACCESSIBLE (button),
++                                      GTK_ACCESSIBLE_PROPERTY_LABEL,
++                                      label,
++                                      -1);
++
++      g_signal_connect_object (button, "clicked",
++                               G_CALLBACK (open_in_default_browser_cb),
++                               view, G_CONNECT_DEFAULT);
++
++      gtk_header_bar_pack_start (GTK_HEADER_BAR (headerbar), button);
++    }
++
+   gtk_window_present (GTK_WINDOW (dialog));
+ 
+   webkit_web_view_load_uri (WEBKIT_WEB_VIEW (view), uri);

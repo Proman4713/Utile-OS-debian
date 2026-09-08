@@ -1,0 +1,175 @@
+From: Sergio Costas Rodriguez <sergio.costas@canonical.com>
+Date: Fri, 13 Mar 2026 04:10:47 +0100
+Subject: gis-page-header: Use GisFocusableBin to hold title and subtitle
+
+It allows to automatically handle the accessible properties without
+having to manually do it
+---
+ gnome-initial-setup/gis-page-header.c              | 33 ++++++++++++++
+ gnome-initial-setup/gis-page-header.ui             | 53 +++++++++++++---------
+ .../pages/privacy/gis-privacy-page.ui              |  1 +
+ 3 files changed, 66 insertions(+), 21 deletions(-)
+
+diff --git a/gnome-initial-setup/gis-page-header.c b/gnome-initial-setup/gis-page-header.c
+index ec51478..c20a1c7 100644
+--- a/gnome-initial-setup/gis-page-header.c
++++ b/gnome-initial-setup/gis-page-header.c
+@@ -25,6 +25,7 @@
+ #include <glib/gi18n.h>
+ 
+ #include "gis-page-header.h"
++#include "gis-focusable-bin.h"
+ #include "gis-webkit.h"
+ 
+ enum {
+@@ -36,6 +37,7 @@ enum {
+   PROP_HEIGHT_REQUEST,
+   PROP_SHOW_ICON,
+   PROP_PIXEL_SIZE,
++  PROP_ACCESSIBLE_TITLE,
+   PROP_LAST,
+ };
+ 
+@@ -70,6 +72,19 @@ update_box_visibility (GisPageHeader *header)
+                                        gtk_widget_get_visible (header->title));
+ }
+ 
++static gboolean
++gis_page_header_grab_focus (GtkWidget *widget)
++{
++  GisPageHeader *header = GIS_PAGE_HEADER (widget);
++  gboolean retval = gtk_widget_grab_focus (GTK_WIDGET (header->box));
++
++  /* Ensure that when grab_focus is called on the header (which happens when
++   * switching between pages), the "focus ring" is hidden.
++   */
++  gtk_window_set_focus_visible (GTK_WINDOW (gtk_widget_get_root (GTK_WIDGET (header))), FALSE);
++  return retval;
++}
++
+ static void
+ gis_page_header_init (GisPageHeader *header)
+ {
+@@ -132,6 +147,10 @@ gis_page_header_get_property (GObject    *object,
+       g_value_set_boolean (value, header->show_icon);
+       break;
+ 
++    case PROP_ACCESSIBLE_TITLE:
++      g_value_set_boolean (value, gtk_widget_get_can_focus (header->box));
++      break;
++
+     default:
+       G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
+       break;
+@@ -183,6 +202,10 @@ gis_page_header_set_property (GObject      *object,
+       update_icon_properties (header);
+       break;
+ 
++    case PROP_ACCESSIBLE_TITLE:
++      gtk_widget_set_can_focus (header->box, g_value_get_boolean (value));
++      break;
++
+     default:
+       G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
+       break;
+@@ -193,7 +216,9 @@ static void
+ gis_page_header_class_init (GisPageHeaderClass *klass)
+ {
+   GObjectClass *gobject_class = G_OBJECT_CLASS (klass);
++  GtkWidgetClass *widget_class = GTK_WIDGET_CLASS (klass);
+ 
++  g_type_ensure (GIS_TYPE_FOCUSABLE_BIN);
+   gtk_widget_class_set_template_from_resource (GTK_WIDGET_CLASS (klass), "/org/gnome/initial-setup/gis-page-header.ui");
+ 
+   gtk_widget_class_bind_template_child (GTK_WIDGET_CLASS (klass), GisPageHeader, box);
+@@ -247,5 +272,13 @@ gis_page_header_class_init (GisPageHeaderClass *klass)
+                           FALSE,
+                           G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS | G_PARAM_CONSTRUCT);
+ 
++  obj_props[PROP_ACCESSIBLE_TITLE] =
++    g_param_spec_boolean ("use-accessible-title",
++                          "", "",
++                          FALSE,
++                          G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS | G_PARAM_CONSTRUCT);
++
+   g_object_class_install_properties (gobject_class, PROP_LAST, obj_props);
++
++  widget_class->grab_focus = gis_page_header_grab_focus;
+ }
+diff --git a/gnome-initial-setup/gis-page-header.ui b/gnome-initial-setup/gis-page-header.ui
+index 100bb3e..b15b57d 100644
+--- a/gnome-initial-setup/gis-page-header.ui
++++ b/gnome-initial-setup/gis-page-header.ui
+@@ -9,28 +9,39 @@
+       </object>
+     </child>
+     <child>
+-      <object class="GtkBox" id="box">
+-        <property name="orientation">vertical</property>
+-        <property name="spacing">0</property>
++      <object class="GisFocusableBin" id="box">
++        <accessibility>
++          <relation name="labelled-by">title</relation>
++          <relation name="described-by">subtitle</relation>
++        </accessibility>
+         <child>
+-          <object class="GtkLabel" id="title">
+-            <property name="justify">center</property>
+-            <property name="max_width_chars">65</property>
+-            <property name="wrap">True</property>
+-            <property name="visible">False</property>
+-            <style>
+-              <class name="title-1"/>
+-            </style>
+-          </object>
+-        </child>
+-        <child>
+-          <object class="GtkLabel" id="subtitle">
+-            <property name="margin-top">15</property>
+-            <property name="justify">center</property>
+-            <property name="max_width_chars">65</property>
+-            <property name="wrap">True</property>
+-            <property name="visible">False</property>
+-            <signal name="activate-link" handler="gis_activate_link" object="GisPageHeader" swapped="no" />
++          <object class="GtkBox">
++            <property name="accessible-role">none</property>
++            <property name="orientation">vertical</property>
++            <property name="spacing">0</property>
++            <child>
++              <object class="GtkLabel" id="title">
++              <property name="accessible-role">none</property>
++                <property name="justify">center</property>
++                <property name="max_width_chars">65</property>
++                <property name="wrap">True</property>
++                <property name="visible">False</property>
++                <style>
++                  <class name="title-1"/>
++                </style>
++              </object>
++            </child>
++            <child>
++              <object class="GtkLabel" id="subtitle">
++              <property name="accessible-role">none</property>
++                <property name="margin-top">15</property>
++                <property name="justify">center</property>
++                <property name="max_width_chars">65</property>
++                <property name="wrap">True</property>
++                <property name="visible">False</property>
++                <signal name="activate-link" handler="gis_activate_link" object="GisPageHeader" swapped="no" />
++              </object>
++            </child>
+           </object>
+         </child>
+       </object>
+diff --git a/gnome-initial-setup/pages/privacy/gis-privacy-page.ui b/gnome-initial-setup/pages/privacy/gis-privacy-page.ui
+index 5a5b90f..81fe4ad 100644
+--- a/gnome-initial-setup/pages/privacy/gis-privacy-page.ui
++++ b/gnome-initial-setup/pages/privacy/gis-privacy-page.ui
+@@ -11,6 +11,7 @@
+             <property name="accessible-role">group</property>
+             <child>
+               <object class="GisPageHeader" id="header">
++                <property name="use-accessible-title">true</property>
+                 <property name="margin_top">24</property>
+                 <property name="title" translatable="yes">Privacy</property>
+                 <property name="icon_name">preferences-system-privacy-symbolic</property>

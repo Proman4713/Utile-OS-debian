@@ -1,0 +1,3253 @@
+From: =?utf-8?b?Ik1hcmNvIFRyZXZpc2FuIChUcmV2acOxbyki?= <mail@3v1n0.net>
+Date: Fri, 6 Feb 2026 16:28:07 +0100
+Subject: pages: Add an appearance page to customize the UI style
+
+Co-Authored-By: Mario Limonciello <mario.limonciello@amd.com>
+---
+ gnome-initial-setup/gnome-initial-setup.c          |    3 +
+ gnome-initial-setup/meson.build                    |    2 +
+ .../pages/appearance/appearance.gresource.xml      |    8 +
+ .../pages/appearance/cc-background-item.c          | 1137 ++++++++++++++++++++
+ .../pages/appearance/cc-background-item.h          |   88 ++
+ .../pages/appearance/cc-background-paintable.c     |  480 +++++++++
+ .../pages/appearance/cc-background-paintable.h     |   47 +
+ .../pages/appearance/cc-background-preview.blp     |   50 +
+ .../pages/appearance/cc-background-preview.c       |  299 +++++
+ .../pages/appearance/cc-background-preview.h       |   36 +
+ .../pages/appearance/gis-appearance-page.blp       |  149 +++
+ .../pages/appearance/gis-appearance-page.c         |  513 +++++++++
+ .../pages/appearance/gis-appearance-page.h         |   32 +
+ gnome-initial-setup/pages/appearance/meson.build   |   54 +
+ gnome-initial-setup/pages/appearance/preview.css   |  180 ++++
+ gnome-initial-setup/pages/meson.build              |    1 +
+ po/POTFILES.in                                     |    3 +
+ 17 files changed, 3082 insertions(+)
+ create mode 100644 gnome-initial-setup/pages/appearance/appearance.gresource.xml
+ create mode 100644 gnome-initial-setup/pages/appearance/cc-background-item.c
+ create mode 100644 gnome-initial-setup/pages/appearance/cc-background-item.h
+ create mode 100644 gnome-initial-setup/pages/appearance/cc-background-paintable.c
+ create mode 100644 gnome-initial-setup/pages/appearance/cc-background-paintable.h
+ create mode 100644 gnome-initial-setup/pages/appearance/cc-background-preview.blp
+ create mode 100644 gnome-initial-setup/pages/appearance/cc-background-preview.c
+ create mode 100644 gnome-initial-setup/pages/appearance/cc-background-preview.h
+ create mode 100644 gnome-initial-setup/pages/appearance/gis-appearance-page.blp
+ create mode 100644 gnome-initial-setup/pages/appearance/gis-appearance-page.c
+ create mode 100644 gnome-initial-setup/pages/appearance/gis-appearance-page.h
+ create mode 100644 gnome-initial-setup/pages/appearance/meson.build
+ create mode 100644 gnome-initial-setup/pages/appearance/preview.css
+
+diff --git a/gnome-initial-setup/gnome-initial-setup.c b/gnome-initial-setup/gnome-initial-setup.c
+index 58a83ef..12fcc5a 100644
+--- a/gnome-initial-setup/gnome-initial-setup.c
++++ b/gnome-initial-setup/gnome-initial-setup.c
+@@ -44,6 +44,7 @@
+ #include "pages/ubuntu-insights/gis-ubuntu-insights-page.h"
+ #include "pages/ubuntu-pro/gis-ubuntupro-page.h"
+ #include "pages/apps/gis-apps-page.h"
++#include "pages/appearance/gis-appearance-page.h"
+ 
+ #define VENDOR_PAGES_GROUP "pages"
+ #define VENDOR_SKIP_KEY "skip"
+@@ -101,6 +102,7 @@ static PageData ubuntu_page_table[] = {
+   PAGE (ubuntu_insights, FALSE, TRUE),
+   PAGE (account,         TRUE, FALSE),
+   PAGE (password,        TRUE, FALSE),
++  PAGE (appearance,      FALSE, TRUE),
+   PAGE (apps,            FALSE, FALSE),
+   { NULL },
+ };
+@@ -115,6 +117,7 @@ static PageData unity_page_table[] = {
+   PAGE (ubuntu_insights, FALSE, TRUE),
+   PAGE (account,         TRUE, FALSE),
+   PAGE (password,        TRUE, FALSE),
++  PAGE (appearance,      FALSE, FALSE),
+   PAGE (apps,            FALSE, FALSE),
+   { NULL },
+ };
+diff --git a/gnome-initial-setup/meson.build b/gnome-initial-setup/meson.build
+index 1f9cc63..55b3f57 100644
+--- a/gnome-initial-setup/meson.build
++++ b/gnome-initial-setup/meson.build
+@@ -59,6 +59,8 @@ dependencies = [
+     dependency ('libsecret-1', version: '>= 0.18.8'),
+     dependency ('pwquality'),
+     dependency ('insights'),
++    dependency ('gnome-bg-4'),
++    dependency ('libdrm'),
+     ibus_dep,
+     libmalcontent_dep,
+     libmalcontent_ui_dep,
+diff --git a/gnome-initial-setup/pages/appearance/appearance.gresource.xml b/gnome-initial-setup/pages/appearance/appearance.gresource.xml
+new file mode 100644
+index 0000000..a2902bb
+--- /dev/null
++++ b/gnome-initial-setup/pages/appearance/appearance.gresource.xml
+@@ -0,0 +1,8 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<gresources>
++  <gresource prefix="/org/gnome/initial-setup">
++    <file preprocess="xml-stripblanks">gis-appearance-page.ui</file>
++    <file preprocess="xml-stripblanks">cc-background-preview.ui</file>
++    <file>preview.css</file>
++  </gresource>
++</gresources>
+diff --git a/gnome-initial-setup/pages/appearance/cc-background-item.c b/gnome-initial-setup/pages/appearance/cc-background-item.c
+new file mode 100644
+index 0000000..3e0d31f
+--- /dev/null
++++ b/gnome-initial-setup/pages/appearance/cc-background-item.c
+@@ -0,0 +1,1137 @@
++/* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 8 -*-
++ *
++ * Copyright (C) 2010-2011 Red Hat, Inc.
++ *
++ * This program is free software; you can redistribute it and/or modify
++ * it under the terms of the GNU General Public License as published by
++ * the Free Software Foundation; either version 2 of the License, or
++ * (at your option) any later version.
++ *
++ * This program is distributed in the hope that it will be useful,
++ * but WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++ * GNU General Public License for more details.
++ *
++ * You should have received a copy of the GNU General Public License
++ * along with this program; if not, see <http://www.gnu.org/licenses/>.
++ *
++ */
++
++#define GNOME_DESKTOP_USE_UNSTABLE_API
++
++#include "config.h"
++
++#include <stdlib.h>
++#include <stdio.h>
++
++#include <gtk/gtk.h>
++#include <gio/gio.h>
++#include <glib/gi18n-lib.h>
++
++#include <gnome-bg/gnome-bg.h>
++#include <gdesktop-enums.h>
++
++#include "cc-background-item.h"
++#include "gdesktop-enums-types.h"
++#include "cc-background-enum-types.h"
++
++typedef struct {
++        int        width;
++        int        height;
++        int        scale_factor;
++        GdkPixbuf *thumbnail;
++} CachedThumbnail;
++
++struct _CcBackgroundItem
++{
++        GObject          parent_instance;
++
++        /* properties */
++        char            *name;
++        char            *uri;
++        char            *uri_dark;
++        char            *size;
++        GDesktopBackgroundStyle placement;
++        GDesktopBackgroundShading shading;
++        char            *primary_color;
++        char            *secondary_color;
++        char            *source_url; /* Used by the Flickr source */
++        char            *source_xml; /* Used by the Wallpapers source */
++        gboolean         is_deleted;
++        gboolean         needs_download;
++        CcBackgroundItemFlags flags;
++        guint64          modified;
++
++        /* internal */
++        char            *mime_type;
++        int              width;
++        int              height;
++
++        CachedThumbnail cached_thumbnail;
++        CachedThumbnail cached_thumbnail_dark;
++};
++
++enum {
++        PROP_0,
++        PROP_NAME,
++        PROP_URI,
++        PROP_URI_DARK,
++        PROP_PLACEMENT,
++        PROP_SHADING,
++        PROP_PRIMARY_COLOR,
++        PROP_SECONDARY_COLOR,
++        PROP_IS_DELETED,
++        PROP_SOURCE_URL,
++        PROP_SOURCE_XML,
++        PROP_FLAGS,
++        PROP_SIZE,
++        PROP_NEEDS_DOWNLOAD,
++        PROP_MODIFIED,
++        N_PROPS
++};
++
++static GParamSpec *props [N_PROPS];
++static GMutex thread_mutex;
++static GQueue thread_queue;
++static GThread *thread;
++
++static void     cc_background_item_finalize       (GObject               *object);
++
++G_DEFINE_TYPE (CcBackgroundItem, cc_background_item, G_TYPE_OBJECT)
++
++typedef struct
++{
++  GList link;
++  GTask *task;
++  GTaskThreadFunc func;
++} RunInThread;
++
++static gpointer
++run_in_thread_worker (gpointer data)
++{
++        gboolean exiting = FALSE;
++
++        while (!exiting) {
++                RunInThread *state;
++
++                g_mutex_lock (&thread_mutex);
++                if ((state = g_queue_peek_head (&thread_queue))) {
++                        g_queue_unlink (&thread_queue, &state->link);
++                } else {
++                        exiting = TRUE;
++                        thread = NULL;
++                }
++
++                g_mutex_unlock (&thread_mutex);
++
++                if (state != NULL) {
++                        state->func (state->task,
++                                     g_task_get_source_object (state->task),
++                                     g_task_get_task_data (state->task),
++                                     g_task_get_cancellable (state->task));
++                        g_clear_object (&state->task);
++                        g_free (state);
++                }
++        }
++
++        return NULL;
++}
++
++static void
++run_in_thread (GTask           *task,
++               GTaskThreadFunc  func)
++{
++        RunInThread *state;
++
++        g_assert (G_IS_TASK (task));
++        g_assert (func != NULL);
++
++        state = g_new0 (RunInThread, 1);
++        state->link.data = state;
++        state->task = g_object_ref (task);
++        state->func = func;
++
++        g_mutex_lock (&thread_mutex);
++        g_queue_push_tail_link (&thread_queue, &state->link);
++        if (thread == NULL)
++                thread = g_thread_new ("[cc-background-item]", run_in_thread_worker, NULL);
++        g_mutex_unlock (&thread_mutex);
++}
++
++static GnomeBG *
++item_to_gnome_bg (CcBackgroundItem *item,
++                  gboolean          dark)
++{
++        GnomeBG *bg;
++        char *uri;
++        g_autoptr(GFile) file = NULL;
++        g_autofree gchar *filename = NULL;
++        GdkRGBA pcolor = { 0, 0, 0, 0 };
++        GdkRGBA scolor = { 0, 0, 0, 0 };
++
++        uri = dark ? item->uri_dark: item->uri;
++
++        g_return_val_if_fail (uri != NULL, NULL);
++
++        bg = gnome_bg_new ();
++
++        file = g_file_new_for_commandline_arg (uri);
++        filename = g_file_get_path (file);
++        gnome_bg_set_filename (bg, filename);
++
++        if (item->primary_color != NULL) {
++                gdk_rgba_parse (&pcolor, item->primary_color);
++        }
++        if (item->secondary_color != NULL) {
++                gdk_rgba_parse (&scolor, item->secondary_color);
++        }
++
++        gnome_bg_set_rgba (bg, item->shading, &pcolor, &scolor);
++        gnome_bg_set_placement (bg, item->placement);
++
++        return bg;
++}
++
++gboolean
++cc_background_item_changes_with_time (CcBackgroundItem *item)
++{
++        g_autoptr(GnomeBG) bg = NULL;
++        g_autoptr(GnomeBG) bg_dark = NULL;
++        gboolean changes = FALSE;
++
++        g_return_val_if_fail (CC_IS_BACKGROUND_ITEM (item), FALSE);
++
++        if (item->uri != NULL) {
++                bg = item_to_gnome_bg (item, FALSE);
++                changes |= gnome_bg_changes_with_time (bg);
++        }
++        if (item->uri_dark != NULL && !changes) {
++                bg_dark = item_to_gnome_bg (item, TRUE);
++                changes |= gnome_bg_changes_with_time (bg_dark);
++        }
++
++        return changes;
++}
++
++gboolean
++cc_background_item_has_dark_version (CcBackgroundItem *item)
++{
++	g_return_val_if_fail (CC_IS_BACKGROUND_ITEM (item), FALSE);
++
++        return item->uri && item->uri_dark;
++}
++
++static void
++update_size (CcBackgroundItem *item)
++{
++        g_autoptr(GnomeBG) bg = NULL;
++
++	g_clear_pointer (&item->size, g_free);
++
++	if (item->uri == NULL) {
++		item->size = g_strdup ("");
++	} else {
++                bg = item_to_gnome_bg (item, FALSE);
++		if (gnome_bg_has_multiple_sizes (bg) || gnome_bg_changes_with_time (bg)) {
++			item->size = g_strdup (_("multiple sizes"));
++		} else {
++			gdk_pixbuf_get_file_info (gnome_bg_get_filename (bg),
++						  &item->width,
++						  &item->height);
++			/* translators: 100 × 100px
++			 * Note that this is not an "x", but U+00D7 MULTIPLICATION SIGN */
++			item->size = g_strdup_printf (_("%d × %d"),
++						      item->width,
++						      item->height);
++		}
++	}
++}
++
++typedef struct
++{
++        GnomeDesktopThumbnailFactory *thumbs;
++        GnomeBG                      *bg;
++        GdkRectangle                  monitor_layout;
++        int                           width;
++        int                           height;
++        int                           scale_factor;
++        guint                         dark : 1;
++        guint                         cached_result : 1;
++} GetThumbnailAsync;
++
++static void
++get_thumbnail_async_free (gpointer data)
++{
++        GetThumbnailAsync *state = data;
++
++        g_clear_object (&state->thumbs);
++        g_clear_object (&state->bg);
++        g_free (state);
++}
++
++static void
++cc_background_item_get_thumbnail_worker (GTask        *task,
++                                         gpointer      source_object,
++                                         gpointer      task_data,
++                                         GCancellable *cancellable)
++{
++        GetThumbnailAsync *state = task_data;
++        CcBackgroundItem *item = source_object;
++        GdkPixbuf *pixbuf;
++
++        g_assert (G_IS_TASK (task));
++        g_assert (CC_IS_BACKGROUND_ITEM (item));
++        g_assert (!cancellable || G_IS_CANCELLABLE (cancellable));
++        g_assert (state != NULL);
++        g_assert (state->thumbs != NULL);
++
++        pixbuf = gnome_bg_create_thumbnail (state->bg,
++                                            state->thumbs,
++                                            &state->monitor_layout,
++                                            state->scale_factor * state->width,
++                                            state->scale_factor * state->height);
++
++        if (pixbuf != NULL)
++                g_task_return_pointer (task, pixbuf, g_object_unref);
++        else
++                g_task_return_new_error (task,
++                                         G_IO_ERROR,
++                                         G_IO_ERROR_FAILED,
++                                         "Failed to load pixbuf");
++}
++
++void
++cc_background_item_get_thumbnail_async (CcBackgroundItem             *item,
++                                        GnomeDesktopThumbnailFactory *thumbs,
++                                        int                           width,
++                                        int                           height,
++                                        int                           scale_factor,
++                                        gboolean                      dark,
++                                        GCancellable                 *cancellable,
++                                        GAsyncReadyCallback           callback,
++                                        gpointer                      user_data)
++{
++        g_autoptr(GdkMonitor) monitor = NULL;
++        g_autoptr(GTask) task = NULL;
++        GetThumbnailAsync *state;
++        CachedThumbnail *thumbnail;
++        GListModel *monitors;
++        GdkDisplay *display;
++
++        g_return_if_fail (CC_IS_BACKGROUND_ITEM (item));
++        g_return_if_fail (width > 0 && height > 0);
++        g_return_if_fail (thumbs != NULL);
++        g_return_if_fail (!cancellable || G_IS_CANCELLABLE (cancellable));
++
++        task = g_task_new (item, cancellable, callback, user_data);
++        g_task_set_source_tag (task, cc_background_item_get_thumbnail_async);
++
++        state = g_new0 (GetThumbnailAsync, 1);
++        g_task_set_task_data (task, state, get_thumbnail_async_free);
++
++        thumbnail = dark ? &item->cached_thumbnail_dark : &item->cached_thumbnail;
++
++        /* Use the cached thumbnail if the sizes match */
++        if (thumbnail->thumbnail &&
++            thumbnail->width == width &&
++            thumbnail->height == height &&
++            thumbnail->scale_factor == scale_factor) {
++                state->cached_result = TRUE;
++                g_task_return_pointer (task, g_object_ref (thumbnail->thumbnail), g_object_unref);
++                return;
++        }
++
++        display = gdk_display_get_default ();
++        monitors = gdk_display_get_monitors (display);
++        monitor = g_list_model_get_item (monitors, 0);
++
++        state->thumbs = g_object_ref (thumbs);
++        gdk_monitor_get_geometry (monitor, &state->monitor_layout);
++        state->width = width;
++        state->height = height;
++        state->scale_factor = scale_factor;
++        state->dark = !!dark;
++        state->bg = item_to_gnome_bg (item, dark);
++
++        /* g_task_run_in_thread() will use a threadpool which may jump the
++         * number of parallel workers to around 10. On low-memory systems, that
++         * could cause excessive memory use to the point of paging.
++         *
++         * What we really want is non-blocking more than massive concurrency,
++         * so use a single worker thread but retain GTask usage.
++         */
++        run_in_thread (task, cc_background_item_get_thumbnail_worker);
++}
++
++GdkPixbuf *
++cc_background_item_get_thumbnail_finish (CcBackgroundItem  *item,
++                                         GAsyncResult      *result,
++                                         GError           **error)
++{
++        GdkPixbuf *pixbuf;
++        GetThumbnailAsync *state;
++        CachedThumbnail *thumbnail;
++
++        g_return_val_if_fail (CC_IS_BACKGROUND_ITEM (item), NULL);
++        g_return_val_if_fail (G_IS_TASK (result), NULL);
++
++        if (!(pixbuf = g_task_propagate_pointer (G_TASK (result), error)))
++                return NULL;
++
++        state = g_task_get_task_data (G_TASK (result));
++
++        if (state->cached_result)
++                return pixbuf;
++
++        thumbnail = state->dark ? &item->cached_thumbnail_dark : &item->cached_thumbnail;
++
++        /* Cache the new thumbnail */
++        if (g_set_object (&thumbnail->thumbnail, pixbuf)) {
++                thumbnail->width = state->width;
++                thumbnail->height = state->height;
++                thumbnail->scale_factor = state->scale_factor;
++        }
++
++        return pixbuf;
++}
++
++static void
++update_info (CcBackgroundItem *item,
++	     GFileInfo        *_info)
++{
++        g_autoptr(GFileInfo) info = NULL;
++
++	if (_info == NULL) {
++		g_autoptr(GFile) file = NULL;
++
++		file = g_file_new_for_uri (item->uri);
++
++		info = g_file_query_info (file,
++					  G_FILE_ATTRIBUTE_STANDARD_NAME ","
++					  G_FILE_ATTRIBUTE_STANDARD_SIZE ","
++					  G_FILE_ATTRIBUTE_STANDARD_CONTENT_TYPE ","
++					  G_FILE_ATTRIBUTE_STANDARD_DISPLAY_NAME ","
++					  G_FILE_ATTRIBUTE_TIME_MODIFIED,
++					  G_FILE_QUERY_INFO_NONE,
++					  NULL,
++					  NULL);
++	} else {
++		info = g_object_ref (_info);
++	}
++
++	g_clear_pointer (&item->mime_type, g_free);
++
++        if (info == NULL
++            || g_file_info_get_content_type (info) == NULL) {
++                if (item->uri == NULL) {
++                        item->mime_type = g_strdup ("image/x-no-data");
++                        g_free (item->name);
++                        item->name = g_strdup (_("No Desktop Background"));
++                }
++        } else {
++                if (item->name == NULL)
++                        item->name = g_strdup (g_file_info_get_display_name (info));
++
++                item->mime_type = g_strdup (g_file_info_get_content_type (info));
++                if (item->modified == 0)
++                        item->modified = g_file_info_get_attribute_uint64 (info, G_FILE_ATTRIBUTE_TIME_MODIFIED);
++        }
++}
++
++gboolean
++cc_background_item_load (CcBackgroundItem *item,
++			 GFileInfo        *info)
++{
++        g_return_val_if_fail (CC_IS_BACKGROUND_ITEM (item), FALSE);
++
++        if (item->uri == NULL)
++		return TRUE;
++
++        update_info (item, info);
++
++        if (item->mime_type == NULL
++            || !(g_str_has_prefix (item->mime_type, "image/")
++                 || strcmp (item->mime_type, "application/xml") == 0))
++                return FALSE;
++
++	/* FIXME we should handle XML files as well */
++        if (item->mime_type != NULL &&
++            g_str_has_prefix (item->mime_type, "image/")) {
++		g_autofree gchar *filename = NULL;
++
++		filename = g_filename_from_uri (item->uri, NULL, NULL);
++		gdk_pixbuf_get_file_info (filename,
++					  &item->width,
++					  &item->height);
++	}
++
++        return TRUE;
++}
++
++static void
++_set_name (CcBackgroundItem *item,
++           const char       *value)
++{
++        g_free (item->name);
++        item->name = g_strdup (value);
++}
++
++const char *
++cc_background_item_get_name (CcBackgroundItem *item)
++{
++	g_return_val_if_fail (CC_IS_BACKGROUND_ITEM (item), NULL);
++
++	return item->name;
++}
++
++static void
++_add_flag (CcBackgroundItem      *item,
++           CcBackgroundItemFlags  flag)
++{
++        item->flags |= flag;
++        g_object_notify_by_pspec (G_OBJECT (item), props[PROP_FLAGS]);
++}
++
++static void
++_set_uri (CcBackgroundItem *item,
++	  const char       *value)
++{
++        g_free (item->uri);
++        if (value && *value == '\0') {
++		item->uri = NULL;
++	} else {
++		if (value && strstr (value, "://") == NULL)
++			g_warning ("URI '%s' is invalid", value);
++		item->uri = g_strdup (value);
++	}
++        _add_flag (item, CC_BACKGROUND_ITEM_HAS_URI);
++}
++
++static void
++_set_uri_dark (CcBackgroundItem *item,
++               const char       *value)
++{
++        g_free (item->uri_dark);
++        if (value && *value == '\0') {
++		item->uri_dark = NULL;
++	} else {
++		if (value && strstr (value, "://") == NULL)
++			g_warning ("URI '%s' is invalid", value);
++		item->uri_dark = g_strdup (value);
++	}
++        _add_flag (item, CC_BACKGROUND_ITEM_HAS_URI_DARK);
++}
++
++const char *
++cc_background_item_get_uri (CcBackgroundItem *item)
++{
++	g_return_val_if_fail (CC_IS_BACKGROUND_ITEM (item), NULL);
++
++	return item->uri;
++}
++
++const char *
++cc_background_item_get_uri_dark (CcBackgroundItem *item)
++{
++	g_return_val_if_fail (CC_IS_BACKGROUND_ITEM (item), NULL);
++
++	return item->uri_dark;
++}
++
++static void
++_set_placement (CcBackgroundItem        *item,
++                GDesktopBackgroundStyle  value)
++{
++        item->placement = value;
++        _add_flag (item, CC_BACKGROUND_ITEM_HAS_PLACEMENT);
++}
++
++static void
++_set_shading (CcBackgroundItem          *item,
++              GDesktopBackgroundShading  value)
++{
++        item->shading = value;
++        _add_flag (item, CC_BACKGROUND_ITEM_HAS_SHADING);
++}
++
++static void
++_set_primary_color (CcBackgroundItem *item,
++                    const char       *value)
++{
++        g_free (item->primary_color);
++        item->primary_color = g_strdup (value);
++        _add_flag (item, CC_BACKGROUND_ITEM_HAS_PCOLOR);
++}
++
++const char *
++cc_background_item_get_pcolor (CcBackgroundItem *item)
++{
++	g_return_val_if_fail (CC_IS_BACKGROUND_ITEM (item), NULL);
++
++	return item->primary_color;
++}
++
++static void
++_set_secondary_color (CcBackgroundItem *item,
++                      const char       *value)
++{
++        g_free (item->secondary_color);
++        item->secondary_color = g_strdup (value);
++        _add_flag (item, CC_BACKGROUND_ITEM_HAS_SCOLOR);
++}
++
++const char *
++cc_background_item_get_scolor (CcBackgroundItem *item)
++{
++	g_return_val_if_fail (CC_IS_BACKGROUND_ITEM (item), NULL);
++
++	return item->secondary_color;
++}
++
++GDesktopBackgroundStyle
++cc_background_item_get_placement (CcBackgroundItem *item)
++{
++	g_return_val_if_fail (CC_IS_BACKGROUND_ITEM (item), G_DESKTOP_BACKGROUND_STYLE_SCALED);
++
++	return item->placement;
++}
++
++GDesktopBackgroundShading
++cc_background_item_get_shading (CcBackgroundItem *item)
++{
++	g_return_val_if_fail (CC_IS_BACKGROUND_ITEM (item), G_DESKTOP_BACKGROUND_SHADING_SOLID);
++
++	return item->shading;
++}
++
++static void
++_set_is_deleted (CcBackgroundItem *item,
++                 gboolean          value)
++{
++        item->is_deleted = value;
++}
++
++static void
++_set_source_url (CcBackgroundItem *item,
++                 const char       *value)
++{
++        g_free (item->source_url);
++        item->source_url = g_strdup (value);
++}
++
++const char *
++cc_background_item_get_source_url (CcBackgroundItem *item)
++{
++	g_return_val_if_fail (CC_IS_BACKGROUND_ITEM (item), NULL);
++
++	return item->source_url;
++}
++
++static void
++_set_source_xml (CcBackgroundItem *item,
++                 const char       *value)
++{
++        g_free (item->source_xml);
++        item->source_xml = g_strdup (value);
++}
++
++const char *
++cc_background_item_get_source_xml (CcBackgroundItem *item)
++{
++	g_return_val_if_fail (CC_IS_BACKGROUND_ITEM (item), NULL);
++
++	return item->source_xml;
++}
++
++CcBackgroundItemFlags
++cc_background_item_get_flags (CcBackgroundItem *item)
++{
++	g_return_val_if_fail (CC_IS_BACKGROUND_ITEM (item), 0);
++
++	return item->flags;
++}
++
++const char *
++cc_background_item_get_size (CcBackgroundItem *item)
++{
++	g_return_val_if_fail (CC_IS_BACKGROUND_ITEM (item), NULL);
++
++	update_size (item);
++
++	return item->size;
++}
++
++static void
++_set_needs_download (CcBackgroundItem *item,
++		     gboolean          value)
++{
++	item->needs_download = value;
++}
++
++gboolean
++cc_background_item_get_needs_download (CcBackgroundItem *item)
++{
++	g_return_val_if_fail (CC_IS_BACKGROUND_ITEM (item), 0);
++
++	return item->needs_download;
++}
++
++static void
++_set_modified (CcBackgroundItem *item,
++               guint64           value)
++{
++        item->modified = value;
++}
++
++guint64
++cc_background_item_get_modified (CcBackgroundItem *item)
++{
++	g_return_val_if_fail (CC_IS_BACKGROUND_ITEM (item), 0);
++
++	return item->modified;
++}
++
++static void
++cc_background_item_set_property (GObject      *object,
++                                 guint         prop_id,
++                                 const GValue *value,
++                                 GParamSpec   *pspec)
++{
++        CcBackgroundItem *self;
++
++        self = CC_BACKGROUND_ITEM (object);
++
++        switch (prop_id) {
++        case PROP_NAME:
++                _set_name (self, g_value_get_string (value));
++                break;
++        case PROP_URI:
++                _set_uri (self, g_value_get_string (value));
++                break;
++        case PROP_URI_DARK:
++                _set_uri_dark (self, g_value_get_string (value));
++                break;
++        case PROP_PLACEMENT:
++                _set_placement (self, g_value_get_enum (value));
++                break;
++        case PROP_SHADING:
++                _set_shading (self, g_value_get_enum (value));
++                break;
++        case PROP_PRIMARY_COLOR:
++                _set_primary_color (self, g_value_get_string (value));
++                break;
++        case PROP_SECONDARY_COLOR:
++                _set_secondary_color (self, g_value_get_string (value));
++                break;
++        case PROP_IS_DELETED:
++                _set_is_deleted (self, g_value_get_boolean (value));
++                break;
++	case PROP_SOURCE_URL:
++		_set_source_url (self, g_value_get_string (value));
++		break;
++	case PROP_SOURCE_XML:
++		_set_source_xml (self, g_value_get_string (value));
++		break;
++	case PROP_NEEDS_DOWNLOAD:
++		_set_needs_download (self, g_value_get_boolean (value));
++		break;
++	case PROP_MODIFIED:
++		_set_modified (self, g_value_get_uint64 (value));
++		break;
++        default:
++                G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
++                break;
++        }
++}
++
++static void
++cc_background_item_get_property (GObject    *object,
++                                 guint       prop_id,
++                                 GValue     *value,
++                                 GParamSpec *pspec)
++{
++        CcBackgroundItem *self;
++
++        self = CC_BACKGROUND_ITEM (object);
++
++        switch (prop_id) {
++        case PROP_NAME:
++                g_value_set_string (value, self->name);
++                break;
++        case PROP_URI:
++                g_value_set_string (value, self->uri);
++                break;
++        case PROP_URI_DARK:
++                g_value_set_string (value, self->uri_dark);
++                break;
++        case PROP_PLACEMENT:
++                g_value_set_enum (value, self->placement);
++                break;
++        case PROP_SHADING:
++                g_value_set_enum (value, self->shading);
++                break;
++        case PROP_PRIMARY_COLOR:
++                g_value_set_string (value, self->primary_color);
++                break;
++        case PROP_SECONDARY_COLOR:
++                g_value_set_string (value, self->secondary_color);
++                break;
++        case PROP_IS_DELETED:
++                g_value_set_boolean (value, self->is_deleted);
++                break;
++	case PROP_SOURCE_URL:
++		g_value_set_string (value, self->source_url);
++		break;
++	case PROP_SOURCE_XML:
++		g_value_set_string (value, self->source_xml);
++		break;
++	case PROP_FLAGS:
++		g_value_set_flags (value, self->flags);
++		break;
++	case PROP_SIZE:
++		update_size (self);
++		g_value_set_string (value, self->size);
++		break;
++	case PROP_NEEDS_DOWNLOAD:
++		g_value_set_boolean (value, self->needs_download);
++		break;
++	case PROP_MODIFIED:
++		g_value_set_uint64 (value, self->modified);
++		break;
++        default:
++                G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
++                break;
++        }
++}
++
++static GObject *
++cc_background_item_constructor (GType                  type,
++                                guint                  n_construct_properties,
++                                GObjectConstructParam *construct_properties)
++{
++        CcBackgroundItem      *background_item;
++
++        background_item = CC_BACKGROUND_ITEM (G_OBJECT_CLASS (cc_background_item_parent_class)->constructor (type,
++                                                                                                             n_construct_properties,
++                                                                                                             construct_properties));
++
++        return G_OBJECT (background_item);
++}
++
++static void
++cc_background_item_class_init (CcBackgroundItemClass *klass)
++{
++        GObjectClass  *object_class = G_OBJECT_CLASS (klass);
++
++        object_class->get_property = cc_background_item_get_property;
++        object_class->set_property = cc_background_item_set_property;
++        object_class->constructor = cc_background_item_constructor;
++        object_class->finalize = cc_background_item_finalize;
++
++        props[PROP_NAME] = g_param_spec_string ("name",
++                                                "name",
++                                                "name",
++                                                NULL,
++                                                G_PARAM_READWRITE);
++
++        props[PROP_URI] = g_param_spec_string ("uri",
++                                               "uri",
++                                               "uri",
++                                               NULL,
++                                               G_PARAM_READWRITE);
++
++        props[PROP_URI_DARK] = g_param_spec_string ("uri-dark",
++                                                    "uri-dark",
++                                                    "uri-dark",
++                                                    NULL,
++                                                    G_PARAM_READWRITE);
++
++        props[PROP_PLACEMENT] = g_param_spec_enum ("placement",
++                                                   "placement",
++                                                   "placement",
++                                                   G_DESKTOP_TYPE_BACKGROUND_STYLE,
++                                                   G_DESKTOP_BACKGROUND_STYLE_SCALED,
++                                                   G_PARAM_READWRITE);
++
++        props[PROP_SHADING] = g_param_spec_enum ("shading",
++                                                 "shading",
++                                                 "shading",
++                                                 G_DESKTOP_TYPE_BACKGROUND_SHADING,
++                                                 G_DESKTOP_BACKGROUND_SHADING_SOLID,
++                                                 G_PARAM_READWRITE);
++
++        props[PROP_PRIMARY_COLOR] = g_param_spec_string ("primary-color",
++                                                         "primary-color",
++                                                         "primary-color",
++                                                         "#000000000000",
++                                                         G_PARAM_READWRITE);
++
++        props[PROP_SECONDARY_COLOR] = g_param_spec_string ("secondary-color",
++                                                           "secondary-color",
++                                                           "secondary-color",
++                                                           "#000000000000",
++                                                           G_PARAM_READWRITE);
++
++        props[PROP_IS_DELETED] = g_param_spec_boolean ("is-deleted",
++                                                       NULL,
++                                                       NULL,
++                                                       FALSE,
++                                                       G_PARAM_READWRITE);
++
++        props[PROP_SOURCE_URL] = g_param_spec_string ("source-url",
++                                                      "source-url",
++                                                      "source-url",
++                                                      NULL,
++                                                      G_PARAM_READWRITE);
++
++        props[PROP_SOURCE_XML] = g_param_spec_string ("source-xml",
++                                                      "source-xml",
++                                                      "source-xml",
++                                                      NULL,
++                                                      G_PARAM_READWRITE);
++
++        props[PROP_FLAGS] = g_param_spec_flags ("flags",
++                                                "flags",
++                                                "flags",
++                                                CC_TYPE_BACKGROUND_ITEM_FLAGS,
++                                                0,
++                                                G_PARAM_READABLE);
++
++        props[PROP_SIZE] = g_param_spec_string ("size",
++                                                "size",
++                                                "size",
++                                                NULL,
++                                                G_PARAM_READABLE);
++
++        props[PROP_NEEDS_DOWNLOAD] = g_param_spec_boolean ("needs-download",
++                                                           NULL,
++                                                           NULL,
++                                                           TRUE,
++                                                           G_PARAM_READWRITE);
++
++        props[PROP_MODIFIED] = g_param_spec_uint64 ("modified",
++                                                    "modified",
++                                                    NULL,
++                                                    0,
++                                                    G_MAXUINT64,
++                                                    0,
++                                                    G_PARAM_READWRITE);
++
++        g_object_class_install_properties (object_class, N_PROPS, props);
++}
++
++static void
++cc_background_item_init (CcBackgroundItem *item)
++{
++        item->shading = G_DESKTOP_BACKGROUND_SHADING_SOLID;
++        item->placement = G_DESKTOP_BACKGROUND_STYLE_SCALED;
++        item->primary_color = g_strdup ("#000000000000");
++        item->secondary_color = g_strdup ("#000000000000");
++        item->needs_download = TRUE;
++        item->flags = 0;
++        item->modified = 0;
++}
++
++static void
++cc_background_item_finalize (GObject *object)
++{
++        CcBackgroundItem *item;
++
++        g_return_if_fail (object != NULL);
++        g_return_if_fail (CC_IS_BACKGROUND_ITEM (object));
++
++        item = CC_BACKGROUND_ITEM (object);
++
++        g_return_if_fail (item != NULL);
++
++        g_clear_object (&item->cached_thumbnail.thumbnail);
++        g_clear_object (&item->cached_thumbnail_dark.thumbnail);
++        g_free (item->name);
++        g_free (item->uri);
++        g_free (item->uri_dark);
++        g_free (item->primary_color);
++        g_free (item->secondary_color);
++        g_free (item->mime_type);
++        g_free (item->size);
++        g_free (item->source_url);
++        g_free (item->source_xml);
++
++        G_OBJECT_CLASS (cc_background_item_parent_class)->finalize (object);
++}
++
++CcBackgroundItem *
++cc_background_item_new (const char *uri)
++{
++        GObject *object;
++
++        object = g_object_new (CC_TYPE_BACKGROUND_ITEM,
++                               "uri", uri,
++                               NULL);
++
++        return CC_BACKGROUND_ITEM (object);
++}
++
++CcBackgroundItem *
++cc_background_item_copy (CcBackgroundItem *item)
++{
++	CcBackgroundItem *ret;
++
++	ret = cc_background_item_new (item->uri);
++	ret->name = g_strdup (item->name);
++	ret->size = g_strdup (item->size);
++	ret->placement = item->placement;
++	ret->shading = item->shading;
++	ret->primary_color = g_strdup (item->primary_color);
++	ret->secondary_color = g_strdup (item->secondary_color);
++	ret->source_url = g_strdup (item->source_url);
++	ret->source_xml = g_strdup (item->source_xml);
++	ret->is_deleted = item->is_deleted;
++	ret->needs_download = item->needs_download;
++	ret->flags = item->flags;
++
++	return ret;
++}
++
++static const char *
++flags_to_str (CcBackgroundItemFlags flag)
++{
++	GFlagsClass *fclass;
++	GFlagsValue *value;
++
++	fclass = G_FLAGS_CLASS (g_type_class_peek (CC_TYPE_BACKGROUND_ITEM_FLAGS));
++	value = g_flags_get_first_value (fclass, flag);
++
++	g_assert (value);
++
++	return value->value_nick;
++}
++
++static const char *
++enum_to_str (GType type,
++	     int   v)
++{
++	GEnumClass *eclass;
++	GEnumValue *value;
++
++	eclass = G_ENUM_CLASS (g_type_class_peek (type));
++	value = g_enum_get_value (eclass, v);
++
++	g_assert (value);
++
++	return value->value_nick;
++}
++
++void
++cc_background_item_dump (CcBackgroundItem *item)
++{
++	g_autoptr(GString) flags = NULL;
++	int i;
++
++	g_return_if_fail (CC_IS_BACKGROUND_ITEM (item));
++
++	update_size (item);
++
++	g_debug ("name:\t\t\t%s", item->name);
++	g_debug ("URI:\t\t\t%s", item->uri ? item->uri : "NULL");
++	if (item->size)
++		g_debug ("size:\t\t\t'%s'", item->size);
++	flags = g_string_new (NULL);
++	for (i = 0; i < 5; i++) {
++		if (item->flags & (1 << i)) {
++			g_string_append (flags, flags_to_str (1 << i));
++			g_string_append_c (flags, ' ');
++		}
++	}
++	if (flags->len == 0)
++		g_string_append (flags, "-none-");
++	g_debug ("flags:\t\t\t%s", flags->str);
++	if (item->primary_color)
++		g_debug ("pcolor:\t\t\t%s", item->primary_color);
++	if (item->secondary_color)
++		g_debug ("scolor:\t\t\t%s", item->secondary_color);
++	g_debug ("placement:\t\t%s", enum_to_str (G_DESKTOP_TYPE_BACKGROUND_STYLE, item->placement));
++	g_debug ("shading:\t\t%s", enum_to_str (G_DESKTOP_TYPE_BACKGROUND_SHADING, item->shading));
++	if (item->source_url)
++		g_debug ("source URL:\t\t%s", item->source_url);
++	if (item->source_xml)
++		g_debug ("source XML:\t\t%s", item->source_xml);
++	g_debug ("deleted:\t\t%s", item->is_deleted ? "yes" : "no");
++	if (item->mime_type)
++		g_debug ("mime-type:\t\t%s", item->mime_type);
++	g_debug ("dimensions:\t\t%d x %d", item->width, item->height);
++        g_debug ("modified: %"G_GUINT64_FORMAT, item->modified);
++	g_debug (" ");
++}
++
++static gboolean
++files_equal (const char *a,
++	     const char *b)
++{
++	g_autoptr(GFile) file1 = NULL;
++	g_autoptr(GFile) file2 = NULL;
++
++	if (a == NULL && b == NULL)
++		return TRUE;
++
++	if (a == NULL || b == NULL)
++		return FALSE;
++
++	file1 = g_file_new_for_commandline_arg (a);
++	file2 = g_file_new_for_commandline_arg (b);
++
++	return g_file_equal (file1, file2);
++}
++
++static gboolean
++colors_equal (const char *a,
++	      const char *b)
++{
++	GdkRGBA color1, color2;
++
++	gdk_rgba_parse (&color1, a);
++	gdk_rgba_parse (&color2, b);
++
++	return gdk_rgba_equal (&color1, &color2);
++}
++
++gboolean
++cc_background_item_compare (CcBackgroundItem *saved,
++			    CcBackgroundItem *configured)
++{
++	CcBackgroundItemFlags flags;
++
++	flags = saved->flags;
++	if (flags == 0)
++		return FALSE;
++
++	if (flags & CC_BACKGROUND_ITEM_HAS_URI) {
++		if (files_equal (saved->uri, configured->uri) == FALSE)
++			return FALSE;
++	}
++	if (flags & CC_BACKGROUND_ITEM_HAS_URI_DARK) {
++		if (files_equal (saved->uri_dark, configured->uri_dark) == FALSE)
++			return FALSE;
++	}
++	if (flags & CC_BACKGROUND_ITEM_HAS_SHADING) {
++		if (saved->shading != configured->shading)
++			return FALSE;
++	}
++	if (flags & CC_BACKGROUND_ITEM_HAS_PLACEMENT) {
++		if (saved->placement != configured->placement)
++			return FALSE;
++	}
++	if (flags & CC_BACKGROUND_ITEM_HAS_PCOLOR) {
++		if (colors_equal (saved->primary_color,
++				  configured->primary_color) == FALSE) {
++			return FALSE;
++		}
++	}
++	if (flags & CC_BACKGROUND_ITEM_HAS_SCOLOR) {
++		if (colors_equal (saved->secondary_color,
++				  configured->secondary_color) == FALSE) {
++			return FALSE;
++		}
++	}
++
++	return TRUE;
++}
+diff --git a/gnome-initial-setup/pages/appearance/cc-background-item.h b/gnome-initial-setup/pages/appearance/cc-background-item.h
+new file mode 100644
+index 0000000..7478566
+--- /dev/null
++++ b/gnome-initial-setup/pages/appearance/cc-background-item.h
+@@ -0,0 +1,88 @@
++/* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 8 -*-
++ *
++ * Copyright (C) 2010-2011 Red Hat, Inc.
++ *
++ * This program is free software; you can redistribute it and/or modify
++ * it under the terms of the GNU General Public License as published by
++ * the Free Software Foundation; either version 2 of the License, or
++ * (at your option) any later version.
++ *
++ * This program is distributed in the hope that it will be useful,
++ * but WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++ * GNU General Public License for more details.
++ *
++ * You should have received a copy of the GNU General Public License
++ * along with this program; if not, see <http://www.gnu.org/licenses/>.
++ *
++ */
++
++#pragma once
++
++#define GNOME_DESKTOP_USE_UNSTABLE_API
++
++#include <glib-object.h>
++#include <gdk-pixbuf/gdk-pixbuf.h>
++#include <libgnome-desktop/gnome-desktop-thumbnail.h>
++#include <gdesktop-enums.h>
++#include <gnome-bg/gnome-bg.h>
++
++G_BEGIN_DECLS
++
++#define CC_TYPE_BACKGROUND_ITEM (cc_background_item_get_type ())
++G_DECLARE_FINAL_TYPE (CcBackgroundItem, cc_background_item, CC, BACKGROUND_ITEM, GObject)
++
++typedef enum {
++	CC_BACKGROUND_ITEM_HAS_SHADING   = 1 << 0,
++	CC_BACKGROUND_ITEM_HAS_PLACEMENT = 1 << 1,
++	CC_BACKGROUND_ITEM_HAS_PCOLOR    = 1 << 2,
++	CC_BACKGROUND_ITEM_HAS_SCOLOR    = 1 << 3,
++	CC_BACKGROUND_ITEM_HAS_URI       = 1 << 4,
++	CC_BACKGROUND_ITEM_HAS_URI_DARK  = 1 << 5
++} CcBackgroundItemFlags;
++
++#define CC_BACKGROUND_ITEM_HAS_ALL (CC_BACKGROUND_ITEM_HAS_SHADING &	\
++				    CC_BACKGROUND_ITEM_HAS_PLACEMENT &	\
++				    CC_BACKGROUND_ITEM_HAS_PCOLOR &	\
++				    CC_BACKGROUND_ITEM_HAS_SCOLOR &	\
++				    CC_BACKGROUND_ITEM_HAS_FNAME)
++
++CcBackgroundItem * cc_background_item_new               (const char                   *uri);
++CcBackgroundItem * cc_background_item_copy              (CcBackgroundItem             *item);
++gboolean           cc_background_item_load              (CcBackgroundItem *item,
++                                                         GFileInfo        *info);
++gboolean           cc_background_item_changes_with_time (CcBackgroundItem             *item);
++gboolean           cc_background_item_has_dark_version  (CcBackgroundItem             *item);
++
++void               cc_background_item_get_thumbnail_async  (CcBackgroundItem             *item,
++                                                            GnomeDesktopThumbnailFactory *thumbs,
++                                                            int                           width,
++                                                            int                           height,
++                                                            int                           scale_factor,
++                                                            gboolean                      dark,
++                                                            GCancellable                 *cancellable,
++                                                            GAsyncReadyCallback           callback,
++                                                            gpointer                      user_data);
++GdkPixbuf        * cc_background_item_get_thumbnail_finish (CcBackgroundItem             *item,
++                                                            GAsyncResult                 *result,
++                                                            GError                      **error);
++
++GDesktopBackgroundStyle   cc_background_item_get_placement  (CcBackgroundItem *item);
++GDesktopBackgroundShading cc_background_item_get_shading    (CcBackgroundItem *item);
++const char *              cc_background_item_get_uri        (CcBackgroundItem *item);
++const char *              cc_background_item_get_uri_dark   (CcBackgroundItem *item);
++const char *              cc_background_item_get_source_url (CcBackgroundItem *item);
++const char *              cc_background_item_get_source_xml (CcBackgroundItem *item);
++CcBackgroundItemFlags     cc_background_item_get_flags      (CcBackgroundItem *item);
++const char *              cc_background_item_get_pcolor     (CcBackgroundItem *item);
++const char *              cc_background_item_get_scolor     (CcBackgroundItem *item);
++const char *              cc_background_item_get_name       (CcBackgroundItem *item);
++const char *              cc_background_item_get_size       (CcBackgroundItem *item);
++gboolean                  cc_background_item_get_needs_download (CcBackgroundItem *item);
++guint64                   cc_background_item_get_modified   (CcBackgroundItem *item);
++
++gboolean                  cc_background_item_compare        (CcBackgroundItem *saved,
++							     CcBackgroundItem *configured);
++void                      cc_background_item_dump           (CcBackgroundItem *item);
++
++G_END_DECLS
+diff --git a/gnome-initial-setup/pages/appearance/cc-background-paintable.c b/gnome-initial-setup/pages/appearance/cc-background-paintable.c
+new file mode 100644
+index 0000000..0ae4348
+--- /dev/null
++++ b/gnome-initial-setup/pages/appearance/cc-background-paintable.c
+@@ -0,0 +1,480 @@
++/* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 8 -*-
++ *
++ * Copyright (C) 2021 Alexander Mikhaylenko <alexm@gnome.org>
++ *
++ * This program is free software; you can redistribute it and/or modify
++ * it under the terms of the GNU General Public License as published by
++ * the Free Software Foundation; either version 2 of the License, or
++ * (at your option) any later version.
++ *
++ * This program is distributed in the hope that it will be useful,
++ * but WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++ * GNU General Public License for more details.
++ *
++ * You should have received a copy of the GNU General Public License
++ * along with this program; if not, see <http://www.gnu.org/licenses/>.
++ *
++ */
++
++#include <config.h>
++
++#include "cc-background-enum-types.h"
++#include "cc-background-paintable.h"
++
++struct _CcBackgroundPaintable
++{
++  GObject           parent_instance;
++
++  GnomeDesktopThumbnailFactory *thumbnail_factory;
++  CcBackgroundItem *item;
++  int               width;
++  int               height;
++  int               scale_factor;
++  GtkTextDirection  text_direction;
++
++  GdkPaintable     *texture;
++  GdkPaintable     *dark_texture;
++
++  GCancellable     *cancellable;
++
++  CcBackgroundPaintFlags  paint_flags;
++};
++
++enum
++{
++  PROP_0,
++  PROP_THUMBNAIL_FACTORY,
++  PROP_ITEM,
++  PROP_WIDTH,
++  PROP_HEIGHT,
++  PROP_SCALE_FACTOR,
++  PROP_TEXT_DIRECTION,
++  PROP_PAINT_FLAGS,
++  N_PROPS
++};
++
++static GParamSpec *properties [N_PROPS];
++
++static void cc_background_paintable_paintable_init (GdkPaintableInterface *iface);
++
++G_DEFINE_TYPE_WITH_CODE (CcBackgroundPaintable, cc_background_paintable, G_TYPE_OBJECT,
++                         G_IMPLEMENT_INTERFACE (GDK_TYPE_PAINTABLE,
++                                                cc_background_paintable_paintable_init))
++
++static void
++light_cb (GObject      *object,
++          GAsyncResult *result,
++          gpointer      user_data)
++{
++  g_autoptr(CcBackgroundPaintable) self = user_data;
++  g_autoptr(GdkPixbuf) pixbuf = NULL;
++
++  if ((pixbuf = cc_background_item_get_thumbnail_finish (CC_BACKGROUND_ITEM (object), result, NULL)))
++    {
++      g_clear_object (&self->texture);
++      self->texture = GDK_PAINTABLE (gdk_texture_new_for_pixbuf (pixbuf));
++
++      gdk_paintable_invalidate_size (GDK_PAINTABLE (self));
++    }
++}
++
++static void
++dark_cb (GObject      *object,
++         GAsyncResult *result,
++         gpointer      user_data)
++{
++  g_autoptr(CcBackgroundPaintable) self = user_data;
++  g_autoptr(GdkPixbuf) pixbuf = NULL;
++
++  if ((pixbuf = cc_background_item_get_thumbnail_finish (CC_BACKGROUND_ITEM (object), result, NULL)))
++    {
++      g_clear_object (&self->dark_texture);
++      self->dark_texture = GDK_PAINTABLE (gdk_texture_new_for_pixbuf (pixbuf));
++
++      gdk_paintable_invalidate_size (GDK_PAINTABLE (self));
++    }
++}
++
++static void
++update_cache (CcBackgroundPaintable *self)
++{
++  gboolean has_dark = cc_background_item_has_dark_version (self->item);
++
++  g_cancellable_cancel (self->cancellable);
++  g_clear_object (&self->cancellable);
++  self->cancellable = g_cancellable_new ();
++
++  if ((self->paint_flags & CC_BACKGROUND_PAINT_LIGHT) || !has_dark)
++    cc_background_item_get_thumbnail_async (self->item,
++                                            self->thumbnail_factory,
++                                            self->width,
++                                            self->height,
++                                            self->scale_factor,
++                                            FALSE,
++                                            self->cancellable,
++                                            light_cb,
++                                            g_object_ref (self));
++
++  if ((self->paint_flags & CC_BACKGROUND_PAINT_DARK) && has_dark)
++    cc_background_item_get_thumbnail_async (self->item,
++                                            self->thumbnail_factory,
++                                            self->width,
++                                            self->height,
++                                            self->scale_factor,
++                                            TRUE,
++                                            self->cancellable,
++                                            dark_cb,
++                                            g_object_ref (self));
++}
++
++static void
++cc_background_paintable_dispose (GObject *object)
++{
++  CcBackgroundPaintable *self = CC_BACKGROUND_PAINTABLE (object);
++
++  g_cancellable_cancel (self->cancellable);
++  g_clear_object (&self->cancellable);
++
++  g_clear_object (&self->item);
++  g_clear_object (&self->thumbnail_factory);
++  g_clear_object (&self->texture);
++  g_clear_object (&self->dark_texture);
++
++  G_OBJECT_CLASS (cc_background_paintable_parent_class)->dispose (object);
++}
++
++static void
++cc_background_paintable_get_property (GObject    *object,
++                                      guint       prop_id,
++                                      GValue     *value,
++                                      GParamSpec *pspec)
++{
++  CcBackgroundPaintable *self = CC_BACKGROUND_PAINTABLE (object);
++
++  switch (prop_id)
++    {
++    case PROP_THUMBNAIL_FACTORY:
++      g_value_set_object (value, self->thumbnail_factory);
++      break;
++
++    case PROP_ITEM:
++      g_value_set_object (value, self->item);
++      break;
++
++    case PROP_WIDTH:
++      g_value_set_int (value, self->width);
++      break;
++
++    case PROP_HEIGHT:
++      g_value_set_int (value, self->height);
++      break;
++
++    case PROP_SCALE_FACTOR:
++      g_value_set_int (value, self->scale_factor);
++      break;
++
++    case PROP_TEXT_DIRECTION:
++      g_value_set_enum (value, self->text_direction);
++      break;
++
++    case PROP_PAINT_FLAGS:
++      g_value_set_flags (value, self->paint_flags);
++      break;
++
++    default:
++      G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
++    }
++}
++
++static void
++cc_background_paintable_set_property (GObject      *object,
++                                      guint         prop_id,
++                                      const GValue *value,
++                                      GParamSpec   *pspec)
++{
++  CcBackgroundPaintable *self = CC_BACKGROUND_PAINTABLE (object);
++  int scale_factor;
++
++  switch (prop_id)
++    {
++    case PROP_THUMBNAIL_FACTORY:
++      g_set_object (&self->thumbnail_factory, g_value_get_object (value));
++      break;
++
++    case PROP_ITEM:
++      g_set_object (&self->item, g_value_get_object (value));
++      break;
++
++    case PROP_WIDTH:
++      self->width = g_value_get_int (value);
++      break;
++
++    case PROP_HEIGHT:
++      self->height = g_value_get_int (value);
++      break;
++
++    case PROP_SCALE_FACTOR:
++      scale_factor = g_value_get_int (value);
++      if (self->scale_factor != scale_factor)
++        {
++          self->scale_factor = scale_factor;
++          /* Update cache, but only if the async call has ran or is still running */
++          if (self->cancellable)
++            update_cache (self);
++        }
++      break;
++
++    case PROP_TEXT_DIRECTION:
++      self->text_direction = g_value_get_enum (value);
++      gdk_paintable_invalidate_contents (GDK_PAINTABLE (self));
++      break;
++
++    case PROP_PAINT_FLAGS:
++      self->paint_flags = g_value_get_flags (value);
++      break;
++
++    default:
++      G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
++    }
++}
++
++static void
++cc_background_paintable_class_init (CcBackgroundPaintableClass *klass)
++{
++  GObjectClass *object_class = G_OBJECT_CLASS (klass);
++
++  object_class->dispose = cc_background_paintable_dispose;
++  object_class->get_property = cc_background_paintable_get_property;
++  object_class->set_property = cc_background_paintable_set_property;
++
++  properties[PROP_THUMBNAIL_FACTORY] =
++    g_param_spec_object ("thumbnail-factory",
++                         "Thumbnail factory",
++                         "Thumbnail factory",
++                         GNOME_DESKTOP_TYPE_THUMBNAIL_FACTORY,
++                         G_PARAM_READWRITE |
++                         G_PARAM_CONSTRUCT_ONLY |
++                         G_PARAM_STATIC_STRINGS);
++
++  properties[PROP_ITEM] =
++    g_param_spec_object ("item",
++                         "Item",
++                         "Item",
++                         CC_TYPE_BACKGROUND_ITEM,
++                         G_PARAM_READWRITE |
++                         G_PARAM_CONSTRUCT_ONLY |
++                         G_PARAM_STATIC_STRINGS);
++
++  properties[PROP_WIDTH] =
++    g_param_spec_int ("width",
++                      "Width",
++                      "Width",
++                      1, G_MAXINT, 144,
++                      G_PARAM_READWRITE |
++                      G_PARAM_CONSTRUCT_ONLY |
++                      G_PARAM_STATIC_STRINGS);
++
++  properties[PROP_HEIGHT] =
++    g_param_spec_int ("height",
++                      "Height",
++                      "Height",
++                      1, G_MAXINT, 144 * 3 / 4,
++                      G_PARAM_READWRITE |
++                      G_PARAM_CONSTRUCT_ONLY |
++                      G_PARAM_STATIC_STRINGS);
++
++  properties[PROP_SCALE_FACTOR] =
++    g_param_spec_int ("scale-factor",
++                      "Scale Factor",
++                      "Scale Factor",
++                      1, G_MAXINT, 1,
++                      G_PARAM_READWRITE |
++                      G_PARAM_CONSTRUCT |
++                      G_PARAM_STATIC_STRINGS);
++
++  properties[PROP_TEXT_DIRECTION] =
++    g_param_spec_enum ("text-direction",
++                       "Text Direction",
++                       "Text Direction",
++                       GTK_TYPE_TEXT_DIRECTION,
++                       GTK_TEXT_DIR_LTR,
++                       G_PARAM_READWRITE |
++                       G_PARAM_CONSTRUCT |
++                       G_PARAM_STATIC_STRINGS);
++
++  properties[PROP_PAINT_FLAGS] =
++    g_param_spec_flags ("paint-flags",
++                        "Paint Flags",
++                        "Paint Flags",
++                        CC_TYPE_BACKGROUND_PAINT_FLAGS,
++                        CC_BACKGROUND_PAINT_LIGHT,
++                        G_PARAM_READWRITE |
++                        G_PARAM_CONSTRUCT_ONLY |
++                        G_PARAM_STATIC_STRINGS);
++
++  g_object_class_install_properties (object_class, N_PROPS, properties);
++}
++
++static void
++cc_background_paintable_init (CcBackgroundPaintable *self)
++{
++}
++
++static void
++cc_background_paintable_snapshot (GdkPaintable *paintable,
++                                  GdkSnapshot  *snapshot,
++                                  double        width,
++                                  double        height)
++{
++  CcBackgroundPaintable *self = CC_BACKGROUND_PAINTABLE (paintable);
++  gboolean is_rtl;
++
++  /* If we haven't loaded our textures yet, render nothing */
++  if (self->dark_texture == NULL && self->texture == NULL)
++    return;
++
++  if (!self->dark_texture)
++    {
++      gdk_paintable_snapshot (self->texture, snapshot, width, height);
++      return;
++    }
++
++  if (!self->texture)
++    {
++      gdk_paintable_snapshot (self->dark_texture, snapshot, width, height);
++      return;
++    }
++
++  is_rtl = self->text_direction == GTK_TEXT_DIR_RTL;
++
++  gtk_snapshot_push_clip (GTK_SNAPSHOT (snapshot),
++                          &GRAPHENE_RECT_INIT (is_rtl ? width / 2.0f : 0.0f,
++                                               0.0f,
++                                               width / 2.0f,
++                                               height));
++  gdk_paintable_snapshot (self->texture, snapshot, width, height);
++  gtk_snapshot_pop (GTK_SNAPSHOT (snapshot));
++
++  gtk_snapshot_push_clip (GTK_SNAPSHOT (snapshot),
++                          &GRAPHENE_RECT_INIT (is_rtl ? 0.0f : width / 2.0f,
++                                               0.0f,
++                                               width / 2.0f,
++                                               height));
++  gdk_paintable_snapshot (self->dark_texture, snapshot, width, height);
++  gtk_snapshot_pop (GTK_SNAPSHOT (snapshot));
++}
++
++static int
++cc_background_paintable_get_intrinsic_width (GdkPaintable *paintable)
++{
++  CcBackgroundPaintable *self = CC_BACKGROUND_PAINTABLE (paintable);
++  GdkPaintable *valid_texture = self->texture ? self->texture : self->dark_texture;
++
++  if (valid_texture != NULL)
++    return gdk_paintable_get_intrinsic_width (valid_texture) / self->scale_factor;
++
++  return self->width;
++
++}
++
++static int
++cc_background_paintable_get_intrinsic_height (GdkPaintable *paintable)
++{
++  CcBackgroundPaintable *self = CC_BACKGROUND_PAINTABLE (paintable);
++  GdkPaintable *valid_texture = self->texture ? self->texture : self->dark_texture;
++
++  if (valid_texture != NULL)
++    return gdk_paintable_get_intrinsic_height (valid_texture) / self->scale_factor;
++
++  return self->height;
++}
++
++static double
++cc_background_paintable_get_intrinsic_aspect_ratio (GdkPaintable *paintable)
++{
++  CcBackgroundPaintable *self = CC_BACKGROUND_PAINTABLE (paintable);
++  GdkPaintable *valid_texture = self->texture ? self->texture : self->dark_texture;
++
++  if (valid_texture != NULL)
++    return gdk_paintable_get_intrinsic_aspect_ratio (valid_texture);
++
++  return (double) self->width / self->height;
++}
++
++static void
++cc_background_paintable_paintable_init (GdkPaintableInterface *iface)
++{
++  iface->snapshot = cc_background_paintable_snapshot;
++  iface->get_intrinsic_width = cc_background_paintable_get_intrinsic_width;
++  iface->get_intrinsic_height = cc_background_paintable_get_intrinsic_height;
++  iface->get_intrinsic_aspect_ratio = cc_background_paintable_get_intrinsic_aspect_ratio;
++}
++
++static void
++on_root_direction_changed_cb (GtkWidget        *root,
++                              GtkTextDirection *previous_direction,
++                              GdkPaintable     *paintable)
++{
++  g_object_set (paintable,
++                "text-direction", gtk_widget_get_direction (root),
++                NULL);
++}
++
++static void
++on_container_root_cb (GtkWidget             *container,
++                      GParamSpec            *pspec,
++                      CcBackgroundPaintable *self)
++{
++  GtkWidget *root;
++
++  g_signal_handlers_disconnect_by_func (container, on_container_root_cb, self);
++
++  root = GTK_WIDGET (gtk_widget_get_root (container));
++
++  g_object_bind_property (root, "scale-factor",
++                          self, "scale-factor",
++                          G_BINDING_SYNC_CREATE);
++  g_signal_connect_object (root, "direction-changed",
++                           G_CALLBACK (on_root_direction_changed_cb), self,
++                           G_CONNECT_DEFAULT);
++
++  update_cache (self);
++}
++
++/* Workaround for a typo in libgnome-desktop, see gnome-desktop!160 */
++#define G_TYPE_INSTANCE_CHECK_TYPE G_TYPE_CHECK_INSTANCE_TYPE
++
++CcBackgroundPaintable *
++cc_background_paintable_new (GnomeDesktopThumbnailFactory *thumbnail_factory,
++                             CcBackgroundItem             *item,
++                             CcBackgroundPaintFlags        paint_flags,
++                             int                           width,
++                             int                           height,
++                             GtkWidget                    *container)
++{
++  CcBackgroundPaintable *self;
++  g_return_val_if_fail (GNOME_DESKTOP_IS_THUMBNAIL_FACTORY (thumbnail_factory), NULL);
++  g_return_val_if_fail (CC_IS_BACKGROUND_ITEM (item), NULL);
++  g_return_val_if_fail (GTK_IS_WIDGET (container), NULL);
++
++  self = g_object_new (CC_TYPE_BACKGROUND_PAINTABLE,
++                       "thumbnail-factory", thumbnail_factory,
++                       "item", item,
++                       "paint-flags", paint_flags,
++                       "width", width,
++                       "height", height,
++                       NULL);
++
++  /* We will wait until the container is rooted, as otherwise the scale-factor can't
++     be retrieved reliably. Doing a cache update with the wrong scale-factor can be
++     costly, so it's worth the wait */
++  if (gtk_widget_get_root (container))
++    on_container_root_cb (container, NULL, self);
++  else
++    g_signal_connect_object (container, "notify::root",
++                             G_CALLBACK (on_container_root_cb), self,
++                             G_CONNECT_DEFAULT);
++
++  return self;
++}
+diff --git a/gnome-initial-setup/pages/appearance/cc-background-paintable.h b/gnome-initial-setup/pages/appearance/cc-background-paintable.h
+new file mode 100644
+index 0000000..33eb431
+--- /dev/null
++++ b/gnome-initial-setup/pages/appearance/cc-background-paintable.h
+@@ -0,0 +1,47 @@
++/* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 8 -*-
++ *
++ * Copyright (C) 2021 Alexander Mikhaylenko <alexm@gnome.org>
++ *
++ * This program is free software; you can redistribute it and/or modify
++ * it under the terms of the GNU General Public License as published by
++ * the Free Software Foundation; either version 2 of the License, or
++ * (at your option) any later version.
++ *
++ * This program is distributed in the hope that it will be useful,
++ * but WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++ * GNU General Public License for more details.
++ *
++ * You should have received a copy of the GNU General Public License
++ * along with this program; if not, see <http://www.gnu.org/licenses/>.
++ *
++ */
++
++#pragma once
++
++#include <gtk/gtk.h>
++
++#include "cc-background-item.h"
++#include <libgnome-desktop/gnome-desktop-thumbnail.h>
++
++G_BEGIN_DECLS
++
++#define CC_TYPE_BACKGROUND_PAINTABLE (cc_background_paintable_get_type ())
++G_DECLARE_FINAL_TYPE (CcBackgroundPaintable, cc_background_paintable, CC, BACKGROUND_PAINTABLE, GObject)
++
++typedef enum {
++    CC_BACKGROUND_PAINT_LIGHT = 1 << 0,
++    CC_BACKGROUND_PAINT_DARK  = 1 << 1
++} CcBackgroundPaintFlags;
++
++#define CC_BACKGROUND_PAINT_LIGHT_DARK (CC_BACKGROUND_PAINT_LIGHT |	\
++                                        CC_BACKGROUND_PAINT_DARK)
++
++CcBackgroundPaintable * cc_background_paintable_new (GnomeDesktopThumbnailFactory *thumbnail_factory,
++                                                     CcBackgroundItem             *item,
++                                                     CcBackgroundPaintFlags        paint_flags,
++                                                     int                           width,
++                                                     int                           height,
++                                                     GtkWidget                    *container);
++
++G_END_DECLS
+diff --git a/gnome-initial-setup/pages/appearance/cc-background-preview.blp b/gnome-initial-setup/pages/appearance/cc-background-preview.blp
+new file mode 100644
+index 0000000..41369aa
+--- /dev/null
++++ b/gnome-initial-setup/pages/appearance/cc-background-preview.blp
+@@ -0,0 +1,50 @@
++using Gtk 4.0;
++using Adw 1;
++
++template $CcBackgroundPreview: Widget {
++  overflow: hidden;
++  width-request: 2;
++  height-request: 2;
++
++  Picture picture {
++    content-fit: cover;
++  }
++
++  Adw.Bin dark_window {
++    overflow: hidden;
++
++    styles [
++      "window",
++      "background",
++      "back",
++      "dark",
++    ]
++
++    Adw.Bin {
++      styles [
++        "sidebar",
++      ]
++
++      halign: start;
++    }
++  }
++
++  Adw.Bin light_dark_window {
++    overflow: hidden;
++
++    styles [
++      "window",
++      "background",
++      "front",
++      "light",
++    ]
++
++    Adw.Bin {
++      styles [
++        "header-bar",
++      ]
++
++      valign: start;
++    }
++  }
++}
+diff --git a/gnome-initial-setup/pages/appearance/cc-background-preview.c b/gnome-initial-setup/pages/appearance/cc-background-preview.c
+new file mode 100644
+index 0000000..ab8fca0
+--- /dev/null
++++ b/gnome-initial-setup/pages/appearance/cc-background-preview.c
+@@ -0,0 +1,299 @@
++/* cc-background-preview.c
++ *
++ * Copyright 2019 Georges Basile Stavracas Neto <georges.stavracas@gmail.com>
++ *
++ * This program is free software: you can redistribute it and/or modify
++ * it under the terms of the GNU General Public License as published by
++ * the Free Software Foundation, either version 3 of the License, or
++ * (at your option) any later version.
++ *
++ * This program is distributed in the hope that it will be useful,
++ * but WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++ * GNU General Public License for more details.
++ *
++ * You should have received a copy of the GNU General Public License
++ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
++ *
++ * SPDX-License-Identifier: GPL-3.0-or-later
++ */
++
++#define GNOME_DESKTOP_USE_UNSTABLE_API
++
++#include <libgnome-desktop/gnome-desktop-thumbnail.h>
++
++#include "cc-background-preview.h"
++#include "cc-background-paintable.h"
++
++#define THUMBNAIL_WIDTH 256 /* No use asking for more, gnome_bg caps at 256 */
++#define THUMBNAIL_HEIGHT (THUMBNAIL_WIDTH * 3 / 4)
++
++struct _CcBackgroundPreview
++{
++  GtkWidget         parent;
++
++  GtkWidget        *picture;
++  GtkWidget        *light_dark_window;
++  GtkWidget        *dark_window;
++
++  GnomeDesktopThumbnailFactory *thumbnail_factory;
++
++  gboolean          is_dark;
++  CcBackgroundItem *item;
++};
++
++G_DEFINE_TYPE (CcBackgroundPreview, cc_background_preview, GTK_TYPE_WIDGET)
++
++enum
++{
++  PROP_0,
++  PROP_IS_DARK,
++  PROP_ITEM,
++  N_PROPS
++};
++
++static GParamSpec *properties [N_PROPS];
++
++/* GObject overrides */
++
++static void
++cc_background_preview_dispose (GObject *object)
++{
++  CcBackgroundPreview *self = (CcBackgroundPreview *)object;
++
++  gtk_widget_dispose_template (GTK_WIDGET (self), CC_TYPE_BACKGROUND_PREVIEW);
++
++  G_OBJECT_CLASS (cc_background_preview_parent_class)->dispose (object);
++}
++
++static void
++cc_background_preview_finalize (GObject *object)
++{
++  CcBackgroundPreview *self = (CcBackgroundPreview *)object;
++
++  g_clear_object (&self->item);
++  g_clear_object (&self->thumbnail_factory);
++
++  G_OBJECT_CLASS (cc_background_preview_parent_class)->finalize (object);
++}
++
++static void
++set_is_dark (CcBackgroundPreview *self,
++             gboolean             is_dark)
++{
++  self->is_dark = is_dark;
++
++  if (self->is_dark)
++    {
++      gtk_widget_add_css_class (self->light_dark_window, "dark");
++      gtk_widget_remove_css_class (self->light_dark_window, "light");
++    }
++  else
++    {
++      gtk_widget_add_css_class (self->light_dark_window, "light");
++      gtk_widget_remove_css_class (self->light_dark_window, "dark");
++    }
++}
++
++static void
++cc_background_preview_get_property (GObject    *object,
++                                    guint       prop_id,
++                                    GValue     *value,
++                                    GParamSpec *pspec)
++{
++  CcBackgroundPreview *self = CC_BACKGROUND_PREVIEW (object);
++
++  switch (prop_id)
++    {
++    case PROP_IS_DARK:
++      g_value_set_boolean (value, self->is_dark);
++      break;
++
++    case PROP_ITEM:
++      g_value_set_object (value, self->item);
++      break;
++
++    default:
++      G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
++    }
++}
++
++static void
++cc_background_preview_set_property (GObject      *object,
++                                    guint         prop_id,
++                                    const GValue *value,
++                                    GParamSpec   *pspec)
++{
++  CcBackgroundPreview *self = CC_BACKGROUND_PREVIEW (object);
++
++  switch (prop_id)
++    {
++    case PROP_IS_DARK:
++      set_is_dark (self, g_value_get_boolean (value));
++      break;
++
++    case PROP_ITEM:
++      cc_background_preview_set_item (self, g_value_get_object (value));
++      break;
++
++    default:
++      G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
++    }
++}
++
++static GtkSizeRequestMode
++cc_background_preview_get_request_mode (GtkWidget *widget)
++{
++  return GTK_SIZE_REQUEST_HEIGHT_FOR_WIDTH;
++}
++
++static void
++cc_background_preview_measure (GtkWidget      *widget,
++                               GtkOrientation  orientation,
++                               gint            for_size,
++                               gint           *minimum,
++                               gint           *natural,
++                               gint           *minimum_baseline,
++                               gint           *natural_baseline)
++{
++  GtkWidget *child;
++
++  if (orientation == GTK_ORIENTATION_HORIZONTAL)
++    {
++      *natural = THUMBNAIL_WIDTH;
++      *minimum = 0;
++    }
++  else
++    {
++      *natural = MAX (0, for_size * 3 / 4); /* 4:3 aspect ratio */
++      *minimum = *natural;
++    }
++
++  for (child = gtk_widget_get_first_child (widget);
++       child;
++       child = gtk_widget_get_next_sibling (child))
++    {
++      int child_min, child_nat;
++
++      gtk_widget_measure (child, orientation, for_size,
++                          &child_min, &child_nat, NULL, NULL);
++
++      *minimum = MAX (*minimum, child_min);
++      *natural = MAX (*natural, child_nat);
++    }
++}
++
++static void
++cc_background_preview_size_allocate (GtkWidget *widget,
++                                     gint       width,
++                                     gint       height,
++                                     gint       baseline)
++{
++  CcBackgroundPreview *self = CC_BACKGROUND_PREVIEW (widget);
++  int window_width, window_height, margin_x, margin_y;
++  int opposite_margin_x, opposite_margin_y;
++  GskTransform *front_transform, *back_transform;
++  gboolean is_rtl;
++
++  window_width = ceil (width * 0.5);
++  window_height = ceil (height * 0.5);
++  margin_x = floor (width * 0.15);
++  margin_y = floor (height * 0.15);
++  opposite_margin_x = width - window_width - margin_x;
++  opposite_margin_y = height - window_height - margin_y;
++  is_rtl = gtk_widget_get_direction (widget) == GTK_TEXT_DIR_RTL;
++
++  front_transform =
++    gsk_transform_translate (NULL, &GRAPHENE_POINT_INIT (is_rtl ? opposite_margin_x : margin_x,
++                                                         opposite_margin_y));
++  back_transform =
++    gsk_transform_translate (NULL, &GRAPHENE_POINT_INIT (is_rtl ? margin_x : opposite_margin_x,
++                                                         margin_y));
++
++  gtk_widget_allocate (self->picture, width, height, baseline, NULL);
++  gtk_widget_allocate (self->dark_window, window_width, window_height,
++                       baseline, back_transform);
++  gtk_widget_allocate (self->light_dark_window, window_width, window_height,
++                       baseline, front_transform);
++}
++
++static void
++cc_background_preview_class_init (CcBackgroundPreviewClass *klass)
++{
++  GObjectClass *object_class = G_OBJECT_CLASS (klass);
++  GtkWidgetClass *widget_class = GTK_WIDGET_CLASS (klass);
++
++  object_class->dispose = cc_background_preview_dispose;
++  object_class->finalize = cc_background_preview_finalize;
++  object_class->get_property = cc_background_preview_get_property;
++  object_class->set_property = cc_background_preview_set_property;
++
++  widget_class->get_request_mode = cc_background_preview_get_request_mode;
++  widget_class->measure = cc_background_preview_measure;
++  widget_class->size_allocate = cc_background_preview_size_allocate;
++
++  properties[PROP_IS_DARK] = g_param_spec_boolean ("is-dark",
++                                                   "Is dark",
++                                                   "Whether the preview is dark",
++                                                   FALSE,
++                                                   G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS);
++
++  properties[PROP_ITEM] = g_param_spec_object ("item",
++                                               "Item",
++                                               "Background item",
++                                               CC_TYPE_BACKGROUND_ITEM,
++                                               G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS);
++
++  g_object_class_install_properties (object_class, N_PROPS, properties);
++
++  gtk_widget_class_set_template_from_resource (widget_class, "/org/gnome/initial-setup/cc-background-preview.ui");
++
++  gtk_widget_class_bind_template_child (widget_class, CcBackgroundPreview, picture);
++  gtk_widget_class_bind_template_child (widget_class, CcBackgroundPreview, light_dark_window);
++  gtk_widget_class_bind_template_child (widget_class, CcBackgroundPreview, dark_window);
++
++  gtk_widget_class_set_css_name (widget_class, "background-preview");
++}
++
++static void
++cc_background_preview_init (CcBackgroundPreview *self)
++{
++  gtk_widget_init_template (GTK_WIDGET (self));
++
++  self->thumbnail_factory = gnome_desktop_thumbnail_factory_new (GNOME_DESKTOP_THUMBNAIL_SIZE_LARGE);
++}
++
++CcBackgroundItem*
++cc_background_preview_get_item (CcBackgroundPreview *self)
++{
++  g_return_val_if_fail (CC_IS_BACKGROUND_PREVIEW (self), NULL);
++
++  return self->item;
++}
++
++void
++cc_background_preview_set_item (CcBackgroundPreview *self,
++                                CcBackgroundItem    *item)
++{
++  g_autoptr(CcBackgroundPaintable) paintable = NULL;
++  CcBackgroundPaintFlags paint_flags;
++
++  g_return_if_fail (CC_IS_BACKGROUND_PREVIEW (self));
++  g_return_if_fail (CC_IS_BACKGROUND_ITEM (item));
++
++  if (!g_set_object (&self->item, item))
++    return;
++
++  paint_flags = self->is_dark ? CC_BACKGROUND_PAINT_DARK : CC_BACKGROUND_PAINT_LIGHT;
++
++  paintable = cc_background_paintable_new (self->thumbnail_factory,
++                                           item,
++                                           paint_flags,
++                                           THUMBNAIL_WIDTH,
++                                           THUMBNAIL_HEIGHT,
++                                           GTK_WIDGET (self));
++
++  gtk_picture_set_paintable (GTK_PICTURE (self->picture), GDK_PAINTABLE (paintable));
++
++  g_object_notify_by_pspec (G_OBJECT (self), properties[PROP_ITEM]);
++}
+diff --git a/gnome-initial-setup/pages/appearance/cc-background-preview.h b/gnome-initial-setup/pages/appearance/cc-background-preview.h
+new file mode 100644
+index 0000000..40393c0
+--- /dev/null
++++ b/gnome-initial-setup/pages/appearance/cc-background-preview.h
+@@ -0,0 +1,36 @@
++/* cc-background-preview.h
++ *
++ * Copyright 2019 Georges Basile Stavracas Neto <georges.stavracas@gmail.com>
++ *
++ * This program is free software: you can redistribute it and/or modify
++ * it under the terms of the GNU General Public License as published by
++ * the Free Software Foundation, either version 3 of the License, or
++ * (at your option) any later version.
++ *
++ * This program is distributed in the hope that it will be useful,
++ * but WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++ * GNU General Public License for more details.
++ *
++ * You should have received a copy of the GNU General Public License
++ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
++ *
++ * SPDX-License-Identifier: GPL-3.0-or-later
++ */
++
++#pragma once
++
++#include <gtk/gtk.h>
++
++#include "cc-background-item.h"
++
++G_BEGIN_DECLS
++
++#define CC_TYPE_BACKGROUND_PREVIEW (cc_background_preview_get_type())
++G_DECLARE_FINAL_TYPE (CcBackgroundPreview, cc_background_preview, CC, BACKGROUND_PREVIEW, GtkWidget)
++
++CcBackgroundItem* cc_background_preview_get_item (CcBackgroundPreview *self);
++void              cc_background_preview_set_item (CcBackgroundPreview *self,
++                                                  CcBackgroundItem    *item);
++
++G_END_DECLS
+diff --git a/gnome-initial-setup/pages/appearance/gis-appearance-page.blp b/gnome-initial-setup/pages/appearance/gis-appearance-page.blp
+new file mode 100644
+index 0000000..4c82b03
+--- /dev/null
++++ b/gnome-initial-setup/pages/appearance/gis-appearance-page.blp
+@@ -0,0 +1,149 @@
++using Gtk 4.0;
++using Adw 1;
++
++template $GisAppearancePage: $GisPage {
++  Adw.PreferencesPage {
++    Adw.PreferencesGroup {
++      $GisPageHeader header {
++        margin-top: 36;
++        title: _("Choose how Ubuntu looks");
++        subtitle: _("Personalize your desktop's appearance");
++        show-icon: false;
++        use-accessible-title: true;
++      }
++    }
++
++    Adw.PreferencesGroup {
++      title: _("Style");
++
++      Adw.PreferencesRow {
++        activatable: false;
++        focusable: false;
++
++        Adw.Clamp {
++          maximum-size: 400;
++          tightening-threshold: 300;
++
++          Grid {
++            column-homogeneous: true;
++            column-spacing: 24;
++            row-spacing: 12;
++            margin-start: 12;
++            margin-end: 12;
++            margin-top: 18;
++            margin-bottom: 12;
++            hexpand: true;
++
++            ToggleButton default_toggle {
++              toggled => $on_color_scheme_toggle_active_cb() swapped;
++
++              styles [
++                "background-preview-button",
++              ]
++
++              layout {
++                column: "0";
++                row: "0";
++              }
++
++              $CcBackgroundPreview default_preview {}
++            }
++
++            Label default_label {
++              label: _("_Default");
++              use-underline: true;
++              mnemonic-widget: default_toggle;
++
++              layout {
++                column: "0";
++                row: "1";
++              }
++            }
++
++            ToggleButton dark_toggle {
++              group: default_toggle;
++              toggled => $on_color_scheme_toggle_active_cb() swapped;
++
++              styles [
++                "background-preview-button",
++              ]
++
++              layout {
++                column: "1";
++                row: "0";
++              }
++
++              $CcBackgroundPreview dark_preview {
++                is-dark: true;
++              }
++            }
++
++            Label dark_label {
++              label: _("Da_rk");
++              use-underline: true;
++              mnemonic-widget: dark_toggle;
++
++              layout {
++                column: "1";
++                row: "1";
++              }
++            }
++          }
++        }
++      }
++    }
++
++    Adw.PreferencesGroup {
++      Label oled_label {
++        valign: start;
++        vexpand: true;
++        label: _("OLED screen detected. Dark style may save power.");
++        visible: false;
++        justify: center;
++        wrap: true;
++
++        styles [
++          "dim-label",
++        ]
++      }
++    }
++
++    Adw.PreferencesGroup {
++      title: _("Accent Color");
++
++      Adw.PreferencesRow {
++        activatable: false;
++        focusable: false;
++
++        Box accent_box {
++          spacing: 12;
++          margin-top: 12;
++          margin-bottom: 12;
++          halign: center;
++        }
++      }
++    }
++
++    Adw.PreferencesGroup {
++      $GisFocusableBin {
++        vexpand: true;
++        valign: end;
++        accessibility{
++          labelled-by: [
++            footer_label,
++          ];
++        }
++        Label footer_label {
++          accessible-role: none;
++          label: _("You can change this later in the Settings app");
++          justify: center;
++          wrap: true;
++
++          styles [
++            "dim-label",
++          ]
++        }
++      }
++    }
++  }
++}
+diff --git a/gnome-initial-setup/pages/appearance/gis-appearance-page.c b/gnome-initial-setup/pages/appearance/gis-appearance-page.c
+new file mode 100644
+index 0000000..2d6af2e
+--- /dev/null
++++ b/gnome-initial-setup/pages/appearance/gis-appearance-page.c
+@@ -0,0 +1,513 @@
++/* -*- mode: C; c-file-style: "gnu"; indent-tabs-mode: nil; -*- */
++/*
++ * Copyright (C) 2026 Canonical Ltd.
++ *
++ * This program is free software; you can redistribute it and/or
++ * modify it under the terms of the GNU General Public License as
++ * published by the Free Software Foundation; either version 2 of the
++ * License, or (at your option) any later version.
++ *
++ * This program is distributed in the hope that it will be useful, but
++ * WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++ * General Public License for more details.
++ *
++ * You should have received a copy of the GNU General Public License
++ * along with this program; if not, see <http://www.gnu.org/licenses/>.
++ */
++
++#define PAGE_ID "appearance"
++
++#define GNOME_DESKTOP_USE_UNSTABLE_API
++
++#include "config.h"
++#include "appearance-resources.h"
++#include "gis-appearance-page.h"
++#include "gis-page-header.h"
++
++#include "cc-background-preview.h"
++
++#include <glib.h>
++#include <glib-object.h>
++#include <gio/gio.h>
++#include <glib/gi18n.h>
++#include <glib/gstdio.h>
++#include <adwaita.h>
++#include <gdesktop-enums.h>
++
++#include <fcntl.h>
++#include <xf86drm.h>
++#include <xf86drmMode.h>
++
++#define INTERFACE_PATH_ID "org.gnome.desktop.interface"
++#define INTERFACE_ACCENT_COLOR_KEY "accent-color"
++#define INTERFACE_COLOR_SCHEME_KEY "color-scheme"
++#define INTERFACE_CURSOR_THEME_KEY "cursor-theme"
++#define INTERFACE_GTK_THEME_KEY "gtk-theme"
++#define INTERFACE_ICON_THEME_KEY "icon-theme"
++
++#define DEFAULT_ACCENT_COLOR "default"
++
++struct _GisAppearancePage
++{
++  GisPage parent;
++
++  GSettings *interface_settings;
++  GDBusProxy *shell_proxy;
++  GCancellable *cancellable;
++
++  GtkWidget *header;
++  GtkWidget *accent_box;
++  GtkWidget *oled_label;
++  GtkToggleButton *default_toggle;
++  GtkToggleButton *dark_toggle;
++};
++
++G_DEFINE_TYPE (GisAppearancePage, gis_appearance_page, GIS_TYPE_PAGE);
++
++static const char *
++get_color_tooltip (GDesktopAccentColor color)
++{
++  switch (color)
++    {
++    case G_DESKTOP_ACCENT_COLOR_BLUE:
++    /* TRANSLATORS: An accent color. */
++      return _("Blue");
++    case G_DESKTOP_ACCENT_COLOR_TEAL:
++    /* TRANSLATORS: An accent color. */
++      return _("Teal");
++    case G_DESKTOP_ACCENT_COLOR_GREEN:
++    /* TRANSLATORS: An accent color. */
++      return _("Green");
++    case G_DESKTOP_ACCENT_COLOR_YELLOW:
++    /* TRANSLATORS: An accent color. */
++      return _("Yellow");
++    case G_DESKTOP_ACCENT_COLOR_ORANGE:
++    /* TRANSLATORS: An accent color. */
++      return _("Orange");
++    case G_DESKTOP_ACCENT_COLOR_RED:
++    /* TRANSLATORS: An accent color. */
++      return _("Red");
++    case G_DESKTOP_ACCENT_COLOR_PINK:
++    /* TRANSLATORS: An accent color. */
++      return _("Pink");
++    case G_DESKTOP_ACCENT_COLOR_PURPLE:
++    /* TRANSLATORS: An accent color. */
++      return _("Purple");
++    case G_DESKTOP_ACCENT_COLOR_SLATE:
++    /* TRANSLATORS: An accent color. */
++      return _("Slate");
++    case G_DESKTOP_ACCENT_COLOR_BROWN:
++    /* TRANSLATORS: An accent color. */
++      return _("Warty Brown");
++    default:
++      g_assert_not_reached ();
++    }
++}
++
++static const char *
++get_untranslated_color (GDesktopAccentColor color)
++{
++  switch (color)
++    {
++    case G_DESKTOP_ACCENT_COLOR_BLUE:
++      return "blue";
++    case G_DESKTOP_ACCENT_COLOR_TEAL:
++      return "teal";
++    case G_DESKTOP_ACCENT_COLOR_GREEN:
++      return "green";
++    case G_DESKTOP_ACCENT_COLOR_YELLOW:
++      return "yellow";
++    case G_DESKTOP_ACCENT_COLOR_ORANGE:
++      return "orange";
++    case G_DESKTOP_ACCENT_COLOR_RED:
++      return "red";
++    case G_DESKTOP_ACCENT_COLOR_PINK:
++      return "pink";
++    case G_DESKTOP_ACCENT_COLOR_PURPLE:
++      return "purple";
++    case G_DESKTOP_ACCENT_COLOR_SLATE:
++      return "slate";
++    case G_DESKTOP_ACCENT_COLOR_BROWN:
++      return "brown";
++    default:
++      g_assert_not_reached ();
++    }
++}
++
++static void
++got_shell_proxy_cb (GObject      *source,
++                    GAsyncResult *res,
++                    gpointer      data)
++{
++  g_autoptr(GDBusProxy) proxy = NULL;
++  g_autoptr(GError) error = NULL;
++  GisAppearancePage *self = data;
++
++  if (!(proxy = g_dbus_proxy_new_for_bus_finish (res, &error)))
++    {
++      if (!g_error_matches (error, G_IO_ERROR, G_IO_ERROR_CANCELLED))
++        g_warning ("Error creating Shell proxy: %s", error->message);
++
++      return;
++    }
++
++  self->shell_proxy = g_steal_pointer (&proxy);
++}
++
++static void
++transition_screen (GisAppearancePage *self)
++{
++  if (!self->shell_proxy)
++    return;
++
++  g_dbus_proxy_call (self->shell_proxy,
++                     "ScreenTransition",
++                     NULL,
++                     G_DBUS_CALL_FLAGS_NONE,
++                     -1,
++                     self->cancellable,
++                     NULL, NULL);
++}
++
++static void
++update_yaru_accent_settings (GisAppearancePage *self)
++{
++  g_autoptr(GString) gtk_theme = NULL;
++  g_autoptr(GString) icon_theme = NULL;
++  g_autoptr(GString) gedit_theme = NULL;
++  g_autofree char *current_gtk_theme = NULL;
++  g_autofree char *current_icon_theme = NULL;
++  g_autofree char *yaru_accent = NULL;
++  GDesktopColorScheme scheme;
++
++  g_object_get (G_OBJECT (adw_style_manager_get_default ()), "yaru-accent",
++                &yaru_accent, NULL);
++  if (yaru_accent == NULL)
++    return;
++
++  gtk_theme = g_string_new ("Yaru");
++  icon_theme = g_string_new ("Yaru");
++  gedit_theme = g_string_new ("Yaru");
++
++  if (!g_str_equal (yaru_accent, DEFAULT_ACCENT_COLOR))
++    {
++      g_string_append_printf (gtk_theme, "-%s", yaru_accent);
++      g_string_append_printf (icon_theme, "-%s", yaru_accent);
++    }
++
++  scheme = g_settings_get_enum (self->interface_settings, INTERFACE_COLOR_SCHEME_KEY);
++  if (scheme == G_DESKTOP_COLOR_SCHEME_PREFER_DARK)
++    {
++      g_string_append (gtk_theme, "-dark");
++      g_string_append (icon_theme, "-dark");
++      g_string_append (gedit_theme, "-dark");
++    }
++
++  current_gtk_theme = g_settings_get_string (self->interface_settings, INTERFACE_GTK_THEME_KEY);
++  if (g_strcmp0 (current_gtk_theme, gtk_theme->str) != 0)
++    g_settings_set_string (self->interface_settings, INTERFACE_GTK_THEME_KEY, gtk_theme->str);
++
++  current_icon_theme = g_settings_get_string (self->interface_settings, INTERFACE_ICON_THEME_KEY);
++
++  if (!current_icon_theme ||
++      g_str_has_prefix (current_icon_theme, "Yaru"))
++    g_settings_set_string (self->interface_settings, INTERFACE_ICON_THEME_KEY, icon_theme->str);
++}
++
++static void
++on_accent_color_toggled_cb (GisAppearancePage *self,
++                            GtkToggleButton   *toggle)
++{
++  GDesktopAccentColor accent_color_from_key;
++  GDesktopAccentColor accent_color = GPOINTER_TO_INT (g_object_get_data (G_OBJECT (toggle), "accent-color"));
++
++  if (!gtk_toggle_button_get_active (toggle))
++    return;
++
++  accent_color_from_key = g_settings_get_enum (self->interface_settings,
++                                                INTERFACE_ACCENT_COLOR_KEY);
++
++  if (accent_color == accent_color_from_key)
++    return;
++
++  transition_screen (self);
++
++  g_settings_set_enum (self->interface_settings,
++                       INTERFACE_ACCENT_COLOR_KEY,
++                       accent_color);
++
++  update_yaru_accent_settings (self);
++}
++
++static void
++setup_accent_color_toggles (GisAppearancePage *self)
++{
++  GDesktopAccentColor accent_color = g_settings_get_enum (self->interface_settings, INTERFACE_ACCENT_COLOR_KEY);
++  GDesktopAccentColor i;
++
++  for (i = G_DESKTOP_ACCENT_COLOR_BLUE;
++       i <= G_DESKTOP_ACCENT_COLOR_SLATE || i == G_DESKTOP_ACCENT_COLOR_BROWN; i++)
++    {
++      GtkWidget *button = GTK_WIDGET (gtk_toggle_button_new ());
++      GtkToggleButton *grouping_button = GTK_TOGGLE_BUTTON (gtk_widget_get_first_child (self->accent_box));
++
++      gtk_widget_set_tooltip_text (button, get_color_tooltip (i));
++      gtk_widget_add_css_class (button, "accent-button");
++      gtk_widget_add_css_class (button, get_untranslated_color (i));
++      g_object_set_data (G_OBJECT (button), "accent-color", GINT_TO_POINTER (i));
++      g_signal_connect_object (button, "toggled",
++                               G_CALLBACK (on_accent_color_toggled_cb),
++                               self,
++                               G_CONNECT_SWAPPED);
++
++      if (grouping_button != NULL)
++        gtk_toggle_button_set_group (GTK_TOGGLE_BUTTON (button), grouping_button);
++
++      if (i == accent_color)
++        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (button), TRUE);
++
++      gtk_box_append (GTK_BOX (self->accent_box), button);
++
++      if (i == G_DESKTOP_ACCENT_COLOR_SLATE)
++        i = G_DESKTOP_ACCENT_COLOR_BROWN-1;
++    }
++}
++
++static void
++load_custom_css (GisAppearancePage *self)
++{
++  g_autoptr(GtkCssProvider) provider = NULL;
++
++  provider = gtk_css_provider_new ();
++  gtk_css_provider_load_from_resource (provider, "/org/gnome/initial-setup/preview.css");
++  gtk_style_context_add_provider_for_display (gdk_display_get_default (),
++                                              GTK_STYLE_PROVIDER (provider),
++                                              GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
++}
++
++
++static void
++on_color_scheme_toggle_active_cb (GisAppearancePage *page)
++{
++  GDesktopColorScheme color_scheme;
++
++  transition_screen (page);
++
++  if (gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (page->dark_toggle)))
++    color_scheme = G_DESKTOP_COLOR_SCHEME_PREFER_DARK;
++  else
++    color_scheme = G_DESKTOP_COLOR_SCHEME_DEFAULT;
++
++  g_settings_set_enum (page->interface_settings,
++                       INTERFACE_COLOR_SCHEME_KEY,
++                       color_scheme);
++
++  update_yaru_accent_settings (page);
++}
++
++G_DEFINE_AUTOPTR_CLEANUP_FUNC (drmModeRes, drmModeFreeResources);
++G_DEFINE_AUTO_CLEANUP_FREE_FUNC (drmModePropertyPtr, drmModeFreeProperty, NULL);
++G_DEFINE_AUTOPTR_CLEANUP_FUNC (drmModeConnector, drmModeFreeConnector);
++
++gboolean
++has_oled_panel (void)
++{
++  int i, j, k;
++  char path[48];
++
++  /* Iterate over /dev/dri/card* devices */
++  for (i = 0; i < 16; i++)
++    {
++      g_autofd int fd = -1;
++      g_autoptr (drmModeRes) resources = NULL;
++
++      snprintf (path, sizeof (path), "/dev/dri/card%d", i);
++      fd = open (path, O_RDWR | O_CLOEXEC);
++      if (fd < 0)
++        continue;
++
++      resources = drmModeGetResources (fd);
++      if (!resources)
++        continue;
++
++      for (j = 0; j < resources->count_connectors; j++)
++        {
++          g_autoptr (drmModeConnector) connector = NULL;
++
++          connector = drmModeGetConnector (fd, resources->connectors[j]);
++          if (!connector)
++            continue;
++
++          if (connector->connection == DRM_MODE_CONNECTED)
++            {
++              for (k = 0; k < connector->count_props; k++)
++                {
++                  g_auto(drmModePropertyPtr) prop = NULL;
++
++                  prop = drmModeGetProperty (fd, connector->props[k]);
++                  if (!prop)
++                    continue;
++
++                  if (g_str_equal (prop->name, "panel_type"))
++                    {
++                      if (connector->prop_values[k] == 1)
++                        return TRUE;
++                    }
++                }
++            }
++        }
++    }
++
++  return FALSE;
++}
++
++static void
++check_has_oled_page_thread (GTask *task,
++                            gpointer source_object,
++                            gpointer task_data,
++                            GCancellable *cancellable)
++{
++  g_task_return_boolean (task, has_oled_panel ());
++}
++
++static void
++on_oled_check_done (GObject      *source,
++                    GAsyncResult *res,
++                    gpointer      data)
++{
++  GisAppearancePage *page = GIS_APPEARANCE_PAGE (source);
++  g_autoptr (GError) error = NULL;
++  gboolean has_oled;
++
++  has_oled = g_task_propagate_boolean (G_TASK (res), &error);
++  if (error)
++    {
++      if (!g_error_matches (error, G_IO_ERROR, G_IO_ERROR_CANCELLED))
++        g_warning ("Error checking for OLED panel: %s", error->message);
++
++      return;
++    }
++
++  gtk_widget_set_visible (page->oled_label, has_oled);
++}
++
++static void
++gis_appearance_page_shown (GisPage *gis_page)
++{
++  GisAppearancePage *page = GIS_APPEARANCE_PAGE (gis_page);
++  gtk_widget_grab_focus (GTK_WIDGET (page->header));
++}
++
++static void
++gis_appearance_page_constructed (GObject *object)
++{
++  GisAppearancePage *page = GIS_APPEARANCE_PAGE (object);
++  GDesktopColorScheme color_scheme;
++  g_autoptr (GTask) task = NULL;
++
++  G_OBJECT_CLASS (gis_appearance_page_parent_class)->constructed (object);
++
++  page->interface_settings = g_settings_new (INTERFACE_PATH_ID);
++
++  load_custom_css (page);
++  setup_accent_color_toggles (page);
++
++  color_scheme = g_settings_get_enum (page->interface_settings,
++                                      INTERFACE_COLOR_SCHEME_KEY);
++
++  if (color_scheme == G_DESKTOP_COLOR_SCHEME_PREFER_DARK)
++    {
++      gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (page->dark_toggle), TRUE);
++    }
++  else
++    {
++      gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (page->default_toggle), TRUE);
++    }
++
++  page->cancellable = g_cancellable_new ();
++  g_dbus_proxy_new_for_bus (G_BUS_TYPE_SESSION,
++                            G_DBUS_PROXY_FLAGS_NONE,
++                            NULL,
++                            "org.gnome.Shell",
++                            "/org/gnome/Shell",
++                            "org.gnome.Shell",
++                            page->cancellable,
++                            got_shell_proxy_cb,
++                            page);
++
++  g_signal_connect_object (adw_style_manager_get_default (),
++                           "notify::yaru-accent",
++                           G_CALLBACK (update_yaru_accent_settings),
++                           page,
++                           G_CONNECT_SWAPPED);
++
++  task = g_task_new (page, NULL, on_oled_check_done, NULL);
++  g_task_set_return_on_cancel (task, TRUE);
++  g_task_run_in_thread (task, check_has_oled_page_thread);
++
++  gis_page_set_complete (GIS_PAGE (page), TRUE);
++}
++
++static void
++gis_appearance_page_dispose (GObject *object)
++{
++  GisAppearancePage *page = GIS_APPEARANCE_PAGE (object);
++
++  g_cancellable_cancel (page->cancellable);
++
++  g_clear_object (&page->cancellable);
++  g_clear_object (&page->interface_settings);
++  g_clear_object (&page->shell_proxy);
++
++  G_OBJECT_CLASS (gis_appearance_page_parent_class)->dispose (object);
++}
++
++static void
++gis_appearance_page_locale_changed (GisPage *page)
++{
++  gis_page_set_title (GIS_PAGE (page), _("Appearance"));
++}
++
++static void
++gis_appearance_page_class_init (GisAppearancePageClass *klass)
++{
++  GisPageClass *page_class = GIS_PAGE_CLASS (klass);
++  GObjectClass *object_class = G_OBJECT_CLASS (klass);
++
++  gtk_widget_class_set_template_from_resource (GTK_WIDGET_CLASS (klass),
++                                               "/org/gnome/initial-setup/gis-appearance-page.ui");
++
++  gtk_widget_class_bind_template_child (GTK_WIDGET_CLASS (klass), GisAppearancePage, header);
++  gtk_widget_class_bind_template_child (GTK_WIDGET_CLASS (klass), GisAppearancePage, accent_box);
++  gtk_widget_class_bind_template_child (GTK_WIDGET_CLASS (klass), GisAppearancePage, default_toggle);
++  gtk_widget_class_bind_template_child (GTK_WIDGET_CLASS (klass), GisAppearancePage, dark_toggle);
++  gtk_widget_class_bind_template_child (GTK_WIDGET_CLASS (klass), GisAppearancePage, oled_label);
++
++  gtk_widget_class_bind_template_callback (GTK_WIDGET_CLASS (klass), on_color_scheme_toggle_active_cb);
++
++  page_class->page_id = PAGE_ID;
++  page_class->locale_changed = gis_appearance_page_locale_changed;
++  page_class->shown = gis_appearance_page_shown;
++  object_class->constructed = gis_appearance_page_constructed;
++  object_class->dispose = gis_appearance_page_dispose;
++}
++
++static void
++gis_appearance_page_init (GisAppearancePage *page)
++{
++  g_resources_register (appearance_get_resource ());
++  g_type_ensure (GIS_TYPE_PAGE_HEADER);
++  g_type_ensure (CC_TYPE_BACKGROUND_PREVIEW);
++
++  gtk_widget_init_template (GTK_WIDGET (page));
++}
++
++GisPage *
++gis_prepare_appearance_page (GisDriver *driver)
++{
++  return g_object_new (GIS_TYPE_APPEARANCE_PAGE,
++                       "driver", driver,
++                       NULL);
++}
++
+diff --git a/gnome-initial-setup/pages/appearance/gis-appearance-page.h b/gnome-initial-setup/pages/appearance/gis-appearance-page.h
+new file mode 100644
+index 0000000..03b514a
+--- /dev/null
++++ b/gnome-initial-setup/pages/appearance/gis-appearance-page.h
+@@ -0,0 +1,32 @@
++/* -*- mode: C; c-file-style: "gnu"; indent-tabs-mode: nil; -*- */
++/*
++ * Copyright (C) 2026 Canonical Ltd.
++ *
++ * This program is free software; you can redistribute it and/or
++ * modify it under the terms of the GNU General Public License as
++ * published by the Free Software Foundation; either version 2 of the
++ * License, or (at your option) any later version.
++ *
++ * This program is distributed in the hope that it will be useful, but
++ * WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++ * General Public License for more details.
++ *
++ * You should have received a copy of the GNU General Public License
++ * along with this program; if not, see <http://www.gnu.org/licenses/>.
++ */
++
++#pragma once
++
++#include "gnome-initial-setup.h"
++
++G_BEGIN_DECLS
++
++#define GIS_TYPE_APPEARANCE_PAGE (gis_appearance_page_get_type ())
++G_DECLARE_FINAL_TYPE (GisAppearancePage, gis_appearance_page, GIS, APPEARANCE_PAGE, GisPage)
++
++GType gis_appearance_page_get_type (void);
++
++GisPage *gis_prepare_appearance_page (GisDriver *driver);
++
++G_END_DECLS
+diff --git a/gnome-initial-setup/pages/appearance/meson.build b/gnome-initial-setup/pages/appearance/meson.build
+new file mode 100644
+index 0000000..17bfaaf
+--- /dev/null
++++ b/gnome-initial-setup/pages/appearance/meson.build
+@@ -0,0 +1,54 @@
++blueprint_compiler = find_program('blueprint-compiler')
++
++gsettings_desktop_dep = dependency('gsettings-desktop-schemas', version: '>= 3.37.1')
++
++enum_sources = gnome.mkenums_simple(
++    'cc-background-enum-types',
++    sources: files('cc-background-item.h', 'cc-background-paintable.h'),
++    install_header: false,
++)
++
++gdesktop_enums_header = files(
++    gsettings_desktop_dep.get_variable(pkgconfig: 'prefix') +
++        '/include/gsettings-desktop-schemas/gdesktop-enums.h'
++)
++add_project_arguments('-I' +
++    meson.build_root() / meson.current_source_dir(), language: 'c')
++
++enum_sources += gnome.mkenums_simple(
++    'gdesktop-enums-types',
++    sources: gdesktop_enums_header,
++    identifier_prefix: 'GDesktop',
++    symbol_prefix: 'g_desktop',
++    install_header: false,
++)
++
++blueprints = custom_target(
++    'appearance-ui-files',
++    input: files(
++        'gis-appearance-page.blp',
++        'cc-background-preview.blp',
++    ),
++    output: '.',
++    command: [blueprint_compiler,  'batch-compile', '--minify', '@OUTPUT@', '@CURRENT_SOURCE_DIR@', '@INPUT@'],
++)
++
++sources += gnome.compile_resources(
++    'appearance-resources',
++    files('appearance.gresource.xml'),
++    c_name: 'appearance',
++    dependencies: blueprints,
++)
++
++sources += enum_sources
++
++sources += files(
++    'gis-appearance-page.c',
++    'gis-appearance-page.h',
++    'cc-background-item.c',
++    'cc-background-item.h',
++    'cc-background-paintable.c',
++    'cc-background-paintable.h',
++    'cc-background-preview.c',
++    'cc-background-preview.h',
++)
+diff --git a/gnome-initial-setup/pages/appearance/preview.css b/gnome-initial-setup/pages/appearance/preview.css
+new file mode 100644
+index 0000000..4c49523
+--- /dev/null
++++ b/gnome-initial-setup/pages/appearance/preview.css
+@@ -0,0 +1,180 @@
++background-preview {
++  border-radius: 6px;
++}
++
++background-preview .window {
++  border-radius: 6px;
++  box-shadow: 0 1px 4px 1px color-mix(in srgb, black 13%, transparent),
++              0 1px 10px 5px color-mix(in srgb, black 9%, transparent),
++              0 3px 16px 8px color-mix(in srgb, black 4%, transparent),
++              0 0 0 1px color-mix(in srgb, black 5%, transparent);
++
++  --window-bg-color: #fafafa;
++  --headerbar-bg-color: white;
++  --headerbar-shade-color: rgb(0 0 0 / 12%);
++  --sidebar-bg-color: #ebebeb;
++  --sidebar-backdrop-color: #f2f2f2;
++  --sidebar-border-color: rgb(0 0 0 / 7%);
++}
++
++background-preview .window.dark {
++  --window-bg-color: #242424;
++  --headerbar-bg-color: #303030;
++  --headerbar-shade-color: rgb(0 0 0 / 36%);
++  --sidebar-bg-color: #303030;
++  --sidebar-backdrop-color: #2a2a2a;
++  --sidebar-border-color: rgb(0 0 0 / 36%);
++}
++
++background-preview .window .header-bar {
++  min-height: 15px;
++  box-shadow: 0 1px color-mix(in srgb, var(--headerbar-shade-color) 50%, transparent),
++              0 2px 4px color-mix(in srgb, var(--headerbar-shade-color) 50%, transparent);
++}
++
++background-preview .window.front .header-bar {
++  background-color: var(--headerbar-bg-color);
++}
++
++background-preview .window .sidebar {
++  background-color: var(--sidebar-backdrop-color);
++  min-width: 30px;
++  border: none;
++}
++
++background-preview .window.front .sidebar {
++  background-color: var(--sidebar-bg-color);
++}
++
++background-preview .window .sidebar:dir(ltr) {
++  box-shadow: inset -1px 0 var(--sidebar-border-color);
++}
++
++background-preview .window .sidebar:dir(rtl) {
++  border: none;
++  box-shadow: inset 1px 0 var(--sidebar-border-color);
++}
++
++.background-preview-button {
++  background: none;
++  border-radius: 9px;
++  padding: 3px;
++  box-shadow: none;
++  outline: none;
++}
++
++.background-preview-button:checked {
++  box-shadow: 0 0 0 3px var(--accent-bg-color);
++}
++
++.background-preview-button:focus:focus-visible {
++  box-shadow: 0 0 0 3px var(--accent-bg-color), 0 0 0 6px color-mix(in srgb, var(--accent-color) 30%, transparent);
++}
++
++.background-preview-button:checked:focus:focus-visible {
++  box-shadow: 0 0 0 3px var(--accent-color), 0 0 0 6px color-mix(in srgb, var(--accent-color) 30%, transparent);
++}
++
++.background-flowbox > flowboxchild {
++  background: none;
++  border-radius: 9px;
++}
++
++.background-thumbnail {
++  border-radius: 6px;
++}
++
++.slideshow-icon {
++  color: white;
++  -gtk-icon-shadow: 0 1px 2px rgba(0, 0, 0, 0.33);
++  margin: 8px;
++}
++
++.selected-check {
++  color: var(--accent-fg-color);
++  background: var(--accent-bg-color);
++  border-radius: 100px;
++  padding: 2px;
++  opacity: 0;
++  margin: 6px;
++  transition-duration: 200ms;
++}
++
++flowboxchild.active-item .selected-check {
++  opacity: 1;
++}
++
++.remove-button {
++  padding: 2px;
++  min-width: 0;
++  min-height: 0;
++  margin: 6px;
++}
++
++.accent-button {
++  border-radius: 9999px;
++  padding: 3px;
++  background: var(--accent-bg-color);
++  min-width: 24px;
++  min-height: 24px;
++  outline: none;
++  background-clip: content-box;
++  box-shadow: none;
++}
++
++.accent-button:checked {
++  box-shadow: 0 0 0 3px var(--accent-bg-color);
++}
++
++.accent-button:focus:focus-visible {
++  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-color) 30%, transparent);
++}
++
++.accent-button:checked:focus:focus-visible {
++  box-shadow: 0 0 0 3px var(--accent-bg-color),
++              0 0 0 6px color-mix(in srgb, var(--accent-color) 30%, transparent);
++}
++
++.blue, .teal, .green, .yellow, .orange, .red, .pink, .purple, .slate, .brown {
++  --accent-color: oklab(from var(--accent-bg-color) var(--standalone-color-oklab));
++}
++
++.blue {
++  --accent-bg-color: var(--accent-blue);
++}
++
++.teal {
++  --accent-bg-color: var(--accent-teal);
++}
++
++.green {
++  --accent-bg-color: var(--accent-green);
++}
++
++.yellow {
++  --accent-bg-color: var(--accent-yellow);
++}
++
++.orange {
++  --accent-bg-color: var(--accent-orange);
++}
++
++.red {
++  --accent-bg-color: var(--accent-red);
++}
++
++.pink {
++  --accent-bg-color: var(--accent-pink);
++}
++
++.purple {
++  --accent-bg-color: var(--accent-purple);
++}
++
++.slate {
++  --accent-bg-color: var(--accent-slate);
++}
++
++.brown {
++  --accent-bg-color: var(--accent-brown);
++}
+diff --git a/gnome-initial-setup/pages/meson.build b/gnome-initial-setup/pages/meson.build
+index adcdbd3..bb0b57b 100644
+--- a/gnome-initial-setup/pages/meson.build
++++ b/gnome-initial-setup/pages/meson.build
+@@ -1,5 +1,6 @@
+ pages = [
+    'account',
++   'appearance',
+    'eula',
+    'language',
+    'keyboard',
+diff --git a/po/POTFILES.in b/po/POTFILES.in
+index 33c94fe..6536575 100644
+--- a/po/POTFILES.in
++++ b/po/POTFILES.in
+@@ -54,4 +54,7 @@ gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp
+ gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.blp
+ gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-services-page.blp
+ gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c
++gnome-initial-setup/pages/appearance/gis-appearance-page.c
++gnome-initial-setup/pages/appearance/gis-appearance-page.blp
++gnome-initial-setup/pages/appearance/cc-background-preview.blp
+ po/EXTRA_STRINGS.sh

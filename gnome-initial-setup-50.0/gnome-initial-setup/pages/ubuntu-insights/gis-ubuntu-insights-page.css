@@ -1,0 +1,8 @@
+/* Emulate spacing of a label */
+.link-caption {
+  padding: 0;
+  box-shadow: none;
+  border-radius: 0px;
+  min-height: 0px;
+  min-width: 0px;
+}

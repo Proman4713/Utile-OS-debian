@@ -1,0 +1,237 @@
+From: =?utf-8?b?Ik1hcmNvIFRyZXZpc2FuIChUcmV2acOxbyki?= <mail@3v1n0.net>
+Date: Fri, 6 Feb 2026 03:42:01 +0100
+Subject: gis-webkit: Show a QR Code to open links when lacking network of
+ webkit
+
+In case we are offline or webkit is not available we are hiding some
+links, and in some cases (like the privacy policy links) we should
+always show them to be compliant.
+
+So, in case GIS is configured without WebKit or the network connection
+is not available, show a qrcode instead so that we can still provide a
+way to open the links in other devices
+
+Origin: https://gitlab.gnome.org/GNOME/gnome-initial-setup/-/merge_requests/309
+---
+ gnome-initial-setup/gis-webkit.c                   | 112 ++++++++++++++++++++-
+ gnome-initial-setup/meson.build                    |   1 +
+ .../pages/privacy/gis-privacy-page.c               |   4 -
+ .../pages/software/gis-software-page.c             |   4 -
+ 4 files changed, 111 insertions(+), 10 deletions(-)
+
+diff --git a/gnome-initial-setup/gis-webkit.c b/gnome-initial-setup/gis-webkit.c
+index 73b46c1..b6557a7 100644
+--- a/gnome-initial-setup/gis-webkit.c
++++ b/gnome-initial-setup/gis-webkit.c
+@@ -20,11 +20,110 @@
+ #include "gis-webkit.h"
+ 
+ #include <glib/gi18n.h>
++#include <adwaita.h>
++#include <gnome-qr-gtk/gnome-qr-widget.h>
+ 
+ #ifdef HAVE_WEBKITGTK
+ #include <webkit/webkit.h>
+ #endif
+ 
++gboolean
++ignore_uri_activation (GtkLabel    *label,
++                       const gchar *uri,
++                       GtkWidget   *any_widget)
++{
++  return TRUE;
++}
++
++static gboolean
++gis_show_qr_code_dialog (const gchar *uri,
++                         GtkWidget   *parent,
++                         GtkLabel    *maybe_label)
++{
++  GtkWidget *headerbar;
++  AdwDialog *dialog;
++  GtkWidget *vbox;
++  GtkWidget *qr_box;
++  GtkWidget *qr_widget;
++  GtkWidget *uri_label;
++
++  dialog = adw_dialog_new ();
++  adw_dialog_set_can_close (dialog, TRUE);
++  adw_dialog_set_title (dialog, _("Scan the QR Code…"));
++
++  qr_widget = g_object_new (GNOME_TYPE_QR_WIDGET,
++                            "text", uri,
++                            "focusable", TRUE,
++                            "size", 300,
++                            "margin-top", 30,
++                            "margin-start", 30,
++                            "margin-end", 30,
++                            NULL);
++
++  qr_box = g_object_new (GTK_TYPE_BOX,
++                         "orientation", GTK_ORIENTATION_VERTICAL,
++                         "spacing", 10,
++                         "margin-start", 30,
++                         "margin-end", 30,
++                         "margin-top", 10,
++                         "margin-bottom", 10,
++                         NULL);
++  gtk_widget_add_css_class (qr_box, "card");
++  gtk_box_append (GTK_BOX (qr_box), qr_widget);
++
++  uri_label = g_object_new (GTK_TYPE_LABEL,
++                            "label", uri,
++                            "ellipsize", PANGO_ELLIPSIZE_MIDDLE,
++                            "max-width-chars", 35,
++                            "margin-bottom", 12,
++                            "margin-start", 12,
++                            "margin-end", 12,
++                            NULL);
++
++  gtk_widget_add_css_class (uri_label, "caption");
++  gtk_widget_add_css_class (uri_label, "monospace");
++  gtk_widget_set_tooltip_text (uri_label, uri);
++  gtk_box_append (GTK_BOX (qr_box), GTK_WIDGET (uri_label));
++
++  vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
++  gtk_widget_set_margin_bottom(GTK_WIDGET (vbox), 18);
++  gtk_box_append (GTK_BOX (vbox), qr_box);
++
++  if (GTK_IS_LABEL (maybe_label))
++    {
++      GtkWidget *label;
++
++      label = g_object_new (GTK_TYPE_LABEL,
++                            "label", gtk_label_get_label (maybe_label),
++                            "use-markup", gtk_label_get_use_markup (maybe_label),
++                            "wrap-mode", PANGO_WRAP_WORD,
++                            "max-width-chars", 35,
++                            "wrap", TRUE,
++                            "justify", GTK_JUSTIFY_CENTER,
++                            "margin-top", 12,
++                            "margin-start", 12,
++                            "margin-end", 12,
++                            NULL);
++
++      gtk_widget_add_css_class (label, "caption");
++      g_signal_connect (label, "activate-link", G_CALLBACK (ignore_uri_activation), NULL);
++
++      gtk_box_append (GTK_BOX (vbox), GTK_WIDGET (label));
++    }
++
++  GtkWidget *toolbar_view = adw_toolbar_view_new ();
++  adw_toolbar_view_set_content (ADW_TOOLBAR_VIEW (toolbar_view), vbox);
++  headerbar = adw_header_bar_new ();
++  adw_toolbar_view_add_top_bar (ADW_TOOLBAR_VIEW (toolbar_view), headerbar);
++
++  adw_dialog_set_child (dialog, toolbar_view);
++  adw_dialog_set_follows_content_size(dialog, TRUE);
++
++  adw_dialog_present (dialog, GTK_WIDGET (gtk_widget_get_root (parent)));
++
++  return TRUE;
++}
++
+ #ifdef HAVE_WEBKITGTK
+ static void
+ notify_progress_cb (GObject    *object,
+@@ -76,12 +175,21 @@ gis_activate_link (GtkLabel    *label,
+                    const gchar *uri,
+                    GtkWidget   *any_widget)
+ {
++  GNetworkMonitor *monitor;
+   GtkWidget *headerbar;
+   GtkWidget *dialog;
+   GtkWidget *overlay;
+   GtkWidget *view;
+   GtkWidget *progress_bar;
+ 
++  monitor = g_network_monitor_get_default ();
++  if (!g_str_has_prefix (uri, "file:") &&
++      !g_network_monitor_get_network_available (monitor))
++    {
++      gis_show_qr_code_dialog (uri, any_widget, label);
++      return TRUE;
++    }
++
+   headerbar = gtk_header_bar_new ();
+   gtk_header_bar_set_show_title_buttons (GTK_HEADER_BAR (headerbar), TRUE);
+ 
+@@ -125,7 +233,7 @@ gis_activate_link (GtkLabel    *label,
+                    const gchar *uri,
+                    GtkWidget   *any_widget)
+ {
+-  /* Fall back to default handler */
+-  return FALSE;
++  gis_show_qr_code_dialog (uri, any_widget, label);
++  return TRUE;
+ }
+ #endif
+diff --git a/gnome-initial-setup/meson.build b/gnome-initial-setup/meson.build
+index e88acb5..1ce94b7 100644
+--- a/gnome-initial-setup/meson.build
++++ b/gnome-initial-setup/meson.build
+@@ -41,6 +41,7 @@ dependencies = [
+     dependency ('accountsservice'),
+     geocode_glib_2_dep,
+     dependency ('gnome-desktop-4'),
++    dependency ('gnome-qr-gtk-4'),
+     dependency ('gsettings-desktop-schemas', version: '>= 3.37.1'),
+     dependency ('fontconfig'),
+     dependency ('gtk4', version: '>= 4.17', fallback: ['gtk4', 'libgtk_dep']),
+diff --git a/gnome-initial-setup/pages/privacy/gis-privacy-page.c b/gnome-initial-setup/pages/privacy/gis-privacy-page.c
+index 75528e7..d36e2aa 100644
+--- a/gnome-initial-setup/pages/privacy/gis-privacy-page.c
++++ b/gnome-initial-setup/pages/privacy/gis-privacy-page.c
+@@ -54,14 +54,11 @@ update_os_data (GisPrivacyPage *page)
+ {
+   g_autofree char *name = g_get_os_info (G_OS_INFO_KEY_NAME);
+   g_autofree char *subtitle = NULL;
+-#ifdef HAVE_WEBKITGTK
+   g_autofree char *privacy_policy = g_get_os_info (G_OS_INFO_KEY_PRIVACY_POLICY_URL);
+-#endif
+ 
+   if (!name)
+     return FALSE;
+ 
+-#ifdef HAVE_WEBKITGTK
+   if (privacy_policy)
+     {
+       /* Translators: the first parameter here is the name of a distribution,
+@@ -74,7 +71,6 @@ update_os_data (GisPrivacyPage *page)
+ 
+       return TRUE;
+     }
+-#endif
+ 
+   /* Translators: the parameter here is the name of a distribution,
+    * like "Fedora" or "Ubuntu".
+diff --git a/gnome-initial-setup/pages/software/gis-software-page.c b/gnome-initial-setup/pages/software/gis-software-page.c
+index 60afe38..cda2c98 100644
+--- a/gnome-initial-setup/pages/software/gis-software-page.c
++++ b/gnome-initial-setup/pages/software/gis-software-page.c
+@@ -72,7 +72,6 @@ should_show_software_page (void)
+   return has_fedora_third_party != NULL;
+ }
+ 
+-#ifdef HAVE_WEBKITGTK
+ static char *
+ external_sources_link (void)
+ {
+@@ -80,7 +79,6 @@ external_sources_link (void)
+     return "https://docs.fedoraproject.org/en-US/workstation-working-group/third-party-repos/";
+   return NULL;
+ }
+-#endif
+ 
+ static gboolean
+ gis_software_page_apply (GisPage      *gis_page,
+@@ -120,9 +118,7 @@ gis_software_page_locale_changed (GisPage *gis_page)
+   g_autofree char *subtitle = NULL;
+   const char *link = NULL;
+ 
+-#ifdef HAVE_WEBKITGTK
+   link = external_sources_link ();
+-#endif
+ 
+   gis_page_set_title (GIS_PAGE (page), _("Third-Party Repositories"));
+   if (link != NULL)

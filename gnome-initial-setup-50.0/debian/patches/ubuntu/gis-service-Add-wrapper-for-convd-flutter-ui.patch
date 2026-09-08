@@ -1,0 +1,54 @@
+From: Sergio Costas Rodriguez <sergio.costas@canonical.com>
+Date: Thu, 21 Mar 2024 13:02:31 +0100
+Subject: gis-service: Add wrapper for convd-flutter-ui
+
+This patch adds a simple wrapper that tries to call
+convd/flutter ui. If it doesn't exist, it will call the original
+gnome-initial-setup.
+---
+ data/gnome-initial-setup-wrapper    | 12 ++++++++++++
+ data/gnome-initial-setup.service.in |  2 +-
+ data/meson.build                    |  2 ++
+ 3 files changed, 15 insertions(+), 1 deletion(-)
+ create mode 100755 data/gnome-initial-setup-wrapper
+
+diff --git a/data/gnome-initial-setup-wrapper b/data/gnome-initial-setup-wrapper
+new file mode 100755
+index 0000000..0e276f5
+--- /dev/null
++++ b/data/gnome-initial-setup-wrapper
+@@ -0,0 +1,12 @@
++#!/bin/bash
++
++CONVD_WRAPPER=/usr/libexec/launch-desktop-provision-init
++
++if [ -f "${CONVD_WRAPPER}" ]; then
++# call convd wrapper passing as first parameter the full path to
++# the original gnome-initial-setup
++    exec "${CONVD_WRAPPER}" "$@"
++else
++    # if the wrapper doesn't exist, launch the original gnome-initial-setup
++    exec "$@"
++fi
+diff --git a/data/gnome-initial-setup.service.in b/data/gnome-initial-setup.service.in
+index bb0af2e..ade7379 100644
+--- a/data/gnome-initial-setup.service.in
++++ b/data/gnome-initial-setup.service.in
+@@ -8,6 +8,6 @@ After=gnome-session.target
+ 
+ [Service]
+ Type=simple
+-ExecStart=@libexecdir@/gnome-initial-setup
++ExecStart=@libexecdir@/gnome-initial-setup-wrapper @libexecdir@/gnome-initial-setup
+ ExecStopPost=-@libexecdir@/gnome-session-ctl --shutdown
+ Restart=no
+diff --git a/data/meson.build b/data/meson.build
+index bc70abc..3c96a05 100644
+--- a/data/meson.build
++++ b/data/meson.build
+@@ -67,3 +67,5 @@ mode_dir = join_paths(data_dir, 'gnome-shell', 'modes')
+ install_data('initial-setup.json', install_dir: mode_dir)
+ 
+ install_data('gnome-initial-setup-set-debian-keyboard', install_dir: libexec_dir)
++
++install_data('gnome-initial-setup-wrapper', install_dir: libexec_dir)

@@ -1,0 +1,507 @@
+From: Matthew Hagemann <matt.hagemann@canonical.com>
+Date: Tue, 11 Jun 2024 15:08:41 +0200
+Subject: gis-local-account: Allow setting hostname
+
+Allow an user to edit their hostname on the local account creation page.
+The validation for setting a hostname re-uses the same logic from the username
+validation to not introduce new strings for translation, while additionally
+ensuring the hostname is not already in use on the network.
+When an user enters their username, a suggested hostname is synchronised based
+on the username, however it can be overridden.
+Added error hints specific to setting a hostname.
+
+Co-authored-by: Didier Roche-Tolomelli <didrocks@ubuntu.com>
+Co-authored-by: Marco Trevisan <marco@ubuntu.com>
+---
+ .../pages/account/gis-account-page-local.c         | 277 ++++++++++++++++++++-
+ .../pages/account/gis-account-page-local.ui        |  60 ++++-
+ 2 files changed, 331 insertions(+), 6 deletions(-)
+
+diff --git a/gnome-initial-setup/pages/account/gis-account-page-local.c b/gnome-initial-setup/pages/account/gis-account-page-local.c
+index ac73199..ce0a3ff 100644
+--- a/gnome-initial-setup/pages/account/gis-account-page-local.c
++++ b/gnome-initial-setup/pages/account/gis-account-page-local.c
+@@ -28,6 +28,7 @@
+ #include <glib/gi18n.h>
+ #include <gio/gio.h>
+ #include <glib/gstdio.h>
++#include <netdb.h>
+ 
+ #include <string.h>
+ #include <act/act-user-manager.h>
+@@ -59,18 +60,26 @@ struct _GisAccountPageLocal
+   GtkWidget *header;
+   GtkWidget *fullname_entry;
+   GtkWidget *username_combo;
++  GtkWidget *hostname_entry;
++  GtkWidget *hostname_verifier_spinner;
+   GtkWidget *enable_parental_controls_box;
+   GtkWidget *enable_parental_controls_check_button;
+   gboolean   has_custom_username;
++  gboolean   has_custom_hostname;
+   GtkWidget *username_explanation;
++  GtkWidget *hostname_explanation;
+   UmPhotoDialog *photo_dialog;
+ 
+   gint timeout_id;
+ 
++  GCancellable *validation_cancellable;
++  char *last_checked_hostname;
++
+   ActUserManager *act_client;
+ 
+   gboolean valid_name;
+   gboolean valid_username;
++  gboolean valid_hostname;
+   ActUserAccountType account_type;
+ };
+ 
+@@ -111,11 +120,190 @@ update_avatar_text (GisAccountPageLocal *page)
+   adw_avatar_set_text (ADW_AVATAR (page->avatar_image), name);
+ }
+ 
++static void
++verification_completed (GObject *source_object,
++                        GAsyncResult *res,
++                        gpointer user_data)
++{
++  GisAccountPageLocal *page = GIS_ACCOUNT_PAGE_LOCAL (source_object);
++  GTask *task = G_TASK (res);
++  g_autoptr (GError) error = NULL;
++  g_autofree char *tip = NULL;
++  gboolean valid_hostname;
++
++  valid_hostname = g_task_propagate_boolean (task, &error);
++
++  if (!valid_hostname)
++    {
++      if (g_error_matches (error, G_IO_ERROR, G_IO_ERROR_CANCELLED))
++        return;
++
++      if (g_error_matches (error, G_IO_ERROR, G_IO_ERROR_PERMISSION_DENIED) ||
++          g_error_matches (error, G_IO_ERROR, G_IO_ERROR_ADDRESS_IN_USE))
++        tip = g_steal_pointer (&error->message);
++    }
++
++  g_debug ("Hostname '%s' validation completed, is valid: %d, "
++           "have tip: %d, error: %s", (char *) g_task_get_task_data (task),
++           valid_hostname, tip != NULL, error ? error->message : NULL);
++
++  page->valid_hostname = valid_hostname;
++  g_set_str (&page->last_checked_hostname, g_task_get_task_data (task));
++
++  if (page->valid_hostname)
++    set_entry_validation_checkmark (GTK_ENTRY (page->hostname_entry));
++
++  gtk_widget_hide (page->hostname_verifier_spinner);
++  gtk_label_set_text (GTK_LABEL (page->hostname_explanation), tip);
++  validation_changed (page);
++}
++
++gboolean
++is_valid_hostname (const gchar *hostname, gchar **tip)
++{
++  gboolean too_long;
++  gboolean valid;
++  gboolean valid_start;
++  const gchar *c;
++
++  if (hostname == NULL || hostname[0] == '\0')
++  {
++    return FALSE;
++  }
++
++  too_long = strlen(hostname) > 255;
++  valid = TRUE;
++  valid_start = TRUE;
++
++  if (!too_long)
++  {
++    /* First char must be a lower case letter, and it must only be
++     * composed of lower case letters, digits and '-'.
++     */
++    for (c = hostname; *c; c++)
++    {
++      if (c == hostname)
++      {
++        if (!((*c >= 'a' && *c <= 'z') ||
++              (*c >= '0' && *c <= '9')))
++        {
++          valid_start = FALSE;
++          valid = FALSE;
++        }
++      }
++      else
++      {
++        if (!((*c >= 'a' && *c <= 'z') ||
++              (*c >= '0' && *c <= '9') ||
++              (*c == '-')))
++          valid = FALSE;
++      }
++    }
++  }
++
++  valid = !too_long && valid;
++
++  if (!valid)
++  {
++    if (too_long)
++    {
++      *tip = g_strdup_printf (_("The hostname is too long."));
++    }
++    else if (!valid_start)
++    {
++      *tip = g_strdup (_("The hostname must start with a lower case letter from a-z or a digit."));
++    }
++    else
++    {
++      *tip = g_strdup (_("The hostname should only consist of lower case letters from a-z, digits and a hyphen: -"));
++    }
++  }
++
++  return valid;
++}
++
++static void
++hostname_resolver_callback (GObject *source_object,
++                            GAsyncResult *res,
++                            gpointer user_data)
++{
++  GResolver *resolver = G_RESOLVER (source_object);
++  g_autoptr(GTask) task = g_steal_pointer (&user_data);
++  g_autoptr(GError) error = NULL;
++  g_autolist(GInetAddress) addresses = NULL;
++
++  addresses = g_resolver_lookup_by_name_finish (resolver, res, &error);
++
++  if (g_error_matches (error, G_IO_ERROR, G_IO_ERROR_CANCELLED))
++    {
++      g_task_return_error (task, g_steal_pointer (&error));
++      return;
++    }
++
++  if (addresses == NULL)
++    {
++      /* Inverting the logic: we're good on failure or if we got no results */
++      g_task_return_boolean (task, TRUE);
++      return;
++    }
++
++  /* We got some results, so... We can't proceed */
++  g_task_return_new_error_literal (task, G_IO_ERROR,
++                                    G_IO_ERROR_ADDRESS_IN_USE,
++                                    g_strerror (ENOTUNIQ));
++}
++
++static void
++begin_hostname_validation (GisAccountPageLocal *page,
++                           const char *hostname)
++{
++  if (g_strcmp0 (page->last_checked_hostname, hostname) == 0)
++    {
++      g_debug ("Hostname is still %s, don't check it again...", hostname);
++      validation_changed (page);
++      return;
++    }
++
++  g_cancellable_cancel (page->validation_cancellable);
++  g_clear_object (&page->validation_cancellable);
++  page->validation_cancellable = g_cancellable_new ();
++
++  gtk_label_set_text (GTK_LABEL (page->hostname_explanation), NULL);
++  gtk_widget_show (page->hostname_verifier_spinner);
++
++  g_autoptr(GTask) task = g_task_new (page, page->validation_cancellable,
++                                      verification_completed, NULL);
++  g_task_set_task_data (task, g_strdup (hostname), g_free);
++
++  if (!hostname || *hostname == '\0')
++    {
++      g_task_return_new_error_literal (task, G_IO_ERROR,
++                                       G_IO_ERROR_INVALID_ARGUMENT,
++                                       "Empty hostname");
++      return;
++    }
++
++  g_autofree char *tip = NULL;
++  if (!is_valid_hostname (hostname, &tip))
++    {
++      g_task_return_new_error_literal (task, G_IO_ERROR,
++                                       G_IO_ERROR_PERMISSION_DENIED,
++                                       tip);
++      return;
++    }
++
++  g_autoptr(GResolver) resolver = g_resolver_get_default ();
++  g_resolver_lookup_by_name_async (resolver, hostname,
++                                   page->validation_cancellable,
++                                   hostname_resolver_callback,
++                                   g_steal_pointer (&task));
++}
++
+ static gboolean
+ validate (GisAccountPageLocal *page)
+ {
+   GtkWidget *entry;
+-  const gchar *name, *username;
++  const gchar *name, *username, *hostname;
+   gboolean parental_controls_enabled;
+   g_autofree gchar *tip = NULL;
+ 
+@@ -125,6 +313,7 @@ validate (GisAccountPageLocal *page)
+ 
+   name = gtk_editable_get_text (GTK_EDITABLE (page->fullname_entry));
+   username = gtk_combo_box_text_get_active_text (GTK_COMBO_BOX_TEXT (page->username_combo));
++  hostname = gtk_editable_get_text (GTK_EDITABLE (page->hostname_entry));
+ #ifdef HAVE_PARENTAL_CONTROLS
+   parental_controls_enabled = gtk_check_button_get_active (GTK_CHECK_BUTTON (page->enable_parental_controls_check_button));
+ #else
+@@ -144,7 +333,7 @@ validate (GisAccountPageLocal *page)
+     gtk_accessible_announce (GTK_ACCESSIBLE (page), tip, GTK_ACCESSIBLE_ANNOUNCEMENT_PRIORITY_MEDIUM);
+   gtk_label_set_text (GTK_LABEL (page->username_explanation), tip);
+ 
+-  validation_changed (page);
++  begin_hostname_validation (page, hostname);
+ 
+   return G_SOURCE_REMOVE;
+ }
+@@ -209,6 +398,9 @@ username_changed (GtkComboBoxText     *combo,
+ 
+   clear_entry_validation_error (GTK_ENTRY (entry));
+ 
++  if (!page->has_custom_hostname)
++    gtk_editable_set_text (GTK_EDITABLE (page->hostname_entry), username);
++
+   page->valid_username = FALSE;
+   validation_changed (page);
+ 
+@@ -219,6 +411,31 @@ username_changed (GtkComboBoxText     *combo,
+   update_avatar_text (page);
+ }
+ 
++static void
++hostname_changed (GtkWidget           *entry,
++                  GParamSpec          *pspec,
++                  GisAccountPageLocal *page)
++{
++  const gchar *hostname;
++
++  hostname = gtk_editable_get_text (GTK_EDITABLE (entry));
++  if (*hostname == '\0')
++    page->has_custom_hostname = FALSE;
++  else if (gtk_widget_get_focus_child (entry))
++    page->has_custom_hostname = TRUE;
++
++  clear_entry_validation_error (GTK_ENTRY (entry));
++
++  page->valid_hostname = FALSE;
++  validation_changed (page);
++
++  g_clear_handle_id (&page->timeout_id, g_source_remove);
++  page->timeout_id = g_timeout_add (VALIDATION_TIMEOUT, (GSourceFunc)validate, page);
++
++  g_clear_pointer (&page->last_checked_hostname, g_free);
++  g_cancellable_cancel (page->validation_cancellable);
++}
++
+ static void
+ on_remove_avatar_button_clicked (GisAccountPageLocal *page)
+ {
+@@ -300,10 +517,16 @@ gis_account_page_local_constructed (GObject *object)
+                     G_CALLBACK (username_changed), page);
+   track_focus_out (page, page->username_combo);
+ 
++  g_signal_connect (page->hostname_entry, "notify::text",
++                    G_CALLBACK (hostname_changed), page);
++  track_focus_out (page, page->hostname_entry);
++
+   g_signal_connect_swapped (gtk_combo_box_get_child (GTK_COMBO_BOX (page->username_combo)),
+                             "activate", G_CALLBACK (confirm), page);
+   g_signal_connect_swapped (page->fullname_entry, "activate",
+                             G_CALLBACK (confirm), page);
++  g_signal_connect_swapped (page->fullname_entry, "activate",
++                            G_CALLBACK (confirm), page);
+   g_signal_connect (page->enable_parental_controls_check_button, "toggled",
+                     G_CALLBACK (enable_parental_controls_check_button_toggled_cb), page);
+ 
+@@ -314,6 +537,7 @@ gis_account_page_local_constructed (GObject *object)
+ 
+   page->valid_name = FALSE;
+   page->valid_username = FALSE;
++  page->valid_hostname = FALSE;
+ 
+   /* FIXME: change this for a large deployment scenario; maybe through a GSetting? */
+   page->account_type = ACT_USER_ACCOUNT_TYPE_ADMINISTRATOR;
+@@ -322,6 +546,7 @@ gis_account_page_local_constructed (GObject *object)
+   gtk_editable_set_text (GTK_EDITABLE (page->fullname_entry), "");
+   gtk_list_store_clear (GTK_LIST_STORE (gtk_combo_box_get_model (GTK_COMBO_BOX (page->username_combo))));
+   page->has_custom_username = FALSE;
++  page->has_custom_hostname = FALSE;
+ 
+   gtk_menu_button_set_popover (GTK_MENU_BUTTON (page->avatar_button),
+                                GTK_WIDGET (page->photo_dialog));
+@@ -335,6 +560,9 @@ gis_account_page_local_dispose (GObject *object)
+   GisAccountPageLocal *page = GIS_ACCOUNT_PAGE_LOCAL (object);
+ 
+   g_clear_handle_id (&page->timeout_id, g_source_remove);
++  g_cancellable_cancel (page->validation_cancellable);
++  g_clear_object (&page->validation_cancellable);
++  g_clear_pointer (&page->last_checked_hostname, g_free);
+ 
+   G_OBJECT_CLASS (gis_account_page_local_parent_class)->dispose (object);
+ }
+@@ -550,6 +778,9 @@ gis_account_page_local_class_init (GisAccountPageLocalClass *klass)
+   gtk_widget_class_bind_template_child (GTK_WIDGET_CLASS (klass), GisAccountPageLocal, fullname_entry);
+   gtk_widget_class_bind_template_child (GTK_WIDGET_CLASS (klass), GisAccountPageLocal, username_combo);
+   gtk_widget_class_bind_template_child (GTK_WIDGET_CLASS (klass), GisAccountPageLocal, username_explanation);
++  gtk_widget_class_bind_template_child (GTK_WIDGET_CLASS (klass), GisAccountPageLocal, hostname_entry);
++  gtk_widget_class_bind_template_child (GTK_WIDGET_CLASS (klass), GisAccountPageLocal, hostname_verifier_spinner);
++  gtk_widget_class_bind_template_child (GTK_WIDGET_CLASS (klass), GisAccountPageLocal, hostname_explanation);
+   gtk_widget_class_bind_template_child (GTK_WIDGET_CLASS (klass), GisAccountPageLocal, enable_parental_controls_box);
+   gtk_widget_class_bind_template_child (GTK_WIDGET_CLASS (klass), GisAccountPageLocal, enable_parental_controls_check_button);
+   gtk_widget_class_bind_template_callback (GTK_WIDGET_CLASS (klass), on_remove_avatar_button_clicked);
+@@ -589,7 +820,7 @@ gis_account_page_local_init (GisAccountPageLocal *page)
+ gboolean
+ gis_account_page_local_validate (GisAccountPageLocal *page)
+ {
+-  return page->valid_name && page->valid_username;
++  return page->valid_name && page->valid_username && page->valid_hostname;
+ }
+ 
+ gboolean
+@@ -600,11 +831,29 @@ gis_account_page_local_create_user (GisAccountPageLocal  *local,
+   return local_create_user (local, page, error);
+ }
+ 
++static void
++on_set_static_hostname (GObject *source,
++                        GAsyncResult *result,
++                        gpointer user_data)
++{
++  GisPage *page = user_data;
++  g_autoptr(GError) error = NULL;
++  g_autoptr(GVariant) retval = NULL;
++
++  retval = g_dbus_connection_call_finish (G_DBUS_CONNECTION (source), result, &error);
++  if (error != NULL)
++    g_warning ("Could not change hostname: %s", error->message);
++
++  /* Now we can complete the page! */
++  gis_page_apply_complete (page, error == NULL);
++}
++
+ gboolean
+ gis_account_page_local_apply (GisAccountPageLocal *local, GisPage *page)
+ {
+   GisDriver *driver = GIS_PAGE (page)->driver;
+-  const gchar *username, *full_name;
++  const gchar *username, *full_name, *hostname;
++  GDBusConnection *connection;
+   gboolean parental_controls_enabled;
+   GdkTexture *texture = NULL;
+ 
+@@ -638,9 +887,27 @@ gis_account_page_local_apply (GisAccountPageLocal *local, GisPage *page)
+ #endif
+   gis_driver_set_parental_controls_enabled (driver, parental_controls_enabled);
+ 
++  g_autoptr (GError) error = NULL;
++  hostname = gtk_editable_get_text (GTK_EDITABLE (local->hostname_entry));
++  connection = g_bus_get_sync (G_BUS_TYPE_SYSTEM, NULL, &error);
++  if (error != NULL) {
++    g_warning ("Could not get DBus connection: %s", error->message);
++    return TRUE;
++  }
++
++  g_dbus_connection_call (connection, "org.freedesktop.hostname1",
++                          "/org/freedesktop/hostname1",
++                          "org.freedesktop.hostname1",
++                          "SetStaticHostname",
++                          g_variant_new ("(sb)", hostname, TRUE),
++                          G_VARIANT_TYPE ("()"),
++                          G_DBUS_CALL_FLAGS_NONE,
++                          G_MAXINT, NULL, on_set_static_hostname, page);
++
+   g_object_thaw_notify (G_OBJECT (driver));
+ 
+-  return FALSE;
++  /* We don't apply promptly, this will happen only once the async call is done */
++  return TRUE;
+ }
+ 
+ void
+diff --git a/gnome-initial-setup/pages/account/gis-account-page-local.ui b/gnome-initial-setup/pages/account/gis-account-page-local.ui
+index 433e049..bb6ce36 100644
+--- a/gnome-initial-setup/pages/account/gis-account-page-local.ui
++++ b/gnome-initial-setup/pages/account/gis-account-page-local.ui
+@@ -144,12 +144,70 @@
+                 </attributes>
+               </object>
+             </child>
++            <child>
++              <object class="GtkLabel" id="hostname_label">
++                <property name="halign">end</property>
++                <property name="xalign">1</property>
++                <property name="label" translatable="yes">_Computer</property>
++                <property name="use_underline">True</property>
++                <property name="mnemonic_widget">hostname_entry</property>
++                <property name="margin_top">6</property>
++                <layout>
++                  <property name="column">0</property>
++                  <property name="row">6</property>
++                </layout>
++              </object>
++            </child>
++            <child>
++              <object class="GtkOverlay">
++                <layout>
++                  <property name="column">1</property>
++                  <property name="row">6</property>
++                </layout>
++                <child>
++                  <object class="GtkEntry" id="hostname_entry">
++                    <property name="max_length">255</property>
++                    <property name="width-chars">25</property>
++                  </object>
++                </child>
++                <child type="overlay">
++                  <object class="GtkSpinner" id="hostname_verifier_spinner">
++                    <property name="margin-end">6</property>
++                    <property name="halign">end</property>
++                    <property name="valign">center</property>
++                    <property name="spinning">True</property>
++                    <property name="visible">False</property>
++                  </object>
++                </child>
++              </object>
++            </child>
++            <child>
++              <object class="GtkLabel" id="hostname_explanation">
++                <property name="yalign">0</property>
++                <property name="xalign">0</property>
++                <property name="width-chars">35</property>
++                <property name="max-width-chars">35</property>
++                <property name="height-request">50</property>
++                <property name="wrap">True</property>
++                <property name="wrap_mode">word-char</property>
++                <layout>
++                  <property name="column">1</property>
++                  <property name="row">7</property>
++                </layout>
++                <style>
++                  <class name="dim-label"/>
++                </style>
++                <attributes>
++                  <attribute name="scale" value="0.8"/>
++                </attributes>
++              </object>
++            </child>
+             <child>
+               <object class="GtkBox" id="enable_parental_controls_box">
+                 <property name="orientation">vertical</property>
+                 <layout>
+                   <property name="column">1</property>
+-                  <property name="row">6</property>
++                  <property name="row">8</property>
+                 </layout>
+                 <child>
+                   <object class="GtkCheckButton" id="enable_parental_controls_check_button">

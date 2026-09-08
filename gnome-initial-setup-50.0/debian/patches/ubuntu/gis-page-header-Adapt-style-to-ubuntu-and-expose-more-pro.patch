@@ -1,0 +1,168 @@
+From: Robert Ancell <robert.ancell@canonical.com>
+Date: Tue, 20 Mar 2018 11:51:30 +1300
+Subject: gis-page-header: Adapt style to ubuntu and expose more properties
+
+Co-Authored-By: Marco Trevisan <mail@3v1n0.net>
+---
+ gnome-initial-setup/gis-page-header.c  | 58 ++++++++++++++++++++++++++++++++--
+ gnome-initial-setup/gis-page-header.ui | 10 +++---
+ 2 files changed, 60 insertions(+), 8 deletions(-)
+
+diff --git a/gnome-initial-setup/gis-page-header.c b/gnome-initial-setup/gis-page-header.c
+index 0c19b45..ec51478 100644
+--- a/gnome-initial-setup/gis-page-header.c
++++ b/gnome-initial-setup/gis-page-header.c
+@@ -33,7 +33,9 @@ enum {
+   PROP_SUBTITLE,
+   PROP_ICON_NAME,
+   PROP_PAINTABLE,
++  PROP_HEIGHT_REQUEST,
+   PROP_SHOW_ICON,
++  PROP_PIXEL_SIZE,
+   PROP_LAST,
+ };
+ 
+@@ -47,6 +49,10 @@ struct _GisPageHeader
+   GtkWidget *icon;
+   GtkWidget *subtitle;
+   GtkWidget *title;
++
++  gint pixel_size;
++  guint height_request;
++  gboolean show_icon;
+ };
+ 
+ G_DEFINE_TYPE (GisPageHeader, gis_page_header, GTK_TYPE_BOX)
+@@ -75,6 +81,19 @@ gis_page_header_init (GisPageHeader *header)
+                             G_CALLBACK(update_box_visibility), header);
+ }
+ 
++static void
++update_icon_properties (GisPageHeader *header)
++{
++  if (!header->icon)
++    return;
++
++  g_object_set (G_OBJECT (header->icon),
++                "pixel-size", header->pixel_size,
++                "height-request", header->height_request,
++                "visible", header->show_icon,
++                NULL);
++}
++
+ static void
+ gis_page_header_get_property (GObject    *object,
+                               guint       prop_id,
+@@ -101,8 +120,16 @@ gis_page_header_get_property (GObject    *object,
+       g_object_get_property (G_OBJECT (header->icon), "paintable", value);
+       break;
+ 
++    case PROP_HEIGHT_REQUEST:
++      g_value_set_uint (value, header->height_request);
++      break;
++
++    case PROP_PIXEL_SIZE:
++      g_value_set_int (value, header->pixel_size);
++      break;
++
+     case PROP_SHOW_ICON:
+-      g_value_set_boolean (value, gtk_widget_get_visible (header->icon));
++      g_value_set_boolean (value, header->show_icon);
+       break;
+ 
+     default:
+@@ -133,14 +160,27 @@ gis_page_header_set_property (GObject      *object,
+ 
+     case PROP_ICON_NAME:
+       g_object_set_property (G_OBJECT (header->icon), "icon-name", value);
++      update_icon_properties (header);
+       break;
+ 
+     case PROP_PAINTABLE:
+       g_object_set_property (G_OBJECT (header->icon), "paintable", value);
++      update_icon_properties (header);
++      break;
++
++    case PROP_HEIGHT_REQUEST:
++      header->height_request = g_value_get_uint (value);
++      update_icon_properties (header);
++      break;
++
++    case PROP_PIXEL_SIZE:
++      header->pixel_size = g_value_get_int (value);
++      update_icon_properties (header);
+       break;
+ 
+     case PROP_SHOW_ICON:
+-      gtk_widget_set_visible (header->icon, g_value_get_boolean (value));
++      header->show_icon = g_value_get_boolean (value);
++      update_icon_properties (header);
+       break;
+ 
+     default:
+@@ -189,11 +229,23 @@ gis_page_header_class_init (GisPageHeaderClass *klass)
+                          GDK_TYPE_PAINTABLE,
+                          G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS);
+ 
++  obj_props[PROP_HEIGHT_REQUEST] =
++    g_param_spec_uint ("height-request",
++                       "", "",
++                       0, G_MAXUINT, 0,
++                       G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS | G_PARAM_CONSTRUCT);
++
++  obj_props[PROP_PIXEL_SIZE] =
++    g_param_spec_int ("pixel-size",
++                      "", "",
++                      0, G_MAXINT, 280, /* 280 matches the default image size */
++                      G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS | G_PARAM_CONSTRUCT);
++
+   obj_props[PROP_SHOW_ICON] =
+     g_param_spec_boolean ("show-icon",
+                           "", "",
+                           FALSE,
+-                          G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS);
++                          G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS | G_PARAM_CONSTRUCT);
+ 
+   g_object_class_install_properties (gobject_class, PROP_LAST, obj_props);
+ }
+diff --git a/gnome-initial-setup/gis-page-header.ui b/gnome-initial-setup/gis-page-header.ui
+index 167186c..100bb3e 100644
+--- a/gnome-initial-setup/gis-page-header.ui
++++ b/gnome-initial-setup/gis-page-header.ui
+@@ -5,21 +5,19 @@
+     <property name="spacing">18</property>
+     <child>
+       <object class="GtkImage" id="icon">
+-        <property name="pixel_size">96</property>
+-        <style>
+-          <class name="dim-label"/>
+-        </style>
++        <property name="pixel_size">196</property>
+       </object>
+     </child>
+     <child>
+       <object class="GtkBox" id="box">
+         <property name="orientation">vertical</property>
+-        <property name="spacing">6</property>
++        <property name="spacing">0</property>
+         <child>
+           <object class="GtkLabel" id="title">
+             <property name="justify">center</property>
+             <property name="max_width_chars">65</property>
+             <property name="wrap">True</property>
++            <property name="visible">False</property>
+             <style>
+               <class name="title-1"/>
+             </style>
+@@ -27,9 +25,11 @@
+         </child>
+         <child>
+           <object class="GtkLabel" id="subtitle">
++            <property name="margin-top">15</property>
+             <property name="justify">center</property>
+             <property name="max_width_chars">65</property>
+             <property name="wrap">True</property>
++            <property name="visible">False</property>
+             <signal name="activate-link" handler="gis_activate_link" object="GisPageHeader" swapped="no" />
+           </object>
+         </child>

@@ -1,0 +1,13 @@
+#!/bin/bash
+
+CONVD_WRAPPER=/usr/libexec/launch-desktop-provision-init
+ulimit -n 4096
+
+if [ -f "${CONVD_WRAPPER}" ]; then
+# call convd wrapper passing as first parameter the full path to
+# the original gnome-initial-setup
+    exec "${CONVD_WRAPPER}" "$@"
+else
+    # if the wrapper doesn't exist, launch the original gnome-initial-setup
+    exec "$@"
+fi

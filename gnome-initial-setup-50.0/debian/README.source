@@ -1,0 +1,68 @@
+Testing this package
+====================
+
+Test Case 1
+---------------
+rm ~/.config/gnome-initial-setup-done
+Log out then log back in
+gnome-initial-setup should automatically start
+
+Test Case 2
+----------------
+Create a new user
+Log in as the new user
+gnome-initial-setup should automatically start
+
+Test Case 3
+----------------
+Run this command
+/usr/libexec/gnome-initial-setup --existing-user
+
+
+Ubuntu translations patch
+=========================
+
+We are opting out of language packs for translations (by having the package
+listed in the pkgbinarymangler's blocklist) since we want all translations
+available for the "system setup wizard". Because Ubuntu adds custom pages
+and strings for the Ubuntu session first start experience we can't rely
+on upstream translations only.
+
+The translation template is updated as part of the package build and
+launchpad then import it as well as the translations from the source tarball.
+During the devel cycle we drop the patch, which makes updating the package
+easier but also allows us to import newer upstream translations to launchpad.
+
+At the end of the cycle we restore the Ubuntu translations by following
+those steps
+
+- request a translations export from launchpad in "PO format" on
+https://translations.launchpad.net/ubuntu/<series>/+source/gnome-initial-setup/+export
+(access is restricted so need to find a translation coordinator)
+
+- wait for the tarball to be ready (launchpad is sending the download url
+to the requester via email)
+
+Working from a directory where you checkout the packaging vcs and download
+the translations tarball
+
+- extract the tarball
+$ tar xf launchpad-export.tar.gz
+
+- rename the files to match the upstream tarball naming
+$ rename 's/gnome-initial-setup-//' po/*.po
+
+- copy the updates translations to the vcs to generate the patch
+$ cp po/*.po gnome-initial-setup/po/
+$ cd gnome-initial-setup
+
+- add the new languages (non tracked po/ files in git status)
+$ ls po/*.po | sed 's/po\/\(.*\)\.po/\1/' > po/LINGUAS
+
+- create the patch
+$ git add po
+$ git diff --staged > debian/patches/launchpad_translations_export.patch
+$ echo "launchpad_translations_export.patch" >> debian/patches/series
+
+- clean the Vcs
+$ git restore --staged --worktree po

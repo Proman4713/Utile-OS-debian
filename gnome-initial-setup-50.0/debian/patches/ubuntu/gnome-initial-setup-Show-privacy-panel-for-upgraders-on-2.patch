@@ -1,0 +1,42 @@
+From: =?utf-8?b?Ik1hcmNvIFRyZXZpc2FuIChUcmV2acOxbyki?= <mail@3v1n0.net>
+Date: Thu, 29 Jan 2026 17:58:09 +0100
+Subject: gnome-initial-setup: Show privacy panel for upgraders on 26.04
+
+We switched to BeaconDB for geoclue, so better to show the consent panel
+again
+
+This can be dropped after 26.04.
+---
+ gnome-initial-setup/gnome-initial-setup.c | 12 ++++++++++--
+ 1 file changed, 10 insertions(+), 2 deletions(-)
+
+diff --git a/gnome-initial-setup/gnome-initial-setup.c b/gnome-initial-setup/gnome-initial-setup.c
+index a9ba558..58a83ef 100644
+--- a/gnome-initial-setup/gnome-initial-setup.c
++++ b/gnome-initial-setup/gnome-initial-setup.c
+@@ -93,7 +93,11 @@ static PageData page_table[] = {
+ static PageData ubuntu_page_table[] = {
+   PAGE (welcome,         FALSE, TRUE),
+   PAGE (ubuntu_pro,      FALSE, TRUE),
+-  PAGE (privacy,         FALSE, FALSE),
++  /* Showing privacy panel since we switched to baeconDB since last LTS,
++   * so it's better to ask for consent again.
++   * This can be dropped after 26.04.
++   */
++  PAGE (privacy,         FALSE, TRUE),
+   PAGE (ubuntu_insights, FALSE, TRUE),
+   PAGE (account,         TRUE, FALSE),
+   PAGE (password,        TRUE, FALSE),
+@@ -103,7 +107,11 @@ static PageData ubuntu_page_table[] = {
+ 
+ static PageData unity_page_table[] = {
+   PAGE (welcome,         FALSE, TRUE),
+-  PAGE (privacy,         FALSE, FALSE),
++  /* Showing privacy panel since we switched to baeconDB since last LTS,
++   * so it's better to ask for consent again.
++   * This can be dropped after 26.04.
++   */
++  PAGE (privacy,         FALSE, TRUE),
+   PAGE (ubuntu_insights, FALSE, TRUE),
+   PAGE (account,         TRUE, FALSE),
+   PAGE (password,        TRUE, FALSE),

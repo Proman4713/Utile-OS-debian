@@ -1,0 +1,59 @@
+From: =?utf-8?b?Ik1hcmNvIFRyZXZpc2FuIChUcmV2acOxbyki?= <mail@3v1n0.net>
+Date: Wed, 28 Jan 2026 17:05:21 +0100
+Subject: gis-driver: Define a default driver
+
+This makes it easier to use the driver that is selected, since it's
+really something that must defined just once
+---
+ gnome-initial-setup/gis-driver.c | 16 +++++++++++++++-
+ gnome-initial-setup/gis-driver.h |  2 ++
+ 2 files changed, 17 insertions(+), 1 deletion(-)
+
+diff --git a/gnome-initial-setup/gis-driver.c b/gnome-initial-setup/gis-driver.c
+index 63964ca..2d92fd6 100644
+--- a/gnome-initial-setup/gis-driver.c
++++ b/gnome-initial-setup/gis-driver.c
+@@ -33,6 +33,8 @@
+ #include "cc-common-language.h"
+ #include "gis-assistant.h"
+ 
++static GisDriver *default_driver = NULL;
++
+ #define GIS_TYPE_DRIVER_MODE (gis_driver_mode_get_type ())
+ 
+ /* Statically include this for now. Maybe later
+@@ -1024,8 +1026,20 @@ gis_driver_save_data (GisDriver  *driver,
+ GisDriver *
+ gis_driver_new (GisDriverMode mode)
+ {
+-  return g_object_new (GIS_TYPE_DRIVER,
++  g_assert (default_driver == NULL);
++
++  default_driver =
++         g_object_new (GIS_TYPE_DRIVER,
+                        "application-id", "org.gnome.InitialSetup",
+                        "mode", mode,
+                        NULL);
++  return default_driver;
++}
++
++GisDriver *
++gis_driver_get_default (void)
++{
++  g_assert (default_driver != NULL);
++
++  return default_driver;
+ }
+diff --git a/gnome-initial-setup/gis-driver.h b/gnome-initial-setup/gis-driver.h
+index ca06391..4255ec3 100644
+--- a/gnome-initial-setup/gis-driver.h
++++ b/gnome-initial-setup/gis-driver.h
+@@ -127,6 +127,8 @@ gchar *gis_driver_conf_get_string (GisDriver *driver,
+ 
+ GisDriver *gis_driver_new (GisDriverMode mode);
+ 
++GisDriver *gis_driver_get_default (void);
++
+ G_END_DECLS
+ 
+ #endif /* __GIS_DRIVER_H__ */

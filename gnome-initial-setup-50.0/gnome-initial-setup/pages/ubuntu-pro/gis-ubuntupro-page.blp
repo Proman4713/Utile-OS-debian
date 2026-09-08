@@ -1,0 +1,17 @@
+using Gtk 4.0;
+
+template $GisUbuntuProPage: $GisPage {
+  Stack stack {
+    transition-type: slide_left_right;
+    vexpand: true;
+    hexpand: true;
+    hhomogeneous: false;
+    vhomogeneous: false;
+
+    $GisUbuntuProOfferPage offer_page {}
+
+    $GisUbuntuProAttachPage attach_page {}
+
+    $GisUbuntuProServicesPage services_page {}
+  }
+}

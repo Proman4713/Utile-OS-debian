@@ -1,0 +1,878 @@
+From: kkuo <kat.kuo@canonical.com>
+Date: Tue, 12 Aug 2025 10:39:17 -0400
+Subject: ubuntu-insights: Add page to report hardware and other metrics
+
+---
+ gnome-initial-setup/gnome-initial-setup.c          |   4 +
+ gnome-initial-setup/meson.build                    |   1 +
+ gnome-initial-setup/pages/meson.build              |   1 +
+ .../ubuntu-insights/gis-ubuntu-insights-page.blp   | 137 ++++++
+ .../ubuntu-insights/gis-ubuntu-insights-page.c     | 525 +++++++++++++++++++++
+ .../ubuntu-insights/gis-ubuntu-insights-page.css   |   8 +
+ .../ubuntu-insights/gis-ubuntu-insights-page.h}    |  13 +-
+ .../pages/{apps => ubuntu-insights}/meson.build    |  14 +-
+ .../ubuntu-insights/ubuntu-insights.gresource.xml  |  10 +
+ .../pages/ubuntu-insights/ubuntu-insights.svg      |   1 +
+ po/POTFILES.in                                     |   2 +
+ 11 files changed, 704 insertions(+), 12 deletions(-)
+ create mode 100644 gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp
+ create mode 100644 gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c
+ create mode 100644 gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.css
+ copy gnome-initial-setup/{gis-focusable-bin.h => pages/ubuntu-insights/gis-ubuntu-insights-page.h} (65%)
+ copy gnome-initial-setup/pages/{apps => ubuntu-insights}/meson.build (57%)
+ create mode 100644 gnome-initial-setup/pages/ubuntu-insights/ubuntu-insights.gresource.xml
+ create mode 100644 gnome-initial-setup/pages/ubuntu-insights/ubuntu-insights.svg
+
+diff --git a/gnome-initial-setup/gnome-initial-setup.c b/gnome-initial-setup/gnome-initial-setup.c
+index 8174437..a9ba558 100644
+--- a/gnome-initial-setup/gnome-initial-setup.c
++++ b/gnome-initial-setup/gnome-initial-setup.c
+@@ -41,6 +41,7 @@
+ #include "pages/parental-controls/gis-parental-controls-page.h"
+ #include "pages/password/gis-password-page.h"
+ #include "pages/summary/gis-summary-page.h"
++#include "pages/ubuntu-insights/gis-ubuntu-insights-page.h"
+ #include "pages/ubuntu-pro/gis-ubuntupro-page.h"
+ #include "pages/apps/gis-apps-page.h"
+ 
+@@ -78,6 +79,7 @@ static PageData page_table[] = {
+   PAGE (password, TRUE, FALSE),
+   PAGE (ubuntu_pro, TRUE, FALSE),
+   PAGE (privacy,  FALSE, FALSE),
++  PAGE (ubuntu_insights, FALSE, TRUE),
+   PAGE (timezone, TRUE, FALSE),
+   PAGE (software, TRUE, FALSE),
+ #ifdef HAVE_PARENTAL_CONTROLS
+@@ -92,6 +94,7 @@ static PageData ubuntu_page_table[] = {
+   PAGE (welcome,         FALSE, TRUE),
+   PAGE (ubuntu_pro,      FALSE, TRUE),
+   PAGE (privacy,         FALSE, FALSE),
++  PAGE (ubuntu_insights, FALSE, TRUE),
+   PAGE (account,         TRUE, FALSE),
+   PAGE (password,        TRUE, FALSE),
+   PAGE (apps,            FALSE, FALSE),
+@@ -101,6 +104,7 @@ static PageData ubuntu_page_table[] = {
+ static PageData unity_page_table[] = {
+   PAGE (welcome,         FALSE, TRUE),
+   PAGE (privacy,         FALSE, FALSE),
++  PAGE (ubuntu_insights, FALSE, TRUE),
+   PAGE (account,         TRUE, FALSE),
+   PAGE (password,        TRUE, FALSE),
+   PAGE (apps,            FALSE, FALSE),
+diff --git a/gnome-initial-setup/meson.build b/gnome-initial-setup/meson.build
+index 610a102..1f9cc63 100644
+--- a/gnome-initial-setup/meson.build
++++ b/gnome-initial-setup/meson.build
+@@ -58,6 +58,7 @@ dependencies = [
+     dependency ('krb5'),
+     dependency ('libsecret-1', version: '>= 0.18.8'),
+     dependency ('pwquality'),
++    dependency ('insights'),
+     ibus_dep,
+     libmalcontent_dep,
+     libmalcontent_ui_dep,
+diff --git a/gnome-initial-setup/pages/meson.build b/gnome-initial-setup/pages/meson.build
+index b8b4631..adcdbd3 100644
+--- a/gnome-initial-setup/pages/meson.build
++++ b/gnome-initial-setup/pages/meson.build
+@@ -11,6 +11,7 @@ pages = [
+    'summary',
+    'welcome',
+    'ubuntu-pro',
++   'ubuntu-insights',
+    'apps',
+ ]
+ 
+diff --git a/gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp b/gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp
+new file mode 100644
+index 0000000..c50b770
+--- /dev/null
++++ b/gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp
+@@ -0,0 +1,137 @@
++using Gtk 4.0;
++using Adw 1;
++
++template $GisUbuntuInsightsPage: $GisPage {
++  Adw.PreferencesPage {
++    Adw.PreferencesGroup {
++      $GisPageHeader header {
++        margin-top: "24";
++        icon-name: "ubuntu-insights";
++        title: _("Help Improve Ubuntu");
++        show-icon: bind template.small-screen inverted;
++      }
++    }
++
++    Adw.PreferencesGroup insights_group {
++      accessible-role: group;
++
++      accessibility {
++        labelled-by: [
++          header,
++        ];
++
++        described-by: [
++          header,
++        ];
++      }
++
++      Adw.SwitchRow insights_switch {
++        title: _("Share _system data with the Ubuntu team");
++        subtitle: _("This includes hardware information, language and timezone");
++        use-underline: true;
++      }
++
++      CenterBox {
++        margin-top: 12;
++
++        [start]
++        Box {
++          halign: start;
++          valign: start;
++          spacing: 18;
++
++          LinkButton {
++            label: _("Learn more about system reporting");
++            uri: "https://discourse.ubuntu.com/t/ubuntu-insights-how-telemetry-is-changing-on-ubuntu-desktop/73442";
++            activate-link => $on_link_activated(template);
++
++            styles [
++              "caption",
++              "link-caption",
++            ]
++          }
++
++          LinkButton {
++            label: _("Legal notice");
++            uri: "https://ubuntu.com/legal/systems-information-notice";
++            activate-link => $on_link_activated(template);
++
++            styles [
++              "caption",
++              "link-caption",
++            ]
++          }
++
++          LinkButton show_report_link {
++            label: _("Show Report");
++            activate-link => $on_show_report_activated(template);
++
++            styles [
++              "caption",
++              "link-caption",
++            ]
++          }
++        }
++      }
++    }
++
++    Adw.PreferencesGroup {
++      $GisFocusableBin {
++        vexpand: true;
++        valign: end;
++        accessibility{
++          labelled-by: [
++            footer_label,
++          ];
++        }
++        Label footer_label {
++          accessible-role: none;
++          label: _("You can change this later in the Settings app");
++          justify: center;
++          wrap: true;
++
++          styles [
++            "dim-label",
++          ]
++        }
++      }
++    }
++  }
++}
++
++Adw.Dialog report_dialog {
++  title: _("System Report");
++  content-width: 800;
++  content-height: 600;
++
++  Adw.ToolbarView {
++    [top]
++    Adw.HeaderBar {}
++
++    Stack report_stack {
++      Spinner report_loading_spinner {
++        spinning: true;
++        width-request: 32;
++        height-request: 32;
++        halign: center;
++        valign: center;
++        hexpand: true;
++        vexpand: true;
++      }
++
++      ScrolledWindow report_scroll {
++        hexpand: true;
++        vexpand: true;
++        margin-top: 6;
++        margin-bottom: 6;
++        margin-start: 6;
++        margin-end: 6;
++
++        child: TextView report_text_view {
++          monospace: true;
++          editable: false;
++        };
++      }
++    }
++  }
++}
+diff --git a/gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c b/gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c
+new file mode 100644
+index 0000000..4bdab24
+--- /dev/null
++++ b/gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c
+@@ -0,0 +1,525 @@
++/* -*- mode: C; c-file-style: "gnu"; indent-tabs-mode: nil; -*- */
++/*
++ * Copyright (C) 2025 Canonical Ltd.
++ *
++ * This program is free software; you can redistribute it and/or
++ * modify it under the terms of the GNU General Public License as
++ * published by the Free Software Foundation; either version 2 of the
++ * License, or (at your option) any later version.
++ *
++ * This program is distributed in the hope that it will be useful, but
++ * WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++ * General Public License for more details.
++ *
++ * You should have received a copy of the GNU General Public License
++ * along with this program; if not, see <http://www.gnu.org/licenses/>.
++ */
++
++/* Ubuntu insights page {{{1 */
++
++#include "config.h"
++
++#define PAGE_ID "ubuntu-insights"
++#define TELEMETRY_LOG_PATH "/var/log/installer/telemetry"
++
++/* Used for allow-list on the server side.
++ * The naming originates from the fact that the source metrics originate from
++ * the provisioner.
++ */
++#define APP_SOURCE "ubuntu_desktop_provision"
++
++#include "gis-ubuntu-insights-page.h"
++#include "gis-page-header.h"
++#include "gis-webkit.h"
++#include "ubuntu-insights-resources.h"
++
++#include <gio/gio.h>
++#include <glib/gi18n.h>
++#include <insights/insights.h>
++#include <insights/types.h>
++
++struct _GisUbuntuInsightsPage {
++  GisPage parent;
++
++  GtkWidget *insights_switch;
++  GtkWidget *header;
++  GtkWidget *show_report_link;
++
++  AdwDialog *report_dialog;
++  GtkWidget *report_stack;
++  GtkWidget *report_loading_spinner;
++  GtkWidget *report_scroll;
++  GtkWidget *report_text_view;
++
++  GCancellable *cancellable;
++  gchar *report;
++};
++
++G_DEFINE_TYPE (GisUbuntuInsightsPage, gis_ubuntu_insights_page, GIS_TYPE_PAGE);
++
++struct
++{
++  const char *source;
++  const char *error_message_consent;
++  const char *error_message_withdraw;
++} static const INSIGHT_SOURCES[] = {
++  {
++    APP_SOURCE, /* GNOME Initial Setup */
++    /* TRANSLATORS: The place-holder is an error message */
++    N_("Failed to grant consent for the Initial Setup application: %s"),
++    /* TRANSLATORS: The place-holder is an error message */
++    N_("Failed to withdraw consent for the Initial Setup application: %s"),
++  },
++  {
++    "linux", /* Platform source used by timed systemd collection */
++    /* TRANSLATORS: The place-holder is an error message */
++    N_("Failed to grant consent for the system data collector: %s"),
++    /* TRANSLATORS: The place-holder is an error message */
++    N_("Failed to withdraw consent for the system data collector: %s"),
++  },
++  {
++    "ubuntu_release_upgrader", /* Platform source used by release upgrader collection */
++    /* TRANSLATORS: The place-holder is an error message */
++    N_("Failed to grant consent for the release upgrader application: %s"),
++    /* TRANSLATORS: The place-holder is an error message */
++    N_("Failed to withdraw consent for the release upgrader application: %s"),
++  },
++};
++
++static void
++cancel_report (GisUbuntuInsightsPage *page)
++{
++  g_cancellable_cancel (page->cancellable);
++  g_clear_object (&page->cancellable);
++  page->cancellable = g_cancellable_new ();
++}
++
++static void
++on_report_dialog_closed (GisUbuntuInsightsPage *self)
++{
++  GtkWidget *err_page;
++
++  err_page = gtk_stack_get_child_by_name (GTK_STACK (self->report_stack), "error");
++  if (err_page)
++    gtk_stack_remove (GTK_STACK (self->report_stack), err_page);
++
++  gtk_text_buffer_set_text (
++    gtk_text_view_get_buffer (GTK_TEXT_VIEW (self->report_text_view)), "", 0);
++
++  g_signal_handlers_disconnect_by_func (self->report_dialog,
++                                        G_CALLBACK (on_report_dialog_closed),
++                                        self);
++
++  cancel_report (self);
++}
++
++static void
++page_shown (GisPage *page)
++{
++  g_print ("Insights page shown: %p, type: %s\n", page, g_type_name_from_instance ((GTypeInstance *)page));
++  GisUbuntuInsightsPage *self = GIS_UBUNTU_INSIGHTS_PAGE (page);
++  gtk_widget_grab_focus (self->header);
++}
++
++static void
++gis_ubuntu_insights_page_constructed (GObject *object)
++{
++  GisUbuntuInsightsPage *page = GIS_UBUNTU_INSIGHTS_PAGE (object);
++
++  G_OBJECT_CLASS (gis_ubuntu_insights_page_parent_class)->constructed (object);
++
++  page->cancellable = g_cancellable_new ();
++
++  gis_page_set_complete (GIS_PAGE (page), TRUE);
++}
++
++static void
++gis_ubuntu_insights_page_finalize (GObject *object)
++{
++  GisUbuntuInsightsPage *page = GIS_UBUNTU_INSIGHTS_PAGE (object);
++
++  g_cancellable_cancel (page->cancellable);
++  g_clear_object (&page->cancellable);
++
++  g_free (page->report);
++
++  G_OBJECT_CLASS (gis_ubuntu_insights_page_parent_class)->finalize (object);
++}
++
++/**
++ * compile_insights_report:
++ * @error: (out) (optional): Return location for an error, or NULL
++ *
++ * Helper function to compile an insights report.
++ * If compilation fails using %TELEMETRY_LOG_PATH, it retries without it.
++ *
++ * Returns: (transfer full): The generated report, or NULL on error.
++ */
++static char *
++compile_insights_report (gboolean   include_telemetry,
++                         GError   **error)
++{
++  g_autofree char *error_msg = NULL;
++  g_autofree char *telemetry_error_msg = NULL;
++  g_autofree char *report = NULL;
++  insights_compile_flags flags = {0};
++
++  if (include_telemetry && g_file_test (TELEMETRY_LOG_PATH, G_FILE_TEST_EXISTS))
++    flags.source_metrics_path = TELEMETRY_LOG_PATH;
++
++  error_msg = insights_compile (NULL, &flags, &report);
++  if (error_msg != NULL && flags.source_metrics_path != NULL)
++    {
++      g_warning ("Failed to compile with telemetry log, "
++                 "retrying without source metrics: %s",
++                 error_msg);
++
++      telemetry_error_msg = g_steal_pointer (&error_msg);
++      flags.source_metrics_path = NULL;
++
++      error_msg = insights_compile (NULL, &flags, &report);
++    }
++
++  if (error_msg != NULL)
++    {
++      if (telemetry_error_msg != NULL)
++        {
++          /* TRANSLATORS: Both placeholders are error messages */
++          g_set_error (error, G_IO_ERROR, G_IO_ERROR_FAILED,
++                       _("With telemetry log: %s\n"
++                         "Without telemetry log: %s"),
++                       telemetry_error_msg, error_msg);
++        }
++      else
++        {
++          g_set_error_literal (error, G_IO_ERROR, G_IO_ERROR_FAILED, error_msg);
++        }
++      return NULL;
++    }
++
++  return g_steal_pointer(&report);
++}
++
++static void
++on_collect_report_thread (GTask        *task,
++                          gpointer      source_object,
++                          gpointer      task_data,
++                          GCancellable *cancellable)
++{
++  g_autoptr (GError) error = NULL;
++  g_autofree char *report = NULL;
++  gboolean use_telemetry;
++
++  use_telemetry = GPOINTER_TO_INT (task_data);
++  report = compile_insights_report (use_telemetry, &error);
++
++  if (!report)
++    {
++      g_task_return_new_error (task, G_IO_ERROR, G_IO_ERROR_FAILED,
++                               _("Failed to collect telemetry report: %s"),
++                               error->message);
++      return;
++    }
++
++  g_task_return_pointer (task, g_steal_pointer (&report), g_free);
++}
++
++static void
++on_show_report_callback (GObject      *source_object,
++                         GAsyncResult *res,
++                         gpointer      user_data)
++{
++  GisUbuntuInsightsPage *page = user_data;
++  GTask *task = G_TASK (res);
++  g_autoptr(GError) error = NULL;
++  g_autofree char *report = NULL;
++
++  report = g_task_propagate_pointer (task, &error);
++
++  if (g_error_matches (error, G_IO_ERROR, G_IO_ERROR_CANCELLED))
++    return;
++
++  if (error != NULL)
++    {
++      GtkWidget *err_label;
++
++      err_label = g_object_new (GTK_TYPE_LABEL,
++                                "label", error->message,
++                                "wrap", TRUE,
++                                "justify", GTK_JUSTIFY_CENTER,
++                                "margin-top", 12,
++                                "margin-bottom", 12,
++                                "margin-start", 12,
++                                "margin-end", 12,
++                                NULL);
++
++      gtk_stack_add_named (GTK_STACK (page->report_stack), err_label, "error");
++      gtk_stack_set_visible_child (GTK_STACK (page->report_stack), err_label);
++      return;
++    }
++
++  page->report = g_steal_pointer (&report);
++
++  gtk_text_buffer_set_text (
++    gtk_text_view_get_buffer (GTK_TEXT_VIEW (page->report_text_view)),
++    page->report, -1);
++
++  gtk_stack_set_visible_child (GTK_STACK (page->report_stack),
++                               page->report_scroll);
++}
++
++static void
++show_report (GisUbuntuInsightsPage *page)
++{
++  g_autoptr(GTask) task = NULL;
++  gboolean use_telemetry_path;
++
++  gtk_stack_set_visible_child (GTK_STACK (page->report_stack), page->report_loading_spinner);
++
++  g_signal_connect_object (page->report_dialog, "closed",
++                           G_CALLBACK (on_report_dialog_closed),
++                           page, G_CONNECT_SWAPPED);
++
++  adw_dialog_present (page->report_dialog,
++                      GTK_WIDGET (gtk_widget_get_root (GTK_WIDGET (page))));
++
++  task = g_task_new (page, page->cancellable, on_show_report_callback, page);
++
++  if (page->report)
++    {
++      g_task_return_pointer (task, g_steal_pointer (&page->report), g_free);
++      return;
++    }
++
++  use_telemetry_path = (gis_driver_get_mode (GIS_PAGE (page)->driver) != GIS_DRIVER_MODE_UPGRADE);
++  g_task_set_task_data (task, GINT_TO_POINTER (use_telemetry_path), NULL);
++  g_task_set_return_on_cancel (task, TRUE);
++  g_task_run_in_thread (task, on_collect_report_thread);
++}
++
++static gboolean
++on_show_report_activated (GisUbuntuInsightsPage *self,
++                          GtkLinkButton         *link_button)
++{
++  show_report (self);
++  return TRUE;
++}
++
++typedef struct {
++  gboolean consent;
++  gboolean collect;
++  gchar *report;
++} InsightsApplyThreadData;
++
++static void
++ubuntu_insights_apply_thread_data_free (InsightsApplyThreadData *data)
++{
++  g_free (data->report);
++  g_free (data);
++}
++
++static void
++on_ubuntu_insights_apply_thread (GTask        *task,
++                                 gpointer      source_object,
++                                 gpointer      task_data,
++                                 GCancellable *cancellable)
++{
++  InsightsApplyThreadData *data = task_data;
++  g_autofree char *error_msg = NULL;
++
++  for (size_t i = 0; i < G_N_ELEMENTS (INSIGHT_SOURCES); i++) {
++    error_msg = insights_set_consent_state (NULL, INSIGHT_SOURCES[i].source,
++                                            data->consent);
++
++    if (error_msg != NULL)
++      {
++        const char *consent_error_msg;
++
++        if (data->consent)
++          consent_error_msg = INSIGHT_SOURCES[i].error_message_consent;
++        else
++          consent_error_msg = INSIGHT_SOURCES[i].error_message_withdraw;
++
++        g_task_return_new_error (task, G_IO_ERROR, G_IO_ERROR_FAILED,
++                                 _(consent_error_msg), error_msg);
++        return;
++      }
++  }
++
++  if (!data->collect)
++    {
++      g_task_return_boolean (task, TRUE);
++      return;
++    }
++
++  /* Write report */
++  if (!data->report)
++    {
++      g_autoptr (GError) error = NULL;
++
++      data->report = compile_insights_report (TRUE, &error);
++      if (error)
++        {
++          g_task_return_new_error (task, G_IO_ERROR, G_IO_ERROR_FAILED,
++                                   _("Failed to generate report: %s"),
++                                   error->message);
++          return;
++        }
++    }
++
++  g_assert (data->report);
++
++  /* We only write, and allow the systemd service/timer to do the uploading */
++  insights_write_flags flags = {0};
++  flags.period = G_MAXINT32; /* Ensure uniqueness */
++  flags.force = TRUE; /* Overwrite existing reports within period */
++
++  error_msg = insights_write (NULL, APP_SOURCE,
++                              data->report, &flags);
++  if (error_msg != NULL)
++    {
++      g_task_return_new_error (task, G_IO_ERROR, G_IO_ERROR_FAILED,
++                               _("Failed to write report: %s"), error_msg);
++      return;
++    }
++
++  g_task_return_boolean (task, TRUE);
++}
++
++static void
++on_ubuntu_insights_apply_callback (GObject     *source_object,
++                                  GAsyncResult *res,
++                                  gpointer      user_data)
++{
++  GTask *task = G_TASK (res);
++  g_autoptr (GError) error = NULL;
++
++  if (!g_task_propagate_boolean (task, &error))
++    g_warning ("%s", error->message);
++
++  gis_page_apply_complete (GIS_PAGE (source_object), TRUE);
++}
++
++/* Set consent and if not in upgrade mode, retrieve and write the report to disk.
++ * Ubuntu Insights will take care of sending it via a timed Systemd service.
++ * If report compile or write operations fails, we still attempt to
++ * set consent, and allow the user to continue on.
++ */
++static gboolean
++gis_ubuntu_insights_page_apply (GisPage *gis_page, GCancellable *cancellable)
++{
++  GisUbuntuInsightsPage *page = GIS_UBUNTU_INSIGHTS_PAGE (gis_page);
++  g_autoptr(GTask) task = NULL;
++  InsightsApplyThreadData *data;
++
++  data = g_new0 (InsightsApplyThreadData, 1);
++  data->consent = adw_switch_row_get_active (ADW_SWITCH_ROW (page->insights_switch));
++  data->collect = gis_driver_get_mode (gis_page->driver) != GIS_DRIVER_MODE_UPGRADE;
++  data->report = g_steal_pointer (&page->report);
++
++  task = g_task_new (page, cancellable, on_ubuntu_insights_apply_callback, NULL);
++  g_task_set_task_data (task, g_steal_pointer (&data),
++                        (GDestroyNotify) ubuntu_insights_apply_thread_data_free);
++
++  g_task_run_in_thread (task, on_ubuntu_insights_apply_thread);
++
++  return TRUE;
++}
++
++static void
++gis_ubuntu_insights_page_locale_changed (GisPage *gis_page)
++{
++  GisUbuntuInsightsPage *page = GIS_UBUNTU_INSIGHTS_PAGE (gis_page);
++  g_autofree gchar *description_text = NULL;
++
++  gis_page_set_title (GIS_PAGE (page), _("Help Improve Ubuntu"));
++
++  description_text = g_strdup_printf (_("Help us improve Ubuntu by sharing your system data with us. "
++                                        "This includes things like your machine model, "
++                                        "language, and timezone."));
++
++  if (gis_driver_get_mode (gis_page->driver) != GIS_DRIVER_MODE_UPGRADE)
++    {
++      gtk_button_set_label (GTK_BUTTON (page->show_report_link),
++                            _("Show First Report"));
++    }
++
++  g_object_set (page->header, "subtitle", description_text, NULL);
++}
++
++static gboolean
++on_link_activated (GisUbuntuInsightsPage *self,
++                   GtkLinkButton         *link_button)
++{
++  return gis_activate_link (NULL,
++                            gtk_link_button_get_uri (link_button),
++                            GTK_WIDGET (self));
++}
++
++static void
++gis_ubuntu_insights_page_class_init (GisUbuntuInsightsPageClass *klass)
++{
++  GisPageClass *page_class = GIS_PAGE_CLASS (klass);
++  GObjectClass *object_class = G_OBJECT_CLASS (klass);
++
++  gtk_widget_class_set_template_from_resource (GTK_WIDGET_CLASS (klass), "/org/gnome/initial-setup/gis-ubuntu-insights-page.ui");
++  gtk_widget_class_bind_template_child (GTK_WIDGET_CLASS (klass), GisUbuntuInsightsPage, header);
++  gtk_widget_class_bind_template_child (GTK_WIDGET_CLASS (klass), GisUbuntuInsightsPage, show_report_link);
++  gtk_widget_class_bind_template_child (GTK_WIDGET_CLASS (klass), GisUbuntuInsightsPage, insights_switch);
++  gtk_widget_class_bind_template_child (GTK_WIDGET_CLASS (klass), GisUbuntuInsightsPage, report_dialog);
++  gtk_widget_class_bind_template_child (GTK_WIDGET_CLASS (klass), GisUbuntuInsightsPage, report_stack);
++  gtk_widget_class_bind_template_child (GTK_WIDGET_CLASS (klass), GisUbuntuInsightsPage, report_loading_spinner);
++  gtk_widget_class_bind_template_child (GTK_WIDGET_CLASS (klass), GisUbuntuInsightsPage, report_scroll);
++  gtk_widget_class_bind_template_child (GTK_WIDGET_CLASS (klass), GisUbuntuInsightsPage, report_text_view);
++  gtk_widget_class_bind_template_callback (GTK_WIDGET_CLASS (klass), on_link_activated);
++  gtk_widget_class_bind_template_callback (GTK_WIDGET_CLASS (klass), on_show_report_activated);
++
++  page_class->page_id = PAGE_ID;
++  page_class->apply = gis_ubuntu_insights_page_apply;
++  page_class->locale_changed = gis_ubuntu_insights_page_locale_changed;
++  page_class->shown = page_shown;
++  object_class->constructed = gis_ubuntu_insights_page_constructed;
++  object_class->finalize = gis_ubuntu_insights_page_finalize;
++
++  gis_add_style_from_resource ("/org/gnome/initial-setup/gis-ubuntu-insights-page.css");
++}
++
++gboolean
++insight_needs_consent (void)
++{
++  for (size_t i = 0; i < G_N_ELEMENTS (INSIGHT_SOURCES); i++)
++    {
++      const char *source = INSIGHT_SOURCES[i].source;
++
++      if (insights_get_consent_state (NULL, source) == INSIGHTS_CONSENT_UNKNOWN)
++        return TRUE;
++    }
++
++  return FALSE;
++}
++
++static void
++gis_ubuntu_insights_page_init (GisUbuntuInsightsPage *page)
++{
++  g_resources_register (ubuntu_insights_get_resource ());
++  g_type_ensure (GIS_TYPE_PAGE_HEADER);
++
++  gtk_widget_init_template (GTK_WIDGET (page));
++}
++
++GisPage *
++gis_prepare_ubuntu_insights_page (GisDriver *driver)
++{
++  if (gis_driver_get_mode (driver) == GIS_DRIVER_MODE_UPGRADE &&
++      !insight_needs_consent () &&
++      !g_getenv ("GIS_SHOW_ALL_PAGES"))
++    {
++      g_message ("Ubuntu Insights consent has already been set. Skipping Ubuntu Insights page.");
++      return NULL;
++    }
++
++  return g_object_new (GIS_TYPE_UBUNTU_INSIGHTS_PAGE,
++                       "driver", driver,
++                       NULL);
++}
+diff --git a/gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.css b/gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.css
+new file mode 100644
+index 0000000..08ce2d7
+--- /dev/null
++++ b/gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.css
+@@ -0,0 +1,8 @@
++/* Emulate spacing of a label */
++.link-caption {
++  padding: 0;
++  box-shadow: none;
++  border-radius: 0px;
++  min-height: 0px;
++  min-width: 0px;
++}
+diff --git a/gnome-initial-setup/gis-focusable-bin.h b/gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.h
+similarity index 65%
+copy from gnome-initial-setup/gis-focusable-bin.h
+copy to gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.h
+index fdf11ac..9305963 100644
+--- a/gnome-initial-setup/gis-focusable-bin.h
++++ b/gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.h
+@@ -16,15 +16,18 @@
+  * along with this program; if not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+-#pragma once
++#ifndef __GIS_UBUNTU_INSIGHTS_PAGE_H__
++#define __GIS_UBUNTU_INSIGHTS_PAGE_H__
+ 
+-#include "gtk/gtk.h"
++#include "gnome-initial-setup.h"
+ 
+ G_BEGIN_DECLS
+ 
+-#define GIS_TYPE_FOCUSABLE_BIN gis_focusable_bin_get_type()
+-G_DECLARE_FINAL_TYPE (GisFocusableBin, gis_focusable_bin, GIS, FOCUSABLE_BIN, GtkWidget)
++#define GIS_TYPE_UBUNTU_INSIGHTS_PAGE            (gis_ubuntu_insights_page_get_type ())
++G_DECLARE_FINAL_TYPE (GisUbuntuInsightsPage, gis_ubuntu_insights_page, GIS, UBUNTU_INSIGHTS_PAGE, GisPage);
+ 
+-GisFocusableBin *gis_focusable_bin_new (void);
++GisPage *gis_prepare_ubuntu_insights_page (GisDriver *driver);
+ 
+ G_END_DECLS
++
++#endif /* __GIS_UBUNTU_INSIGHTS_PAGE_H__ */
+diff --git a/gnome-initial-setup/pages/apps/meson.build b/gnome-initial-setup/pages/ubuntu-insights/meson.build
+similarity index 57%
+copy from gnome-initial-setup/pages/apps/meson.build
+copy to gnome-initial-setup/pages/ubuntu-insights/meson.build
+index dc88382..1674aa0 100644
+--- a/gnome-initial-setup/pages/apps/meson.build
++++ b/gnome-initial-setup/pages/ubuntu-insights/meson.build
+@@ -1,22 +1,22 @@
+ blueprint_compiler = find_program('blueprint-compiler')
+ 
+ blueprints = custom_target(
+-    'ubuntu-pro-ui-files',
++    'ubuntu-insights-ui-files',
+     input: files(
+-        'gis-apps-page.blp',
++        'gis-ubuntu-insights-page.blp',
+     ),
+     output: '.',
+     command: [blueprint_compiler,  'batch-compile', '--minify', '@OUTPUT@', '@CURRENT_SOURCE_DIR@', '@INPUT@'],
+ )
+ 
+ sources += gnome.compile_resources(
+-    'apps-resources',
+-    files('apps.gresource.xml'),
+-    c_name: 'apps',
++    'ubuntu-insights-resources',
++    files('ubuntu-insights.gresource.xml'),
++    c_name: 'ubuntu_insights',
+     dependencies: blueprints,
+ )
+ 
+ sources += files(
+-    'gis-apps-page.c',
+-    'gis-apps-page.h',
++    'gis-ubuntu-insights-page.c',
++    'gis-ubuntu-insights-page.h',
+ )
+diff --git a/gnome-initial-setup/pages/ubuntu-insights/ubuntu-insights.gresource.xml b/gnome-initial-setup/pages/ubuntu-insights/ubuntu-insights.gresource.xml
+new file mode 100644
+index 0000000..f29fe3c
+--- /dev/null
++++ b/gnome-initial-setup/pages/ubuntu-insights/ubuntu-insights.gresource.xml
+@@ -0,0 +1,10 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<gresources>
++  <gresource prefix="/org/gnome/initial-setup">
++    <file preprocess="xml-stripblanks" alias="gis-ubuntu-insights-page.ui">gis-ubuntu-insights-page.ui</file>
++    <file>gis-ubuntu-insights-page.css</file>
++  </gresource>
++  <gresource prefix="/org/gnome/InitialSetup/icons">
++    <file preprocess="xml-stripblanks" alias="scalable/places/ubuntu-insights.svg">ubuntu-insights.svg</file>
++  </gresource>
++</gresources>
+diff --git a/gnome-initial-setup/pages/ubuntu-insights/ubuntu-insights.svg b/gnome-initial-setup/pages/ubuntu-insights/ubuntu-insights.svg
+new file mode 100644
+index 0000000..5c4eace
+--- /dev/null
++++ b/gnome-initial-setup/pages/ubuntu-insights/ubuntu-insights.svg
+@@ -0,0 +1 @@
++<?xml version="1.0" encoding="UTF-8"?><svg id="a" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="280" height="280" viewBox="0 0 280 280"><defs><clipPath id="b"><path d="M126.9,54.59l-4.13-2.44c.16-.48.46-.84.76-1.01l4.13,2.44c-.3.18-.6.53-.76,1.01Z" style="fill:#fff; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:.5px;"/></clipPath><clipPath id="c"><path d="M93.66,90.34c1.38.81,2.75,1.62,4.13,2.44-.63-.37-1.47-.26-2.3.23-.9.53-1.8,1.5-2.45,2.75l-4.13-2.44c.64-1.25,1.54-2.22,2.45-2.75.83-.49,1.67-.6,2.3-.23Z" style="fill:#fff; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:.5px;"/></clipPath><clipPath id="d"><path d="M77.38,122.89l-4.13-2.44c.34.2.78.13,1.22-.12.49-.28.97-.8,1.31-1.47l4.13,2.44c-.34.67-.83,1.19-1.31,1.47-.44.26-.88.32-1.22.12Z" style="fill:#fff; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:.5px;"/></clipPath><clipPath id="e"><path d="M70.51,125.03l-4.13-2.44c.66-1.36,1.63-2.42,2.61-2.99.85-.5,1.71-.63,2.37-.24l4.13,2.44c-.66-.38-1.52-.26-2.37.24-.97.57-1.94,1.63-2.61,2.99Z" style="fill:#fff; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:.5px;"/></clipPath><clipPath id="f"><path d="M60.43,142.13l-4.13-2.44c.33.19.76.13,1.19-.12.49-.29.97-.81,1.3-1.49l4.13,2.44c-.33.68-.82,1.21-1.3,1.49-.43.25-.86.31-1.19.12Z" style="fill:#fff; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:.5px;"/></clipPath><clipPath id="g"><path d="M52.55,141.9l-4.13-2.44c0-1.08.76-2.25,1.55-2.71.38-.22.77-.28,1.08-.1l4.13,2.44c-.31-.18-.7-.12-1.08.1-.79.46-1.55,1.63-1.55,2.71Z" style="fill:#fff; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:.5px;"/></clipPath><clipPath id="h"><path d="M140.33,77.15l-4.13-2.44c.32-.56.71-.95,1.09-1.17l4.13,2.44c-.38.22-.77.62-1.09,1.17Z" style="fill:#fff; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:.5px;"/></clipPath><clipPath id="i"><path d="M154.63,85.1c1.38.81,2.75,1.62,4.13,2.44-.25-.15-.6-.11-.95.09l-4.13-2.44c.36-.21.7-.24.95-.09Z" style="fill:#fff; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:.5px;"/></clipPath><clipPath id="j"><path d="M156.89,88.62l-4.13-2.44c.27-.47.6-.8.92-.99l4.13,2.44c-.32.19-.65.52-.92.99Z" style="fill:#fff; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:.5px;"/></clipPath><clipPath id="k"><path d="M143.01,105.52l-4.13-2.44c.44-.78,1.02-1.37,1.6-1.71.58-.34,1.16-.42,1.61-.17s1.03.18,1.61-.16c.58-.34,1.16-.94,1.6-1.71l4.13,2.44c-.44.78-1.02,1.38-1.6,1.71-.58.34-1.16.42-1.61.16-.44-.26-1.03-.18-1.61.17-.58.34-1.16.94-1.6,1.72Z" style="fill:#fff; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:.5px;"/></clipPath><clipPath id="l"><path d="M133.5,116.96l-4.13-2.44c.62.36,1.43.24,2.25-.23.81-.48,1.62-1.31,2.24-2.4l4.13,2.44c-.62,1.09-1.43,1.92-2.24,2.4-.81.48-1.62.59-2.25.23Z" style="fill:#fff; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:.5px;"/></clipPath><clipPath id="m"><path d="M126.03,117.87l-4.13-2.44c.62-1.09,1.43-1.92,2.24-2.4.81-.48,1.63-.59,2.25-.23l4.13,2.44c-.62-.36-1.44-.24-2.25.23-.81.48-1.62,1.31-2.24,2.4Z" style="fill:#fff; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:.5px;"/></clipPath><clipPath id="n"><path d="M109.73,141.27l-4.13-2.44c.62.36,1.44.25,2.25-.23.81-.48,1.62-1.31,2.24-2.4l4.13,2.44c-.62,1.09-1.43,1.92-2.24,2.4-.81.48-1.63.59-2.25.23Z" style="fill:#fff; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:.5px;"/></clipPath><clipPath id="o"><path d="M103.16,142.69l-4.13-2.44c.62-1.09,1.43-1.92,2.24-2.4.81-.48,1.62-.59,2.25-.23l4.13,2.44c-.62-.36-1.43-.25-2.25.23-.81.48-1.62,1.31-2.24,2.4Z" style="fill:#fff; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:.5px;"/></clipPath><clipPath id="p"><path d="M90.2,160.21l-4.13-2.44c.62.36,1.43.25,2.25-.23.81-.48,1.62-1.31,2.24-2.4l4.13,2.44c-.62,1.09-1.43,1.92-2.24,2.4-.81.48-1.62.59-2.25.23Z" style="fill:#fff; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:.5px;"/></clipPath></defs><path d="M96.35,179.24l78.34-46.15c2.08-1.2,1.82-3.32-.59-4.71l-46.64-24.79c-2.41-1.39-6.08-1.54-8.16-.34l-78.34,46.15c-2.08,1.2-1.82,3.32.59,4.71l46.64,24.79c2.41,1.39,6.08,1.54,8.16.34Z" style="fill:#666; opacity:.2; stroke-width:0px;"/><path d="M128.54,54.07c0-.31-.1-.49-.26-.57,0,0,.01,0,.02,0l-4.13-2.44c-.17-.1-.4-.07-.63.07-.3.18-.6.53-.76,1.01l-19.52,38.85c-.22.66-.67,1.2-1.11,1.46-.27.16-.67.1-.97.04l-7.74-2.27c-.6-.23-1.34-.09-2.07.34-.9.53-1.8,1.5-2.45,2.75l-13.12,25.54c-.34.67-.83,1.19-1.31,1.47-.44.26-.88.32-1.22.12l-1.89-1.09c-.66-.38-1.52-.26-2.37.24-.97.57-1.94,1.63-2.61,2.99l-7.59,15.48c-.33.68-.82,1.21-1.3,1.49-.43.25-.86.31-1.19.12l-5.25-3.05c-.32-.18-.7-.12-1.08.1-.79.46-1.55,1.63-1.55,2.71l.03,12.47,4.13,2.44,76.11-44.6-.16-55.7ZM128.2,53.47s-.04-.01-.06-.02c.02,0,.04.01.06.02ZM128.06,53.45s-.04,0-.06,0c.02,0,.04,0,.06,0ZM105.8,95.05h0,0ZM105.89,95.04s.02,0,.04,0c-.01,0-.02,0-.04,0ZM105.99,95.02s.03,0,.05-.01c-.02,0-.03,0-.05.01ZM106.1,94.99s.03-.01.05-.02c-.02,0-.03.01-.05.02ZM127.89,53.48s-.04,0-.06.02c.02,0,.04-.01.06-.02Z" style="fill:#fff; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:2px;"/><path d="M105.39,94.99l-4.35-2.51c.31.06.79.17,1.1-.01.45-.26.89-.8,1.11-1.46l4.13,2.44c-.22.66-.66,1.2-1.11,1.46-.31.18-.57.18-.88.09h0Z" style="fill:#fff; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:.5px;"/><g style="isolation:isolate;"><path d="M127.66,53.57l-4.13-2.44c.23-.14.47-.17.63-.07l4.13,2.44c-.17-.1-.4-.07-.63.07h0Z" style="fill:#fff; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:.5px;"/></g><polygon points="107.38 93.44 103.25 91 122.77 52.15 126.9 54.59 107.38 93.44" style="fill:#fff; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:.5px;"/><g style="isolation:isolate;"><path d="M126.9,54.59l-4.13-2.44c.16-.48.46-.84.76-1.01l4.13,2.44c-.3.18-.6.53-.76,1.01Z" style="fill:#fff;"/><g style="clip-path:url(#b);"><path d="M126.9,54.59l-4.13-2.44c.16-.48.46-.84.76-1.01l4.13,2.44c-.3.18-.6.53-.76,1.01h0Z" style="fill:#fff; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:.5px;"/></g><path d="M126.9,54.59l-4.13-2.44c.16-.48.46-.84.76-1.01l4.13,2.44c-.3.18-.6.53-.76,1.01Z" style="fill:none; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:.5px;"/></g><polygon points="97.3 92.6 93.2 90.17 101.21 92.52 105.34 94.95 97.3 92.6" style="fill:#fff; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:.5px;"/><polygon points="79.92 121.3 75.79 118.86 88.91 93.32 93.04 95.76 79.92 121.3" style="fill:#fff; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:.5px;"/><g style="isolation:isolate;"><path d="M93.66,90.34c1.38.81,2.75,1.62,4.13,2.44-.63-.37-1.47-.26-2.3.23-.9.53-1.8,1.5-2.45,2.75l-4.13-2.44c.64-1.25,1.54-2.22,2.45-2.75.83-.49,1.67-.6,2.3-.23Z" style="fill:#fff;"/><g style="clip-path:url(#c);"><path d="M93.04,95.76l-4.13-2.44c.64-1.25,1.54-2.22,2.45-2.75.83-.49,1.67-.6,2.3-.23l4.13,2.44c-.63-.37-1.47-.26-2.3.23-.9.53-1.8,1.5-2.45,2.75h0Z" style="fill:#fff; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:.5px;"/></g><path d="M93.66,90.34c1.38.81,2.75,1.62,4.13,2.44-.63-.37-1.47-.26-2.3.23-.9.53-1.8,1.5-2.45,2.75l-4.13-2.44c.64-1.25,1.54-2.22,2.45-2.75.83-.49,1.67-.6,2.3-.23Z" style="fill:none; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:.5px;"/></g><g style="isolation:isolate;"><path d="M77.38,122.89l-4.13-2.44c.34.2.78.13,1.22-.12.49-.28.97-.8,1.31-1.47l4.13,2.44c-.34.67-.83,1.19-1.31,1.47-.44.26-.88.32-1.22.12Z" style="fill:#fff;"/><g style="clip-path:url(#d);"><path d="M77.38,122.89l-4.13-2.44c.34.2.78.13,1.22-.12.49-.28.97-.8,1.31-1.47l4.13,2.44c-.34.67-.83,1.19-1.31,1.47-.44.26-.88.32-1.22.12h0Z" style="fill:#fff; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:.5px;"/></g><path d="M77.38,122.89l-4.13-2.44c.34.2.78.13,1.22-.12.49-.28.97-.8,1.31-1.47l4.13,2.44c-.34.67-.83,1.19-1.31,1.47-.44.26-.88.32-1.22.12Z" style="fill:none; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:.5px;"/></g><polygon points="75.49 121.81 71.36 119.37 73.25 120.46 77.38 122.89 75.49 121.81" style="fill:#fff; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:.5px;"/><polygon points="62.92 140.52 58.79 138.08 66.38 122.6 70.51 125.03 62.92 140.52" style="fill:#fff; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:.5px;"/><g style="isolation:isolate;"><path d="M70.51,125.03l-4.13-2.44c.66-1.36,1.63-2.42,2.61-2.99.85-.5,1.71-.63,2.37-.24l4.13,2.44c-.66-.38-1.52-.26-2.37.24-.97.57-1.94,1.63-2.61,2.99Z" style="fill:#fff;"/><g style="clip-path:url(#e);"><path d="M70.51,125.03l-4.13-2.44c.66-1.36,1.63-2.42,2.61-2.99.85-.5,1.71-.63,2.37-.24l4.13,2.44c-.66-.38-1.52-.26-2.37.24-.97.57-1.94,1.63-2.61,2.99h0Z" style="fill:#fff; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:.5px;"/></g><path d="M70.51,125.03l-4.13-2.44c.66-1.36,1.63-2.42,2.61-2.99.85-.5,1.71-.63,2.37-.24l4.13,2.44c-.66-.38-1.52-.26-2.37.24-.97.57-1.94,1.63-2.61,2.99Z" style="fill:none; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:.5px;"/></g><g style="isolation:isolate;"><path d="M60.43,142.13l-4.13-2.44c.33.19.76.13,1.19-.12.49-.29.97-.81,1.3-1.49l4.13,2.44c-.33.68-.82,1.21-1.3,1.49-.43.25-.86.31-1.19.12Z" style="fill:#fff;"/><g style="clip-path:url(#f);"><path d="M60.43,142.13l-4.13-2.44c.33.19.76.13,1.19-.12.49-.29.97-.81,1.3-1.49l4.13,2.44c-.33.68-.82,1.21-1.3,1.49-.43.25-.86.31-1.19.12h0Z" style="fill:#fff; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:.5px;"/></g><path d="M60.43,142.13l-4.13-2.44c.33.19.76.13,1.19-.12.49-.29.97-.81,1.3-1.49l4.13,2.44c-.33.68-.82,1.21-1.3,1.49-.43.25-.86.31-1.19.12Z" style="fill:none; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:.5px;"/></g><polygon points="55.18 139.08 51.05 136.65 56.3 139.69 60.43 142.13 55.18 139.08" style="fill:#fff; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:.5px;"/><polygon points="52.58 154.37 48.45 151.93 48.42 139.46 52.55 141.9 52.58 154.37" style="fill:#fff; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:.5px;"/><path d="M127.66,53.57c.44-.26.87-.14.87.5l.16,55.7-76.11,44.6-.03-12.47c0-1.08.76-2.25,1.55-2.71.38-.22.77-.28,1.08-.1l5.25,3.05c.33.19.76.13,1.19-.12.49-.28.97-.81,1.3-1.49l7.59-15.48c.66-1.36,1.63-2.42,2.61-2.99.85-.5,1.71-.63,2.37-.24l1.89,1.09c.34.2.78.13,1.22-.12.48-.28.97-.8,1.31-1.47l13.12-25.54c.64-1.25,1.54-2.22,2.45-2.75.9-.52,1.41-.6,2.51-.23l7.34,2.17c.33.13.59.15.93-.05.45-.26.89-.81,1.11-1.46l19.52-38.85c.16-.49.46-.84.76-1.01" style="fill:#fff; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:.5px;"/><g style="isolation:isolate;"><path d="M52.55,141.9l-4.13-2.44c0-1.08.76-2.25,1.55-2.71.38-.22.77-.28,1.08-.1l4.13,2.44c-.31-.18-.7-.12-1.08.1-.79.46-1.55,1.63-1.55,2.71Z" style="fill:#fff;"/><g style="clip-path:url(#g);"><path d="M52.55,141.9l-4.13-2.44c0-1.08.76-2.25,1.55-2.71.38-.22.77-.28,1.08-.1l4.13,2.44c-.31-.18-.7-.12-1.08.1-.79.46-1.55,1.63-1.55,2.71h0Z" style="fill:#fff; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:.5px;"/></g><path d="M52.55,141.9l-4.13-2.44c0-1.08.76-2.25,1.55-2.71.38-.22.77-.28,1.08-.1l4.13,2.44c-.31-.18-.7-.12-1.08.1-.79.46-1.55,1.63-1.55,2.71Z" style="fill:none; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:.5px;"/></g><g style="opacity:.31;"><path d="M127.66,53.57c.44-.26.87-.14.87.5l.16,55.7-76.11,44.6-.03-12.47c0-1.08.76-2.25,1.55-2.71.38-.22.77-.28,1.08-.1l5.25,3.05c.33.19.76.13,1.19-.12.49-.28.97-.81,1.3-1.49l7.59-15.48c.66-1.36,1.63-2.42,2.61-2.99.85-.5,1.71-.63,2.37-.24l1.89,1.09c.34.2.78.13,1.22-.12.48-.28.97-.8,1.31-1.47l13.12-25.54c.64-1.25,1.54-2.22,2.45-2.75.9-.52,1.41-.6,2.51-.23l7.34,2.17c.33.13.59.15.93-.05.45-.26.89-.81,1.11-1.46l19.52-38.85c.16-.49.46-.84.76-1.01" style="fill:#e95420; stroke-width:0px;"/></g><path d="M62.5,159.15l4.13,2.43,76.47-44.82-.11-39.9c0-.53-.19-.87-.47-1.02,0,0,.02,0,.02,0-1.38-.81-2.75-1.62-4.13-2.44-.3-.17-.71-.13-1.13.11-.38.22-.77.62-1.09,1.17l-11.76,20.69c-.73,1.29-1.7,2.28-2.66,2.84-.96.56-1.93.7-2.66.28l-3.05-1.77c-.74-.43-1.7-.29-2.66.28-.96.56-1.93,1.56-2.66,2.84l-16.93,29.76c-.73,1.29-1.69,2.28-2.66,2.84-.96.56-1.93.7-2.66.27l-5.32-3.08c-.75-.43-1.73-.3-2.71.28-.96.56-1.92,1.54-2.66,2.82l-15.31,26.38ZM142.12,75.76s-.07,0-.11,0c.04,0,.07,0,.11,0ZM142.39,75.8s-.07-.03-.1-.03c.04,0,.07.02.1.03ZM141.72,75.83s.07-.02.11-.03c-.04,0-.07.01-.11.03Z" style="fill:none; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:.5px;"/><path d="M62.5,159.15l4.13,2.43,76.47-44.82-.11-39.9c0-.53-.19-.87-.47-1.02,0,0,.02,0,.02,0-1.38-.81-2.75-1.62-4.13-2.44-.3-.17-.71-.13-1.13.11-.38.22-.77.62-1.09,1.17l-11.76,20.69c-.73,1.29-1.7,2.28-2.66,2.84-.96.56-1.93.7-2.66.28l-3.05-1.77c-.74-.43-1.7-.29-2.66.28-.96.56-1.93,1.56-2.66,2.84l-16.93,29.76c-.73,1.29-1.69,2.28-2.66,2.84-.96.56-1.93.7-2.66.27l-5.32-3.08c-.75-.43-1.73-.3-2.71.28-.96.56-1.92,1.54-2.66,2.82l-15.31,26.38ZM142.12,75.76s-.07,0-.11,0c.04,0,.07,0,.11,0ZM142.39,75.8s-.07-.03-.1-.03c.04,0,.07.02.1.03ZM141.72,75.83s.07-.02.11-.03c-.04,0-.07.01-.11.03Z" style="fill:none; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:.5px;"/><polygon points="128.56 97.83 124.43 95.4 136.2 74.71 140.33 77.15 128.56 97.83" style="fill:#fff; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:.5px;"/><g style="isolation:isolate;"><path d="M138.42,73.42c1.38.81,2.75,1.62,4.13,2.44-.3-.18-.71-.13-1.13.11l-4.13-2.44c.42-.25.83-.29,1.13-.11Z" style="fill:#fff;"/><path d="M138.42,73.42c1.38.81,2.75,1.62,4.13,2.44-.3-.18-.71-.13-1.13.11l-4.13-2.44c.42-.25.83-.29,1.13-.11Z" style="fill:none; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:.5px;"/></g><g style="isolation:isolate;"><path d="M140.33,77.15l-4.13-2.44c.32-.56.71-.95,1.09-1.17l4.13,2.44c-.38.22-.77.62-1.09,1.17Z" style="fill:#fff;"/><g style="clip-path:url(#h);"><path d="M140.33,77.15l-4.13-2.44c.32-.56.71-.95,1.09-1.17l4.13,2.44c-.38.22-.77.62-1.09,1.17h0Z" style="fill:#fff; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:.5px;"/></g><path d="M140.33,77.15l-4.13-2.44c.32-.56.71-.95,1.09-1.17l4.13,2.44c-.38.22-.77.62-1.09,1.17Z" style="fill:none; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:.5px;"/></g><g style="isolation:isolate;"><path d="M123.24,100.95l-4.13-2.44c.74.42,1.7.29,2.66-.28.96-.56,1.93-1.56,2.66-2.84l4.13,2.44c-.73,1.29-1.69,2.28-2.66,2.84-.96.56-1.93.7-2.67.28Z" style="fill:#fff;"/><path d="M123.24,100.95l-4.13-2.44c.74.42,1.7.29,2.66-.28.96-.56,1.93-1.56,2.66-2.84l4.13,2.44c-.73,1.29-1.69,2.28-2.66,2.84-.96.56-1.93.7-2.67.28Z" style="fill:none; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:.5px;"/></g><polygon points="97.93 132.07 93.8 129.63 110.73 99.87 114.86 102.31 97.93 132.07" style="fill:#fff; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:.5px;"/><g style="isolation:isolate;"><path d="M114.86,102.31l-4.13-2.44c.73-1.29,1.69-2.28,2.66-2.84.96-.56,1.93-.7,2.66-.28l4.13,2.44c-.74-.43-1.7-.29-2.66.28-.96.56-1.92,1.56-2.66,2.84Z" style="fill:#fff;"/><path d="M114.86,102.31l-4.13-2.44c.73-1.29,1.69-2.28,2.66-2.84.96-.56,1.93-.7,2.66-.28l4.13,2.44c-.74-.43-1.7-.29-2.66.28-.96.56-1.92,1.56-2.66,2.84Z" style="fill:none; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:.5px;"/></g><polygon points="66.63 161.59 62.5 159.15 77.8 132.77 81.93 135.21 66.63 161.59" style="fill:#fff; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:.5px;"/><path d="M141.41,75.97c.8-.47,1.57-.19,1.58.9l.11,39.9-76.47,44.82,15.31-26.38c.74-1.27,1.7-2.26,2.66-2.82.98-.57,1.96-.71,2.71-.28l5.32,3.08c.74.43,1.7.29,2.66-.28.96-.56,1.93-1.56,2.66-2.84l16.93-29.76c.73-1.29,1.69-2.28,2.66-2.84.96-.56,1.93-.7,2.66-.28l3.05,1.77c.74.43,1.7.29,2.67-.28.96-.56,1.92-1.56,2.66-2.84l11.77-20.69c.32-.56.71-.95,1.09-1.17Z" style="fill:#e95420; stroke-width:0px;"/><g style="isolation:isolate;"><path d="M92.61,135.19l-4.13-2.44c.74.43,1.7.29,2.66-.27.96-.56,1.93-1.56,2.66-2.84l4.13,2.44c-.73,1.29-1.69,2.28-2.66,2.84-.96.56-1.93.7-2.66.28Z" style="fill:#fff;"/><path d="M92.61,135.19l-4.13-2.44c.74.43,1.7.29,2.66-.27.96-.56,1.93-1.56,2.66-2.84l4.13,2.44c-.73,1.29-1.69,2.28-2.66,2.84-.96.56-1.93.7-2.66.28Z" style="fill:none; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:.5px;"/></g><g style="isolation:isolate;"><path d="M81.93,135.21l-4.13-2.44c.74-1.27,1.7-2.26,2.66-2.82.98-.57,1.96-.71,2.71-.28l4.13,2.44c-.75-.43-1.73-.29-2.71.28-.96.56-1.92,1.54-2.66,2.82Z" style="fill:#fff;"/><path d="M81.93,135.21l-4.13-2.44c.74-1.27,1.7-2.26,2.66-2.82.98-.57,1.96-.71,2.71-.28l4.13,2.44c-.75-.43-1.73-.29-2.71.28-.96.56-1.92,1.54-2.66,2.82Z" style="fill:none; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:.5px;"/></g><path d="M142.99,76.87c0-.53-.19-.87-.47-1.02,0,0,.02,0,.02,0,0,0,0,0,0,0,0,0,0,0,0,0-1.38-.81-2.75-1.62-4.13-2.44-.04-.02-.08-.04-.12-.06-.08-.03-.17-.05-.26-.05-.05,0-.09,0-.14,0-.19.02-.4.09-.61.21-.08.05-.16.1-.24.16-.11.09-.22.18-.33.3-.02.02-.03.04-.05.06-.17.19-.33.4-.47.66l-11.76,20.69c-.27.48-.58.92-.91,1.32-.11.13-.22.26-.33.38-.45.48-.93.87-1.42,1.15-.49.29-.98.46-1.45.51-.22.02-.43.02-.63-.02-.1-.02-.21-.05-.31-.08-.1-.04-.19-.08-.29-.13h0l-3.05-1.77h0s0,0,0,0h0c-.57-.33-1.29-.32-2.03-.03-.21.08-.42.18-.64.31-.72.42-1.44,1.09-2.07,1.94-.21.28-.41.59-.59.91l-16.93,29.76c-.37.64-.79,1.21-1.24,1.69-.13.14-.26.26-.39.38-.33.31-.68.57-1.03.77-.48.28-.96.46-1.42.51-.11.01-.23.02-.33.02-.33,0-.64-.09-.91-.25h0s0,0,0,0l-5.31-3.07h0c-.28-.16-.59-.25-.93-.26-.11,0-.22,0-.34.02-.23.03-.47.08-.71.17-.12.04-.24.09-.36.15-.12.06-.24.12-.37.19-.07.04-.15.09-.22.14-.41.27-.81.6-1.19,1-.23.24-.45.5-.65.78s-.41.58-.59.9l-15.31,26.38h0s4.13,2.44,4.13,2.44l76.47-44.82-.11-39.9Z" style="fill:none; stroke:#606060; stroke-linecap:round; stroke-linejoin:round;"/><path d="M154.63,85.1c1.38.81,2.75,1.62,4.13,2.44-.25-.15-.6-.11-.95.09l-4.13-2.44c.36-.21.7-.24.95-.09Z" style="fill:#fff;"/><g style="clip-path:url(#i);"><g style="isolation:isolate;"><path d="M157.81,87.63l-4.13-2.44c.36-.21.7-.24.95-.09l4.13,2.44c-.25-.15-.6-.11-.95.09h0Z" style="fill:#fff; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:.5px;"/></g></g><path d="M154.63,85.1c1.38.81,2.75,1.62,4.13,2.44-.25-.15-.6-.11-.95.09l-4.13-2.44c.36-.21.7-.24.95-.09Z" style="fill:none; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:.5px;"/><polygon points="149.42 101.76 145.29 99.32 152.76 86.19 156.89 88.62 149.42 101.76" style="fill:#fff; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:.5px;"/><path d="M156.89,88.62l-4.13-2.44c.27-.47.6-.8.92-.99l4.13,2.44c-.32.19-.65.52-.92.99Z" style="fill:#fff;"/><g style="clip-path:url(#j);"><path d="M156.89,88.62l-4.13-2.44c.27-.47.6-.8.92-.99l4.13,2.44c-.32.19-.65.52-.92.99h0Z" style="fill:#fff; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:.5px;"/></g><path d="M156.89,88.62l-4.13-2.44c.27-.47.6-.8.92-.99l4.13,2.44c-.32.19-.65.52-.92.99Z" style="fill:none; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:.5px;"/><polygon points="137.99 114.33 133.86 111.9 138.88 103.08 143.01 105.52 137.99 114.33" style="fill:#fff; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:.5px;"/><path d="M143.01,105.52l-4.13-2.44c.44-.78,1.02-1.37,1.6-1.71.58-.34,1.16-.42,1.61-.17s1.03.18,1.61-.16c.58-.34,1.16-.94,1.6-1.71l4.13,2.44c-.44.78-1.02,1.38-1.6,1.71-.58.34-1.16.42-1.61.16-.44-.26-1.03-.18-1.61.17-.58.34-1.16.94-1.6,1.72Z" style="fill:#fff;"/><g style="clip-path:url(#k);"><path d="M143.01,105.52l-4.13-2.44c.44-.78,1.02-1.37,1.6-1.71.58-.34,1.16-.42,1.61-.17s1.03.18,1.61-.16c.58-.34,1.16-.94,1.6-1.71l4.13,2.44c-.44.78-1.02,1.38-1.6,1.71-.58.34-1.16.42-1.61.16-.44-.26-1.03-.18-1.61.17-.58.34-1.16.94-1.6,1.72h0Z" style="fill:#fff; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:.5px;"/></g><path d="M143.01,105.52l-4.13-2.44c.44-.78,1.02-1.37,1.6-1.71.58-.34,1.16-.42,1.61-.17s1.03.18,1.61-.16c.58-.34,1.16-.94,1.6-1.71l4.13,2.44c-.44.78-1.02,1.38-1.6,1.71-.58.34-1.16.42-1.61.16-.44-.26-1.03-.18-1.61.17-.58.34-1.16.94-1.6,1.72Z" style="fill:none; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:.5px;"/><path d="M133.5,116.96l-4.13-2.44c.62.36,1.43.24,2.25-.23.81-.48,1.62-1.31,2.24-2.4l4.13,2.44c-.62,1.09-1.43,1.92-2.24,2.4-.81.48-1.62.59-2.25.23Z" style="fill:#fff;"/><g style="clip-path:url(#l);"><path d="M133.5,116.96l-4.13-2.44c.62.36,1.43.24,2.25-.23.81-.48,1.62-1.31,2.24-2.4l4.13,2.44c-.62,1.09-1.43,1.92-2.24,2.4-.81.48-1.62.59-2.25.23h0Z" style="fill:#fff; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:.5px;"/></g><path d="M133.5,116.96l-4.13-2.44c.62.36,1.43.24,2.25-.23.81-.48,1.62-1.31,2.24-2.4l4.13,2.44c-.62,1.09-1.43,1.92-2.24,2.4-.81.48-1.62.59-2.25.23Z" style="fill:none; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:.5px;"/><polygon points="130.52 115.24 126.39 112.8 129.37 114.53 133.5 116.96 130.52 115.24" style="fill:#fff; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:.5px;"/><polygon points="114.22 138.64 110.09 136.2 121.9 115.43 126.03 117.87 114.22 138.64" style="fill:#fff; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:.5px;"/><path d="M126.03,117.87l-4.13-2.44c.62-1.09,1.43-1.92,2.24-2.4.81-.48,1.63-.59,2.25-.23l4.13,2.44c-.62-.36-1.44-.24-2.25.23-.81.48-1.62,1.31-2.24,2.4Z" style="fill:#fff;"/><g style="clip-path:url(#m);"><path d="M126.03,117.87l-4.13-2.44c.62-1.09,1.43-1.92,2.24-2.4.81-.48,1.63-.59,2.25-.23l4.13,2.44c-.62-.36-1.44-.24-2.25.23-.81.48-1.62,1.31-2.24,2.4h0Z" style="fill:#fff; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:.5px;"/></g><path d="M126.03,117.87l-4.13-2.44c.62-1.09,1.43-1.92,2.24-2.4.81-.48,1.63-.59,2.25-.23l4.13,2.44c-.62-.36-1.44-.24-2.25.23-.81.48-1.62,1.31-2.24,2.4Z" style="fill:none; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:.5px;"/><path d="M109.73,141.27l-4.13-2.44c.62.36,1.44.25,2.25-.23.81-.48,1.62-1.31,2.24-2.4l4.13,2.44c-.62,1.09-1.43,1.92-2.24,2.4-.81.48-1.63.59-2.25.23Z" style="fill:#fff;"/><g style="clip-path:url(#n);"><path d="M109.73,141.27l-4.13-2.44c.62.36,1.44.25,2.25-.23.81-.48,1.62-1.31,2.24-2.4l4.13,2.44c-.62,1.09-1.43,1.92-2.24,2.4-.81.48-1.63.59-2.25.23h0Z" style="fill:#fff; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:.5px;"/></g><path d="M109.73,141.27l-4.13-2.44c.62.36,1.44.25,2.25-.23.81-.48,1.62-1.31,2.24-2.4l4.13,2.44c-.62,1.09-1.43,1.92-2.24,2.4-.81.48-1.63.59-2.25.23Z" style="fill:none; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:.5px;"/><polygon points="107.64 140.06 103.51 137.63 105.6 138.83 109.73 141.27 107.64 140.06" style="fill:#fff; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:.5px;"/><polygon points="94.69 157.58 90.56 155.14 99.03 140.25 103.16 142.69 94.69 157.58" style="fill:#fff; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:.5px;"/><path d="M103.16,142.69l-4.13-2.44c.62-1.09,1.43-1.92,2.24-2.4.81-.48,1.62-.59,2.25-.23l4.13,2.44c-.62-.36-1.43-.25-2.25.23-.81.48-1.62,1.31-2.24,2.4Z" style="fill:#fff;"/><g style="clip-path:url(#o);"><path d="M103.16,142.69l-4.13-2.44c.62-1.09,1.43-1.92,2.24-2.4.81-.48,1.62-.59,2.25-.23l4.13,2.44c-.62-.36-1.43-.25-2.25.23-.81.48-1.62,1.31-2.24,2.4h0Z" style="fill:#fff; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:.5px;"/></g><path d="M103.16,142.69l-4.13-2.44c.62-1.09,1.43-1.92,2.24-2.4.81-.48,1.62-.59,2.25-.23l4.13,2.44c-.62-.36-1.43-.25-2.25.23-.81.48-1.62,1.31-2.24,2.4Z" style="fill:none; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:.5px;"/><path d="M90.2,160.21l-4.13-2.44c.62.36,1.43.25,2.25-.23.81-.48,1.62-1.31,2.24-2.4l4.13,2.44c-.62,1.09-1.43,1.92-2.24,2.4-.81.48-1.62.59-2.25.23Z" style="fill:#fff;"/><g style="clip-path:url(#p);"><path d="M90.2,160.21l-4.13-2.44c.62.36,1.43.25,2.25-.23.81-.48,1.62-1.31,2.24-2.4l4.13,2.44c-.62,1.09-1.43,1.92-2.24,2.4-.81.48-1.62.59-2.25.23h0Z" style="fill:#fff; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:.5px;"/></g><path d="M90.2,160.21l-4.13-2.44c.62.36,1.43.25,2.25-.23.81-.48,1.62-1.31,2.24-2.4l4.13,2.44c-.62,1.09-1.43,1.92-2.24,2.4-.81.48-1.62.59-2.25.23Z" style="fill:none; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:.5px;"/><polygon points="85.34 157.4 81.22 154.96 86.07 157.77 90.2 160.21 85.34 157.4" style="fill:#fff; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:.5px;"/><polygon points="83.13 170.37 79 167.94 78.97 157.36 83.1 159.8 83.13 170.37" style="fill:#fff; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:.5px;"/><path d="M157.81,87.63c.68-.4,1.33-.16,1.33.76l.1,37.38-76.11,44.6-.03-10.57c0-.92.64-1.91,1.32-2.31.32-.19.65-.24.92-.09l4.86,2.81c.62.36,1.43.25,2.25-.23.81-.48,1.62-1.31,2.24-2.4l8.47-14.89c.62-1.09,1.43-1.92,2.24-2.4.81-.48,1.62-.59,2.25-.23l2.08,1.21c.62.36,1.44.24,2.25-.23.81-.48,1.62-1.31,2.24-2.4l11.81-20.77c.62-1.09,1.43-1.92,2.24-2.4.81-.48,1.63-.59,2.25-.23l2.98,1.73c.62.36,1.43.25,2.25-.23.81-.48,1.62-1.31,2.24-2.4l5.02-8.82c.44-.78,1.02-1.38,1.6-1.72.58-.34,1.16-.42,1.61-.17.44.26,1.03.18,1.61-.16.58-.34,1.16-.94,1.6-1.71l7.47-13.13c.27-.47.6-.8.92-.99Z" style="fill:none; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:.5px;"/><g style="opacity:.31;"><path d="M157.81,87.63c.68-.4,1.33-.16,1.33.76l.1,37.38-76.11,44.6-.03-10.57c0-.92.64-1.91,1.32-2.31.32-.19.65-.24.92-.09l4.86,2.81c.62.36,1.43.25,2.25-.23.81-.48,1.62-1.31,2.24-2.4l8.47-14.89c.62-1.09,1.43-1.92,2.24-2.4.81-.48,1.62-.59,2.25-.23l2.08,1.21c.62.36,1.44.24,2.25-.23.81-.48,1.62-1.31,2.24-2.4l11.81-20.77c.62-1.09,1.43-1.92,2.24-2.4.81-.48,1.63-.59,2.25-.23l2.98,1.73c.62.36,1.43.25,2.25-.23.81-.48,1.62-1.31,2.24-2.4l5.02-8.82c.44-.78,1.02-1.38,1.6-1.72.58-.34,1.16-.42,1.61-.17.44.26,1.03.18,1.61-.16.58-.34,1.16-.94,1.6-1.71l7.47-13.13c.27-.47.6-.8.92-.99Z" style="fill:#e95420; stroke-width:0px;"/></g><g style="isolation:isolate;"><path d="M83.1,159.8l-4.13-2.44c0-.92.64-1.91,1.32-2.31.32-.19.65-.24.92-.09l4.13,2.44c-.27-.15-.6-.1-.92.09-.68.4-1.32,1.39-1.32,2.31h0Z" style="fill:#fff; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:.5px;"/></g><path d="M159.14,88.39c0-.45-.16-.74-.4-.87,0,0,.02,0,.03.01-1.38-.81-2.75-1.62-4.13-2.44-.09-.06-.2-.09-.32-.09-.16,0-.33.03-.5.11-.04.02-.09.04-.13.07-.32.19-.65.52-.92.99l-7.47,13.13c-.44.78-1.02,1.37-1.6,1.71-.58.34-1.16.42-1.61.16-.44-.26-1.03-.18-1.61.16-.58.34-1.16.94-1.6,1.71l-5.02,8.82c-.62,1.09-1.43,1.92-2.24,2.4-.81.48-1.62.59-2.25.23l-2.98-1.73c-.62-.36-1.44-.24-2.25.23-.81.48-1.62,1.31-2.24,2.4l-11.81,20.77c-.62,1.09-1.43,1.92-2.24,2.4-.81.48-1.63.59-2.25.23l-2.09-1.21c-.62-.36-1.43-.25-2.25.23-.81.48-1.62,1.31-2.24,2.4l-8.47,14.89c-.62,1.09-1.43,1.92-2.24,2.4-.81.48-1.62.59-2.25.23l-4.86-2.81c-.27-.16-.6-.1-.92.09-.68.4-1.32,1.39-1.32,2.31l.03,10.57,4.13,2.44,76.11-44.6-.1-37.38ZM158.71,87.51c-.05-.03-.11-.04-.17-.05.06.01.12.03.17.05ZM158.51,87.45c-.06,0-.13,0-.2,0,.07,0,.14,0,.2,0ZM158.05,87.52c-.08.03-.16.07-.24.11.08-.05.16-.09.24-.11ZM158.29,87.46c-.07.01-.15.03-.22.05.08-.03.15-.04.22-.05Z" style="fill:none; stroke:#606060; stroke-linecap:round; stroke-linejoin:round;"/><path d="M238.15,65.62l-41.11-23.74c-.64-.37-1.21-.4-1.63-.15h0s-2.6,1.52-2.6,1.52h0c-.46.22-.76.75-.76,1.53v24.84c0,1.46,1.03,3.24,2.29,3.97l31.39,18.12c.18.82.28,1.64.28,2.42,0,2.16-.72,3.7-1.9,4.49,1.59.67,3.02.64,4.1,0h0s2.5-1.47,2.5-1.47h0c.67-.34,1.21-.9,1.6-1.65l3.15,1.82c.67.38,1.26.4,1.68.11h0s2.64-1.53,2.64-1.53h0c.4-.25.65-.76.65-1.47v-24.84c0-1.46-1.03-3.24-2.29-3.97Z" style="fill:#fff; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:2px;"/><path d="M239.67,67.17c-.41-.65-.94-1.21-1.52-1.55l-41.11-23.74c-.64-.37-1.21-.4-1.63-.15h0s-2.6,1.52-2.6,1.52l1.93,3.53v21.27c0,1.46,1.03,3.24,2.29,3.97l31.39,18.12c.18.82.28,1.64.28,2.42,0,2.16-.72,3.7-1.9,4.49.22.09.44.17.66.24l-.46.25,1.22,1.08,2.5-1.47h0c1.32-.67,2.17-2.2,2.23-4.4l1.39.8c.03-10.38.15-23.21.15-23.21l5.18-3.18Z" style="fill:#fff; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:.5px;"/><path d="M239.79,95.9h0c.4-.25.65-.76.65-1.47v-24.84c0-.79-.3-1.67-.78-2.43l-5.18,3.18s-.13,12.83-.15,23.21l1.1.63-1.1.53c0,.31,0,.63,0,.94l2.82,1.79,2.64-1.54Z" style="fill:#e95420; stroke:#606060; stroke-miterlimit:10; stroke-width:.5px;"/><path d="M235.46,67.19l-41.11-23.74c-1.26-.73-2.29-.13-2.29,1.32v24.84c0,1.46,1.03,3.24,2.29,3.97l31.39,18.12c.18.82.28,1.64.28,2.42,0,2.16-.72,3.7-1.9,4.49,3.39,1.43,6.02-.34,6.15-4.3l5.2,3c1.26.73,2.29.13,2.29-1.32v-24.84c0-1.46-1.03-3.24-2.29-3.97Z" style="fill:#fff; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:.5px;"/><path d="M211,63.31c.2.07.7.25,1.25.45,0,0,0,0,0,0,.07.03.15.05.22.08.35.13.62.2.8.02-.09-.4-.14-.77-.18-1.12-.08-.08-.16-.16-.23-.21-.2-.14-.26-.81-.2-1.21.04-.26.25-.2.4-.13,0,0-.35-1.7-.18-1.91s.36-.11.36-.11c0,0,.04-.6.84-.14s1.95,1.13,2.05,2.22c.06.68-.24,1.51-.24,1.51h0s0,.04,0,.05c.15.1.36.29.38.58.03.45-.07,1.03-.27.94-.07-.03-.16-.05-.24-.06-.06.29-.14.59-.25.87.17.38.43.61.78.89.07.06.15.12.22.17,0,0,0,0,0,0,.54.43,1.03.81,1.23.97.49.4.96,1.58,1.34,2.74.43-.68.7-1.6.74-2.72.12-3.59-2.15-7.87-5.08-9.56-2.93-1.69-5.4-.15-5.52,3.44-.03,1.02.13,2.11.44,3.17.42-.61.9-1.12,1.36-.95Z" style="fill:#e95420; stroke-width:0px;"/><polygon points="223.43 76.43 195.98 60.58 196.02 59.46 223.47 75.31 223.43 76.43" style="fill:#e95420; opacity:.35; stroke-width:0px;"/><polygon points="221.01 78.79 195.81 64.25 195.85 63.12 221.05 77.67 221.01 78.79" style="fill:#e95420; opacity:.35; stroke-width:0px;"/><polygon points="221.01 85.6 195.81 71.05 195.85 69.93 221.05 84.47 221.01 85.6" style="fill:#e95420; opacity:.35; stroke-width:0px;"/><polygon points="228.24 86.41 195.65 67.59 195.69 66.46 228.28 85.28 228.24 86.41" style="fill:#e95420; opacity:.35; stroke-width:0px;"/><path d="M217.84,93.2l-41.69-24.07c-.71-.41-1.35-.4-1.77-.07l-2.37,1.28.02.07c-.53.19-.87.75-.87,1.59v25.19c0,1.48,1.05,3.29,2.33,4.03l5.27,3.04c.12,4.16,2.79,9.03,6.23,11.56,0,0,0,0,0,0h0s2.67-1.52,2.67-1.52l-.51-1.02c-.76-1.63-1.26-3.34-1.38-4.97l29.41,16.98c.74.43,1.4.4,1.82.03h0s2.48-1.38,2.48-1.38c.43-.24.7-.76.7-1.51v-25.19c0-1.48-1.05-3.29-2.33-4.03Z" style="fill:#fff; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:2px;"/><path d="M219.7,95.37c-.42-.9-1.1-1.73-1.87-2.17l-41.69-24.07c-.71-.41-1.35-.4-1.77-.07l-2.37,1.28.89,3.78.93.24v21.3c0,1.48,1.05,3.29,2.33,4.03l5.27,3.04c.03.87.17,1.78.41,2.69l-1.36.29,1.24,5.13,3.28,4.97,2.67-1.52-.51-1.02c-.89-1.9-1.41-3.91-1.41-5.76,0-.8.1-1.51.28-2.13l25.33,14.62c-.68-9.11-1.37-19.4-1.37-19.4l9.73-5.24Z" style="fill:#fff; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:.5px;"/><path d="M214.52,123.43l2.47,1.88,2.48-1.38c.43-.24.7-.76.7-1.51v-25.19c0-.6-.17-1.25-.46-1.86l-9.73,5.24s.68,10.28,1.37,19.4l3.04,1.75.15,1.67Z" style="fill:#e95420; stroke:#606060; stroke-miterlimit:10; stroke-width:.5px;"/><path d="M215.17,94.73l-41.69-24.07c-1.28-.74-2.33-.13-2.33,1.34v25.19c0,1.48,1.05,3.29,2.33,4.03l5.27,3.04c.12,4.16,2.79,9.03,6.23,11.56-1.19-2.18-1.92-4.59-1.92-6.78,0-.8.1-1.51.28-2.13l31.83,18.38c1.28.74,2.33.13,2.33-1.34v-25.19c0-1.48-1.05-3.29-2.33-4.03Z" style="fill:#fff; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:.5px;"/><path d="M191.84,91.1c.2.07.7.25,1.25.45,0,0,0,0,0,0,.07.03.15.05.22.08.35.13.62.2.8.02-.09-.4-.14-.77-.18-1.12-.08-.08-.16-.16-.23-.21-.2-.14-.26-.81-.2-1.21.04-.26.25-.2.4-.13,0,0-.35-1.7-.18-1.91s.36-.11.36-.11c0,0,.04-.6.84-.14s1.95,1.13,2.05,2.22c.06.68-.24,1.51-.24,1.51h0s0,.04,0,.05c.15.1.36.29.38.58.03.45-.07,1.03-.27.94-.07-.03-.16-.05-.24-.06-.06.29-.14.59-.25.87.17.38.43.61.78.89.07.06.15.12.22.17,0,0,0,0,0,0,.54.43,1.03.81,1.23.97.49.4.96,1.58,1.34,2.74.43-.68.7-1.6.74-2.72.12-3.59-2.15-7.87-5.08-9.56s-5.4-.15-5.52,3.44c-.03,1.02.13,2.11.44,3.17.42-.61.9-1.12,1.36-.95Z" style="fill:#e95420; stroke-width:0px;"/><polygon points="204.28 104.23 176.82 88.38 176.86 87.25 204.32 103.1 204.28 104.23" style="fill:#e95420; opacity:.35; stroke-width:0px;"/><polygon points="201.86 106.59 176.66 92.04 176.7 90.92 201.89 105.46 201.86 106.59" style="fill:#e95420; opacity:.35; stroke-width:0px;"/><polygon points="201.86 113.4 176.66 98.85 176.7 97.72 201.89 112.27 201.86 113.4" style="fill:#e95420; opacity:.35; stroke-width:0px;"/><polygon points="209.09 114.2 176.49 95.38 176.53 94.26 209.13 113.08 209.09 114.2" style="fill:#e95420; opacity:.35; stroke-width:0px;"/><polygon points="203.94 233 201.37 231.51 200.81 231.83 203.38 233.32 200.81 234.81 201.37 235.13 203.94 233.64 206.52 235.13 207.07 234.81 204.5 233.32 207.08 231.83 206.52 231.51 203.94 233" style="fill:#e95420; fill-rule:evenodd; stroke-width:0px;"/><polygon points="187.53 236.29 184.95 234.81 184.39 235.13 186.97 236.62 184.39 238.1 184.95 238.43 187.53 236.94 190.1 238.43 190.66 238.1 188.09 236.62 190.66 235.13 190.1 234.81 187.53 236.29" style="fill:#e95420; fill-rule:evenodd; stroke-width:0px;"/><polygon points="194.14 130.67 191.56 129.19 191 129.51 193.58 131 191 132.48 191.56 132.81 194.14 131.32 196.71 132.81 197.27 132.48 194.7 131 197.27 129.51 196.71 129.19 194.14 130.67" style="fill:#e95420; fill-rule:evenodd; stroke-width:0px;"/><polygon points="101.04 190.68 98.47 189.19 97.91 189.51 100.48 191 97.91 192.49 98.47 192.81 101.04 191.32 103.62 192.81 104.18 192.49 101.6 191 104.18 189.51 103.62 189.19 101.04 190.68" style="fill:#e95420; fill-rule:evenodd; stroke-width:0px;"/><path d="M224.11,160.59s-2.15-1.44-2.18-1.47l-3.08.58s-.26,1.89-.27,1.92l-5.02-.23s.23-1.89.24-1.93l-2.89-.85s-2.49,1.23-2.54,1.25l-3.28-2.22s2.47-1.24,2.52-1.26l-1.01-1.79c-.05,0-3.26-.16-3.32-.16l.38-2.9c.06,0,3.27.14,3.33.15l1.47-1.67c-.1-.06-2.12-1.45-2.16-1.47l3.82-1.89s2.15,1.44,2.18,1.47l3.08-.58s.26-1.89.27-1.92l5.02.23s-.23,1.89-.24,1.93l2.89.85s2.49-1.23,2.54-1.25l3.28,2.22s-2.47,1.24-2.52,1.26l1.01,1.79c.06,0,3.26.16,3.32.16l-.38,2.9c-.06,0-3.27-.14-3.32-.15l-1.47,1.67c.1.06,2.12,1.45,2.16,1.47l-3.82,1.89ZM216.78,156.21c2.47.11,4.62-.95,4.81-2.38.1-.79-.41-1.52-1.31-2.04-.73-.42-1.71-.7-2.81-.75-2.47-.11-4.62.95-4.81,2.38-.1.79.41,1.52,1.31,2.04.73.42,1.71.7,2.81.75h0Z" style="fill:#666; opacity:.2; stroke-width:0px;"/><polygon points="174.8 142.29 167.31 137.1 167.31 118.95 174.8 124.14 174.8 142.29" style="fill:#fff; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:2px;"/><polygon points="174.8 142.29 182.3 137.1 182.3 118.95 174.8 124.14 174.8 142.29" style="fill:#fff; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:2px;"/><ellipse cx="179.8" cy="197.05" rx="48.4" ry="27.94" style="fill:#666; opacity:.2; stroke-width:0px;"/><path d="M220.85,187.53l-.28,1.92c1.47-6.39-2.93-12.87-13.21-18.8-17.98-10.38-47.14-10.38-65.12,0-10.28,5.93-14.68,12.41-13.21,18.8l-.26-2.22h0v4.47h0c-.06,1.7.16,3.41.66,5.1.11.36.23.73.37,1.09.09.23.18.46.27.69.54,1.28,1.25,2.55,2.13,3.79.1.14.19.27.29.41.24.32.49.64.75.95.53.64,1.11,1.27,1.73,1.9.62.62,1.3,1.23,2.01,1.82,1.54,1.27,3.28,2.49,5.25,3.62.56.32,1.13.64,1.71.94.23.12.48.24.71.35.35.18.7.35,1.06.52.33.16.67.3,1.01.45.27.12.54.25.82.36.4.17.81.33,1.22.49.22.09.44.18.66.27.46.18.93.34,1.4.51.18.06.35.13.52.19.52.18,1.04.34,1.57.51.13.04.26.09.4.13.57.17,1.14.34,1.72.49.1.03.19.06.28.08.61.16,1.23.32,1.85.47.06.02.13.03.19.05.65.15,1.31.3,1.97.43.03,0,.07.02.1.02.69.14,1.38.27,2.07.39.01,0,.02,0,.03,0,4.23.73,8.61,1.1,12.99,1.12,0,0,.01,0,.02,0h0c3.7.01,7.41-.23,11.03-.73,0,0,.01,0,.02,0,.7-.1,1.4-.21,2.1-.32.02,0,.05,0,.07-.01.67-.11,1.34-.24,2.01-.37.04,0,.09-.02.13-.02.64-.13,1.28-.27,1.91-.41.07-.02.13-.03.2-.04.61-.14,1.21-.29,1.81-.45.09-.02.18-.04.27-.07.57-.15,1.13-.31,1.69-.48.12-.03.23-.06.35-.1.53-.16,1.05-.33,1.57-.5.14-.05.29-.09.43-.14.49-.17.97-.35,1.46-.52.16-.06.33-.12.5-.18.46-.17.9-.36,1.35-.54.18-.07.37-.14.55-.22.43-.18.84-.37,1.26-.56.2-.09.39-.17.59-.26.42-.2.83-.41,1.24-.62.18-.09.37-.18.54-.27.58-.3,1.14-.61,1.7-.93,0,0,.02,0,.02-.01,4.45-2.57,7.79-5.53,10.04-8.7.67-.94,1.24-1.9,1.71-2.87.03-.07.06-.13.09-.2.09-.19.18-.39.26-.58.99-2.3,1.45-4.66,1.36-7.01h.02v-4.16Z" style="fill:#fff; fill-rule:evenodd; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:2px;"/><path d="M220.82,191.69h.02v-4.16l-5.31,1.92c-2.1-2.3-4.83-4.46-8.18-6.39-17.98-10.38-47.14-10.38-65.12,0-3.35,1.93-6.08,4.09-8.18,6.39l-5.29-2.22v4.47h0c-.25,6.99,4.23,14.02,13.47,19.35,17.98,10.38,47.14,10.38,65.12,0,9.24-5.33,13.72-12.37,13.46-19.35Z" style="fill:#fff; fill-rule:evenodd; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:.5px;"/><ellipse cx="174.8" cy="187.04" rx="44.55" ry="24.02" style="fill:#fff; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:.5px;"/><path d="M142.23,183.05c-3.35,1.93-6.08,4.09-8.18,6.39l-5.29-2.22v4.47h0c-.25,6.99,4.23,14.02,13.47,19.35,8.93,5.15,20.61,7.75,32.31,7.78v-43.56c-11.7.04-23.39,2.63-32.31,7.78Z" style="fill:#fff; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:.5px;"/><path d="M207.36,211.04c9.24-5.33,13.72-12.37,13.46-19.35h.02v-4.16l-5.31,1.92c-2.1-2.3-4.83-4.46-8.18-6.39-9.06-5.23-20.94-7.82-32.81-7.78v43.56c11.87.04,23.76-2.56,32.81-7.78Z" style="fill:#e95420; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:.5px;"/><ellipse cx="174.8" cy="187.04" rx="44.55" ry="24.02" style="fill:#fff; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:.5px;"/><path d="M201.08,172.62c-14.75-7.75-38.58-7.79-53.23-.09-14.65,7.7-14.58,20.23.17,27.97,14.75,7.75,38.58,7.79,53.23.09,14.65-7.7,14.58-20.23-.17-27.97ZM153.32,197.72c-11.8-6.2-11.86-16.22-.13-22.38,11.72-6.16,30.79-6.13,42.58.07,11.8,6.2,11.86,16.22.13,22.38-11.72,6.16-30.79,6.13-42.58-.07ZM190.47,178.2c-8.85-4.65-23.15-4.67-31.94-.05-8.79,4.62-8.75,12.14.1,16.78,8.85,4.65,23.15,4.67,31.94.05,8.79-4.62,8.75-12.14-.1-16.78ZM163.94,192.15c-5.9-3.1-5.93-8.11-.07-11.19,5.86-3.08,15.39-3.07,21.29.03,5.9,3.1,5.93,8.11.07,11.19-5.86,3.08-15.39,3.07-21.29-.03ZM179.85,183.78c-2.95-1.55-7.72-1.56-10.65-.02-2.93,1.54-2.92,4.05.03,5.59,2.95,1.55,7.72,1.56,10.65.02,2.93-1.54,2.92-4.05-.03-5.59Z" style="fill:#e95420; stroke-width:0px;"/><line x1="174.8" y1="186.57" x2="174.8" y2="142.29" style="fill:#fff; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:1.5px;"/><polygon points="174.8 142.29 167.31 137.1 167.31 118.95 174.8 124.14 174.8 142.29" style="fill:#fff; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:.5px;"/><polygon points="174.8 142.29 182.3 137.1 182.3 118.95 174.8 124.14 174.8 142.29" style="fill:#e95420; stroke:#606060; stroke-miterlimit:10; stroke-width:.5px;"/><polygon points="225.57 214.2 216.68 215.13 215.06 220.26 227.78 227.61 229.4 222.48 238.29 221.54 225.57 214.2" style="fill:#666; opacity:.2; stroke-width:0px;"/><line x1="174.81" y1="186.6" x2="204.66" y2="204.52" style="fill:#fff; opacity:.3; stroke:#606060; stroke-linecap:round; stroke-linejoin:round; stroke-width:1.5px;"/></svg>
+\ No newline at end of file
+diff --git a/po/POTFILES.in b/po/POTFILES.in
+index 56c2d69..33c94fe 100644
+--- a/po/POTFILES.in
++++ b/po/POTFILES.in
+@@ -47,6 +47,8 @@ gnome-initial-setup/pages/apps/gis-apps-page.c
+ gnome-initial-setup/pages/apps/gis-apps-page.blp
+ gnome-initial-setup/pages/eula/gis-eula-page.c
+ gnome-initial-setup/pages/eula/gis-eula-page.blp
++gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c
++gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp
+ gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-attach-page.blp
+ gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp
+ gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.blp

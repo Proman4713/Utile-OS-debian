@@ -1,0 +1,93 @@
+From: Robert Ancell <robert.ancell@canonical.com>
+Date: Tue, 20 Mar 2018 11:51:30 +1300
+Subject: Add Ubuntu mode with special pages
+
+---
+ gnome-initial-setup/gnome-initial-setup.c | 39 ++++++++++++++++++++++++++++---
+ 1 file changed, 36 insertions(+), 3 deletions(-)
+
+diff --git a/gnome-initial-setup/gnome-initial-setup.c b/gnome-initial-setup/gnome-initial-setup.c
+index e63d611..604cb8a 100644
+--- a/gnome-initial-setup/gnome-initial-setup.c
++++ b/gnome-initial-setup/gnome-initial-setup.c
+@@ -46,6 +46,8 @@
+ #define VENDOR_NEW_USER_ONLY_KEY "new_user_only"
+ #define VENDOR_EXISTING_USER_ONLY_KEY "existing_user_only"
+ 
++static gboolean is_desktop (const gchar *name);
++
+ static gboolean force_existing_user_mode;
+ 
+ static GPtrArray *skipped_pages;
+@@ -78,6 +80,13 @@ static PageData page_table[] = {
+   { NULL },
+ };
+ 
++static PageData ubuntu_page_table[] = {
++  PAGE (welcome,        FALSE),
++  PAGE (account,        TRUE),
++  PAGE (password,       TRUE),
++  { NULL },
++};
++
+ #undef PAGE
+ 
+ static gboolean
+@@ -89,7 +98,9 @@ should_skip_page (const gchar  *page_id,
+   /* special case welcome. We only want to show it if language
+    * is skipped
+    */
+-  if (strcmp (page_id, "welcome") == 0)
++  if ((strcmp (page_id, "welcome") == 0) &&
++      !is_desktop ("ubuntu") &&
++      !is_desktop ("unity"))
+     return !should_skip_page ("language", skip_pages);
+ 
+   /* check through our skip pages list for pages we don't want */
+@@ -188,6 +199,24 @@ destroy_page (gpointer data)
+     gis_assistant_remove_page (GIS_ASSISTANT (assistant), page);
+ }
+ 
++static gboolean
++is_desktop (const gchar *name)
++{
++  /* note that, for first user account creation inside gnome-initial-setup user,
++   * XDG_CURRENT_DESKTOP is set to "GNOME-Greeter:GNOME"
++   */
++
++  const gchar *xdg_current_desktop;
++  g_auto(GStrv) tokens = NULL;
++
++  xdg_current_desktop = g_getenv ("XDG_CURRENT_DESKTOP");
++  if (xdg_current_desktop == NULL)
++    return FALSE;
++
++  tokens = g_strsplit (xdg_current_desktop, ":", -1);
++  return g_strv_contains ((const gchar * const*) tokens, name);
++}
++
+ static void
+ rebuild_pages_cb (GisDriver *driver)
+ {
+@@ -200,7 +229,11 @@ rebuild_pages_cb (GisDriver *driver)
+ 
+   assistant = gis_driver_get_assistant (driver);
+   current_page = gis_assistant_get_current_page (assistant);
+-  page_data = page_table;
++
++  if (is_desktop ("ubuntu"))
++    page_data = ubuntu_page_table;
++  else
++    page_data = page_table;
+ 
+   g_ptr_array_free (skipped_pages, TRUE);
+   skipped_pages = g_ptr_array_new_with_free_func (destroy_page);
+@@ -208,7 +241,7 @@ rebuild_pages_cb (GisDriver *driver)
+   if (current_page != NULL) {
+     destroy_pages_after (assistant, current_page);
+ 
+-    for (page_data = page_table; page_data->page_id != NULL; ++page_data)
++    for (; page_data->page_id != NULL; ++page_data)
+       if (g_str_equal (page_data->page_id, GIS_PAGE_GET_CLASS (current_page)->page_id))
+         break;
+ 

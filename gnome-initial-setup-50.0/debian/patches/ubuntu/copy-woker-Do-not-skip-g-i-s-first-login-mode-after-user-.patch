@@ -1,0 +1,23 @@
+From: Didier Roche <didier.roche@canonical.com>
+Date: Tue, 11 Jun 2024 09:09:52 +0200
+Subject: copy-woker: Do not skip g-i-s first login mode after user creation
+
+When creating an user with g-i-s, the first login experience was then
+skipped.
+Ensure we always present it as the set of screens is different.
+---
+ gnome-initial-setup/gnome-initial-setup-copy-worker.c | 1 -
+ 1 file changed, 1 deletion(-)
+
+diff --git a/gnome-initial-setup/gnome-initial-setup-copy-worker.c b/gnome-initial-setup/gnome-initial-setup-copy-worker.c
+index caa9f9e..d21910e 100644
+--- a/gnome-initial-setup/gnome-initial-setup-copy-worker.c
++++ b/gnome-initial-setup/gnome-initial-setup-copy-worker.c
+@@ -291,7 +291,6 @@ main (int    argc,
+ #define FILE(path) \
+   copy_file_from_homedir (src, dest, path);
+ 
+-  FILE (".config/gnome-initial-setup-done");
+   FILE (".config/dconf/user");
+   FILE (".config/monitors.xml");
+ 

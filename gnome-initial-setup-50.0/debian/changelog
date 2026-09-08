@@ -1,0 +1,2490 @@
+gnome-initial-setup (50.0-0ubuntu7.1) resolute; urgency=medium
+
+  [ Alessandro Astone ]
+  * debian: Branch for ubuntu/resolute
+  * d/p: Update translations from launchpad (LP: #2150220)
+
+  [ Sergio Costas Rodriguez ]
+  * d/p: Make "View release notes" translatable (LP: #2150220)
+
+ -- Alessandro Astone <alessandro.astone@canonical.com>  Wed, 01 Jul 2026 14:37:27 +0200
+
+gnome-initial-setup (50.0-0ubuntu7) resolute; urgency=medium
+
+  * debian/patches/ubuntu/launchpad_translations_export.patch:
+    - update the translations from launchpad
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Mon, 20 Apr 2026 10:56:37 +0200
+
+gnome-initial-setup (50.0-0ubuntu6) resolute; urgency=medium
+
+  * d/p/u: Do not show upgrade wizard on the second login of new user.
+    Create the stamp file as if we had already shown the upgrade wizard for this
+    user. (LP: #2148199)
+  * d/p/d: Change sh interpreter path to make lintian happy
+
+ -- Alessandro Astone <alessandro.astone@canonical.com>  Mon, 13 Apr 2026 15:49:14 +0200
+
+gnome-initial-setup (50.0-0ubuntu5) resolute; urgency=medium
+
+  [ Sergio Costas Rodriguez ]
+  * pro: New style for services page (LP: #2146324)
+
+  [ Marco Trevisan (Treviño) ]
+  * d/p/ubuntu/welcome: Use the release note ubuntu.com redirect
+  * d/p/ubuntu/insights: Use new documentation Apport website (LP: #2147654)
+  * d/p/translations: Refresh translations patch
+
+ -- Marco Trevisan (Treviño) <marco@ubuntu.com>  Thu, 09 Apr 2026 18:00:26 +0200
+
+gnome-initial-setup (50.0-0ubuntu4) resolute; urgency=medium
+
+  * debian/patches/launchpad_translations_export.patch:
+    - export the current translations from launchpad and include them in
+      the source since we are opting out from langpacks there.
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Wed, 01 Apr 2026 10:26:09 +0200
+
+gnome-initial-setup (50.0-0ubuntu3) resolute; urgency=medium
+
+  [ Sergio Costas Rodriguez ]
+  * accessibility: Hide focus ring when changing between pages.
+    The new focusable bin can show a focus ring around. Unfortunately,
+    sometimes it is shown after a page switch even if the keyboard
+    isn't being used. (LP: #2146315)
+  * accessibility: replace ActionRow+Switch with SwitchRow.
+    The insights and the privacy pages use currently an Adw.ActionRow
+    with an internal Gtk.Switch. This is cumbersome for accessibility
+    because the role isn't being notified, and the navigation can be
+    odd unless some tricks are used. (LP: #2146436)
+  * pro: Fix the text alignment in the Ubuntu Pro presentation page.
+    (LP: #2146323)
+  * Use external browser to activate Ubuntu Pro
+
+  [ Marco Trevisan (Treviño) ]
+  * d/p/welcome-page: Update the release notes page to reflect new docs URI
+    (LP: #2146935)
+
+ -- Marco Trevisan (Treviño) <marco@ubuntu.com>  Tue, 31 Mar 2026 18:43:37 +0200
+
+gnome-initial-setup (50.0-0ubuntu2) resolute; urgency=medium
+
+  [ Marco Trevisan (Treviño) ]
+  * d/p: Refresh git indexes
+
+  [ Sergio Costas Rodriguez ]
+  * pro: Add extra accessibility to Pro pages
+
+  [ Alessandro Astone ]
+  * d/p/debian: Set keyboard configuration the debian way (LP: #2101934)
+  * d/p/ubuntu: Fixup dynamic langpack installation
+  * d/p/ubuntu: Change distributor-logo SVG to not use style tags
+  * d/p: Refresh git indexes
+
+ -- Alessandro Astone <alessandro.astone@canonical.com>  Tue, 24 Mar 2026 17:59:53 +0100
+
+gnome-initial-setup (50.0-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release
+
+ -- Marco Trevisan (Treviño) <marco@ubuntu.com>  Thu, 19 Mar 2026 12:28:11 +0100
+
+gnome-initial-setup (50~rc-1ubuntu3) resolute; urgency=medium
+
+  [ Sergio Costas Rodriguez ]
+  * pro: Add Ubuntu Pro token to the URI
+
+  [ Marco Trevisan (Treviño) ]
+  * d/p/ubuntu-appeareance: Set the oled label invisible by default
+
+ -- Marco Trevisan (Treviño) <marco@ubuntu.com>  Wed, 18 Mar 2026 13:00:39 +0100
+
+gnome-initial-setup (50~rc-1ubuntu2) resolute; urgency=medium
+
+  [ Sergio Costas Rodriguez ]
+  * a11y: Add missing use-accessible-title property
+  * Add missing "show-page" method to PRO pages
+  * Remove duplicated text in Pro pages
+  * Use latest Ubuntu Pro logos
+  * Update Ubuntu Pro text
+  * Fix legal text
+  * Remove dots at the end.
+  * Always honor the theme
+  * Move URIs to code
+  * Use g_signal_connect_object
+
+  [ Marco Trevisan (Treviño) ]
+  * d/p/ubuntu-insights: Add both learn more about system reporting and legal notice
+  * d/p/ubuntu-pro: drop unused variable and adjust tranlators strings
+  * d/p/ubuntu-pro: Drop style classes from dark svg
+  * d/p/ubuntu-insights: Show the report via a link button
+  * d/p/ubuntu-insights: Drop cancel button showing the report dialog early
+
+ -- Marco Trevisan (Treviño) <marco@ubuntu.com>  Sat, 14 Mar 2026 06:06:00 +0100
+
+gnome-initial-setup (50~rc-1ubuntu1) resolute; urgency=medium
+
+  [ Marco Trevisan (Treviño) ]
+  * New upstream release
+  * gis-webkit: Set some basic sensible default settings
+  * d/p/ubuntu-pro: Adjust svg to work with native GtkSvg
+  * d/p: Refresh
+  * d/p/gis-focusable-bin: Embed fallback css code on class init
+  * d/p/insight: Rely on the default size for header image
+  * d/p: Remove 49 compatibility patch and break on older gnome-session
+  * d/p/ubuntu-insights: Use a focusable bin to hold the footer label
+  * d/p/ubuntu: Use uniform style to redirect to settings
+  * d/p/ubuntu-apps: Do not make the main picture focusable
+  * d/p/ubuntu-privacy: Do not try to use whoopise if not an admin
+  * d/p: Reorder pages to match design
+  * d/p/ubuntu-pro: Compute the supported year programmatically
+  * d/p/ubuntu-pro: Improve string wording
+  * d/p/ubuntu-appearance: Drop the on-hover dark/light preview
+  * d/p/ubuntu-appearance: Add translators hints
+  * d/p/ubuntu-pro: Clear token when entering in the attach page
+  * d/p/ubuntu-appearance: Improve strings wording
+  * d/p/ubuntu-insights: Use a switch to control the telemetry option
+  * d/p: Move error reporting setting to insights page
+  * d/p/ubuntu-insights: Use gresources to load the header image
+  * d/p/appearance: Adjust the top margin
+  * d/p/ubuntu-insights: Always show the page if whoopsie is available
+
+  [ kkuo ]
+  * d/p/u: UX consistency fixes for the Insights page
+  * d/p/u: UX consistency fixes for the Privacy page
+
+  [ Sergio Costas Rodriguez ]
+  * d/p/ubuntu-pro, appearance: Fix and improvements to the blueprint file
+  * d/p: Fix appearance in pages with title but no subtitle
+  * d/p: Add gis-focusable bin widget
+  * d/p: Use accessible bin widget in pages
+  * d/p/ubuntu: Use accessible bin for more page components
+
+ -- Marco Trevisan (Treviño) <marco@ubuntu.com>  Fri, 13 Mar 2026 09:40:14 +0100
+
+gnome-initial-setup (50~alpha-0ubuntu11) resolute; urgency=medium
+
+  * debian/control, debian/rules:
+    - restore use of dh_gnome to update translations, we don't include
+      them in langpacks but we still rely on a template to be generated
+      during build and import on launchpad since we export those to
+      integrate them in the source package (lp: #2143825)
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Tue, 10 Mar 2026 15:03:29 +0100
+
+gnome-initial-setup (50~alpha-0ubuntu10) resolute; urgency=medium
+
+  * Reapply "d/p/u: Update Ubuntu mascot for 26.04"
+  * Reapply "d/p/u: Add spacing between Ubuntu mascot and welcome text"
+  * d/p/u: Refresh Ubuntu mascot for the dark theme
+
+ -- Alessandro Astone <alessandro.astone@canonical.com>  Thu, 26 Feb 2026 23:30:02 +0100
+
+gnome-initial-setup (50~alpha-0ubuntu9) resolute; urgency=medium
+
+  * Revert "d/p/u: Add spacing between Ubuntu mascot and welcome text"
+  * Revert "d/p/u: Update Ubuntu mascot for 26.04"
+
+ -- Alessandro Astone <alessandro.astone@canonical.com>  Thu, 12 Feb 2026 16:59:33 +0100
+
+gnome-initial-setup (50~alpha-0ubuntu8) resolute; urgency=medium
+
+  * d/p/u: Update Ubuntu mascot for 26.04
+  * d/p/u: Add spacing between Ubuntu mascot and welcome text
+  * d/p/u: Bundle distributor-logo.svg as a gresource
+
+ -- Alessandro Astone <alessandro.astone@canonical.com>  Thu, 12 Feb 2026 11:10:24 +0100
+
+gnome-initial-setup (50~alpha-0ubuntu7) resolute; urgency=medium
+
+  * d/p/ubuntu-pro: Fix Atomic int handling in armhf
+
+ -- Marco Trevisan (Treviño) <marco@ubuntu.com>  Mon, 09 Feb 2026 20:14:46 +0100
+
+gnome-initial-setup (50~alpha-0ubuntu6) resolute; urgency=medium
+
+  [ Marco Trevisan (Treviño) ]
+  * d/p/ubuntu-pro:
+    - Use thread-safe values and update UI on main thread.
+      We were wrongly updating the UI from a non-main thread and this unsafe
+      and wrong in a Gtk world, so let's do it in an idle
+    - Remove uneeded code that GObject can handle for us
+    - Ensure the page is alive during the async requests
+    - Do not return a valid magic on JSON error.
+      If the JSON we got is invalid we should threat it as an error, so check
+      for both the schema version and whether we exited with success
+    - Fix extra vertical space on ubuntu-pro lists and adjust images sizes
+    - Unset the accessible role for bullets labels.
+      They are not something we need to announce
+    - Disable the whole enabling action row if network is missing
+    - Fix Binding of the logo in the services page
+    - Open all the links in the embedded browser.
+      When used inside GDM we do not really have a browser, so let's use the
+      internal browser, unless the user asks to open the current URI in the
+      external browser.
+    - Use strings for pango attributes.
+      It will make possible to use blueprint
+  * d/p/ubuntu-insights: Adjust consent migration for upgrades.
+  * d/p/gis-webview: Open current page in the external browser.
+    We were opening the original link, but it's more consistent with the
+    expectations
+  * d/p/privacy:
+    - Hide the privacy button if network is offline
+    - Move Data privacy button to the proper location
+    - Support enabling automatic whoopsie reporting.
+      It's something that we show already in settings, and the upstream code
+      is ready for this, so let's show the related switch
+    - Show privacy page again in user creation mode.
+      We have now a browser that we can show, so it's still relevant
+  * d/p/upgrade-support: Save the stamp file in a subdirectory
+  * d/p: Show a QR code when trying to open links in offline mode
+  * d/p/appearance: Trigger a shell transition when changing theme.
+    It makes the switch look nicer
+  * d/p/appearance:
+    - Add appearance page to choose style and accent colors
+    - Toggle dark/light mode on app on hover.
+      Immediately show the theme change on application when hovering a
+      selector
+    - Suggest using a dark theme on OLED display detected
+  * d/p: Add an env variable to force showing ubuntu pages.
+    When GIS_SHOW_ALL_PAGES env variable is set, all the hidden pages can be
+    shown, even if they may not be supported in current setup
+  * d/p: Use blueprint for UI files in ubuntu pages.
+    It's way easier to maintain than XML, so let's switch to it for the
+    ubuntu-only pages (and we needed it anyways)
+
+  [ kkuo ]
+  * d/p/ubuntu: Re-add text pointing to telemetry settings
+  * d/p/ubuntu-insights: Improve the Ubuntu Insights page's user interface
+
+ -- Marco Trevisan (Treviño) <marco@ubuntu.com>  Mon, 09 Feb 2026 10:29:18 +0100
+
+gnome-initial-setup (50~alpha-0ubuntu5) resolute; urgency=medium
+
+  [ Marco Trevisan (Treviño) ]
+  * debian/patches: Move to ubuntu namespace and clarify their meanings.
+    Make things play better with gbp
+  * d/p/ubuntu: Split patches to make them independent.
+    We had some huge non-atomic patches that were hard to maintain and to
+    understand, split them all so each one is now atomic and only does one
+    thing.
+    In the process, drop lots of unneeded functions, unused files and
+    dependencies
+  * debian/control: Remove dependency on snapd-glib.
+    It's unused nowadays
+  * d/p: Show location services page showing BeaconDB privacy policies.
+    It's the new geoclue provider
+  * d/p/page-header: Ensure image parameters are always set.
+    We had the assumptions that the image was always set before of its
+    parameters, but this may not be true, so make the code to be not
+    dependent on properties initialization
+  * d/p: Simplify the welcome page image code.
+    And also use a bigger mascot image
+  * d/p/apps: Give more priority to the snap store rather than ubuntu sw
+  * d/p/ubuntu-pro: Drop unused code and simplify json parsing
+  * d/p/ubuntu-pro: Use GLib utils to parse release and simplify non-LTS checks
+  * d/p: Simplify the application shutdown when there are no more pages
+  * d/p/ubuntu-insights: Do not mark the page completed too early.
+    We were marking the page completed as soon as the working thread was
+    started, and so we were not notifying users in time and not showing nay
+    spinner if required.
+  * d/p: Define a default gjs-driver for easier mode check
+  * d/p: Set some some webkit default settings from upstream
+  * d/p: Use GtkLinkButton to open welcome page release notes
+  * d/p: Allow open web pages in external browser
+  * d/p: Use embedded browser to show the policy page in insight page
+  * d/p: Use embedded browser to show the release notes
+  * d/p, d/control: Rely on default webkit viewer to show EULA PDF files.
+    Rather than re-implementing a super-limited PDF viewer, let's just rely
+    on PDF.js that webkit embeds to show the local PDF EULA files
+  * d/p: Use internal browser to show the privacy policy page
+  * d/p: Add support for handling user upgrades
+  * debian/control: Build depend on lsb-release.
+    It's used the upgrade patch, so we need it for building
+  * d/p: Add patch to show privacy panel to 26.04 upgraders.
+    We switched to BeaconDB for geoclue, so better to show the consent panel
+    again
+
+  [ kkuo ]
+  * d/p/ubuntu: Remove default source and add ubuntu_release_upgrader source
+  * d/p/ubuntu: Fix insights collection when installer telemetry is corrupted
+
+ -- Marco Trevisan (Treviño) <marco@ubuntu.com>  Fri, 30 Jan 2026 18:13:48 +0100
+
+gnome-initial-setup (50~alpha-0ubuntu4) resolute; urgency=medium
+
+  * d/patches, d/control: Temporarily make it compatible with gnome-shell 49
+
+ -- Alessandro Astone <alessandro.astone@canonical.com>  Fri, 23 Jan 2026 11:46:09 +0100
+
+gnome-initial-setup (50~alpha-0ubuntu3) resolute; urgency=medium
+
+  * d/control: Add Breaks gnome-shell-common (<< 50~)
+
+ -- Alessandro Astone <alessandro.astone@canonical.com>  Thu, 15 Jan 2026 11:23:34 +0100
+
+gnome-initial-setup (50~alpha-0ubuntu2) resolute; urgency=medium
+
+  * Revert "debian/{rules,control}: Enable malcontent in ubuntu"
+  * d/p/ubuntu-distributor-logo.patch: Update distributor-logo.svg
+
+ -- Alessandro Astone <alessandro.astone@canonical.com>  Wed, 14 Jan 2026 11:41:54 +0100
+
+gnome-initial-setup (50~alpha-0ubuntu1) resolute; urgency=medium
+
+  * Merge with Debian. Remaining changes:
+    - d/README.source: document the ubuntu translations patch
+    - d/control: Add Build-Depends:
+      + libinsights-dev
+      + libpoppler-glib-dev
+      + libsnapd-glib-dev
+    - d/control: Drop unused dependency on gnome-keyring
+    - d/control: Add language-selector-common to Reccommends
+    - d/maintscript: Remove obsolete autostart desktop files
+    - d/patches: Ubuntu-specific patches:
+      + reenable-existing-user-mode.patch
+      + 0001-Make-summary-page-explicitly-request-navigation-butt.patch
+      + 0001-Ensure-stamp-file-if-the-user-quit-the-wizard.patch
+      + 0001-Add-Ubuntu-mode-with-special-pages.patch
+      + 0001-Display-the-ubuntu-welcome-wizard-in-Unity.patch
+      + 0002-no-deprecation-warnings.patch
+      + 0008-Ubuntu-location-default.patch
+      + ubuntu-distributor-logo.patch
+      + Update-style-to-the-same-than-flutter-installer.patch
+      + Allow-setting-hostname-to-local-account-page.patch
+      + Do-not-skip-g-i-s-first-login-mode-after-user-creation.patch
+      + Skip-privacy-page-in-user-creation-setup.patch
+      + Add-wrapper-for-convd-flutter-ui.patch
+      + Adding-EULA-page-for-OEMs.patch
+      + Dynamic-lang-pack-installation-support.patch
+    - Temporarily ignore build test failures, the new test isn't compatible
+      with Ubuntu patches yet
+    - debian/vendor.conf: do not hide language page
+  * New upstream release
+  * d/p/parental-controls: Drop patch applied upstream
+  * d/p/launchpad-translations-export.patch: Drop patch to upload new strings
+  * d/p: Rebase all other patches
+
+ -- Alessandro Astone <alessandro.astone@canonical.com>  Mon, 12 Jan 2026 14:55:55 +0100
+
+gnome-initial-setup (49.0-4) unstable; urgency=medium
+
+  * debian/{rules,control}: Enable malcontent in ubuntu.
+    Simplify the dependencies code, since ubuntu can now depend on
+    malcontent, being it in main repository
+  * d/p: Add early support for malcontent-0.14
+
+ -- Marco Trevisan (Treviño) <marco@ubuntu.com>  Thu, 11 Dec 2025 06:26:35 +0100
+
+gnome-initial-setup (49.0-3) unstable; urgency=medium
+
+  [ Luca Boccassi ]
+  * Drop dependency on pkexec
+  * Use sysusers.d instead of adduser
+
+ -- Jeremy Bícha <jbicha@ubuntu.com>  Wed, 03 Dec 2025 16:37:20 -0500
+
+gnome-initial-setup (49.0-2) unstable; urgency=medium
+
+  * Add Breaks: gnome-session-bin << 49
+  * Release to unstable
+
+ -- Jeremy Bícha <jbicha@ubuntu.com>  Fri, 31 Oct 2025 09:32:29 -0400
+
+gnome-initial-setup (49.0-1ubuntu4) questing; urgency=medium
+
+  * debian/patches/launchpad-translations-export.patch:
+    - update translations from launchpad for questing
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Tue, 30 Sep 2025 17:16:35 +0200
+
+gnome-initial-setup (49.0-1ubuntu3) questing; urgency=medium
+
+  [ Sebastien Bacher ]
+  * debian/README.source:
+    - document the ubuntu translations patch and how to update it
+
+  [ Alessandro Astone ]
+  * d/maintscript: Remove obsolete autostart desktop files
+
+ -- Alessandro Astone <alessandro.astone@canonical.com>  Fri, 26 Sep 2025 13:59:00 +0200
+
+gnome-initial-setup (49.0-1ubuntu2) questing; urgency=medium
+
+  * debian/patches/launchpad-translations-export.patch:
+    - include translations from launchpad a patch, it's needed since we
+      opted out from langpacks to include all languages
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Fri, 26 Sep 2025 11:35:10 +0200
+
+gnome-initial-setup (49.0-1ubuntu1) questing; urgency=medium
+
+  * Merge with debian for new bugfix release (LP: #2125416).
+    Remaining changes:
+    - d/control: Add Build-Depends:
+      + libsnapd-glib-dev
+      + libsysmetrics-dev
+      + libpoppler-glib-dev
+    - d/control: Drop unused dependency on gnome-keyring
+    - d/control: Add language-selector-common to Reccommends
+    - d/patches: Ubuntu-specific patches:
+      + reenable-existing-user-mode.patch
+      + 0001-Make-summary-page-explicitly-request-navigation-butt.patch
+      + 0001-Ensure-stamp-file-if-the-user-quit-the-wizard.patch
+      + 0001-Add-Ubuntu-mode-with-special-pages.patch
+      + 0001-Display-the-ubuntu-welcome-wizard-in-Unity.patch
+      + 0002-no-deprecation-warnings.patch
+      + 0008-Ubuntu-location-default.patch
+      + ubuntu-distributor-logo.patch
+      + Update-style-to-the-same-than-flutter-installer.patch
+      + Allow-setting-hostname-to-local-account-page.patch
+      + Do-not-skip-g-i-s-first-login-mode-after-user-creation.patch
+      + Skip-privacy-page-in-user-creation-setup.patch
+      + Add-wrapper-for-convd-flutter-ui.patch
+      + Adding-EULA-page-for-OEMs.patch
+      + Dynamic-lang-pack-installation-support.patch
+    - Temporarily ignore build test failures, the new test isn't compatible
+      with Ubuntu patches yet
+    - debian/vendor.conf: do not hide language page
+  * d/p: Refresh patches
+  * d/control: Drop versioned depends on gnome-session
+
+ -- Alessandro Astone <alessandro.astone@canonical.com>  Mon, 22 Sep 2025 16:54:00 +0200
+
+gnome-initial-setup (49.0-1) experimental; urgency=medium
+
+  * New upstream release
+  * Bump Standards Version to 4.7.2
+  * Remove obsolete Rules-Requires-Root: no field
+
+ -- Jeremy Bícha <jbicha@ubuntu.com>  Sat, 20 Sep 2025 12:10:47 -0400
+
+gnome-initial-setup (49~beta.1-0ubuntu4) questing; urgency=medium
+
+  * d/p/Dynamic-lang-pack-installation-support.patch: Fix polkit rules
+    (LP: #2122340)
+
+ -- Alessandro Astone <alessandro.astone@canonical.com>  Mon, 15 Sep 2025 17:02:58 +0200
+
+gnome-initial-setup (49~beta.1-0ubuntu3) questing; urgency=medium
+
+  [ Sergio Costas Rodriguez ]
+  * Fix SVGs
+
+  [ Matthew Hagemann ]
+  * feat: remove locales-all before language pack installation
+
+ -- Alessandro Astone <alessandro.astone@canonical.com>  Mon, 08 Sep 2025 13:57:37 +0200
+
+gnome-initial-setup (49~beta.1-0ubuntu2) questing; urgency=medium
+
+  [ Marco Trevisan (Treviño) ]
+  * d/p/ubuntu-pages: Remove ubuntu report support
+
+  [ kkuo ]
+  * d/p/ubuntu: Use ubuntu-insights to report hardware and other metrics
+    (LP: #2118794)
+
+ -- Marco Trevisan (Treviño) <marco@ubuntu.com>  Tue, 02 Sep 2025 18:21:13 +0200
+
+gnome-initial-setup (49~beta.1-0ubuntu1) questing; urgency=medium
+
+  * New upstream release
+  * d/control: Depend on gnome-session 49.beta
+  * d/control: Drop unused dependency on gnome-keyring
+  * d/p/a11y-Notify-bad-username.patch: Drop patch applied upstream
+  * d/p: Rebase patches
+
+ -- Alessandro Astone <alessandro.astone@canonical.com>  Thu, 07 Aug 2025 11:15:55 +0200
+
+gnome-initial-setup (49~alpha-0ubuntu2) questing; urgency=medium
+
+  * a11y: Notify through the screen reader any error message about
+    invalid user names in the About you page (LP: #2116935)
+
+ -- Sergio Costas Rodriguez <sergio.costas@canonical.com>  Tue, 15 Jul 2025 13:29:58 +0200
+
+gnome-initial-setup (49~alpha-0ubuntu1) questing; urgency=medium
+
+  [ Sergio Costas Rodriguez ]
+  * a11y: Add accessibility to some Ubuntu pages
+  * a11y: Add role to the release notes link
+
+  [ Alessandro Astone ]
+  * New upstream release
+  * Refresh patches
+  * d/p/launchpad-translations-export.patch: Drop patch to upload new strings
+
+ -- Alessandro Astone <alessandro.astone@canonical.com>  Mon, 07 Jul 2025 16:30:18 +0200
+
+gnome-initial-setup (48.1-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Jeremy Bícha <jbicha@ubuntu.com>  Thu, 17 Apr 2025 12:16:42 -0400
+
+gnome-initial-setup (48.0-1ubuntu4) plucky; urgency=medium
+
+  * debian/patches/launchpad-translations-export.patch:
+    - include translations from launchpad a patch, it's needed since we
+      opted out from langpacks to include all languages (lp: #2104148)
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Wed, 02 Apr 2025 11:32:48 +0200
+
+gnome-initial-setup (48.0-1ubuntu3) plucky; urgency=medium
+
+  [ Sebastien Bacher ]
+  * debian/patches/0001-Add-Ubuntu-mode-with-special-pages.patch:
+    - update the mascot asset for plucky
+
+  [ Alessandro Astone ]
+  * Provide distributor-logo icon (LP: #2103423)
+
+  [ Jeremy Bícha ]
+  * Update Ubuntu report page for deprecation of /etc/timezone
+
+ -- Jeremy Bícha <jbicha@ubuntu.com>  Wed, 26 Mar 2025 18:47:03 -0400
+
+gnome-initial-setup (48.0-1ubuntu2) plucky; urgency=medium
+
+  [ Matthew Hagemann ]
+  * debian/patches/Dynamic-lang-pack-installation-support.patch
+    - Fixed a bug where the GIS user's account was having its locale updated,
+      not the newly created users (LP: #2103385)
+
+ -- Marco Trevisan (Treviño) <marco@ubuntu.com>  Wed, 19 Mar 2025 16:13:21 +0100
+
+gnome-initial-setup (48.0-1ubuntu1) plucky; urgency=medium
+
+  * Merge with Debian. Remaining changes:
+    - d/control: Add Build-Depends:
+      + libsnapd-glib-dev
+      + libsysmetrics-dev
+      + libpoppler-glib-dev
+    - d/patches: Ubuntu-specific patches:
+      + reenable-existing-user-mode.patch
+      + 0001-Make-summary-page-explicitly-request-navigation-butt.patch
+      + 0001-Ensure-stamp-file-if-the-user-quit-the-wizard.patch
+      + 0001-Add-Ubuntu-mode-with-special-pages.patch
+      + 0001-Display-the-ubuntu-welcome-wizard-in-Unity.patch
+      + 0002-no-deprecation-warnings.patch
+      + 0008-Ubuntu-location-default.patch
+      + ubuntu-distributor-logo.patch
+      + Update-style-to-the-same-than-flutter-installer.patch
+      + Allow-setting-hostname-to-local-account-page.patch
+      + Do-not-skip-g-i-s-first-login-mode-after-user-creation.patch
+      + Skip-privacy-page-in-user-creation-setup.patch
+      + Add-wrapper-for-convd-flutter-ui.patch
+      + Adding-EULA-page-for-OEMs.patch
+      + Dynamic-lang-pack-installation-support.patch
+    - Temporarily ignore build test failures, the new test isn't compatible
+      with Ubuntu patches yet
+    - debian/vendor.conf: do not hide language page
+  * Refresh patches
+
+ -- Alessandro Astone <alessandro.astone@canonical.com>  Fri, 14 Mar 2025 15:58:57 +0100
+
+gnome-initial-setup (48.0-1) unstable; urgency=medium
+
+  * Team upload
+  * New upstream release
+
+ -- Alessandro Astone <alessandro.astone@canonical.com>  Fri, 14 Mar 2025 15:26:54 +0100
+
+gnome-initial-setup (48~rc-1ubuntu1) plucky; urgency=medium
+
+  [ Marco Trevisan (Treviño) ]
+  * Merge with debian
+  * debian/salsa-ci: Use ubuntu recipe
+
+  [ Matthew Hagemann ]
+  * debian/patches/Dynamic-lang-pack-installation-support.patch
+    - Removed dynamic lang pack installation from language chooser, moving it
+      instead to the summary page right at the end of the flow (LP: #2101826)
+    - Download is skipped if no active network connection is detected.
+    - Explicitly set max file descriptors before launching GIS (LP: #2101825)
+
+ -- Marco Trevisan (Treviño) <marco@ubuntu.com>  Fri, 14 Mar 2025 03:29:39 +0100
+
+gnome-initial-setup (48~rc-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Jeremy Bícha <jbicha@ubuntu.com>  Thu, 06 Mar 2025 10:48:53 -0500
+
+gnome-initial-setup (48~beta-0ubuntu2) plucky; urgency=medium
+
+  [ Matthew Hagemann ]
+  * debian/patches/Dynamic-lang-pack-installation-support.patch
+    - Adding a polkit rule to allow the gnome initial setup user to run pkexec
+      if the program it is running is apt-get.
+    - Adding a function apt_get_install that takes in a list of packages and
+      attempts to install them.
+    - Added parse_language_list function to parse the static list of languages
+      in /usr/share/language-selector/data/languagelist which is now used to
+      populate the language chooser.
+    - Added the ability to g-i-s to determine what outstanding language packs
+      need to be installed via check-language-support -l and to use that output
+      to install outstanding lang packs via an async GTask.
+    - Added a spinner to the language chooser for when a language has been
+      selected and packs are being installed.
+    - Added a Cancel button to be able to cancel the request.
+  * debian/control: Add language-selector-common to Reccommends
+
+ -- Marco Trevisan (Treviño) <marco@ubuntu.com>  Thu, 20 Feb 2025 06:40:19 +0100
+
+gnome-initial-setup (48~beta-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release
+  * Bump minimum gtk4
+  * Remove launchpad translations export patch for now
+
+ -- Jeremy Bícha <jbicha@ubuntu.com>  Mon, 10 Feb 2025 14:49:06 -0500
+
+gnome-initial-setup (47.2-1ubuntu2) plucky; urgency=medium
+
+  * debian/patches/launchpad_translations_export.patch:
+    - export the current translations from launchpad and include them in
+      the source since we are opting out from langpacks there.
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Mon, 16 Dec 2024 16:28:23 +0100
+
+gnome-initial-setup (47.2-1ubuntu1) plucky; urgency=medium
+
+  * Merge with Debian. Remaining changes:
+    - d/control: Add Build-Depends:
+      + libsnapd-glib-dev
+      + libsysmetrics-dev
+      + libpoppler-glib-dev
+    - d/patches: Ubuntu-specific patches:
+      + reenable-existing-user-mode.patch
+      + 0001-Make-summary-page-explicitly-request-navigation-butt.patch
+      + 0001-Ensure-stamp-file-if-the-user-quit-the-wizard.patch
+      + 0001-Add-Ubuntu-mode-with-special-pages.patch
+      + 0001-Display-the-ubuntu-welcome-wizard-in-Unity.patch
+      + 0002-no-deprecation-warnings.patch
+      + 0008-Ubuntu-location-default.patch
+      + ubuntu-distributor-logo.patch
+      + Update-style-to-the-same-than-flutter-installer.patch
+      + Allow-setting-hostname-to-local-account-page.patch
+      + Do-not-skip-g-i-s-first-login-mode-after-user-creation.patch
+      + Skip-privacy-page-in-user-creation-setup.patch
+    - Temporarily ignore build test failures, the new test isn't compatible
+      with Ubuntu patches yet
+    - debian/vendor.conf: do not hide language page
+
+ -- Jeremy Bícha <jbicha@ubuntu.com>  Fri, 06 Dec 2024 15:52:43 -0500
+
+gnome-initial-setup (47.2-1) unstable; urgency=medium
+
+  [ Jeremy Bícha ]
+  * New upstream release
+  * Remove patch that re-enabled "existing user" mode.
+    The current pages are not useful to most users (Closes: #1080154)
+
+  [ Dandan Zhang ]
+  * Build parental controls feature for loong64 (Closes: #1058679)
+
+ -- Jeremy Bícha <jbicha@ubuntu.com>  Mon, 25 Nov 2024 12:59:33 -0500
+
+gnome-initial-setup (47.1-1ubuntu1) plucky; urgency=medium
+
+  * Remove debian/source/include-binaries.
+    The 0001-Add*.patch that it was including no longer has binary content,
+    as icons in it have been replaced with SVGs.
+  * Merge with Debian. Remaining changes:
+    - d/control: Add Build-Depends:
+      + libsnapd-glib-dev
+      + libsysmetrics-dev
+      + libpoppler-glib-dev
+    - d/patches: Ubuntu-specific patches:
+      + 0001-Make-summary-page-explicitly-request-navigation-butt.patch
+      + 0001-Ensure-stamp-file-if-the-user-quit-the-wizard.patch
+      + 0001-Add-Ubuntu-mode-with-special-pages.patch
+      + 0001-Display-the-ubuntu-welcome-wizard-in-Unity.patch
+      + 0002-no-deprecation-warnings.patch
+      + 0008-Ubuntu-location-default.patch
+      + ubuntu-distributor-logo.patch
+      + Update-style-to-the-same-than-flutter-installer.patch
+      + Allow-setting-hostname-to-local-account-page.patch
+      + Do-not-skip-g-i-s-first-login-mode-after-user-creation.patch
+      + Skip-privacy-page-in-user-creation-setup.patch
+    - Temporarily ignore build test failures, the new test isn't compatible
+      with Ubuntu patches yet
+    - debian/vendor.conf: do not hide language page
+
+ -- Nathan Pratta Teodosio <nteodosio@ubuntu.com>  Thu, 21 Nov 2024 09:23:34 +0100
+
+gnome-initial-setup (47.1-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Jeremy Bícha <jbicha@ubuntu.com>  Thu, 17 Oct 2024 14:51:41 -0400
+
+gnome-initial-setup (47.0-1ubuntu1) oracular; urgency=medium
+
+  * New upstream version
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Mon, 16 Sep 2024 16:31:45 +0200
+
+gnome-initial-setup (47.0-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Mon, 16 Sep 2024 15:31:26 +0200
+
+gnome-initial-setup (47~rc-1ubuntu3) oracular; urgency=medium
+
+  * Fix some issues in the svg from the previous upload
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Mon, 16 Sep 2024 13:29:36 +0200
+
+gnome-initial-setup (47~rc-1ubuntu2) oracular; urgency=medium
+
+  * ubuntu-mascot.svg: update the mascot for Oracular (lp: #2080521)
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Mon, 16 Sep 2024 10:52:03 +0200
+
+gnome-initial-setup (47~rc-1ubuntu1) oracular; urgency=medium
+
+  [ Alessandro Astone ]
+  * Merge with Debian
+  * Refresh patches
+
+ -- Marco Trevisan (Treviño) <marco@ubuntu.com>  Fri, 06 Sep 2024 18:47:40 +0200
+
+gnome-initial-setup (47~rc-1) unstable; urgency=medium
+
+  [ Alessandro Astone ]
+  * New upstream release
+
+ -- Marco Trevisan (Treviño) <marco@ubuntu.com>  Fri, 06 Sep 2024 16:47:21 +0200
+
+gnome-initial-setup (47~beta-1ubuntu1) oracular; urgency=medium
+
+  * Merge with Debian
+  * Refresh patches
+  * Temporarily ignore build test failures, the new test isn't compatible
+    with Ubuntu patches yet
+
+ -- Jeremy Bícha <jbicha@ubuntu.com>  Wed, 14 Aug 2024 09:59:45 -0400
+
+gnome-initial-setup (47~beta-1) unstable; urgency=medium
+
+  * New upstream release
+  * Bump Standards Version to 4.7.0
+
+ -- Jeremy Bícha <jbicha@ubuntu.com>  Wed, 07 Aug 2024 12:06:55 -0400
+
+gnome-initial-setup (46.3-1ubuntu3) oracular; urgency=medium
+
+  * d/p: Ubuntu Pro, use style that is more consistent with the app
+    (LP: #2076189)
+  * d/p: Ubuntu Pro, scale icons automatically (LP: #2068675)
+  * debian/patches: Refresh git indexes
+
+ -- Marco Trevisan (Treviño) <marco@ubuntu.com>  Tue, 06 Aug 2024 14:55:55 -0600
+
+gnome-initial-setup (46.3-1ubuntu2) oracular; urgency=medium
+
+  * debian/patches/0001-Add-Ubuntu-mode-with-special-pages.patch:
+    - Don't call the release notes a changelog and mark the corresponding
+      string as translatable (lp: #2061317)
+
+  [ Yao Wei (魏銘廷) ]
+  * debian/patches/0001-Add-Ubuntu-mode-with-special-pages.patch:
+    - Un-revert a patch to fix segfault issue, which was reverted by mistake.
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Tue, 09 Jul 2024 09:09:28 +0200
+
+gnome-initial-setup (46.3-1ubuntu1) oracular; urgency=medium
+
+  [ Jeremy Bícha ]
+  * Merge with Debian
+  * Refresh patches
+  * Drop patch applied in new release
+
+  [ Sebastien Bacher ]
+  * debian/patches/0001-Add-Ubuntu-mode-with-special-pages.patch,
+    debian/patches/Update-style-to-the-same-than-flutter-installer.patch:
+    - use transtable="yes" instead of ="1" in .ui files
+
+ -- Jeremy Bícha <jbicha@ubuntu.com>  Fri, 28 Jun 2024 14:54:22 -0400
+
+gnome-initial-setup (46.3-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Jeremy Bícha <jbicha@ubuntu.com>  Fri, 28 Jun 2024 14:36:23 -0400
+
+gnome-initial-setup (46.2-1ubuntu3) oracular; urgency=medium
+
+  [ Didier Roche ]
+  * Relax hostname validation rules.
+    Allow more correct hostname validations, still keeping the user error
+    strings for now.
+    Co-Authored-By: Matt Hagemann <matt.hagemann@canonical.com>
+
+  [ Nathan Pratta Teodosio ]
+  [ Marco Trevisan (Treviño) ]
+  * debian/patches: Refresh git indexes
+  * Fix alignment in bullet points in first Pro page.
+    (LP: #2062971)
+  * Align radio button text and its hint below in first Pro page.
+    (LP: #2062971)
+  * Remove all extraneous instances of can-focus.
+    As that prevents keyboard navigation of the pages (LP: #2069375).
+  * d/p: Ubuntu pages, bind functions to template.
+    C Functions referenced by the template must be bound to the template or
+    they won't be properly connected. (LP: #2068614)
+  * d/p: Ubuntu pages, ensure welcome screen is loaded (LP: #2068862)
+  * d/p: Ubuntu pages, reference private widgets only after construction.
+    They're just not created earlier, so we ended up referring to NULL
+    pointers instead of the actual widgets (LP: #2068614)
+  * d/p: Ubuntu pages, use filling alignment for the Ubuntu Pro offer message
+    (LP: #2062971)
+  * d/p: Ubuntu mode, always set the missing connection warning icon.
+    Then it's visibility is controlled as before, but at least now we will
+    show it even if there's no connection setup on startup (LP: #2068632)
+  * d/p: Ubuntu mode, add pro pages to POTFILE and improve strings to be
+    translated.
+    UI or C files of the Ubuntu Pro pages were not translatable, so add the
+    files to the POTFILES and fix the strings that contained elements that
+    should not be exposed to translators (LP: #2068639)
+  * d/p: Ubuntu Pro, add translatable pro services descriptions (LP: #2068639).
+  * d/p: Ubuntu Pro, fix alignment of widgets to match design (LP: #2062971)
+  * d/p: Ubuntu Pro, Use a grid to properly align dotted list elements.
+    We were listing the elements using manual formatting and this was broken
+    for lower resolutions or in general for longer texts, making a dotted
+    list not properly padded.
+    So use a grid to manage this, this indeed changes the text used by
+    translations but because of lp:2068639 it's not a problem because no
+    translations are available so far.
+    Also in this way RTL languages are properly handled (LP: #2062971)
+  * d/p: Ubuntu Pro, limit the wrapped label widths not to increase window size.
+    (LP: #2068856)
+  * d/p: Ubuntu Pro, animate stack on pro page changes (LP: #2068856)
+  * d/p: Ubuntu Pro, improve readability of long labels (LP: #2062971)
+  * d/p: Ubuntu Pro, scale icons and images to follow widget scaling
+    (LP: #2068675)
+  * d/p: Ubuntu Pro, use async spawn of pro client process.
+    The pro client process may slow in responding to us the tokens, so use
+    asynchronous spawn to ensure we don't hang the UI while calling it.
+    (LP: #2068859)
+  * d/p/Ubuntu mode: Do not override links color in the welcome page
+    (LP: #2069346)
+
+  [ Matt Hagemann ]
+  * d/p/Minor-design-and-copy-tweaks.patch:
+    - add error hints for setting hostname on accounts page
+
+  [ Yao Wei (魏銘廷) ]
+  * debian/patches/fix-language-select-crash.patch:
+    - fix crash when switching between languages multiple times
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Thu, 27 Jun 2024 10:50:39 +0200
+
+gnome-initial-setup (46.2-1ubuntu2) oracular; urgency=medium
+
+  [ Yao Wei (魏銘廷) ]
+  * debian/vendor.conf: do not hide language page
+  * debian/patches:
+    - fix segfault when selecting language
+    - code comment on is_desktop for when setting up the first user
+
+  [ Didier Roche-Tolomelli ]
+  [ Marco Trevisan (Treviño) ]
+  * debian/patches/Update-style-to-the-same-than-flutter-installer.patch:
+    - update user creation icons to ones matching more the ubuntu style.
+    - update some icon sizes as those icons are more detailed.
+
+  [ Matt Hagemann ]
+  [ Didier Roche-Tolomelli ]
+  [ Marco Trevisan (Treviño) ]
+  * d/p/Do-not-skip-g-i-s-first-login-mode-after-user-creation.patch:
+    - g-i-s first login experience has different screens from user creation.
+      Do not skip it.
+  * d/p/Adding-EULA-page-for-OEMs.patch:
+    - Add optional EULA page for showing OEMs documents during user creation.
+  * d/p/Allow-setting-hostname-to-local-account-page.patch:
+    - Allow an user to edit their hostname on the local account creation page.
+  * d/p/Skip-privacy-page-in-user-creation-setup.patch :
+    - The button doesn’t open any browsers and this setting was not in
+      oem-config.
+  * debian/control:
+    - Add libpoppler-glib-dev build-dep.
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Fri, 14 Jun 2024 16:11:38 +0200
+
+gnome-initial-setup (46.2-1ubuntu1) oracular; urgency=medium
+
+  * Merge with Debian. Remaining changes:
+    + debian/control:
+      - Add Build-Depends: libsnapd-glib-dev and libsysmetrics-dev
+    + Add Ubuntu-specific patches:
+      - 0001-Make-summary-page-explicitly-request-navigation-butt.patch
+      - 0001-Ensure-stamp-file-if-the-user-quit-the-wizard.patch
+      - 0001-Add-Ubuntu-mode-with-special-pages.patch
+      - 0001-Display-the-ubuntu-welcome-wizard-in-Unity.patch
+      - 0002-no-deprecation-warnings.patch
+      - 0008-Ubuntu-location-default.patch
+      - ubuntu-distributor-logo.patch
+      - Restore-and-adapt-the-Welcome-page.patch
+  * Refresh 0001-Make-summary*.patch.
+  * 0001-Add-Ubuntu-mode-with-special-pages.patch: Ubuntu Pro logo would
+    move horizontally depending on the window width, in general not being
+    left-aligned (LP: #2065789).
+
+ -- Nathan Pratta Teodosio <nathan.teodosio@canonical.com>  Wed, 29 May 2024 11:01:30 +0200
+
+gnome-initial-setup (46.2-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Nathan Pratta Teodosio <nathan.teodosio@canonical.com>  Tue, 28 May 2024 11:41:41 +0200
+
+gnome-initial-setup (46.0-1ubuntu6) noble; urgency=medium
+
+  [ Sergio Costas ]
+  * debian/patches/Add-wrapper-for-convd-flutter-ui.patch:
+    - update for provd wrapper location change
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Fri, 12 Apr 2024 08:51:11 +0200
+
+gnome-initial-setup (46.0-1ubuntu5) noble; urgency=medium
+
+  * d/p/0001-Add-Ubuntu-mode-with-special-pages.patch:
+    - Do not wait for the metrics server to respond to the user's
+      decision to send or not to send the report; Rather, advance
+      to the next page unconditionally (LP:#2050884, LP:#2049670).
+
+ -- Nathan Pratta Teodosio <nathan.teodosio@canonical.com>  Tue, 09 Apr 2024 13:28:51 +0200
+
+gnome-initial-setup (46.0-1ubuntu4) noble; urgency=medium
+
+  * No-change rebuild for CVE-2024-3094
+
+ -- Steve Langasek <steve.langasek@ubuntu.com>  Sun, 31 Mar 2024 06:07:38 +0000
+
+gnome-initial-setup (46.0-1ubuntu3) noble; urgency=medium
+
+  * d/p/Add-wrapper-for-convd-flutter-ui.patch:
+    - add a wrapper to use the new flutter provisioning if it is available,
+      if not fallback to the normal gnome-initial-setup. Since we are not
+      shipping the new provisioning stack in noble yet the change isn't
+      going to change anything but it makes testing easier.
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Tue, 26 Mar 2024 15:26:28 +0100
+
+gnome-initial-setup (46.0-1ubuntu2) noble; urgency=medium
+
+  * d/p/0001-Add-Ubuntu-mode-with-special-pages.patch:
+    - Merge Restore-and-adapt-the-Welcome-page.patch in, the changes are
+      part of the Ubuntu customization
+    - change the order of the pages to match the design, hide the location
+      step since the Mozilla service is being deprecated
+  * d/p/0001-Display-the-ubuntu-welcome-wizard-in-Unity.patch:
+    - include the welcome page in unity
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Mon, 25 Mar 2024 13:09:27 +0100
+
+gnome-initial-setup (46.0-1ubuntu1) noble; urgency=medium
+
+  * Merge with Debian. Remaining changes:
+    + debian/control:
+      - Add Build-Depends: libsnapd-glib-dev and libsysmetrics-dev
+    + Add Ubuntu-specific patches:
+      - 0001-Make-summary-page-explicitly-request-navigation-butt.patch
+      - 0001-Ensure-stamp-file-if-the-user-quit-the-wizard.patch
+      - 0001-Add-Ubuntu-mode-with-special-pages.patch
+      - 0001-Display-the-ubuntu-welcome-wizard-in-Unity.patch
+      - 0002-no-deprecation-warnings.patch
+      - 0008-Ubuntu-location-default.patch
+      - ubuntu-distributor-logo.patch
+      - Restore-and-adapt-the-Welcome-page.patch
+
+ -- Jeremy Bícha <jbicha@ubuntu.com>  Thu, 21 Mar 2024 19:37:34 -0400
+
+gnome-initial-setup (46.0-1) unstable; urgency=medium
+
+  [ Jeremy Bícha ]
+  * New upstream release
+  * Bump minimum GTK4 and geoclue
+
+  [ Michael Biebl ]
+  * Build-depend on systemd-dev instead of systemd (Closes: #1060502)
+
+ -- Jeremy Bícha <jbicha@ubuntu.com>  Thu, 21 Mar 2024 19:34:40 -0400
+
+gnome-initial-setup (46~beta-1ubuntu3) noble; urgency=medium
+
+  * d/p/0001-Add-Ubuntu-mode-with-special-pages.patch: Re-enable Ubuntu Pro.
+    + The apropos of the patch was copied from Jammy and then ported to GTK4.
+      Also switched it to use Libadwaita to detect dark themes,
+      as Libhandy is incompatible with GTK4.
+  * d/p/0002-no-deprecation-warnings.patch: Added.
+    + The deprecation warnings generate a lot of noise and make detecting
+      actually relevant warnings difficult.
+
+  [ Sergio Costas ]
+  * Updated the style to be the same than the new flutter installer,
+    enable the welcome page by default since the previous first page which
+    was the online account one got removed in the new upstream version
+
+ -- Nathan Pratta Teodosio <nathan.teodosio@canonical.com>  Fri, 15 Mar 2024 12:32:29 +0100
+
+gnome-initial-setup (46~beta-1ubuntu1) noble; urgency=medium
+
+  * Merge with Debian. Remaining changes:
+    + debian/control:
+      - Add Build-Depends: libsnapd-glib-dev and libsysmetrics-dev
+    + Add Ubuntu-specific patches:
+      - 0001-Make-summary-page-explicitly-request-navigation-butt.patch
+      - 0001-Ensure-stamp-file-if-the-user-quit-the-wizard.patch
+      - 0001-Add-Ubuntu-mode-with-special-pages.patch
+      - 0001-Display-the-ubuntu-welcome-wizard-in-Unity.patch
+      - 0008-Ubuntu-location-default.patch
+      - ubuntu-distributor-logo.patch
+  * Update patches
+
+ -- Jeremy Bícha <jbicha@ubuntu.com>  Mon, 12 Feb 2024 14:28:07 -0500
+
+gnome-initial-setup (46~beta-1) unstable; urgency=medium
+
+  * New upstream release
+    - Minimize button correctly hidden (LP: #1990173)
+  * Drop patch applied in new release
+
+ -- Jeremy Bícha <jbicha@ubuntu.com>  Mon, 12 Feb 2024 11:23:44 -0500
+
+gnome-initial-setup (46~alpha-2ubuntu1) noble; urgency=medium
+
+  * Merge with Debian. Remaining changes:
+    + debian/control.in:
+      - Add Build-Depends: libsnapd-glib-dev and libsysmetrics-dev
+    + Add Ubuntu-specific patches:
+      - 0001-Make-summary-page-explicitly-request-navigation-butt.patch
+      - 0001-Ensure-stamp-file-if-the-user-quit-the-wizard.patch
+      - 0001-Add-Ubuntu-mode-with-special-pages.patch
+      - 0001-Display-the-ubuntu-welcome-wizard-in-Unity.patch
+      - 0008-Ubuntu-location-default.patch
+      - ubuntu-distributor-logo.patch
+  * Refresh patches
+  * Drop obsolete Online Accounts patches
+  * Update Unity patch to show the Privacy>Location page too
+
+ -- Jeremy Bícha <jbicha@ubuntu.com>  Mon, 22 Jan 2024 08:10:22 -0500
+
+gnome-initial-setup (46~alpha-2) unstable; urgency=medium
+
+  * Update close patch with latest version proposed upstream
+
+ -- Jeremy Bícha <jbicha@ubuntu.com>  Wed, 17 Jan 2024 15:33:09 -0500
+
+gnome-initial-setup (46~alpha-1) unstable; urgency=medium
+
+  * New upstream release
+    - GNOME Online Accounts integration was removed.
+      Use the GNOME Settings app instead. (LP: #2049513)
+  * Drop obsolete Build-Depends: librest-dev
+  * Update architectures where malcontent is available
+  * Stop using debian/control.in and dh_gnome_clean
+  * Add patch to restore ability to close Initial Setup in existing user mode
+
+ -- Jeremy Bícha <jbicha@ubuntu.com>  Wed, 17 Jan 2024 11:37:21 -0500
+
+gnome-initial-setup (45.0-1ubuntu4) noble; urgency=medium
+
+  [ Nathan Pratta Teodosio ]
+  * Do not block on calls to Ubuntu Report (LP: #1761742).
+  * Do not set the page as skippable.
+
+  [ Marco Trevisan (Treviño) ]
+  * debian/patches: Refresh indexes
+  * ubuntu-report-page: Use linked style for show-report buttons
+  * ubuntu-report-page: Fix error handling on show report
+  * ubuntu-report-page: Avoid firing a new thread if the report is available
+  * ubuntu-report-page: Go to next page once report is sent or on error
+  * ubuntu-report-page: Add timeout before failing during report send
+  * ubuntu-report-page: translate errors
+
+ -- Marco Trevisan (Treviño) <marco@ubuntu.com>  Mon, 11 Dec 2023 22:58:05 +0100
+
+gnome-initial-setup (45.0-1ubuntu3) mantic; urgency=medium
+
+  * debian/patches/0001-Add-Ubuntu-mode-with-special-pages.patch:
+    - update the 'Ready to go' screen for the ubuntu software -> app center
+      change in mantic (lp: #2036981)
+
+ -- Nathan Pratta Teodosio <nathan.teodosio@canonical.com>  Tue, 26 Sep 2023 11:20:36 +0200
+
+gnome-initial-setup (45.0-1ubuntu2) mantic; urgency=medium
+
+  * debian/patches/0001-Add-Ubuntu-mode-with-special-pages.patch:
+    - use the right name for the new snap-store, we want to reference to
+      the binary and not the .desktop
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Tue, 19 Sep 2023 17:35:17 +0200
+
+gnome-initial-setup (45.0-1ubuntu1) mantic; urgency=medium
+
+  [ Jeremy Bícha]
+  * Merge with Debian. Remaining changes:
+    + debian/control.in:
+      - Build-Depends on libsnapd-glib-dev and libsysmetrics-dev
+    + Add Ubuntu-specific patches:
+      - 0001-Make-summary-page-explicitly-request-navigation-butt.patch
+      - 0001-Ensure-stamp-file-if-the-user-quit-the-wizard.patch
+      - 0001-Add-Ubuntu-mode-with-special-pages.patch
+      - 0001-Display-the-ubuntu-welcome-wizard-in-Unity.patch
+      - 0006-goa-Add-Ubuntu-Single-Sign-On-to-the-list.patch
+      - 0007-goa-adjust-description-to-not-mention-email-or-conta.patch
+      - 0008-Ubuntu-location-default.patch
+
+  [ Sebastien Bacher ]
+  * debian/patches/0001-Add-Ubuntu-mode-with-special-pages.patch:
+    - update the code to also check for the new snap-store .desktop name,
+      keep the old name for now in case flavors still need it (lp: #2034305)
+
+ -- Jeremy Bícha <jbicha@ubuntu.com>  Mon, 18 Sep 2023 14:48:00 -0400
+
+gnome-initial-setup (45.0-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Jeremy Bícha <jbicha@ubuntu.com>  Mon, 18 Sep 2023 14:20:23 -0400
+
+gnome-initial-setup (45~beta-2ubuntu1) mantic; urgency=medium
+
+  * Merge with Debian (LP: #2034579). Remaining changes:
+    + debian/control.in:
+      - Build-Depends on libsnapd-glib-dev and libsysmetrics-dev
+    + Add Ubuntu-specific patches:
+      - 0001-Make-summary-page-explicitly-request-navigation-butt.patch
+      - 0001-Ensure-stamp-file-if-the-user-quit-the-wizard.patch
+      - 0001-Add-Ubuntu-mode-with-special-pages.patch
+      - 0001-Display-the-ubuntu-welcome-wizard-in-Unity.patch
+      - 0006-goa-Add-Ubuntu-Single-Sign-On-to-the-list.patch
+      - 0007-goa-adjust-description-to-not-mention-email-or-conta.patch
+      - 0008-Ubuntu-location-default.patch
+
+ -- Jeremy Bícha <jbicha@ubuntu.com>  Wed, 13 Sep 2023 16:23:53 -0400
+
+gnome-initial-setup (45~beta-2) unstable; urgency=medium
+
+  * Drop patch reverting use of Tecla for Keyboard panel
+  * Depend on tecla
+
+ -- Jeremy Bícha <jbicha@ubuntu.com>  Wed, 06 Sep 2023 14:42:24 -0400
+
+gnome-initial-setup (45~beta-1ubuntu1) mantic; urgency=medium
+
+  * Merge with Debian. Remaining changes:
+    + debian/control.in:
+      - Build-Depends on libsnapd-glib-dev and libsysmetrics-dev
+    + Add Ubuntu-specific patches:
+      - 0001-Make-summary-page-explicitly-request-navigation-butt.patch
+      - 0001-Ensure-stamp-file-if-the-user-quit-the-wizard.patch
+      - 0001-Add-Ubuntu-mode-with-special-pages.patch
+      - 0001-Display-the-ubuntu-welcome-wizard-in-Unity.patch
+      - 0006-goa-Add-Ubuntu-Single-Sign-On-to-the-list.patch
+      - 0007-goa-adjust-description-to-not-mention-email-or-conta.patch
+      - 0008-Ubuntu-location-default.patch
+  * Drop Facebook patch: not needed since GNOME Online Accounts dropped Facebook
+
+ -- Jeremy Bícha <jbicha@ubuntu.com>  Mon, 07 Aug 2023 10:33:53 -0400
+
+gnome-initial-setup (45~beta-1) unstable; urgency=medium
+
+  * New upstream release
+  * Build-Depend on dconf-cli
+  * Drop 3 patches applied in new release
+  * Add patch to revert switch to Tecla since Tecla #7 is unfixed
+
+ -- Jeremy Bícha <jbicha@ubuntu.com>  Mon, 07 Aug 2023 10:18:22 -0400
+
+gnome-initial-setup (44.0-2) unstable; urgency=medium
+
+  * Update standards version to 4.6.2, no changes needed
+  * Release to unstable
+
+ -- Jeremy Bícha <jbicha@ubuntu.com>  Sun, 23 Jul 2023 16:28:52 -0400
+
+gnome-initial-setup (44.0-1ubuntu1) lunar; urgency=medium
+
+  * Merge with Debian. Remaining changes:
+    + debian/control.in:
+      - Build-Depends on libsnapd-glib-dev and libsysmetrics-dev
+    + Add Ubuntu-specific patches:
+      - 0001-Make-summary-page-explicitly-request-navigation-butt.patch
+      - 0001-Ensure-stamp-file-if-the-user-quit-the-wizard.patch
+      - 0001-Add-Ubuntu-mode-with-special-pages.patch
+      - 0001-Display-the-ubuntu-welcome-wizard-in-Unity.patch
+      - 0006-goa-Add-Ubuntu-Single-Sign-On-to-the-list.patch
+      - 0007-goa-adjust-description-to-not-mention-email-or-conta.patch
+      - Don-t-show-Facebook-in-Ubuntu.patch
+      - 0008-Ubuntu-location-default.patch
+
+ -- Jeremy Bicha <jbicha@ubuntu.com>  Mon, 27 Mar 2023 14:29:39 -0400
+
+gnome-initial-setup (44.0-1) experimental; urgency=medium
+
+  * New upstream release
+  * Drop 4 patches applied in new release
+
+ -- Jeremy Bicha <jbicha@ubuntu.com>  Mon, 27 Mar 2023 14:27:06 -0400
+
+gnome-initial-setup (44~rc-0ubuntu2) lunar; urgency=medium
+
+  * Build against webkitgtk 6.0 instead of 5.0
+
+ -- Jeremy Bicha <jbicha@ubuntu.com>  Wed, 15 Mar 2023 19:42:03 -0400
+
+gnome-initial-setup (44~rc-0ubuntu1) lunar; urgency=medium
+
+  [ Jeremy Bicha ]
+  * New upstream release (LP: #2009886)
+
+  [ Simon McVittie ]
+  * d/README.source: Add some notes on how to smoke-test this package.
+    Thanks to Jeremy Bicha (via #1032448)
+  * d/p/driver-Set-a-non-trivial-window-title.patch:
+    Add patch to set a window title.
+
+ -- Jeremy Bicha <jbicha@ubuntu.com>  Mon, 13 Mar 2023 16:41:44 -0400
+
+gnome-initial-setup (44~beta-0ubuntu1) lunar; urgency=medium
+
+  * New upstream release
+
+ -- Jeremy Bicha <jbicha@ubuntu.com>  Thu, 23 Feb 2023 17:52:19 -0500
+
+gnome-initial-setup (43.2-6) unstable; urgency=medium
+
+  * Team upload
+  * d/p/privacy-Move-subtitles-to-separate-labels.patch:
+    Fix Mozilla Location Services privacy policy link in kiosk mode.
+    The privacy policy links on the Privacy page are meant to be overridden
+    to open in an embedded (WebKitGTK-based) web browser widget instead of
+    an external web browser, but a regression in the port to GTK 4 between
+    GNOME 42 and 43 caused this behaviour to break.
+    In existing-user mode (run on the first GNOME login for a new user
+    account), the link would previously have opened in the default web
+    browser (normally Firefox), which is harmless but was not the
+    intended UX.
+    In new-user mode (when no user accounts exist), Initial Setup runs in a
+    captive "kiosk mode" to create the first user account. In this mode, the
+    link would previously not do anything. A mitigation is that this failure
+    mode is rarely seen in Debian, because the installer normally creates a
+    user account. (Closes: #1033228)
+
+ -- Simon McVittie <smcv@debian.org>  Mon, 20 Mar 2023 15:27:27 +0000
+
+gnome-initial-setup (43.2-5) unstable; urgency=medium
+
+  * Build against webkitgtk 6.0 instead of 5.0
+  * Cherry-pick a build fix for latest webkitgtk
+
+ -- Jeremy Bicha <jbicha@ubuntu.com>  Wed, 15 Mar 2023 20:18:52 -0400
+
+gnome-initial-setup (43.2-4) unstable; urgency=medium
+
+  * Team upload
+  * d/p/keyboard-Resort-refilter-list-when-picking-shortlist.patch:
+    Add patch from upstream 44.rc to display more input methods and
+    keyboard layouts without clicking the "more..." button. This has
+    a known issue that the shortlist of keyboard layouts is often not
+    particularly useful, but at least it includes the default and
+    current layouts (possibly different) and some other possibilities.
+  * d/p/keyboard-Correctly-update-labels-for-IBus-engines.patch,
+    d/p/keyboard-Update-filter-and-sort-when-the-display-name-cha.patch:
+    Rework patches for xkb layout and IBus method selection, fixing a
+    crash on startup (Closes: #1032448)
+  * d/README.source: Add some notes on how to smoke-test this package.
+    Thanks to Jeremy Bicha (via #1032448)
+  * d/p/driver-Set-a-non-trivial-window-title.patch:
+    Add patch to set a window title.
+    This is one of the first things a new GNOME user will see, so let's
+    make it a bit more polished.
+
+ -- Simon McVittie <smcv@debian.org>  Mon, 06 Mar 2023 23:46:19 +0000
+
+gnome-initial-setup (43.2-3) unstable; urgency=medium
+
+  * Team upload
+  * d/p/Add-StartupWMClass-to-.desktop-file.patch:
+    Replace previous patch for app ID handling with upstream equivalent.
+    gnome-initial-setup is not a syntactically valid app ID. Return to the
+    syntactically valid app ID used upstream, and set the StartupWMClass
+    instead.
+    This gives us a correct window title in the Overview and the
+    Alt+(key above Tab) window switcher, unlike the patch in 43.2-2.
+  * d/p/reenable-existing-user-mode.patch:
+    Add a note of which upstream commit we're reverting
+  * d/patches: Reorder with closest-to-upstream first
+  * d/p/keyboard-Correctly-update-labels-for-IBus-engines.patch,
+    d/p/keyboard-Update-filter-and-sort-when-the-display-name-cha.patch:
+    Correctly update input method chooser with info from IBus.
+    This ensures that when the default is an IBus-based input method like
+    Anthy (currently GNOME's default for ja_JP in bookworm) or Mozc (requested
+    as a new default for ja_JP in #1029821), it will be displayed with its
+    correct label like "Japanese (Anthy)" or "日本語 (Mozc)" instead of
+    a placeholder name "anthy" or "mozc-jp". (Closes: #1032382)
+
+ -- Simon McVittie <smcv@debian.org>  Sun, 05 Mar 2023 17:39:30 +0000
+
+gnome-initial-setup (43.2-2) unstable; urgency=medium
+
+  * Add patch to fix broken icon and app name
+
+ -- Jeremy Bicha <jbicha@ubuntu.com>  Thu, 02 Mar 2023 17:32:26 -0500
+
+gnome-initial-setup (43.2-1ubuntu1) lunar; urgency=medium
+
+  * Merge with Debian. Remaining changes:
+    + debian/control.in:
+      - Build-Depends on libsnapd-glib-dev and libsysmetrics-dev
+    + Add Ubuntu-specific patches:
+      - 0001-Make-summary-page-explicitly-request-navigation-butt.patch
+      - 0001-Ensure-stamp-file-if-the-user-quit-the-wizard.patch
+      - 0001-Add-Ubuntu-mode-with-special-pages.patch
+      - 0001-Display-the-ubuntu-welcome-wizard-in-Unity.patch
+      - 0006-goa-Add-Ubuntu-Single-Sign-On-to-the-list.patch
+      - 0007-goa-adjust-description-to-not-mention-email-or-conta.patch
+      - Don-t-show-Facebook-in-Ubuntu.patch
+      - 0008-Ubuntu-location-default.patch
+
+ -- Jeremy Bicha <jbicha@ubuntu.com>  Tue, 06 Dec 2022 13:27:56 -0500
+
+gnome-initial-setup (43.2-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Jeremy Bicha <jbicha@ubuntu.com>  Tue, 06 Dec 2022 09:27:10 -0500
+
+gnome-initial-setup (43.1-2ubuntu1) lunar; urgency=medium
+
+  * Merge with Debian. Remaining changes:
+    + debian/control.in:
+      - Build-Depends on libsnapd-glib-dev and libsysmetrics-dev
+    + Add Ubuntu-specific patches:
+      - 0001-Make-summary-page-explicitly-request-navigation-butt.patch
+      - 0001-Ensure-stamp-file-if-the-user-quit-the-wizard.patch
+      - 0001-Add-Ubuntu-mode-with-special-pages.patch
+      - 0001-Display-the-ubuntu-welcome-wizard-in-Unity.patch
+      - 0006-goa-Add-Ubuntu-Single-Sign-On-to-the-list.patch
+      - 0007-goa-adjust-description-to-not-mention-email-or-conta.patch
+      - Don-t-show-Facebook-in-Ubuntu.patch
+      - 0008-Ubuntu-location-default.patch
+
+ -- Amin Bandali <amin.bandali@canonical.com>  Wed, 23 Nov 2022 11:10:11 -0500
+
+gnome-initial-setup (43.1-2) unstable; urgency=medium
+
+  * Team upload
+  * Depend on polkitd and pkexec instead of transitional policykit-1.
+    This package runs pkexec, so that dependency is still needed.
+  * d/copyright: use spaces rather than tabs to start continuation lines
+  * d/control.in: Update standards version to 4.6.1 (no changes needed)
+  * d/upstream/metadata: Update Gitlab URLs
+
+ -- Simon McVittie <smcv@debian.org>  Tue, 15 Nov 2022 08:36:43 +0000
+
+gnome-initial-setup (43.1-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Jeremy Bicha <jbicha@ubuntu.com>  Tue, 18 Oct 2022 13:08:46 -0400
+
+gnome-initial-setup (43.0-1ubuntu2) kinetic; urgency=medium
+
+  * Update 0001-Add-Ubuntu-mode-with-special-pages.patch:
+    - Fix no option selected by default for Help Improve Ubuntu (LP: #1993495)
+
+ -- Nathan Pratta Teodosio <nathan.teodosio@canonical.com>  Wed, 19 Oct 2022 10:53:46 -0300
+
+gnome-initial-setup (43.0-1ubuntu1) kinetic; urgency=medium
+
+  * Merge with Debian. Remaining changes:
+    + debian/control.in:
+      - Build-Depends on libsnapd-glib-dev and libsysmetrics-dev
+    + Add Ubuntu-specific patches:
+      - 0001-Make-summary-page-explicitly-request-navigation-butt.patch
+      - 0001-Ensure-stamp-file-if-the-user-quit-the-wizard.patch
+      - 0001-Add-Ubuntu-mode-with-special-pages.patch
+      - 0001-Display-the-ubuntu-welcome-wizard-in-Unity.patch
+      - 0006-goa-Add-Ubuntu-Single-Sign-On-to-the-list.patch
+      - 0007-goa-adjust-description-to-not-mention-email-or-conta.patch
+      - Don-t-show-Facebook-in-Ubuntu.patch
+      - 0008-Ubuntu-location-default.patch
+  * Drop unnecessary Build-Depends on libsoup-3.0-dev
+
+ -- Jeremy Bicha <jbicha@ubuntu.com>  Mon, 19 Sep 2022 12:14:21 -0400
+
+gnome-initial-setup (43.0-1) unstable; urgency=medium
+
+  [ Jeremy Bicha ]
+  * New upstream release
+  * Re-enable Privacy page
+  * Re-enable malcontent integration for Debian
+
+  [ Simon McVittie ]
+  * d/control.in: Replace transitional libfontconfig1-dev with libfontconfig-dev
+
+ -- Jeremy Bicha <jbicha@ubuntu.com>  Mon, 19 Sep 2022 11:44:22 -0400
+
+gnome-initial-setup (43~rc.1-1ubuntu1) kinetic; urgency=medium
+
+  * Merge with debian, containing new upstream release
+  * debian/patches: Port Ubuntu pages to Gtk4 and enable them again.
+    Moved code to the newer toolkit, adding more async operations and an UI
+    redesigned with more Adwaita look and feel.
+    Also, remove the livepatch support because:
+     - We don't support point releases
+     - It will be moved to the installer for the next LTS.
+  * debian/control: Build-depend on libsoup-3.0-dev, required by snap panel
+  * debian/control: Remove dependency on polkitd.
+    It was required by the livepatch page but we don't use it anymore.
+  * debian/patches: Refresh and remove debian's patch to disable webkit2gtk5
+  * Remaining changes with debian:
+    + debian/control.in:
+      - Build-Depends on libsnapd-glib-dev, libsoup3-dev, libsysmetrics-dev,
+        libwebkit2gtk-5.0-dev
+    + Add Ubuntu-specific patches:
+      - 0001-Make-summary-page-explicitly-request-navigation-butt.patch
+      - 0001-Ensure-stamp-file-if-the-user-quit-the-wizard.patch
+      - 0001-Add-Ubuntu-mode-with-special-pages.patch
+      - 0001-Display-the-ubuntu-welcome-wizard-in-Unity.patch
+      - 0006-goa-Add-Ubuntu-Single-Sign-On-to-the-list.patch
+      - 0007-goa-adjust-description-to-not-mention-email-or-conta.patch
+      - Don-t-show-Facebook-in-Ubuntu.patch
+      - 0008-Ubuntu-location-default.patch
+
+ -- Marco Trevisan (Treviño) <marco@ubuntu.com>  Thu, 15 Sep 2022 19:30:37 +0200
+
+gnome-initial-setup (43~rc.1-1) unstable; urgency=high
+
+  * New upstream release
+  * Add patch to disable privacy page. It uses webkitgtk 5.0
+    which is still only in Debian Experimental
+  * debian/control.in: Drop webkitgtk from Build-Depends for now
+  * Add patch from Ubuntu to re-enable existing-user mode.
+    It was disabled upstream because it conflicts with gnome-tour
+    but gnome-tour isn't available in Debian or Ubuntu yet
+  * Release to unstable (Closes: #1019106)
+
+ -- Jeremy Bicha <jbicha@ubuntu.com>  Wed, 07 Sep 2022 11:04:27 -0400
+
+gnome-initial-setup (43~beta-0ubuntu1) kinetic; urgency=medium
+
+  * New upstream release
+  * Switch to gtk4, libadwaita, and libsoup3
+  * Drop obsolete cheese dependency
+  * Build-Depend on libxml2-utils for xmllint
+  * Temporarily disable malcontent integration
+  * Refresh patches
+  * Disable Ubuntu patch that needs to be ported to gtk4
+
+ -- Jeremy Bicha <jbicha@ubuntu.com>  Mon, 29 Aug 2022 15:22:18 -0400
+
+gnome-initial-setup (42.2-1ubuntu2) kinetic; urgency=medium
+
+  * Rebuild against latest gnome-desktop
+
+ -- Jeremy Bicha <jbicha@ubuntu.com>  Thu, 28 Jul 2022 09:41:22 -0400
+
+gnome-initial-setup (42.2-1ubuntu1) kinetic; urgency=medium
+
+  * Resynchronize with Debian. Remaining changes:
+    + debian/control.in:
+      - Build-Depends on libsnapd-glib-dev, libsoup2.4-dev, libsysmetrics-dev,
+        polkitd, libxml2-utils
+    + Add Ubuntu-specific patches:
+      - 0001-Make-summary-page-explicitly-request-navigation-butt.patch
+      - 0001-Ensure-stamp-file-if-the-user-quit-the-wizard.patch
+      - 0001-Add-Ubuntu-mode-with-special-pages.patch
+      - 0001-Display-the-ubuntu-welcome-wizard-in-Unity.patch
+      - 0006-goa-Add-Ubuntu-Single-Sign-On-to-the-list.patch
+      - 0007-goa-adjust-description-to-not-mention-email-or-conta.patch
+      - Don-t-show-Facebook-in-Ubuntu.patch
+      - 0008-Ubuntu-location-default.patch
+      - ubuntu_newuser_wizard.patch:
+        + revert the new upstream behaviour of not using the wizard for
+          existing users since it has a purpose in Ubuntu
+
+ -- Jeremy Bicha <jbicha@ubuntu.com>  Mon, 06 Jun 2022 17:01:56 -0400
+
+gnome-initial-setup (42.2-1) unstable; urgency=medium
+
+  * New upstream translations release
+
+ -- Jeremy Bicha <jbicha@ubuntu.com>  Mon, 06 Jun 2022 16:47:25 -0400
+
+gnome-initial-setup (42.1.1-1) unstable; urgency=medium
+
+  * New upstream translations release
+
+ -- Jeremy Bicha <jbicha@ubuntu.com>  Thu, 21 Apr 2022 13:37:45 -0400
+
+gnome-initial-setup (42.1-1) unstable; urgency=medium
+
+  [ Jeremy Bicha ]
+  * New upstream translations release
+  * Add debian/upstream/metadata
+  * Bump Standards-Version to 4.6.0
+
+  [ Will Thompson ]
+  * debian/copyright: Remove obsolete license exception for um-realm-manager.*
+
+ -- Jeremy Bicha <jbicha@ubuntu.com>  Mon, 18 Apr 2022 11:55:21 -0400
+
+gnome-initial-setup (42.0.1-2) unstable; urgency=medium
+
+  * Switch to libgweather4
+
+ -- Jeremy Bicha <jbicha@ubuntu.com>  Mon, 28 Mar 2022 11:55:08 -0400
+
+gnome-initial-setup (42.0.1-1ubuntu3) kinetic; urgency=medium
+
+  * Drop patches reverting switch to gweather4
+  * debian/control.in: Build-Depend on libgweather-4-dev
+
+ -- Jeremy Bicha <jbicha@ubuntu.com>  Thu, 28 Apr 2022 21:48:13 -0400
+
+gnome-initial-setup (42.0.1-1ubuntu2) jammy; urgency=medium
+
+  * debian/patches/ubuntu-distributor-logo.patch:
+    - replace another use of the wrong logo (lp: #1966115)
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Tue, 29 Mar 2022 09:35:08 +0200
+
+gnome-initial-setup (42.0.1-1ubuntu1) jammy; urgency=medium
+
+  * Resynchronize with Debian. Remaining changes:
+    + debian/control.in:
+      - Build-Depends on libsnapd-glib-dev, libsoup2.4-dev, libsysmetrics-dev
+    + Add Ubuntu-specific patches:
+      - 0001-Make-summary-page-explicitly-request-navigation-butt.patch
+      - 0001-Ensure-stamp-file-if-the-user-quit-the-wizard.patch
+      - 0001-Add-Ubuntu-mode-with-special-pages.patch
+      - 0001-Display-the-ubuntu-welcome-wizard-in-Unity.patch
+      - 0006-goa-Add-Ubuntu-Single-Sign-On-to-the-list.patch
+      - 0007-goa-adjust-description-to-not-mention-email-or-conta.patch
+      - Don-t-show-Facebook-in-Ubuntu.patch
+      - 0008-Ubuntu-location-default.patch
+      - ubuntu_newuser_wizard.patch:
+        + revert the new upstream behaviour of not using the wizard for
+          existing users since it has a purpose in Ubuntu
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Thu, 24 Mar 2022 16:23:11 +0100
+
+gnome-initial-setup (42.0.1-1) unstable; urgency=medium
+
+  * New upstream release, remove patch included in the update
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Thu, 24 Mar 2022 14:50:12 +0100
+
+gnome-initial-setup (42~beta-1ubuntu2) jammy; urgency=medium
+
+  * debian/patches/0001-Add-Ubuntu-mode-with-special-pages.patch:
+    - use distributor-logo instead of ubuntu-logo-icon from the settings
+      (lp: #1966115)
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Thu, 24 Mar 2022 13:38:08 +0100
+
+gnome-initial-setup (42~beta-1) unstable; urgency=medium
+
+  * New upstream release
+  * Drop all patches: applied in new release
+  * Add patch to support GNOME 42 dark theme preference
+  * Revert switch to libgweather4
+  * Build-Depend on libgnome-desktop-4-dev instead of libgnome-desktop-3-dev
+  * debian/control.in: Build-Depend on libhandy
+  * debian/vendor.conf: Drop unused run_welcome_tour line
+
+ -- Jeremy Bicha <jeremy.bicha@canonical.com>  Wed, 16 Feb 2022 10:34:12 -0500
+
+gnome-initial-setup (41.2-2) unstable; urgency=medium
+
+  * Team upload
+  * d/patches: Update to upstream gnome-41 branch commit 41.2-2-g916995f0
+    - Update Icelandic translation
+  * d/p/build-Fix-Meson-deprecation-warning.patch:
+    Add patch from upstream to fix FTBFS with recent Meson
+    (Closes: #1004780)
+
+ -- Simon McVittie <smcv@debian.org>  Tue, 01 Feb 2022 23:03:00 +0000
+
+gnome-initial-setup (41.2-1) unstable; urgency=medium
+
+  * New upstream release
+  * debian/vendor.conf: Don't try to run the welcome tour on Ubuntu
+
+ -- Jeremy Bicha <jbicha@debian.org>  Sun, 05 Dec 2021 02:57:19 -0500
+
+gnome-initial-setup (41.0-1ubuntu1) jammy; urgency=medium
+
+  * Resynchronize with Debian. Remaining changes:
+    + debian/control.in:
+      - Build-Depends on libsnapd-glib-dev, libsoup2.4-dev, libsysmetrics-dev
+    + Add Ubuntu-specific patches:
+      - 0001-Make-summary-page-explicitly-request-navigation-butt.patch
+      - 0001-Ensure-stamp-file-if-the-user-quit-the-wizard.patch
+      - 0001-Add-Ubuntu-mode-with-special-pages.patch
+      - 0001-Display-the-ubuntu-welcome-wizard-in-Unity.patch
+      - 0006-goa-Add-Ubuntu-Single-Sign-On-to-the-list.patch
+      - 0007-goa-adjust-description-to-not-mention-email-or-conta.patch
+      - Don-t-show-Facebook-in-Ubuntu.patch
+      - 0008-Ubuntu-location-default.patch
+    + debian/vendor.conf,
+      - we don't do the upstream welcome tour on Ubuntu, it's not packaged
+        and not adapted to our customized desktop configuration
+  * debian/patches/ubuntu_newuser_wizard.patch:
+    - revert the new upstream behaviour of not using the wizard for
+      existing users since it has a purpose in Ubuntu
+  * Removed delta since it's included in Debian now
+    * debian/control.in, debian/rules:
+      - build without malcontent for now since it's in universe
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Thu, 11 Nov 2021 12:46:05 +0100
+
+gnome-initial-setup (41.0-1) unstable; urgency=medium
+
+  * New upstream release
+  * Bump minimum meson to 0.50.0
+  * Install Ubuntu's vendor.conf in upstream recommended /usr/share/
+  * Don't build with malcontent on Ubuntu since it's not in Ubuntu main
+
+ -- Jeremy Bicha <jbicha@debian.org>  Fri, 17 Sep 2021 07:05:14 -0400
+
+gnome-initial-setup (40.4-1ubuntu1) impish; urgency=medium
+
+  * Resynchronize with Debian. Remaining changes:
+    + debian/control.in:
+      - Build-Depends on libsnapd-glib-dev, libsoup2.4-dev, libsysmetrics-dev
+    + Add Ubuntu-specific patches:
+      - 0001-Make-summary-page-explicitly-request-navigation-butt.patch
+      - 0001-Ensure-stamp-file-if-the-user-quit-the-wizard.patch
+      - 0001-Add-Ubuntu-mode-with-special-pages.patch
+      - 0001-Display-the-ubuntu-welcome-wizard-in-Unity.patch
+      - 0006-goa-Add-Ubuntu-Single-Sign-On-to-the-list.patch
+      - 0007-goa-adjust-description-to-not-mention-email-or-conta.patch
+      - Don-t-show-Facebook-in-Ubuntu.patch
+      - 0008-Ubuntu-location-default.patch
+  * debian/control.in, debian/rules:
+    - build without malcontent for now since it's in universe
+  * debian/vendor.conf,
+    debian/patches/0001-Don-t-run-welcome-tour-at-end.patch:
+    - use the new vendor configuration instead of a patch
+  * debian/patches/ubuntu_newuser_wizard.patch:
+    - revert the new upstream behaviour of not using the wizard for
+      existing users since it has a purpose in Ubuntu
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Mon, 23 Aug 2021 10:23:07 +0200
+
+gnome-initial-setup (40.4-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Jeremy Bicha <jbicha@debian.org>  Sun, 22 Aug 2021 09:34:06 -0400
+
+gnome-initial-setup (40.2-2) unstable; urgency=medium
+
+  * Bump debhelper-compat to 13
+  * debian/rules: minor cleanup
+  * Release to unstable
+
+ -- Jeremy Bicha <jbicha@debian.org>  Sun, 22 Aug 2021 09:00:43 -0400
+
+gnome-initial-setup (40.2-1ubuntu1) impish; urgency=medium
+
+  * debian/patches/ubuntu_newuser_wizard.patch:
+    - revert the new upstream behaviour of not using the wizard for
+      existing users since it has a purpose in Ubuntu
+  * Resynchronize with Debian. Remaining changes:
+    + debian/control.in:
+      - Build-Depends on libsnapd-glib-dev, libsoup2.4-dev, libsysmetrics-dev
+    + Add Ubuntu-specific patches:
+      - 0001-Make-summary-page-explicitly-request-navigation-butt.patch
+      - 0001-Ensure-stamp-file-if-the-user-quit-the-wizard.patch
+      - 0001-Add-Ubuntu-mode-with-special-pages.patch
+      - 0001-Display-the-ubuntu-welcome-wizard-in-Unity.patch
+      - 0006-goa-Add-Ubuntu-Single-Sign-On-to-the-list.patch
+      - 0007-goa-adjust-description-to-not-mention-email-or-conta.patch
+      - Don-t-show-Facebook-in-Ubuntu.patch
+      - 0008-Ubuntu-location-default.patch
+  * debian/control.in, debian/rules:
+    - build without malcontent for now since it's in universe
+  * debian/vendor.conf,
+    debian/patches/0001-Don-t-run-welcome-tour-at-end.patch:
+    - use the new vendor configuration instead of a patch
+
+  [ Gunnar Hjalmarsson ]
+  * Stop recommending gnome-getting-started-docs - archived upstream
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Tue, 08 Jun 2021 16:23:01 +0200
+
+gnome-initial-setup (40.2-1) experimental; urgency=medium
+
+  * New upstream release
+  * debian/gnome-initial-setup.maintscript:
+    - remove obsolete gnome-welcome-tour.desktop
+
+  [ Gunnar Hjalmarsson ]
+  * Stop recommending gnome-getting-started-docs - archived upstream
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Tue, 08 Jun 2021 16:20:16 +0200
+
+gnome-initial-setup (40.1-1) experimental; urgency=medium
+
+  * New upstream release
+  * Remove .desktop symlink hack, the issue is fixed upstream now
+  * debian/patches/revert_gnome_tour.patch:
+    - removed, the code it was patching has been deprecated
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Fri, 28 May 2021 12:56:59 +0200
+
+gnome-initial-setup (3.38.5-2) experimental; urgency=medium
+
+  * debian/control.in:
+    - Build-Depends on systemd, some other required package used to pull
+      it in but isn't anymore which is failing the build
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Mon, 17 May 2021 21:56:29 +0200
+
+gnome-initial-setup (3.38.5-1ubuntu1) impish; urgency=medium
+
+  * Merge with Debian. Remaining changes:
+    + debian/control.in:
+      - Build-Depends on libsnapd-glib-dev, libsoup2.4-dev, libsysmetrics-dev
+    + Add Ubuntu-specific patches:
+      - 0001-Make-summary-page-explicitly-request-navigation-butt.patch
+      - 0001-Ensure-stamp-file-if-the-user-quit-the-wizard.patch
+      - 0001-Add-Ubuntu-mode-with-special-pages.patch
+      - 0001-Display-the-ubuntu-welcome-wizard-in-Unity.patch
+      - 0006-goa-Add-Ubuntu-Single-Sign-On-to-the-list.patch
+      - 0007-goa-adjust-description-to-not-mention-email-or-conta.patch
+      - Don-t-show-Facebook-in-Ubuntu.patch
+      - 0008-Ubuntu-location-default.patch
+  * debian/control.in, debian/rules:
+    - build without malcontent for now since it's in universe
+  * debian/vendor.conf,
+    debian/patches/0001-Don-t-run-welcome-tour-at-end.patch:
+    - use the new vendor configuration instead of a patch
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Mon, 17 May 2021 16:26:10 +0200
+
+gnome-initial-setup (3.38.5-1) experimental; urgency=medium
+
+  * New upstream release
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Mon, 17 May 2021 16:23:38 +0200
+
+gnome-initial-setup (3.38.4-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Fri, 19 Feb 2021 11:47:41 +0100
+
+gnome-initial-setup (3.38.3-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Wed, 20 Jan 2021 16:46:38 +0100
+
+gnome-initial-setup (3.38.1-1ubuntu2) hirsute; urgency=medium
+
+  * Don't cast a GtkLabel into a GisSnapTile.
+    We populate a GtkFlowBox with tiles representing features snaps. There
+    might not be exactly enough to fill up the entire number of rows, so the
+    remaining cells are filled up with blank space, which is actually a
+    GtkLabel.
+    When clicking these tiles, we launch Software to the application that's
+    been clicked. That is done by looking inside the tile to find its
+    associated snap.
+    We try to do this 'looking inside' for the blank tiles too. But they
+    aren't snaps at all - as mentioned above, they are GtkLabels. We illegally
+    cast to a snap tile, and then operate on it. At best, this leads to a
+    warning on stderr and Software getting spawned to display a nonsense
+    application. At worst we crash.
+    Fix this by altering the callback to check if we have clicked on a snap or
+    not. In the not case, simply return and do nothing. (LP: #1901548)
+
+ -- Iain Lane <iain.lane@canonical.com>  Tue, 27 Oct 2020 17:57:59 +0000
+
+gnome-initial-setup (3.38.1-1ubuntu1) groovy; urgency=medium
+
+  * Merge with Debian. Remaining changes:
+    + debian/control.in:
+      - Build-Depends on libsnapd-glib-dev, libsoup2.4-dev, libsysmetrics-dev
+    + Add Ubuntu-specific patches:
+      - 0001-Make-summary-page-explicitly-request-navigation-butt.patch
+      - 0001-Ensure-stamp-file-if-the-user-quit-the-wizard.patch
+      - 0001-Add-Ubuntu-mode-with-special-pages.patch
+      - 0001-Display-the-ubuntu-welcome-wizard-in-Unity.patch
+      - 0006-goa-Add-Ubuntu-Single-Sign-On-to-the-list.patch
+      - 0007-goa-adjust-description-to-not-mention-email-or-conta.patch
+      - Don-t-show-Facebook-in-Ubuntu.patch
+      - 0008-Ubuntu-location-default.patch
+  * debian/control.in, debian/rules:
+    - build without malcontent for now since it's in universe
+  * debian/vendor.conf,
+    debian/patches/0001-Don-t-run-welcome-tour-at-end.patch:
+    - use the new vendor configuration instead of a patch
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Mon, 05 Oct 2020 11:26:23 +0200
+
+gnome-initial-setup (3.38.1-1) unstable; urgency=medium
+
+  * New upstream release
+  * debian/control.in:
+    - updated meson requirement
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Mon, 05 Oct 2020 11:15:01 +0200
+
+gnome-initial-setup (3.38.0-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Tue, 15 Sep 2020 16:27:03 +0200
+
+gnome-initial-setup (3.37.91-1) experimental; urgency=medium
+
+  * New upstream release
+  * debian/control.in:
+    - require gsettings-desktop-schemas and webkitgtk 2.26
+  * debian/copyright:
+    - updated list of copyright owners
+  * debian/docs:
+    - updated for the README renaming
+  * debian/patches/revert_gnome_tour.patch:
+    - revert back to start yelp until gnome-tour is packaged in Debian
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Fri, 14 Aug 2020 15:29:10 +0200
+
+gnome-initial-setup (3.36.4-1) unstable; urgency=medium
+
+  * New upstream release
+  * debian/control.in: Recommends accountsservice, this is used by gis
+  * debian/control.in: Bump malcontent to Recommends
+
+ -- Laurent Bigonville <bigon@debian.org>  Mon, 06 Jul 2020 14:38:00 +0200
+
+gnome-initial-setup (3.36.3-2) unstable; urgency=medium
+
+  * debian/control.in: Bump Standards-Version to 4.5.0 (no further changes)
+  * Enable malcontent on supported architectures
+
+ -- Laurent Bigonville <bigon@debian.org>  Mon, 06 Jul 2020 12:11:29 +0200
+
+gnome-initial-setup (3.36.3-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Thu, 18 Jun 2020 21:50:34 +0200
+
+gnome-initial-setup (3.36.2-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Sebastien Bacher <seb128@debian.org>  Tue, 28 Apr 2020 12:01:34 +0200
+
+gnome-initial-setup (3.36.1-1ubuntu1) focal; urgency=medium
+
+  * New bugfix update
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Fri, 03 Apr 2020 10:19:31 +0200
+
+gnome-initial-setup (3.36.1-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Will Thompson <wjt@endlessm.com>  Thu, 02 Apr 2020 20:26:56 +0100
+
+gnome-initial-setup (3.36.0-1ubuntu4) focal; urgency=medium
+
+  * debian/patches/0001-Add-Ubuntu-mode-with-special-pages.patch:
+    - use ubuntu-software to browse available softwares, fallback
+      to using gnome-software if it's missing (lp: #1869591)
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Tue, 31 Mar 2020 17:27:03 +0200
+
+gnome-initial-setup (3.36.0-1ubuntu3) focal; urgency=medium
+
+  * Refresh the control...
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Tue, 17 Mar 2020 16:28:27 +0100
+
+gnome-initial-setup (3.36.0-1ubuntu2) focal; urgency=medium
+
+  * debian/control.in,
+     d/p/0001-Add-Ubuntu-mode-with-special-pages.patch:
+    - simplify the meson gettext handling of the polkit file, our package
+      handles its rules even if it's version is older. Build-Depends on
+      libxml2-utils and polkit. (lp: #1859960)
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Tue, 17 Mar 2020 12:38:32 +0100
+
+gnome-initial-setup (3.36.0-1ubuntu1) focal; urgency=medium
+
+  * Merge with Debian. Remaining changes:
+    + debian/control.in:
+      - Build-Depends on libsnapd-glib-dev, libsoup2.4-dev, libsysmetrics-dev
+    + Add Ubuntu-specific patches:
+      - 0001-Don-t-run-welcome-tour-at-end.patch
+      - 0001-Make-summary-page-explicitly-request-navigation-butt.patch
+      - 0001-Ensure-stamp-file-if-the-user-quit-the-wizard.patch
+      - 0001-Add-Ubuntu-mode-with-special-pages.patch
+      - 0001-Display-the-ubuntu-welcome-wizard-in-Unity.patch
+      - 0006-goa-Add-Ubuntu-Single-Sign-On-to-the-list.patch
+      - 0007-goa-adjust-description-to-not-mention-email-or-conta.patch
+      - Don-t-show-Facebook-in-Ubuntu.patch
+      - 0008-Ubuntu-location-default.patch
+  * debian/patches/0001-Add-Ubuntu-mode-with-special-pages.patch:
+    - don't add non existant sources to the translation template,
+      should fix the translations import (lp: #1859960)
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Thu, 12 Mar 2020 20:37:23 +0100
+
+gnome-initial-setup (3.36.0-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Will Thompson <wjt@endlessm.com>  Tue, 10 Mar 2020 16:46:31 +0000
+
+gnome-initial-setup (3.35.91-1) experimental; urgency=medium
+
+  [ Will Thompson ]
+  * New upstream release
+  * debian/control:
+    - build without parental controls, it has depends not yet in Debian
+    - depend on GLib >= 2.63.1
+  * debian/rules:
+    - drop obsolete build option
+    - build without parental controls
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Tue, 18 Feb 2020 11:24:03 +0100
+
+gnome-initial-setup (3.35.90-1) experimental; urgency=medium
+
+  * New upstream release
+  * debian/control:
+    - updates the cheese requirement, removed libpackagekit-glib2-dev
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Thu, 06 Feb 2020 11:37:30 +0100
+
+gnome-initial-setup (3.34.1-1ubuntu2) focal; urgency=medium
+
+  * No-change rebuild against latest libgweather
+
+ -- Jeremy Bicha <jbicha@ubuntu.com>  Wed, 30 Oct 2019 19:06:57 -0400
+
+gnome-initial-setup (3.34.1-1ubuntu1) eoan; urgency=medium
+
+  * Merge with Debian. Remaining changes:
+    + debian/control.in:
+      - Build-Depends on libsnapd-glib-dev, libsoup2.4-dev, libsysmetrics-dev
+    + Add Ubuntu-specific patches:
+      - 0001-Don-t-run-welcome-tour-at-end.patch
+      - 0001-Make-summary-page-explicitly-request-navigation-butt.patch
+      - 0001-Ensure-stamp-file-if-the-user-quit-the-wizard.patch
+      - 0001-Add-Ubuntu-mode-with-special-pages.patch
+      - 0001-Display-the-ubuntu-welcome-wizard-in-Unity.patch
+      - 0006-goa-Add-Ubuntu-Single-Sign-On-to-the-list.patch
+      - debian/patches/0008-Ubuntu-location-default.patch
+      - Don-t-show-Facebook-in-Ubuntu.patch
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Mon, 07 Oct 2019 10:00:27 +0200
+
+gnome-initial-setup (3.34.1-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Jeremy Bicha <jbicha@debian.org>  Sun, 06 Oct 2019 07:20:33 -0400
+
+gnome-initial-setup (3.34.0-2) unstable; urgency=medium
+
+  * Release to unstable
+
+ -- Jeremy Bicha <jbicha@debian.org>  Mon, 30 Sep 2019 20:48:57 -0400
+
+gnome-initial-setup (3.34.0-1) experimental; urgency=medium
+
+  * New upstream release
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Thu, 12 Sep 2019 16:01:08 +0200
+
+gnome-initial-setup (3.33.91-1) experimental; urgency=medium
+
+  * New upstream release
+    - systemd user instance support
+    - use a11y menu in initial-setup session
+    - Make the page fit narrow screens
+    - Account for multi monitor when checking for small screen
+    - Refactor the logo selection
+    - Refactor page headers
+  * debian/control: Build-depend on systemd
+
+ -- Marco Trevisan (Treviño) <marco@ubuntu.com>  Wed, 21 Aug 2019 15:51:57 +0200
+
+gnome-initial-setup (3.32.1-1ubuntu4) eoan; urgency=medium
+
+  * d/p/0001-Add-Ubuntu-mode-with-special-pages.patch:
+    - typo fixed in an error string (lp: #1824539)
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Sat, 18 May 2019 13:09:47 +0200
+
+gnome-initial-setup (3.32.1-1ubuntu3) disco; urgency=medium
+
+  * d/p/0001-Add-Ubuntu-mode-with-special-pages.patch:
+    - Don't set vexpand for the GtkSpinner in the apps page. (LP: #1824996)
+
+ -- Andrea Azzarone <andrea.azzarone@canonical.com>  Tue, 16 Apr 2019 17:19:07 +0100
+
+gnome-initial-setup (3.32.1-1ubuntu2) disco; urgency=medium
+
+  * d/p/0001-Add-Ubuntu-mode-with-special-pages.patch:
+    - Retry getting the list of featured snaps in case of failure. (LP: #1824188)
+  * d/p/0001-Ensure-stamp-file-if-the-user-quit-the-wizard.patch:
+  * d/p/0001-Make-summary-page-explicitly-request-navigation-butt.patch:
+  * d/p/0008-Ubuntu-location-default.patch:
+    - Patches refreshed automatically by gbp.
+
+ -- Andrea Azzarone <andrea.azzarone@canonical.com>  Fri, 12 Apr 2019 17:17:35 +0000
+
+gnome-initial-setup (3.32.1-1ubuntu1) disco; urgency=medium
+
+  * Sync with Debian. Remaining changes:
+    + debian/control.in:
+      - Build-Depends on libsnapd-glib-dev, libsoup2.4-dev, libsysmetrics-dev
+    + Add Ubuntu-specific patches:
+      - 0001-Don-t-run-welcome-tour-at-end.patch
+      - 0001-Make-summary-page-explicitly-request-navigation-butt.patch
+      - 0001-Ensure-stamp-file-if-the-user-quit-the-wizard.patch
+      - 0001-Add-Ubuntu-mode-with-special-pages.patch
+      - 0001-Display-the-ubuntu-welcome-wizard-in-Unity.patch
+      - 0006-goa-Add-Ubuntu-Single-Sign-On-to-the-list.patch
+      - debian/patches/0008-Ubuntu-location-default.patch
+      - Don-t-show-Facebook-in-Ubuntu.patch
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Tue, 12 Mar 2019 10:18:36 +0100
+
+gnome-initial-setup (3.32.1-1) experimental; urgency=medium
+
+  * New upstream release
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Tue, 09 Apr 2019 10:41:17 +0200
+
+gnome-initial-setup (3.32.0-1) experimental; urgency=medium
+
+  * New upstream release
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Tue, 12 Mar 2019 10:11:00 +0100
+
+gnome-initial-setup (3.31.92-1) experimental; urgency=medium
+
+  * New upstream release
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Wed, 06 Mar 2019 14:43:25 +0100
+
+gnome-initial-setup (3.31.90-1) experimental; urgency=medium
+
+  * New upstream development release
+  * Build-Depend on debhelper-compat 12 and drop debian/compat
+  * Build-Depend on dh-sequence-gnome
+  * Stop overriding libexecdir
+  * debian/rules: Update build flags
+  * Bump Standards-Version to 4.3.0
+
+ -- Jeremy Bicha <jbicha@debian.org>  Thu, 07 Feb 2019 20:25:00 -0500
+
+gnome-initial-setup (3.30.0-1ubuntu5) disco; urgency=medium
+
+  * debian/patches/0001-Add-Ubuntu-mode-with-special-pages.patch:
+    - enable the 'privacy' step in the Ubuntu first login wizard,
+      that way users can easily opt in for the location service
+      which also enable some of the desktop features to work without
+      having to go tweak the settings (like timezone changes)
+      (lp: #1809002)
+
+  [ Andrea Azzarone ]
+  * debian/patches/0001-Add-Ubuntu-mode-with-special-pages.patch:
+    - Use privacy URL from /etc/os-release in Livepatch page.
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Wed, 19 Dec 2018 10:09:35 +0100
+
+gnome-initial-setup (3.30.0-1ubuntu4) disco; urgency=medium
+
+  * debian/patches/0001-Add-Ubuntu-mode-with-special-pages.patch:
+    - update the "legal notice" URL to use the one which is specific about
+      ubuntu report (lp: #1789925)
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Wed, 31 Oct 2018 15:41:49 +0100
+
+gnome-initial-setup (3.30.0-1ubuntu3) cosmic; urgency=medium
+
+  * Populate featured snaps from ubuntu-firstrun category
+
+ -- Andrea Azzarone <andrea.azzarone@canonical.com>  Wed, 17 Oct 2018 10:25:35 +0100
+
+gnome-initial-setup (3.30.0-1ubuntu2) cosmic; urgency=medium
+
+  * Add Don-t-show-Facebook-in-Ubuntu.patch:
+    - Don't offer Facebook login in Welcome to Ubuntu wizard since
+      none of Ubuntu's default apps will use it. (LP: #1797736)
+
+ -- Jeremy Bicha <jbicha@ubuntu.com>  Sat, 13 Oct 2018 22:28:02 -0400
+
+gnome-initial-setup (3.30.0-1ubuntu1) cosmic; urgency=medium
+
+  * Merge frin debian unstable (LP: #1795373). Remaining changes:
+    + debian/control.in:
+      - Build-Depends on libsnapd-glib-dev, libsoup2.4-dev, libsysmetrics-dev
+      - Enable langpack usage
+    + Ubuntu-specific patches:
+      - 0001-Don-t-run-welcome-tour-at-end.patch
+      - 0001-Make-summary-page-explicitly-request-navigation-butt.patch
+      - 0001-Ensure-stamp-file-if-the-user-quit-the-wizard.patch
+      - 0001-Add-Ubuntu-mode-with-special-pages.patch
+      - 0001-Display-the-ubuntu-welcome-wizard-in-Unity.patch
+      - 0006-goa-Add-Ubuntu-Single-Sign-On-to-the-list.patch
+  * debian/rules:
+    - Drop the dh_auto_clean workaround, the required commit is upstream now.
+
+ -- Andrea Azzarone <andrea.azzarone@canonical.com>  Mon, 01 Oct 2018 12:48:03 +0100
+
+gnome-initial-setup (3.30.0-1) unstable; urgency=medium
+
+  * New upstream release
+  * Bump Standards-Version to 4.2.1
+  * Release to unstable
+
+ -- Jeremy Bicha <jbicha@debian.org>  Sat, 22 Sep 2018 19:09:38 -0400
+
+gnome-initial-setup (3.29.92-1ubuntu3) cosmic; urgency=medium
+
+  * debian/patches/0001-Add-Ubuntu-mode-with-special-pages.patch:
+    Drop ubuntu-changes page (LP: #1790146).
+
+ -- Andrea Azzarone <andrea.azzarone@canonical.com>  Thu, 20 Sep 2018 13:38:11 +0000
+
+gnome-initial-setup (3.29.92-1ubuntu2) cosmic; urgency=medium
+
+  * debian/patches/0001-Add-Ubuntu-mode-with-special-pages.patch:
+    - update the livepatch page legal notice url (lp: #1789925)
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Mon, 03 Sep 2018 16:30:19 +0200
+
+gnome-initial-setup (3.29.92-1ubuntu1) cosmic; urgency=medium
+
+  * Update to 3.29.92
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Wed, 29 Aug 2018 11:08:58 +0200
+
+gnome-initial-setup (3.29.92-1) experimental; urgency=medium
+
+  * New upstream version
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Wed, 29 Aug 2018 10:50:01 +0200
+
+gnome-initial-setup (3.29.1-1ubuntu1) cosmic; urgency=medium
+
+  * Merge from Debian experimental (lp: #1784617). Remaining changes:
+    + debian/control.in:
+      - Build-Depends on libsnapd-glib-dev, libsoup2.4-dev, libsysmetrics-dev
+      - Enable langpack usage
+    + Ubuntu-specific patches:
+      - 0001-Don-t-run-welcome-tour-at-end.patch
+      - 0001-Make-summary-page-explicitly-request-navigation-butt.patch
+      - 0001-Ensure-stamp-file-if-the-user-quit-the-wizard.patch
+      - 0001-Add-Ubuntu-mode-with-special-pages.patch
+      - 0001-Display-the-ubuntu-welcome-wizard-in-Unity.patch
+      - 0006-goa-Add-Ubuntu-Single-Sign-On-to-the-list.patch
+  * d/p/0001-Add-Ubuntu-mode-with-special-pages.patch:
+      - Support Meson build system
+      - Show an dialog in case of error when enabling Livepatch (lp: #1764723)
+      - Enable online accounts page (lp: #1762192)
+  * d/p/0001-Display-the-ubuntu-welcome-wizard-in-Unity.patch:
+      - Enable online accounts page (lp: #1762192)
+  * d/p/0006-goa-Add-Ubuntu-Single-Sign-On-to-the-list.patch:
+      - Show "Ubuntu Single Sign-on" first in the list in the online accounts
+        page.
+  * d/p/0007-goa-adjust-description-to-not-mention-email-or-conta.patch:
+      - Adjust online account description to not mention email or contacts.
+
+ -- Andrea Azzarone <andrea.azzarone@canonical.com>  Tue, 14 Aug 2018 16:12:10 +0200
+
+gnome-initial-setup (3.29.1-1) experimental; urgency=medium
+
+  * New upstream release
+  * d/p/welcome-screen.patch: Drop, this is already upstream
+  * d/p/use-Debian-icon-on-Debian.patch: Drop, this is already upstream
+  * d/p/use-Ubuntu-icon-on-Ubuntu.patch: Drop, this is already upstream
+  * Standards-Version: 4.1.5 (no changes required)
+  * Set Rules-Requires-Root to no
+  * Build with meson
+
+ -- Andrea Azzarone <andrea.azzarone@canonical.com>  Wed, 01 Aug 2018 16:09:43 +0200
+
+gnome-initial-setup (3.28.0-2ubuntu13) cosmic; urgency=medium
+
+  * debian/patches/0001-Add-Ubuntu-mode-with-special-pages.patch:
+    - typo fix in an error string (lp: #1777468)
+  * debian/patches/0001-Display-the-ubuntu-welcome-wizard-in-Unity.patch:
+    - Display the ubuntu welcome wizard in Unity, don't display the
+      "what's new" page though since Unity didn't change (lp: #1781417)
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Thu, 12 Jul 2018 20:49:37 +0200
+
+gnome-initial-setup (3.28.0-2ubuntu12) cosmic; urgency=medium
+
+  * debian/patches/0001-Add-Ubuntu-mode-with-special-pages.patch:
+    - Add legal notice for livepatch page (LP: #1773140)
+    - Hide livepatch page if it is not supported (LP: #1770694)
+    - Use sharper changes graphic
+    - Fix promoted apps layout
+  * debian/rules:
+    - Remove files to fix patch not being correctly applied
+
+ -- Robert Ancell <robert.ancell@canonical.com>  Wed, 30 May 2018 17:15:39 +1200
+
+gnome-initial-setup (3.28.0-2ubuntu11) cosmic; urgency=medium
+
+  * debian/patches/0001-Add-Ubuntu-mode-with-special-pages.patch:
+    - typo fix in the "help improve ubuntu" page (lp: #1768549)
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Fri, 25 May 2018 15:32:05 +0200
+
+gnome-initial-setup (3.28.0-2ubuntu10) cosmic; urgency=medium
+
+  * debian/patches/0001-Add-Ubuntu-mode-with-special-pages.patch:
+    - Fix alignment of changes page labels
+    - Fix crash if fail to get installed snaps (LP: #1768744)
+
+ -- Robert Ancell <robert.ancell@canonical.com>  Fri, 11 May 2018 12:27:58 +1200
+
+gnome-initial-setup (3.28.0-2ubuntu9) cosmic; urgency=medium
+
+  * debian/patches/0001-Add-Ubuntu-mode-with-special-pages.patch:
+    - Make changes page translatable string use correct terms
+
+ -- Robert Ancell <robert.ancell@canonical.com>  Fri, 11 May 2018 11:59:26 +1200
+
+gnome-initial-setup (3.28.0-2ubuntu8) cosmic; urgency=medium
+
+  * debian/patches/0001-Add-Ubuntu-mode-with-special-pages.patch:
+    - Remove some dead code
+    - Fix alignment of featured snaps (LP: #1769810)
+    - Update background images to be more transparent (LP: #1769811)
+    - Make changes page translatable (LP: #1766277)
+    - Fix crash handling errors in livepatch page (LP: #1768743)
+  * debian/patches/0001-Ensure-stamp-file-if-the-user-quit-the-wizard.patch:
+    - Split out of 0001-Add-Ubuntu-mode-with-special-pages.patch
+
+ -- Robert Ancell <robert.ancell@canonical.com>  Wed, 09 May 2018 16:08:27 +1200
+
+gnome-initial-setup (3.28.0-2ubuntu7) cosmic; urgency=medium
+
+  [ Robert Ancell ]
+  * debian/patches/0001-Add-Ubuntu-mode-with-special-pages.patch:
+    - Fix crash on shutdown in ubuntu-report page (LP: #1767873)
+
+  [ Spencer Bygraves ]
+  * Update the "What's new" graphic to mention dock and notifications
+    (LP: #1768557)
+
+  [ Andrea Azzarone ]
+  * Don't autostart if user quits the wizard before completing it
+    (LP: #1768929)
+
+  [ Jeremy Bicha ]
+  * Drop debian/ubuntu-changes.png to use the version included in
+    0001-Add-Ubuntu-mode-with-special-pages.patch
+
+ -- Jeremy Bicha <jbicha@ubuntu.com>  Thu, 03 May 2018 14:06:19 -0400
+
+gnome-initial-setup (3.28.0-2ubuntu6) bionic; urgency=medium
+
+  [ Andrea Azzarone ]
+  * debian/patches/0001-Add-Ubuntu-mode-with-special-pages.patch:
+    - Store goa account id in gsettings
+
+ -- Robert Ancell <robert.ancell@canonical.com>  Thu, 19 Apr 2018 14:27:53 +1200
+
+gnome-initial-setup (3.28.0-2ubuntu5) bionic; urgency=medium
+
+  * debian/patches/0001-Add-Ubuntu-mode-with-special-pages.patch:
+    - Improve promoted apps navigation
+
+ -- Robert Ancell <robert.ancell@canonical.com>  Thu, 19 Apr 2018 11:23:09 +1200
+
+gnome-initial-setup (3.28.0-2ubuntu4) bionic; urgency=medium
+
+  * debian/patches/0001-Don-t-run-welcome-tour-at-end.patch:
+  * debian/patches/0001-Make-summary-page-explicitly-request-navigation-butt.patch:
+  * debian/patches/0001-Add-Ubuntu-mode-with-special-pages.patch:
+    - Don't run the "welcome tour" at the end
+    - Drop start / end pages
+    - Show graphic showing what's changed from older versions of Ubuntu
+    - Change layout to match updated design
+
+ -- Robert Ancell <robert.ancell@canonical.com>  Thu, 19 Apr 2018 09:35:48 +1200
+
+gnome-initial-setup (3.28.0-2ubuntu3) bionic; urgency=medium
+
+  * debian/patches/0001-Add-Ubuntu-mode-with-special-pages.patch:
+    - Don't show livepatch page if already enabled (LP: #1761569)
+
+ -- Robert Ancell <robert.ancell@canonical.com>  Wed, 11 Apr 2018 10:36:45 +1200
+
+gnome-initial-setup (3.28.0-2ubuntu2) bionic; urgency=medium
+
+  * debian/patches/0001-Add-Ubuntu-mode-with-special-pages.patch:
+    - Only show installed graphical apps (LP: #1761574)
+    - Don't promote snaps that are already installed (LP: #1761578)
+    - Don't show settings privacy link that doesn't exist (LP: #1762199)
+    - Remove FIXME from page description (LP: #1762201)
+    - Use privacy URL from /etc/os-release (LP: #1761745)
+    - Make page titles consistent with existing pages (LP: #1762198)
+
+ -- Robert Ancell <robert.ancell@canonical.com>  Wed, 11 Apr 2018 09:47:40 +1200
+
+gnome-initial-setup (3.28.0-2ubuntu1) bionic; urgency=medium
+
+  * debian/patches/0001-Add-Ubuntu-mode-with-special-pages.patch:
+  * debian/ubuntu-changes.png:
+    - Show Ubuntu welcome pages (LP: #1755456)
+  * debian/control:
+    - Build-Depends on libsnapd-glib-dev, libsoupd2.4-dev,
+      libsysmetrics-dev
+    - Enable langpack usage
+
+ -- Robert Ancell <robert.ancell@canonical.com>  Fri, 06 Apr 2018 09:52:39 +1200
+
+gnome-initial-setup (3.28.0-2) unstable; urgency=medium
+
+  * Add welcome-screen.patch from Fedora to still show Welcome screen if
+    Language page is disabled
+  * Install vendor.conf on Ubuntu to skip the language settings there
+    since they don't currently work with Ubuntu's language packs
+  * Cherry-pick use-Ubuntu-icon-on-Ubuntu.patch
+
+ -- Jeremy Bicha <jbicha@debian.org>  Tue, 20 Mar 2018 23:09:30 -0400
+
+gnome-initial-setup (3.28.0-1) unstable; urgency=medium
+
+  * New upstream release
+  * Cherry-pick use-Debian-icon-on-Debian.patch:
+    - Use the Debian logo instead of GNOME logo on the Welcome screen
+  * Depend on desktop-base on Debian for that feature
+
+ -- Jeremy Bicha <jbicha@debian.org>  Tue, 20 Mar 2018 19:29:29 -0400
+
+gnome-initial-setup (3.27.90-2) unstable; urgency=medium
+
+  * Release to unstable
+
+ -- Jeremy Bicha <jbicha@debian.org>  Sat, 10 Mar 2018 20:59:32 -0500
+
+gnome-initial-setup (3.27.90-1) experimental; urgency=medium
+
+  * New upstream development release
+  * Update Vcs fields for migration to https://salsa.debian.org/
+
+ -- Jeremy Bicha <jbicha@debian.org>  Tue, 13 Feb 2018 13:55:27 -0500
+
+gnome-initial-setup (3.26.0-2) unstable; urgency=medium
+
+  * Lower dependency on gdm3 to Suggests.
+  * Update Vcs fields for conversion to git
+  * Add debian/gbp.conf
+  * Bump Standards-Version to 4.1.2
+  * Bump debhelper compat to 11
+  * Disable the Software Sources page since there is no obvious easy way
+    to change this setting later
+
+ -- Jeremy Bicha <jbicha@debian.org>  Mon, 25 Dec 2017 09:22:53 -0500
+
+gnome-initial-setup (3.26.0-1) unstable; urgency=medium
+
+  * New upstream translations release
+
+ -- Jeremy Bicha <jbicha@debian.org>  Wed, 13 Sep 2017 21:22:37 -0400
+
+gnome-initial-setup (3.25.92-1) unstable; urgency=medium
+
+  * New upstream translations release (Closes: #862675)
+
+ -- Jeremy Bicha <jbicha@debian.org>  Mon, 04 Sep 2017 20:14:08 -0400
+
+gnome-initial-setup (3.25.4-1) unstable; urgency=medium
+
+  * New upstream release
+  * Drop all patches, applied in new release
+  * debian/links:
+    + Symlink the gdm greeter .desktop to /usr/share/applications
+      so that "Initial Setup" has a proper window title
+  * Bump Standards-Version to 4.1.0
+
+ -- Jeremy Bicha <jbicha@debian.org>  Wed, 30 Aug 2017 12:11:56 -0400
+
+gnome-initial-setup (3.24.2-1) unstable; urgency=medium
+
+  * New upstream release (Closes: #869942)
+    - Adapt gnome-session file for gnome-settings-daemon 3.24
+  * debian/control.in:
+    - Update NetworkManager related Build-Depends
+    - Add explicit dependency on gnome-settings-daemon >= 3.24
+  * Add adapt-to-gsd325.patch:
+    - Don't require the orientation or xrandr plugins that will
+      be dropped in gnome-settings-daemon 3.26 to smooth that
+      transition
+
+ -- Jeremy Bicha <jbicha@ubuntu.com>  Sun, 06 Aug 2017 17:41:28 -0400
+
+gnome-initial-setup (3.22.1-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Laurent Bigonville <bigon@debian.org>  Tue, 06 Dec 2016 18:05:21 +0100
+
+gnome-initial-setup (3.22.0-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Bump debhelper compat to 10 (automatic autoreconf).
+  * Set libexecdir to non-multiarch dir, following current practice.
+  * Update Build-Depends as per configure.ac.
+  * Explicitly enable the software sources page.
+  * Refresh polkit-allow-NM.patch.
+  * Avoid using full path to deluser in postrm script to quieten lintian.
+  * Tweak copyright file to add some text to the public-domain block.
+
+ -- Jordi Mallach <jordi@debian.org>  Sat, 24 Sep 2016 01:59:12 +0200
+
+gnome-initial-setup (3.20.1-1) unstable; urgency=low
+
+  [ Javier Martinez ]
+  * Initial release  (Closes: #766388)
+
+  [ Sjoerd Simons ]
+  * debian/patches/pollkit-allow-NM.patch:
+    - Added. Allow the gnome-initial-setup user to control the network
+
+  [ Jordi Mallach ]
+  * New upstream release.
+  * Update Build-Depends as per configure.ac.
+  * Add missing GPL-2+ license to copyright.
+  * Add missing ${shlibs:Depends} substitution variable.
+  * Add dependency on adduser.
+
+  [ Jeremy Bicha ]
+  * New upstream release. Update build-dependencies accordingly.
+  * Use dh
+  * Set Arch to linux-any since it needs gdm to build and run
+  * Set libexecdir
+  * Add to description and d/copyright
+
+  [ Jordi Mallach ]
+  * Add a pkla rules file for compat with policykit-1 < 0.106.
+
+ -- Jordi Mallach <jordi@debian.org>  Wed, 03 Aug 2016 12:22:21 +0200

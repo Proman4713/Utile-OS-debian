@@ -1,0 +1,1420 @@
+# Swedish translation for gnome-initial-setup.
+# Copyright © 2012-2026 Free Software Foundation, Inc.
+# This file is distributed under the same license as the gnome-initial-setup package.
+# Daniel Nylander <po@danielnylander.se>, 2012.
+# Mattias Eriksson <snaggen@gmail.com>, 2014.
+# Sebastian Rasmussen <sebras@gmail.com>, 2015.
+# Anders Jonsson <anders.jonsson@norsjovallen.se>, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026.
+# Luna Jernberg <droidbittin@gmail.com>, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-initial-setup\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-"
+"setup/issues/\n"
+"POT-Creation-Date: 2026-05-22 14:35+0000\n"
+"PO-Revision-Date: 2026-04-14 01:43+0000\n"
+"Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
+"Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2026-07-01 12:24+0000\n"
+"X-Generator: Launchpad (build c38ea58da9d7185c4996adfc854ab433551cdcdd)\n"
+"Language: sv\n"
+
+#: data/gnome-initial-setup.desktop.in.in:2
+#: gnome-initial-setup/gis-driver.c:890
+msgid "Initial Setup"
+msgstr "Initial konfiguration"
+
+#: gnome-initial-setup/gis-assistant.c:425
+msgid "_Next"
+msgstr "_Nästa"
+
+#: gnome-initial-setup/gis-assistant.c:426
+msgid "_Finish"
+msgstr "_Färdigställ"
+
+#: gnome-initial-setup/gis-assistant.c:427
+msgid "_Accept"
+msgstr "_Acceptera"
+
+#: gnome-initial-setup/gis-assistant.c:428
+msgid "_Skip"
+msgstr "Hoppa _över"
+
+#: gnome-initial-setup/gis-assistant.c:429
+msgid "_Previous"
+msgstr "_Föregående"
+
+#: gnome-initial-setup/gis-assistant.c:430
+#: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:254
+msgid "_Cancel"
+msgstr "_Avbryt"
+
+#: gnome-initial-setup/gis-webkit.c:54
+msgid "Scan the QR Code…"
+msgstr "Skanna QR-koden..."
+
+#: gnome-initial-setup/gis-webkit.c:244
+msgid "Open in default web browser"
+msgstr "Öppna i standardwebbläsaren"
+
+#: gnome-initial-setup/gis-webkit.c:247
+msgid "Open in default file handler"
+msgstr "Öppna i standardfilhanteraren"
+
+#: gnome-initial-setup/gnome-initial-setup.c:362
+msgid "Force existing user mode"
+msgstr "Tvinga existerande användarläge"
+
+#: gnome-initial-setup/gnome-initial-setup.c:364
+msgid "Force Upgrade user"
+msgstr "Användare för tvingad uppgradering"
+
+#: gnome-initial-setup/gnome-initial-setup.c:378
+msgid "— GNOME initial setup"
+msgstr "— GNOME initial konfiguration"
+
+#: gnome-initial-setup/pages/account/gis-account-page-enterprise.c:181
+msgid "Failed to cache account"
+msgstr "Misslyckades med att cacha konto"
+
+#: gnome-initial-setup/pages/account/gis-account-page-enterprise.c:231
+msgid "Failed to register account"
+msgstr "Misslyckades med att registrera konto"
+
+#: gnome-initial-setup/pages/account/gis-account-page-enterprise.c:420
+msgid "No supported way to authenticate with this domain"
+msgstr "Inga stödda sätt att autentisera mot denna domän"
+
+#: gnome-initial-setup/pages/account/gis-account-page-enterprise.c:459
+msgid "Failed to join domain"
+msgstr "Misslyckades med att ansluta till domän"
+
+#: gnome-initial-setup/pages/account/gis-account-page-enterprise.c:526
+msgid "Failed to log into domain"
+msgstr "Misslyckades med att logga in i domän"
+
+#: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:12
+msgid "Enterprise Login"
+msgstr "Företagsinloggning"
+
+#: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:13
+msgid ""
+"Enterprise login allows an existing centrally managed user account to be "
+"used on this device. You can also use this account to access company "
+"resources on the internet."
+msgstr ""
+"Företagsinloggning möjliggör att ett existerande centralt hanterat "
+"användarkonto används med den här enheten. Du kan också använda detta konto "
+"för att komma åt företagsresurser på internet."
+
+#: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:27
+#: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:153
+msgid "_Domain"
+msgstr "_Domän"
+
+#: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:40
+#: gnome-initial-setup/pages/account/gis-account-page-local.ui:104
+msgid "_Username"
+msgstr "A_nvändarnamn"
+
+#: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:53
+#: gnome-initial-setup/pages/password/gis-password-page.ui:31
+msgid "_Password"
+msgstr "_Lösenord"
+
+#: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:99
+msgid "Enterprise domain or realm name"
+msgstr "Namn på företagsdomän eller rike"
+
+#: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:126
+msgid "Domain Administrator Login"
+msgstr "Administratörsinloggning för domän"
+
+#: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:141
+msgid ""
+"In order to use enterprise logins, this computer needs to be enrolled in a "
+"domain. Please have your network administrator type the domain password "
+"here, and choose a unique computer name for your computer."
+msgstr ""
+"För att använda företagsinloggning, måste denna dator anslutas till en "
+"domän. Be din nätverksadministratör ange domänlösenord här, och välj ett "
+"unikt datornamn för din dator."
+
+#: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:179
+#: gnome-initial-setup/pages/account/gis-account-page-local.ui:151
+msgid "_Computer"
+msgstr "_Dator"
+
+#: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:203
+msgid "Administrator _Name"
+msgstr "Administratörs_namn"
+
+#: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:227
+msgid "Administrator Password"
+msgstr "Administratörslösenord"
+
+#: gnome-initial-setup/pages/account/gis-account-page-enterprise.ui:260
+msgid "C_ontinue"
+msgstr "F_ortsätt"
+
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:225
+#, c-format
+msgid "The hostname is too long."
+msgstr "Värdnamnet är för långt."
+
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:229
+msgid "The hostname must start with a lower case letter from a-z or a digit."
+msgstr "Värdnamnet måste starta med en gemen bokstav a-z eller en siffra."
+
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:233
+msgid ""
+"The hostname should only consist of lower case letters from a-z, digits and "
+"a hyphen: -"
+msgstr ""
+"Värdnamnet ska endast bestå av gemena bokstäver a-z, siffror och ett "
+"bindestreck: -"
+
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:574
+msgid "We need a few details to complete setup."
+msgstr "Vi behöver några uppgifter för att slutföra konfigurationen."
+
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:737
+msgid "Administrator"
+msgstr "Administratör"
+
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:743
+#: gnome-initial-setup/pages/account/gis-account-page-local.c:786
+#, c-format
+msgid "Failed to create user '%s': "
+msgstr "Misslyckades med att skapa användaren ”%s”: "
+
+#: gnome-initial-setup/pages/account/gis-account-page-local.ui:28
+msgid "Change Avatar"
+msgstr "Byt profilbild"
+
+#: gnome-initial-setup/pages/account/gis-account-page-local.ui:46
+msgid "Remove Avatar"
+msgstr "Ta bort profilbild"
+
+#: gnome-initial-setup/pages/account/gis-account-page-local.ui:64
+#: gnome-initial-setup/pages/account/gis-account-page.c:274
+msgid "About You"
+msgstr "Om dig"
+
+#: gnome-initial-setup/pages/account/gis-account-page-local.ui:65
+msgid "Please provide a name and username. You can choose a picture too."
+msgstr "Ange ett namn och ett användarnamn. Du kan välja en bild också."
+
+#: gnome-initial-setup/pages/account/gis-account-page-local.ui:81
+msgid "_Full Name"
+msgstr "_Fullständigt namn"
+
+#: gnome-initial-setup/pages/account/gis-account-page-local.ui:217
+msgid "Set up _parental controls for this user"
+msgstr "Ställ in _föräldrakontroller för denna användare"
+
+#: gnome-initial-setup/pages/account/gis-account-page-local.ui:223
+msgid ""
+"For use by a parent or supervisor, who must set up their own password."
+msgstr ""
+"Att användas av en förälder eller övervakare, som måste ställa in ett eget "
+"lösenord."
+
+#: gnome-initial-setup/pages/account/gis-account-page.ui:32
+msgid "_Enterprise Login"
+msgstr "För_etagsinloggning"
+
+#: gnome-initial-setup/pages/account/gis-account-page.ui:41
+msgid "Go online to set up Enterprise Login."
+msgstr "Anslut till nätverket för att konfigurera företagsinloggning."
+
+#: gnome-initial-setup/pages/account/um-realm-manager.c:310
+msgid "Cannot automatically join this type of domain"
+msgstr "Kan inte automatiskt ansluta till denna typ av domän"
+
+#: gnome-initial-setup/pages/account/um-realm-manager.c:373
+#, c-format
+msgid "No such domain or realm found"
+msgstr "Ingen sådan domän eller rike hittades"
+
+#: gnome-initial-setup/pages/account/um-realm-manager.c:782
+#: gnome-initial-setup/pages/account/um-realm-manager.c:796
+#, c-format
+msgid "Cannot log in as %s at the %s domain"
+msgstr "Kan inte logga in som %s i domänen %s"
+
+#: gnome-initial-setup/pages/account/um-realm-manager.c:788
+msgid "Invalid password, please try again"
+msgstr "Ogiltigt lösenord, försök igen"
+
+#: gnome-initial-setup/pages/account/um-realm-manager.c:801
+#, c-format
+msgid "Couldn’t connect to the %s domain: %s"
+msgstr "Kunde inte ansluta till domänen %s: %s"
+
+#: gnome-initial-setup/pages/account/um-utils.c:153
+msgid "Sorry, that user name isn’t available. Please try another."
+msgstr "Det där användarnamnet är inte tillgängligt. Försök med ett annat."
+
+#: gnome-initial-setup/pages/account/um-utils.c:156
+#, c-format
+msgid "The username is too long."
+msgstr "Användarnamnet är för långt."
+
+#: gnome-initial-setup/pages/account/um-utils.c:159
+msgid "The username must start with a lower case letter from a-z."
+msgstr "Användarnamnet måste börja med en liten bokstav från a-z."
+
+#: gnome-initial-setup/pages/account/um-utils.c:162
+msgid "That username isn’t available. Please try another."
+msgstr "Det där användarnamnet är inte tillgängligt. Försök med ett annat."
+
+#: gnome-initial-setup/pages/account/um-utils.c:165
+msgid ""
+"The username should only consist of lower case letters from a-z, digits, and "
+"the following characters: - _"
+msgstr ""
+"Användarnamnet får endast bestå av små bokstäver från a-z, siffror samt "
+"följande tecken: - _"
+
+#: gnome-initial-setup/pages/account/um-utils.c:169
+msgid "This will be used to name your home folder and can’t be changed."
+msgstr ""
+"Detta kommer att användas för att namnge din hemkatalog och kan inte ändras."
+
+#: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:257
+msgid "Preview"
+msgstr "Förhandsgranska"
+
+#: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:325
+#: gnome-initial-setup/pages/language/cc-language-chooser.c:244
+msgid "More…"
+msgstr "Mer…"
+
+#. Translators: a search for input methods or keyboard layouts
+#. * did not yield any results
+#. 
+#: gnome-initial-setup/pages/keyboard/cc-input-chooser.c:347
+msgid "No inputs found"
+msgstr "Inga inmatningsenheter hittades"
+
+#: gnome-initial-setup/pages/keyboard/gis-keyboard-page.c:484
+#: gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui:16
+msgid "Typing"
+msgstr "Inmatning"
+
+#: gnome-initial-setup/pages/keyboard/gis-keyboard-page.ui:17
+msgid "Select your keyboard layout or an input method."
+msgstr "Välj din tangentbordslayout eller en inmatningsmetod."
+
+#: gnome-initial-setup/pages/keyboard/input-chooser.ui:8
+msgid "Search keyboards and input methods"
+msgstr "Sök tangentbord och inmatningsmetoder"
+
+#: gnome-initial-setup/pages/language/cc-language-chooser.c:264
+msgid "No languages found"
+msgstr "Inga språk hittades"
+
+#: gnome-initial-setup/pages/language/gis-language-page.c:146
+#: gnome-initial-setup/pages/language/gis-language-page.ui:14
+msgid "Welcome"
+msgstr "Välkommen"
+
+#: gnome-initial-setup/pages/language/gis-language-page.ui:41
+msgid "Select a language from the list, or search for a specific language."
+msgstr "Välj ett språk från listan, eller sök ett specifikt språk."
+
+#. Translators: This is meant to be a warm, engaging welcome message,
+#. * like greeting somebody at the door. If the exclamation mark is not
+#. * suitable for this in your language you may replace it.
+#. 
+#: gnome-initial-setup/pages/language/gis-welcome-widget.c:132
+msgid "Welcome!"
+msgstr "Välkommen!"
+
+#: gnome-initial-setup/pages/language/language-chooser.ui:11
+msgid "Search languages"
+msgstr "Sök språk"
+
+#: gnome-initial-setup/pages/language/language-chooser.ui:21
+msgid "Available languages"
+msgstr "Tillgängliga språk"
+
+#: gnome-initial-setup/pages/network/gis-network-page.c:319
+msgctxt "Wireless access point"
+msgid "Other…"
+msgstr "Andra…"
+
+#: gnome-initial-setup/pages/network/gis-network-page.c:401
+msgid "Wireless networking is disabled"
+msgstr "Trådlöst nätverk är inaktiverat"
+
+#: gnome-initial-setup/pages/network/gis-network-page.c:408
+msgid "Checking for available wireless networks"
+msgstr "Letar efter tillgängliga trådlösa nätverk"
+
+#: gnome-initial-setup/pages/network/gis-network-page.c:809
+msgid "Network"
+msgstr "Nätverk"
+
+#: gnome-initial-setup/pages/network/gis-network-page.ui:15
+msgid "Wi-Fi"
+msgstr "Trådlöst nätverk"
+
+#: gnome-initial-setup/pages/network/gis-network-page.ui:16
+msgid ""
+"Connecting to the internet helps you get new apps, information, and other "
+"upgrades. It also helps set the time and your location automatically."
+msgstr ""
+"Att ansluta till internet hjälper dig skaffa nya program, information samt "
+"andra uppgraderingar. Det hjälper också till med att automatiskt ställa in "
+"tiden och din plats."
+
+#: gnome-initial-setup/pages/network/gis-network-page.ui:57
+msgid "No wireless available"
+msgstr "Inga trådlösa nätverk tillgängliga"
+
+#: gnome-initial-setup/pages/network/gis-network-page.ui:70
+msgid "Turn On"
+msgstr "Slå på"
+
+#. Translators: The placeholder is the user’s full name.
+#: gnome-initial-setup/pages/parental-controls/gis-parental-controls-page.c:106
+#, c-format
+msgid "Parental Controls for %s"
+msgstr "Föräldrakontroller för %s"
+
+#: gnome-initial-setup/pages/parental-controls/gis-parental-controls-page.c:108
+msgid "Set restrictions on what this user can run or install."
+msgstr ""
+"Ställ in begränsningar på vad denna användare kan köra eller installera."
+
+#: gnome-initial-setup/pages/parental-controls/gis-parental-controls-page.c:215
+msgid "Parental Controls"
+msgstr "Föräldrakontroller"
+
+#. Translators: The placeholder is for the user’s full name.
+#: gnome-initial-setup/pages/password/gis-password-page.c:92
+#, c-format
+msgid "Set a Password for %s"
+msgstr "Sätt ett lösenord för %s"
+
+#: gnome-initial-setup/pages/password/gis-password-page.c:94
+msgid "Be careful not to lose your password."
+msgstr "Var noga med att inte tappa bort ditt lösenord."
+
+#: gnome-initial-setup/pages/password/gis-password-page.c:99
+msgid "Set a Parent Password"
+msgstr "Sätt ett föräldralösenord"
+
+#. Translators: The placeholder is the full name of the child user on the system.
+#: gnome-initial-setup/pages/password/gis-password-page.c:101
+#, c-format
+msgid "This password will control access to the parental controls for %s."
+msgstr "Detta lösenord kommer ge åtkomst till föräldrakontrollerna för %s."
+
+#: gnome-initial-setup/pages/password/gis-password-page.c:223
+#, c-format
+msgid "Password strength: %s."
+msgstr "Lösenordsstyrka: %s."
+
+#: gnome-initial-setup/pages/password/gis-password-page.c:249
+#: gnome-initial-setup/pages/password/gis-password-page.c:251
+msgid "The passwords do not match."
+msgstr "Lösenorden stämmer inte överens."
+
+#: gnome-initial-setup/pages/password/gis-password-page.c:427
+msgid "Password"
+msgstr "Lösenord"
+
+#: gnome-initial-setup/pages/password/gis-password-page.ui:68
+msgid "_Confirm Password"
+msgstr "_Bekräfta lösenord"
+
+#: gnome-initial-setup/pages/password/gis-password-page.ui:92
+msgid "Password _Hint"
+msgstr "Lösenords_tips"
+
+#: gnome-initial-setup/pages/password/gis-password-page.ui:103
+msgid "Password hint will be shown in case you forget your password."
+msgstr "Ett lösenordstips kommer visas om du glömmer ditt lösenord."
+
+#: gnome-initial-setup/pages/password/pw-utils.c:81
+msgctxt "Password hint"
+msgid "The new password needs to be different from the old one."
+msgstr "Det nya lösenordet måste skilja sig från det gamla."
+
+#: gnome-initial-setup/pages/password/pw-utils.c:83
+msgctxt "Password hint"
+msgid ""
+"This password is very similar to your last one. Try changing some letters "
+"and numbers."
+msgstr ""
+"Detta lösenord liknar ditt föregående väldigt mycket. Försök att ändra några "
+"bokstäver och siffror."
+
+#: gnome-initial-setup/pages/password/pw-utils.c:85
+#: gnome-initial-setup/pages/password/pw-utils.c:93
+msgctxt "Password hint"
+msgid ""
+"This password is very similar to your last one. Try changing the password a "
+"bit more."
+msgstr ""
+"Detta lösenord liknar ditt föregående väldigt mycket. Försök att ändra "
+"lösenordet lite till."
+
+#: gnome-initial-setup/pages/password/pw-utils.c:87
+msgctxt "Password hint"
+msgid ""
+"This is a weak password. A password without your user name would be stronger."
+msgstr ""
+"Detta är ett svagt lösenord. Ett lösenord utan ditt användarnamn skulle vara "
+"säkrare."
+
+#: gnome-initial-setup/pages/password/pw-utils.c:89
+msgctxt "Password hint"
+msgid ""
+"This is a weak password. Try to avoid using your name in the password."
+msgstr ""
+"Detta är ett svagt lösenord. Försök att undvika att använda ditt namn i "
+"lösenordet."
+
+#: gnome-initial-setup/pages/password/pw-utils.c:91
+msgctxt "Password hint"
+msgid ""
+"This is a weak password. Try to avoid some of the words included in the "
+"password."
+msgstr ""
+"Detta är ett svagt lösenord. Försök att undvika några av orden som ingår i "
+"lösenordet."
+
+#: gnome-initial-setup/pages/password/pw-utils.c:95
+msgctxt "Password hint"
+msgid "This is a weak password. Try to avoid common words."
+msgstr "Detta är ett svagt lösenord. Försök att undvika vanliga ord."
+
+#: gnome-initial-setup/pages/password/pw-utils.c:97
+msgctxt "Password hint"
+msgid "This is a weak password. Try to avoid reordering existing words."
+msgstr ""
+"Detta är ett svagt lösenord. Försök att undvika att kasta om existerande ord."
+
+#: gnome-initial-setup/pages/password/pw-utils.c:99
+msgctxt "Password hint"
+msgid "This is a weak password. Try to use more numbers."
+msgstr "Detta är ett svagt lösenord. Försök att använda fler siffror."
+
+#: gnome-initial-setup/pages/password/pw-utils.c:101
+msgctxt "Password hint"
+msgid "This is a weak password. Try to use more uppercase letters."
+msgstr ""
+"Detta är ett svagt lösenord. Försök att använda fler stora bokstäver."
+
+#: gnome-initial-setup/pages/password/pw-utils.c:103
+msgctxt "Password hint"
+msgid "This is a weak password. Try to use more lowercase letters."
+msgstr "Detta är ett svagt lösenord. Försök att använda fler små bokstäver."
+
+#: gnome-initial-setup/pages/password/pw-utils.c:105
+msgctxt "Password hint"
+msgid ""
+"This is a weak password. Try to use more special characters, like "
+"punctuation."
+msgstr ""
+"Detta är ett svagt lösenord. Försök att använda fler specialtecken, till "
+"exempel skiljetecken."
+
+#: gnome-initial-setup/pages/password/pw-utils.c:107
+msgctxt "Password hint"
+msgid ""
+"This is a weak password. Try to use a mixture of letters, numbers and "
+"punctuation."
+msgstr ""
+"Detta är ett svagt lösenord. Försök att använda en blandning av bokstäver, "
+"siffror och skiljetecken."
+
+#: gnome-initial-setup/pages/password/pw-utils.c:109
+msgctxt "Password hint"
+msgid "This is a weak password. Try to avoid repeating the same character."
+msgstr ""
+"Detta är ett svagt lösenord. Försök att undvika att upprepa samma tecken."
+
+#: gnome-initial-setup/pages/password/pw-utils.c:111
+msgctxt "Password hint"
+msgid ""
+"This is a weak password. Try to avoid repeating the same type of character: "
+"you need to mix up letters, numbers and punctuation."
+msgstr ""
+"Detta är ett svagt lösenord. Försök att undvika att upprepa samma typ av "
+"tecken: du behöver blanda bokstäver, nummer och skiljetecken."
+
+#: gnome-initial-setup/pages/password/pw-utils.c:113
+msgctxt "Password hint"
+msgid "This is a weak password. Try to avoid sequences like 1234 or abcd."
+msgstr ""
+"Detta är ett svagt lösenord. Försök att undvika sekvenser som 1234 eller "
+"abcd."
+
+#: gnome-initial-setup/pages/password/pw-utils.c:115
+msgctxt "Password hint"
+msgid ""
+"This is a weak password. Try to add more letters, numbers and punctuation."
+msgstr ""
+"Detta är ett svagt lösenord. Försök att lägga till fler bokstäver, siffror "
+"och skiljetecken."
+
+#: gnome-initial-setup/pages/password/pw-utils.c:117
+msgctxt "Password hint"
+msgid "Mix uppercase and lowercase and try to use a number or two."
+msgstr ""
+"Blanda stora och små bokstäver samt försök använda en siffra eller två."
+
+#: gnome-initial-setup/pages/password/pw-utils.c:119
+msgctxt "Password hint"
+msgid ""
+"Adding more letters, numbers and punctuation will make the password stronger."
+msgstr ""
+"Att lägga till fler bokstäver, siffror och skiljetecken kommer göra "
+"lösenordet starkare."
+
+#. TRANSLATORS: this string describes a password as being poor
+#: gnome-initial-setup/pages/password/pw-utils.c:146
+msgid "poor"
+msgstr "dålig"
+
+#. TRANSLATORS: this string describes a password as being weak
+#: gnome-initial-setup/pages/password/pw-utils.c:150
+msgid "weak"
+msgstr "svag"
+
+#. TRANSLATORS: this string describes a password as being strong
+#: gnome-initial-setup/pages/password/pw-utils.c:154
+#: gnome-initial-setup/pages/password/pw-utils.c:157
+msgid "strong"
+msgstr "stark"
+
+#. TRANSLATORS: this string describes a password as being excellent
+#: gnome-initial-setup/pages/password/pw-utils.c:161
+msgid "excellent"
+msgstr "lysande"
+
+#. Translators: the first parameter here is the name of a distribution,
+#. * like "Fedora" or "Ubuntu".
+#. 
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:68
+#, c-format
+msgid ""
+"Sends technical reports that do not contain personal information. Data is "
+"collected by %1$s (<u><a href='%2$s'>privacy policy</a></u>)."
+msgstr ""
+"Skickar tekniska rapporter som inte innehåller personlig information. Data "
+"samlas in av %1$s (<u><a href='%2$s'>integritetspolicy</a></u>)."
+
+#. Translators: the parameter here is the name of a distribution,
+#. * like "Fedora" or "Ubuntu".
+#. 
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:79
+#, c-format
+msgid ""
+"Sends technical reports that do not contain personal information. Data is "
+"collected by %s."
+msgstr ""
+"Skickar tekniska rapporter som inte innehåller personlig information. Data "
+"samlas in av %s."
+
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:123
+#, c-format
+msgid ""
+"Allows apps to determine your geographical location (<u><a "
+"href='%1$s'>privacy policy</a></u>)."
+msgstr ""
+"Låter program ta reda på din geografiska position (<u><a "
+"href='%1$s'>integritetspolicy</a></u>)."
+
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.c:174
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:14
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:28
+msgid "Location Services"
+msgstr "Platstjänster"
+
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:17
+msgid ""
+"Turn on location services to let applications know your geographical "
+"location."
+msgstr ""
+"Aktivera platstjänster för att låta program ta reda på din geografiska "
+"position."
+
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:56
+msgid "Automatic Problem Reporting"
+msgstr "Automatisk problemrapportering"
+
+#: gnome-initial-setup/pages/privacy/gis-privacy-page.ui:99
+#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:134
+#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:138
+msgid "You can change this later in the Settings app"
+msgstr "Du kan ändra detta senare i appen Inställningar"
+
+#: gnome-initial-setup/pages/software/gis-software-page.c:123
+#: gnome-initial-setup/pages/software/gis-software-page.ui:11
+msgid "Third-Party Repositories"
+msgstr "Förråd från tredje part"
+
+#: gnome-initial-setup/pages/software/gis-software-page.c:125
+#, c-format
+msgid ""
+"Third-party repositories provide access to additional software from selected "
+"<a href='%s'>external sources</a>, including popular apps and drivers that "
+"are important for some devices. Some proprietary software is included."
+msgstr ""
+"Förråd från tredje part ger åtkomst till ytterligare programvara från "
+"utvalda <a href='%s'>externa källor</a>, såsom populära program och "
+"drivrutiner som är viktiga för vissa enheter. Viss proprietär programvara "
+"inkluderas."
+
+#: gnome-initial-setup/pages/software/gis-software-page.c:127
+msgid ""
+"Third-party repositories provide access to additional software from selected "
+"external sources, including popular apps and drivers that are important for "
+"some devices. Some proprietary software is included."
+msgstr ""
+"Förråd från tredje part ger åtkomst till ytterligare programvara från "
+"utvalda externa källor, såsom populära program och drivrutiner som är "
+"viktiga för vissa enheter. Viss proprietär programvara inkluderas."
+
+#: gnome-initial-setup/pages/software/gis-software-page.c:139
+msgid "_Disable Third-Party Repositories"
+msgstr "_Inaktivera förråd från tredje part"
+
+#: gnome-initial-setup/pages/software/gis-software-page.c:144
+msgid "_Enable Third-Party Repositories"
+msgstr "_Aktivera förråd från tredje part"
+
+#. Translators: the parameter here is the name of a distribution,
+#. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
+#. * detect any distribution.
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:406
+#, c-format
+msgid "_Start Using %s"
+msgstr "_Börja använda %s"
+
+#. Translators: the parameter here is the name of a distribution,
+#. * like "Fedora" or "Ubuntu". It falls back to "GNOME" if we can't
+#. * detect any distribution.
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:413
+#, c-format
+msgid "%s is ready to be used."
+msgstr "%s är klart att användas."
+
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:431
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:499
+#: gnome-initial-setup/pages/summary/gis-summary-page.ui:8
+msgid "All done!"
+msgstr "Allt klart!"
+
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:457
+msgid "Setup Failed"
+msgstr "Konfiguration misslyckades"
+
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:459
+msgid "Close"
+msgstr "Stäng"
+
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:472
+msgid "Almost done"
+msgstr "Nästan färdigt"
+
+#: gnome-initial-setup/pages/summary/gis-summary-page.c:568
+msgid "Setup Complete"
+msgstr "Konfiguration klar"
+
+#: gnome-initial-setup/pages/summary/gis-summary-page.ui:39
+msgid "Downloading additional language packs"
+msgstr "Hämtar ytterligare språkpaket"
+
+#: gnome-initial-setup/pages/summary/gis-summary-page.ui:47
+msgid "Cancel Download"
+msgstr "Avbryt hämtning"
+
+#: gnome-initial-setup/pages/timezone/gis-location-entry.c:117
+msgid "Search cities"
+msgstr "Sök städer"
+
+#. Recurse, adding the ADM1 name to the country name
+#. Translators: this is the name of a location followed by a region, for example:
+#. * 'London, United Kingdom'
+#. * You shouldn't need to translate this string unless the language has a different comma.
+#. 
+#: gnome-initial-setup/pages/timezone/gis-location-entry.c:557
+#: gnome-initial-setup/pages/timezone/gis-location-entry.c:582
+#, c-format
+msgid "%s, %s"
+msgstr "%s, %s"
+
+#. Translators: "city, country"
+#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:284
+#, c-format
+msgctxt "timezone loc"
+msgid "%s, %s"
+msgstr "%s, %s"
+
+#. Translators: UTC here means the Coordinated Universal Time.
+#. * %:::z will be replaced by the offset from UTC e.g. UTC+02
+#. 
+#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:320
+msgid "UTC%:::z"
+msgstr "UTC%:::z"
+
+#. Translators: This is the time format used in 12-hour mode.
+#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:324
+msgid "%l:%M %p"
+msgstr "%l:%M %p"
+
+#. Translators: This is the time format used in 24-hour mode.
+#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:327
+msgid "%R"
+msgstr "%R"
+
+#. Translators: "timezone (utc shift)"
+#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:330
+#, c-format
+msgctxt "timezone map"
+msgid "%s (%s)"
+msgstr "%s (%s)"
+
+#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:339
+#, c-format
+msgid "Current timezone: %s at %s; current time: %s"
+msgstr "Aktuell tidszon: %s i %s; aktuell tid: %s"
+
+#: gnome-initial-setup/pages/timezone/gis-timezone-page.c:505
+#: gnome-initial-setup/pages/timezone/gis-timezone-page.ui:16
+msgid "Time Zone"
+msgstr "Tidszon"
+
+#: gnome-initial-setup/pages/timezone/gis-timezone-page.ui:17
+msgid ""
+"The time zone will be set automatically if your location can be found. You "
+"can also search for a city to set it yourself."
+msgstr ""
+"Tidszonen kommer ställas in automatiskt om din plats kan hittas. Du kan "
+"också söka efter en stad för att ställa in den manuellt."
+
+#: gnome-initial-setup/pages/timezone/gis-timezone-page.ui:49
+msgid "Please search for a nearby city"
+msgstr "Sök efter en stad i närheten"
+
+#. Translators: This is meant to be a warm, engaging welcome message,
+#. * like greeting somebody at the door. If the exclamation mark is not
+#. * suitable for this in your language you may replace it. The space
+#. * before the exclamation mark in this string is a typographical thin
+#. * space (U200a) to improve the spacing in the title, which you can
+#. * keep or remove. The %s is getting replaced with the name and version
+#. * of the OS, e.g. "GNOME 3.38"
+#. 
+#: gnome-initial-setup/pages/welcome/gis-welcome-page.c:79
+#, c-format
+msgid "Welcome to %s !"
+msgstr "Välkommen till %s!"
+
+#: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:12
+msgid "Welcome to Ubuntu 24.04 LTS"
+msgstr "Välkommen till Ubuntu 24.04 LTS"
+
+#: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:13
+msgid ""
+"Complete your setup with additional settings and we'll\n"
+"have you up and running in no time"
+msgstr ""
+"Komplettera din konfiguration med ytterligare\n"
+"inställningar så får vi dig på banan på nolltid"
+
+#: gnome-initial-setup/pages/welcome/gis-welcome-page.ui:32
+msgid "View release notes"
+msgstr "Visa versionsinformation"
+
+#: gnome-initial-setup/pages/apps/gis-apps-page.c:95
+msgid "Ready to go"
+msgstr "Redo"
+
+#: gnome-initial-setup/pages/apps/gis-apps-page.blp:8
+msgid "Get started with more applications"
+msgstr "Kom igång med fler program"
+
+#: gnome-initial-setup/pages/apps/gis-apps-page.blp:9
+msgid "Ubuntu's App Center has a range of apps you can get started with."
+msgstr "Ubuntus appcentral har ett antal program du kan komma igång med."
+
+#: gnome-initial-setup/pages/apps/gis-apps-page.blp:28
+msgid "Open App Center"
+msgstr "Öppna appcentral"
+
+#: gnome-initial-setup/pages/eula/gis-eula-page.blp:4
+msgid "End-User License Agreement"
+msgstr "Licensavtal för slutanvändare"
+
+#. GNOME Initial Setup
+#. TRANSLATORS: The place-holder is an error message
+#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:73
+#, c-format
+msgid "Failed to grant consent for the Initial Setup application: %s"
+msgstr ""
+"Misslyckades med att bevilja samtycke för programmet Initial Setup: %s"
+
+#. TRANSLATORS: The place-holder is an error message
+#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:75
+#, c-format
+msgid "Failed to withdraw consent for the Initial Setup application: %s"
+msgstr ""
+"Misslyckades med att återkalla samtycke för det initiala "
+"installationsprogrammet: %s"
+
+#. Platform source used by timed systemd collection
+#. TRANSLATORS: The place-holder is an error message
+#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:80
+#, c-format
+msgid "Failed to grant consent for the system data collector: %s"
+msgstr "Misslyckades med att bevilja samtycke för systemdatainsamlaren: %s"
+
+#. TRANSLATORS: The place-holder is an error message
+#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:82
+#, c-format
+msgid "Failed to withdraw consent for the system data collector: %s"
+msgstr "Misslyckades med att återkalla samtycke för systemdatainsamlaren: %s"
+
+#. Platform source used by release upgrader collection
+#. TRANSLATORS: The place-holder is an error message
+#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:87
+#, c-format
+msgid "Failed to grant consent for the release upgrader application: %s"
+msgstr ""
+"Misslyckades med att bevilja samtycke för uppgraderingsprogrammet: %s"
+
+#. TRANSLATORS: The place-holder is an error message
+#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:89
+#, c-format
+msgid "Failed to withdraw consent for the release upgrader application: %s"
+msgstr ""
+"Misslyckades med att dra tillbaka samtycket för uppgraderingsprogrammet: %s"
+
+#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:381
+#, c-format
+msgid ""
+"With telemetry log: %s\n"
+"Without telemetry log: %s"
+msgstr ""
+"Med telemetrilogg: %s\n"
+"Utan telemetrilogg: %s"
+
+#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:411
+#, c-format
+msgid "Failed to collect telemetry report: %s"
+msgstr "Misslyckades med att samla in telemetrirapport: %s"
+
+#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:571
+#, c-format
+msgid "Failed to generate report: %s"
+msgstr "Misslyckades med att generera rapport: %s"
+
+#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:589
+#, c-format
+msgid "Failed to write report: %s"
+msgstr "Misslyckades med att skriva rapport: %s"
+
+#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.c:647
+msgid "Show First Report"
+msgstr "Visa första rapport"
+
+#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:9
+msgid "Help Improve Ubuntu"
+msgstr "Hjälp till att förbättra Ubuntu"
+
+#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:10
+msgid ""
+"Help us improve Ubuntu by sharing your system and error reports with us.\n"
+"Reports are sent anonymously."
+msgstr ""
+"Hjälp oss att förbättra Ubuntu genom att dela dina system- och felrapporter "
+"med oss.\n"
+"Rapporterna skickas anonymt."
+
+#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:31
+msgid "Share _system data with the Ubuntu team"
+msgstr "Dela _systemdata med Ubuntu-teamet"
+
+#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:32
+msgid "This includes hardware information, language and timezone"
+msgstr "Detta inkludera hårdvaruinformation, språk och tidszon"
+
+#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:46
+msgid "Learn more about system reporting"
+msgstr "Läs mer om systemrapportering"
+
+#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:57
+msgid "Legal notice"
+msgstr "Juridisk information"
+
+#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:68
+msgid "Show Report"
+msgstr "Visa rapport"
+
+#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:95
+msgid "Share _error reports with the Ubuntu team"
+msgstr "Dela _felrapporter med Ubuntu-teamet"
+
+#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:96
+msgid "This includes crash reports and related system logs"
+msgstr "Detta inkluderar kraschrapporter och relaterade systemloggar"
+
+#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:110
+msgid "Learn more about error reporting"
+msgstr "Läs mer om felrapportering"
+
+#: gnome-initial-setup/pages/ubuntu-insights/gis-ubuntu-insights-page.blp:148
+msgid "System Report"
+msgstr "Systemrapport"
+
+#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-attach-page.blp:21
+#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:21
+msgid "Enable Ubuntu Pro"
+msgstr "Aktivera Ubuntu Pro"
+
+#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-attach-page.blp:29
+msgid "_Attach machine via your Ubuntu One account"
+msgstr "_Anslut maskinen via ditt Ubuntu One-konto"
+
+#. Translators: translators: This is the other way to attach a machine to Ubuntu Pro
+#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-attach-page.blp:82
+msgid "Or add a _token manually"
+msgstr "Eller lägg till en _token manuellt"
+
+#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-attach-page.blp:117
+msgid "Token"
+msgstr "Token"
+
+#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:54
+msgid "Upgrade this device to Ubuntu Pro. Free for personal use."
+msgstr ""
+"Uppgradera denna enhet till Ubuntu Pro. Kostnadsfritt för personlig "
+"användning."
+
+#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:105
+msgid ""
+"Fulfill FedRAMP, FIPS, STIG and HIPAA and other compliance and hardening "
+"requirements with certified tooling and crypto-modules"
+msgstr ""
+"Uppfyll kraven enligt FedRAMP, FIPS, STIG och HIPAA samt övriga krav på "
+"efterlevnad och härdning med hjälp av certifierade verktyg och kryptomoduler"
+
+#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:130
+msgid "Enable Ubuntu Pro now, or skip this step."
+msgstr "Aktivera Ubuntu Pro nu, eller hoppa över det här steget."
+
+#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:133
+msgid "_Enable Ubuntu Pro"
+msgstr "_Aktivera Ubuntu Pro"
+
+#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:152
+msgid "_Skip for now"
+msgstr "_Hoppa över nu"
+
+#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-offer-page.blp:153
+msgid "You can enable Ubuntu Pro later in the Security Center"
+msgstr "Du kan aktivera Ubuntu Pro senare i Säkerhetscenter"
+
+#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-services-page.blp:22
+msgid "Ubuntu Pro Services"
+msgstr "Ubuntu Pro tjänster"
+
+#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-services-page.blp:29
+msgid "Your subscription"
+msgstr "Din prenumeration"
+
+#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-services-page.blp:44
+msgid "Your enabled services"
+msgstr "Dina aktiverade tjänster"
+
+#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-services-page.blp:47
+msgid ""
+"You can change the default enablements for your token on the ubuntu.com/pro "
+"web interface. You can also change enabled services in the Settings menu or "
+"with the `<span font_family='monospace'>pro</span>` command-line."
+msgstr ""
+"Du kan ändra standardaktiveringarna för din token i webbgränssnittet "
+"ubuntu.com/pro. Du kan också ändra aktiverade tjänster i menyn Inställningar "
+"eller med kommandoraden `<span font_family='monospace'>pro</span>`."
+
+#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-services-page.blp:53
+msgid "Other available services"
+msgstr "Andra tillgängliga tjänster"
+
+#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:221
+msgid "Valid token"
+msgstr "Giltig token"
+
+#. TRANSLATORS: The error shown when attaching an
+#. Ubuntu Pro contact fails.
+#. It may be due to various reasons, most common is
+#. an invalid token.
+#. 
+#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:236
+msgid "Invalid token or attach failure"
+msgstr "Ogiltig token eller bifogningsfel"
+
+#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:244
+msgid "Code expired"
+msgstr "Koden har löpt ut"
+
+#. TRANSLATORS: the placeholder %s is a link to ubuntu.com/pro/attach.
+#. Use HTML encoded format for special characters such as '&'.
+#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:259
+#, c-format
+msgid "Enter this code on %s"
+msgstr "Ange denna kod på %s"
+
+#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:316
+msgid "An internet connection is required to enable Ubuntu Pro"
+msgstr "En internetanslutning krävs för att aktivera Ubuntu Pro"
+
+#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:466
+#, c-format
+msgid "Get security updates on a wide range of packages until %s"
+msgstr "Få säkerhetsuppdateringar för en stor mängd paket tills %s"
+
+#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:474
+msgid "Ubuntu Pro"
+msgstr "Ubuntu Pro"
+
+#. TRANSLATORS: The anbox-cloud Ubuntu Pro Service description.
+#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:609
+msgid "Scalable Android in the cloud"
+msgstr "Skalbar Android i molnet"
+
+#. TRANSLATORS: The cc-eal Ubuntu Pro Service description.
+#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:612
+msgid "Common Criteria EAL2 Provisioning Packages"
+msgstr "Common Criteria EAL2 provisioneringspaket"
+
+#. TRANSLATORS: The esm-apps Ubuntu Pro Service description.
+#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:615
+msgid "Expanded Security Maintenance for Applications"
+msgstr "Utökat säkerhetsunderhåll för applikationer"
+
+#. TRANSLATORS: The esm-infra Ubuntu Pro Service description.
+#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:618
+msgid "Expanded Security Maintenance for Infrastructure"
+msgstr "Utökat säkerhetsunderhåll för infrastruktur"
+
+#. TRANSLATORS: The fips Ubuntu Pro Service description.
+#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:621
+msgid "NIST-certified FIPS crypto packages"
+msgstr "NIST-certifierade FIPS kryptopaket"
+
+#. TRANSLATORS: The fips-preview Ubuntu Pro Service description.
+#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:624
+msgid "Preview of FIPS crypto packages undergoing certification with NIST"
+msgstr ""
+"Förhandsvisning av FIPS-kryptopaket som genomgår certifiering med NIST"
+
+#. TRANSLATORS: The fips-updates Ubuntu Pro Service description.
+#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:627
+msgid "FIPS compliant crypto packages with stable security updates"
+msgstr "FIPS-kompatibla kryptopaket med stabila säkerhetsuppdateringar"
+
+#. TRANSLATORS: The landscape Ubuntu Pro Service description.
+#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:630
+msgid "Management and administration tool for Ubuntu"
+msgstr "Hantering och administrationsverktyg för Ubuntu"
+
+#. TRANSLATORS: The livepatch Ubuntu Pro Service description.
+#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:633
+msgid "Canonical kernel Livepatch service"
+msgstr "Canonical kärna Livepatch tjänst"
+
+#. TRANSLATORS: The realtime-kernel Ubuntu Pro Service description.
+#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:636
+msgid "Ubuntu kernel with PREEMPT_RT patches integrated"
+msgstr "Ubuntu kärna med PREEMPT_RT patchar integrerade"
+
+#. TRANSLATORS: The ros Ubuntu Pro Service description.
+#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:639
+msgid "Security Updates for the Robot Operating System"
+msgstr "Säkerhetsuppdateringar för robotoperativsystem"
+
+#. TRANSLATORS: The ros-updates Ubuntu Pro Service description.
+#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:642
+msgid "All Updates for the Robot Operating System"
+msgstr "Alla uppdateringar för robotoperativsystem"
+
+#. TRANSLATORS: The usg Ubuntu Pro Service description.
+#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:645
+msgid "Security compliance and audit tools"
+msgstr "Säkerhetsefterlevnad och revisionsverktyg"
+
+#. TRANSLATORS: Use HTML encoded format for special characters such as &amp' for '&'. %s is a URL.
+#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:1230
+#, c-format
+msgid "Learn more at %s"
+msgstr "Läs mer på %s"
+
+#. TRANSLATORS: Subtitle telling who can provide the Ubuntu Pro token.
+#. Use HTML encoded format for special characters such as &amp' for '&'. %s is a URL.
+#. 
+#: gnome-initial-setup/pages/ubuntu-pro/gis-ubuntupro-page.c:1247
+#, c-format
+msgid "From your admin, or from %s"
+msgstr "Från din administratör eller från %s"
+
+#. TRANSLATORS: An accent color.
+#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:75
+msgid "Blue"
+msgstr "Blå"
+
+#. TRANSLATORS: An accent color.
+#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:78
+msgid "Teal"
+msgstr "Grönblå"
+
+#. TRANSLATORS: An accent color.
+#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:81
+msgid "Green"
+msgstr "Grön"
+
+#. TRANSLATORS: An accent color.
+#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:84
+msgid "Yellow"
+msgstr "Gul"
+
+#. TRANSLATORS: An accent color.
+#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:87
+msgid "Orange"
+msgstr "Orange"
+
+#. TRANSLATORS: An accent color.
+#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:90
+msgid "Red"
+msgstr "Röd"
+
+#. TRANSLATORS: An accent color.
+#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:93
+msgid "Pink"
+msgstr "Rosa"
+
+#. TRANSLATORS: An accent color.
+#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:96
+msgid "Purple"
+msgstr "Lila"
+
+#. TRANSLATORS: An accent color.
+#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:99
+msgid "Slate"
+msgstr "Skiffer"
+
+#. TRANSLATORS: An accent color.
+#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:102
+msgid "Warty Brown"
+msgstr "Warty Brown"
+
+#: gnome-initial-setup/pages/appearance/gis-appearance-page.c:469
+msgid "Appearance"
+msgstr "Utseende"
+
+#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+msgid "Choose how Ubuntu looks"
+msgstr "Välj hur Ubuntu ska se ut"
+
+#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+msgid "Personalize your desktop's appearance"
+msgstr "Anpassa utseendet på ditt skrivbord"
+
+#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+msgid "Style"
+msgstr "Stil"
+
+#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:53
+msgid "_Default"
+msgstr "Sta_ndard"
+
+#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:82
+msgid "Da_rk"
+msgstr "Mö_rk"
+
+#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:100
+msgid "OLED screen detected. Dark style may save power."
+msgstr "En OLED-skärm har upptäckts. Mörkt tema kan spara ström."
+
+#: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:112
+msgid "Accent Color"
+msgstr "Accentfärg"
+
+#: po/EXTRA_STRINGS.sh:1
+msgid "Force live user mode"
+msgstr "Tvinga live-användarläge"
+
+#: po/EXTRA_STRINGS.sh:2
+msgid "Force OEM mode"
+msgstr "Tvinga OEM-läge"
+
+#: po/EXTRA_STRINGS.sh:3
+msgid "Try or Install?"
+msgstr "Testa eller installera?"
+
+#: po/EXTRA_STRINGS.sh:4
+#, sh-format
+msgid ""
+"You can try a temporary version of ${NAME} without making changes to the "
+"computer. If you decide to install later, just launch the installer from the "
+"Activities view.\n"
+"\n"
+"        Alternatively, choose install to launch the installer."
+msgstr ""
+"Du kan testa en temporär version av ${NAME} utan att göra några ändringar "
+"till datorn. Om du sedan bestämmer dig för att installera kan du starta "
+"installeraren från vyn Aktiviteter.\n"
+"\n"
+"        Alternativt kan du välja installera för att köra installeraren."
+
+#: po/EXTRA_STRINGS.sh:7
+msgid "Install to Disk…"
+msgstr "Installera till disk…"
+
+#: po/EXTRA_STRINGS.sh:8
+#, sh-format
+msgid "Try ${NAME}"
+msgstr "Testa ${NAME}"
+
+#: po/EXTRA_STRINGS.sh:9
+#, sh-format
+msgid "Install ${PRETTY_NAME}"
+msgstr "Installera ${PRETTY_NAME}"
+
+#~ msgid "Help improve Ubuntu"
+#~ msgstr "Hjälp oss att förbättra Ubuntu"
+
+#, c-format
+#~ msgid "Failed to get report information: %s"
+#~ msgstr "Misslyckades med att hämta rapportinformation: %s"
+
+#~ msgid "Show the First Report"
+#~ msgstr "Visa den första rapporten"
+
+#, c-format
+#~ msgid "Failed to show privacy policy: %s"
+#~ msgstr "Misslyckades med att visa sekretesspolicy: %s"
+
+#~ msgid "Cancel"
+#~ msgstr "Avbryt"
+
+#, c-format
+#~ msgid ""
+#~ "Sends technical reports that do not contain personal information. Data is "
+#~ "collected by %1$s (<a href='%2$s'>privacy policy</a>)."
+#~ msgstr ""
+#~ "Skickar tekniska rapporter som inte innehåller personlig information. Data "
+#~ "samlas in av %1$s (<a href='%2$s'>sekretesspolicy</a>)."
+
+#~ msgid "Ubuntu Report Contents"
+#~ msgstr "Ubuntu-rapportens innehåll"
+
+#~ msgid "You can change your mind later in Settings → Privacy → Diagnostics."
+#~ msgstr "Du kan ändra dig senare i Inställningar → Sekretess → Diagnostik."
+
+#~ msgid "Privacy controls can be changed at any time from the Settings app."
+#~ msgstr ""
+#~ "Sekretessinställningar kan ändras när som helst från inställningsprogrammet."
+
+#~ msgid "Location services"
+#~ msgstr "Platstjänster"
+
+#~ msgid "Data privacy"
+#~ msgstr "Datasekretess"
+
+#~ msgid "No, don't share system data"
+#~ msgstr "Nej, dela inte systemdata"
+
+#, c-format
+#~ msgid ""
+#~ "Turn on location services to let applications know your geographical "
+#~ "location. You can change this anytime in System Settings."
+#~ msgstr ""
+#~ "Slå på platstjänster för att låta program känna till din geografiska plats. "
+#~ "Du kan ändra detta när som helst i systeminställningarna."
+
+#, c-format
+#~ msgid ""
+#~ "Help us improve Ubuntu by sharing your system data with us. This includes "
+#~ "things like your machine model, installed software and the location you "
+#~ "chose for your timezone."
+#~ msgstr ""
+#~ "Hjälp oss förbättra Ubuntu genom att dela dina systemdata med oss. Detta "
+#~ "inkluderar saker som din maskinmodell, installerad programvara och platsen "
+#~ "du valde för din tidszon."
+
+#~ msgid "Yes, share system data with the Ubuntu team"
+#~ msgstr "Ja, dela systemdata med Ubuntu-teamet"
+
+#, c-format
+#~ msgid "Failed to send report information: %s"
+#~ msgstr "Misslyckades med att skicka rapportinformation: %s"
+
+#, c-format
+#~ msgid "Failed to send report decline: %s"
+#~ msgstr "Misslyckades med att skicka rapportavböjande: %s"
+
+#~ msgid ""
+#~ "Upgrade this machine to Ubuntu Pro for security updates on a much wider "
+#~ "range of packages, until 2034. Fulfill FedRAMP, FIPS, STIG and HIPAA and "
+#~ "other compliance and hardening requirements with certified tooling and "
+#~ "crypto-modules. Free for up to 5 machines.\n"
+#~ "\n"
+#~ "More information on <a href=\"https://ubuntu.com/pro\">ubuntu.com/pro</a>."
+#~ msgstr ""
+#~ "Uppgradera den här maskinen till Ubuntu Pro för säkerhetsuppdateringar av "
+#~ "ett mycket bredare utbud av paket, fram till 2034. Uppfyller FedRAMP, FIPS, "
+#~ "STIG och HIPAA och andra krav på efterlevnad och härdning med certifierade "
+#~ "verktyg och kryptomoduler. Gratis för upp till 5 maskiner.\n"
+#~ "\n"
+#~ "Mer information på <a href=\"https://ubuntu.com/pro\">ubuntu.com/pro</a>."
+
+#~ msgid "Or add _token manually"
+#~ msgstr "Eller lägg till _token manuellt"
+
+#~ msgid "From your admin, or from ubuntu.com/pro"
+#~ msgstr "Från din administratör, eller från ubuntu.com/pro"
+
+#~ msgid "Upgrade this machine to Ubuntu Pro. Free for up to 5 machines."
+#~ msgstr ""
+#~ "Uppgradera den här maskinen till Ubuntu Pro. Gratis för upp till 5 maskiner."
+
+#~ msgid "Get security updates on a wide range of packages until 2034"
+#~ msgstr ""
+#~ "Få säkerhetsuppdateringar för ett brett utbud av paket fram till 2034"
+
+#~ msgid ""
+#~ "Fulfill FedRAMP, FIPS, STIG and HIPAA and other compliance and hardening "
+#~ "requirements with certified tooling and crypto-modules."
+#~ msgstr ""
+#~ "Uppfyll FedRAMP, FIPS, STIG och HIPAA och andra efterlevnads och "
+#~ "härdningskrav med certifierade verktyg och kryptomoduler."
+
+#~ msgid "Learn more at <a href=\"https://ubuntu.com/pro\">ubuntu.com/pro</a>."
+#~ msgstr "Läs mer på <a href=\"https://ubuntu.com/pro\">ubuntu.com/pro</a>."
+
+#~ msgid ""
+#~ "You can always enable Ubuntu Pro later via the Software & Updates application"
+#~ msgstr ""
+#~ "Du kan alltid aktivera Ubuntu Pro senare via programmet Programvara och "
+#~ "uppdateringar"
+
+#~ msgid "Downloading language packs…"
+#~ msgstr "Laddar ner språkpaket…"
+
+#~ msgid "Canceled additional downloads"
+#~ msgstr "Avbrutna ytterligare nedladdningar"
+
+#~ msgid "Unable to download additional language packs"
+#~ msgstr "Misslyckades att ladda ner ytterligare språkpaket"
