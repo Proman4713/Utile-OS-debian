@@ -1,3 +1,10 @@
+utile-gnome-defaults (26.0.7) abstract; urgency=medium
+
+  * Add start-here, distributor-logo, and view-app-grid* icons
+  * Move icons to /usr/share/utile/icons/Yaru to benefit from XDG_DATA_DIRS priority
+
+ -- Aaser Abd-el Sabour <proman4713@gmail.com>  Wed, 09 Sep 2026 17:58:30 +0300
+
 utile-gnome-defaults (26.0.6) abstract; urgency=medium
 
   * Update script logic to fix source sorting and prepending
