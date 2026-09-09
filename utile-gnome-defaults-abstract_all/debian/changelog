@@ -1,3 +1,10 @@
+utile-gnome-defaults (26.0.4) abstract; urgency=medium
+
+  * Add icon overrides for GNOME Initial Setup
+  * Move fastfetch configuration to this package
+
+ -- Aaser Abd-el Sabour <proman4713@gmail.com>  Wed, 09 Sep 2026 14:32:21 +0300
+
 utile-gnome-defaults (26.0.3) abstract; urgency=medium
 
   * Change default music application in dock to Utile Music

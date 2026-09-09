@@ -1,3 +1,9 @@
+utile-desktop (26.0.2) abstract; urgency=medium
+
+  * Fix incorrect conventions (it is now solely a metapackage, fastfetch config moved to utile-gnome-defaults)
+
+ -- Aaser Abd-el Sabour <proman4713@gmail.com>  Wed, 09 Sep 2026 14:31:25 +0300
+
 utile-desktop (26.0.1) abstract; urgency=medium
 
   * Add Utile Music to default apps

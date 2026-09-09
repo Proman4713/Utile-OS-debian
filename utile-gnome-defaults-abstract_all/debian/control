@@ -1,5 +1,5 @@
 Source: utile-gnome-defaults
-Section: gnome
+Section: x11
 Priority: optional
 Maintainer: Aaser Abd-el Sabour <proman4713@gmail.com>
 Build-Depends: debhelper-compat (= 13)

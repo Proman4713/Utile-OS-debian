@@ -32,3 +32,6 @@ accel-profile='flat'
 [org/gnome/settings-daemon/plugins/color]
 night-light-schedule-from=0.0
 night-light-schedule-to=23.99
+
+[org/gnome/login-screen]
+logo='/usr/share/pixmaps/utile-logo-text-dark.svg'
