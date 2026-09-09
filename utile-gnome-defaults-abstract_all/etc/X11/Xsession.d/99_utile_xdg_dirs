@@ -1,7 +1,5 @@
 # This file is sourced by Xsession(5), not executed.
 # Prepend /usr/share/utile to $XDG_DATA_DIRS
 
-if [ -n "${XDG_DATA_DIRS##*/usr/share/utile*}" ]; then
-  XDG_DATA_DIRS="/usr/share/utile:$XDG_DATA_DIRS"
-  export XDG_DATA_DIRS
-fi
+XDG_DATA_DIRS="/usr/share/utile:${XDG_DATA_DIRS#*/usr/share/utile:}"
+export XDG_DATA_DIRS

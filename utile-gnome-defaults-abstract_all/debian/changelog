@@ -1,3 +1,9 @@
+utile-gnome-defaults (26.0.6) abstract; urgency=medium
+
+  * Update script logic to fix source sorting and prepending
+
+ -- Aaser Abd-el Sabour <proman4713@gmail.com>  Wed, 09 Sep 2026 17:08:03 +0300
+
 utile-gnome-defaults (26.0.5) abstract; urgency=medium
 
   * Fix idempotency issues
