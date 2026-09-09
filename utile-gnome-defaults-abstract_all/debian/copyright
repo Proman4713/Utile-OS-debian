@@ -11,7 +11,7 @@ Copyright: 2026, Aaser Abd-el Sabour <proman4713@gmail.com>
 License: CC-BY-NC-ND-4.0
 Comment: This is custom Utile OS artwork, which is licensed under CC BY-NC-ND 4.0 (Utile OS's media license: https://github.com/Proman4713/Utile-OS/blob/main/resources/LICENSE.md).
 
-Files: usr/share/utile/icons/Yaru/scalable/apps/*
+Files: usr/share/utile/icons/Yaru/*/apps/*
 Copyright: 2026, Aaser Abd-el Sabour <proman4713@gmail.com>
 License: CC-BY-SA-4.0
 Comment: This artwork is based on the Ubuntu Yaru icon theme (https://github.com/ubuntu/yaru), which is licensed under BY-SA 4.0. The Utile OS artwork inside remains licensed CC-BY-NC-ND-4.0.

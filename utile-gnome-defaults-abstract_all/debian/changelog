@@ -1,3 +1,9 @@
+utile-gnome-defaults (26.0.9) abstract; urgency=medium
+
+  * Improve Ptyxis icon and add size variants
+
+ -- Aaser Abd-el Sabour <proman4713@gmail.com>  Wed, 09 Sep 2026 22:17:46 +0300
+
 utile-gnome-defaults (26.0.8) abstract; urgency=medium
 
   * Add Ptyxis icon
