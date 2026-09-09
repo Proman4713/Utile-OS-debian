@@ -2,7 +2,8 @@
 *.dsc
 !*/tests/data/**/*.deb
 !*/tests/data/**/*.dsc
-*.build
+# Fix meson.build being excluded by the previous rule
+*_amd64.build
 *.buildinfo
 *.changes
 *.tar.xz
