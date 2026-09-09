@@ -1,3 +1,10 @@
+utile-gnome-defaults (26.0.8) abstract; urgency=medium
+
+  * Add Ptyxis icon
+  * Add debian/copyright
+
+ -- Aaser Abd-el Sabour <proman4713@gmail.com>  Wed, 09 Sep 2026 18:38:40 +0300
+
 utile-gnome-defaults (26.0.7) abstract; urgency=medium
 
   * Add start-here, distributor-logo, and view-app-grid* icons
