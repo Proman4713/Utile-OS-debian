@@ -39,3 +39,4 @@ ubuntu/gis-password-page-Adapt-per-gis-accessible-bin-usage.patch
 ubuntu/launchpad_translations_export.patch
 substitute-utile-branding.patch
 change-default-accent-colour-to-purple.patch
+configure-utile-translations.patch

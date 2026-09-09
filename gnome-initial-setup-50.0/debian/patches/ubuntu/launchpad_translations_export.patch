@@ -1,7 +1,7 @@
 Index: gnome-initial-setup-50.0/po/LINGUAS
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/LINGUAS	2026-09-09 02:25:30.106134671 +0300
-+++ gnome-initial-setup-50.0/po/LINGUAS	2026-09-09 02:25:29.946134667 +0300
+--- gnome-initial-setup-50.0.orig/po/LINGUAS	2026-09-09 12:28:29.887793832 +0300
++++ gnome-initial-setup-50.0/po/LINGUAS	2026-09-09 12:28:29.743793843 +0300
 @@ -1,19 +1,30 @@
  ab
  af
@@ -100,8 +100,8 @@ Index: gnome-initial-setup-50.0/po/LINGUAS
  uk
 Index: gnome-initial-setup-50.0/po/ab.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/ab.po	2026-09-09 02:25:30.106134671 +0300
-+++ gnome-initial-setup-50.0/po/ab.po	2026-09-09 02:25:29.946134667 +0300
+--- gnome-initial-setup-50.0.orig/po/ab.po	2026-09-09 12:28:29.887793832 +0300
++++ gnome-initial-setup-50.0/po/ab.po	2026-09-09 12:30:36.095795306 +0300
 @@ -1,67 +1,91 @@
  msgid ""
  msgstr ""
@@ -110,7 +110,7 @@ Index: gnome-initial-setup-50.0/po/ab.po
  "issues\n"
 -"POT-Creation-Date: 2022-12-18 12:18+0000\n"
 -"Last-Translator: Нанба Наала <naala-nanba@rambler.ru>\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2023-02-24 00:14+0000\n"
 +"Last-Translator: Наала Нанба <Unknown>\n"
  "Language-Team: Abkhazian <daniel.abzakh@gmail.com>\n"
@@ -1256,8 +1256,8 @@ Index: gnome-initial-setup-50.0/po/ab.po
  msgstr ""
 Index: gnome-initial-setup-50.0/po/af.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/af.po	2026-09-09 02:25:30.106134671 +0300
-+++ gnome-initial-setup-50.0/po/af.po	2026-09-09 02:25:29.950134667 +0300
+--- gnome-initial-setup-50.0.orig/po/af.po	2026-09-09 12:28:29.887793832 +0300
++++ gnome-initial-setup-50.0/po/af.po	2026-09-09 12:30:36.111795306 +0300
 @@ -9,78 +9,97 @@
  "Project-Id-Version: gnome-initial-setup master\n"
  "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
@@ -1265,7 +1265,7 @@ Index: gnome-initial-setup-50.0/po/af.po
 -"POT-Creation-Date: 2017-06-23 23:13+0000\n"
 -"PO-Revision-Date: 2018-01-27 08:25+0200\n"
 -"Last-Translator: Pieter Schoeman <pieter@sonbesie.co.za>\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2026-04-14 01:47+0000\n"
 +"Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
  "Language-Team: Afrikaans <pieter@sonbesie.co.za>\n"
@@ -3063,7 +3063,7 @@ Index: gnome-initial-setup-50.0/po/af.po
 Index: gnome-initial-setup-50.0/po/am.po
 ===================================================================
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ gnome-initial-setup-50.0/po/am.po	2026-09-09 02:25:29.954134667 +0300
++++ gnome-initial-setup-50.0/po/am.po	2026-09-09 12:30:36.123795306 +0300
 @@ -0,0 +1,1202 @@
 +# Amharic translation for gnome-initial-setup
 +# Copyright (c) 2021 Rosetta Contributors and Canonical Ltd 2021
@@ -3075,7 +3075,7 @@ Index: gnome-initial-setup-50.0/po/am.po
 +"Project-Id-Version: gnome-initial-setup\n"
 +"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
 +"issues\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2021-03-13 03:56+0000\n"
 +"Last-Translator: samson <Unknown>\n"
 +"Language-Team: Amharic <am@li.org>\n"
@@ -4269,15 +4269,15 @@ Index: gnome-initial-setup-50.0/po/am.po
 +msgstr ""
 Index: gnome-initial-setup-50.0/po/an.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/an.po	2026-09-09 02:25:30.106134671 +0300
-+++ gnome-initial-setup-50.0/po/an.po	2026-09-09 02:25:29.958134668 +0300
+--- gnome-initial-setup-50.0.orig/po/an.po	2026-09-09 12:28:29.887793832 +0300
++++ gnome-initial-setup-50.0/po/an.po	2026-09-09 12:30:36.139795305 +0300
 @@ -9,110 +9,126 @@
  "Project-Id-Version: gnome-initial-setup gnome-3-6\n"
  "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
  "issues\n"
 -"POT-Creation-Date: 2015-03-17 07:51+0000\n"
 -"PO-Revision-Date: 2015-03-17 19:54+0100\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2026-04-14 01:46+0000\n"
  "Last-Translator: Daniel Martinez <entaltoaragon@gmail.com>\n"
  "Language-Team: Aragonés <softaragones@googlegroups.com>\n"
@@ -5876,8 +5876,8 @@ Index: gnome-initial-setup-50.0/po/an.po
 +#~ msgstr "Cancelar"
 Index: gnome-initial-setup-50.0/po/ar.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/ar.po	2026-09-09 02:25:30.106134671 +0300
-+++ gnome-initial-setup-50.0/po/ar.po	2026-09-09 02:25:29.958134668 +0300
+--- gnome-initial-setup-50.0.orig/po/ar.po	2026-09-09 12:28:29.887793832 +0300
++++ gnome-initial-setup-50.0/po/ar.po	2026-09-09 12:30:36.159795305 +0300
 @@ -9,58 +9,75 @@
  msgstr ""
  "Project-Id-Version: unnamed project\n"
@@ -5886,7 +5886,7 @@ Index: gnome-initial-setup-50.0/po/ar.po
 -"POT-Creation-Date: 2025-07-06 12:45+0000\n"
 -"PO-Revision-Date: 2025-07-07 19:53+0300\n"
 +"issues\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2026-04-14 01:45+0000\n"
  "Last-Translator: Khalid Abu Shawarib <khalid.shawarib@gmail.com>\n"
  "Language-Team: Arabic <doc@arabeyes.org>\n"
@@ -7340,7 +7340,7 @@ Index: gnome-initial-setup-50.0/po/ar.po
 Index: gnome-initial-setup-50.0/po/arn.po
 ===================================================================
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ gnome-initial-setup-50.0/po/arn.po	2026-09-09 02:25:29.958134668 +0300
++++ gnome-initial-setup-50.0/po/arn.po	2026-09-09 12:30:36.171795305 +0300
 @@ -0,0 +1,1205 @@
 +# Mapudungun translation for gnome-initial-setup
 +# Copyright (c) 2022 Rosetta Contributors and Canonical Ltd 2022
@@ -7352,7 +7352,7 @@ Index: gnome-initial-setup-50.0/po/arn.po
 +"Project-Id-Version: gnome-initial-setup\n"
 +"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
 +"issues\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2022-01-13 05:14+0000\n"
 +"Last-Translator: Demian Araya <Unknown>\n"
 +"Language-Team: Mapudungun <arn@li.org>\n"
@@ -8549,8 +8549,8 @@ Index: gnome-initial-setup-50.0/po/arn.po
 +#~ msgstr "Kaxvtugepe"
 Index: gnome-initial-setup-50.0/po/as.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/as.po	2026-09-09 02:25:30.106134671 +0300
-+++ gnome-initial-setup-50.0/po/as.po	2026-09-09 02:25:29.962134668 +0300
+--- gnome-initial-setup-50.0.orig/po/as.po	2026-09-09 12:28:29.887793832 +0300
++++ gnome-initial-setup-50.0/po/as.po	2026-09-09 12:30:36.187795305 +0300
 @@ -8,782 +8,1201 @@
  "Project-Id-Version: gnome-initial-setup master\n"
  "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
@@ -8558,7 +8558,7 @@ Index: gnome-initial-setup-50.0/po/as.po
 -"POT-Creation-Date: 2014-08-13 06:51+0000\n"
 -"PO-Revision-Date: 2014-08-13 20:39+0530\n"
 -"Last-Translator: Nilamdyuti Goswami <ngoswami@redhat.com>\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2026-04-14 01:43+0000\n"
 +"Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
  "Language-Team: Assamese <kde-i18n-doc@kde.org>\n"
@@ -10222,7 +10222,7 @@ Index: gnome-initial-setup-50.0/po/as.po
 Index: gnome-initial-setup-50.0/po/ast.po
 ===================================================================
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ gnome-initial-setup-50.0/po/ast.po	2026-09-09 02:25:29.962134668 +0300
++++ gnome-initial-setup-50.0/po/ast.po	2026-09-09 12:30:36.203795305 +0300
 @@ -0,0 +1,1250 @@
 +# Asturian translation for gnome-initial-setup
 +# Copyright (c) 2020 Rosetta Contributors and Canonical Ltd 2020
@@ -10234,7 +10234,7 @@ Index: gnome-initial-setup-50.0/po/ast.po
 +"Project-Id-Version: gnome-initial-setup\n"
 +"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
 +"issues\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2020-10-05 10:44+0000\n"
 +"Last-Translator: Xandru Martino <Unknown>\n"
 +"Language-Team: Asturian <ast@li.org>\n"
@@ -11477,7 +11477,7 @@ Index: gnome-initial-setup-50.0/po/ast.po
 Index: gnome-initial-setup-50.0/po/az.po
 ===================================================================
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ gnome-initial-setup-50.0/po/az.po	2026-09-09 02:25:29.962134668 +0300
++++ gnome-initial-setup-50.0/po/az.po	2026-09-09 12:30:36.219795304 +0300
 @@ -0,0 +1,1386 @@
 +# Azerbaijani translation for gnome-initial-setup
 +# Copyright (c) 2024 Rosetta Contributors and Canonical Ltd 2024
@@ -11490,7 +11490,7 @@ Index: gnome-initial-setup-50.0/po/az.po
 +"Project-Id-Version: gnome-initial-setup\n"
 +"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
 +"issues\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2025-10-04 11:30+0000\n"
 +"Last-Translator: Elmin Alirzayev <Unknown>\n"
 +"Language-Team: Azerbaijani <az@li.org>\n"
@@ -12867,8 +12867,8 @@ Index: gnome-initial-setup-50.0/po/az.po
 +#~ "edə bilərsiniz"
 Index: gnome-initial-setup-50.0/po/be.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/be.po	2026-09-09 02:25:30.106134671 +0300
-+++ gnome-initial-setup-50.0/po/be.po	2026-09-09 02:25:29.966134668 +0300
+--- gnome-initial-setup-50.0.orig/po/be.po	2026-09-09 12:28:29.887793832 +0300
++++ gnome-initial-setup-50.0/po/be.po	2026-09-09 12:30:36.243795304 +0300
 @@ -9,51 +9,71 @@
  msgstr ""
  "Project-Id-Version: gnome-initial-setup master\n"
@@ -12878,7 +12878,7 @@ Index: gnome-initial-setup-50.0/po/be.po
 -"PO-Revision-Date: 2024-10-07 16:35+0300\n"
 -"Last-Translator: Yuras Shumovich <shumovichy@gmail.com>\n"
 +"issues\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2026-04-14 01:43+0000\n"
 +"Last-Translator: Yuras <shumovichy@gmail.com>\n"
  "Language-Team: Belarusian <i18n-bel-gnome@googlegroups.com>\n"
@@ -14124,8 +14124,8 @@ Index: gnome-initial-setup-50.0/po/be.po
 +#~ msgstr "Палітыку прыватнасці можна змяніць у любы час праз праграму Налады."
 Index: gnome-initial-setup-50.0/po/bg.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/bg.po	2026-09-09 02:25:30.106134671 +0300
-+++ gnome-initial-setup-50.0/po/bg.po	2026-09-09 02:25:29.966134668 +0300
+--- gnome-initial-setup-50.0.orig/po/bg.po	2026-09-09 12:28:29.887793832 +0300
++++ gnome-initial-setup-50.0/po/bg.po	2026-09-09 12:30:36.259795304 +0300
 @@ -9,49 +9,69 @@
  msgstr ""
  "Project-Id-Version: gnome-initial-setup master\n"
@@ -14135,7 +14135,7 @@ Index: gnome-initial-setup-50.0/po/bg.po
 -"PO-Revision-Date: 2026-01-22 07:02+0100\n"
 -"Last-Translator: twlvnn kraftwerk <kraft_werk@tutanota.com>\n"
 +"issues\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2026-04-14 01:44+0000\n"
 +"Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
  "Language-Team: Bulgarian <dict@fsa-bg.org>\n"
@@ -14943,7 +14943,7 @@ Index: gnome-initial-setup-50.0/po/bg.po
 Index: gnome-initial-setup-50.0/po/bn.po
 ===================================================================
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ gnome-initial-setup-50.0/po/bn.po	2026-09-09 02:25:29.966134668 +0300
++++ gnome-initial-setup-50.0/po/bn.po	2026-09-09 12:30:36.279795303 +0300
 @@ -0,0 +1,1206 @@
 +# Bengali translation for gnome-initial-setup
 +# Copyright (c) 2019 Rosetta Contributors and Canonical Ltd 2019
@@ -14955,7 +14955,7 @@ Index: gnome-initial-setup-50.0/po/bn.po
 +"Project-Id-Version: gnome-initial-setup\n"
 +"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
 +"issues\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2026-04-29 09:18+0000\n"
 +"Last-Translator: Ferdaus <ferdausalamin@yahoo.ca>\n"
 +"Language-Team: Bengali <bn@li.org>\n"
@@ -16154,7 +16154,7 @@ Index: gnome-initial-setup-50.0/po/bn.po
 Index: gnome-initial-setup-50.0/po/bo.po
 ===================================================================
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ gnome-initial-setup-50.0/po/bo.po	2026-09-09 02:25:29.970134668 +0300
++++ gnome-initial-setup-50.0/po/bo.po	2026-09-09 12:30:36.315795303 +0300
 @@ -0,0 +1,1202 @@
 +# Tibetan translation for gnome-initial-setup
 +# Copyright (c) 2019 Rosetta Contributors and Canonical Ltd 2019
@@ -16166,7 +16166,7 @@ Index: gnome-initial-setup-50.0/po/bo.po
 +"Project-Id-Version: gnome-initial-setup\n"
 +"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
 +"issues\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2019-03-22 04:33+0000\n"
 +"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 +"Language-Team: Tibetan <bo@li.org>\n"
@@ -17361,7 +17361,7 @@ Index: gnome-initial-setup-50.0/po/bo.po
 Index: gnome-initial-setup-50.0/po/br.po
 ===================================================================
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ gnome-initial-setup-50.0/po/br.po	2026-09-09 02:25:29.970134668 +0300
++++ gnome-initial-setup-50.0/po/br.po	2026-09-09 12:30:36.327795303 +0300
 @@ -0,0 +1,1202 @@
 +# Breton translation for gnome-initial-setup
 +# Copyright (c) 2018 Rosetta Contributors and Canonical Ltd 2018
@@ -17373,7 +17373,7 @@ Index: gnome-initial-setup-50.0/po/br.po
 +"Project-Id-Version: gnome-initial-setup\n"
 +"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
 +"issues\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2018-09-17 08:25+0000\n"
 +"Last-Translator: Clyde <c.dlugybelmont@gmail.com>\n"
 +"Language-Team: Breton <br@li.org>\n"
@@ -18567,8 +18567,8 @@ Index: gnome-initial-setup-50.0/po/br.po
 +msgstr ""
 Index: gnome-initial-setup-50.0/po/bs.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/bs.po	2026-09-09 02:25:30.106134671 +0300
-+++ gnome-initial-setup-50.0/po/bs.po	2026-09-09 02:25:29.970134668 +0300
+--- gnome-initial-setup-50.0.orig/po/bs.po	2026-09-09 12:28:29.887793832 +0300
++++ gnome-initial-setup-50.0/po/bs.po	2026-09-09 12:30:36.347795302 +0300
 @@ -8,110 +8,129 @@
  "Project-Id-Version: bosnianuniversetranslation\n"
  "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
@@ -18576,7 +18576,7 @@ Index: gnome-initial-setup-50.0/po/bs.po
 -"POT-Creation-Date: 2015-02-26 19:55+0000\n"
 -"PO-Revision-Date: 2015-03-02 12:01+0100\n"
 -"Last-Translator: Samir Ribić <Unknown>\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2026-04-14 01:47+0000\n"
 +"Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
  "Language-Team: Bosnian <bs@li.org>\n"
@@ -20095,8 +20095,8 @@ Index: gnome-initial-setup-50.0/po/bs.po
 +#~ msgstr "Prikaži prvi izvještaj"
 Index: gnome-initial-setup-50.0/po/ca.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/ca.po	2026-09-09 02:25:30.106134671 +0300
-+++ gnome-initial-setup-50.0/po/ca.po	2026-09-09 02:25:29.974134668 +0300
+--- gnome-initial-setup-50.0.orig/po/ca.po	2026-09-09 12:28:29.887793832 +0300
++++ gnome-initial-setup-50.0/po/ca.po	2026-09-09 12:30:36.367795302 +0300
 @@ -10,49 +10,69 @@
  msgstr ""
  "Project-Id-Version: gnome-initial-setup master\n"
@@ -20106,7 +20106,7 @@ Index: gnome-initial-setup-50.0/po/ca.po
 -"PO-Revision-Date: 2026-01-10 13:57+0100\n"
 -"Last-Translator: Jordi Mas i Hernàndez <jmas@softcatala.org>\n"
 +"issues\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2026-04-14 01:44+0000\n"
 +"Last-Translator: Jordi Mas <jmas@softcatala.org>\n"
  "Language-Team: Catalan <tradgnome@softcatala.org>\n"
@@ -20962,8 +20962,8 @@ Index: gnome-initial-setup-50.0/po/ca.po
 -#~ msgstr "Prova"
 Index: gnome-initial-setup-50.0/po/ca@valencia.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/ca@valencia.po	2026-09-09 02:25:30.106134671 +0300
-+++ gnome-initial-setup-50.0/po/ca@valencia.po	2026-09-09 02:25:29.974134668 +0300
+--- gnome-initial-setup-50.0.orig/po/ca@valencia.po	2026-09-09 12:28:29.887793832 +0300
++++ gnome-initial-setup-50.0/po/ca@valencia.po	2026-09-09 12:30:36.387795302 +0300
 @@ -11,76 +11,96 @@
  "Project-Id-Version: gnome-initial-setup master\n"
  "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
@@ -20971,7 +20971,7 @@ Index: gnome-initial-setup-50.0/po/ca@valencia.po
 -"POT-Creation-Date: 2017-09-10 06:12+0000\n"
 -"PO-Revision-Date: 2017-07-11 19:31+0200\n"
 -"Last-Translator: Xavi Ivars <xavi.ivars@gmail.com>\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2026-04-14 01:46+0000\n"
 +"Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
  "Language-Team: Catalan <tradgnome@softcatala.org>\n"
@@ -22527,7 +22527,7 @@ Index: gnome-initial-setup-50.0/po/ca@valencia.po
 Index: gnome-initial-setup-50.0/po/ceb.po
 ===================================================================
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ gnome-initial-setup-50.0/po/ceb.po	2026-09-09 02:25:29.974134668 +0300
++++ gnome-initial-setup-50.0/po/ceb.po	2026-09-09 12:30:36.403795301 +0300
 @@ -0,0 +1,1233 @@
 +# Cebuano translation for gnome-initial-setup
 +# Copyright (c) 2018 Rosetta Contributors and Canonical Ltd 2018
@@ -22539,7 +22539,7 @@ Index: gnome-initial-setup-50.0/po/ceb.po
 +"Project-Id-Version: gnome-initial-setup\n"
 +"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
 +"issues\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2018-09-27 12:21+0000\n"
 +"Last-Translator: Michael Quisido III <mike082112@gmail.com>\n"
 +"Language-Team: Cebuano <ceb@li.org>\n"
@@ -23764,8 +23764,8 @@ Index: gnome-initial-setup-50.0/po/ceb.po
 +#~ msgstr "Ipakita ang Una nga Report"
 Index: gnome-initial-setup-50.0/po/ckb.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/ckb.po	2026-09-09 02:25:30.106134671 +0300
-+++ gnome-initial-setup-50.0/po/ckb.po	2026-09-09 02:25:29.978134668 +0300
+--- gnome-initial-setup-50.0.orig/po/ckb.po	2026-09-09 12:28:29.887793832 +0300
++++ gnome-initial-setup-50.0/po/ckb.po	2026-09-09 12:30:36.423795301 +0300
 @@ -6,170 +6,214 @@
  msgid ""
  msgstr ""
@@ -23775,7 +23775,7 @@ Index: gnome-initial-setup-50.0/po/ckb.po
 -"PO-Revision-Date: 2020-03-28 23:58+0300\n"
 +"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
 +"issues\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2024-11-21 16:53+0000\n"
  "Last-Translator: Jwtiyar Nariman <jwtiyar@gmail.com>\n"
  "Language-Team: Kurdish (Sorani) <ckb@li.org>\n"
@@ -25223,8 +25223,8 @@ Index: gnome-initial-setup-50.0/po/ckb.po
 +#~ msgstr "پاشگه‌زبوونه‌وه‌"
 Index: gnome-initial-setup-50.0/po/cs.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/cs.po	2026-09-09 02:25:30.106134671 +0300
-+++ gnome-initial-setup-50.0/po/cs.po	2026-09-09 02:25:29.978134668 +0300
+--- gnome-initial-setup-50.0.orig/po/cs.po	2026-09-09 12:28:29.887793832 +0300
++++ gnome-initial-setup-50.0/po/cs.po	2026-09-09 12:30:36.443795301 +0300
 @@ -11,49 +11,69 @@
  msgstr ""
  "Project-Id-Version: gnome-initial-setup\n"
@@ -25234,7 +25234,7 @@ Index: gnome-initial-setup-50.0/po/cs.po
 -"PO-Revision-Date: 2026-02-04 15:22+0100\n"
 -"Last-Translator: Daniel Rusek <mail@asciiwolf.com>\n"
 +"issues\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2026-04-14 01:46+0000\n"
 +"Last-Translator: AsciiWolf <mail@asciiwolf.com>\n"
  "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
@@ -26204,7 +26204,7 @@ Index: gnome-initial-setup-50.0/po/cs.po
 Index: gnome-initial-setup-50.0/po/cy.po
 ===================================================================
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ gnome-initial-setup-50.0/po/cy.po	2026-09-09 02:25:29.982134668 +0300
++++ gnome-initial-setup-50.0/po/cy.po	2026-09-09 12:30:36.459795301 +0300
 @@ -0,0 +1,1335 @@
 +# Welsh translation for gnome-initial-setup
 +# Copyright (c) 2018 Rosetta Contributors and Canonical Ltd 2018
@@ -26216,7 +26216,7 @@ Index: gnome-initial-setup-50.0/po/cy.po
 +"Project-Id-Version: gnome-initial-setup\n"
 +"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
 +"issues\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2024-04-09 12:03+0000\n"
 +"Last-Translator: Rhoslyn Prys <Unknown>\n"
 +"Language-Team: Welsh <cy@li.org>\n"
@@ -27543,8 +27543,8 @@ Index: gnome-initial-setup-50.0/po/cy.po
 +#~ "Diagnosteg."
 Index: gnome-initial-setup-50.0/po/da.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/da.po	2026-09-09 02:25:30.106134671 +0300
-+++ gnome-initial-setup-50.0/po/da.po	2026-09-09 02:25:29.982134668 +0300
+--- gnome-initial-setup-50.0.orig/po/da.po	2026-09-09 12:28:29.887793832 +0300
++++ gnome-initial-setup-50.0/po/da.po	2026-09-09 12:30:36.483795300 +0300
 @@ -7,54 +7,75 @@
  # Ask Hjorth Larsen <asklarsen@gmail.com>, 2013-18, 2022-2026.
  # scootergrisen, 2015-2016.
@@ -27561,7 +27561,7 @@ Index: gnome-initial-setup-50.0/po/da.po
 -"Last-Translator: Ask Hjorth Larsen <asklarsen@gmail.com>\n"
 -"Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 +"issues\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2026-04-14 01:43+0000\n"
 +"Last-Translator: Ask Hjorth Larsen <askhl@proton.me>\n"
 +"Language-Team: Danish <danskgruppen@groups.io>\n"
@@ -28677,8 +28677,8 @@ Index: gnome-initial-setup-50.0/po/da.po
 +#~ msgstr "Kunne ikke downloade yderligere sprogpakker"
 Index: gnome-initial-setup-50.0/po/de.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/de.po	2026-09-09 02:25:30.106134671 +0300
-+++ gnome-initial-setup-50.0/po/de.po	2026-09-09 02:25:29.982134668 +0300
+--- gnome-initial-setup-50.0.orig/po/de.po	2026-09-09 12:28:29.887793832 +0300
++++ gnome-initial-setup-50.0/po/de.po	2026-09-09 12:30:36.503795300 +0300
 @@ -17,53 +17,73 @@
  msgstr ""
  "Project-Id-Version: gnome-initial-setup\n"
@@ -28688,7 +28688,7 @@ Index: gnome-initial-setup-50.0/po/de.po
 -"PO-Revision-Date: 2026-02-01 16:52+0100\n"
 -"Last-Translator: Christian Kirbach <christian.kirbach@gmail.com>\n"
 +"issues\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2026-05-10 15:22+0000\n"
 +"Last-Translator: Michael Wehram <michael.wehram@wolfsburg.de>\n"
  "Language-Team: German <gnome-de@gnome.org>\n"
@@ -29885,8 +29885,8 @@ Index: gnome-initial-setup-50.0/po/de.po
 +#~ msgstr "Zusätzliche Sprachpakete können nicht heruntergeladen werden."
 Index: gnome-initial-setup-50.0/po/el.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/el.po	2026-09-09 02:25:30.106134671 +0300
-+++ gnome-initial-setup-50.0/po/el.po	2026-09-09 02:25:29.986134668 +0300
+--- gnome-initial-setup-50.0.orig/po/el.po	2026-09-09 12:28:29.887793832 +0300
++++ gnome-initial-setup-50.0/po/el.po	2026-09-09 12:30:36.527795300 +0300
 @@ -4,55 +4,76 @@
  # Tom Tryfonidis <tomtryf@gmail.com>, 2012.
  # Dimitris Spingos (Δημήτρης Σπίγγος) <dmtrs32@gmail.com>, 2013, 2015.
@@ -29902,7 +29902,7 @@ Index: gnome-initial-setup-50.0/po/el.po
 -"PO-Revision-Date: 2026-02-07 21:55+0200\n"
 -"Last-Translator: Efstathios Iosifidis <eiosifidis@gmail.com>\n"
 +"issues\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2026-04-14 01:47+0000\n"
 +"Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
  "Language-Team: Ελληνικά <>\n"
@@ -31124,7 +31124,7 @@ Index: gnome-initial-setup-50.0/po/el.po
 Index: gnome-initial-setup-50.0/po/en_AU.po
 ===================================================================
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ gnome-initial-setup-50.0/po/en_AU.po	2026-09-09 02:25:29.986134668 +0300
++++ gnome-initial-setup-50.0/po/en_AU.po	2026-09-09 12:30:36.543795299 +0300
 @@ -0,0 +1,1311 @@
 +# English (Australia) translation for gnome-initial-setup
 +# Copyright (c) 2019 Rosetta Contributors and Canonical Ltd 2019
@@ -31136,7 +31136,7 @@ Index: gnome-initial-setup-50.0/po/en_AU.po
 +"Project-Id-Version: gnome-initial-setup\n"
 +"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
 +"issues\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2024-04-07 08:07+0000\n"
 +"Last-Translator: Jared Norris <jarednorris@ubuntu.com>\n"
 +"Language-Team: English (Australia) <en_AU@li.org>\n"
@@ -32440,7 +32440,7 @@ Index: gnome-initial-setup-50.0/po/en_AU.po
 Index: gnome-initial-setup-50.0/po/en_CA.po
 ===================================================================
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ gnome-initial-setup-50.0/po/en_CA.po	2026-09-09 02:25:29.986134668 +0300
++++ gnome-initial-setup-50.0/po/en_CA.po	2026-09-09 12:30:36.563795299 +0300
 @@ -0,0 +1,1371 @@
 +# English (Canada) translation for gnome-initial-setup
 +# Copyright (c) 2020 Rosetta Contributors and Canonical Ltd 2020
@@ -32452,7 +32452,7 @@ Index: gnome-initial-setup-50.0/po/en_CA.po
 +"Project-Id-Version: gnome-initial-setup\n"
 +"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
 +"issues\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2025-03-10 20:54+0000\n"
 +"Last-Translator: Michael Abon <Unknown>\n"
 +"Language-Team: English (Canada) <en_CA@li.org>\n"
@@ -33815,8 +33815,8 @@ Index: gnome-initial-setup-50.0/po/en_CA.po
 +#~ msgstr "Unable to download additional language packs"
 Index: gnome-initial-setup-50.0/po/en_GB.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/en_GB.po	2026-09-09 02:25:30.106134671 +0300
-+++ gnome-initial-setup-50.0/po/en_GB.po	2026-09-09 02:25:29.990134668 +0300
+--- gnome-initial-setup-50.0.orig/po/en_GB.po	2026-09-09 12:28:29.887793832 +0300
++++ gnome-initial-setup-50.0/po/en_GB.po	2026-09-09 12:30:36.583795299 +0300
 @@ -9,50 +9,70 @@
  msgstr ""
  "Project-Id-Version: gnome-initial-setup master\n"
@@ -33826,7 +33826,7 @@ Index: gnome-initial-setup-50.0/po/en_GB.po
 -"PO-Revision-Date: 2026-03-09 11:36+0000\n"
 -"Last-Translator: Bruce Cowan <bruce@bcowan.me.uk>\n"
 +"issues\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2026-04-14 01:48+0000\n"
 +"Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
  "Language-Team: British English <en@li.org>\n"
@@ -34769,8 +34769,8 @@ Index: gnome-initial-setup-50.0/po/en_GB.po
 +#~ msgstr "Unable to download additional language packs"
 Index: gnome-initial-setup-50.0/po/eo.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/eo.po	2026-09-09 02:25:30.106134671 +0300
-+++ gnome-initial-setup-50.0/po/eo.po	2026-09-09 02:25:29.990134668 +0300
+--- gnome-initial-setup-50.0.orig/po/eo.po	2026-09-09 12:28:29.887793832 +0300
++++ gnome-initial-setup-50.0/po/eo.po	2026-09-09 12:30:36.599795298 +0300
 @@ -2,57 +2,77 @@
  # Copyright (C) 2012 Free Software Foundation, Inc.
  # This file is distributed under the same license as the gnome-initial-setup package.
@@ -34788,7 +34788,7 @@ Index: gnome-initial-setup-50.0/po/eo.po
 -"PO-Revision-Date: 2025-09-18 00:07+0200\n"
 -"Last-Translator: Kristjan SCHMIDT <kristjan.schmidt@googlemail.com>\n"
 +"issues\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2026-04-14 01:47+0000\n"
 +"Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
  "Language-Team: Esperanto <gnome-eo-list@gnome.org>\n"
@@ -35977,8 +35977,8 @@ Index: gnome-initial-setup-50.0/po/eo.po
 +#~ "estas kolektataj de %1$s (<a href='%2$s'>respekto pri privateco</a>)."
 Index: gnome-initial-setup-50.0/po/es.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/es.po	2026-09-09 02:25:30.106134671 +0300
-+++ gnome-initial-setup-50.0/po/es.po	2026-09-09 02:25:29.994134668 +0300
+--- gnome-initial-setup-50.0.orig/po/es.po	2026-09-09 12:28:29.887793832 +0300
++++ gnome-initial-setup-50.0/po/es.po	2026-09-09 12:30:36.619795298 +0300
 @@ -8,51 +8,71 @@
  msgstr ""
  "Project-Id-Version: gnome-initial-setup master\n"
@@ -35988,7 +35988,7 @@ Index: gnome-initial-setup-50.0/po/es.po
 -"PO-Revision-Date: 2026-02-12 15:28+0100\n"
 -"Last-Translator: Daniel Mustieles García <daniel.mustieles@gmail.com>\n"
 +"issues\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2026-04-14 01:42+0000\n"
 +"Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
  "Language-Team: Spanish - Spain <gnome-es-list@gnome.org>\n"
@@ -37556,8 +37556,8 @@ Index: gnome-initial-setup-50.0/po/es.po
 +#~ msgstr "No se pueden descargar paquetes de idiomas adicionales"
 Index: gnome-initial-setup-50.0/po/et.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/et.po	2026-09-09 02:25:30.106134671 +0300
-+++ gnome-initial-setup-50.0/po/et.po	2026-09-09 02:25:29.994134668 +0300
+--- gnome-initial-setup-50.0.orig/po/et.po	2026-09-09 12:28:29.887793832 +0300
++++ gnome-initial-setup-50.0/po/et.po	2026-09-09 12:30:36.635795298 +0300
 @@ -8,401 +8,1204 @@
  "Project-Id-Version: gnome-initial-setup master\n"
  "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
@@ -37565,7 +37565,7 @@ Index: gnome-initial-setup-50.0/po/et.po
 -"POT-Creation-Date: 2013-09-18 20:38+0000\n"
 -"PO-Revision-Date: 2013-09-19 20:38+0300\n"
 -"Last-Translator: Mattias Põldaru <mahfiaz@gmail.com>\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2026-04-14 01:42+0000\n"
 +"Last-Translator: mahfiaz <mahfiaz@gmail.com>\n"
  "Language-Team: Estonian <gnome-et-list@gnome.org>\n"
@@ -39003,8 +39003,8 @@ Index: gnome-initial-setup-50.0/po/et.po
 +#~ "rakendusest"
 Index: gnome-initial-setup-50.0/po/eu.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/eu.po	2026-09-09 02:25:30.106134671 +0300
-+++ gnome-initial-setup-50.0/po/eu.po	2026-09-09 02:25:29.994134668 +0300
+--- gnome-initial-setup-50.0.orig/po/eu.po	2026-09-09 12:28:29.887793832 +0300
++++ gnome-initial-setup-50.0/po/eu.po	2026-09-09 12:30:36.651795298 +0300
 @@ -7,49 +7,72 @@
  # Asier Saratsua Garmendia  <asiersarasua@ni.eus>, 2025, 2026.
  #
@@ -39018,7 +39018,7 @@ Index: gnome-initial-setup-50.0/po/eu.po
 +"Project-Id-Version: gnome-initial-setup master\n"
 +"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
 +"issues\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2026-04-14 01:46+0000\n"
 +"Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
  "Language-Team: Basque <librezale@librezale.eus>\n"
@@ -40469,8 +40469,8 @@ Index: gnome-initial-setup-50.0/po/eu.po
 +#~ "Pribatutasuna → Diagnostikoa"
 Index: gnome-initial-setup-50.0/po/fa.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/fa.po	2026-09-09 02:25:30.106134671 +0300
-+++ gnome-initial-setup-50.0/po/fa.po	2026-09-09 02:25:29.998134669 +0300
+--- gnome-initial-setup-50.0.orig/po/fa.po	2026-09-09 12:28:29.887793832 +0300
++++ gnome-initial-setup-50.0/po/fa.po	2026-09-09 12:30:36.671795297 +0300
 @@ -7,48 +7,70 @@
  msgid ""
  msgstr ""
@@ -40480,7 +40480,7 @@ Index: gnome-initial-setup-50.0/po/fa.po
 -"PO-Revision-Date: 2026-01-23 15:17+0330\n"
 +"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
 +"issues\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2026-04-14 01:43+0000\n"
  "Last-Translator: Danial Behzadi <dani.behzi@ubuntu.com>\n"
  "Language-Team: Persian\n"
@@ -41886,8 +41886,8 @@ Index: gnome-initial-setup-50.0/po/fa.po
 +#~ msgstr "ارسال اطلاعات گزارش شکست خورد: %s"
 Index: gnome-initial-setup-50.0/po/fi.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/fi.po	2026-09-09 02:25:30.106134671 +0300
-+++ gnome-initial-setup-50.0/po/fi.po	2026-09-09 02:25:29.998134669 +0300
+--- gnome-initial-setup-50.0.orig/po/fi.po	2026-09-09 12:28:29.887793832 +0300
++++ gnome-initial-setup-50.0/po/fi.po	2026-09-09 12:30:36.691795297 +0300
 @@ -7,49 +7,69 @@
  msgstr ""
  "Project-Id-Version: \n"
@@ -41897,7 +41897,7 @@ Index: gnome-initial-setup-50.0/po/fi.po
 -"PO-Revision-Date: 2026-02-18 11:58+0200\n"
 -"Last-Translator: Jiri Grönroos <jiri.gronroos+l10n@iki.fi>\n"
 +"issues\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2026-04-14 01:43+0000\n"
 +"Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
  "Language-Team: suomi <lokalisointi-lista@googlegroups.com>\n"
@@ -43219,8 +43219,8 @@ Index: gnome-initial-setup-50.0/po/fi.po
 +#~ msgstr "Lisäkielipaketteja ei voi ladata"
 Index: gnome-initial-setup-50.0/po/fil.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/fil.po	2026-09-09 02:25:30.106134671 +0300
-+++ gnome-initial-setup-50.0/po/fil.po	2026-09-09 02:25:30.002134669 +0300
+--- gnome-initial-setup-50.0.orig/po/fil.po	2026-09-09 12:28:29.887793832 +0300
++++ gnome-initial-setup-50.0/po/fil.po	2026-09-09 12:30:36.711795297 +0300
 @@ -7,48 +7,69 @@
  msgstr ""
  "Project-Id-Version: gnome-initial-setup master\n"
@@ -43230,7 +43230,7 @@ Index: gnome-initial-setup-50.0/po/fil.po
 -"PO-Revision-Date: 2025-11-24 22:34+0800\n"
 -"Last-Translator: \n"
 +"issues\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2026-04-14 01:47+0000\n"
 +"Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
  "Language-Team: Filipino <fil@li.org>\n"
@@ -44090,7 +44090,7 @@ Index: gnome-initial-setup-50.0/po/fil.po
 Index: gnome-initial-setup-50.0/po/fo.po
 ===================================================================
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ gnome-initial-setup-50.0/po/fo.po	2026-09-09 02:25:30.002134669 +0300
++++ gnome-initial-setup-50.0/po/fo.po	2026-09-09 12:30:36.727795297 +0300
 @@ -0,0 +1,1202 @@
 +# Faroese translation for gnome-initial-setup
 +# Copyright (c) 2022 Rosetta Contributors and Canonical Ltd 2022
@@ -44102,7 +44102,7 @@ Index: gnome-initial-setup-50.0/po/fo.po
 +"Project-Id-Version: gnome-initial-setup\n"
 +"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
 +"issues\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2022-10-21 15:08+0000\n"
 +"Last-Translator: Bogi <bogi.wennerstrom@gmail.com>\n"
 +"Language-Team: Faroese <fo@li.org>\n"
@@ -45296,8 +45296,8 @@ Index: gnome-initial-setup-50.0/po/fo.po
 +msgstr ""
 Index: gnome-initial-setup-50.0/po/fr.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/fr.po	2026-09-09 02:25:30.106134671 +0300
-+++ gnome-initial-setup-50.0/po/fr.po	2026-09-09 02:25:30.002134669 +0300
+--- gnome-initial-setup-50.0.orig/po/fr.po	2026-09-09 12:28:29.887793832 +0300
++++ gnome-initial-setup-50.0/po/fr.po	2026-09-09 12:30:36.751795296 +0300
 @@ -17,55 +17,75 @@
  msgstr ""
  "Project-Id-Version: gnome-initial-setup\n"
@@ -45307,7 +45307,7 @@ Index: gnome-initial-setup-50.0/po/fr.po
 -"PO-Revision-Date: 2026-02-13 00:13+0000\n"
 -"Last-Translator: Malo Billoré <malo.billore@gmail.com>\n"
 +"issues\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2026-04-14 01:46+0000\n"
 +"Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
  "Language-Team: French\n"
@@ -46295,7 +46295,7 @@ Index: gnome-initial-setup-50.0/po/fr.po
 Index: gnome-initial-setup-50.0/po/fr_CA.po
 ===================================================================
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ gnome-initial-setup-50.0/po/fr_CA.po	2026-09-09 02:25:30.006134669 +0300
++++ gnome-initial-setup-50.0/po/fr_CA.po	2026-09-09 12:30:36.767795296 +0300
 @@ -0,0 +1,1278 @@
 +# French (Canada) translation for the GNOME initial setup
 +# Copyright (C) 2012-2019 listed translators
@@ -46306,7 +46306,7 @@ Index: gnome-initial-setup-50.0/po/fr_CA.po
 +"Project-Id-Version: gnome-initial-setup\n"
 +"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
 +"issues\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2025-03-12 04:02+0000\n"
 +"Last-Translator: AO <Unknown>\n"
 +"Language-Team: French (Canada) <fr_CA@li.org>\n"
@@ -47577,8 +47577,8 @@ Index: gnome-initial-setup-50.0/po/fr_CA.po
 +#~ "Diagnostics."
 Index: gnome-initial-setup-50.0/po/fur.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/fur.po	2026-09-09 02:25:30.106134671 +0300
-+++ gnome-initial-setup-50.0/po/fur.po	2026-09-09 02:25:30.006134669 +0300
+--- gnome-initial-setup-50.0.orig/po/fur.po	2026-09-09 12:28:29.887793832 +0300
++++ gnome-initial-setup-50.0/po/fur.po	2026-09-09 12:30:36.783795296 +0300
 @@ -7,49 +7,70 @@
  msgstr ""
  "Project-Id-Version: gnome-initial-setup gnome-3-6\n"
@@ -47588,7 +47588,7 @@ Index: gnome-initial-setup-50.0/po/fur.po
 -"PO-Revision-Date: 2025-10-15 17:47+0200\n"
 -"Last-Translator: Fabio T. <f.t.public@gmail.com>\n"
 +"issues\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2026-04-14 01:44+0000\n"
 +"Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
  "Language-Team: Friulian <f.t.public@gmail.com>\n"
@@ -48793,8 +48793,8 @@ Index: gnome-initial-setup-50.0/po/fur.po
 +#~ "aplicazion Impostazions."
 Index: gnome-initial-setup-50.0/po/ga.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/ga.po	2026-09-09 02:25:30.106134671 +0300
-+++ gnome-initial-setup-50.0/po/ga.po	2026-09-09 02:25:30.010134669 +0300
+--- gnome-initial-setup-50.0.orig/po/ga.po	2026-09-09 12:28:29.887793832 +0300
++++ gnome-initial-setup-50.0/po/ga.po	2026-09-09 12:30:36.799795295 +0300
 @@ -8,566 +8,1195 @@
  "Project-Id-Version: gnome-initial-setup.master\n"
  "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
@@ -48802,7 +48802,7 @@ Index: gnome-initial-setup-50.0/po/ga.po
 -"POT-Creation-Date: 2015-10-01 13:23-0600\n"
 -"PO-Revision-Date: 2015-10-01 13:58-0600\n"
 -"Last-Translator: Seán de Búrca <leftmostcat@gmail.com>\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2026-04-14 01:46+0000\n"
 +"Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
  "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -50246,8 +50246,8 @@ Index: gnome-initial-setup-50.0/po/ga.po
 +msgstr ""
 Index: gnome-initial-setup-50.0/po/gd.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/gd.po	2026-09-09 02:25:30.106134671 +0300
-+++ gnome-initial-setup-50.0/po/gd.po	2026-09-09 02:25:30.014134669 +0300
+--- gnome-initial-setup-50.0.orig/po/gd.po	2026-09-09 12:28:29.887793832 +0300
++++ gnome-initial-setup-50.0/po/gd.po	2026-09-09 12:30:36.811795295 +0300
 @@ -7,80 +7,99 @@
  "Project-Id-Version: gnome-initial-setup gnome-3-20\n"
  "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
@@ -50255,7 +50255,7 @@ Index: gnome-initial-setup-50.0/po/gd.po
 -"POT-Creation-Date: 2018-04-12 03:36+0000\n"
 -"PO-Revision-Date: 2018-04-21 09:07+0100\n"
 -"Last-Translator: GunChleoc <fios@foramnagaidhlig.net>\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2026-04-14 01:47+0000\n"
 +"Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
  "Language-Team: Fòram na Gàidhlig\n"
@@ -51883,8 +51883,8 @@ Index: gnome-initial-setup-50.0/po/gd.po
 +#~ msgstr "Seall a’ chiad aithisg"
 Index: gnome-initial-setup-50.0/po/gl.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/gl.po	2026-09-09 02:25:30.106134671 +0300
-+++ gnome-initial-setup-50.0/po/gl.po	2026-09-09 02:25:30.014134669 +0300
+--- gnome-initial-setup-50.0.orig/po/gl.po	2026-09-09 12:28:29.887793832 +0300
++++ gnome-initial-setup-50.0/po/gl.po	2026-09-09 12:30:36.827795295 +0300
 @@ -12,55 +12,75 @@
  msgstr ""
  "Project-Id-Version: gnome-initial-setup\n"
@@ -51894,7 +51894,7 @@ Index: gnome-initial-setup-50.0/po/gl.po
 -"PO-Revision-Date: 2026-02-17 23:50+0100\n"
 -"Last-Translator: Fran Dieguez <fran.dieguez@gnome.org>\n"
 +"issues\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2026-04-14 01:43+0000\n"
 +"Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
  "Language-Team: Galician <Proxecto Trasno <proxecto@trasno.gal>>\n"
@@ -52857,8 +52857,8 @@ Index: gnome-initial-setup-50.0/po/gl.po
 +#~ "aplicación de Preferencias."
 Index: gnome-initial-setup-50.0/po/gu.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/gu.po	2026-09-09 02:25:30.106134671 +0300
-+++ gnome-initial-setup-50.0/po/gu.po	2026-09-09 02:25:30.014134669 +0300
+--- gnome-initial-setup-50.0.orig/po/gu.po	2026-09-09 12:28:29.887793832 +0300
++++ gnome-initial-setup-50.0/po/gu.po	2026-09-09 12:30:36.839795295 +0300
 @@ -7,678 +7,1201 @@
  "Project-Id-Version: \n"
  "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
@@ -52866,7 +52866,7 @@ Index: gnome-initial-setup-50.0/po/gu.po
 -"POT-Creation-Date: 2014-08-31 18:53+0000\n"
 -"PO-Revision-Date: 2014-09-26 11:41+0530\n"
 -"Last-Translator: \n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2026-04-14 01:46+0000\n"
 +"Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
  "Language-Team: American English <kde-i18n-doc@kde.org>\n"
@@ -54466,8 +54466,8 @@ Index: gnome-initial-setup-50.0/po/gu.po
 +#~ msgstr "રદ કરો"
 Index: gnome-initial-setup-50.0/po/he.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/he.po	2026-09-09 02:25:30.106134671 +0300
-+++ gnome-initial-setup-50.0/po/he.po	2026-09-09 02:25:30.018134669 +0300
+--- gnome-initial-setup-50.0.orig/po/he.po	2026-09-09 12:28:29.887793832 +0300
++++ gnome-initial-setup-50.0/po/he.po	2026-09-09 12:30:36.855795295 +0300
 @@ -8,51 +8,70 @@
  msgstr ""
  "Project-Id-Version: gnome-initial-setup\n"
@@ -54477,7 +54477,7 @@ Index: gnome-initial-setup-50.0/po/he.po
 -"PO-Revision-Date: 2026-02-01 09:01+0200\n"
 -"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 +"issues\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2026-04-14 01:47+0000\n"
 +"Last-Translator: Yaron <sh.yaron@gmail.com>\n"
  "Language-Team: Hebrew\n"
@@ -55764,8 +55764,8 @@ Index: gnome-initial-setup-50.0/po/he.po
 +#~ "href='%2$s'>מדיניות פרטיות</a>)."
 Index: gnome-initial-setup-50.0/po/hi.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/hi.po	2026-09-09 02:25:30.106134671 +0300
-+++ gnome-initial-setup-50.0/po/hi.po	2026-09-09 02:25:30.018134669 +0300
+--- gnome-initial-setup-50.0.orig/po/hi.po	2026-09-09 12:28:29.887793832 +0300
++++ gnome-initial-setup-50.0/po/hi.po	2026-09-09 12:30:36.871795294 +0300
 @@ -10,50 +10,69 @@
  msgstr ""
  "Project-Id-Version: gnome-initial-setup master\n"
@@ -55775,7 +55775,7 @@ Index: gnome-initial-setup-50.0/po/hi.po
 -"PO-Revision-Date: 2024-07-27 13:59+0530\n"
 -"Last-Translator: Scrambled777 <weblate.scrambled777@simplelogin.com>\n"
 +"issues\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2026-04-14 01:47+0000\n"
 +"Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
  "Language-Team: Hindi <indlinux-hindi@lists.sourceforge.net>\n"
@@ -56887,15 +56887,15 @@ Index: gnome-initial-setup-50.0/po/hi.po
 +#~ msgstr "सेटिंग ऐप से किसी भी समय गोपनीयता नियंत्रणों को बदला जा सकता है।"
 Index: gnome-initial-setup-50.0/po/hr.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/hr.po	2026-09-09 02:25:30.106134671 +0300
-+++ gnome-initial-setup-50.0/po/hr.po	2026-09-09 02:25:30.022134669 +0300
+--- gnome-initial-setup-50.0.orig/po/hr.po	2026-09-09 12:28:29.887793832 +0300
++++ gnome-initial-setup-50.0/po/hr.po	2026-09-09 12:30:36.887795294 +0300
 @@ -8,74 +8,94 @@
  "Project-Id-Version: gnome-initial-setup gnome-3-24\n"
  "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
  "issues\n"
 -"POT-Creation-Date: 2022-08-27 20:13+0000\n"
 -"PO-Revision-Date: 2022-09-16 00:37+0200\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2026-04-14 01:43+0000\n"
  "Last-Translator: gogo <trebelnik2@gmail.com>\n"
  "Language-Team: Croatian <hr@li.org>\n"
@@ -58283,8 +58283,8 @@ Index: gnome-initial-setup-50.0/po/hr.po
 +#~ msgstr "You can change your mind later in Settings → Privacy → Diagnostics."
 Index: gnome-initial-setup-50.0/po/hu.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/hu.po	2026-09-09 02:25:30.106134671 +0300
-+++ gnome-initial-setup-50.0/po/hu.po	2026-09-09 02:25:30.022134669 +0300
+--- gnome-initial-setup-50.0.orig/po/hu.po	2026-09-09 12:28:29.887793832 +0300
++++ gnome-initial-setup-50.0/po/hu.po	2026-09-09 12:30:36.903795294 +0300
 @@ -8,50 +8,70 @@
  msgid ""
  msgstr ""
@@ -58296,7 +58296,7 @@ Index: gnome-initial-setup-50.0/po/hu.po
 -"Last-Translator: Balázs Úr <ur.balazs at fsf dot hu>\n"
 +"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
 +"issues\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2026-04-14 01:47+0000\n"
 +"Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
  "Language-Team: Hungarian <openscope at fsf dot hu>\n"
@@ -59228,7 +59228,7 @@ Index: gnome-initial-setup-50.0/po/hu.po
 Index: gnome-initial-setup-50.0/po/hy.po
 ===================================================================
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ gnome-initial-setup-50.0/po/hy.po	2026-09-09 02:25:30.026134669 +0300
++++ gnome-initial-setup-50.0/po/hy.po	2026-09-09 12:30:36.915795294 +0300
 @@ -0,0 +1,1204 @@
 +# Armenian translation for gnome-initial-setup
 +# Copyright (c) 2018 Rosetta Contributors and Canonical Ltd 2018
@@ -59240,7 +59240,7 @@ Index: gnome-initial-setup-50.0/po/hy.po
 +"Project-Id-Version: gnome-initial-setup\n"
 +"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
 +"issues\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2018-10-21 13:10+0000\n"
 +"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 +"Language-Team: Armenian <hy@li.org>\n"
@@ -60436,8 +60436,8 @@ Index: gnome-initial-setup-50.0/po/hy.po
 +msgstr ""
 Index: gnome-initial-setup-50.0/po/ia.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/ia.po	2026-09-09 02:25:30.106134671 +0300
-+++ gnome-initial-setup-50.0/po/ia.po	2026-09-09 02:25:30.026134669 +0300
+--- gnome-initial-setup-50.0.orig/po/ia.po	2026-09-09 12:28:29.887793832 +0300
++++ gnome-initial-setup-50.0/po/ia.po	2026-09-09 12:30:36.931795293 +0300
 @@ -8,82 +8,100 @@
  msgstr ""
  "Project-Id-Version: gnome-initial-setup master\n"
@@ -60447,7 +60447,7 @@ Index: gnome-initial-setup-50.0/po/ia.po
 -"PO-Revision-Date: 2025-09-13 08:09-0300\n"
 -"Last-Translator: Emilio Sepúlveda <emism.translations@gmail.com>\n"
 +"issues\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2026-05-13 12:27+0000\n"
 +"Last-Translator: karm <melo@carmu.com>\n"
  "Language-Team: Interlingua <softinterlingua@gmail.com>\n"
@@ -61940,8 +61940,8 @@ Index: gnome-initial-setup-50.0/po/ia.po
 +#~ "software e de actualisation"
 Index: gnome-initial-setup-50.0/po/id.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/id.po	2026-09-09 02:25:30.106134671 +0300
-+++ gnome-initial-setup-50.0/po/id.po	2026-09-09 02:25:30.030134669 +0300
+--- gnome-initial-setup-50.0.orig/po/id.po	2026-09-09 12:28:29.887793832 +0300
++++ gnome-initial-setup-50.0/po/id.po	2026-09-09 12:30:36.947795293 +0300
 @@ -10,49 +10,69 @@
  msgstr ""
  "Project-Id-Version: gnome-initial-setup master\n"
@@ -61951,7 +61951,7 @@ Index: gnome-initial-setup-50.0/po/id.po
 -"PO-Revision-Date: 2026-01-18 18:10+0700\n"
 -"Last-Translator: Ega Natha <ega8642@gmail.com>\n"
 +"issues\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2026-04-14 01:43+0000\n"
 +"Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
  "Language-Team: Indonesian\n"
@@ -62888,15 +62888,15 @@ Index: gnome-initial-setup-50.0/po/id.po
 +#~ msgstr "Tidak bisa mengunduh pak bahasa tambahan"
 Index: gnome-initial-setup-50.0/po/ie.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/ie.po	2026-09-09 02:25:30.106134671 +0300
-+++ gnome-initial-setup-50.0/po/ie.po	2026-09-09 02:25:30.030134669 +0300
+--- gnome-initial-setup-50.0.orig/po/ie.po	2026-09-09 12:28:29.887793832 +0300
++++ gnome-initial-setup-50.0/po/ie.po	2026-09-09 12:30:36.959795293 +0300
 @@ -8,75 +8,94 @@
  "Project-Id-Version: \n"
  "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
  "issues\n"
 -"POT-Creation-Date: 2022-12-18 18:51+0700\n"
 -"PO-Revision-Date: 2022-12-18 19:17+0700\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2023-02-24 02:03+0000\n"
 +"Last-Translator: Silvara <Unknown>\n"
  "Language-Team: \n"
@@ -64148,8 +64148,8 @@ Index: gnome-initial-setup-50.0/po/ie.po
 +msgstr ""
 Index: gnome-initial-setup-50.0/po/is.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/is.po	2026-09-09 02:25:30.106134671 +0300
-+++ gnome-initial-setup-50.0/po/is.po	2026-09-09 02:25:30.034134669 +0300
+--- gnome-initial-setup-50.0.orig/po/is.po	2026-09-09 12:28:29.887793832 +0300
++++ gnome-initial-setup-50.0/po/is.po	2026-09-09 12:30:36.975795293 +0300
 @@ -5,66 +5,90 @@
  msgid ""
  msgstr ""
@@ -64160,7 +64160,7 @@ Index: gnome-initial-setup-50.0/po/is.po
 -"PO-Revision-Date: 2023-06-18 09:39+0000\n"
 +"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
 +"issues\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2026-04-14 01:46+0000\n"
  "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
  "Language-Team: Icelandic\n"
@@ -65525,8 +65525,8 @@ Index: gnome-initial-setup-50.0/po/is.po
 +#~ msgstr "Hætta við"
 Index: gnome-initial-setup-50.0/po/it.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/it.po	2026-09-09 02:25:30.106134671 +0300
-+++ gnome-initial-setup-50.0/po/it.po	2026-09-09 02:25:30.034134669 +0300
+--- gnome-initial-setup-50.0.orig/po/it.po	2026-09-09 12:28:29.887793832 +0300
++++ gnome-initial-setup-50.0/po/it.po	2026-09-09 12:30:36.995795292 +0300
 @@ -10,55 +10,74 @@
  msgstr ""
  "Project-Id-Version: gnome-initial-setup\n"
@@ -65536,7 +65536,7 @@ Index: gnome-initial-setup-50.0/po/it.po
 -"PO-Revision-Date: 2024-02-28 14:36+0100\n"
 -"Last-Translator: Milo Casagrande <milo@milo.name>\n"
 +"issues\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2026-04-14 01:46+0000\n"
 +"Last-Translator: Milo Casagrande <milo.casagrande@gmail.com>\n"
  "Language-Team: Italian <gnome-it-list@gnome.org>\n"
@@ -66778,8 +66778,8 @@ Index: gnome-initial-setup-50.0/po/it.po
 +#~ msgstr "Impossibile scaricare pacchetti di lingue aggiuntivi"
 Index: gnome-initial-setup-50.0/po/ja.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/ja.po	2026-09-09 02:25:30.106134671 +0300
-+++ gnome-initial-setup-50.0/po/ja.po	2026-09-09 02:25:30.034134669 +0300
+--- gnome-initial-setup-50.0.orig/po/ja.po	2026-09-09 12:28:29.887793832 +0300
++++ gnome-initial-setup-50.0/po/ja.po	2026-09-09 12:30:37.015795292 +0300
 @@ -13,48 +13,69 @@
  msgstr ""
  "Project-Id-Version: gnome-initial-setup master\n"
@@ -66789,7 +66789,7 @@ Index: gnome-initial-setup-50.0/po/ja.po
 -"PO-Revision-Date: 2026-03-04 22:00+0900\n"
 -"Last-Translator: 小山田 純 <oyamadajun@outlook.jp>\n"
 +"issues\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2026-04-14 01:46+0000\n"
 +"Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
  "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
@@ -67832,8 +67832,8 @@ Index: gnome-initial-setup-50.0/po/ja.po
 +#~ msgstr "プライバシーの設定は、「設定」アプリからいつでも変更できます。"
 Index: gnome-initial-setup-50.0/po/ka.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/ka.po	2026-09-09 02:25:30.106134671 +0300
-+++ gnome-initial-setup-50.0/po/ka.po	2026-09-09 02:25:30.038134670 +0300
+--- gnome-initial-setup-50.0.orig/po/ka.po	2026-09-09 12:28:29.887793832 +0300
++++ gnome-initial-setup-50.0/po/ka.po	2026-09-09 12:30:37.031795292 +0300
 @@ -7,49 +7,69 @@
  msgstr ""
  "Project-Id-Version: gnome-initial-setup\n"
@@ -67843,7 +67843,7 @@ Index: gnome-initial-setup-50.0/po/ka.po
 -"PO-Revision-Date: 2026-01-10 03:01+0100\n"
 -"Last-Translator: Ekaterine Papava <papava.e@gtu.ge>\n"
 +"issues\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2026-04-14 01:47+0000\n"
 +"Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
  "Language-Team: Georgian <(nothing)>\n"
@@ -68716,8 +68716,8 @@ Index: gnome-initial-setup-50.0/po/ka.po
 +#~ "მორგების აპიდან."
 Index: gnome-initial-setup-50.0/po/kab.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/kab.po	2026-09-09 02:25:30.106134671 +0300
-+++ gnome-initial-setup-50.0/po/kab.po	2026-09-09 02:25:30.038134670 +0300
+--- gnome-initial-setup-50.0.orig/po/kab.po	2026-09-09 12:28:29.887793832 +0300
++++ gnome-initial-setup-50.0/po/kab.po	2026-09-09 12:30:37.043795292 +0300
 @@ -8,55 +8,74 @@
  msgstr ""
  "Project-Id-Version: gnome-initial-setup master\n"
@@ -68727,7 +68727,7 @@ Index: gnome-initial-setup-50.0/po/kab.po
 -"PO-Revision-Date: 2024-03-20 02:06+0100\n"
 -"Last-Translator: sa\n"
 +"issues\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2026-04-14 01:42+0000\n"
 +"Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
  "Language-Team: Kabyle <>\n"
@@ -69799,8 +69799,8 @@ Index: gnome-initial-setup-50.0/po/kab.po
 +#~ "usnas n yiɣewwaren."
 Index: gnome-initial-setup-50.0/po/kk.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/kk.po	2026-09-09 02:25:30.106134671 +0300
-+++ gnome-initial-setup-50.0/po/kk.po	2026-09-09 02:25:30.038134670 +0300
+--- gnome-initial-setup-50.0.orig/po/kk.po	2026-09-09 12:28:29.887793832 +0300
++++ gnome-initial-setup-50.0/po/kk.po	2026-09-09 12:30:37.059795291 +0300
 @@ -7,50 +7,71 @@
  msgstr ""
  "Project-Id-Version: gnome-initial-setup master\n"
@@ -69810,7 +69810,7 @@ Index: gnome-initial-setup-50.0/po/kk.po
 -"PO-Revision-Date: 2026-01-09 23:07+0500\n"
 -"Last-Translator: Baurzhan Muftakhidinov <baurthefirst@gmail.com>\n"
 +"issues\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2026-04-14 01:46+0000\n"
 +"Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
  "Language-Team: Kazakh <kk@li.org>\n"
@@ -71468,8 +71468,8 @@ Index: gnome-initial-setup-50.0/po/kk.po
 +#~ "қолданбасы арқылы іске қоса аласыз"
 Index: gnome-initial-setup-50.0/po/kn.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/kn.po	2026-09-09 02:25:30.106134671 +0300
-+++ gnome-initial-setup-50.0/po/kn.po	2026-09-09 02:25:30.042134670 +0300
+--- gnome-initial-setup-50.0.orig/po/kn.po	2026-09-09 12:28:29.887793832 +0300
++++ gnome-initial-setup-50.0/po/kn.po	2026-09-09 12:30:37.071795291 +0300
 @@ -9,690 +9,1201 @@
  "Project-Id-Version: gnome-initial-setup master\n"
  "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
@@ -71477,7 +71477,7 @@ Index: gnome-initial-setup-50.0/po/kn.po
 -"POT-Creation-Date: 2014-09-02 06:53+0000\n"
 -"PO-Revision-Date: 2014-09-17 14:01+0530\n"
 -"Last-Translator: Shankar Prasad <svenkate AT redhat Dot com>\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2026-04-14 01:43+0000\n"
 +"Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
  "Language-Team: Kannada <kde-i18n-doc@kde.org>\n"
@@ -73080,8 +73080,8 @@ Index: gnome-initial-setup-50.0/po/kn.po
 +#~ msgstr "ರದ್ದುಗೊಳಿಸು"
 Index: gnome-initial-setup-50.0/po/ko.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/ko.po	2026-09-09 02:25:30.106134671 +0300
-+++ gnome-initial-setup-50.0/po/ko.po	2026-09-09 02:25:30.042134670 +0300
+--- gnome-initial-setup-50.0.orig/po/ko.po	2026-09-09 12:28:29.887793832 +0300
++++ gnome-initial-setup-50.0/po/ko.po	2026-09-09 12:30:37.087795291 +0300
 @@ -8,55 +8,75 @@
  msgstr ""
  "Project-Id-Version: gnome-initial-setup master\n"
@@ -73091,7 +73091,7 @@ Index: gnome-initial-setup-50.0/po/ko.po
 -"PO-Revision-Date: 2026-02-22 21:58+0900\n"
 -"Last-Translator: Seong-ho Cho <shcho@gnome.org>\n"
 +"issues\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2026-04-14 01:46+0000\n"
 +"Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
  "Language-Team: 한국어 <gnome-kr@googlegroups.com>\n"
@@ -74173,7 +74173,7 @@ Index: gnome-initial-setup-50.0/po/ko.po
 Index: gnome-initial-setup-50.0/po/ku.po
 ===================================================================
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ gnome-initial-setup-50.0/po/ku.po	2026-09-09 02:25:30.042134670 +0300
++++ gnome-initial-setup-50.0/po/ku.po	2026-09-09 12:30:37.107795291 +0300
 @@ -0,0 +1,1256 @@
 +# Kurdish translation for gnome-initial-setup
 +# Copyright (c) 2018 Rosetta Contributors and Canonical Ltd 2018
@@ -74185,7 +74185,7 @@ Index: gnome-initial-setup-50.0/po/ku.po
 +"Project-Id-Version: gnome-initial-setup\n"
 +"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
 +"issues\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2018-08-16 21:16+0000\n"
 +"Last-Translator: Bikarhêner <kaya6491@gmail.com>\n"
 +"Language-Team: Kurdish <ku@li.org>\n"
@@ -75434,7 +75434,7 @@ Index: gnome-initial-setup-50.0/po/ku.po
 Index: gnome-initial-setup-50.0/po/kw.po
 ===================================================================
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ gnome-initial-setup-50.0/po/kw.po	2026-09-09 02:25:30.042134670 +0300
++++ gnome-initial-setup-50.0/po/kw.po	2026-09-09 12:30:37.123795290 +0300
 @@ -0,0 +1,1229 @@
 +# Cornish translation for gnome-initial-setup
 +# Copyright (c) 2019 Rosetta Contributors and Canonical Ltd 2019
@@ -75446,7 +75446,7 @@ Index: gnome-initial-setup-50.0/po/kw.po
 +"Project-Id-Version: gnome-initial-setup\n"
 +"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
 +"issues\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2019-09-17 03:24+0000\n"
 +"Last-Translator: Nicky Rowe <Unknown>\n"
 +"Language-Team: Cornish <kw@li.org>\n"
@@ -76668,7 +76668,7 @@ Index: gnome-initial-setup-50.0/po/kw.po
 Index: gnome-initial-setup-50.0/po/lld.po
 ===================================================================
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ gnome-initial-setup-50.0/po/lld.po	2026-09-09 02:25:30.042134670 +0300
++++ gnome-initial-setup-50.0/po/lld.po	2026-09-09 12:30:37.139795290 +0300
 @@ -0,0 +1,1216 @@
 +# Ladin translation for gnome-initial-setup
 +# Copyright (c) 2023 Rosetta Contributors and Canonical Ltd 2023
@@ -76680,7 +76680,7 @@ Index: gnome-initial-setup-50.0/po/lld.po
 +"Project-Id-Version: gnome-initial-setup\n"
 +"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
 +"issues\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2023-10-30 17:09+0000\n"
 +"Last-Translator: Jack <Unknown>\n"
 +"Language-Team: Ladin <lld@li.org>\n"
@@ -77888,8 +77888,8 @@ Index: gnome-initial-setup-50.0/po/lld.po
 +msgstr ""
 Index: gnome-initial-setup-50.0/po/lt.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/lt.po	2026-09-09 02:25:30.106134671 +0300
-+++ gnome-initial-setup-50.0/po/lt.po	2026-09-09 02:25:30.046134670 +0300
+--- gnome-initial-setup-50.0.orig/po/lt.po	2026-09-09 12:28:29.887793832 +0300
++++ gnome-initial-setup-50.0/po/lt.po	2026-09-09 12:30:37.155795290 +0300
 @@ -7,50 +7,69 @@
  msgstr ""
  "Project-Id-Version: gnome-initial-setup master\n"
@@ -77899,7 +77899,7 @@ Index: gnome-initial-setup-50.0/po/lt.po
 -"PO-Revision-Date: 2026-01-10 17:29+0200\n"
 -"Last-Translator: Aurimas Černius <aurimas.cernius@mailo.com>\n"
 +"issues\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2026-04-14 01:47+0000\n"
 +"Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
  "Language-Team: Lietuvių <gnome-lt@lists.akl.lt>\n"
@@ -79028,8 +79028,8 @@ Index: gnome-initial-setup-50.0/po/lt.po
 +#~ "kada."
 Index: gnome-initial-setup-50.0/po/lv.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/lv.po	2026-09-09 02:25:30.106134671 +0300
-+++ gnome-initial-setup-50.0/po/lv.po	2026-09-09 02:25:30.046134670 +0300
+--- gnome-initial-setup-50.0.orig/po/lv.po	2026-09-09 12:28:29.887793832 +0300
++++ gnome-initial-setup-50.0/po/lv.po	2026-09-09 12:30:37.171795290 +0300
 @@ -7,52 +7,70 @@
  msgid ""
  msgstr ""
@@ -79041,7 +79041,7 @@ Index: gnome-initial-setup-50.0/po/lv.po
 -"Last-Translator: Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>\n"
 +"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
 +"issues\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2026-04-14 01:43+0000\n"
 +"Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
  "Language-Team: Latvian <lata-l10n@googlegroups.com>\n"
@@ -80310,8 +80310,8 @@ Index: gnome-initial-setup-50.0/po/lv.po
 +#~ "atjauninājumus"
 Index: gnome-initial-setup-50.0/po/mjw.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/mjw.po	2026-09-09 02:25:30.106134671 +0300
-+++ gnome-initial-setup-50.0/po/mjw.po	2026-09-09 02:25:30.046134670 +0300
+--- gnome-initial-setup-50.0.orig/po/mjw.po	2026-09-09 12:28:29.887793832 +0300
++++ gnome-initial-setup-50.0/po/mjw.po	2026-09-09 12:30:37.183795290 +0300
 @@ -8,169 +8,212 @@
  "Project-Id-Version: gnome-initial-setup master\n"
  "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
@@ -80319,7 +80319,7 @@ Index: gnome-initial-setup-50.0/po/mjw.po
 -"POT-Creation-Date: 2020-02-22 14:48+0000\n"
 -"PO-Revision-Date: 2020-02-22 22:12+0530\n"
 -"Last-Translator: Jor Teron <jor.teron@gmail.com>\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2020-03-12 21:42+0000\n"
 +"Last-Translator: J T <Unknown>\n"
  "Language-Team: Karbi <karbi.translation@gmail.com>\n"
@@ -81576,8 +81576,8 @@ Index: gnome-initial-setup-50.0/po/mjw.po
 +msgstr ""
 Index: gnome-initial-setup-50.0/po/ml.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/ml.po	2026-09-09 02:25:30.106134671 +0300
-+++ gnome-initial-setup-50.0/po/ml.po	2026-09-09 02:25:30.046134670 +0300
+--- gnome-initial-setup-50.0.orig/po/ml.po	2026-09-09 12:28:29.887793832 +0300
++++ gnome-initial-setup-50.0/po/ml.po	2026-09-09 12:30:37.199795289 +0300
 @@ -8,174 +8,235 @@
  msgid ""
  msgstr ""
@@ -81588,7 +81588,7 @@ Index: gnome-initial-setup-50.0/po/ml.po
 -"Last-Translator: apeter <apeter@redhat.com>\n"
 +"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
 +"issues\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2026-04-14 01:42+0000\n"
 +"Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
  "Language-Team: Swatantra Malayalam Computing\n"
@@ -83137,7 +83137,7 @@ Index: gnome-initial-setup-50.0/po/ml.po
 Index: gnome-initial-setup-50.0/po/mnw.po
 ===================================================================
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ gnome-initial-setup-50.0/po/mnw.po	2026-09-09 02:25:30.050134670 +0300
++++ gnome-initial-setup-50.0/po/mnw.po	2026-09-09 12:30:37.211795289 +0300
 @@ -0,0 +1,1231 @@
 +# Mon translation for gnome-initial-setup
 +# Copyright (c) 2019 Rosetta Contributors and Canonical Ltd 2019
@@ -83149,7 +83149,7 @@ Index: gnome-initial-setup-50.0/po/mnw.po
 +"Project-Id-Version: gnome-initial-setup\n"
 +"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
 +"issues\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2023-05-24 03:14+0000\n"
 +"Last-Translator: Tao Mon Lae <Unknown>\n"
 +"Language-Team: Mon <mnw@li.org>\n"
@@ -84372,8 +84372,8 @@ Index: gnome-initial-setup-50.0/po/mnw.po
 +#~ "ပရေၚ်ပလေဝ်လဝ်တံဂှ် မၞးကလေၚ်ပြံၚ်ကေတ် ပ္ဍဲ  Settings - Privacy - Diagnostics တေံဂွံရ။"
 Index: gnome-initial-setup-50.0/po/mr.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/mr.po	2026-09-09 02:25:30.106134671 +0300
-+++ gnome-initial-setup-50.0/po/mr.po	2026-09-09 02:25:30.050134670 +0300
+--- gnome-initial-setup-50.0.orig/po/mr.po	2026-09-09 12:28:29.887793832 +0300
++++ gnome-initial-setup-50.0/po/mr.po	2026-09-09 12:30:37.223795289 +0300
 @@ -8,736 +8,1202 @@
  "Project-Id-Version: gnome-initial-setup master\n"
  "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
@@ -84381,7 +84381,7 @@ Index: gnome-initial-setup-50.0/po/mr.po
 -"POT-Creation-Date: 2014-09-16 18:53+0000\n"
 -"PO-Revision-Date: 2014-09-17 12:36+0530\n"
 -"Last-Translator: Sandeep Shedmake <sshedmak@redhat.com>\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2026-04-14 01:42+0000\n"
 +"Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
  "Language-Team: Marathi <kde-i18n-doc@kde.org>\n"
@@ -86021,15 +86021,15 @@ Index: gnome-initial-setup-50.0/po/mr.po
 +#~ msgstr "रद्द करा"
 Index: gnome-initial-setup-50.0/po/ms.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/ms.po	2026-09-09 02:25:30.106134671 +0300
-+++ gnome-initial-setup-50.0/po/ms.po	2026-09-09 02:25:30.050134670 +0300
+--- gnome-initial-setup-50.0.orig/po/ms.po	2026-09-09 12:28:29.887793832 +0300
++++ gnome-initial-setup-50.0/po/ms.po	2026-09-09 12:30:37.235795289 +0300
 @@ -8,75 +8,96 @@
  "Project-Id-Version: gnome-initial-setup master\n"
  "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
  "issues\n"
 -"POT-Creation-Date: 2020-01-26 17:22+0000\n"
 -"PO-Revision-Date: 2020-01-27 17:41+0800\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2022-02-16 06:14+0000\n"
 +"Last-Translator: Ahmed Noor Kader Mustajir Md Eusoff <Unknown>\n"
  "Language-Team: Pasukan Terjemahan GNOME Malaysia\n"
@@ -87285,7 +87285,7 @@ Index: gnome-initial-setup-50.0/po/ms.po
 Index: gnome-initial-setup-50.0/po/my.po
 ===================================================================
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ gnome-initial-setup-50.0/po/my.po	2026-09-09 02:25:30.050134670 +0300
++++ gnome-initial-setup-50.0/po/my.po	2026-09-09 12:30:37.255795288 +0300
 @@ -0,0 +1,1381 @@
 +# Burmese translation for gnome-initial-setup
 +# Copyright (c) 2020 Rosetta Contributors and Canonical Ltd 2020
@@ -87297,7 +87297,7 @@ Index: gnome-initial-setup-50.0/po/my.po
 +"Project-Id-Version: gnome-initial-setup\n"
 +"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
 +"issues\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2026-04-11 14:53+0000\n"
 +"Last-Translator: Wint Theingi Aung <Unknown>\n"
 +"Language-Team: Burmese <my@li.org>\n"
@@ -88670,8 +88670,8 @@ Index: gnome-initial-setup-50.0/po/my.po
 +#~ msgstr "နောက်ထပ် ဘာသာစကားအစုံကို ဒေါင်းလုဒ်လုပ်၍မရပါ။"
 Index: gnome-initial-setup-50.0/po/nb.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/nb.po	2026-09-09 02:25:30.106134671 +0300
-+++ gnome-initial-setup-50.0/po/nb.po	2026-09-09 02:25:30.050134670 +0300
+--- gnome-initial-setup-50.0.orig/po/nb.po	2026-09-09 12:28:29.887793832 +0300
++++ gnome-initial-setup-50.0/po/nb.po	2026-09-09 12:30:37.271795288 +0300
 @@ -6,48 +6,70 @@
  msgid ""
  msgstr ""
@@ -88682,7 +88682,7 @@ Index: gnome-initial-setup-50.0/po/nb.po
 -"Last-Translator: Kjartan Maraas <kjartan.maraas@gmail.com>\n"
 +"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
 +"issues\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2026-04-14 01:46+0000\n"
 +"Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
  "Language-Team: \n"
@@ -89580,8 +89580,8 @@ Index: gnome-initial-setup-50.0/po/nb.po
 +#~ msgstr "Personverninnstillinger kan endres når som helst fra Innstillinger."
 Index: gnome-initial-setup-50.0/po/ne.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/ne.po	2026-09-09 02:25:30.106134671 +0300
-+++ gnome-initial-setup-50.0/po/ne.po	2026-09-09 02:25:30.054134670 +0300
+--- gnome-initial-setup-50.0.orig/po/ne.po	2026-09-09 12:28:29.887793832 +0300
++++ gnome-initial-setup-50.0/po/ne.po	2026-09-09 12:30:37.283795288 +0300
 @@ -8,68 +8,89 @@
  "Project-Id-Version: Gnome Nepali Translation Project\n"
  "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
@@ -89589,7 +89589,7 @@ Index: gnome-initial-setup-50.0/po/ne.po
 -"POT-Creation-Date: 2022-08-26 20:46+0000\n"
 -"PO-Revision-Date: 2022-09-22 15:40+0545\n"
 -"Last-Translator: Pawan Chitrakar <chautari@gmail.com>\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2026-04-14 01:46+0000\n"
 +"Last-Translator: chautari <pchitrakar@gmail.com>\n"
  "Language-Team: Nepali Translation Team <chautari@gmail.com>\n"
@@ -90864,8 +90864,8 @@ Index: gnome-initial-setup-50.0/po/ne.po
 +#~ msgstr "_रद्द"
 Index: gnome-initial-setup-50.0/po/nl.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/nl.po	2026-09-09 02:25:30.106134671 +0300
-+++ gnome-initial-setup-50.0/po/nl.po	2026-09-09 02:25:30.054134670 +0300
+--- gnome-initial-setup-50.0.orig/po/nl.po	2026-09-09 12:28:29.887793832 +0300
++++ gnome-initial-setup-50.0/po/nl.po	2026-09-09 12:30:37.299795288 +0300
 @@ -12,50 +12,70 @@
  msgstr ""
  "Project-Id-Version: gnome-initial-setup\n"
@@ -90875,7 +90875,7 @@ Index: gnome-initial-setup-50.0/po/nl.po
 -"PO-Revision-Date: 2025-09-09 19:16+0200\n"
 -"Last-Translator: Nathan Follens <nfollens@gnome.org>\n"
 +"issues\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2026-04-19 17:17+0000\n"
 +"Last-Translator: Pjotr12345 <Unknown>\n"
  "Language-Team: GNOME-NL https://matrix.to/#/#nl:gnome.org\n"
@@ -92096,8 +92096,8 @@ Index: gnome-initial-setup-50.0/po/nl.po
 +#~ "U kunt dit later alsnog veranderen via  Instellingen → Privacy → Diagnose."
 Index: gnome-initial-setup-50.0/po/nn.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/nn.po	2026-09-09 02:25:30.106134671 +0300
-+++ gnome-initial-setup-50.0/po/nn.po	2026-09-09 02:25:30.054134670 +0300
+--- gnome-initial-setup-50.0.orig/po/nn.po	2026-09-09 12:28:29.887793832 +0300
++++ gnome-initial-setup-50.0/po/nn.po	2026-09-09 12:30:37.311795288 +0300
 @@ -7,49 +7,69 @@
  msgstr ""
  "Project-Id-Version: gnome-initial-setup master\n"
@@ -92107,7 +92107,7 @@ Index: gnome-initial-setup-50.0/po/nn.po
 -"PO-Revision-Date: 2025-08-23 02:18+0200\n"
 -"Last-Translator: Sunniva Løvstad <sunniva@turtle.garden>\n"
 +"issues\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2026-04-14 01:47+0000\n"
 +"Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
  "Language-Team: Norwegian Nynorsk <nn@li.org>\n"
@@ -93042,8 +93042,8 @@ Index: gnome-initial-setup-50.0/po/nn.po
 +#~ "Personvernsinnstillingar kan verta brigda når som helst frå Innstillingar."
 Index: gnome-initial-setup-50.0/po/oc.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/oc.po	2026-09-09 02:25:30.106134671 +0300
-+++ gnome-initial-setup-50.0/po/oc.po	2026-09-09 02:25:30.054134670 +0300
+--- gnome-initial-setup-50.0.orig/po/oc.po	2026-09-09 12:28:29.887793832 +0300
++++ gnome-initial-setup-50.0/po/oc.po	2026-09-09 12:30:37.327795287 +0300
 @@ -6,50 +6,70 @@
  msgstr ""
  "Project-Id-Version: gnome-initial-setup\n"
@@ -93053,7 +93053,7 @@ Index: gnome-initial-setup-50.0/po/oc.po
 -"PO-Revision-Date: 2026-01-10 17:02+0100\n"
 -"Last-Translator: Quentin PAGÈS\n"
 +"issues\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2026-04-14 01:44+0000\n"
 +"Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
  "Language-Team: Tot En Òc\n"
@@ -94315,8 +94315,8 @@ Index: gnome-initial-setup-50.0/po/oc.po
 +#~ "Mesas a jorn"
 Index: gnome-initial-setup-50.0/po/or.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/or.po	2026-09-09 02:25:30.106134671 +0300
-+++ gnome-initial-setup-50.0/po/or.po	2026-09-09 02:25:30.058134670 +0300
+--- gnome-initial-setup-50.0.orig/po/or.po	2026-09-09 12:28:29.887793832 +0300
++++ gnome-initial-setup-50.0/po/or.po	2026-09-09 12:30:37.343795287 +0300
 @@ -7,683 +7,1201 @@
  "Project-Id-Version: \n"
  "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
@@ -94324,7 +94324,7 @@ Index: gnome-initial-setup-50.0/po/or.po
 -"POT-Creation-Date: 2014-09-12 06:51+0000\n"
 -"PO-Revision-Date: 2014-09-12 18:22+0530\n"
 -"Last-Translator: Manoj Kumar Giri <mgiri@redhat.com>\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2026-04-14 01:46+0000\n"
 +"Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
  "Language-Team: Oriya <oriya-it@googlegroups.com>\n"
@@ -95927,8 +95927,8 @@ Index: gnome-initial-setup-50.0/po/or.po
 +#~ msgstr "ବାତିଲ"
 Index: gnome-initial-setup-50.0/po/pa.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/pa.po	2026-09-09 02:25:30.106134671 +0300
-+++ gnome-initial-setup-50.0/po/pa.po	2026-09-09 02:25:30.058134670 +0300
+--- gnome-initial-setup-50.0.orig/po/pa.po	2026-09-09 12:28:29.887793832 +0300
++++ gnome-initial-setup-50.0/po/pa.po	2026-09-09 12:30:37.359795287 +0300
 @@ -5,51 +5,70 @@
  msgid ""
  msgstr ""
@@ -95940,7 +95940,7 @@ Index: gnome-initial-setup-50.0/po/pa.po
 -"Last-Translator: A S Alam <aalam@punlinux.org>\n"
 +"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
 +"issues\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2026-04-14 01:47+0000\n"
 +"Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
  "Language-Team: Punjabi <punjabi-users@list.sf.net>\n"
@@ -97514,8 +97514,8 @@ Index: gnome-initial-setup-50.0/po/pa.po
 +#~ msgstr "ਜੇ ਤੁਹਾਡਾ ਵਿਚਾਰ ਬਦਲਿਆ ਤਾਂ ਸੈਟਿੰਗਾਂ → ਪਰਦੇਦਾਰੀ → ਨਿਦਾਨ ਵਿੱਚ ਬਦਲੋ"
 Index: gnome-initial-setup-50.0/po/pl.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/pl.po	2026-09-09 02:25:30.106134671 +0300
-+++ gnome-initial-setup-50.0/po/pl.po	2026-09-09 02:25:30.058134670 +0300
+--- gnome-initial-setup-50.0.orig/po/pl.po	2026-09-09 12:28:29.887793832 +0300
++++ gnome-initial-setup-50.0/po/pl.po	2026-09-09 12:30:37.371795287 +0300
 @@ -9,50 +9,69 @@
  msgstr ""
  "Project-Id-Version: gnome-initial-setup\n"
@@ -97525,7 +97525,7 @@ Index: gnome-initial-setup-50.0/po/pl.po
 -"PO-Revision-Date: 2026-03-06 22:52+0100\n"
 -"Last-Translator: Victoria <royal.victoria@proton.me>\n"
 +"issues\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2026-04-14 01:42+0000\n"
 +"Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
  "Language-Team: Polish\n"
@@ -98473,7 +98473,7 @@ Index: gnome-initial-setup-50.0/po/pl.po
 Index: gnome-initial-setup-50.0/po/ps.po
 ===================================================================
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ gnome-initial-setup-50.0/po/ps.po	2026-09-09 02:25:30.058134670 +0300
++++ gnome-initial-setup-50.0/po/ps.po	2026-09-09 12:30:37.387795286 +0300
 @@ -0,0 +1,1214 @@
 +# Pashto translation for gnome-initial-setup
 +# Copyright (c) 2023 Rosetta Contributors and Canonical Ltd 2023
@@ -98485,7 +98485,7 @@ Index: gnome-initial-setup-50.0/po/ps.po
 +"Project-Id-Version: gnome-initial-setup\n"
 +"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
 +"issues\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2023-01-26 12:55+0000\n"
 +"Last-Translator: Mohammad Asim Ayub <Unknown>\n"
 +"Language-Team: Pashto <ps@li.org>\n"
@@ -99691,8 +99691,8 @@ Index: gnome-initial-setup-50.0/po/ps.po
 +msgstr ""
 Index: gnome-initial-setup-50.0/po/pt.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/pt.po	2026-09-09 02:25:30.106134671 +0300
-+++ gnome-initial-setup-50.0/po/pt.po	2026-09-09 02:25:30.062134670 +0300
+--- gnome-initial-setup-50.0.orig/po/pt.po	2026-09-09 12:28:29.887793832 +0300
++++ gnome-initial-setup-50.0/po/pt.po	2026-09-09 12:30:37.403795286 +0300
 @@ -14,50 +14,70 @@
  msgstr ""
  "Project-Id-Version: 3.12\n"
@@ -99702,7 +99702,7 @@ Index: gnome-initial-setup-50.0/po/pt.po
 -"PO-Revision-Date: 2026-01-12 11:34+0000\n"
 -"Last-Translator: hugokarvalho@hotmail.com <Hugo Carvalho>\n"
 +"issues\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2026-04-14 01:46+0000\n"
 +"Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
  "Language-Team: Portuguese (https://l10n.gnome.org/teams/pt/)\n"
@@ -101116,8 +101116,8 @@ Index: gnome-initial-setup-50.0/po/pt.po
 +#~ msgstr "Não foi possível transferir pacotes de idiomas adicionais"
 Index: gnome-initial-setup-50.0/po/pt_BR.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/pt_BR.po	2026-09-09 02:25:30.106134671 +0300
-+++ gnome-initial-setup-50.0/po/pt_BR.po	2026-09-09 02:25:30.062134670 +0300
+--- gnome-initial-setup-50.0.orig/po/pt_BR.po	2026-09-09 12:28:29.887793832 +0300
++++ gnome-initial-setup-50.0/po/pt_BR.po	2026-09-09 12:30:37.423795286 +0300
 @@ -17,17 +17,17 @@
  msgstr ""
  "Project-Id-Version: gnome-initial-setup master\n"
@@ -101127,7 +101127,7 @@ Index: gnome-initial-setup-50.0/po/pt_BR.po
 -"PO-Revision-Date: 2026-01-20 13:52-0300\n"
 -"Last-Translator: Rafael Fontenelle <rafaelff@gnome.org>\n"
 +"issues\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2026-04-14 01:47+0000\n"
 +"Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
  "Language-Team: Brazilian Portuguese <https://br.gnome.org/traducao>\n"
@@ -102354,8 +102354,8 @@ Index: gnome-initial-setup-50.0/po/pt_BR.po
 +#~ "aplicativo Configurações."
 Index: gnome-initial-setup-50.0/po/ro.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/ro.po	2026-09-09 02:25:30.106134671 +0300
-+++ gnome-initial-setup-50.0/po/ro.po	2026-09-09 02:25:30.062134670 +0300
+--- gnome-initial-setup-50.0.orig/po/ro.po	2026-09-09 12:28:29.887793832 +0300
++++ gnome-initial-setup-50.0/po/ro.po	2026-09-09 12:30:37.439795286 +0300
 @@ -9,51 +9,70 @@
  msgstr ""
  "Project-Id-Version: gnome-initial-setup master\n"
@@ -102365,7 +102365,7 @@ Index: gnome-initial-setup-50.0/po/ro.po
 -"PO-Revision-Date: 2026-01-12 12:19+0100\n"
 -"Last-Translator: Antonio Marin <gnmer.6qxyg@slmail.me>\n"
 +"issues\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2026-04-14 01:47+0000\n"
 +"Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
  "Language-Team: Romanian <gnomero-list@lists.sourceforge.net>\n"
@@ -103162,8 +103162,8 @@ Index: gnome-initial-setup-50.0/po/ro.po
 +#~ "Preferințe."
 Index: gnome-initial-setup-50.0/po/ru.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/ru.po	2026-09-09 02:25:30.106134671 +0300
-+++ gnome-initial-setup-50.0/po/ru.po	2026-09-09 02:25:30.066134670 +0300
+--- gnome-initial-setup-50.0.orig/po/ru.po	2026-09-09 12:28:29.887793832 +0300
++++ gnome-initial-setup-50.0/po/ru.po	2026-09-09 12:30:37.459795285 +0300
 @@ -8,50 +8,69 @@
  msgstr ""
  "Project-Id-Version: gnome-initial-setup\n"
@@ -103173,7 +103173,7 @@ Index: gnome-initial-setup-50.0/po/ru.po
 -"PO-Revision-Date: 2026-01-10 19:16+0300\n"
 -"Last-Translator: Artur So <arturios2005@mail.ru>\n"
 +"issues\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2026-04-14 01:44+0000\n"
 +"Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
  "Language-Team: Русский <gnome-cyr@gnome.org>\n"
@@ -104183,7 +104183,7 @@ Index: gnome-initial-setup-50.0/po/ru.po
 Index: gnome-initial-setup-50.0/po/sd.po
 ===================================================================
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ gnome-initial-setup-50.0/po/sd.po	2026-09-09 02:25:30.066134670 +0300
++++ gnome-initial-setup-50.0/po/sd.po	2026-09-09 12:30:37.479795285 +0300
 @@ -0,0 +1,1202 @@
 +# Sindhi translation for gnome-initial-setup
 +# Copyright (c) 2018 Rosetta Contributors and Canonical Ltd 2018
@@ -104195,7 +104195,7 @@ Index: gnome-initial-setup-50.0/po/sd.po
 +"Project-Id-Version: gnome-initial-setup\n"
 +"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
 +"issues\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2018-11-11 06:40+0000\n"
 +"Last-Translator: Aziz Mangrio <Unknown>\n"
 +"Language-Team: Sindhi <sd@li.org>\n"
@@ -105390,7 +105390,7 @@ Index: gnome-initial-setup-50.0/po/sd.po
 Index: gnome-initial-setup-50.0/po/se.po
 ===================================================================
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ gnome-initial-setup-50.0/po/se.po	2026-09-09 02:25:30.066134670 +0300
++++ gnome-initial-setup-50.0/po/se.po	2026-09-09 12:30:37.495795285 +0300
 @@ -0,0 +1,1205 @@
 +# Northern Sami translation for gnome-initial-setup
 +# Copyright (c) 2021 Rosetta Contributors and Canonical Ltd 2021
@@ -105402,7 +105402,7 @@ Index: gnome-initial-setup-50.0/po/se.po
 +"Project-Id-Version: gnome-initial-setup\n"
 +"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
 +"issues\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2026-03-22 19:55+0000\n"
 +"Last-Translator: Christopher Forster <Unknown>\n"
 +"Language-Team: Northern Sami <se@li.org>\n"
@@ -106600,7 +106600,7 @@ Index: gnome-initial-setup-50.0/po/se.po
 Index: gnome-initial-setup-50.0/po/shn.po
 ===================================================================
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ gnome-initial-setup-50.0/po/shn.po	2026-09-09 02:25:30.070134670 +0300
++++ gnome-initial-setup-50.0/po/shn.po	2026-09-09 12:30:37.511795285 +0300
 @@ -0,0 +1,1202 @@
 +# Shan translation for gnome-initial-setup
 +# Copyright (c) 2019 Rosetta Contributors and Canonical Ltd 2019
@@ -106612,7 +106612,7 @@ Index: gnome-initial-setup-50.0/po/shn.po
 +"Project-Id-Version: gnome-initial-setup\n"
 +"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
 +"issues\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2019-11-04 13:26+0000\n"
 +"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 +"Language-Team: Shan <shn@li.org>\n"
@@ -107807,7 +107807,7 @@ Index: gnome-initial-setup-50.0/po/shn.po
 Index: gnome-initial-setup-50.0/po/si.po
 ===================================================================
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ gnome-initial-setup-50.0/po/si.po	2026-09-09 02:25:30.070134670 +0300
++++ gnome-initial-setup-50.0/po/si.po	2026-09-09 12:30:37.527795284 +0300
 @@ -0,0 +1,1202 @@
 +# Sinhalese translation for gnome-initial-setup
 +# Copyright (c) 2018 Rosetta Contributors and Canonical Ltd 2018
@@ -107819,7 +107819,7 @@ Index: gnome-initial-setup-50.0/po/si.po
 +"Project-Id-Version: gnome-initial-setup\n"
 +"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
 +"issues\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2018-07-18 09:00+0000\n"
 +"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 +"Language-Team: Sinhalese <si@li.org>\n"
@@ -109013,8 +109013,8 @@ Index: gnome-initial-setup-50.0/po/si.po
 +msgstr ""
 Index: gnome-initial-setup-50.0/po/sk.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/sk.po	2026-09-09 02:25:30.106134671 +0300
-+++ gnome-initial-setup-50.0/po/sk.po	2026-09-09 02:25:30.070134670 +0300
+--- gnome-initial-setup-50.0.orig/po/sk.po	2026-09-09 12:28:29.887793832 +0300
++++ gnome-initial-setup-50.0/po/sk.po	2026-09-09 12:30:37.551795284 +0300
 @@ -7,58 +7,78 @@
  msgstr ""
  "Project-Id-Version: gnome-initial-setup master\n"
@@ -109024,7 +109024,7 @@ Index: gnome-initial-setup-50.0/po/sk.po
 -"PO-Revision-Date: 2025-08-19 07:12+0200\n"
 -"Last-Translator: Dušan Kazik <prescott66@gmail.com>\n"
 +"issues\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2026-04-14 01:43+0000\n"
 +"Last-Translator: Dusan Kazik <prescott66@gmail.com>\n"
  "Language-Team: Slovak <gnome-sk-list@gnome.org>\n"
@@ -110354,8 +110354,8 @@ Index: gnome-initial-setup-50.0/po/sk.po
 +#~ "Nastavenia súkromia sa dajú kedykoľvek zmeniť v aplikácii Nastavenia."
 Index: gnome-initial-setup-50.0/po/sl.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/sl.po	2026-09-09 02:25:30.106134671 +0300
-+++ gnome-initial-setup-50.0/po/sl.po	2026-09-09 02:25:30.070134670 +0300
+--- gnome-initial-setup-50.0.orig/po/sl.po	2026-09-09 12:28:29.887793832 +0300
++++ gnome-initial-setup-50.0/po/sl.po	2026-09-09 12:30:37.571795284 +0300
 @@ -8,51 +8,70 @@
  msgstr ""
  "Project-Id-Version: gnome-initial-setup master\n"
@@ -110364,7 +110364,7 @@ Index: gnome-initial-setup-50.0/po/sl.po
 -"POT-Creation-Date: 2025-11-28 10:48+0000\n"
 -"PO-Revision-Date: 2026-01-09 23:27+0100\n"
 +"issues\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2026-04-14 01:42+0000\n"
  "Last-Translator: Martin Srebotnjak <miles@filmsi.net>\n"
  "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
@@ -111292,7 +111292,7 @@ Index: gnome-initial-setup-50.0/po/sl.po
 Index: gnome-initial-setup-50.0/po/sq.po
 ===================================================================
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ gnome-initial-setup-50.0/po/sq.po	2026-09-09 02:25:30.074134670 +0300
++++ gnome-initial-setup-50.0/po/sq.po	2026-09-09 12:30:37.595795283 +0300
 @@ -0,0 +1,1427 @@
 +# Albanian translation for gnome-initial-setup
 +# Copyright (c) 2018 Rosetta Contributors and Canonical Ltd 2018
@@ -111304,7 +111304,7 @@ Index: gnome-initial-setup-50.0/po/sq.po
 +"Project-Id-Version: gnome-initial-setup\n"
 +"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
 +"issues\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2026-03-21 15:29+0000\n"
 +"Last-Translator: Vilson Gjeci <vilsongjeci@gmail.com>\n"
 +"Language-Team: Albanian <sq@li.org>\n"
@@ -112723,8 +112723,8 @@ Index: gnome-initial-setup-50.0/po/sq.po
 +#~ "Përditësime."
 Index: gnome-initial-setup-50.0/po/sr.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/sr.po	2026-09-09 02:25:30.106134671 +0300
-+++ gnome-initial-setup-50.0/po/sr.po	2026-09-09 02:25:30.074134670 +0300
+--- gnome-initial-setup-50.0.orig/po/sr.po	2026-09-09 12:28:29.887793832 +0300
++++ gnome-initial-setup-50.0/po/sr.po	2026-09-09 12:30:37.615795283 +0300
 @@ -10,51 +10,70 @@
  msgstr ""
  "Project-Id-Version: gnome-initial-setup master\n"
@@ -112734,7 +112734,7 @@ Index: gnome-initial-setup-50.0/po/sr.po
 -"PO-Revision-Date: 2026-03-17 23:24+0100\n"
 -"Last-Translator: Марко М. Костић <marko.m.kostic@gmail.com>\n"
 +"issues\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2026-04-14 01:47+0000\n"
 +"Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
  "Language-Team: Serbian <Serbian <gnome-sr@googlegroups.com>>\n"
@@ -113787,8 +113787,8 @@ Index: gnome-initial-setup-50.0/po/sr.po
 +#~ "дистрибуције %1$s."
 Index: gnome-initial-setup-50.0/po/sr@latin.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/sr@latin.po	2026-09-09 02:25:30.106134671 +0300
-+++ gnome-initial-setup-50.0/po/sr@latin.po	2026-09-09 02:25:30.078134671 +0300
+--- gnome-initial-setup-50.0.orig/po/sr@latin.po	2026-09-09 12:28:29.887793832 +0300
++++ gnome-initial-setup-50.0/po/sr@latin.po	2026-09-09 12:30:37.639795283 +0300
 @@ -9,51 +9,70 @@
  msgstr ""
  "Project-Id-Version: gnome-initial-setup master\n"
@@ -113798,7 +113798,7 @@ Index: gnome-initial-setup-50.0/po/sr@latin.po
 -"PO-Revision-Date: 2025-10-15 22:36+0200\n"
 -"Last-Translator: aceydot <aceydot@tuta.io>\n"
 +"issues\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2026-04-14 01:47+0000\n"
 +"Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
  "Language-Team: Serbian <Serbian <gnome-sr@googlegroups.com>>\n"
@@ -115029,7 +115029,7 @@ Index: gnome-initial-setup-50.0/po/sr@latin.po
 Index: gnome-initial-setup-50.0/po/su.po
 ===================================================================
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ gnome-initial-setup-50.0/po/su.po	2026-09-09 02:25:30.078134671 +0300
++++ gnome-initial-setup-50.0/po/su.po	2026-09-09 12:30:37.659795282 +0300
 @@ -0,0 +1,1326 @@
 +# Sundanese translation for gnome-initial-setup
 +# Copyright (c) 2021 Rosetta Contributors and Canonical Ltd 2021
@@ -115041,7 +115041,7 @@ Index: gnome-initial-setup-50.0/po/su.po
 +"Project-Id-Version: gnome-initial-setup\n"
 +"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
 +"issues\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2024-05-25 13:07+0000\n"
 +"Last-Translator: Ilham Nurwansah <ilhamnurwansah@gmail.com>\n"
 +"Language-Team: Sundanese <su@li.org>\n"
@@ -116359,8 +116359,8 @@ Index: gnome-initial-setup-50.0/po/su.po
 +#~ "Diagnostik."
 Index: gnome-initial-setup-50.0/po/sv.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/sv.po	2026-09-09 02:25:30.106134671 +0300
-+++ gnome-initial-setup-50.0/po/sv.po	2026-09-09 02:25:30.078134671 +0300
+--- gnome-initial-setup-50.0.orig/po/sv.po	2026-09-09 12:28:29.887793832 +0300
++++ gnome-initial-setup-50.0/po/sv.po	2026-09-09 12:30:37.683795282 +0300
 @@ -11,48 +11,69 @@
  msgstr ""
  "Project-Id-Version: gnome-initial-setup\n"
@@ -116370,7 +116370,7 @@ Index: gnome-initial-setup-50.0/po/sv.po
 -"PO-Revision-Date: 2025-09-04 20:18+0200\n"
 -"Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
 +"issues\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2026-04-14 01:43+0000\n"
 +"Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
  "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
@@ -117365,7 +117365,7 @@ Index: gnome-initial-setup-50.0/po/sv.po
 Index: gnome-initial-setup-50.0/po/szl.po
 ===================================================================
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ gnome-initial-setup-50.0/po/szl.po	2026-09-09 02:25:30.078134671 +0300
++++ gnome-initial-setup-50.0/po/szl.po	2026-09-09 12:30:37.703795282 +0300
 @@ -0,0 +1,1233 @@
 +# Silesian translation for gnome-initial-setup
 +# Copyright (c) 2019 Rosetta Contributors and Canonical Ltd 2019
@@ -117377,7 +117377,7 @@ Index: gnome-initial-setup-50.0/po/szl.po
 +"Project-Id-Version: gnome-initial-setup\n"
 +"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
 +"issues\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2019-09-10 16:13+0000\n"
 +"Last-Translator: Grzegorz Kulik <Unknown>\n"
 +"Language-Team: Silesian <szl@li.org>\n"
@@ -118602,8 +118602,8 @@ Index: gnome-initial-setup-50.0/po/szl.po
 +#~ msgstr "Pociep"
 Index: gnome-initial-setup-50.0/po/ta.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/ta.po	2026-09-09 02:25:30.106134671 +0300
-+++ gnome-initial-setup-50.0/po/ta.po	2026-09-09 02:25:30.078134671 +0300
+--- gnome-initial-setup-50.0.orig/po/ta.po	2026-09-09 12:28:29.887793832 +0300
++++ gnome-initial-setup-50.0/po/ta.po	2026-09-09 12:30:37.719795281 +0300
 @@ -8,721 +8,1201 @@
  "Project-Id-Version: \n"
  "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
@@ -118611,7 +118611,7 @@ Index: gnome-initial-setup-50.0/po/ta.po
 -"POT-Creation-Date: 2014-09-13 06:52+0000\n"
 -"PO-Revision-Date: 2014-09-13 21:02+0630\n"
 -"Last-Translator: Shantha kumar <shkumar@redhat.com>\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2026-04-14 01:47+0000\n"
 +"Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
  "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -120231,8 +120231,8 @@ Index: gnome-initial-setup-50.0/po/ta.po
 +#~ msgstr "ரத்துசெய்"
 Index: gnome-initial-setup-50.0/po/te.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/te.po	2026-09-09 02:25:30.106134671 +0300
-+++ gnome-initial-setup-50.0/po/te.po	2026-09-09 02:25:30.082134671 +0300
+--- gnome-initial-setup-50.0.orig/po/te.po	2026-09-09 12:28:29.887793832 +0300
++++ gnome-initial-setup-50.0/po/te.po	2026-09-09 12:30:37.739795281 +0300
 @@ -9,649 +9,1201 @@
  "Project-Id-Version: \n"
  "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
@@ -120240,7 +120240,7 @@ Index: gnome-initial-setup-50.0/po/te.po
 -"POT-Creation-Date: 2014-09-11 18:48+0000\n"
 -"PO-Revision-Date: 2014-09-12 15:50+0530\n"
 -"Last-Translator: Krishnababu Krothapalli <kkrothap@redhat.com>\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2026-04-14 01:45+0000\n"
 +"Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
  "Language-Team: Telugu <kde-i18n-doc@kde.org>\n"
@@ -121808,8 +121808,8 @@ Index: gnome-initial-setup-50.0/po/te.po
 +#~ msgstr "రద్దు"
 Index: gnome-initial-setup-50.0/po/tg.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/tg.po	2026-09-09 02:25:30.106134671 +0300
-+++ gnome-initial-setup-50.0/po/tg.po	2026-09-09 02:25:30.082134671 +0300
+--- gnome-initial-setup-50.0.orig/po/tg.po	2026-09-09 12:28:29.887793832 +0300
++++ gnome-initial-setup-50.0/po/tg.po	2026-09-09 12:30:37.759795281 +0300
 @@ -5,119 +5,128 @@
  msgid ""
  msgstr ""
@@ -121820,7 +121820,7 @@ Index: gnome-initial-setup-50.0/po/tg.po
 -"PO-Revision-Date: 2020-07-29 13:36+0500\n"
 +"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
 +"issues\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2026-04-14 01:46+0000\n"
  "Last-Translator: Victor Ibragimov <victor.ibragimov@gmail.com>\n"
  "Language-Team: Tajik <victor.ibragimov@gmail.com>\n"
@@ -123371,8 +123371,8 @@ Index: gnome-initial-setup-50.0/po/tg.po
 +#~ msgstr "Бекор кардан"
 Index: gnome-initial-setup-50.0/po/th.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/th.po	2026-09-09 02:25:30.106134671 +0300
-+++ gnome-initial-setup-50.0/po/th.po	2026-09-09 02:25:30.082134671 +0300
+--- gnome-initial-setup-50.0.orig/po/th.po	2026-09-09 12:28:29.887793832 +0300
++++ gnome-initial-setup-50.0/po/th.po	2026-09-09 12:30:37.783795280 +0300
 @@ -6,47 +6,70 @@
  msgid ""
  msgstr ""
@@ -123383,7 +123383,7 @@ Index: gnome-initial-setup-50.0/po/th.po
 -"Last-Translator: Unticha Pramgoed <unticha@gmail.com>\n"
 +"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
 +"issues\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2026-04-14 01:44+0000\n"
 +"Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
  "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -124708,7 +124708,7 @@ Index: gnome-initial-setup-50.0/po/th.po
 Index: gnome-initial-setup-50.0/po/tl.po
 ===================================================================
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ gnome-initial-setup-50.0/po/tl.po	2026-09-09 02:25:30.082134671 +0300
++++ gnome-initial-setup-50.0/po/tl.po	2026-09-09 12:30:37.799795280 +0300
 @@ -0,0 +1,1202 @@
 +# Tagalog translation for gnome-initial-setup
 +# Copyright (c) 2022 Rosetta Contributors and Canonical Ltd 2022
@@ -124720,7 +124720,7 @@ Index: gnome-initial-setup-50.0/po/tl.po
 +"Project-Id-Version: gnome-initial-setup\n"
 +"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
 +"issues\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2022-02-20 12:54+0000\n"
 +"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 +"Language-Team: Tagalog <tl@li.org>\n"
@@ -125914,8 +125914,8 @@ Index: gnome-initial-setup-50.0/po/tl.po
 +msgstr ""
 Index: gnome-initial-setup-50.0/po/tr.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/tr.po	2026-09-09 02:25:30.106134671 +0300
-+++ gnome-initial-setup-50.0/po/tr.po	2026-09-09 02:25:30.086134671 +0300
+--- gnome-initial-setup-50.0.orig/po/tr.po	2026-09-09 12:28:29.887793832 +0300
++++ gnome-initial-setup-50.0/po/tr.po	2026-09-09 12:30:37.819795280 +0300
 @@ -11,72 +11,93 @@
  msgstr ""
  "Project-Id-Version: gnome-initial-setup master\n"
@@ -125925,7 +125925,7 @@ Index: gnome-initial-setup-50.0/po/tr.po
 -"PO-Revision-Date: 2026-01-11 18:05+0300\n"
 -"Last-Translator: Sabri Ünal <yakushabb@gmail.com>\n"
 +"issues\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2026-04-14 01:46+0000\n"
 +"Last-Translator: sabri unal <yakushabb@gmail.com>\n"
  "Language-Team: Turkish <takim@gnome.org.tr>\n"
@@ -127117,8 +127117,8 @@ Index: gnome-initial-setup-50.0/po/tr.po
 +#~ msgstr "Ek dil paketleri indirilemedi"
 Index: gnome-initial-setup-50.0/po/ug.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/ug.po	2026-09-09 02:25:30.106134671 +0300
-+++ gnome-initial-setup-50.0/po/ug.po	2026-09-09 02:25:30.086134671 +0300
+--- gnome-initial-setup-50.0.orig/po/ug.po	2026-09-09 12:28:29.887793832 +0300
++++ gnome-initial-setup-50.0/po/ug.po	2026-09-09 12:30:37.843795280 +0300
 @@ -7,48 +7,69 @@
  msgstr ""
  "Project-Id-Version: gnome-initial-setup\n"
@@ -127128,7 +127128,7 @@ Index: gnome-initial-setup-50.0/po/ug.po
 -"PO-Revision-Date: 2026-03-02 23:12-0500\n"
 -"Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 +"issues\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2026-04-14 01:42+0000\n"
 +"Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
  "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
@@ -128160,8 +128160,8 @@ Index: gnome-initial-setup-50.0/po/ug.po
 +#~ "شەخسىيەت كونتروللىرىنى تەڭشەك ئەپتىن خالىغان ۋاقىتتا ئۆزگەرتكىلى بولىدۇ."
 Index: gnome-initial-setup-50.0/po/uk.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/uk.po	2026-09-09 02:25:30.106134671 +0300
-+++ gnome-initial-setup-50.0/po/uk.po	2026-09-09 02:25:30.086134671 +0300
+--- gnome-initial-setup-50.0.orig/po/uk.po	2026-09-09 12:28:29.887793832 +0300
++++ gnome-initial-setup-50.0/po/uk.po	2026-09-09 12:30:37.875795279 +0300
 @@ -3,57 +3,78 @@
  # This file is distributed under the same license as the gnome-initial-setup package.
  # Daniel Korostil <ted.korostiled@gmail.com>, 2013, 2014, 2015, 2016, 2017.
@@ -128179,7 +128179,7 @@ Index: gnome-initial-setup-50.0/po/uk.po
 -"Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 +"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
 +"issues\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2026-04-21 09:09+0000\n"
 +"Last-Translator: Anton Matsiuk <dnxb42@gmail.com>\n"
 +"Language-Team: Ukrainian\n"
@@ -129659,8 +129659,8 @@ Index: gnome-initial-setup-50.0/po/uk.po
 +#~ "a>."
 Index: gnome-initial-setup-50.0/po/uz.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/uz.po	2026-09-09 02:25:30.106134671 +0300
-+++ gnome-initial-setup-50.0/po/uz.po	2026-09-09 02:25:30.090134671 +0300
+--- gnome-initial-setup-50.0.orig/po/uz.po	2026-09-09 12:28:29.887793832 +0300
++++ gnome-initial-setup-50.0/po/uz.po	2026-09-09 12:30:37.891795279 +0300
 @@ -7,49 +7,69 @@
  msgstr ""
  "Project-Id-Version: gnome-initial-setup master\n"
@@ -129670,7 +129670,7 @@ Index: gnome-initial-setup-50.0/po/uz.po
 -"PO-Revision-Date: 2025-04-04 11:34+0500\n"
 -"Last-Translator: \n"
 +"issues\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2026-04-14 01:43+0000\n"
 +"Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
  "Language-Team: Uzbek (Latin) <uz@li.org>\n"
@@ -130673,8 +130673,8 @@ Index: gnome-initial-setup-50.0/po/uz.po
 +#~ "oʻzgartirish mumkin."
 Index: gnome-initial-setup-50.0/po/vi.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/vi.po	2026-09-09 02:25:30.106134671 +0300
-+++ gnome-initial-setup-50.0/po/vi.po	2026-09-09 02:25:30.090134671 +0300
+--- gnome-initial-setup-50.0.orig/po/vi.po	2026-09-09 12:28:29.887793832 +0300
++++ gnome-initial-setup-50.0/po/vi.po	2026-09-09 12:30:37.911795278 +0300
 @@ -10,65 +10,88 @@
  "Project-Id-Version: gnome-initial-setup master\n"
  "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
@@ -130682,7 +130682,7 @@ Index: gnome-initial-setup-50.0/po/vi.po
 -"POT-Creation-Date: 2023-11-04 05:01+0000\n"
 -"PO-Revision-Date: 2023-11-11 14:12+0700\n"
 -"Last-Translator: Trần Ngọc Quân <vnwildman@gmail.com>\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2026-04-14 01:43+0000\n"
 +"Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
  "Language-Team: Vietnamese <Vietnamese <gnome-vi-list@gnome.org>>\n"
@@ -132110,8 +132110,8 @@ Index: gnome-initial-setup-50.0/po/vi.po
 +#~ "Cài đặt."
 Index: gnome-initial-setup-50.0/po/zh_CN.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/zh_CN.po	2026-09-09 02:25:30.106134671 +0300
-+++ gnome-initial-setup-50.0/po/zh_CN.po	2026-09-09 02:25:30.090134671 +0300
+--- gnome-initial-setup-50.0.orig/po/zh_CN.po	2026-09-09 12:28:29.887793832 +0300
++++ gnome-initial-setup-50.0/po/zh_CN.po	2026-09-09 12:30:37.931795278 +0300
 @@ -14,59 +14,79 @@
  msgstr ""
  "Project-Id-Version: gnome-initial-setup master\n"
@@ -132121,7 +132121,7 @@ Index: gnome-initial-setup-50.0/po/zh_CN.po
 -"PO-Revision-Date: 2026-01-10 12:18+0800\n"
 -"Last-Translator: lumingzh <lumingzh@qq.com>\n"
 +"issues\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2026-04-21 08:51+0000\n"
 +"Last-Translator: Luke Na <Unknown>\n"
  "Language-Team: Chinese (China) <i18n-zh@googlegroups.com>\n"
@@ -133496,15 +133496,15 @@ Index: gnome-initial-setup-50.0/po/zh_CN.po
 +#~ msgstr "您随时可以通过“软件和更新”应用程序启用 Ubuntu Pro"
 Index: gnome-initial-setup-50.0/po/zh_HK.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/zh_HK.po	2026-09-09 02:25:30.106134671 +0300
-+++ gnome-initial-setup-50.0/po/zh_HK.po	2026-09-09 02:25:30.094134671 +0300
+--- gnome-initial-setup-50.0.orig/po/zh_HK.po	2026-09-09 12:28:29.887793832 +0300
++++ gnome-initial-setup-50.0/po/zh_HK.po	2026-09-09 12:30:37.951795278 +0300
 @@ -8,580 +8,1200 @@
  "Project-Id-Version: gnome-initial-setup master\n"
  "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
  "issues\n"
 -"POT-Creation-Date: 2014-03-05 19:50+0000\n"
 -"PO-Revision-Date: 2014-03-09 11:54+0800\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2026-04-14 01:47+0000\n"
  "Last-Translator: Chao-Hsiung Liao <j_h_liau@yahoo.com.tw>\n"
  "Language-Team: Chinese (Hong Kong) <community@linuxhall.org>\n"
@@ -135065,8 +135065,8 @@ Index: gnome-initial-setup-50.0/po/zh_HK.po
 +#~ msgstr "取消"
 Index: gnome-initial-setup-50.0/po/zh_TW.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/zh_TW.po	2026-09-09 02:25:30.106134671 +0300
-+++ gnome-initial-setup-50.0/po/zh_TW.po	2026-09-09 02:25:30.094134671 +0300
+--- gnome-initial-setup-50.0.orig/po/zh_TW.po	2026-09-09 12:28:29.887793832 +0300
++++ gnome-initial-setup-50.0/po/zh_TW.po	2026-09-09 12:30:37.971795278 +0300
 @@ -9,50 +9,69 @@
  msgstr ""
  "Project-Id-Version: gnome-initial-setup master\n"
@@ -135076,7 +135076,7 @@ Index: gnome-initial-setup-50.0/po/zh_TW.po
 -"PO-Revision-Date: 2025-05-09 13:13+0800\n"
 -"Last-Translator: Cheng-Chia Tseng <zerngjia@gmail.com>\n"
 +"issues\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
 +"PO-Revision-Date: 2026-06-14 06:18+0000\n"
 +"Last-Translator: taijuin lee <Unknown>\n"
  "Language-Team: Chinese - Taiwan <chinese-l10n@googlegroups.com>\n"
@@ -136492,8 +136492,8 @@ Index: gnome-initial-setup-50.0/po/zh_TW.po
 +#~ msgstr "隱私控制可隨時在《設定》中變更。"
 Index: gnome-initial-setup-50.0/po/bn_IN.po
 ===================================================================
---- gnome-initial-setup-50.0.orig/po/bn_IN.po	2026-03-19 11:38:36.000000000 +0200
-+++ gnome-initial-setup-50.0/po/bn_IN.po	2026-09-09 02:27:00.758132643 +0300
+--- gnome-initial-setup-50.0.orig/po/bn_IN.po	2026-09-09 12:28:29.887793832 +0300
++++ gnome-initial-setup-50.0/po/bn_IN.po	2026-09-09 12:30:36.299795303 +0300
 @@ -1,7 +1,7 @@
  # Bengali (India) translation for gnome-initial-setup.
  # Copyright (C) 2012 gnome-initial-setup's COPYRIGHT HOLDER
@@ -136511,7 +136511,7 @@ Index: gnome-initial-setup-50.0/po/bn_IN.po
 -"MIME-Version: 1.0\n"
 -"Content-Type: text/plain; charset=UTF-8\n"
 -"Content-Transfer-Encoding: 8bit\n"
-+"POT-Creation-Date: 2026-09-09 01:52+0300\n"
++"POT-Creation-Date: 2026-09-09 12:30+0300\n"
  "PO-Revision-Date: 2014-02-28 03:06-0500\n"
  "Last-Translator: sray <sray@redhat.com>\n"
  "Language-Team: Bengali (India) <anubad@lists.ankur.org.in>\n"

@@ -1,7 +1,7 @@
 Index: gnome-initial-setup-50.0/gnome-initial-setup/pages/welcome/ubuntu-mascot-dark.svg
 ===================================================================
---- gnome-initial-setup-50.0.orig/gnome-initial-setup/pages/welcome/ubuntu-mascot-dark.svg	2026-09-09 01:06:19.158135461 +0300
-+++ gnome-initial-setup-50.0/gnome-initial-setup/pages/welcome/ubuntu-mascot-dark.svg	2026-09-09 01:12:50.950135521 +0300
+--- gnome-initial-setup-50.0.orig/gnome-initial-setup/pages/welcome/ubuntu-mascot-dark.svg	2026-09-09 12:16:52.199788585 +0300
++++ gnome-initial-setup-50.0/gnome-initial-setup/pages/welcome/ubuntu-mascot-dark.svg	2026-09-09 12:16:52.187788585 +0300
 @@ -1,66 +1,70 @@
 -<?xml version="1.0" encoding="UTF-8"?>
 -<svg id="rr_black_aw" data-name="rr black aw" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 560">
@@ -142,8 +142,8 @@ Index: gnome-initial-setup-50.0/gnome-initial-setup/pages/welcome/ubuntu-mascot-
 +</svg>
 Index: gnome-initial-setup-50.0/gnome-initial-setup/pages/welcome/ubuntu-mascot-light.svg
 ===================================================================
---- gnome-initial-setup-50.0.orig/gnome-initial-setup/pages/welcome/ubuntu-mascot-light.svg	2026-09-09 01:06:19.158135461 +0300
-+++ gnome-initial-setup-50.0/gnome-initial-setup/pages/welcome/ubuntu-mascot-light.svg	2026-09-09 01:13:21.954134589 +0300
+--- gnome-initial-setup-50.0.orig/gnome-initial-setup/pages/welcome/ubuntu-mascot-light.svg	2026-09-09 12:16:52.199788585 +0300
++++ gnome-initial-setup-50.0/gnome-initial-setup/pages/welcome/ubuntu-mascot-light.svg	2026-09-09 12:16:52.187788585 +0300
 @@ -1,5 +1,70 @@
 -<?xml version="1.0" encoding="UTF-8"?>
 -<svg id="rr_black_aw" data-name="rr black aw" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 560">
@@ -223,8 +223,8 @@ Index: gnome-initial-setup-50.0/gnome-initial-setup/pages/welcome/ubuntu-mascot-
 +</svg>
 Index: gnome-initial-setup-50.0/gnome-initial-setup/pages/welcome/gis-welcome-page.c
 ===================================================================
---- gnome-initial-setup-50.0.orig/gnome-initial-setup/pages/welcome/gis-welcome-page.c	2026-09-09 01:06:19.794135460 +0300
-+++ gnome-initial-setup-50.0/gnome-initial-setup/pages/welcome/gis-welcome-page.c	2026-09-09 01:24:30.638133814 +0300
+--- gnome-initial-setup-50.0.orig/gnome-initial-setup/pages/welcome/gis-welcome-page.c	2026-09-09 12:16:52.199788585 +0300
++++ gnome-initial-setup-50.0/gnome-initial-setup/pages/welcome/gis-welcome-page.c	2026-09-09 12:16:52.187788585 +0300
 @@ -86,7 +86,7 @@
      return;
  
@@ -234,3 +234,18 @@ Index: gnome-initial-setup-50.0/gnome-initial-setup/pages/welcome/gis-welcome-pa
          version);
  
    gtk_link_button_set_uri (GTK_LINK_BUTTON (priv->release_notes), release_note_uri);
+Index: gnome-initial-setup-50.0/gnome-initial-setup/pages/appearance/gis-appearance-page.blp
+===================================================================
+--- gnome-initial-setup-50.0.orig/gnome-initial-setup/pages/appearance/gis-appearance-page.blp	2026-09-09 12:16:51.967788593 +0300
++++ gnome-initial-setup-50.0/gnome-initial-setup/pages/appearance/gis-appearance-page.blp	2026-09-09 12:27:52.931800062 +0300
+@@ -6,8 +6,8 @@
+     Adw.PreferencesGroup {
+       $GisPageHeader header {
+         margin-top: 36;
+-        title: _("Choose how Ubuntu looks");
+-        subtitle: _("Personalize your desktop's appearance");
++        title: _("Adjust the look and feel of Utile OS");
++        subtitle: _("Personalise your desktop's appearance");
+         show-icon: false;
+         use-accessible-title: true;
+       }

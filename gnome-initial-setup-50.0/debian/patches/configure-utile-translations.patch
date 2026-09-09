@@ -1,0 +1,3168 @@
+Index: gnome-initial-setup-50.0/po/ab.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/ab.po	2026-09-09 12:32:44.119794977 +0300
++++ gnome-initial-setup-50.0/po/ab.po	2026-09-09 12:35:18.067793478 +0300
+@@ -3,7 +3,7 @@
+ "Project-Id-Version: PACKAGE VERSION\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2023-02-24 00:14+0000\n"
+ "Last-Translator: Наала Нанба <Unknown>\n"
+ "Language-Team: Abkhazian <daniel.abzakh@gmail.com>\n"
+@@ -1134,11 +1134,11 @@
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/af.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/af.po	2026-09-09 12:32:44.119794977 +0300
++++ gnome-initial-setup-50.0/po/af.po	2026-09-09 12:35:18.083793478 +0300
+@@ -9,7 +9,7 @@
+ "Project-Id-Version: gnome-initial-setup master\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2026-04-14 01:47+0000\n"
+ "Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
+ "Language-Team: Afrikaans <pieter@sonbesie.co.za>\n"
+@@ -1200,11 +1200,11 @@
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/am.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/am.po	2026-09-09 12:32:44.123794977 +0300
++++ gnome-initial-setup-50.0/po/am.po	2026-09-09 12:35:18.099793478 +0300
+@@ -8,7 +8,7 @@
+ "Project-Id-Version: gnome-initial-setup\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2021-03-13 03:56+0000\n"
+ "Last-Translator: samson <Unknown>\n"
+ "Language-Team: Amharic <am@li.org>\n"
+@@ -1138,11 +1138,11 @@
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/an.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/an.po	2026-09-09 12:32:44.123794977 +0300
++++ gnome-initial-setup-50.0/po/an.po	2026-09-09 12:35:18.115793477 +0300
+@@ -9,7 +9,7 @@
+ "Project-Id-Version: gnome-initial-setup gnome-3-6\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2026-04-14 01:46+0000\n"
+ "Last-Translator: Daniel Martinez <entaltoaragon@gmail.com>\n"
+ "Language-Team: Aragonés <softaragones@googlegroups.com>\n"
+@@ -1142,11 +1142,11 @@
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/ar.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/ar.po	2026-09-09 12:32:44.123794977 +0300
++++ gnome-initial-setup-50.0/po/ar.po	2026-09-09 12:35:18.131793477 +0300
+@@ -10,7 +10,7 @@
+ "Project-Id-Version: unnamed project\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2026-04-14 01:45+0000\n"
+ "Last-Translator: Khalid Abu Shawarib <khalid.shawarib@gmail.com>\n"
+ "Language-Team: Arabic <doc@arabeyes.org>\n"
+@@ -1170,11 +1170,11 @@
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/arn.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/arn.po	2026-09-09 12:32:44.123794977 +0300
++++ gnome-initial-setup-50.0/po/arn.po	2026-09-09 12:35:18.147793477 +0300
+@@ -8,7 +8,7 @@
+ "Project-Id-Version: gnome-initial-setup\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2022-01-13 05:14+0000\n"
+ "Last-Translator: Demian Araya <Unknown>\n"
+ "Language-Team: Mapudungun <arn@li.org>\n"
+@@ -1138,11 +1138,11 @@
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/as.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/as.po	2026-09-09 12:32:44.123794977 +0300
++++ gnome-initial-setup-50.0/po/as.po	2026-09-09 12:35:18.163793477 +0300
+@@ -8,7 +8,7 @@
+ "Project-Id-Version: gnome-initial-setup master\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2026-04-14 01:43+0000\n"
+ "Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
+ "Language-Team: Assamese <kde-i18n-doc@kde.org>\n"
+@@ -1141,11 +1141,11 @@
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/ast.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/ast.po	2026-09-09 12:32:44.123794977 +0300
++++ gnome-initial-setup-50.0/po/ast.po	2026-09-09 12:35:18.179793477 +0300
+@@ -8,7 +8,7 @@
+ "Project-Id-Version: gnome-initial-setup\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2020-10-05 10:44+0000\n"
+ "Last-Translator: Xandru Martino <Unknown>\n"
+ "Language-Team: Asturian <ast@li.org>\n"
+@@ -1172,11 +1172,11 @@
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/az.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/az.po	2026-09-09 12:32:44.127794977 +0300
++++ gnome-initial-setup-50.0/po/az.po	2026-09-09 12:35:18.195793477 +0300
+@@ -9,7 +9,7 @@
+ "Project-Id-Version: gnome-initial-setup\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2025-10-04 11:30+0000\n"
+ "Last-Translator: Elmin Alirzayev <Unknown>\n"
+ "Language-Team: Azerbaijani <az@li.org>\n"
+@@ -1189,11 +1189,11 @@
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/be.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/be.po	2026-09-09 12:32:44.127794977 +0300
++++ gnome-initial-setup-50.0/po/be.po	2026-09-09 12:35:18.211793476 +0300
+@@ -10,7 +10,7 @@
+ "Project-Id-Version: gnome-initial-setup master\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2026-04-14 01:43+0000\n"
+ "Last-Translator: Yuras <shumovichy@gmail.com>\n"
+ "Language-Team: Belarusian <i18n-bel-gnome@googlegroups.com>\n"
+@@ -1201,11 +1201,11 @@
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/bg.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/bg.po	2026-09-09 12:32:44.127794977 +0300
++++ gnome-initial-setup-50.0/po/bg.po	2026-09-09 12:35:18.235793476 +0300
+@@ -10,7 +10,7 @@
+ "Project-Id-Version: gnome-initial-setup master\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2026-04-14 01:44+0000\n"
+ "Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
+ "Language-Team: Bulgarian <dict@fsa-bg.org>\n"
+@@ -1178,11 +1178,11 @@
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/bn.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/bn.po	2026-09-09 12:32:44.127794977 +0300
++++ gnome-initial-setup-50.0/po/bn.po	2026-09-09 12:35:18.251793476 +0300
+@@ -8,7 +8,7 @@
+ "Project-Id-Version: gnome-initial-setup\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2026-04-29 09:18+0000\n"
+ "Last-Translator: Ferdaus <ferdausalamin@yahoo.ca>\n"
+ "Language-Team: Bengali <bn@li.org>\n"
+@@ -1142,11 +1142,11 @@
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/bn_IN.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/bn_IN.po	2026-09-09 12:32:44.191794977 +0300
++++ gnome-initial-setup-50.0/po/bn_IN.po	2026-09-09 12:35:18.267793476 +0300
+@@ -10,7 +10,7 @@
+ "Project-Id-Version: gnome-initial-setup master\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2014-02-28 03:06-0500\n"
+ "Last-Translator: sray <sray@redhat.com>\n"
+ "Language-Team: Bengali (India) <anubad@lists.ankur.org.in>\n"
+@@ -1180,11 +1180,11 @@
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/bo.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/bo.po	2026-09-09 12:32:44.127794977 +0300
++++ gnome-initial-setup-50.0/po/bo.po	2026-09-09 12:35:18.283793476 +0300
+@@ -8,7 +8,7 @@
+ "Project-Id-Version: gnome-initial-setup\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2019-03-22 04:33+0000\n"
+ "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+ "Language-Team: Tibetan <bo@li.org>\n"
+@@ -1138,11 +1138,11 @@
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/br.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/br.po	2026-09-09 12:32:44.127794977 +0300
++++ gnome-initial-setup-50.0/po/br.po	2026-09-09 12:35:18.303793475 +0300
+@@ -8,7 +8,7 @@
+ "Project-Id-Version: gnome-initial-setup\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2018-09-17 08:25+0000\n"
+ "Last-Translator: Clyde <c.dlugybelmont@gmail.com>\n"
+ "Language-Team: Breton <br@li.org>\n"
+@@ -1138,11 +1138,11 @@
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/bs.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/bs.po	2026-09-09 12:32:44.127794977 +0300
++++ gnome-initial-setup-50.0/po/bs.po	2026-09-09 12:35:18.319793475 +0300
+@@ -8,7 +8,7 @@
+ "Project-Id-Version: bosnianuniversetranslation\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2026-04-14 01:47+0000\n"
+ "Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
+ "Language-Team: Bosnian <bs@li.org>\n"
+@@ -1152,11 +1152,11 @@
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/ca.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/ca.po	2026-09-09 12:32:44.127794977 +0300
++++ gnome-initial-setup-50.0/po/ca.po	2026-09-09 12:35:18.339793475 +0300
+@@ -11,7 +11,7 @@
+ "Project-Id-Version: gnome-initial-setup master\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2026-04-14 01:44+0000\n"
+ "Last-Translator: Jordi Mas <jmas@softcatala.org>\n"
+ "Language-Team: Catalan <tradgnome@softcatala.org>\n"
+@@ -1190,11 +1190,11 @@
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/ca@valencia.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/ca@valencia.po	2026-09-09 12:32:44.131794977 +0300
++++ gnome-initial-setup-50.0/po/ca@valencia.po	2026-09-09 12:35:18.355793475 +0300
+@@ -11,7 +11,7 @@
+ "Project-Id-Version: gnome-initial-setup master\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2026-04-14 01:46+0000\n"
+ "Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
+ "Language-Team: Catalan <tradgnome@softcatala.org>\n"
+@@ -1152,11 +1152,11 @@
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/ceb.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/ceb.po	2026-09-09 12:32:44.131794977 +0300
++++ gnome-initial-setup-50.0/po/ceb.po	2026-09-09 12:35:18.371793475 +0300
+@@ -8,7 +8,7 @@
+ "Project-Id-Version: gnome-initial-setup\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2018-09-27 12:21+0000\n"
+ "Last-Translator: Michael Quisido III <mike082112@gmail.com>\n"
+ "Language-Team: Cebuano <ceb@li.org>\n"
+@@ -1158,11 +1158,11 @@
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/ckb.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/ckb.po	2026-09-09 12:32:44.131794977 +0300
++++ gnome-initial-setup-50.0/po/ckb.po	2026-09-09 12:35:18.387793474 +0300
+@@ -8,7 +8,7 @@
+ "Project-Id-Version: gnome-initial-setup\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2024-11-21 16:53+0000\n"
+ "Last-Translator: Jwtiyar Nariman <jwtiyar@gmail.com>\n"
+ "Language-Team: Kurdish (Sorani) <ckb@li.org>\n"
+@@ -1150,11 +1150,11 @@
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/cs.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/cs.po	2026-09-09 12:32:44.131794977 +0300
++++ gnome-initial-setup-50.0/po/cs.po	2026-09-09 12:35:18.411793474 +0300
+@@ -12,7 +12,7 @@
+ "Project-Id-Version: gnome-initial-setup\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2026-04-14 01:46+0000\n"
+ "Last-Translator: AsciiWolf <mail@asciiwolf.com>\n"
+ "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
+@@ -1199,11 +1199,12 @@
+ msgstr "Vzhled"
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
+-msgstr "Vyberte, jak bude Ubuntu vypadat"
++msgid "Adjust the look and feel of Utile OS"
++msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++#, fuzzy
++msgid "Personalise your desktop's appearance"
+ msgstr "Přizpůsobte si vzhled plochy"
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+@@ -1267,6 +1268,9 @@
+ msgid "Install ${PRETTY_NAME}"
+ msgstr "Nainstalovat ${PRETTY_NAME}"
+ 
++#~ msgid "Choose how Ubuntu looks"
++#~ msgstr "Vyberte, jak bude Ubuntu vypadat"
++
+ #, c-format
+ #~ msgid "Failed to show privacy policy: %s"
+ #~ msgstr "Nepodařilo se zobrazit zásady ochrany soukromí: %s"
+Index: gnome-initial-setup-50.0/po/cy.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/cy.po	2026-09-09 12:32:44.131794977 +0300
++++ gnome-initial-setup-50.0/po/cy.po	2026-09-09 12:35:18.427793474 +0300
+@@ -8,7 +8,7 @@
+ "Project-Id-Version: gnome-initial-setup\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2024-04-09 12:03+0000\n"
+ "Last-Translator: Rhoslyn Prys <Unknown>\n"
+ "Language-Team: Welsh <cy@li.org>\n"
+@@ -1192,11 +1192,11 @@
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/da.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/da.po	2026-09-09 12:32:44.135794977 +0300
++++ gnome-initial-setup-50.0/po/da.po	2026-09-09 12:35:18.447793474 +0300
+@@ -14,7 +14,7 @@
+ "Project-Id-Version: gnome-initial-setup master\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2026-04-14 01:43+0000\n"
+ "Last-Translator: Ask Hjorth Larsen <askhl@proton.me>\n"
+ "Language-Team: Danish <danskgruppen@groups.io>\n"
+@@ -1219,11 +1219,12 @@
+ msgstr "Udseende"
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
+-msgstr "Vælg, hvordan Ubuntu ser ud"
++msgid "Adjust the look and feel of Utile OS"
++msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++#, fuzzy
++msgid "Personalise your desktop's appearance"
+ msgstr "Tilpas dit skrivebords udseende"
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+@@ -1287,6 +1288,9 @@
+ msgid "Install ${PRETTY_NAME}"
+ msgstr "Installér ${PRETTY_NAME}"
+ 
++#~ msgid "Choose how Ubuntu looks"
++#~ msgstr "Vælg, hvordan Ubuntu ser ud"
++
+ #, c-format
+ #~ msgid "Failed to show privacy policy: %s"
+ #~ msgstr "Kunne ikke vise privatlivspolitik: %s"
+Index: gnome-initial-setup-50.0/po/de.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/de.po	2026-09-09 12:32:44.135794977 +0300
++++ gnome-initial-setup-50.0/po/de.po	2026-09-09 12:35:18.467793473 +0300
+@@ -18,7 +18,7 @@
+ "Project-Id-Version: gnome-initial-setup\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2026-05-10 15:22+0000\n"
+ "Last-Translator: Michael Wehram <michael.wehram@wolfsburg.de>\n"
+ "Language-Team: German <gnome-de@gnome.org>\n"
+@@ -1263,11 +1263,12 @@
+ msgstr "Erscheinungsbild"
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
+-msgstr "Wähle aus, wie Ubuntu aussehen soll."
++msgid "Adjust the look and feel of Utile OS"
++msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++#, fuzzy
++msgid "Personalise your desktop's appearance"
+ msgstr "Personalisiere das Erscheinungsbild des Desktops."
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+@@ -1333,6 +1334,9 @@
+ msgid "Install ${PRETTY_NAME}"
+ msgstr "${PRETTY_NAME} installieren"
+ 
++#~ msgid "Choose how Ubuntu looks"
++#~ msgstr "Wähle aus, wie Ubuntu aussehen soll."
++
+ #, c-format
+ #~ msgid "Failed to get report information: %s"
+ #~ msgstr "Probleme bei der Erhebung der Informationen des Berichts: %s"
+Index: gnome-initial-setup-50.0/po/el.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/el.po	2026-09-09 12:32:44.135794977 +0300
++++ gnome-initial-setup-50.0/po/el.po	2026-09-09 12:35:18.487793473 +0300
+@@ -11,7 +11,7 @@
+ "Project-Id-Version: gnome-initial-setup master\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2026-04-14 01:47+0000\n"
+ "Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
+ "Language-Team: Ελληνικά <>\n"
+@@ -1251,11 +1251,12 @@
+ msgstr "Εμφάνιση"
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
+-msgstr "Επιλέξτε την εμφάνιση του Ubuntu"
++msgid "Adjust the look and feel of Utile OS"
++msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++#, fuzzy
++msgid "Personalise your desktop's appearance"
+ msgstr "Εξατομικεύστε την εμφάνιση της επιφάνειας εργασίας σας"
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+@@ -1321,6 +1322,9 @@
+ msgid "Install ${PRETTY_NAME}"
+ msgstr "Εγκατάσταση του ${PRETTY_NAME}"
+ 
++#~ msgid "Choose how Ubuntu looks"
++#~ msgstr "Επιλέξτε την εμφάνιση του Ubuntu"
++
+ #, c-format
+ #~ msgid "Failed to show privacy policy: %s"
+ #~ msgstr "Αποτυχία εμφάνισης πολιτικής ιδιωτικότητας: %s"
+Index: gnome-initial-setup-50.0/po/en_AU.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/en_AU.po	2026-09-09 12:32:44.135794977 +0300
++++ gnome-initial-setup-50.0/po/en_AU.po	2026-09-09 12:35:18.507793473 +0300
+@@ -8,7 +8,7 @@
+ "Project-Id-Version: gnome-initial-setup\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2024-04-07 08:07+0000\n"
+ "Last-Translator: Jared Norris <jarednorris@ubuntu.com>\n"
+ "Language-Team: English (Australia) <en_AU@li.org>\n"
+@@ -1173,11 +1173,11 @@
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/en_CA.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/en_CA.po	2026-09-09 12:32:44.135794977 +0300
++++ gnome-initial-setup-50.0/po/en_CA.po	2026-09-09 12:35:18.523793473 +0300
+@@ -8,7 +8,7 @@
+ "Project-Id-Version: gnome-initial-setup\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2025-03-10 20:54+0000\n"
+ "Last-Translator: Michael Abon <Unknown>\n"
+ "Language-Team: English (Canada) <en_CA@li.org>\n"
+@@ -1182,11 +1182,11 @@
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/en_GB.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/en_GB.po	2026-09-09 12:32:44.135794977 +0300
++++ gnome-initial-setup-50.0/po/en_GB.po	2026-09-09 12:35:18.547793473 +0300
+@@ -10,7 +10,7 @@
+ "Project-Id-Version: gnome-initial-setup master\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2026-04-14 01:48+0000\n"
+ "Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
+ "Language-Team: British English <en@li.org>\n"
+@@ -1197,11 +1197,12 @@
+ msgstr "Appearance"
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
+-msgstr "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
++msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++#, fuzzy
++msgid "Personalise your desktop's appearance"
+ msgstr "Personalise your desktop's appearance"
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+@@ -1265,6 +1266,9 @@
+ msgid "Install ${PRETTY_NAME}"
+ msgstr "Install ${PRETTY_NAME}"
+ 
++#~ msgid "Choose how Ubuntu looks"
++#~ msgstr "Choose how Ubuntu looks"
++
+ #, c-format
+ #~ msgid "Failed to show privacy policy: %s"
+ #~ msgstr "Failed to show privacy policy: %s"
+Index: gnome-initial-setup-50.0/po/eo.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/eo.po	2026-09-09 12:32:44.139794977 +0300
++++ gnome-initial-setup-50.0/po/eo.po	2026-09-09 12:35:18.567793472 +0300
+@@ -10,7 +10,7 @@
+ "Project-Id-Version: gnome-initial-setup master\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2026-04-14 01:47+0000\n"
+ "Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
+ "Language-Team: Esperanto <gnome-eo-list@gnome.org>\n"
+@@ -1183,11 +1183,11 @@
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/es.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/es.po	2026-09-09 12:32:44.139794977 +0300
++++ gnome-initial-setup-50.0/po/es.po	2026-09-09 12:35:18.587793472 +0300
+@@ -9,7 +9,7 @@
+ "Project-Id-Version: gnome-initial-setup master\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2026-04-14 01:42+0000\n"
+ "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
+ "Language-Team: Spanish - Spain <gnome-es-list@gnome.org>\n"
+@@ -1227,11 +1227,12 @@
+ msgstr "Aspecto"
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
+-msgstr "Elija el aspecto de Ubuntu"
++msgid "Adjust the look and feel of Utile OS"
++msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++#, fuzzy
++msgid "Personalise your desktop's appearance"
+ msgstr "Personalice el aspecto de su escritorio"
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+@@ -1296,6 +1297,9 @@
+ msgid "Install ${PRETTY_NAME}"
+ msgstr "Instalar ${PRETTY_NAME}"
+ 
++#~ msgid "Choose how Ubuntu looks"
++#~ msgstr "Elija el aspecto de Ubuntu"
++
+ #, c-format
+ #~ msgid "Failed to show privacy policy: %s"
+ #~ msgstr "No se pudo mostrar la normativa de privacidad: %s"
+Index: gnome-initial-setup-50.0/po/et.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/et.po	2026-09-09 12:32:44.139794977 +0300
++++ gnome-initial-setup-50.0/po/et.po	2026-09-09 12:35:18.607793472 +0300
+@@ -8,7 +8,7 @@
+ "Project-Id-Version: gnome-initial-setup master\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2026-04-14 01:42+0000\n"
+ "Last-Translator: mahfiaz <mahfiaz@gmail.com>\n"
+ "Language-Team: Estonian <gnome-et-list@gnome.org>\n"
+@@ -1140,11 +1140,11 @@
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/eu.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/eu.po	2026-09-09 12:32:44.139794977 +0300
++++ gnome-initial-setup-50.0/po/eu.po	2026-09-09 12:35:18.627793472 +0300
+@@ -11,7 +11,7 @@
+ "Project-Id-Version: gnome-initial-setup master\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2026-04-14 01:46+0000\n"
+ "Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
+ "Language-Team: Basque <librezale@librezale.eus>\n"
+@@ -1212,11 +1212,11 @@
+ msgstr "Itxura"
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/fa.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/fa.po	2026-09-09 12:32:44.139794977 +0300
++++ gnome-initial-setup-50.0/po/fa.po	2026-09-09 12:35:18.655793471 +0300
+@@ -9,7 +9,7 @@
+ "Project-Id-Version: gnome-initial-setup master\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2026-04-14 01:43+0000\n"
+ "Last-Translator: Danial Behzadi <dani.behzi@ubuntu.com>\n"
+ "Language-Team: Persian\n"
+@@ -1175,11 +1175,11 @@
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/fi.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/fi.po	2026-09-09 12:32:44.139794977 +0300
++++ gnome-initial-setup-50.0/po/fi.po	2026-09-09 12:35:18.675793471 +0300
+@@ -8,7 +8,7 @@
+ "Project-Id-Version: \n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2026-04-14 01:43+0000\n"
+ "Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
+ "Language-Team: suomi <lokalisointi-lista@googlegroups.com>\n"
+@@ -1207,11 +1207,12 @@
+ msgstr "Ulkoasu"
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
+-msgstr "Valitse miltä Ubuntu näyttää"
++msgid "Adjust the look and feel of Utile OS"
++msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++#, fuzzy
++msgid "Personalise your desktop's appearance"
+ msgstr "Mukauta työpöydän ulkoasua"
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+@@ -1275,6 +1276,9 @@
+ msgid "Install ${PRETTY_NAME}"
+ msgstr "Asenna ${PRETTY_NAME}"
+ 
++#~ msgid "Choose how Ubuntu looks"
++#~ msgstr "Valitse miltä Ubuntu näyttää"
++
+ #~ msgid "Help improve Ubuntu"
+ #~ msgstr "Auta parantamaan Ubuntua"
+ 
+Index: gnome-initial-setup-50.0/po/fil.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/fil.po	2026-09-09 12:32:44.143794977 +0300
++++ gnome-initial-setup-50.0/po/fil.po	2026-09-09 12:35:18.691793471 +0300
+@@ -8,7 +8,7 @@
+ "Project-Id-Version: gnome-initial-setup master\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2026-04-14 01:47+0000\n"
+ "Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
+ "Language-Team: Filipino <fil@li.org>\n"
+@@ -1195,11 +1195,11 @@
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/fo.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/fo.po	2026-09-09 12:32:44.143794977 +0300
++++ gnome-initial-setup-50.0/po/fo.po	2026-09-09 12:35:18.707793471 +0300
+@@ -8,7 +8,7 @@
+ "Project-Id-Version: gnome-initial-setup\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2022-10-21 15:08+0000\n"
+ "Last-Translator: Bogi <bogi.wennerstrom@gmail.com>\n"
+ "Language-Team: Faroese <fo@li.org>\n"
+@@ -1138,11 +1138,11 @@
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/fr.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/fr.po	2026-09-09 12:32:44.143794977 +0300
++++ gnome-initial-setup-50.0/po/fr.po	2026-09-09 12:35:18.723793471 +0300
+@@ -18,7 +18,7 @@
+ "Project-Id-Version: gnome-initial-setup\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2026-04-14 01:46+0000\n"
+ "Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
+ "Language-Team: French\n"
+@@ -1217,11 +1217,11 @@
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/fr_CA.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/fr_CA.po	2026-09-09 12:32:44.143794977 +0300
++++ gnome-initial-setup-50.0/po/fr_CA.po	2026-09-09 12:35:18.739793470 +0300
+@@ -7,7 +7,7 @@
+ "Project-Id-Version: gnome-initial-setup\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2025-03-12 04:02+0000\n"
+ "Last-Translator: AO <Unknown>\n"
+ "Language-Team: French (Canada) <fr_CA@li.org>\n"
+@@ -1192,11 +1192,11 @@
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/fur.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/fur.po	2026-09-09 12:32:44.143794977 +0300
++++ gnome-initial-setup-50.0/po/fur.po	2026-09-09 12:35:18.759793470 +0300
+@@ -8,7 +8,7 @@
+ "Project-Id-Version: gnome-initial-setup gnome-3-6\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2026-04-14 01:44+0000\n"
+ "Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
+ "Language-Team: Friulian <f.t.public@gmail.com>\n"
+@@ -1194,11 +1194,11 @@
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/ga.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/ga.po	2026-09-09 12:32:44.143794977 +0300
++++ gnome-initial-setup-50.0/po/ga.po	2026-09-09 12:35:18.775793470 +0300
+@@ -8,7 +8,7 @@
+ "Project-Id-Version: gnome-initial-setup.master\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2026-04-14 01:46+0000\n"
+ "Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
+ "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
+@@ -1138,11 +1138,11 @@
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/gd.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/gd.po	2026-09-09 12:32:44.143794977 +0300
++++ gnome-initial-setup-50.0/po/gd.po	2026-09-09 12:35:18.787793470 +0300
+@@ -7,7 +7,7 @@
+ "Project-Id-Version: gnome-initial-setup gnome-3-20\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2026-04-14 01:47+0000\n"
+ "Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
+ "Language-Team: Fòram na Gàidhlig\n"
+@@ -1182,11 +1182,11 @@
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/gl.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/gl.po	2026-09-09 12:32:44.147794977 +0300
++++ gnome-initial-setup-50.0/po/gl.po	2026-09-09 12:35:18.807793470 +0300
+@@ -13,7 +13,7 @@
+ "Project-Id-Version: gnome-initial-setup\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2026-04-14 01:43+0000\n"
+ "Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
+ "Language-Team: Galician <Proxecto Trasno <proxecto@trasno.gal>>\n"
+@@ -1197,11 +1197,11 @@
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/gu.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/gu.po	2026-09-09 12:32:44.147794977 +0300
++++ gnome-initial-setup-50.0/po/gu.po	2026-09-09 12:35:18.819793470 +0300
+@@ -7,7 +7,7 @@
+ "Project-Id-Version: \n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2026-04-14 01:46+0000\n"
+ "Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
+ "Language-Team: American English <kde-i18n-doc@kde.org>\n"
+@@ -1140,11 +1140,11 @@
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/he.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/he.po	2026-09-09 12:32:44.147794977 +0300
++++ gnome-initial-setup-50.0/po/he.po	2026-09-09 12:35:18.835793469 +0300
+@@ -9,7 +9,7 @@
+ "Project-Id-Version: gnome-initial-setup\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2026-04-14 01:47+0000\n"
+ "Last-Translator: Yaron <sh.yaron@gmail.com>\n"
+ "Language-Team: Hebrew\n"
+@@ -1164,11 +1164,11 @@
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/hi.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/hi.po	2026-09-09 12:32:44.147794977 +0300
++++ gnome-initial-setup-50.0/po/hi.po	2026-09-09 12:35:18.855793469 +0300
+@@ -11,7 +11,7 @@
+ "Project-Id-Version: gnome-initial-setup master\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2026-04-14 01:47+0000\n"
+ "Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
+ "Language-Team: Hindi <indlinux-hindi@lists.sourceforge.net>\n"
+@@ -1176,11 +1176,11 @@
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/hr.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/hr.po	2026-09-09 12:32:44.147794977 +0300
++++ gnome-initial-setup-50.0/po/hr.po	2026-09-09 12:35:18.871793469 +0300
+@@ -8,7 +8,7 @@
+ "Project-Id-Version: gnome-initial-setup gnome-3-24\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2026-04-14 01:43+0000\n"
+ "Last-Translator: gogo <trebelnik2@gmail.com>\n"
+ "Language-Team: Croatian <hr@li.org>\n"
+@@ -1174,11 +1174,11 @@
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/hu.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/hu.po	2026-09-09 12:32:44.147794977 +0300
++++ gnome-initial-setup-50.0/po/hu.po	2026-09-09 12:35:18.891793469 +0300
+@@ -10,7 +10,7 @@
+ "Project-Id-Version: gnome-initial-setup master\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2026-04-14 01:47+0000\n"
+ "Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
+ "Language-Team: Hungarian <openscope at fsf dot hu>\n"
+@@ -1200,11 +1200,11 @@
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/hy.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/hy.po	2026-09-09 12:32:44.151794977 +0300
++++ gnome-initial-setup-50.0/po/hy.po	2026-09-09 12:35:18.907793469 +0300
+@@ -8,7 +8,7 @@
+ "Project-Id-Version: gnome-initial-setup\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2018-10-21 13:10+0000\n"
+ "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+ "Language-Team: Armenian <hy@li.org>\n"
+@@ -1140,11 +1140,11 @@
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/ia.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/ia.po	2026-09-09 12:32:44.151794977 +0300
++++ gnome-initial-setup-50.0/po/ia.po	2026-09-09 12:35:18.927793468 +0300
+@@ -9,7 +9,7 @@
+ "Project-Id-Version: gnome-initial-setup master\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2026-05-13 12:27+0000\n"
+ "Last-Translator: karm <melo@carmu.com>\n"
+ "Language-Team: Interlingua <softinterlingua@gmail.com>\n"
+@@ -1233,11 +1233,12 @@
+ msgstr "Apparentia"
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
+-msgstr "Elige como Ubuntu appare"
++msgid "Adjust the look and feel of Utile OS"
++msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++#, fuzzy
++msgid "Personalise your desktop's appearance"
+ msgstr "Personalisa le apparentia de tu scriptorio"
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+@@ -1301,6 +1302,9 @@
+ msgid "Install ${PRETTY_NAME}"
+ msgstr "Installar ${PRETTY_NAME}"
+ 
++#~ msgid "Choose how Ubuntu looks"
++#~ msgstr "Elige como Ubuntu appare"
++
+ #~ msgid "Help improve Ubuntu"
+ #~ msgstr "Adjuta a meliorar Ubuntu"
+ 
+Index: gnome-initial-setup-50.0/po/id.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/id.po	2026-09-09 12:32:44.151794977 +0300
++++ gnome-initial-setup-50.0/po/id.po	2026-09-09 12:35:18.947793468 +0300
+@@ -11,7 +11,7 @@
+ "Project-Id-Version: gnome-initial-setup master\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2026-04-14 01:43+0000\n"
+ "Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
+ "Language-Team: Indonesian\n"
+@@ -1225,11 +1225,12 @@
+ msgstr "Penampilan"
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
+-msgstr "Pilih bagaiman Ubuntu tampil"
++msgid "Adjust the look and feel of Utile OS"
++msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++#, fuzzy
++msgid "Personalise your desktop's appearance"
+ msgstr "Personalisasikan penampilan desktop Anda"
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+@@ -1293,6 +1294,9 @@
+ msgid "Install ${PRETTY_NAME}"
+ msgstr "Pasang ${PRETTY_NAME}"
+ 
++#~ msgid "Choose how Ubuntu looks"
++#~ msgstr "Pilih bagaiman Ubuntu tampil"
++
+ #, c-format
+ #~ msgid "Failed to show privacy policy: %s"
+ #~ msgstr "Gagal menampilkan kebijakan privasi: %s"
+Index: gnome-initial-setup-50.0/po/ie.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/ie.po	2026-09-09 12:32:44.151794977 +0300
++++ gnome-initial-setup-50.0/po/ie.po	2026-09-09 12:35:18.967793468 +0300
+@@ -8,7 +8,7 @@
+ "Project-Id-Version: \n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2023-02-24 02:03+0000\n"
+ "Last-Translator: Silvara <Unknown>\n"
+ "Language-Team: \n"
+@@ -1143,11 +1143,11 @@
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/is.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/is.po	2026-09-09 12:32:44.151794977 +0300
++++ gnome-initial-setup-50.0/po/is.po	2026-09-09 12:35:18.983793468 +0300
+@@ -7,7 +7,7 @@
+ "Project-Id-Version: \n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2026-04-14 01:46+0000\n"
+ "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
+ "Language-Team: Icelandic\n"
+@@ -1180,11 +1180,11 @@
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/it.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/it.po	2026-09-09 12:32:44.151794977 +0300
++++ gnome-initial-setup-50.0/po/it.po	2026-09-09 12:35:18.999793468 +0300
+@@ -11,7 +11,7 @@
+ "Project-Id-Version: gnome-initial-setup\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2026-04-14 01:46+0000\n"
+ "Last-Translator: Milo Casagrande <milo.casagrande@gmail.com>\n"
+ "Language-Team: Italian <gnome-it-list@gnome.org>\n"
+@@ -1244,11 +1244,12 @@
+ msgstr "Aspetto"
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
+-msgstr "Scegli l'aspetto di Ubuntu"
++msgid "Adjust the look and feel of Utile OS"
++msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++#, fuzzy
++msgid "Personalise your desktop's appearance"
+ msgstr "Personalizza l'aspetto del tuo desktop"
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+@@ -1314,6 +1315,9 @@
+ msgid "Install ${PRETTY_NAME}"
+ msgstr "Installa ${PRETTY_NAME}"
+ 
++#~ msgid "Choose how Ubuntu looks"
++#~ msgstr "Scegli l'aspetto di Ubuntu"
++
+ #, c-format
+ #~ msgid "Failed to show privacy policy: %s"
+ #~ msgstr "Impossibile visualizzare l'informativa sulla privacy: %s"
+Index: gnome-initial-setup-50.0/po/ja.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/ja.po	2026-09-09 12:32:44.155794977 +0300
++++ gnome-initial-setup-50.0/po/ja.po	2026-09-09 12:35:19.015793467 +0300
+@@ -14,7 +14,7 @@
+ "Project-Id-Version: gnome-initial-setup master\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2026-04-14 01:46+0000\n"
+ "Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
+ "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
+@@ -1202,11 +1202,12 @@
+ msgstr "外観"
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
+-msgstr "Ubuntuの見た目を選択"
++msgid "Adjust the look and feel of Utile OS"
++msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++#, fuzzy
++msgid "Personalise your desktop's appearance"
+ msgstr "デスクトップの外観を個人向けにカスタマイズ"
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+@@ -1272,6 +1273,9 @@
+ msgid "Install ${PRETTY_NAME}"
+ msgstr "${PRETTY_NAME} をインストール"
+ 
++#~ msgid "Choose how Ubuntu looks"
++#~ msgstr "Ubuntuの見た目を選択"
++
+ #, c-format
+ #~ msgid "Failed to show privacy policy: %s"
+ #~ msgstr "プライバシーポリシーの表示に失敗しました: %s"
+Index: gnome-initial-setup-50.0/po/ka.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/ka.po	2026-09-09 12:32:44.155794977 +0300
++++ gnome-initial-setup-50.0/po/ka.po	2026-09-09 12:35:19.031793467 +0300
+@@ -8,7 +8,7 @@
+ "Project-Id-Version: gnome-initial-setup\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2026-04-14 01:47+0000\n"
+ "Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
+ "Language-Team: Georgian <(nothing)>\n"
+@@ -1170,11 +1170,11 @@
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/kab.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/kab.po	2026-09-09 12:32:44.155794977 +0300
++++ gnome-initial-setup-50.0/po/kab.po	2026-09-09 12:35:19.047793467 +0300
+@@ -9,7 +9,7 @@
+ "Project-Id-Version: gnome-initial-setup master\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2026-04-14 01:42+0000\n"
+ "Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
+ "Language-Team: Kabyle <>\n"
+@@ -1188,11 +1188,11 @@
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/kk.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/kk.po	2026-09-09 12:32:44.155794977 +0300
++++ gnome-initial-setup-50.0/po/kk.po	2026-09-09 12:35:19.067793467 +0300
+@@ -8,7 +8,7 @@
+ "Project-Id-Version: gnome-initial-setup master\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2026-04-14 01:46+0000\n"
+ "Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
+ "Language-Team: Kazakh <kk@li.org>\n"
+@@ -1189,11 +1189,11 @@
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/kn.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/kn.po	2026-09-09 12:32:44.155794977 +0300
++++ gnome-initial-setup-50.0/po/kn.po	2026-09-09 12:35:19.079793467 +0300
+@@ -9,7 +9,7 @@
+ "Project-Id-Version: gnome-initial-setup master\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2026-04-14 01:43+0000\n"
+ "Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
+ "Language-Team: Kannada <kde-i18n-doc@kde.org>\n"
+@@ -1142,11 +1142,11 @@
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/ko.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/ko.po	2026-09-09 12:32:44.159794977 +0300
++++ gnome-initial-setup-50.0/po/ko.po	2026-09-09 12:35:19.095793467 +0300
+@@ -9,7 +9,7 @@
+ "Project-Id-Version: gnome-initial-setup master\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2026-04-14 01:46+0000\n"
+ "Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
+ "Language-Team: 한국어 <gnome-kr@googlegroups.com>\n"
+@@ -1167,11 +1167,11 @@
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/ku.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/ku.po	2026-09-09 12:32:44.159794977 +0300
++++ gnome-initial-setup-50.0/po/ku.po	2026-09-09 12:35:19.107793466 +0300
+@@ -8,7 +8,7 @@
+ "Project-Id-Version: gnome-initial-setup\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2018-08-16 21:16+0000\n"
+ "Last-Translator: Bikarhêner <kaya6491@gmail.com>\n"
+ "Language-Team: Kurdish <ku@li.org>\n"
+@@ -1178,11 +1178,11 @@
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/kw.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/kw.po	2026-09-09 12:32:44.159794977 +0300
++++ gnome-initial-setup-50.0/po/kw.po	2026-09-09 12:35:19.123793466 +0300
+@@ -8,7 +8,7 @@
+ "Project-Id-Version: gnome-initial-setup\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2019-09-17 03:24+0000\n"
+ "Last-Translator: Nicky Rowe <Unknown>\n"
+ "Language-Team: Cornish <kw@li.org>\n"
+@@ -1165,11 +1165,11 @@
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/lld.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/lld.po	2026-09-09 12:32:44.159794977 +0300
++++ gnome-initial-setup-50.0/po/lld.po	2026-09-09 12:35:19.135793466 +0300
+@@ -8,7 +8,7 @@
+ "Project-Id-Version: gnome-initial-setup\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2023-10-30 17:09+0000\n"
+ "Last-Translator: Jack <Unknown>\n"
+ "Language-Team: Ladin <lld@li.org>\n"
+@@ -1152,11 +1152,11 @@
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/lt.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/lt.po	2026-09-09 12:32:44.159794977 +0300
++++ gnome-initial-setup-50.0/po/lt.po	2026-09-09 12:35:19.151793466 +0300
+@@ -8,7 +8,7 @@
+ "Project-Id-Version: gnome-initial-setup master\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2026-04-14 01:47+0000\n"
+ "Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
+ "Language-Team: Lietuvių <gnome-lt@lists.akl.lt>\n"
+@@ -1186,11 +1186,11 @@
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/lv.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/lv.po	2026-09-09 12:32:44.159794977 +0300
++++ gnome-initial-setup-50.0/po/lv.po	2026-09-09 12:35:19.167793466 +0300
+@@ -9,7 +9,7 @@
+ "Project-Id-Version: gnome-initial-setup master\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2026-04-14 01:43+0000\n"
+ "Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
+ "Language-Team: Latvian <lata-l10n@googlegroups.com>\n"
+@@ -1183,11 +1183,11 @@
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/mjw.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/mjw.po	2026-09-09 12:32:44.163794977 +0300
++++ gnome-initial-setup-50.0/po/mjw.po	2026-09-09 12:35:19.179793466 +0300
+@@ -8,7 +8,7 @@
+ "Project-Id-Version: gnome-initial-setup master\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2020-03-12 21:42+0000\n"
+ "Last-Translator: J T <Unknown>\n"
+ "Language-Team: Karbi <karbi.translation@gmail.com>\n"
+@@ -1138,11 +1138,11 @@
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/ml.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/ml.po	2026-09-09 12:32:44.163794977 +0300
++++ gnome-initial-setup-50.0/po/ml.po	2026-09-09 12:35:19.195793465 +0300
+@@ -10,7 +10,7 @@
+ "Project-Id-Version: gnome-initial-setup master\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2026-04-14 01:42+0000\n"
+ "Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
+ "Language-Team: Swatantra Malayalam Computing\n"
+@@ -1170,11 +1170,11 @@
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/mnw.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/mnw.po	2026-09-09 12:32:44.163794977 +0300
++++ gnome-initial-setup-50.0/po/mnw.po	2026-09-09 12:35:19.211793465 +0300
+@@ -8,7 +8,7 @@
+ "Project-Id-Version: gnome-initial-setup\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2023-05-24 03:14+0000\n"
+ "Last-Translator: Tao Mon Lae <Unknown>\n"
+ "Language-Team: Mon <mnw@li.org>\n"
+@@ -1146,11 +1146,11 @@
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/mr.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/mr.po	2026-09-09 12:32:44.163794977 +0300
++++ gnome-initial-setup-50.0/po/mr.po	2026-09-09 12:35:19.223793465 +0300
+@@ -8,7 +8,7 @@
+ "Project-Id-Version: gnome-initial-setup master\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2026-04-14 01:42+0000\n"
+ "Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
+ "Language-Team: Marathi <kde-i18n-doc@kde.org>\n"
+@@ -1142,11 +1142,11 @@
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/ms.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/ms.po	2026-09-09 12:32:44.163794977 +0300
++++ gnome-initial-setup-50.0/po/ms.po	2026-09-09 12:35:19.239793465 +0300
+@@ -8,7 +8,7 @@
+ "Project-Id-Version: gnome-initial-setup master\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2022-02-16 06:14+0000\n"
+ "Last-Translator: Ahmed Noor Kader Mustajir Md Eusoff <Unknown>\n"
+ "Language-Team: Pasukan Terjemahan GNOME Malaysia\n"
+@@ -1167,11 +1167,11 @@
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/my.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/my.po	2026-09-09 12:32:44.163794977 +0300
++++ gnome-initial-setup-50.0/po/my.po	2026-09-09 12:35:19.259793465 +0300
+@@ -8,7 +8,7 @@
+ "Project-Id-Version: gnome-initial-setup\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2026-04-11 14:53+0000\n"
+ "Last-Translator: Wint Theingi Aung <Unknown>\n"
+ "Language-Team: Burmese <my@li.org>\n"
+@@ -1190,11 +1190,12 @@
+ msgstr "အသွင်အပြင်"
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
+-msgstr "Ubuntu ပုံစံကိုရွေးပါ"
++msgid "Adjust the look and feel of Utile OS"
++msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++#, fuzzy
++msgid "Personalise your desktop's appearance"
+ msgstr "သင့်ဒက်စ်တော့ပုံစံကို စိတ်ကြိုက်ပြင်ပါ"
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+@@ -1257,6 +1258,9 @@
+ msgid "Install ${PRETTY_NAME}"
+ msgstr "${PRETTY_NAME} ကို ထည့်သွင်းပါ"
+ 
++#~ msgid "Choose how Ubuntu looks"
++#~ msgstr "Ubuntu ပုံစံကိုရွေးပါ"
++
+ #, c-format
+ #~ msgid "Failed to show privacy policy: %s"
+ #~ msgstr "ကိုယ်ရေးကိုယ်တာမူဝါဒကို ပြသရန် မအောင်မြင်ပါ- %s"
+Index: gnome-initial-setup-50.0/po/nb.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/nb.po	2026-09-09 12:32:44.167794977 +0300
++++ gnome-initial-setup-50.0/po/nb.po	2026-09-09 12:35:19.275793465 +0300
+@@ -8,7 +8,7 @@
+ "Project-Id-Version: \n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2026-04-14 01:46+0000\n"
+ "Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
+ "Language-Team: \n"
+@@ -1171,11 +1171,11 @@
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/ne.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/ne.po	2026-09-09 12:32:44.167794977 +0300
++++ gnome-initial-setup-50.0/po/ne.po	2026-09-09 12:35:19.291793464 +0300
+@@ -8,7 +8,7 @@
+ "Project-Id-Version: Gnome Nepali Translation Project\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2026-04-14 01:46+0000\n"
+ "Last-Translator: chautari <pchitrakar@gmail.com>\n"
+ "Language-Team: Nepali Translation Team <chautari@gmail.com>\n"
+@@ -1166,11 +1166,11 @@
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/nl.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/nl.po	2026-09-09 12:32:44.167794977 +0300
++++ gnome-initial-setup-50.0/po/nl.po	2026-09-09 12:35:19.303793464 +0300
+@@ -13,7 +13,7 @@
+ "Project-Id-Version: gnome-initial-setup\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2026-04-19 17:17+0000\n"
+ "Last-Translator: Pjotr12345 <Unknown>\n"
+ "Language-Team: GNOME-NL https://matrix.to/#/#nl:gnome.org\n"
+@@ -1220,11 +1220,11 @@
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/nn.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/nn.po	2026-09-09 12:32:44.167794977 +0300
++++ gnome-initial-setup-50.0/po/nn.po	2026-09-09 12:35:19.319793464 +0300
+@@ -8,7 +8,7 @@
+ "Project-Id-Version: gnome-initial-setup master\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2026-04-14 01:47+0000\n"
+ "Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
+ "Language-Team: Norwegian Nynorsk <nn@li.org>\n"
+@@ -1190,11 +1190,11 @@
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/oc.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/oc.po	2026-09-09 12:32:44.167794977 +0300
++++ gnome-initial-setup-50.0/po/oc.po	2026-09-09 12:35:19.335793464 +0300
+@@ -7,7 +7,7 @@
+ "Project-Id-Version: gnome-initial-setup\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2026-04-14 01:44+0000\n"
+ "Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
+ "Language-Team: Tot En Òc\n"
+@@ -1233,11 +1233,12 @@
+ msgstr "Aparéncia"
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
+-msgstr "Causissètz l'aspècte d’Ubuntu"
++msgid "Adjust the look and feel of Utile OS"
++msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++#, fuzzy
++msgid "Personalise your desktop's appearance"
+ msgstr "Personalizatz l’aparéncia de vòstre burèu"
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+@@ -1301,6 +1302,9 @@
+ msgid "Install ${PRETTY_NAME}"
+ msgstr "Installar ${PRETTY_NAME}"
+ 
++#~ msgid "Choose how Ubuntu looks"
++#~ msgstr "Causissètz l'aspècte d’Ubuntu"
++
+ #~ msgid "Cancel"
+ #~ msgstr "Anullar"
+ 
+Index: gnome-initial-setup-50.0/po/or.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/or.po	2026-09-09 12:32:44.167794977 +0300
++++ gnome-initial-setup-50.0/po/or.po	2026-09-09 12:35:19.351793464 +0300
+@@ -7,7 +7,7 @@
+ "Project-Id-Version: \n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2026-04-14 01:46+0000\n"
+ "Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
+ "Language-Team: Oriya <oriya-it@googlegroups.com>\n"
+@@ -1140,11 +1140,11 @@
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/pa.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/pa.po	2026-09-09 12:32:44.171794977 +0300
++++ gnome-initial-setup-50.0/po/pa.po	2026-09-09 12:35:19.371793463 +0300
+@@ -7,7 +7,7 @@
+ "Project-Id-Version: \n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2026-04-14 01:47+0000\n"
+ "Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
+ "Language-Team: Punjabi <punjabi-users@list.sf.net>\n"
+@@ -1162,11 +1162,11 @@
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/pl.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/pl.po	2026-09-09 12:32:44.171794977 +0300
++++ gnome-initial-setup-50.0/po/pl.po	2026-09-09 12:35:19.391793463 +0300
+@@ -10,7 +10,7 @@
+ "Project-Id-Version: gnome-initial-setup\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2026-04-14 01:42+0000\n"
+ "Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
+ "Language-Team: Polish\n"
+@@ -1215,11 +1215,12 @@
+ msgstr "Wygląd"
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
+-msgstr "Wybierz wygląd Ubuntu"
++msgid "Adjust the look and feel of Utile OS"
++msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++#, fuzzy
++msgid "Personalise your desktop's appearance"
+ msgstr "Personalizuj wygląd swojego pulpitu"
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+@@ -1283,6 +1284,9 @@
+ msgid "Install ${PRETTY_NAME}"
+ msgstr "Zainstaluj system ${PRETTY_NAME}"
+ 
++#~ msgid "Choose how Ubuntu looks"
++#~ msgstr "Wybierz wygląd Ubuntu"
++
+ #, c-format
+ #~ msgid "Failed to show privacy policy: %s"
+ #~ msgstr "Wyświetlenie informacji o polityce prywatności nie powiodło się: %s"
+Index: gnome-initial-setup-50.0/po/ps.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/ps.po	2026-09-09 12:32:44.171794977 +0300
++++ gnome-initial-setup-50.0/po/ps.po	2026-09-09 12:35:19.407793463 +0300
+@@ -8,7 +8,7 @@
+ "Project-Id-Version: gnome-initial-setup\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2023-01-26 12:55+0000\n"
+ "Last-Translator: Mohammad Asim Ayub <Unknown>\n"
+ "Language-Team: Pashto <ps@li.org>\n"
+@@ -1150,11 +1150,11 @@
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/pt.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/pt.po	2026-09-09 12:32:44.171794977 +0300
++++ gnome-initial-setup-50.0/po/pt.po	2026-09-09 12:35:19.423793463 +0300
+@@ -15,7 +15,7 @@
+ "Project-Id-Version: 3.12\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2026-04-14 01:46+0000\n"
+ "Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
+ "Language-Team: Portuguese (https://l10n.gnome.org/teams/pt/)\n"
+@@ -1236,11 +1236,12 @@
+ msgstr "Aparência"
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
+-msgstr "Escolha o aspeto do Ubuntu"
++msgid "Adjust the look and feel of Utile OS"
++msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++#, fuzzy
++msgid "Personalise your desktop's appearance"
+ msgstr "Personalize o aspeto do seu ambiente de trabalho"
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+@@ -1305,6 +1306,9 @@
+ msgid "Install ${PRETTY_NAME}"
+ msgstr "Instalar ${PRETTY_NAME}"
+ 
++#~ msgid "Choose how Ubuntu looks"
++#~ msgstr "Escolha o aspeto do Ubuntu"
++
+ #, c-format
+ #~ msgid "Failed to show privacy policy: %s"
+ #~ msgstr "Falhou em mostrar política de privacidade: %s"
+Index: gnome-initial-setup-50.0/po/pt_BR.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/pt_BR.po	2026-09-09 12:32:44.171794977 +0300
++++ gnome-initial-setup-50.0/po/pt_BR.po	2026-09-09 12:35:19.443793463 +0300
+@@ -18,7 +18,7 @@
+ "Project-Id-Version: gnome-initial-setup master\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2026-04-14 01:47+0000\n"
+ "Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
+ "Language-Team: Brazilian Portuguese <https://br.gnome.org/traducao>\n"
+@@ -1198,11 +1198,11 @@
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/ro.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/ro.po	2026-09-09 12:32:44.171794977 +0300
++++ gnome-initial-setup-50.0/po/ro.po	2026-09-09 12:35:19.459793463 +0300
+@@ -10,7 +10,7 @@
+ "Project-Id-Version: gnome-initial-setup master\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2026-04-14 01:47+0000\n"
+ "Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
+ "Language-Team: Romanian <gnomero-list@lists.sourceforge.net>\n"
+@@ -1193,11 +1193,11 @@
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/ru.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/ru.po	2026-09-09 12:32:44.175794977 +0300
++++ gnome-initial-setup-50.0/po/ru.po	2026-09-09 12:35:19.483793462 +0300
+@@ -9,7 +9,7 @@
+ "Project-Id-Version: gnome-initial-setup\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2026-04-14 01:44+0000\n"
+ "Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
+ "Language-Team: Русский <gnome-cyr@gnome.org>\n"
+@@ -1216,11 +1216,12 @@
+ msgstr "Внешний вид"
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
+-msgstr "Выберите внешний вид Ubuntu"
++msgid "Adjust the look and feel of Utile OS"
++msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++#, fuzzy
++msgid "Personalise your desktop's appearance"
+ msgstr "Настройте внешний вид системы"
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+@@ -1285,6 +1286,9 @@
+ msgid "Install ${PRETTY_NAME}"
+ msgstr "Установить ${PRETTY_NAME}"
+ 
++#~ msgid "Choose how Ubuntu looks"
++#~ msgstr "Выберите внешний вид Ubuntu"
++
+ #~ msgid "Help improve Ubuntu"
+ #~ msgstr "Помогите улучшить Ubuntu"
+ 
+Index: gnome-initial-setup-50.0/po/sd.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/sd.po	2026-09-09 12:32:44.175794977 +0300
++++ gnome-initial-setup-50.0/po/sd.po	2026-09-09 12:35:19.495793462 +0300
+@@ -8,7 +8,7 @@
+ "Project-Id-Version: gnome-initial-setup\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2018-11-11 06:40+0000\n"
+ "Last-Translator: Aziz Mangrio <Unknown>\n"
+ "Language-Team: Sindhi <sd@li.org>\n"
+@@ -1138,11 +1138,11 @@
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/se.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/se.po	2026-09-09 12:32:44.175794977 +0300
++++ gnome-initial-setup-50.0/po/se.po	2026-09-09 12:35:19.507793462 +0300
+@@ -8,7 +8,7 @@
+ "Project-Id-Version: gnome-initial-setup\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2026-03-22 19:55+0000\n"
+ "Last-Translator: Christopher Forster <Unknown>\n"
+ "Language-Team: Northern Sami <se@li.org>\n"
+@@ -1138,11 +1138,11 @@
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/shn.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/shn.po	2026-09-09 12:32:44.175794977 +0300
++++ gnome-initial-setup-50.0/po/shn.po	2026-09-09 12:35:19.519793462 +0300
+@@ -8,7 +8,7 @@
+ "Project-Id-Version: gnome-initial-setup\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2019-11-04 13:26+0000\n"
+ "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+ "Language-Team: Shan <shn@li.org>\n"
+@@ -1138,11 +1138,11 @@
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/si.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/si.po	2026-09-09 12:32:44.175794977 +0300
++++ gnome-initial-setup-50.0/po/si.po	2026-09-09 12:35:19.531793462 +0300
+@@ -8,7 +8,7 @@
+ "Project-Id-Version: gnome-initial-setup\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2018-07-18 09:00+0000\n"
+ "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+ "Language-Team: Sinhalese <si@li.org>\n"
+@@ -1138,11 +1138,11 @@
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/sk.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/sk.po	2026-09-09 12:32:44.175794977 +0300
++++ gnome-initial-setup-50.0/po/sk.po	2026-09-09 12:35:19.547793462 +0300
+@@ -8,7 +8,7 @@
+ "Project-Id-Version: gnome-initial-setup master\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2026-04-14 01:43+0000\n"
+ "Last-Translator: Dusan Kazik <prescott66@gmail.com>\n"
+ "Language-Team: Slovak <gnome-sk-list@gnome.org>\n"
+@@ -1218,11 +1218,11 @@
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/sl.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/sl.po	2026-09-09 12:32:44.179794977 +0300
++++ gnome-initial-setup-50.0/po/sl.po	2026-09-09 12:35:19.571793461 +0300
+@@ -9,7 +9,7 @@
+ "Project-Id-Version: gnome-initial-setup master\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2026-04-14 01:42+0000\n"
+ "Last-Translator: Martin Srebotnjak <miles@filmsi.net>\n"
+ "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
+@@ -1189,11 +1189,11 @@
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/sq.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/sq.po	2026-09-09 12:32:44.179794977 +0300
++++ gnome-initial-setup-50.0/po/sq.po	2026-09-09 12:35:19.591793461 +0300
+@@ -8,7 +8,7 @@
+ "Project-Id-Version: gnome-initial-setup\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2026-03-21 15:29+0000\n"
+ "Last-Translator: Vilson Gjeci <vilsongjeci@gmail.com>\n"
+ "Language-Team: Albanian <sq@li.org>\n"
+@@ -1228,11 +1228,12 @@
+ msgstr "Pamja"
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
+-msgstr "Zgjidh si duket Ubuntu"
++msgid "Adjust the look and feel of Utile OS"
++msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++#, fuzzy
++msgid "Personalise your desktop's appearance"
+ msgstr "Personalizoni pamjen dhe desktopin tuaj"
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+@@ -1296,6 +1297,9 @@
+ msgid "Install ${PRETTY_NAME}"
+ msgstr "Instalo ${PRETTY_NAME}"
+ 
++#~ msgid "Choose how Ubuntu looks"
++#~ msgstr "Zgjidh si duket Ubuntu"
++
+ #, c-format
+ #~ msgid "Failed to get report information: %s"
+ #~ msgstr "Deshtoi per te marre raportin e informacioneve: %s"
+Index: gnome-initial-setup-50.0/po/sr.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/sr.po	2026-09-09 12:32:44.179794977 +0300
++++ gnome-initial-setup-50.0/po/sr.po	2026-09-09 12:35:19.611793461 +0300
+@@ -11,7 +11,7 @@
+ "Project-Id-Version: gnome-initial-setup master\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2026-04-14 01:47+0000\n"
+ "Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
+ "Language-Team: Serbian <Serbian <gnome-sr@googlegroups.com>>\n"
+@@ -1191,11 +1191,11 @@
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/sr@latin.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/sr@latin.po	2026-09-09 12:32:44.179794977 +0300
++++ gnome-initial-setup-50.0/po/sr@latin.po	2026-09-09 12:35:19.627793461 +0300
+@@ -10,7 +10,7 @@
+ "Project-Id-Version: gnome-initial-setup master\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2026-04-14 01:47+0000\n"
+ "Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
+ "Language-Team: Serbian <Serbian <gnome-sr@googlegroups.com>>\n"
+@@ -1191,11 +1191,11 @@
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/su.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/su.po	2026-09-09 12:32:44.183794977 +0300
++++ gnome-initial-setup-50.0/po/su.po	2026-09-09 12:35:19.643793460 +0300
+@@ -8,7 +8,7 @@
+ "Project-Id-Version: gnome-initial-setup\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2024-05-25 13:07+0000\n"
+ "Last-Translator: Ilham Nurwansah <ilhamnurwansah@gmail.com>\n"
+ "Language-Team: Sundanese <su@li.org>\n"
+@@ -1189,11 +1189,11 @@
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/sv.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/sv.po	2026-09-09 12:32:44.183794977 +0300
++++ gnome-initial-setup-50.0/po/sv.po	2026-09-09 12:35:19.663793460 +0300
+@@ -12,7 +12,7 @@
+ "Project-Id-Version: gnome-initial-setup\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2026-04-14 01:43+0000\n"
+ "Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
+ "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
+@@ -1220,11 +1220,12 @@
+ msgstr "Utseende"
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
+-msgstr "Välj hur Ubuntu ska se ut"
++msgid "Adjust the look and feel of Utile OS"
++msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++#, fuzzy
++msgid "Personalise your desktop's appearance"
+ msgstr "Anpassa utseendet på ditt skrivbord"
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+@@ -1288,6 +1289,9 @@
+ msgid "Install ${PRETTY_NAME}"
+ msgstr "Installera ${PRETTY_NAME}"
+ 
++#~ msgid "Choose how Ubuntu looks"
++#~ msgstr "Välj hur Ubuntu ska se ut"
++
+ #~ msgid "Help improve Ubuntu"
+ #~ msgstr "Hjälp oss att förbättra Ubuntu"
+ 
+Index: gnome-initial-setup-50.0/po/szl.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/szl.po	2026-09-09 12:32:44.183794977 +0300
++++ gnome-initial-setup-50.0/po/szl.po	2026-09-09 12:35:19.679793460 +0300
+@@ -8,7 +8,7 @@
+ "Project-Id-Version: gnome-initial-setup\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2019-09-10 16:13+0000\n"
+ "Last-Translator: Grzegorz Kulik <Unknown>\n"
+ "Language-Team: Silesian <szl@li.org>\n"
+@@ -1155,11 +1155,11 @@
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/ta.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/ta.po	2026-09-09 12:32:44.183794977 +0300
++++ gnome-initial-setup-50.0/po/ta.po	2026-09-09 12:35:19.695793460 +0300
+@@ -8,7 +8,7 @@
+ "Project-Id-Version: \n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2026-04-14 01:47+0000\n"
+ "Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
+ "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
+@@ -1141,11 +1141,11 @@
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/te.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/te.po	2026-09-09 12:32:44.183794977 +0300
++++ gnome-initial-setup-50.0/po/te.po	2026-09-09 12:35:19.707793460 +0300
+@@ -9,7 +9,7 @@
+ "Project-Id-Version: \n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2026-04-14 01:45+0000\n"
+ "Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
+ "Language-Team: Telugu <kde-i18n-doc@kde.org>\n"
+@@ -1142,11 +1142,11 @@
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/tg.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/tg.po	2026-09-09 12:32:44.183794977 +0300
++++ gnome-initial-setup-50.0/po/tg.po	2026-09-09 12:35:19.719793460 +0300
+@@ -7,7 +7,7 @@
+ "Project-Id-Version: Tajik Gnome\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2026-04-14 01:46+0000\n"
+ "Last-Translator: Victor Ibragimov <victor.ibragimov@gmail.com>\n"
+ "Language-Team: Tajik <victor.ibragimov@gmail.com>\n"
+@@ -1162,11 +1162,11 @@
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/th.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/th.po	2026-09-09 12:32:44.187794977 +0300
++++ gnome-initial-setup-50.0/po/th.po	2026-09-09 12:35:19.739793459 +0300
+@@ -8,7 +8,7 @@
+ "Project-Id-Version: gnome-initial-setup master\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2026-04-14 01:44+0000\n"
+ "Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
+ "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
+@@ -1169,11 +1169,11 @@
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/tl.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/tl.po	2026-09-09 12:32:44.187794977 +0300
++++ gnome-initial-setup-50.0/po/tl.po	2026-09-09 12:35:19.751793459 +0300
+@@ -8,7 +8,7 @@
+ "Project-Id-Version: gnome-initial-setup\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2022-02-20 12:54+0000\n"
+ "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+ "Language-Team: Tagalog <tl@li.org>\n"
+@@ -1138,11 +1138,11 @@
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/tr.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/tr.po	2026-09-09 12:32:44.187794977 +0300
++++ gnome-initial-setup-50.0/po/tr.po	2026-09-09 12:35:19.767793459 +0300
+@@ -12,7 +12,7 @@
+ "Project-Id-Version: gnome-initial-setup master\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2026-04-14 01:46+0000\n"
+ "Last-Translator: sabri unal <yakushabb@gmail.com>\n"
+ "Language-Team: Turkish <takim@gnome.org.tr>\n"
+@@ -1196,11 +1196,11 @@
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/ug.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/ug.po	2026-09-09 12:32:44.187794977 +0300
++++ gnome-initial-setup-50.0/po/ug.po	2026-09-09 12:35:19.791793459 +0300
+@@ -8,7 +8,7 @@
+ "Project-Id-Version: gnome-initial-setup\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2026-04-14 01:42+0000\n"
+ "Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
+ "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
+@@ -1192,11 +1192,11 @@
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/uk.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/uk.po	2026-09-09 12:32:44.187794977 +0300
++++ gnome-initial-setup-50.0/po/uk.po	2026-09-09 12:35:19.811793459 +0300
+@@ -10,7 +10,7 @@
+ "Project-Id-Version: gnome-initial-setup master\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2026-04-21 09:09+0000\n"
+ "Last-Translator: Anton Matsiuk <dnxb42@gmail.com>\n"
+ "Language-Team: Ukrainian\n"
+@@ -1224,11 +1224,12 @@
+ msgstr "Зовнішній вигляд"
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
+-msgstr "Оберіть як виглядатиме Ubuntu"
++msgid "Adjust the look and feel of Utile OS"
++msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++#, fuzzy
++msgid "Personalise your desktop's appearance"
+ msgstr "Персоналізуйте зовнішній вигляд вашого десктопу"
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+@@ -1292,6 +1293,9 @@
+ msgid "Install ${PRETTY_NAME}"
+ msgstr "Інсталювати ${PRETTY_NAME}"
+ 
++#~ msgid "Choose how Ubuntu looks"
++#~ msgstr "Оберіть як виглядатиме Ubuntu"
++
+ #, c-format
+ #~ msgid "Failed to show privacy policy: %s"
+ #~ msgstr "Не вдалося показати політику конфіденційності: %s"
+Index: gnome-initial-setup-50.0/po/uz.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/uz.po	2026-09-09 12:32:44.191794977 +0300
++++ gnome-initial-setup-50.0/po/uz.po	2026-09-09 12:35:19.823793458 +0300
+@@ -8,7 +8,7 @@
+ "Project-Id-Version: gnome-initial-setup master\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2026-04-14 01:43+0000\n"
+ "Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
+ "Language-Team: Uzbek (Latin) <uz@li.org>\n"
+@@ -1194,11 +1194,11 @@
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/vi.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/vi.po	2026-09-09 12:32:44.191794977 +0300
++++ gnome-initial-setup-50.0/po/vi.po	2026-09-09 12:35:19.839793458 +0300
+@@ -10,7 +10,7 @@
+ "Project-Id-Version: gnome-initial-setup master\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2026-04-14 01:43+0000\n"
+ "Last-Translator: Ubuntu Archive Auto-Sync <archive@ubuntu.com>\n"
+ "Language-Team: Vietnamese <Vietnamese <gnome-vi-list@gnome.org>>\n"
+@@ -1170,11 +1170,11 @@
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/zh_CN.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/zh_CN.po	2026-09-09 12:32:44.191794977 +0300
++++ gnome-initial-setup-50.0/po/zh_CN.po	2026-09-09 12:35:19.851793458 +0300
+@@ -15,7 +15,7 @@
+ "Project-Id-Version: gnome-initial-setup master\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2026-04-21 08:51+0000\n"
+ "Last-Translator: Luke Na <Unknown>\n"
+ "Language-Team: Chinese (China) <i18n-zh@googlegroups.com>\n"
+@@ -1170,11 +1170,12 @@
+ msgstr "外观"
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
+-msgstr "选择 Ubuntu 的外观"
++msgid "Adjust the look and feel of Utile OS"
++msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++#, fuzzy
++msgid "Personalise your desktop's appearance"
+ msgstr "个性化您的桌面外观"
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+@@ -1237,6 +1238,9 @@
+ msgid "Install ${PRETTY_NAME}"
+ msgstr "安装 ${PRETTY_NAME}"
+ 
++#~ msgid "Choose how Ubuntu looks"
++#~ msgstr "选择 Ubuntu 的外观"
++
+ #~ msgid "Show the First Report"
+ #~ msgstr "显示第一份报告"
+ 
+Index: gnome-initial-setup-50.0/po/zh_HK.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/zh_HK.po	2026-09-09 12:32:44.191794977 +0300
++++ gnome-initial-setup-50.0/po/zh_HK.po	2026-09-09 12:35:19.867793458 +0300
+@@ -8,7 +8,7 @@
+ "Project-Id-Version: gnome-initial-setup master\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2026-04-14 01:47+0000\n"
+ "Last-Translator: Chao-Hsiung Liao <j_h_liau@yahoo.com.tw>\n"
+ "Language-Team: Chinese (Hong Kong) <community@linuxhall.org>\n"
+@@ -1140,11 +1140,11 @@
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
++msgid "Adjust the look and feel of Utile OS"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++msgid "Personalise your desktop's appearance"
+ msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+Index: gnome-initial-setup-50.0/po/zh_TW.po
+===================================================================
+--- gnome-initial-setup-50.0.orig/po/zh_TW.po	2026-09-09 12:32:44.191794977 +0300
++++ gnome-initial-setup-50.0/po/zh_TW.po	2026-09-09 12:35:19.883793458 +0300
+@@ -10,7 +10,7 @@
+ "Project-Id-Version: gnome-initial-setup master\n"
+ "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-initial-setup/"
+ "issues\n"
+-"POT-Creation-Date: 2026-09-09 12:30+0300\n"
++"POT-Creation-Date: 2026-09-09 12:35+0300\n"
+ "PO-Revision-Date: 2026-06-14 06:18+0000\n"
+ "Last-Translator: taijuin lee <Unknown>\n"
+ "Language-Team: Chinese - Taiwan <chinese-l10n@googlegroups.com>\n"
+@@ -1167,11 +1167,12 @@
+ msgstr "外觀"
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:9
+-msgid "Choose how Ubuntu looks"
+-msgstr "選擇 Ubuntu 的外觀"
++msgid "Adjust the look and feel of Utile OS"
++msgstr ""
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:10
+-msgid "Personalize your desktop's appearance"
++#, fuzzy
++msgid "Personalise your desktop's appearance"
+ msgstr "自訂您的桌面外觀"
+ 
+ #: gnome-initial-setup/pages/appearance/gis-appearance-page.blp:17
+@@ -1234,6 +1235,9 @@
+ msgid "Install ${PRETTY_NAME}"
+ msgstr "安裝 ${PRETTY_NAME}"
+ 
++#~ msgid "Choose how Ubuntu looks"
++#~ msgstr "選擇 Ubuntu 的外觀"
++
+ #, c-format
+ #~ msgid "Failed to get report information: %s"
+ #~ msgstr "無法取得報告資訊：%s"

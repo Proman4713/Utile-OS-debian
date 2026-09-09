@@ -16,3 +16,4 @@
 /subprojects/sassc/
 
 !.pc/
+!meson.build
