@@ -1,9 +1,10 @@
-utile-gnome-defaults (26.0.12) UNRELEASED; urgency=medium
+utile-gnome-defaults (26.0.13) abstract; urgency=medium
 
   * Update Ptyxis icon and increase prompt symbol size in smaller variants
   * Update gnome-initial-setup icon
+  * Add htop .desktop override
 
- -- Aaser Abd-el Sabour <proman4713@gmail.com>  Thu, 10 Sep 2026 18:01:13 +0300
+ -- Aaser Abd-el Sabour <proman4713@gmail.com>  Thu, 10 Sep 2026 18:13:52 +0300
 
 utile-gnome-defaults (26.0.11) abstract; urgency=medium
 
