@@ -1,3 +1,10 @@
+utile-gnome-defaults (26.0.12) UNRELEASED; urgency=medium
+
+  * Update Ptyxis icon and increase prompt symbol size in smaller variants
+  * Update gnome-initial-setup icon
+
+ -- Aaser Abd-el Sabour <proman4713@gmail.com>  Thu, 10 Sep 2026 18:01:13 +0300
+
 utile-gnome-defaults (26.0.11) abstract; urgency=medium
 
   * Thicken borders around Ptyxis icon and all of its size variants
