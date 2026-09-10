@@ -1,4 +1,4 @@
-utile-gnome-defaults (26.0.13) abstract; urgency=medium
+utile-gnome-defaults (26.0.12) abstract; urgency=medium
 
   * Update Ptyxis icon and increase prompt symbol size in smaller variants
   * Update gnome-initial-setup icon
