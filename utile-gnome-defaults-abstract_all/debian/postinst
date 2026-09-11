@@ -28,6 +28,7 @@ if command -v gtk-update-icon-cache >/dev/null 2>&1; then
 	gtk-update-icon-cache /usr/share/icons/*
 fi
 
+# TODO: Remove this since the configurations are now in /etc/profile.d
 BASHRC=/etc/skel/.bashrc
 
 APT_FUNCTION_HEADER="# --- UTILE OS NALA CONFIG START --- #"
@@ -42,24 +43,6 @@ if [ -f $BASHRC ]; then
 
 	sed -i "/$APT_FUNCTION_HEADER/,/$APT_FUNCTION_FOOTER/d" "$BASHRC" || true
 	perl -pi -e 'chomp if eof' $BASHRC || true
-	(cat << 'EOF'
-
-# --- UTILE OS NALA CONFIG START --- #
-apt() {
-	HEADER="\e[31mUtile OS uses nala for this 'apt' command. To only use apt: modify your .bashrc, use 'sudo', or use 'apt-get'.\e[0m"
-	if [[ "$1" == "history" || "$1" == "list" || "$1" == "search" || "$1" == "show" ]]; then
-		echo -e "$HEADER"
-		nala "$@"
-	elif [[ "$1" == "autoclean" || "$1" == "reinstall" || "$1" == "satisfy" || "$1" == "source" || "$1" == "edit-sources" || "$2" == "--only-upgrade" || "$2" == "--reinstall" || "$2" == "--allow-downgrades" ]]; then
-		sudo "apt" "$@"
-	else
-		echo -e "$HEADER"
-		sudo nala "$@"
-	fi
-}
-# --- UTILE OS NALA CONFIG END --- #
-EOF
-) >> $BASHRC
 fi
 
 # Default neofetch
@@ -67,14 +50,6 @@ if [ -f $BASHRC ]; then
 	# Remove previous aliases as well as trailing newlines
 	sed -i '/alias fastfetch/d;/alias neofetch/d' $BASHRC || true
 	perl -pi -e 'chomp if eof' $BASHRC || true
-
-	# Add new aliases
-	(cat << 'EOF'
-
-alias fastfetch="fastfetch --logo /usr/share/pixmaps/utile-ascii.txt --config utile.jsonc"
-alias neofetch="fastfetch"
-EOF
-) >> $BASHRC
 fi
 
 #DEBHELPER#

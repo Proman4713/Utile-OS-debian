@@ -1,3 +1,9 @@
+utile-gnome-defaults (26.0.15) abstract; urgency=medium
+
+  * Fix broken conventions and sloppily laid out [by past me] files
+
+ -- Aaser Abd-el Sabour <proman4713@gmail.com>  Fri, 11 Sep 2026 13:44:53 +0300
+
 utile-gnome-defaults (26.0.14) abstract; urgency=medium
 
   * Fix and move systemd unit file (rookie mistake)
