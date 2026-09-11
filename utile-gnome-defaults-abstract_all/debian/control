@@ -3,11 +3,12 @@ Section: x11
 Priority: optional
 Maintainer: Aaser Abd-el Sabour <proman4713@gmail.com>
 Build-Depends: debhelper-compat (= 13)
+Standards-Version: 4.7.3
 
 Package: utile-gnome-defaults
 Architecture: all
 Description: Utile OS Default GNOME Configurations
- Includes dconf overrides, Yaru theme overrides, login/logout sounds, custom desktop icons, shell aliases, and fastfetch configuration.
+ Includes default user settings and most UI/UX modifications for Utile OS.
  .
- This package is included in the `utile-desktop` metapackage and is installed by default in Utile OS.
+ This package is installed by default in Utile OS.
 Depends: gnome-shell,pulseaudio-utils,yaru-theme-sound,${misc:Depends}
