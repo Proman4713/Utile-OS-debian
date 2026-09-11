@@ -7,4 +7,4 @@ Build-Depends: debhelper-compat (= 13)
 Package: utile-gnome-defaults
 Architecture: all
 Description: Utile OS Default GNOME Configurations
-Depends: gnome-shell
+Depends: gnome-shell,pulseaudio-utils,yaru-theme-sound

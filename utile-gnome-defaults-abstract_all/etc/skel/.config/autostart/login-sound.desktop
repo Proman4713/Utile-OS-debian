@@ -1,9 +1,9 @@
 # Startup sound
 [Desktop Entry]
 Type=Application
-Exec=/usr/bin/canberra-gtk-play --id="desktop-login"
-Hidden=false
-NoDisplay=false
-Name=Login Sound
-Comment=Plays welcome sound at login
+# Number is # out of 65536, this is 70%.
+Exec=/usr/bin/paplay --volume=45875.2 /usr/share/sounds/Yaru/stereo/desktop-login.oga
+NoDisplay=true
+Name=User Log-in Sound
+Comment=Play welcome sound at login
 X-GNOME-Autostart-enabled=true

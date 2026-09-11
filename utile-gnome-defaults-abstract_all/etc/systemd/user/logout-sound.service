@@ -1,0 +1,12 @@
+[Unit]
+Description=Play farewell sound at log-out
+DefaultDependencies=no
+Conflicts=shutdown.target reboot.target halt.target
+
+[Service]
+Type=oneshot
+# Number is # out of 65536, this is 70%.
+ExecStart=/usr/bin/paplay --volume=45875.2 /usr/share/sounds/Yaru/stereo/desktop-logout.oga
+
+[Install]
+WantedBy=gnome-session-shutdown.target

@@ -76,3 +76,5 @@ alias neofetch="fastfetch"
 EOF
 ) >> $BASHRC
 fi
+
+#DEBHELPER#
