@@ -1,3 +1,9 @@
+utile-gnome-defaults (26.0.14) abstract; urgency=medium
+
+  * Fix and move systemd unit file (rookie mistake)
+
+ -- Aaser Abd-el Sabour <proman4713@gmail.com>  Fri, 11 Sep 2026 12:56:53 +0300
+
 utile-gnome-defaults (26.0.13) abstract; urgency=medium
 
   * Switch to pulseaudio-utils for desktop log-in sound for volume control
