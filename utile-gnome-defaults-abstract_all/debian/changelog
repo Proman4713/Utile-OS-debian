@@ -1,3 +1,10 @@
+utile-gnome-defaults (26.0.16) abstract; urgency=medium
+
+  * /etc/profile.d/zz99_utile_aliases.sh: Add execution permissions
+  * logout-sound.service: Fix .oga filepath
+
+ -- Aaser Abd-el Sabour <proman4713@gmail.com>  Fri, 11 Sep 2026 14:43:33 +0300
+
 utile-gnome-defaults (26.0.15) abstract; urgency=medium
 
   * Fix broken conventions and sloppily laid out [by past me] files

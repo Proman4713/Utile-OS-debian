@@ -7,7 +7,7 @@ Before=shutdown.target gnome-session-cleanup.target
 [Service]
 Type=oneshot
 # Number is # out of 65536, this is 70%.
-ExecStart=/usr/bin/paplay --volume=45875.2 /usr/share/sounds/Yaru/stereo/desktop-logout.oga
+ExecStart=/usr/bin/paplay --volume=45875.2 /usr/share/sounds/Yaru/stereo/desktop-logoff.oga
 
 [Install]
 WantedBy=gnome-session-shutdown.target
