@@ -3,6 +3,7 @@ Description=Play farewell sound at log-out
 DefaultDependencies=no
 Conflicts=shutdown.target reboot.target halt.target
 Before=shutdown.target gnome-session-cleanup.target
+After=pipewire.service pipewire-pulse.service pulseaudio.service wireplumber.service
 
 [Service]
 Type=oneshot

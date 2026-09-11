@@ -1,3 +1,10 @@
+utile-gnome-defaults (26.0.17) abstract; urgency=medium
+
+  * Move nala/apt and neofetch wrapping logic back to postinst due to /etc/profile.d/ being ignored on standard GUI terminals
+  * Attempt to fix logout-sound.service
+
+ -- Aaser Abd-el Sabour <proman4713@gmail.com>  Fri, 11 Sep 2026 15:22:05 +0300
+
 utile-gnome-defaults (26.0.16) abstract; urgency=medium
 
   * /etc/profile.d/zz99_utile_aliases.sh: Add execution permissions
