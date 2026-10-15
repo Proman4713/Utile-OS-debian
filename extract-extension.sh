@@ -6,8 +6,9 @@ EXTENSION_URL=$1
 EXTENSION_NAME=$2
 OUTPUT_DIR=$3
 
-if ! [ -d "$OUTPUT_DIR" ]; then
-	mkdir -p "$OUTPUT_DIR"
+if [ "$EXTENSION_URL" = "-h" ]; then
+	echo "./extract-extension.sh [Extension .zip URL] [Extension Name (blur-my-shell@aunetx)] [Output Directory (./utile-gnome-shell-extensions-abstract_all/usr/share/gnome-shell/extensions)]"
+	exit
 fi
 
 # Validate extension name and url
@@ -19,6 +20,10 @@ fi
 if ! [ -n "$EXTENSION_URL" ]; then
 	echo "Missing extension url"
 	exit 1
+fi
+
+if ! [ -d "$OUTPUT_DIR" ]; then
+	mkdir -p "$OUTPUT_DIR"
 fi
 
 if ! [ -d "$OUTPUT_DIR/$EXTENSION_NAME" ]; then
