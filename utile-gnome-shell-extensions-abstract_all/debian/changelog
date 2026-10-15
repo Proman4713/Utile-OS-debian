@@ -1,6 +1,8 @@
 utile-gnome-shell-extensions (26.0.1) abstract; urgency=medium
 
-  * Update Add To Desktop, All-In-One Clipboard, Blur My Shell (massive for popup blurs), Hide Top Bar, Just Perfection, and Vitals
+  * Update Add To Desktop, All-In-One Clipboard, Blur My Shell (important for popup blurs),
+  * 	Hide Top Bar, Just Perfection, and Vitals
+  * Update debian/ directory to fix linitan errors
 
  -- Aaser Abd-el Sabour <proman4713@gmail.com>  Thu, 15 Oct 2026 20:38:30 +0300
 

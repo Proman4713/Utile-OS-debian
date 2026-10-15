@@ -3,8 +3,9 @@ Section: utils
 Priority: optional
 Maintainer: Aaser Abd-el Sabour <proman4713@gmail.com>
 Build-Depends: debhelper-compat (= 13)
+Standards-Version: 4.7.3
 
 Package: utile-gnome-shell-extensions
 Architecture: all
 Description: Utile OS Default GNOME Shell Extensions
-Depends: gnome-shell,gnome-browser-connector,gnome-shell-extension-gsconnect,gnome-shell-extension-gsconnect-browsers
+Depends: gnome-shell,gnome-browser-connector,gnome-shell-extension-gsconnect,gnome-shell-extension-gsconnect-browsers,${misc:Depends}
