@@ -61,14 +61,20 @@ export const ClipboardTabContent = GObject.registerClass(
             this._selectionService = new ClipboardSelectionService();
 
             this._mainBox = new St.BoxLayout({
-                vertical: true,
+                orientation: Clutter.Orientation.VERTICAL,
                 style_class: 'aio-clipboard-container',
                 x_expand: true,
             });
             this.set_child(this._mainBox);
 
             this._searchService = new ClipboardSearchService({
-                onSearchChanged: () => this._scheduleRedraw(true),
+                onSearchChanged: () => {
+                    if (this._currentView) {
+                        this._currentView.resetScrollAndPagination();
+                    }
+                    this._scheduleRedraw(true);
+                },
+                clipboardRegistry: this._manager._clipboardRegistry,
             });
 
             this._buildSearchComponent();

@@ -25,7 +25,6 @@ import Clutter from 'gi://Clutter';
 import * as Main from 'resource:///org/gnome/shell/ui/main.js';
 import * as Layout from 'resource:///org/gnome/shell/ui/layout.js';
 import * as Config from 'resource:///org/gnome/shell/misc/config.js';
-import * as PointerWatcher from 'resource:///org/gnome/shell/ui/pointerWatcher.js';
 const [major] = Config.PACKAGE_VERSION.split('.');
 const shellVersion = Number.parseInt(major);
 
@@ -53,6 +52,7 @@ export class PanelVisibilityManager {
         this._staticBox = new Clutter.ActorBox();
         this._animationActive = false;
         this._shortcutTimeout = null;
+        this._unredirectDisabled = false;
 
         this._desktopIconsUsableArea = (
             new DesktopIconsIntegration.DesktopIconsUsableAreaClass()
@@ -76,7 +76,11 @@ export class PanelVisibilityManager {
             }
         ).bind(this);
 
-        this._pointerWatcher = PointerWatcher.getPointerWatcher();
+        this._cursorTracker = (
+            (typeof global.backend?.get_cursor_tracker === "function")
+            ? global.backend.get_cursor_tracker()
+            : Meta.CursorTracker.get_for_display(global.display)  // GNOME Shell 45-47
+        );
         this._pointerListener = null;
 
         // Load settings
@@ -89,8 +93,17 @@ export class PanelVisibilityManager {
 
         this._updateHotCorner(false);
         this._updateStaticBox();
+        // Wait until the panel has an allocation: after login this can take
+        // a second or two, and on unlock a relayout can still be queued.
+        // notify::allocation is not enough, it only fires if the box changes.
         this._bindTimeoutId = GLib.timeout_add(
-            GLib.PRIORITY_DEFAULT, 100, this._bindUIChanges.bind(this),
+            GLib.PRIORITY_DEFAULT, 100, () => {
+                if (!PanelBox.has_allocation())
+                    return GLib.SOURCE_CONTINUE;
+                this._bindTimeoutId = 0;
+                this._bindUIChanges();
+                return GLib.SOURCE_REMOVE;
+            }
         );
     }
 
@@ -104,10 +117,7 @@ export class PanelVisibilityManager {
         let mouse = global.get_pointer();
         if(trigger == "mouse-left" && this._isHovering(...mouse)) return;
 
-        if(this._pointerListener) {
-            this._pointerWatcher._removeWatch(this._pointerListener);
-            this._pointerListener = null;
-        }
+        this._stopWatchingPointer();
 
         if(this._animationActive) {
             PanelBox.remove_all_transitions();
@@ -125,8 +135,31 @@ export class PanelVisibilityManager {
                     PanelBox.hide();
                 }
                 this._updateHotCorner(true);
+                this._setUnredirectDisabled(false);
             }
         });
+    }
+
+    // While the panel is on screen above a window that covers the whole
+    // monitor, that window must not be unredirected (X11) or put on a
+    // direct-scanout plane (Wayland): the compositor would skip painting
+    // the stage and the panel would stay invisible although it still
+    // receives input. GNOME Shell does the same for its own notifications,
+    // OSDs and menus. The calls are counted by Mutter, so keep them paired.
+    _setUnredirectDisabled(disabled) {
+        if (disabled === this._unredirectDisabled) return;
+        if (shellVersion >= 48) {
+            if (disabled)
+                global.compositor.disable_unredirect();
+            else
+                global.compositor.enable_unredirect();
+        } else {
+            if (disabled)
+                Meta.disable_unredirect_for_display(global.display);
+            else
+                Meta.enable_unredirect_for_display(global.display);
+        }
+        this._unredirectDisabled = disabled;
     }
 
     show(animationTime, trigger) {
@@ -143,6 +176,7 @@ export class PanelVisibilityManager {
 
         this._updateHotCorner(false);
         PanelBox.show();
+        this._setUnredirectDisabled(trigger != "destroy");
         if(trigger == "destroy"
            || (
                trigger == "showing-overview"
@@ -173,9 +207,10 @@ export class PanelVisibilityManager {
                     {
                         // The cursor is still on the panel. Start watching the
                         // pointer so we know when it leaves the panel.
-                        this._pointerListener =
-                            this._pointerWatcher.addWatch
-                                (10, this._handlePointer.bind(this));
+                        this._pointerListener = this._cursorTracker.connect(
+                            'position-invalidated',
+                            () => this._handlePointer(...global.get_pointer()),
+                        );
                     }
                 }
             });
@@ -187,6 +222,13 @@ export class PanelVisibilityManager {
                     y < this._staticBox.y2 &&
                     x >= this._staticBox.x1 &&
                     x < this._staticBox.x2 );
+    }
+
+    _stopWatchingPointer() {
+        if(this._pointerListener) {
+            this._cursorTracker.disconnect(this._pointerListener);
+            this._pointerListener = null;
+        }
     }
 
     _handlePointer(x, y) {
@@ -277,10 +319,7 @@ export class PanelVisibilityManager {
     }
 
     _disablePressureBarrier() {
-        if(this._pointerListener) {
-            this._pointerWatcher._removeWatch(this._pointerListener);
-            this._pointerListener = null;
-        }
+        this._stopWatchingPointer();
 
         if(this._panelBarrier && this._panelPressure) {
             this._panelPressure.removeBarrier(this._panelBarrier);
@@ -412,7 +451,6 @@ export class PanelVisibilityManager {
     }
 
     _bindUIChanges() {
-        this._signalsHandler = new Convenience.GlobalSignalsHandler();
         this._signalsHandler.add(
             [
                 Main.overview,
@@ -463,6 +501,9 @@ export class PanelVisibilityManager {
                     this._base_y = PanelBox.y;
                     this._updateStaticBox();
                     this._updateSettingsMouseSensitive();
+                    // LayoutManager._updateBoxes() has just moved PanelBox
+                    // back on screen: hide it again unless it is held.
+                    this._handleMenus();
                 }
             ],
             [
@@ -478,18 +519,7 @@ export class PanelVisibilityManager {
             this._handleShortcut.bind(this)
         );
 
-        if (!PanelBox.has_allocation()) {
-          // after login, allocating the panel can take a second or two
-          let tmp_handle = PanelBox.connect("notify::allocation", () => {
-            this._updateIntellihideStatus();
-            PanelBox.disconnect(tmp_handle);
-          });
-        } else {
-          this._updateIntellihideStatus();
-        }
-
-        this._bindTimeoutId = 0;
-        return false;
+        this._updateIntellihideStatus();
     }
 
     _bindSettingsChanges() {
@@ -548,10 +578,14 @@ export class PanelVisibilityManager {
 
         MessageTray._bannerBin.ease = this._oldEase;
         this.show(0, "destroy");
+        this._setUnredirectDisabled(false);
 
+        // The shell disables this extension while the screen is locked. Giving
+        // the top bar its strut back then shrinks the work area and pushes
+        // floating windows down.
         Main.layoutManager.removeChrome(PanelBox);
         Main.layoutManager.addChrome(PanelBox, {
-            affectsStruts: true,
+            affectsStruts: Main.sessionMode.currentMode !== 'unlock-dialog',
             trackFullscreen: true
         });
         this._desktopIconsUsableArea.destroy();

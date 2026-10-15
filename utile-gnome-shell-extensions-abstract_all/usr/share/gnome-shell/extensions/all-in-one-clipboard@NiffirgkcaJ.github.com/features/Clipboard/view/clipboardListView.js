@@ -96,10 +96,9 @@ export const ClipboardListView = GObject.registerClass(
         _getItemOptions(isPinned) {
             return {
                 isPinned: isPinned,
-                imagesDir: this._manager.imagesDir,
-                imagePreviewsDir: this._manager.imagePreviewsDir,
-                linkPreviewsDir: this._manager.linkPreviewsDir,
-                imagePreviewSize: this._imagePreviewSize,
+                registry: this._manager._clipboardRegistry,
+                storage: this._manager.storage,
+                previewSize: this._imagePreviewSize,
                 onItemCopy: this._onItemCopy,
                 manager: this._manager,
                 selectedIds: this._selectedIds,

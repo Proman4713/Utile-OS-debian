@@ -81,7 +81,7 @@ export const MenuContentArea = GObject.registerClass(
          * Focuses the active tab's primary content element.
          */
         focusActiveTabContent() {
-            this._currentTabActor?.onTabSelected?.();
+            this._currentTabActor?.onTabSelected();
         }
 
         // ========================================================================
@@ -103,7 +103,7 @@ export const MenuContentArea = GObject.registerClass(
 
             try {
                 if (this._activeTabName === tabName && oldActor) {
-                    oldActor.onTabSelected?.();
+                    oldActor.onTabSelected();
                     return;
                 }
 
@@ -305,11 +305,11 @@ export const MenuContentArea = GObject.registerClass(
         async _loadTabModule(tabName) {
             const sectionDef = getMenuSectionByLocalizedName(tabName);
             if (!sectionDef) {
-                throw new Error(`[AIO-Clipboard] No layout definition found for tab: ${tabName}`);
+                throw new Error(`No layout definition found for tab: ${tabName}`);
             }
 
             if (!sectionDef.createContentActor) {
-                throw new Error(`[AIO-Clipboard] Tab definition ${sectionDef.id} missing 'createContentActor' factory.`);
+                throw new Error(`Tab definition ${sectionDef.id} missing 'createContentActor' factory.`);
             }
 
             return await sectionDef.createContentActor(this._extension, this._settings, this._clipboardManager);
@@ -373,7 +373,7 @@ export const MenuContentArea = GObject.registerClass(
          */
         _notifyTabSelected(afterTabSelected = null) {
             const selectedActor = this._currentTabActor;
-            selectedActor?.onTabSelected?.();
+            selectedActor?.onTabSelected();
 
             if (afterTabSelected) {
                 Promise.resolve(afterTabSelected(selectedActor)).catch((e) => {
