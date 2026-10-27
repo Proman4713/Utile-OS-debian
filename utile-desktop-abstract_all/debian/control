@@ -7,4 +7,5 @@ Build-Depends: debhelper-compat (= 13)
 Package: utile-desktop
 Architecture: all
 Description: Utile Desktop metapackage
-Depends: base-files,fastfetch,nala,utile-gnome-defaults,utile-gnome-shell-extensions,utile-grub-theme,utile-keyring,utile-music,utile-wallpapers
+Depends: base-files
+Recommends: fastfetch,nala,utile-gnome-defaults,utile-gnome-shell-extensions,utile-grub-theme,utile-keyring,utile-music,utile-wallpapers

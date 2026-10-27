@@ -1,3 +1,9 @@
+utile-gnome-defaults (26.0.18) abstract; urgency=medium
+
+  * Update default settings for Vitals and Just Perfection
+
+ -- Aaser Abd-el Sabour <proman4713@gmail.com>  Tue, 27 Oct 2026 17:52:15 +0300
+
 utile-gnome-defaults (26.0.17) abstract; urgency=medium
 
   * Move nala/apt and neofetch wrapping logic back to postinst due to /etc/profile.d/ being ignored on standard GUI terminals

@@ -56,7 +56,7 @@ disable-extension-version-validation=true
 # Default pinned apps
 favorite-apps=['org.gnome.Nautilus.desktop', 'brave-browser.desktop', 'org.gnome.Calendar.desktop', 'com.github.proman4713.utile-music.desktop', 'libreoffice-impress.desktop', 'libreoffice-calc.desktop', 'libreoffice-writer.desktop', 'snap-store_snap-store.desktop', 'org.gnome.Settings.desktop']
 # Enable Extensions (except Blur My Shell):
-enabled-extensions=['hidetopbar@mathieu.bidon.ca', 'ding@rastersoft.com', 'ubuntu-dock@ubuntu.com', 'tiling-assistant@ubuntu.com', 'snapd-search-provider@canonical.com', 'web-search-provider@ubuntu.com', 'gsconnect@andyholmes.github.io', 'add-to-desktop@tommimon.github.com', 'just-perfection-desktop@just-perfection', 'Vitals@CoreCoding.com', 'all-in-one-clipboard@NiffirgkcaJ.github.com']
+enabled-extensions=['hidetopbar@mathieu.bidon.ca', 'ding@rastersoft.com', 'ubuntu-dock@ubuntu.com', 'tiling-assistant@ubuntu.com', 'snapd-search-provider@canonical.com', 'web-search-provider@ubuntu.com', 'gsconnect@andyholmes.github.io', 'add-to-desktop@tommimon.github.com', 'just-perfection-desktop@just-perfection', 'all-in-one-clipboard@NiffirgkcaJ.github.com']
 
 [org/gnome/shell/keybindings]
 # Muscle Memory: Windows users use Win+Shift+S to open the Snipping Tool, not just PrtScr
@@ -179,13 +179,17 @@ show-in-overview=true
 # Hide activities button, the entire existence of this button only serves to show the number of workspaces as well as act as a CTA to open the overview.
 #	Regular users will most likely only use Super and Super+A, and power users know that hot corners exist, so that button is largely unneeded and this space may be
 #	used better by the Vitals extension.
-activities-button=false
+#! Amendment: The Vitals pill isn't something the regular user would care to be exposed to constantly, it should be provided as a settings option for those who want it,
+#!	but the activities button is a core part of the GNOME experience and even hints at the existence of hot corners in that direction. It shows the number of workspaces,
+#!	too.
+activities-button=true
 # Show top bar in overview, in accordance with Hide Top Bar
 panel-in-overview=true
 # Boot to desktop rather than overview
 startup-status=0
 #! I will not add this, even though on my target system it is different from the default (0), because this stops the donation notification from appearing until
-#!	a new version is released, which is probably wrong morally:
+#!	a new version is released, which is probably wrong morally, as I don't pay back to Vitals in the same way Canonical does to many of the open-source projects
+#!	it relies on:
 #? org.gnome.shell.extensions.just-perfection support-notifier-showed-version 36
 
 #* CONFIGURE: Vitals
