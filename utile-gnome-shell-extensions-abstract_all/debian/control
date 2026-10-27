@@ -8,4 +8,11 @@ Standards-Version: 4.7.3
 Package: utile-gnome-shell-extensions
 Architecture: all
 Description: Utile OS Default GNOME Shell Extensions
-Depends: gnome-shell,gnome-browser-connector,gnome-shell-extension-gsconnect,gnome-shell-extension-gsconnect-browsers,${misc:Depends}
+Recommends:
+ gnome-browser-connector,
+ gnome-shell-extension-gsconnect,
+ gnome-shell-extension-gsconnect-browsers,
+Depends:
+ gnome-shell,
+ libblur-effect-1.0-1,
+ ${misc:Depends},
