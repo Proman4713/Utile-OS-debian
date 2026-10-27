@@ -1,0 +1,50 @@
+Source: gnome-rounded-blur
+Section: libs
+Priority: optional
+Maintainer: Aaser Abd-el Sabour <proman4713@gmail.com>
+Build-Depends:
+ debhelper-compat (= 13),
+ dh-sequence-gir,
+ libglib2.0-dev,
+ gobject-introspection,
+ gir1.2-gobject-2.0-dev <!nogir>,
+ meson,
+ libmutter-18-dev,
+Standards-Version: 4.7.3
+Homepage: https://github.com/kancko/gnome-rounded-blur
+Rules-Requires-Root: no
+#Vcs-Git: https://salsa.debian.org/debian/gnome-rounded-blur.git
+#Vcs-Browser: https://salsa.debian.org/debian/<project_site>
+
+Package: libblur-effect-1.0-1
+Architecture: any
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+Recommends:
+ gir1.2-blur-1.0
+Description: library providing corner radius support for GNOME extensions
+ This is basically just copy of ShellBlurEffect with corner mask and
+ different GIR namespace (Blur). It also includes the runtime GObject
+ Introspection typelib for applications that load the API.
+
+Package: gir1.2-blur-1.0
+Section: introspection
+Architecture: any
+Depends:
+ ${misc:Depends},
+ ${gir:Depends}
+Provides: ${gir:Provides}
+Description: GObject introspection data for the GNOME Rounded Blur
+ Includes .typelib files for the GNOME Rounded Blur library.
+
+Package: gnome-rounded-blur-dev
+Section: libdevel
+Architecture: any
+Depends:
+ ${misc:Depends},
+ ${gir:Depends}
+Provides: ${gir:Provides}
+Description: development files for gnome-rounded-blur
+ This package contains the headers, linker symlink, pkg-config file, and
+ GObject Introspection metadata needed to develop against gnome-rounded-blur.

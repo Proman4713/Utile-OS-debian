@@ -1,0 +1,13 @@
+#!/usr/bin/make -f
+
+export DEB_BUILD_MAINT_OPTIONS = hardening=+bindnow
+
+%:
+	dh $@ --with gir --buildsystem=meson
+
+# Fix issues where it cannot find the libraries inside it for some reason
+override_dh_shlibdeps:
+	dh_shlibdeps -l/usr/lib/x86_64-linux-gnu/mutter-18
+
+# override_dh_auto_configure:
+# 	dh_auto_configure -- -Dprefix=/usr

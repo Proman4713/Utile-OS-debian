@@ -1,0 +1,8 @@
+gnome-rounded-blur for Debian
+
+Please edit this to provide information specific to
+this gnome-rounded-blur Debian package.
+
+    This package is added to the Utile OS package archives for the `utile-gnome-shell-extensions` package, which includes Blur My Shell, which uses this library for pop-up blur.
+
+ -- Aaser Abd-el Sabour <proman4713@gmail.com>  Tue, 27 Oct 2026 18:04:32 +0300

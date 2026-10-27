@@ -1,0 +1,13 @@
+libblur-effect-1.0.so.1 libblur-effect-1.0-1 #MINVER#
+* Build-Depends-Package: gnome-rounded-blur-dev
+ gb_blur_effect_get_brightness@Base 1.0.2
+ gb_blur_effect_get_corner_radius@Base 1.0.2
+ gb_blur_effect_get_mode@Base 1.0.2
+ gb_blur_effect_get_radius@Base 1.0.2
+ gb_blur_effect_get_type@Base 1.0.2
+ gb_blur_effect_new@Base 1.0.2
+ gb_blur_effect_set_brightness@Base 1.0.2
+ gb_blur_effect_set_corner_radius@Base 1.0.2
+ gb_blur_effect_set_mode@Base 1.0.2
+ gb_blur_effect_set_radius@Base 1.0.2
+ gb_blur_mode_get_type@Base 1.0.2
